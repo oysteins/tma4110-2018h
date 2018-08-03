@@ -1,0 +1,31 @@
+uke dato          tema                                   bok                                 videoer   øving
+34  20.08./21.08. introduksjon
+                  lineære likn.syst.                     L 1.1   			     14,15,16
+    22.08./24.08. gausseliminasjon        		 L 1.2
+35  27.08./28.08. vektorlikninger og matriselikninger	 L 1.3-1.6 (1.6 er «applications»)
+    29.08./31.08. lineær uavhengighet       		 L 1.7
+36  03.09./04.09. lineærtransformasjoner		 L 1.8-1.9
+    05.09./07.09. matriseoperasjoner			 L 2.1
+37  10.09./11.09. inverse matriser			 L 2.2-2.3
+    12.09./14.09. LU-faktorisering			 L 2.5
+38  17.09./18.09. determinanter				 L 3.1-3.2
+    19.09./21.09. vektorrom				 L 4.1-4.2
+39  24.09./25.09. basis, nullrom, kolonnerom, radrom     L 4.3
+    26.09./28.09. dimensjon og rang 	      		 L 4.4-4.6
+40  01.10./02.10. markov-kjeder				 L 4.9
+    03.10./05.10. egenverdier/-vektorer, diagonalisering L 5.1-5.3
+41  08.10./09.10. indreprodukt, lengde, ortogonalitet    L 6.1-6.2
+    10.10./12.10. ortogonale projeksjoner, Gram-Schmidt  L 6.3-6.4
+--- Morten tar over
+42  15.10./16.10. minste kvadraters løsning		 L 6.5-6.6
+    17.10./19.10. ortogonal diagonalisering		 L 7.1-7.2
+43  22.10./23.10. komplekse tall  	 		 S 1.1-1.2
+    24.10./26.10. polarform 				 S 1.3-1.4
+44  29.10./30.10. potenser og røtter av komplekse tall   S 1.5
+    31.10./02.11. komplekse egenverdier    		 L 5.5
+45  05.11./06.11. andreordens differensiallikninger	 P 4.1
+    07.11./09.11. systemer av lineære diff.likn.	 P 4.2, L 5.7
+46  12.11./13.11. homogene diff.likninger		 P 4.3-4.4
+    14.11./16.11. inhomogene diff.likn. (ubest. koeff.)  P 4.5
+47  19.11./20.11. variasjon av param., tvungne svign.    P 4.6-4.7
+    21.11./23.11. oppsummering

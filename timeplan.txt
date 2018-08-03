@@ -1,0 +1,17 @@
+      man     tir     ons     tor     fre
+08-10 F1(R1*) F2(R1*)
+10-12                 F1(R1)          F2(R7*)
+12-14                                 Ø(S7/8)
+14-16         Ø(S7/8)         Ø(S7/8) Ø(S7/8)
+16-18	      Ø(S7/8)         Ø(S7/8)
+
+* uke 34: R1->EL5, R7->F1
+
+https://wiki.math.ntnu.no/drift/help/other/plugin-schedule
+
+Paralleller:
+1: BKJ, MTBYGG, MTING, MTPETR, MTTEKGEO
+2: MTDESIG, MTIØT, MTKOM, MTMART, MTMT, MTPROD
+
+Offisiell timeplan: https://www.ntnu.no/studier/emner/TMA4110#tab=timeplan
+ntnu.1024.no?

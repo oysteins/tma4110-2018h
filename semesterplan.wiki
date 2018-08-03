@@ -1,0 +1,30 @@
+^  Uke     ^ Dato          ^ Tema                                                           ^ Bok          ^ Øving       ^ Referansegruppe ^
+^  34 Ø    | 20.08./21.08. | Introduksjon                                                   |              |             |                 |
+^  :::     | :::           | Lineære likningssystemer                                       | L 1.1        |             | :::             |
+^  :::     | 22.08./24.08. | Gausseliminasjon                                               | L 1.2        |             | :::             |
+^  35 M    | 27.08./28.08. | Vektorlikninger                                                | L 1.3        | Øving 1     | Sanke studenter |
+^  :::     | 29.08./31.08. | Matriselikninger                                               | L 1.4-1.6    | :::         | :::             |
+^  36 Ø    | 03.09./04.09. | Lineær uavhengighet                                            | L 1.7        | Øving 2     |                 |
+^  :::     | 05.09./07.09. | Lineærtransformasjoner                                         | L 1.8-1.9    | :::         | :::             |
+^  37 Ø    | 10.09./11.09. | Matriseoperasjoner                                             | L 2.1        | Øving 3     |                 |
+^  :::     | 12.09./14.09. | Inverse matriser                                               | L 2.2-2.3    | :::         | :::             |
+^  38 Ø    | 17.09./18.09. | Determinanter                                                  | L 3.1-3.2    | Øving 4     | Møte            |
+^  :::     | 19.09./21.09. | Vektorrom                                                      | L 4.1-4.2    | :::         | :::             |
+^  39 Ø    | 24.09./25.09. | Basis, nullrom, kolonnerom, radrom                             | L 4.3        | Øving 5     |                 |
+^  :::     | 26.09./28.09. | Dimensjon og rang                                              | L 4.4-4.6    | :::         | :::             |
+^  40 Ø    | 01.10./02.10. | Markov-kjeder                                                  | L 4.9        | Øving 6     |                 |
+^  :::     | 03.10./05.10. | Egenverdier, egenvektorer, diagonalisering                     | L 5.1-5.3    | :::         | :::             |
+^  41 Ø    | 08.10./09.10. | Indreprodukt, lengde, ortogonalitet                            | L 6.1-6.2    | Øving 7     |                 |
+^  :::     | 10.10./12.10. | Ortogonale projeksjoner, Gram-Schmidt-ortogonalisering         | L 6.3-6.4    | :::         | :::             |
+^  42 M    | 15.10./16.10. | Minste kvadraters løsning                                      | L 6.5-6.6    | Øving 8     |                 |
+^  :::     | 17.10./19.10. | Ortogonal diagonalisering                                      | L 7.1-7.2    | :::         | :::             |
+^  43 M    | 22.10./23.10. | Komplekse tall                                                 | S 1.1-1.2    | Øving 9     | Møte            |
+^  :::     | 24.10./26.10. | Polarform                                                      | S 1.3-1.4    | :::         | :::             |
+^  44 M    | 29.10./30.10. | Potenser og røtter av komplekse tall                           | S 1.5        | Øving 10    |                 |
+^  :::     | 31.10./02.11. | Komplekse egenverdier                                          | L 5.5        | :::         | :::             |
+^  45 M    | 05.11./06.11. | Andreordens differensiallikninger                              | P 4.1        | Øving 11    |                 |
+^  :::     | 07.11./09.11. | Systemer av lineære differensiallikninger                      | P 4.2, L 5.7 | :::         | :::             |
+^  46 M    | 12.11./13.11. | Homogene differensiallikninger                                 | P 4.3-4.4    | Øving 12    |                 |
+^  :::     | 14.11./16.11. | Inhomogene differensiallikninger (ubestemte koeffisienter)     | P 4.5        | :::         | :::             |
+^  47 M    | 19.11./20.11. | Variasjon av parametre, tvungne svingninger                    | P 4.6-4.7    | Øving 13    | Møte            |
+^  :::     | 21.11./23.11. | Oppsummering                                                   |              | :::         | :::             |
