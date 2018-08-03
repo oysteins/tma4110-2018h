@@ -1,0 +1,83 @@
+\input{preamble}
+
+\begin{document}
+
+\notatnr{2}{3} % TODO sett riktig startsidetall ut fra lengden på forrige notat
+\tittel{Lineære likningssystemer}
+
+\noindent%
+Grunnlaget for lineær algebra er \emph{lineære liknings\-systemer}.  I
+dette notatet starter vi vår reise inn i den lineære algebraen ved å
+først se på noen forskjellige måter å løse likningssystemer på, og så
+forsikre oss om at vi er helt enige om nøyaktig hva det vil si at et
+likningssystem er lineært.
+
+\section*{Forskjellige fremgangsmåter}
+
+Her er et eksempel på et lineært likningssystem:
+\[
+(\ast)
+\systeme{
+ x + 2y = 17,
+3x + 9y = 39
+}
+\]
+I dette systemet har vi to likninger og to ukjente.
+En løsning av systemet består av to tall som vi kan sette inn
+for $x$ og~$y$ slik at begge likningene er oppfylt samtidig.
+
+Vi kjenner fra før til flere måter å løse et slikt system på.  La oss
+løse systemet over med noen forskjellige metoder.
+
+\begin{ex}
+Den kanskje mest åpenbare metoden for å løse et likningssystem er å
+først løse én likning med hensyn på én av de ukjente, og så sette inn
+i den andre likningen (eller i \emph{de} andre likningene, hvis vi har
+et system med mer enn to likninger).
+
+For å løse systemet~$(\ast)$ med denne metoden kan vi først løse den
+første likningen med hensyn på~$x$; da får vi:
+\[
+x = 17 - 2y
+\]
+Så setter vi dette inn i den andre likningen og forenkler:
+\begin{align*}
+3 \cdot (17 - 2y) + 9y &= 39 \\
+51 + 3y &= 39
+\end{align*}
+Nå kan vi løse denne likningen med hensyn på~$y$:
+\begin{align*}
+3y &= 39 - 51 = -12 \\
+y &= -4
+\end{align*}
+Til slutt setter vi denne $y$-verdien inn i uttrykket vi fant for~$x$,
+og får:
+\[
+x = 17 - 2y = 17 - 2 \cdot (-4) = 25
+\]
+
+Vi har altså funnet ut at for at begge likningene skal være oppfylt,
+må vi ha at $x = 25$ og $y = -4$.  Vi sjekker at dette virkelig er en
+løsning av~$(\ast)$ ved å sette inn disse verdiene i begge likningene
+i systemet:
+\begin{align*}
+x + 2y &= 25 + 2 \cdot (-4) = 25 - 8 = 17 \\
+3x + 9y &= 3 \cdot 25 + 9 \cdot (-4) = 75 - 36 = 39
+\end{align*}
+Vi har nå funnet ut at systemet~$(\ast)$ har nøyaktig én løsning,
+nemlig $x = 25$ og $y = -4$.
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+
+
+\section*{Hva er et lineært likningssystem?}
+
+
+
+\section*{Totalmatrisen til et system}
+
+
+\end{document}

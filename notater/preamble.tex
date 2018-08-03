@@ -1,0 +1,80 @@
+\documentclass[norsk,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[total={17cm,27cm}]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{systeme}
+%\usepackage{hyperref}
+%\usepackage{enumerate}
+
+\usepackage{sectsty}
+\sectionfont{\bf\large}
+\subsectionfont{\bf\normalsize}
+
+\newcommand{\defterm}[1]{\emph{#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\abs}[1]{|#1|}
+
+\newcounter{notatnr}
+\newcommand{\notatnr}[2]
+{\setcounter{notatnr}{#1}%
+ \setcounter{page}{#2}%
+}
+
+\newtheorem{thm}{Teorem}[notatnr]
+\newtheorem*{thm-nn}{Teorem}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposisjon}
+\theoremstyle{definition}
+\newtheorem*{defnx}{Definisjon}
+\newtheorem*{exx}{Eksempel}
+\newtheorem*{oppg}{Oppgave}
+\newtheorem*{merkx}{Merk}
+\newtheorem*{spmx}{Spørsmål}
+
+\newenvironment{defn}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\defnx}
+  {\popQED\enddefnx}
+\newenvironment{ex}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\exx}
+  {\popQED\endexx}
+\newenvironment{merk}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\merkx}
+  {\popQED\endmerkx}
+\newenvironment{spm}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\spmx}
+  {\popQED\endspmx}
+
+\setlength{\columnsep}{26pt}
+
+\newcommand{\Tittel}[2]{%
+\twocolumn[
+\begin{center}
+\Large
+\begin{tabularx}{\textwidth}{cXr}
+\cellcolor{black}\color{white}%
+\bf {#1} &
+#2
+\hfill &
+\footnotesize TMA4110 høsten 2018
+\\ \hline
+\end{tabularx}
+\end{center}
+]}
+
+\newcommand{\tittel}[1]{\Tittel{\arabic{notatnr}}{#1}}
+
+\newcommand{\linje}{%
+\begin{center}
+\rule{.8\linewidth}{0.4pt}
+\end{center}
+}
