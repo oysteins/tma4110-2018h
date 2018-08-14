@@ -1,0 +1,334 @@
+\input{preamble}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\begin{document}
+
+\notatnr{3}{5} % TODO sett riktig startsidetall ut fra lengden på forrige notat
+\tittel{Gausseliminasjon}
+
+\noindent%
+I dette notatet skal vi formalisere det vi gjorde i forrige notat.  Vi
+skal se hvordan vi kan løse et hvilket som helst lineært
+likningssystem ved å skrive om totalmatrisen til systemet etter
+bestemte regler.
+
+Reglene for hvordan totalmatrisen kan skrives om kalles
+\emph{radoperasjoner}, og vi vil ende opp med at matrisen er på
+\emph{trappeform}.  Hele prosessen kalles \emph{gausseliminasjon}.
+
+% \section*{Matriser}
+
+% \[
+% \text{$m \times n$-matrise}
+% \begin{bmatrix}
+
+% \end{bmatrix}
+% \]
+
+
+\section*{Radoperasjoner}
+
+% I eksempel~2.5 i forrige notat løste vi dette systemet:
+% \[
+% \systeme{
+%    x + 2y - 2z = -5,
+%    x + 3y +  z = 5,
+%   2x + 7y + 7z = 28
+% }
+% \]
+% Totalmatrisen til systemet er:
+% \[
+% \begin{amatrix}{3}
+
+% \end{amatrix}
+% \]
+
+Følgende tre måter å endre en matrise på kalles
+\defterm{radoperasjoner}:
+\begin{enumerate}
+\item Gange alle tallene i en rad med det samme tallet (ikke~$0$)
+\item Legge til (et multiplum av) en rad i en annen
+\item Bytte rekkefølge på radene
+\end{enumerate}
+
+Vi sier at to matriser er \defterm{radekvivalente} hvis vi kan komme
+fra den ene til den andre ved å utføre en eller flere radoperasjoner.
+Vi bruker notasjonen $M \roweq N$ for å si at to matriser $M$ og~$N$
+er radekvivalente.
+
+\begin{ex}
+Disse matrisene er radekvivalente, siden vi får den andre matrisen fra
+den første ved å gange øverste rad med~$4$:
+\begin{align*}
+\begin{bmatrix}
+ 2 & 5 \\
+ 1 & 7
+\end{bmatrix}
+&\roweq
+\begin{bmatrix}
+ 8 & 20 \\
+ 1 &  7
+\end{bmatrix}
+\end{align*}
+Merk at vi også kan gå motsatt vei: Ved å gange øverste rad i den
+andre matrisen med $1/4$ får vi tilbake den første matrisen.
+
+Disse to matrisene er også radekvivalente:
+\begin{align*}
+\begin{bmatrix}
+ 3 & 1 \\
+ 9 & 5
+\end{bmatrix}
+&\roweq
+\begin{bmatrix}
+ 3 & 1 \\
+ 0 & 2
+\end{bmatrix}
+\end{align*}
+Her har vi brukt den andre typen radoperasjon: Vi la til $-3$ ganger
+øverste rad i nederste rad for å komme fra den første matrisen til den
+andre.  Merk igjen at vi også kan gå motsatt vei: Ved å legge til $3$
+ganger øverste rad i nederste rad, kommer vi fra den andre matrisen
+til den første.
+\end{ex}
+
+Hele poenget med radoperasjoner er at det å utføre en radoperasjon på
+en totalmatrise tilsvarer å skrive om likningssystemet til et nytt
+system som er ekvivalent med det opprinnelige.  Vi formulerer dette
+som et teorem:
+
+\begin{thm}
+Hvis to likningssystemer har radekvivalente totalmatriser, så er de to
+likningssystemene ekvivalente.
+\end{thm}
+
+\begin{ex}
+Vi gjentar regningen i eksempel~2.5 fra forrige notat, denne gangen
+ved å utføre radoperasjoner på totalmatrisen til likningssystemet:
+\begin{align*}
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+1 & 5 &  9 & 33 \\
+2 & 5 & -1 &  0
+\end{amatrix}
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 3 & 11 & 38 \\
+2 & 5 & -1 &  0
+\end{amatrix}
+\\
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 3 & 11 & 38 \\
+0 & 1 &  3 & 10
+\end{amatrix}
+\\
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 1 &  3 & 10 \\
+0 & 3 & 11 & 38
+\end{amatrix}
+\\
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 1 &  3 & 10 \\
+0 & 0 &  2 &  8
+\end{amatrix}
+\end{align*}
+Her gjorde vi følgende radoperasjoner: Legge til $-1$ ganger første
+rad i andre rad, legge til $-2$ ganger første rad i tredje rad, bytte
+andre og tredje rad, og legge til $-3$ ganger andre rad i tredje rad.
+
+Den siste matrisen her er på det som kalles trappeform, og da er det
+(som vi så i eksempel~2.5) lett å lese av løsningen.  Hvis vi vil
+gjøre det enda lettere, kan vi fortsette med radoperasjoner til vi
+oppnår det som kalles \emph{redusert trappeform}:
+\begin{align*}
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 1 &  3 & 10 \\
+0 & 0 &  2 &  8
+\end{amatrix}
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 1 &  3 & 10 \\
+0 & 0 &  1 &  4
+\end{amatrix}
+\\
+&\roweq
+\begin{amatrix}{3}
+1 & 2 &  0 &  3 \\
+0 & 1 &  0 & -2 \\
+0 & 0 &  1 &  4
+\end{amatrix}
+\\
+&\roweq
+\begin{amatrix}{3}
+1 & 0 &  0 &  7 \\
+0 & 1 &  0 & -2 \\
+0 & 0 &  1 &  4
+\end{amatrix}
+\end{align*}
+Den siste totalmatrisen her svarer til følgende likningssystem:
+\[
+\systeme*{
+x = 7,
+y = -2,
+z = 4
+}
+\]
+Her har vi altså kommet helt frem til løsningen.
+\end{ex}
+
+
+\section*{Trappeform}
+
+% I det siste eksempelet i forrige notat løste vi et likningssystem med
+% tre likninger og tre ukjente.  Vi erstattet systemet med nye
+% ekvivalente systemer frem til det så slik ut:
+% \[
+% \systeme{
+%    x + 2y - 2z = -5,
+%         y + 3z = 10,
+%             2z =  8
+% }
+% \]
+% Legg merke til den spesielle fasongen på dette systemet som gjør at
+% det er lett å finne løsningen: $x$ og~$y$ er ikke med i den siste
+% likningen, og $x$ er ikke med i den midterste.  Vi sier at dette
+% systemet er på \emph{trappeform}, siden den tomme plassen til venstre
+% under likningene har fasong som en trapp.
+
+% Totalmatrisen for systemet ser slik ut:
+% \[
+% \begin{amatrix}{3}
+% 1 & 2 & -2 & -5 \\
+% 0 & 1 &  3 & 10 \\
+% 0 & 0 &  2 &  8
+% \end{amatrix}
+% \]
+% Her er det de tre nullene nede til venstre som gjør at vi ser at
+% systemet er på trappeform.
+
+Vi vil nå gi en presis definisjon av begrepet «trappeform».  Da
+trenger vi også et annet begrep, nemlig «lederelement».
+
+\begin{defn}
+Det første tallet i en rad i en matrise som ikke er~$0$ kalles
+\defterm{lederelementet} for den raden.  (En rad med bare nuller har
+ikke noe lederelement.)
+\end{defn}
+
+\begin{ex}
+\label{ex:lederelement}
+Se på følgende matrise:
+\[
+\begin{bmatrix}
+3 & -2 & 0 & 2 \\
+0 &  0  & 5 & 12 \\
+1 &  8 & 3 & 7 \\
+0 &  0  & 0 & 0
+\end{bmatrix}
+\]
+Lederelementene her er tallet~$3$ i den øverste raden, tallet~$5$ i
+den andre raden og tallet~$1$ i den tredje raden.  Den siste raden
+består av bare nuller, og har derfor ikke noe lederelement.
+\end{ex}
+
+\begin{defn}
+En matrise er på \defterm{trappeform} dersom hvert lederelement er til
+høyre for alle lederelementer i tidligere rader, og eventuelle
+nullrader er helt nederst.
+\end{defn}
+
+\begin{ex}
+\label{ex:trappeform}
+Denne matrisen er på trappeform:
+\[
+\begin{bmatrix}
+3 & 7 & 6 \\
+0 & 1 & -2 \\
+0 & 0 & 2
+\end{bmatrix}
+\]
+Lederelementene er $3$, $1$ og~$2$, og hvert av dem er til høyre for
+alle de tidligere lederelementene.
+
+Denne matrisen er også på trappeform:
+\[
+\begin{bmatrix}
+-2 & 7 & 1 & 5 \\
+ 0 & 0 & 4 & 9 \\
+ 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+Denne matrisen er ikke på trappeform fordi nullradene ikke er samlet
+nederst:
+\[
+\begin{bmatrix}
+3 & 8 & 2 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 2 & 1 & 4 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+Matrisen i eksempel~\ref{ex:lederelement} er ikke på trappeform fordi
+lederelementet i tredje rad ikke er til høyre for lederelementene i
+første og andre rad.
+
+TODO: mer eksempel
+\end{ex}
+
+\begin{defn}
+En matrise er på \defterm{redusert trappeform} hvis den er på
+trappeform og dessuten oppfyller følgende:
+\begin{itemize}
+\item Alle lederelementene er~$1$.
+\item Alle tall som står over lederelementer er~$0$.
+\end{itemize}
+\end{defn}
+
+
+\section*{Gausseliminasjon}
+
+\begin{ex}
+\begin{align*}
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+1 & 3 & 1  & 5 \\
+2 & 7 & 7  & 28
+\end{amatrix}
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 1 & 3  & 10 \\
+2 & 7 & 7  & 28
+\end{amatrix}
+\\
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 1 & 3  & 10 \\
+0 & 3 & 11 & 38
+\end{amatrix}
+\\
+&\roweq
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+0 & 1 & 3  & 10 \\
+0 & 0 & 2  & 8
+\end{amatrix}
+\end{align*}
+\end{ex}
+
+
+\end{document}

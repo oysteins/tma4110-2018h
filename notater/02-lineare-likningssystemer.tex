@@ -101,10 +101,10 @@ Vi har dermed igjen funnet løsningen $x = 3$ og $y = 6$.
 
 % Når vi (i neste notat) skal beskrive en 
 
-\begin{enumerate}
-\item Gange en likning med et tall (ikke~$0$).
-\item Legge sammen 
-\end{enumerate}
+% \begin{enumerate}
+% \item Gange en likning med et tall (ikke~$0$).
+% \item Legge sammen 
+% \end{enumerate}
 
 \begin{ex}
 Vi kan også løse systemet~$(\ast)$ grafisk.  Vi lager et
@@ -130,7 +130,7 @@ likningene $2x+3y=9$ og $-x+6y=3$ beskriver en rett linje:
 \filldraw (3,1) circle [radius=2pt];
 \end{tikzpicture}
 \end{center}
-Løsningene av $2x + 3y = 9$ er altså alle punkter som ligger på den
+Løsningene av $2x + 3y = 9$ er  alle punkter som ligger på den
 ene linjen, mens løsningene av $-x + 6y = 3$ er alle punkter som
 ligger på den andre linjen.  Den felles løsningen av begge likningene
 er punktet der de to linjene møtes, nemlig $(3,1)$.  Løsningen er
@@ -155,8 +155,8 @@ Hvis vi har en likning med to ukjente, så kan vi tegne grafen til
 denne likningen.  Vi sier at likningen er lineær hvis grafen dens er
 en rett linje.  I eksempelet over så vi at grafene til likningene
 $2x + 3y = 9$ og $-x + 6y = 3$ er rette linjer.  Men det er også lett
-å finne likninger som er slik at grafen ikke blir en rett linje, for
-eksempel $y = x^2$ eller $x^2 + y^2 = 4$.
+å finne likninger som ikke har rettlinjede grafer, for eksempel
+$y = x^2$ eller $x^2 + y^2 = 4$.
 
 Generelt er det slik at grafen til en likning er en rett linje hvis og
 bare hvis likningen kan skrives på formen
@@ -192,62 +192,88 @@ lineære likninger med de samme ukjente.
 
 \begin{ex}
 Her er noen eksempler på lineære likninger:
-\begin{align*}
-5 x_1 + x_2 - 7 x_3 + x_4 &= 27 \\
-\frac{2}{5} x - 5y &= \pi
-\end{align*}
+\begin{gather*}
+5 x_1 + x_2 - 7 x_3 + x_4 = 27 \\
+\frac{2}{5} x - 5y = \pi
+\end{gather*}
 Og her er noen eksempler på likninger som ikke er lineære:
-\begin{align*}
-2 x^2 + y &= 3 \\
-x_1 + 2 x_1 x_2 + x_3 &= 1
+\begin{gather*}
+2 x^2 + y = 3 \\
+x_1 + 2 x_1 x_2 + x_3 = 1
 \qedhere
-\end{align*}
+\end{gather*}
 \end{ex}
 
 
 \section*{Ekvivalente systemer}
 
+Vi sier at to likningssystemer er \defterm{ekvivalente} dersom de har
+samme løsninger.  Når vi skal løse et likningssystem, vil vi gå frem
+ved å erstatte det med stadig enklere ekvivalente systemer.
+
 \begin{ex}
+\label{ex:gausseliminasjon}
 La oss løse det følgende lineære likningssystemet:
 \[
 \systeme{
-  x + 0y + 2z = 21,
-  -2x + 3y - 4z = -47,
-  3x + 9y + 7z = 52
+   x + 2y - 2z = -5,
+   x + 5y + 9z = 33,
+  2x + 5y -  z = 0
 }
 \]
 Vi vil begynne med å eliminere $x$-en fra de to siste likningene.
-Hvis vi ganger første likning med~$2$, får vi $2x + 4z = 42$, og hvis
-vi legger til dette i andre likning, får vi den nye likningen
+Hvis vi trekker den første likningen fra den andre, får vi den nye
+likningen
 \[
-3y = -5.
+3y + 11z = 38.
 \]
 Vi bytter ut den andre likningen i systemet med denne nye likningen:
 \[
 \systeme{
-  x + 2z = 21,
-  3y = -5,
-  3x + 9y + 7z = 52
+   x + 2y -  2z = -5,
+       3y + 11z = 38,
+  2x + 5y -   z = 0
 }
 \]
 På samme måte kan vi eliminere $x$ fra den siste likningen ved å
-trekke fra første likning ganget med~$3$:
+trekke fra første likning ganget med~$2$:
 \[
 \systeme{
-  x + 2z = 21,
-  3y = -5,
-  9y + z = -11
+   x + 2y -  2z = -5,
+       3y + 11z = 38,
+        y +  3z = 10
 }
 \]
-Videre kan vi eliminere $y$ fra den siste likningen ved å trekke fra
-andre likning ganget med~$3$:
+Nå vil vi eliminere $y$ fra den siste likningen.  Men det er lettere å
+eliminere $y$ fra den midterste likningen (ved å trekke fra $3$ ganger den
+siste).  Likningenes rekkefølge spiller imidlertid ingen rolle, så vi
+kan bytte om på de to nederste likningene først:
 \[
 \systeme{
-  x + 2z = 21,
-  3y = -5,
-  z = 4
+   x + 2y -  2z = -5,
+        y +  3z = 10,
+       3y + 11z = 38
 }
 \]
+Så eliminerer vi $y$ fra den siste likningen ved å trekke fra andre
+likning ganget med~$3$:
+\[
+\systeme{
+   x + 2y - 2z = -5,
+        y + 3z = 10,
+            2z =  8
+}
+\]
+Nå ser vi fra den siste likningen at vi må ha $z = 4$.  Ved å sette
+inn det i den midterste likningen får vi $y = 10 - 3 \cdot 4 = -2$.
+Til slutt får vi ved å sette inn i den øverste likningen at
+$x = -5 - 2 \cdot (-2) + 2 \cdot 4 = 7$.
+\end{ex}
+
+Alle likningssystemene vi skrev opp i dette eksempelet er ekvivalente
+med hverandre, men det siste er mye enklere å håndtere enn det vi
+startet med.  Prosessen vi utførte for å forenkle systemet kalles
+\emph{gauss\-eliminasjon}, og er nærmere beskrevet i neste notat.
 
 
 \section*{Totalmatrisen til et system}
@@ -268,6 +294,38 @@ Når vi skal løse et slikt system, vil vi skrive opp en rekke nye
 systemer som er ekvivalent med dette, men som er stadig enklere.  Da
 er det unødvendig tungvint å skrive alle de ukjente og alle $+$-ene og
 $=$-tegnene hver eneste gang.  Den eneste informasjonen vi trenger å
-ha med oss gjennom utregningen er hva 
+ha med oss gjennom utregningen er koeffisientene ($a$-ene) og tallene
+på høyresiden ($b$-ene).
+
+\defterm{Totalmatrisen} til et likningssystem er en tabell som
+inneholder akkurat disse tallene:
+\[
+\left[
+\begin{array}{cccc|c}
+  a_{11} & a_{12} & \cdots & a_{1n} & b_1 \\
+  a_{21} & a_{22} & \cdots & a_{2n} & b_2 \\
+  \vdots & \vdots & \ddots & \vdots & \vdots \\
+  a_{m1} & a_{m2} & \cdots & a_{mn} & b_m
+\end{array}
+\right]
+\]
+
+\begin{ex}
+Likningssystemet vi startet med i eksempel~\ref{ex:gausseliminasjon}
+har følgende totalmatrise:
+\[
+\raisebox{15pt}{$
+\begin{amatrix}{3}
+1 & 2 & -2 & -5 \\
+1 & 5 &  9 & 33 \\
+2 & 5 & -1 & 0
+\end{amatrix}
+$}\qedhere
+\]
+\end{ex}
+
+Den loddrette streken inni matrisen er egentlig ikke nødvendig å ha
+med, men den er praktisk for å hjelpe oss med å huske at det som står
+til høyre for streken hører til høyre side av likningene.
 
 \end{document}
