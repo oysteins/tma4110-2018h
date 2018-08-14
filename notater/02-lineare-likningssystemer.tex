@@ -97,14 +97,7 @@ $x = 3$.
 Vi har dermed igjen funnet løsningen $x = 3$ og $y = 6$.
 \end{ex}
 
-
-
-% Når vi (i neste notat) skal beskrive en 
-
-% \begin{enumerate}
-% \item Gange en likning med et tall (ikke~$0$).
-% \item Legge sammen 
-% \end{enumerate}
+% Når vi (i neste notat) skal beskrive en  ...
 
 \begin{ex}
 Vi kan også løse systemet~$(\ast)$ grafisk.  Vi lager et
@@ -112,13 +105,8 @@ koordinatsystem med en $x$-akse og en $y$-akse.  Hver av de to
 likningene $2x+3y=9$ og $-x+6y=3$ beskriver en rett linje:
 \begin{center}
 \begin{tikzpicture}[scale=.9]
-%\clip (-0.6,-0.2) rectangle (0.6,1.51);
-%\draw[step=1cm,help lines,gray] (-3.5,-3.5) grid (3.5,3.5);
-%\filldraw[fill=green!20,draw=green!50!black] (0,0) -- (3mm,0mm)
-%arc [start angle=0, end angle=30, radius=3mm] -- cycle;
 \draw[->] (-1.5,0) -- (6.5,0);
 \draw[->] (0,-1.5) -- (0,5.5);
-%\draw (0,0) circle [radius=1cm];
 \foreach \x in {-1,1,2,3,4,5,6}
 \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
 \foreach \y in {-1,1,2,3,4,5}
@@ -194,7 +182,7 @@ lineære likninger med de samme ukjente.
 Her er noen eksempler på lineære likninger:
 \begin{gather*}
 5 x_1 + x_2 - 7 x_3 + x_4 = 27 \\
-\frac{2}{5} x - 5y = \pi
+17 x - 5y = \pi
 \end{gather*}
 Og her er noen eksempler på likninger som ikke er lineære:
 \begin{gather*}
@@ -208,8 +196,9 @@ x_1 + 2 x_1 x_2 + x_3 = 1
 \section*{Ekvivalente systemer}
 
 Vi sier at to likningssystemer er \defterm{ekvivalente} dersom de har
-samme løsninger.  Når vi skal løse et likningssystem, vil vi gå frem
-ved å erstatte det med stadig enklere ekvivalente systemer.
+samme løsninger.  Vi kan løse et likningssystem ved å erstatte det med
+stadig enklere ekvivalente systemer.  Vi tar et eksempel for å se
+hvordan dette kan gjøres.
 
 \begin{ex}
 \label{ex:gausseliminasjon}

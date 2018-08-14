@@ -9,48 +9,24 @@
 \tittel{Gausseliminasjon}
 
 \noindent%
-I dette notatet skal vi formalisere det vi gjorde i forrige notat.  Vi
+I dette notatet skal vi formalisere ideene fra forrige notat.  Vi
 skal se hvordan vi kan løse et hvilket som helst lineært
 likningssystem ved å skrive om totalmatrisen til systemet etter
 bestemte regler.
 
 Reglene for hvordan totalmatrisen kan skrives om kalles
-\emph{radoperasjoner}, og vi vil ende opp med at matrisen er på
-\emph{trappeform}.  Hele prosessen kalles \emph{gausseliminasjon}.
-
-% \section*{Matriser}
-
-% \[
-% \text{$m \times n$-matrise}
-% \begin{bmatrix}
-
-% \end{bmatrix}
-% \]
+\emph{radoperasjoner}, og målet er å få en matrise som er på
+\emph{trappeform}.  Denne prosessen kalles \emph{gausseliminasjon}.
 
 
 \section*{Radoperasjoner}
 
-% I eksempel~2.5 i forrige notat løste vi dette systemet:
-% \[
-% \systeme{
-%    x + 2y - 2z = -5,
-%    x + 3y +  z = 5,
-%   2x + 7y + 7z = 28
-% }
-% \]
-% Totalmatrisen til systemet er:
-% \[
-% \begin{amatrix}{3}
-
-% \end{amatrix}
-% \]
-
 Følgende tre måter å endre en matrise på kalles
 \defterm{radoperasjoner}:
 \begin{enumerate}
-\item Gange alle tallene i en rad med det samme tallet (ikke~$0$)
-\item Legge til (et multiplum av) en rad i en annen
-\item Bytte rekkefølge på radene
+\item Gange alle tallene i en rad med det samme tallet (ikke~$0$).
+\item Legge til (et multiplum av) en rad i en annen.
+\item Bytte rekkefølge på radene.
 \end{enumerate}
 
 Vi sier at to matriser er \defterm{radekvivalente} hvis vi kan komme
@@ -59,6 +35,7 @@ Vi bruker notasjonen $M \roweq N$ for å si at to matriser $M$ og~$N$
 er radekvivalente.
 
 \begin{ex}
+\label{ex:radekvivalent}
 Disse matrisene er radekvivalente, siden vi får den andre matrisen fra
 den første ved å gange øverste rad med~$4$:
 \begin{align*}
@@ -105,6 +82,7 @@ likningssystemene ekvivalente.
 \end{thm}
 
 \begin{ex}
+\label{ex:gausseliminasjon1}
 Vi gjentar regningen i eksempel~2.5 fra forrige notat, denne gangen
 ved å utføre radoperasjoner på totalmatrisen til likningssystemet:
 \begin{align*}
@@ -146,7 +124,7 @@ rad i andre rad, legge til $-2$ ganger første rad i tredje rad, bytte
 andre og tredje rad, og legge til $-3$ ganger andre rad i tredje rad.
 
 Den siste matrisen her er på det som kalles trappeform, og da er det
-(som vi så i eksempel~2.5) lett å lese av løsningen.  Hvis vi vil
+(som vi så i eksempel~2.5) lett å finne løsningen.  Hvis vi vil
 gjøre det enda lettere, kan vi fortsette med radoperasjoner til vi
 oppnår det som kalles \emph{redusert trappeform}:
 \begin{align*}
@@ -190,44 +168,19 @@ Her har vi altså kommet helt frem til løsningen.
 
 \section*{Trappeform}
 
-% I det siste eksempelet i forrige notat løste vi et likningssystem med
-% tre likninger og tre ukjente.  Vi erstattet systemet med nye
-% ekvivalente systemer frem til det så slik ut:
-% \[
-% \systeme{
-%    x + 2y - 2z = -5,
-%         y + 3z = 10,
-%             2z =  8
-% }
-% \]
-% Legg merke til den spesielle fasongen på dette systemet som gjør at
-% det er lett å finne løsningen: $x$ og~$y$ er ikke med i den siste
-% likningen, og $x$ er ikke med i den midterste.  Vi sier at dette
-% systemet er på \emph{trappeform}, siden den tomme plassen til venstre
-% under likningene har fasong som en trapp.
+Vi vil nå gi en presis definisjon av begrepene «trappeform» og
+«redusert trappeform».  Da trenger vi også et annet begrep, nemlig
+«pivotelement».
 
-% Totalmatrisen for systemet ser slik ut:
-% \[
-% \begin{amatrix}{3}
-% 1 & 2 & -2 & -5 \\
-% 0 & 1 &  3 & 10 \\
-% 0 & 0 &  2 &  8
-% \end{amatrix}
-% \]
-% Her er det de tre nullene nede til venstre som gjør at vi ser at
-% systemet er på trappeform.
-
-Vi vil nå gi en presis definisjon av begrepet «trappeform».  Da
-trenger vi også et annet begrep, nemlig «lederelement».
-
+% TODO: endre til «lederelement»?  ta med «pivotposisjon», «pivotkolonne»?
 \begin{defn}
 Det første tallet i en rad i en matrise som ikke er~$0$ kalles
-\defterm{lederelementet} for den raden.  (En rad med bare nuller har
-ikke noe lederelement.)
+\defterm{pivotelementet} for den raden.  (En rad med bare nuller har
+ikke noe pivotelement.)
 \end{defn}
 
 \begin{ex}
-\label{ex:lederelement}
+\label{ex:pivotelement}
 Se på følgende matrise:
 \[
 \begin{bmatrix}
@@ -237,14 +190,14 @@ Se på følgende matrise:
 0 &  0  & 0 & 0
 \end{bmatrix}
 \]
-Lederelementene her er tallet~$3$ i den øverste raden, tallet~$5$ i
+Pivotelementene her er tallet~$3$ i den øverste raden, tallet~$5$ i
 den andre raden og tallet~$1$ i den tredje raden.  Den siste raden
-består av bare nuller, og har derfor ikke noe lederelement.
+består av bare nuller, og har derfor ikke noe pivotelement.
 \end{ex}
 
 \begin{defn}
-En matrise er på \defterm{trappeform} dersom hvert lederelement er til
-høyre for alle lederelementer i tidligere rader, og eventuelle
+En matrise er på \defterm{trappeform} dersom hvert pivotelement er til
+høyre for alle pivotelementer i tidligere rader, og eventuelle
 nullrader er helt nederst.
 \end{defn}
 
@@ -258,8 +211,8 @@ Denne matrisen er på trappeform:
 0 & 0 & 2
 \end{bmatrix}
 \]
-Lederelementene er $3$, $1$ og~$2$, og hvert av dem er til høyre for
-alle de tidligere lederelementene.
+Pivotelementene er $3$, $1$ og~$2$, og hvert av dem er til høyre for
+alle de tidligere pivotelementene.
 
 Denne matrisen er også på trappeform:
 \[
@@ -281,54 +234,204 @@ nederst:
 \end{bmatrix}
 \]
 
-Matrisen i eksempel~\ref{ex:lederelement} er ikke på trappeform fordi
-lederelementet i tredje rad ikke er til høyre for lederelementene i
-første og andre rad.
-
-TODO: mer eksempel
+Denne matrisen ser «trappete» ut, men er likevel ikke på trappeform:
+\[
+\begin{bmatrix}
+5 & 8 & 7 & 2 \\
+0 & 4 & 1 & 6 \\
+0 & 9 & 2 & 0 \\
+0 & 0 & 3 & 1
+\end{bmatrix}
+\]
+Grunnen til at den ikke er på trappeform er at pivotelementet $9$ i
+tredje rad ikke er til høyre for pivotelementet i andre rad, men rett
+under det isteden.
 \end{ex}
 
 \begin{defn}
 En matrise er på \defterm{redusert trappeform} hvis den er på
-trappeform og dessuten oppfyller følgende:
+trappeform og dessuten oppfyller:
 \begin{itemize}
-\item Alle lederelementene er~$1$.
-\item Alle tall som står over lederelementer er~$0$.
+\item Alle pivotelementene er~$1$.
+\item Alle tall som står over pivotelementer er~$0$.\qedhere
 \end{itemize}
 \end{defn}
 
+Den siste matrisen i eksempel~\ref{ex:gausseliminasjon1} er på
+redusert trappeform, og der så vi også hva som gjør redusert
+trappeform nyttig: Løsningen av systemet kan leses av direkte.
 
-\section*{Gausseliminasjon}
+\medskip
+Det å  skrive om en matrise til trappeform
+ved hjelp av radoperasjoner
+kalles \defterm{gausseliminasjon}, oppkalt etter den tyske
+matematikeren Carl Friedrich Gauss (1777--1855).  Noen velger også å
+ha et eget navn på det å komme frem til \emph{redusert} trappeform, og
+kaller den prosessen for \defterm{Gauss--Jordan-eliminasjon}, oppkalt
+etter Wilhelm Jordan (1842--1899).  Vi tar det ikke så nøye med den
+forskjellen, og sier «gauss\-eliminasjon» uansett.
+
+(Disse begrepene er uansett historisk sett fullstendig misvisende.
+Metoden som vi kaller gauss\-eli\-minasjon var kjent i Kina for flere
+tusen år siden, og Gauss -- som riktignok var et universalgeni og fant
+opp mengder av flotte ting -- har ikke egentlig så mye med den å
+gjøre.)
+
+
+\section*{Eksistens og entydighet av løsninger}
+
+Når vi vil løse et likningssystem, er det noen åpenbare spørsmål vi
+kan stille:
+\begin{itemize}
+\item Har systemet noen løsning? (\emph{Eksistens})
+\item Hvis systemet har løsning: Har det også flere løsninger, eller
+bare én?  (\emph{Entydighet})
+\end{itemize}
+
+I eksempel~\ref{ex:gausseliminasjon1} hadde vi et system med entydig
+løsning.  Vi tar noen flere eksempler for å vise andre ting som kan
+skje.
 
 \begin{ex}
+\label{ex:gausseliminasjon2}
+La oss løse følgende system:
+\[
+\systeme{
+  x_1 + 3 x_2 + 2 x_3 + 3 x_4 = 16,
+  x_1 + 3 x_2 + 3 x_3 + 1 x_4 = 21,
+2 x_1 + 6 x_2 + 4 x_3 + 6 x_4 = 32
+}
+\]
+Vi setter opp totalmatrisen og gausseliminerer:
 \begin{align*}
-\begin{amatrix}{3}
-1 & 2 & -2 & -5 \\
-1 & 3 & 1  & 5 \\
-2 & 7 & 7  & 28
+\begin{amatrix}{4}
+1 & 3 & 2 &  3 & 16 \\
+1 & 3 & 3 &  1 & 21 \\
+2 & 6 & 4 &  6 & 32
 \end{amatrix}
 &\roweq
-\begin{amatrix}{3}
-1 & 2 & -2 & -5 \\
-0 & 1 & 3  & 10 \\
-2 & 7 & 7  & 28
-\end{amatrix}
-\\
-&\roweq
-\begin{amatrix}{3}
-1 & 2 & -2 & -5 \\
-0 & 1 & 3  & 10 \\
-0 & 3 & 11 & 38
+\begin{amatrix}{4}
+1 & 3 & 2 &  3 & 16 \\
+0 & 0 & 1 & -2 &  5 \\
+0 & 0 & 0 &  0 &  0
 \end{amatrix}
 \\
 &\roweq
-\begin{amatrix}{3}
-1 & 2 & -2 & -5 \\
-0 & 1 & 3  & 10 \\
-0 & 0 & 2  & 8
+\begin{amatrix}{4}
+1 & 3 & 0 &  7 & 6 \\
+0 & 0 & 1 & -2 & 5 \\
+0 & 0 & 0 &  0 & 0
 \end{amatrix}
 \end{align*}
+Den siste matrisen svarer til følgende system:
+\[
+\systeme*{
+x_1 + 3 x_2 + 7 x_4 = 6,
+x_3 - 2 x_4 = 5
+}
+\]
+(Her har vi ikke tatt med noen likning for nullraden i matrisen.  Det
+er fordi nullraden står for likningen $0x_1 + 0x_2 + 0x_3 + 0x_4 = 0$,
+eller med andre ord $0 = 0$.  Denne likningen er åpenbart oppfylt
+uansett hva $x_1$, $x_2$, $x_3$ og~$x_4$ er, så vi trenger ikke ta den
+med.)
+
+Hvis vi flytter alt unntatt $x_1$ og~$x_3$ til høyresiden, ser
+systemet slik ut:
+\[
+\left\{
+\begin{aligned}
+x_1 &= - 3 x_2 - 7 x_4 + 6 \\
+x_3 &= 2 x_4 + 5
+\end{aligned}
+\right.
+\]
+Vi kan altså finne løsninger av systemet ved å sette $x_2$ og~$x_4$
+til å være hva vi vil, og deretter bruke disse to likhetene til å
+bestemme $x_1$ og~$x_3$.
+
+Hvis vi for eksempel velger å sette $x_2 = 0$ og $x_4 = 1$, så får vi
+følgende løsning:
+\[
+\left\{
+\begin{aligned}
+x_1 &= -3 \cdot 0 - 7 \cdot 1 + 6 = -1 \\
+x_2 &= 0 \\
+x_3 &= 2 \cdot 1 + 5 = 7 \\
+x_4 &= 1
+\end{aligned}
+\right.
+\]
+
+For å beskrive alle løsningene av systemet på en ryddig måte, kan vi
+sette $x_2 = s$ og $x_4 = t$, der $s$ og~$t$ står for to vilkårlige
+tall.  Da er alle løsningene gitt ved:
+\[
+\left\{
+\begin{aligned}
+x_1 &= -3 s - 7 t + 6 \\
+x_2 &= s \\
+x_3 &= 2 t + 5 \\
+x_4 &= t
+\end{aligned}
+\right.
+\qedhere
+\]
 \end{ex}
 
+Variabler som vi kan sette til hva vi vil, slik som $x_2$ og~$x_4$ i
+eksempelet over, kalles \defterm{frie variabler}.  Hvis vi får en
+eller flere frie variabler når vi løser et lineært likningssystem, så
+har systemet uendelig mange løsninger.
+
+\begin{ex}
+La oss løse følgende system:
+\[
+\systeme{
+   x -  2 y = 1,
+-5 x + 10 y = -1
+}
+\]
+Vi setter opp totalmatrisen og gausseliminerer:
+\[
+\begin{amatrix}{2}
+ 1 & -2 &  1 \\
+-5 & 10 & -1
+\end{amatrix}
+\roweq
+\begin{amatrix}{2}
+1 & -2 & 1 \\
+0 &  0 & 4
+\end{amatrix}
+\]
+Den siste matrisen svarer til følgende system:
+\[
+\systeme{
+  x + 2 y = 1,
+0 x + 0 y = 4
+}
+\]
+Likningen $0x + 0y = 4$ kan også skrives som $0 = 4$, og den kan ikke
+stemme uansett hva vi setter $x$ og~$y$ til å være.  Dette systemet
+har altså ingen løsning.
+\end{ex}
+
+Generelt er det slik at hvis vi får en rad i totalmatrisen vår på
+formen
+\[
+0\ 0\ \cdots\ 0\ |\ b,
+\]
+der $b$ er et tall som ikke er~$0$, så har systemet ingen løsning.
+Hvis vi har en matrise på trappeform der ingen av radene er på denne
+formen, så har systemet minst én løsning.
+
+\medskip
+
+For ethvert lineært likningssystem må én av følgende være sant:
+\begin{itemize}
+\item Systemet har ingen løsning.
+\item Systemet har entydig løsning.
+\item Systemet har uendelig mange løsninger.
+\end{itemize}
 
 \end{document}
