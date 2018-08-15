@@ -1,0 +1,157 @@
+\documentclass[11pt, a4paper, norsk]{NTNUoving}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb,amsmath}
+\usepackage{systeme}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfornament}
+\usepackage{wrapfig}
+\usepackage[all]{xy}
+\usepackage{systeme}
+
+\newcommand{\abs}[1]{|#1|}
+
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\vv}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\vvv}[3]{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}}
+\newcommand{\vvvv}[4]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \end{bmatrix}}
+\newcommand{\vn}[2]{\vvvv{#1_1}{#1_2}{\vdots}{#1_#2}}
+
+\semester{Høst 2018}
+\fag{TMA4110 Matematikk 3}
+\institutt{Institutt for matematiske fag}
+\ovingnr{1}
+
+\begin{document}
+
+
+\begin{oppgave}
+hvilke av likningene er lineære?
+\begin{punkt}
+...
+\end{punkt}
+\begin{punkt}
+...
+\end{punkt}
+\end{oppgave}
+
+
+\begin{oppgave}
+hvilke av matrisene er på trappeform?  på redusert trappeform?
+\begin{punkt}
+...
+\end{punkt}
+\begin{punkt}
+...
+\end{punkt}
+\end{oppgave}
+
+
+\begin{oppgave}
+løs likningssystemer (3-4 likninger/ukjente)
+\begin{punkt}
+(én løsning)
+\end{punkt}
+\begin{punkt}
+(uendelig mange løsninger)
+\end{punkt}
+\begin{punkt}
+(ingen løsninger)
+\end{punkt}
+\end{oppgave}
+
+
+\begin{oppgave}
+Lag et lineært likningssystem med to likninger og to ukjente som
+\begin{punkt}
+\ldots\ har entydig løsning.
+\end{punkt}
+\begin{punkt}
+\ldots\ ikke har noen løsning.
+\end{punkt}
+\begin{punkt}
+\ldots\ har uendelig mange løsninger.
+\end{punkt}
+I hver deloppgave: Tegn grafene til de to likningene i systemet ditt.
+\end{oppgave}
+
+
+\begin{oppgave}
+to vektorer $\V{u}$ og $\V{v}$
+
+regn ut $a \V{u} + b \V{v}$ for noen ulike $a$ og~$b$,
+tegn opp i planet
+\end{oppgave}
+
+
+\begin{oppgave}
+er $\V{b}$ en lineærkombinasjon av ...?
+\end{oppgave}
+
+
+\begin{oppgave}
+gitt vektorer u, v, w (to eller tre), finn vektor som ikke er lineærkombinasjon av disse
+\end{oppgave}
+
+
+\begin{oppgave}
+en lineær likning med to ukjente kan tegnes som en rett linje i $x$-$y$-planet.
+hvordan kan vi på tilsvarende måte se for oss en lineær likning med tre ukjente?
+\end{oppgave}
+
+
+\begin{oppgave}
+system med $m$ likninger, $n$ ukjente
+
+ni tilfeller:\\
+($m < n$, $m = n$, $m > n$) $\times$ (ingen løsninger, én løsning, uendelig mange løsninger)
+
+hvilke tilfeller er mulige?
+\end{oppgave}
+
+
+\begin{oppgave}
+Se på likningssystemet
+\[
+\systeme[xy]{
+  ax + by = m,
+  cx + dy = n
+}
+\]
+der $a$, $b$, $c$, $d$, $m$ og~$n$ er konstanter, og vi antar at $ad \ne bc$.
+
+Hvor mange løsninger har systemet?  Finn løsningen(e) uttrykt ved $a$,
+$b$, $c$, $d$, $m$ og~$n$.
+\end{oppgave}
+
+
+\begin{oppgave}
+tre punkter i planet, vil finne andregradspolynom $ax^2 + bx + c$ slik
+at grafen går gjennom de tre punktene
+\begin{punkt}
+Sett opp et lineært likningssystem for $a$, $b$ og~$c$.
+\end{punkt}
+\begin{punkt}
+Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
+\end{punkt}
+\end{oppgave}
+
+
+\begin{oppgave}
+to polynomer
+\begin{align*}
+p(x) &= ax^2 + bx + c \\
+q(x) &= dx^2 + ex + f
+\end{align*}
+(sett inn tall for a,b,c,d,e,f)
+
+tredje polynom $r(x) = ...$.  Kan det skrives som lineærkombinasjon av $p$ og~$q$?
+
+vis at alle andregradspolynomer er lineærkombinasjoner av $p$, $q$ og et tredje polynom
+\end{oppgave}
+
+
+
+\end{document}
