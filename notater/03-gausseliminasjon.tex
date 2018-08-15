@@ -297,6 +297,49 @@ skje.
 La oss løse følgende system:
 \[
 \systeme{
+   x -  2 y = 1,
+-5 x + 10 y = -1
+}
+\]
+Vi setter opp totalmatrisen og gausseliminerer:
+\[
+\begin{amatrix}{2}
+ 1 & -2 &  1 \\
+-5 & 10 & -1
+\end{amatrix}
+\roweq
+\begin{amatrix}{2}
+1 & -2 & 1 \\
+0 &  0 & 4
+\end{amatrix}
+\]
+Den siste matrisen svarer til følgende system:
+\[
+\systeme{
+  x + 2 y = 1,
+0 x + 0 y = 4
+}
+\]
+Likningen $0x + 0y = 4$ kan også skrives som $0 = 4$, og den kan ikke
+stemme uansett hva vi setter $x$ og~$y$ til å være.  Dette systemet
+har altså ingen løsning.
+\end{ex}
+
+Generelt er det slik at hvis vi får en rad i totalmatrisen vår på
+formen
+\[
+0\ 0\ \cdots\ 0\ |\ b,
+\]
+der $b$ er et tall som ikke er~$0$, så har systemet ingen løsning.
+Denne raden svarer jo til likningen $0 = b$, som ikke kan være sann.
+Hvis vi har en matrise på trappeform der ingen av radene er på denne
+formen, så har systemet minst én løsning.
+
+\begin{ex}
+\label{ex:gausseliminasjon3}
+La oss løse følgende system:
+\[
+\systeme{
   x_1 + 3 x_2 + 2 x_3 + 3 x_4 = 16,
   x_1 + 3 x_2 + 3 x_3 + 1 x_4 = 21,
 2 x_1 + 6 x_2 + 4 x_3 + 6 x_4 = 32
@@ -380,54 +423,25 @@ x_4 &= t
 \end{ex}
 
 Variabler som vi kan sette til hva vi vil, slik som $x_2$ og~$x_4$ i
-eksempelet over, kalles \defterm{frie variabler}.  Hvis vi får en
-eller flere frie variabler når vi løser et lineært likningssystem, så
-har systemet uendelig mange løsninger.
+eksempelet over, kalles \defterm{frie variabler}.
 
-\begin{ex}
-La oss løse følgende system:
-\[
-\systeme{
-   x -  2 y = 1,
--5 x + 10 y = -1
-}
-\]
-Vi setter opp totalmatrisen og gausseliminerer:
-\[
-\begin{amatrix}{2}
- 1 & -2 &  1 \\
--5 & 10 & -1
-\end{amatrix}
-\roweq
-\begin{amatrix}{2}
-1 & -2 & 1 \\
-0 &  0 & 4
-\end{amatrix}
-\]
-Den siste matrisen svarer til følgende system:
-\[
-\systeme{
-  x + 2 y = 1,
-0 x + 0 y = 4
-}
-\]
-Likningen $0x + 0y = 4$ kan også skrives som $0 = 4$, og den kan ikke
-stemme uansett hva vi setter $x$ og~$y$ til å være.  Dette systemet
-har altså ingen løsning.
-\end{ex}
+Når vi løser et lineært likningssystem, og har funnet ut at det har
+minst én løsning, så er det to muligheter.  Den ene muligheten er at
+vi ikke får noen frie variabler (slik som i
+eksempel~\ref{ex:gausseliminasjon1}).  Da har systemet entydig
+løsning.  Den andre muligheten er at det er en eller flere frie
+variabler.  Da har systemet uendelig mange løsninger, siden hver av de
+frie variablene kan settes til å være et hvilket som helst tall.
 
-Generelt er det slik at hvis vi får en rad i totalmatrisen vår på
-formen
-\[
-0\ 0\ \cdots\ 0\ |\ b,
-\]
-der $b$ er et tall som ikke er~$0$, så har systemet ingen løsning.
-Hvis vi har en matrise på trappeform der ingen av radene er på denne
-formen, så har systemet minst én løsning.
+Dette betyr at det ikke er mulig at vi får for eksempel to løsninger,
+eller tre løsninger, og så videre.  Om det først er mer enn én
+løsning, må det være uendelig mange.
 
 \medskip
 
-For ethvert lineært likningssystem må én av følgende være sant:
+La oss oppsummere det vi har funnet ut om eksistens og entydighet av
+løsninger.  For ethvert lineært likningssystem må én av følgende være
+sant:
 \begin{itemize}
 \item Systemet har ingen løsning.
 \item Systemet har entydig løsning.
