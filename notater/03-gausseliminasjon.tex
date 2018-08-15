@@ -77,9 +77,56 @@ system som er ekvivalent med det opprinnelige.  Vi formulerer dette
 som et teorem:
 
 \begin{thm}
+\label{thm:radekvivalens}
 Hvis to likningssystemer har radekvivalente totalmatriser, så er de to
 likningssystemene ekvivalente.
 \end{thm}
+\begin{proof}
+For å bevise dette, er det nok å vise at det å gjøre en radoperasjon
+på totalmatrisen til et likningssystem tilsvarer å gjøre en gyldig
+omskrivning av systemet selv.
+
+Den første typen radoperasjon -- å gange alle tallene i en rad med
+samme tall -- tilsvarer å gange med det samme tallet på begge sider av
+en ligning.  Litt mer detaljert: La oss si at
+\[
+a_{i1}\ a_{i2}\ \cdots\ a_{in}\ |\ b_i
+\]
+er en av radene i totalmatrisen, og at vi ganger opp denne med
+tallet~$c$ slik at vi får:
+\[
+(c a_{i1})\ (c a_{i2})\ \cdots\ (c a_{in})\ |\ (c b_i)
+\]
+Dette tilsvarer at vi bytter ut likningen
+\[
+a_{i1} x_1 + a_{i2} x_2 + \cdots + a_{in} x_n = b_i
+\]
+med den nye likningen
+\[
+(c a_{i1}) x_1 + (c a_{i2}) x_2 + \cdots + (c a_{in}) x_n = c b_i.
+\]
+Men det er klart at hvis den opprinnelige likningen var sann, så må
+også den nye være det.  Og siden det ikke tillates at tallet~$c$ som
+vi ganger med er~$0$, så har vi også det motsatte: Hvis den nye
+likningen er sann, så må også den opprinnelige være det.  Altså gjør
+vi ingen endring i løsningene av likningssystemet ved å utføre denne
+typen radoperasjon.
+
+For den andre typen radoperasjon -- legge til et multiplum av en rad i
+en annen -- kan vi på tilsvarende måte se at den nye raden vi lager
+tilsvarer en likning som må være sann hvis de gamle likningene var
+sanne.  Sett at vi legger til $c$ ganger rad~$i$ i rad~$j$.  Dette
+tilsvarer at vi ganger opp den $i$-te likningen med~$c$, og legger til
+resultatet i den $j$-te likningen.  Alle løsninger av de gamle
+likningene må da også være løsninger av denne nye likningen.  Dessuten
+kan vi komme tilbake til det gamle systemet (ved å legge til $-c$
+ganger rad~$i$ i rad~$j$), og dermed må alle løsninger av det nye
+systemet også være løsninger av det gamle.
+
+Den tredje og siste typen radoperasjon -- bytte rekkefølge på radene
+-- gjør åpenbart ingen endringer i løsningene av likningssystemet,
+siden dette bare tilsvarer å skrive likningene i en annen rekkefølge.
+\end{proof}
 
 \begin{ex}
 \label{ex:gausseliminasjon1}
