@@ -10,9 +10,9 @@
 \noindent%
 Velkommen til emnet TMA4110 Matematikk 3.
 
-Dette er det første i en serie med notater som vil følge deg gjennom
-emnet.  Notatene tilsvarer det som gjennomgås i forelesningene, og det
-er notatene som angir hva som er pensum.
+Det du leser nå er det første i en serie med notater som vil følge deg
+gjennom emnet.  Notatene tilsvarer det som gjennomgås i
+forelesningene, og det er notatene som angir hva som er pensum.
 
 I dette første notatet skal vi ta et overblikk over temaene vi skal
 innom i løpet av semesteret.  Det gjør ikke noe om du ikke forstår alt
@@ -86,7 +86,7 @@ gående.
 
 I løpet av 1800-tallet og begynnelsen på 1900-tallet førte den
 matematiske utviklingen til at algebraen som fagfelt skiftet fokus.
-Man utviklet visse former for matematiske \emph{strukturer} som ble
+Man utviklet visse former for matematiske strukturer som ble
 brukt til å forstå ulike typer likninger, og over tid fant man ut at
 disse strukturene kunne generaliseres og være nyttige også til andre
 ting enn løsing av likninger.  Dermed endte man opp med forskjellige
@@ -96,16 +96,6 @@ handler primært om å forstå disse strukturene.  Denne nye formen for
 algebra kalles \emph{abstrakt algebra} (eller \emph{moderne algebra}),
 for å skille den fra den mer tradisjonelle algebraen som handler om
 løsing av likninger.
-
-% ga studiet av
-% likninger opphav til at man fant opp visse former for matematiske
-% strukturer.  Etter hvert ble det oppdaget at mange forskjellige
-% strukturer hadde visse grunnleggende egenskaper felles, og at man ofte
-% kunne forenkle ting voldsomt ved å se vekk fra detaljene i hver enkelt
-% struktur, og kun fokusere på disse grunnleggende egenskapene.  Dermed
-% endte man opp med en hel del \emph{abstrakte algebraiske strukturer}
-% (noen av de viktigste kalles \emph{grupper}, \emph{ringer} og
-% \emph{moduler}).  
 
 \medskip
 Greit, det var veldig mye prat om algebra.  Men hva er \emph{lineær
@@ -118,8 +108,12 @@ En lineær likning med én ukjent ser generelt slik ut:
 \[
 ax = b
 \]
-Dersom $a \ne 0$, har denne likningen løsning $x = b/a$.  Og det er
-egentlig alt som er å si om lineære likninger med én ukjent.
+Dersom $a \ne 0$, kan vi løse denne likningen ved å dele på $a$:
+\[
+x = b/a
+\]
+Og det er egentlig omtrent alt som er å si om lineære likninger med én
+ukjent.
 
 Men hvis vi ser på et system av flere lineære likninger, med flere
 ukjente, blir det straks mer interessant.  Her er et eksempel på et
@@ -133,6 +127,7 @@ system av lineære likninger:
 \]
 Studiet av slike systemer er utgangspunktet for lineær algebra.
 
+\smallskip
 Det første vi skal lære er en metode (som kalles
 \emph{gausseliminasjon}) for å løse lineære likningssystemer på en
 effektiv måte.
@@ -228,10 +223,14 @@ $m$-dimensjonale vektorer.  En slik funksjon kalles en
 \[
 T \colon \R^n \to \R^m
 \]
-Her står $R^n$ for mengden av alle $n$-dimensjonale kolonnevektorer,
+Her står $\R^n$ for mengden av alle $n$-dimensjonale kolonnevektorer,
 og en slik mengde kalles et \emph{vektorrom}.
 
-Men vi vil gjøre vektorbegrepet enda mer generelt.  %% TODO
+Nå viser det seg at vektorrom, lineærtransformasjoner og matriser er
+interessante ting å studere i seg selv, og at vi med utgangspunkt i
+disse tingene kan bygge opp en stor og flott matematisk teori med
+anvendelsesområder som går langt ut over det å løse likningssystemer.
+Den teorien er lineær algebra.
 
 
 \section*{Komplekse tall}
@@ -262,17 +261,17 @@ andre og få $-1$.
 Men denne situasjonen er egentlig helt tilsvarende som da vi bare
 kjente til de positive tallene og lurte på hva $3 - 5$ er.  Akkurat
 som vi da kunne utvide tallsystemet ved å legge til negative tall, kan
-vi nå legge til nye tall som gjør at vi får kvadratrøtter av negative
-tall.
+vi nå legge til nye tall som gjør at uttrykket $\sqrt{-1}$ gir mening.
 
 Vi lager et nytt tall, som vi kaller~$i$, og som er definert til å
 være slik at
 \[
 i^2 = -1
 \]
-For å få et tallsystem som gir mening, må vi kunne gange og legge
-sammen $i$ med et hvilket som helst annet tall.  Til sammen får vi at
-alle tall som kan skrives som
+For å få et tallsystem som oppfører seg slik det skal, må vi kunne
+gange og legge sammen $i$ med et hvilket som helst annet tall.  Det
+gjør at vi må ha med flere nye tall, og til sammen får vi at alle tall
+som kan skrives som
 \[
 a + bi
 \qquad
@@ -308,7 +307,7 @@ kvadratrøtter av hvilke som helst tall, uten å måtte tenke på om de er
 negative.  Med andre ord: alle likninger på formen $x^2 = a$ har
 løsninger.  Og ikke bare det, men alle andregradslikninger
 \[
-a x^2 + bx + x = 0
+a x^2 + bx + c = 0
 \]
 har løsninger.  Og ikke bare det, men alle polynomlikninger av hvilken
 som helst grad, altså alle likninger på formen
@@ -326,7 +325,9 @@ se for seg hva tallene kan representere.
 
 Når vi får bruk for komplekse tall er det ofte slik at vi starter med
 noe som bare handler om reelle tall, og får et sluttsvar med bare
-reelle tall, men må innom de komplekse tallene i mellomregningen.
+reelle tall, men må innom de komplekse tallene i mellomregningen.  Vi
+kommer til å se eksempler på nettopp dette når vi i emnets siste del
+skal løse differensiallikninger.
 
 
 \section*{Lineære differensiallikninger}
@@ -349,15 +350,17 @@ Når vi skal løse en slik likning får vi bruk for å lage en
 \[
 \lambda^2 + p \lambda + q = 0
 \]
-der $\lambda$ er den ukjente.  Det viser seg nemlig at løsningene av
-denne likningen gir oss viktig informasjon om hvordan løsningene av
-differensiallikningen ser ut.  Men avhengig av hva $p$ og~$q$ er, er
-det ikke sikkert at denne andregradslikningen har noen løsning i
-reelle tall.  Her blir vi reddet av at vi har lært om komplekse tall!
-Vi kan alltid finne komplekse tall som er løsninger av hjelpelikningen
-vår, og disse kan vi igjen bruke til å finne løsningene av
-differensiallikningen vi startet med.
+der $\lambda$ er den ukjente, og $p$ og~$q$ er de samme konstantene
+som vi hadde i differensiallikningen.  Det viser seg nemlig at
+løsningene av denne likningen gir oss viktig informasjon om hvordan
+løsningene av differensiallikningen ser ut.  Men avhengig av hva $p$
+og~$q$ er, er det ikke sikkert at denne andregradslikningen har noen
+løsning i reelle tall.  Her blir vi reddet av at vi har lært om
+komplekse tall!  Vi kan alltid finne komplekse tall som er løsninger
+av hjelpelikningen vår, og disse kan vi igjen bruke til å finne
+løsningene av differensiallikningen vi startet med.
 
+\smallskip
 Den andre typen differensiallikninger vi skal se på er systemer av
 førsteordens lineære differensiallikninger, som vil si
 likningssystemer på formen
@@ -375,7 +378,7 @@ der koeffisientene $a_{ij}$ er konstanter og hver $x_i$ er en ukjent
 funksjon av~$t$.
 
 Når vi har lært om lineær algebra og matriser, ser vi at et slikt
-system også kan skrives på formen
+system også kan skrives på den mer kompakte formen
 \[
 \V{x}' = A \V{x},
 \]
