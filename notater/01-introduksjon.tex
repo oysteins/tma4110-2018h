@@ -1,4 +1,6 @@
 \input{preamble}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 
 \begin{document}
 
@@ -8,24 +10,28 @@
 \noindent%
 Velkommen til emnet TMA4110 Matematikk 3.
 
-Dette er den første i en serie med notater som vil følge deg gjennom
+Dette er det første i en serie med notater som vil følge deg gjennom
 emnet.  Notatene tilsvarer det som gjennomgås i forelesningene, og det
 er notatene som angir hva som er pensum.
 
-I dette første notatet skal vi bare ta et overblikk over temaene vi
-skal innom i løpet av semesteret.  Det gjør ikke noe om du ikke
-forstår alt i dette notatet; vi skal gjennomgå det i detalj siden.
-Fra notat~2 starter den virkelige gjennomgangen av pensum.
+I dette første notatet skal vi ta et overblikk over temaene vi skal
+innom i løpet av semesteret.  Det gjør ikke noe om du ikke forstår alt
+i dette notatet; vi skal gjennomgå det i detalj siden.  Fra notat~2
+starter den virkelige gjennomgangen av pensum.
+
+\smallskip
 
 Emnet er delt inn i tre separate deler som egentlig hører til helt
 forskjellige områder innenfor matematikk:
 \begin{enumerate}
 \item Lineær algebra
 \item Komplekse tall
-\item Andreordens differensiallikninger
+\item Lineære differensiallikninger
 \end{enumerate}
 Delen om lineær algebra utgjør hoveddelen av emnet og er den vi vil
 bruke mest tid på.
+
+\smallskip
 
 Grunnen til at disse tilsynelatende urelaterte temaene er gruppert
 sammen i ett emne er at det er noen viktige tilknytningspunkter mellom
@@ -34,14 +40,350 @@ dem som gjør at det er fornuftig å lære om dem sammen.
 
 \section*{Lineær algebra}
 
-TODO
+Algebra er et område innenfor matematikk som i utgangspunktet handler
+om å løse likninger.  For å få en idé om hva algebra er for noe, kan
+det være nyttig å vite hva det \emph{ikke} er.  Her er en liten guide
+til hvordan noen av de tingene du antagelig har gjort i ditt
+matematiske liv så langt passer inn i ulike områder innen matematikk:
+
+Hvis du deriverer eller integrerer, så driver du med \emph{analyse}.
+Hvis du tegner en figur, driver du antagelig med \emph{geometri}.
+Hvis du teller antall måter du kan plukke opp forskjellige fargede
+kuler fra en pose på, så driver du med \emph{kombinatorikk}; men hvis
+du deretter regner ut sannsynligheten for at du får to røde kuler, så
+har du flyttet deg over til \emph{sannsynlighetsregning}.  Hvis du
+prøver å forstå reglene for hvordan et matematisk bevis utføres, så
+driver du med \emph{logikk}.  Og hvis du løser en likning, da driver
+du med algebra.
+
+\smallskip
+
+Da du for eksempel (en gang for mange år siden) lærte at en
+andregradslikning
+\[
+ax^2 + bx + c = 0
+\]
+kan løses ved hjelp av formelen
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a},
+\]
+så var det en del av den klassiske, grunnleggende algebraen du lærte.
+
+\smallskip
+
+Ordet «algebra» kommer av det arabiske \emph{al-jabr}, som var en del
+av tittelen på en bok skrevet omkring år 820 av den persiske
+matematikeren al-Khwarizmi.  Denne boken inneholdt metoder for å løse
+likninger (blant annet andregradslikningen nevnt over), og la
+grunnlaget for algebra som fagområde.
+
+Men så er det slik med matematikk at den stadig endrer seg.
+Matematisk forskning er en evig runddans av at matematikere finner opp
+nye teknikker og konsepter for å finne svar på spørsmål de synes er
+interessante, og så finner de ut at man kan stille nye interessante
+spørsmål om de nye tingene de har funnet opp, og så har man det
+gående.
+
+I løpet av 1800-tallet og begynnelsen på 1900-tallet førte den
+matematiske utviklingen til at algebraen som fagfelt skiftet fokus.
+Man utviklet visse former for matematiske \emph{strukturer} som ble
+brukt til å forstå ulike typer likninger, og over tid fant man ut at
+disse strukturene kunne generaliseres og være nyttige også til andre
+ting enn løsing av likninger.  Dermed endte man opp med forskjellige
+typer \emph{abstrakte algebraiske strukturer} (noen av disse kalles
+\emph{grupper}, \emph{ringer} og \emph{moduler}), og algebra i dag
+handler primært om å forstå disse strukturene.  Denne nye formen for
+algebra kalles \emph{abstrakt algebra} (eller \emph{moderne algebra}),
+for å skille den fra den mer tradisjonelle algebraen som handler om
+løsing av likninger.
+
+% ga studiet av
+% likninger opphav til at man fant opp visse former for matematiske
+% strukturer.  Etter hvert ble det oppdaget at mange forskjellige
+% strukturer hadde visse grunnleggende egenskaper felles, og at man ofte
+% kunne forenkle ting voldsomt ved å se vekk fra detaljene i hver enkelt
+% struktur, og kun fokusere på disse grunnleggende egenskapene.  Dermed
+% endte man opp med en hel del \emph{abstrakte algebraiske strukturer}
+% (noen av de viktigste kalles \emph{grupper}, \emph{ringer} og
+% \emph{moduler}).  
+
+\medskip
+Greit, det var veldig mye prat om algebra.  Men hva er \emph{lineær
+  algebra} for noe?
+
+Algebra handler opprinnelig om likninger, og lineær algebra er den
+delen av algebraen som handler om lineære likninger.
+
+En lineær likning med én ukjent ser generelt slik ut:
+\[
+ax = b
+\]
+Dersom $a \ne 0$, har denne likningen løsning $x = b/a$.  Og det er
+egentlig alt som er å si om lineære likninger med én ukjent.
+
+Men hvis vi ser på et system av flere lineære likninger, med flere
+ukjente, blir det straks mer interessant.  Her er et eksempel på et
+system av lineære likninger:
+\[
+\systeme{
+  3x + 5y - 2z = 14,
+   x - 9y + 7z = 0,
+ -5x + 4y + 8z = -3
+}
+\]
+Studiet av slike systemer er utgangspunktet for lineær algebra.
+
+Det første vi skal lære er en metode (som kalles
+\emph{gausseliminasjon}) for å løse lineære likningssystemer på en
+effektiv måte.
+
+Deretter skal vi se at ved å innføre noen nye konsepter -- nemlig
+\emph{vektorer} og \emph{matriser} -- kan vi få en bedre forståelse av
+lineære likningssystemer.
+
+Du har antagelig hørt om vektorer før, og antagelig har du lært å
+tenke på en vektor som en pil -- noe som har en lengde og en retning.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\draw[->] (0,1) -- (3,0);
+\end{tikzpicture}
+\\
+{\small\it En pil}
+\end{center}
+Dette er imidlertid bare ett aspekt av vektorer.  Vi vil velge å se på
+et \emph{punkt} i planet, og \emph{pilen} fra origo til dette punktet, og
+\emph{koordinatene} til punktet, som tre forskjellige representasjoner
+av den samme vektoren.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\draw[->] (-3.5,0) -- (3.5,0);
+\draw[->] (0,-1.2) -- (0,2.4);
+\foreach \x in {-3,-2,-1,1,2,3}
+\draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+\foreach \y in {-1,1,2}
+\draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+\draw[-{>[length=7,width=5]},line width=1pt] (0,0) -- (2,1);
+\filldraw (2,1) circle [radius=2pt];
+\node[anchor=west] at (2,1) {$(2,1)$};
+\end{tikzpicture}
+\\
+{\small\it Vektorenes treenighet:\\punkt -- pil -- koordinater}
+\end{center}
+Koordinatene som angir en vektor, for eksempel $(2,1)$, vil vi
+vanligvis skrive på denne måten:
+\[
+\vv{2}{1}
+\]
+Dette kaller vi en \emph{kolonnevektor}.
+
+Det er klart at vi kan se på vektorer i to dimensjoner eller i tre
+dimensjoner -- altså i et plan eller i et rom.  Men hvis vi tenker på
+vektorer bare som kolonnevektorer, og glemmer det med punkter og
+piler, så er det ikke noe i veien for å snakke om vektorer i fire
+dimensjoner, eller fem, eller så mange dimensjoner vi vil.  Og det
+skal vi gjøre.
+
+Men hva har dette med lineære likningssystemer å gjøre?  Vi skal
+definere aritmetiske operasjoner for vektorer (på ganske naturlige
+måter), slik at likningssystemet vi så for en stund siden kan skrives
+på denne måten:
+\[
+\vvv{3}{1}{-5} \cdot x + \vvv{5}{-9}{4} \cdot y + \vvv{-2}{7}{8} \cdot z = \vvv{14}{0}{-3}
+\]
+Istedenfor et system med flere likninger har vi altså én likning, der
+koeffisientene og høyresiden er vektorer.  Istedenfor å tenke på
+problemet som det å finne tall som er løsninger av flere forskjellige
+likninger, tenker vi på det som å finne ut om visse vektorer kan
+kombineres slik at vi får en viss annen vektor.
+
+Så innfører vi matriser, som er rektangulære tabeller med tall, og vi
+kan skrive om systemet vårt til:
+\[
+\begin{bmatrix}
+ 3 &  5 & -2 \\
+ 1 & -9 &  7 \\
+-5 &  4 &  8
+\end{bmatrix}
+\vvv{x}{y}{z}
+= \vvv{14}{0}{-3}
+\]
+Her har vi en matrise ganger en vektor på venstresiden, og en vektor
+på høyresiden.  Når vi har lært om matriser, kan vi skrive et generelt
+lineært likningssystem på den konsise formen
+\[
+A \V{x} = \V{b},
+\]
+der $A$ er en matrise, $\V{b}$ er en konstant vektor, og $\V{x}$ er en
+ukjent vektor.
+
+Men det stopper ikke der!  Vi kan snu likheten $A \V{x} = \V{b}$ litt
+på hodet.  Istedenfor å si at $\V{x}$ er en ukjent som vi vil finne,
+så kan vi si at når matrisen $A$ ganges med en vektor~$\V{x}$, så får
+vi ut en ny vektor~$\V{b}$.  Med andre ord: En matrise gir opphav til
+en funksjon som tar inn vektorer og gir ut vektorer.  Hvis matrisen
+har $m$~rader og $n$~kolonner, så kan vi bruke den til å lage en
+funksjon~$T$ som tar inn $n$-dimensjonale vektorer og gir ut
+$m$-dimensjonale vektorer.  En slik funksjon kalles en
+\emph{lineærtransformasjon}, og vi skriver:
+\[
+T \colon \R^n \to \R^m
+\]
+Her står $R^n$ for mengden av alle $n$-dimensjonale kolonnevektorer,
+og en slik mengde kalles et \emph{vektorrom}.
+
+Men vi vil gjøre vektorbegrepet enda mer generelt.  %% TODO
+
 
 \section*{Komplekse tall}
 
-TODO
+Hva er et tall?  Da du som barn lærte å telle, lærte du tallene
+\[
+1,\ 2,\ 3,\ 4,\ \ldots
+\]
+Så lærte du å legge sammen tall, og å trekke tall fra hverandre.  Da
+viste det seg at det går an å stille spørsmål som ikke har svar: Hva
+er $3 - 5$?
 
-\section*{Andreordens differensiallikninger}
+Men så lærte du at slike spørsmål likevel kan besvares når man bare
+har innført noen nye tall:
+\[
+0,\ -1,\ -2,\ -3,\ \ldots
+\]
 
-TODO
+Videre utvidet du tallforståelsen din med \emph{rasjonale tall}
+(brøker av heltall, for eksempel $7/5$), og så lærte du at det også
+finnes tall som ikke er rasjonale, for eksempel $\sqrt{2}$ og $\pi$.
+Når vi tar med alle slike tall, har vi mengden av \emph{reelle tall}.
+
+Fremdeles er det spørsmål som ikke kan besvares, for eksempel: Hva er
+$\sqrt{-1}$?  Det finnes ikke noe reelt tall som vi kan opphøye i
+andre og få $-1$.
+
+Men denne situasjonen er egentlig helt tilsvarende som da vi bare
+kjente til de positive tallene og lurte på hva $3 - 5$ er.  Akkurat
+som vi da kunne utvide tallsystemet ved å legge til negative tall, kan
+vi nå legge til nye tall som gjør at vi får kvadratrøtter av negative
+tall.
+
+Vi lager et nytt tall, som vi kaller~$i$, og som er definert til å
+være slik at
+\[
+i^2 = -1
+\]
+For å få et tallsystem som gir mening, må vi kunne gange og legge
+sammen $i$ med et hvilket som helst annet tall.  Til sammen får vi at
+alle tall som kan skrives som
+\[
+a + bi
+\qquad
+\text{(der $a$ og~$b$ er reelle tall)}
+\]
+må være med i det nye tallsystemet.  Disse tallene kalles
+\emph{komplekse tall}.
+
+Mengden av reelle tall visualiserer vi som en uendelig lang tallinje.
+Mengden av komplekse tall visualiserer vi som et todimensjonalt plan.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\draw[->] (-3.3,0) -- (3.5,0);
+\draw[->] (0,-1.3) -- (0,2.4);
+\foreach \x in {-3,-2,-1,1,2,3}
+\draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+\draw (1pt, 2 cm) -- (-1pt, 2 cm) node[anchor=east] {$2i$};
+\draw (1pt, 1 cm) -- (-1pt, 1 cm) node[anchor=east] {$i$};
+\draw (1pt,-1 cm) -- (-1pt,-1 cm) node[anchor=east] {$-i$};
+\filldraw (1,2) circle [radius=2pt];
+\node[anchor=west] at (1,2) {$(1 + 2i)$};
+\end{tikzpicture}
+\\
+{\small\it Det komplekse planet}
+\end{center}
+
+Du må ikke la deg lure av navnet til å tro at komplekse tall er
+kompliserte å ha med å gjøre.  På mange måter er det enklere å jobbe
+med komplekse tall enn med reelle tall.
+
+Innenfor de komplekse tallene kan vi for eksempel alltid ta
+kvadratrøtter av hvilke som helst tall, uten å måtte tenke på om de er
+negative.  Med andre ord: alle likninger på formen $x^2 = a$ har
+løsninger.  Og ikke bare det, men alle andregradslikninger
+\[
+a x^2 + bx + x = 0
+\]
+har løsninger.  Og ikke bare det, men alle polynomlikninger av hvilken
+som helst grad, altså alle likninger på formen
+\[
+a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 = 0,
+\]
+har løsninger.
+
+Det som imidlertid kan gjøre komplekse tall litt vanskelige er at de
+ikke helt passer inn i vår intuitive forståelse av hva et tall skal
+være.  Med reelle tall kan vi lett se for oss hvordan et tall kan
+representere noe målbart i den virkelige verden: en avstand, et areal,
+en hastighet eller liknende.  Med komplekse tall er det vanskeligere å
+se for seg hva tallene kan representere.
+
+Når vi får bruk for komplekse tall er det ofte slik at vi starter med
+noe som bare handler om reelle tall, og får et sluttsvar med bare
+reelle tall, men må innom de komplekse tallene i mellomregningen.
+
+
+\section*{Lineære differensiallikninger}
+
+En \emph{differensiallikning} er en likning der den ukjente er en
+funksjon, og der den deriverte av denne ukjente funksjonen også er med
+i likningen.
+
+Vi skal se på to forskjellige typer differensiallikninger.  Den ene
+typen er lineære andreordens differensiallikninger, som vil si
+likninger på formen
+\[
+y'' + p y' + q y = g,
+\]
+der $y$ er en ukjent funksjon av en variabel~$t$, og $g$ er en kjent
+funksjon av~$t$, og $p$ og~$q$ er konstanter.
+
+Når vi skal løse en slik likning får vi bruk for å lage en
+«hjelpelikning», nemlig andregradslikningen
+\[
+\lambda^2 + p \lambda + q = 0
+\]
+der $\lambda$ er den ukjente.  Det viser seg nemlig at løsningene av
+denne likningen gir oss viktig informasjon om hvordan løsningene av
+differensiallikningen ser ut.  Men avhengig av hva $p$ og~$q$ er, er
+det ikke sikkert at denne andregradslikningen har noen løsning i
+reelle tall.  Her blir vi reddet av at vi har lært om komplekse tall!
+Vi kan alltid finne komplekse tall som er løsninger av hjelpelikningen
+vår, og disse kan vi igjen bruke til å finne løsningene av
+differensiallikningen vi startet med.
+
+Den andre typen differensiallikninger vi skal se på er systemer av
+førsteordens lineære differensiallikninger, som vil si
+likningssystemer på formen
+\[
+\left\{
+\begin{aligned}
+x_1' &= a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n \\
+x_2' &= a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n \\
+     &\ \ \vdots \\
+x_n' &= a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n
+\end{aligned}
+\right.
+\]
+der koeffisientene $a_{ij}$ er konstanter og hver $x_i$ er en ukjent
+funksjon av~$t$.
+
+Når vi har lært om lineær algebra og matriser, ser vi at et slikt
+system også kan skrives på formen
+\[
+\V{x}' = A \V{x},
+\]
+der $\V{x}$ er en vektorfunksjon og $A$ er en matrise.  For å løse
+systemet vil vi bruke avansert lineær-algebraisk magi som litt
+forenklet sagt går ut på å vri det $n$-dimensjonale rommet om til et
+nytt $n$-dimensjonalt rom der systemet blir enkelt å løse, så løse det
+der, og til slutt vri rommet tilbake og ta løsningene med oss.
+
 
 \end{document}
