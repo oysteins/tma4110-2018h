@@ -1,18 +1,21 @@
-\documentclass[norsk,a4paper]{article}
+\documentclass[norsk,a4paper,twocolumn,oneside]{memoir}
 
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[total={17cm,27cm}]{geometry}
 \usepackage[table]{xcolor}
-\usepackage{tabularx}
+%\usepackage{tabularx}
 \usepackage{systeme}
 %\usepackage{hyperref}
 %\usepackage{enumerate}
 
-\usepackage{sectsty}
-\sectionfont{\bf\large}
-\subsectionfont{\bf\normalsize}
+%\usepackage{sectsty}
+\setsecheadstyle{\bfseries\large}
+%\subsectionfont{\bf\normalsize}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 
 \newcommand{\defterm}[1]{\emph{#1}}
 
@@ -38,13 +41,13 @@
   \end{array}\right]
 }
 
-\newcounter{notatnr}
-\newcommand{\notatnr}[2]
-{\setcounter{notatnr}{#1}%
- \setcounter{page}{#2}%
-}
+% \newcounter{notatnr}
+% \newcommand{\notatnr}[2]
+% {\setcounter{notatnr}{#1}%
+%  \setcounter{page}{#2}%
+% }
 
-\newtheorem{thm}{Teorem}[notatnr]
+\newtheorem{thm}{Teorem}[chapter]
 \newtheorem*{thm-nn}{Teorem}
 \newtheorem{cor}[thm]{Korollar}
 \newtheorem{lem}[thm]{Lemma}
@@ -93,3 +96,45 @@
 \rule{.8\linewidth}{0.4pt}
 \end{center}
 }
+
+
+\newcommand{\chapternumber}{}
+
+\makechapterstyle{tma4110}{%
+ \renewcommand*{\chapterheadstart}{}
+ \renewcommand*{\printchaptername}{}
+ \renewcommand*{\chapternamenum}{}
+ \renewcommand*{\printchapternum}{\renewcommand{\chapternumber}{\thechapter}}
+ \renewcommand*{\afterchapternum}{}
+ \renewcommand*{\printchapternonum}{\renewcommand{\chapternumber}{}}
+ \renewcommand*{\printchaptertitle}[1]{
+\LARGE
+\begin{tabularx}{\textwidth}{cXr}
+\cellcolor{black}\color{white}%
+\textbf{\chapternumber} &
+\textbf{##1}
+\hfill &
+%\footnotesize TMA4110 høsten 2018
+\\ \hline
+\end{tabularx}%
+}
+ \renewcommand*{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
+ % \newcommand{\chapnamefont}{\normalfont\huge\bfseries}
+ % \newcommand{\chapnumfont}{\normalfont\huge\bfseries}
+ % \newcommand{\chaptitlefont}{\normalfont\Huge\bfseries}
+ \setlength{\beforechapskip}{0pt}
+ \setlength{\midchapskip}{0pt}
+ \setlength{\afterchapskip}{10pt}
+}
+
+
+\newcounter{oppgnr}[chapter]
+\newcounter{punktnr}[oppgnr]
+\newenvironment{oppgave}
+ {\par\noindent\stepcounter{oppgnr}\textbf{{\arabic{oppgnr}}.}}
+ {\par\bigskip}
+\newenvironment{punkt}
+ {\par\smallskip\noindent\stepcounter{punktnr}\textbf{\alph{punktnr})} }
+ {\par}
+
+\newcommand{\oppgaver}{\linje\section*{Oppgaver}}

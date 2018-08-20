@@ -1,0 +1,8 @@
+\ifx\inkludert\undefined
+\input{preamble}
+\newcommand{\kapittel}[2]{\setcounter{chapter}{#1}\addtocounter{chapter}{-1}\chapter{#2}}
+\newcommand{\kapittelslutt}{\enddocument}
+\begin{document}
+\chapterstyle{tma4110}
+\pagestyle{plain}
+\fi
