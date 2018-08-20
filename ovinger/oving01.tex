@@ -11,6 +11,8 @@
 \usepackage[all]{xy}
 \usepackage{systeme}
 
+\newcommand{\R}{\mathbb{R}}
+
 \newcommand{\abs}[1]{|#1|}
 
 \newcommand{\V}[1]{\mathbf{#1}}
@@ -18,6 +20,14 @@
 \newcommand{\vvv}[3]{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}}
 \newcommand{\vvvv}[4]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \end{bmatrix}}
 \newcommand{\vn}[2]{\vvvv{#1_1}{#1_2}{\vdots}{#1_#2}}
+
+\newcommand{\roweq}{\sim}
+
+\newenvironment{amatrix}[1]{% "augmented matrix"
+  \left[\begin{array}{*{#1}{c}|c}
+}{%
+  \end{array}\right]
+}
 
 \semester{Høst 2018}
 \fag{TMA4110 Matematikk 3}
@@ -28,37 +38,88 @@
 
 
 \begin{oppgave}
-hvilke av likningene er lineære?
+Hvilke av disse likningene er lineære?
 \begin{punkt}
-...
+$14x + 3y = 2x + 1 - 5z$
 \end{punkt}
 \begin{punkt}
-...
-\end{punkt}
-\end{oppgave}
-
-
-\begin{oppgave}
-hvilke av matrisene er på trappeform?  på redusert trappeform?
-\begin{punkt}
-...
+$x + 2xy + y = 1$
 \end{punkt}
 \begin{punkt}
-...
+$\frac{x + y}{2} = z$
 \end{punkt}
 \end{oppgave}
 
 
 \begin{oppgave}
-løs likningssystemer (3-4 likninger/ukjente)
+Hvilke av disse matrisene er på trappeform?  Hvilke av dem er på
+redusert trappeform?
 \begin{punkt}
-(én løsning)
+$
+\begin{bmatrix}
+1 & 5 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$
 \end{punkt}
 \begin{punkt}
-(uendelig mange løsninger)
+$
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+0 & -1
+\end{bmatrix}
+$
 \end{punkt}
 \begin{punkt}
-(ingen løsninger)
+$
+\begin{bmatrix}
+0 & 2 & 1 \\
+0 & 0 & 4 \\
+0 & 0 & 0
+\end{bmatrix}
+$
+\end{punkt}
+\begin{punkt}
+$
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+$
+\end{punkt}
+\end{oppgave}
+
+
+\begin{oppgave}
+Løs likningssystemene.
+\begin{punkt}
+$
+\systeme{
+  2x - 4y + 9z = -38,
+  4x - 3y + 8z = -26,
+ -2x + 4y - 2z =  17
+}
+$
+\end{punkt}
+\begin{punkt}
+(TODO: system med uendelig mange løsninger)
+\end{punkt}
+\begin{punkt}
+(TODO: system med ingen løsninger)
+\end{punkt}
+\end{oppgave}
+
+
+\begin{oppgave}
+\begin{punkt}
+Er disse to likningssystemene ekvivalente?
+(TODO: to likningssystemer som er ekvivalente)
+\end{punkt}
+\begin{punkt}
+Er disse to matrisene radekvivalente?
+(TODO: to totalmatriser som ikke er radekvivalente)
 \end{punkt}
 \end{oppgave}
 
@@ -79,36 +140,56 @@ I hver deloppgave: Tegn grafene til de to likningene i systemet ditt.
 
 
 \begin{oppgave}
-to vektorer $\V{u}$ og $\V{v}$
+La $\V{u} = \vv{3}{2}$ og~$\V{v} = \vv{-1}{1}$ være to vektorer
+i~$\R^2$.
 
-regn ut $a \V{u} + b \V{v}$ for noen ulike $a$ og~$b$,
-tegn opp i planet
+\begin{punkt}
+Regn ut $\V{u} + \V{v}$ og $\frac{1}{2} \V{u} - 2 \V{v}$.
+\end{punkt}
+
+\begin{punkt}
+Tegn en figur som viser vektorene $\V{u}$, $\V{v}$, $\V{u} + \V{v}$ og
+$\frac{1}{2} \V{u} - 2 \V{v}$ i planet.
+\end{punkt}
 \end{oppgave}
 
 
 \begin{oppgave}
-er $\V{b}$ en lineærkombinasjon av ...?
+(TODO: noen gitte vektorer, finn ut om en av dem er lineærkombinasjon av de andre)
 \end{oppgave}
 
 
 \begin{oppgave}
-gitt vektorer u, v, w (to eller tre), finn vektor som ikke er lineærkombinasjon av disse
+(TODO: gitt vektorer u, v, w (to eller tre), finn vektor som ikke er lineærkombinasjon av disse)
 \end{oppgave}
 
 
 \begin{oppgave}
-en lineær likning med to ukjente kan tegnes som en rett linje i $x$-$y$-planet.
-hvordan kan vi på tilsvarende måte se for oss en lineær likning med tre ukjente?
+\begin{punkt}
+En lineær likning med to ukjente kan tegnes som en rett linje i $x$--$y$-planet.
+Hvordan kan vi på tilsvarende måte se for oss en lineær likning med tre ukjente?
+\end{punkt}
+\begin{punkt}
+Se på følgende likningssystem:
+(TODO: system med to likninger og tre ukjente)
+
+Tegn en figur som illustrerer løsningene av hver av disse likningene
+og løsningene av systemet.
+\end{punkt}
 \end{oppgave}
 
 
 \begin{oppgave}
-system med $m$ likninger, $n$ ukjente
-
-ni tilfeller:\\
-($m < n$, $m = n$, $m > n$) $\times$ (ingen løsninger, én løsning, uendelig mange løsninger)
-
-hvilke tilfeller er mulige?
+Anta at vi har et likningssystem med $m$~likninger og~$n$ ukjente.
+Hvilke av de ni forskjellige tilfellene i følgende tabell er mulige?
+\[
+\begin{array}{r|c|c|c|}
+                                & m < n & m = n & m > n \\ \hline
+\text{ingen løsninger}          &       &       &       \\ \hline
+\text{én løsning}               &       &       &       \\ \hline
+\text{uendelig mange løsninger} &       &       &       \\ \hline
+\end{array}
+\]
 \end{oppgave}
 
 
@@ -128,6 +209,8 @@ $b$, $c$, $d$, $m$ og~$n$.
 
 
 \begin{oppgave}
+(TODO: velg tre passende punkter og skriv ferdig oppgaveteksten)
+
 tre punkter i planet, vil finne andregradspolynom $ax^2 + bx + c$ slik
 at grafen går gjennom de tre punktene
 \begin{punkt}
@@ -140,18 +223,33 @@ Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
 
 
 \begin{oppgave}
+(TODO: velg passende polynomer (sett inn tall for a,b,c,d,e,f)
+og skriv ferdig oppgaveteksten.  Ikke bruk ordet «lineærkombinasjon».)
+
 to polynomer
 \begin{align*}
 p(x) &= ax^2 + bx + c \\
 q(x) &= dx^2 + ex + f
 \end{align*}
-(sett inn tall for a,b,c,d,e,f)
 
 tredje polynom $r(x) = ...$.  Kan det skrives som lineærkombinasjon av $p$ og~$q$?
 
 vis at alle andregradspolynomer er lineærkombinasjoner av $p$, $q$ og et tredje polynom
 \end{oppgave}
 
+
+\begin{oppgave}
+Vis at følgende påstander er sanne for alle matriser $M$, $N$ og~$L$:
+\begin{punkt}
+$M \roweq M$.
+\end{punkt}
+\begin{punkt}
+Hvis $M \roweq N$, så: $N \roweq M$.
+\end{punkt}
+\begin{punkt}
+Hvis $M \roweq L$ og $L \roweq N$, så: $M \roweq N$.
+\end{punkt}
+\end{oppgave}
 
 
 \end{document}
