@@ -9,6 +9,7 @@
 \usepackage{systeme}
 %\usepackage{hyperref}
 %\usepackage{enumerate}
+\usepackage{ifthen}
 
 %\usepackage{sectsty}
 \setsecheadstyle{\bfseries\large}
@@ -126,15 +127,43 @@
  \setlength{\midchapskip}{0pt}
  \setlength{\afterchapskip}{10pt}
 }
+\chapterstyle{tma4110}
+\pagestyle{plain}
 
 
-\newcounter{oppgnr}[chapter]
+\newboolean{vis-oppgaver}
+\newboolean{vis-losninger}
+\setboolean{vis-oppgaver}{true}
+\setboolean{vis-losninger}{false}
+
+\newcounter{oppg-kap} % kapittelnummerering for oppgaver
+\newcounter{oppgnr}[oppg-kap]
 \newcounter{punktnr}[oppgnr]
-\newenvironment{oppgave}
- {\par\noindent\stepcounter{oppgnr}\textbf{{\arabic{oppgnr}}.}}
- {\par\bigskip}
+
+\newenvironment{oppgave}%
+ {\ifthenelse{\boolean{vis-oppgaver}}%
+             {\par\noindent\stepcounter{oppgnr}\textbf{\arabic{oppgnr}.}}%
+             {\expandafter\comment}}%
+ {\ifthenelse{\boolean{vis-oppgaver}}%
+             {\par\bigskip}%
+             {\expandafter\endcomment}}
+
+\newenvironment{losning}%
+ {\ifthenelse{\boolean{vis-losninger}}%
+             {\par\noindent\stepcounter{oppgnr}\textbf{\arabic{oppg-kap}.\arabic{oppgnr}.}}%
+             {\expandafter\comment}}%
+ {\ifthenelse{\boolean{vis-losninger}}%
+             {\par\bigskip}%
+             {\expandafter\endcomment}}
+
 \newenvironment{punkt}
  {\par\smallskip\noindent\stepcounter{punktnr}\textbf{\alph{punktnr})} }
  {\par}
 
-\newcommand{\oppgaver}{\linje\section*{Oppgaver}}
+\newcommand{\kap}[1]{\setcounter{oppg-kap}{#1}\addtocounter{oppg-kap}{-1}\stepcounter{oppg-kap}}
+
+\newcommand{\oppgaver}[1]{%
+  \kap{#1}%
+  \ifthenelse{\boolean{vis-oppgaver}}%
+             {\linje\section*{Oppgaver}}%
+             {}}
