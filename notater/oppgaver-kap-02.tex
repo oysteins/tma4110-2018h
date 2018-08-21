@@ -1,3 +1,4 @@
+% -*- TeX-master: "oving01"; -*-
 \oppgaver{2}
 
 \begin{oppgave}
@@ -117,18 +118,42 @@ Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
 
 
 \begin{oppgave}
-(TODO: velg passende polynomer (sett inn tall for a,b,c,d,e,f)
-og skriv ferdig oppgaveteksten.  Ikke bruk ordet «lineærkombinasjon».)
-
-to polynomer
+% 1  4  1
+% 0 -2  3
+% 0  0 17
+% ---
+% 1  4  1
+% 0 -2  3
+% 0  8  5
+% ---
+% 1  4  1
+% 0 -2  3
+%-3 -4  2
+% ---
+% 1  4  1
+% 5 18  8
+%-3  4  2
+La $p$ og~$q$ være følgende polynomer:
 \begin{align*}
-p(x) &= ax^2 + bx + c \\
-q(x) &= dx^2 + ex + f
+p(x) &= x^2 + 5x - 3 \\
+q(x) &= 4x^2 + 18x + 4
 \end{align*}
-
-tredje polynom $r(x) = ...$.  Kan det skrives som lineærkombinasjon av $p$ og~$q$?
-
-vis at alle andregradspolynomer er lineærkombinasjoner av $p$, $q$ og et tredje polynom
+\begin{punkt}
+La $s$ være polynomet $s(x) = x^2 + 8x + 2$.  Finnes det konstanter
+$a$ og~$b$ slik at
+\[
+s(x) = a \cdot p(x) + b \cdot q(x)
+\]
+for alle~$x$?
+\end{punkt}
+\begin{punkt}
+Finn et andregradspolynom $t$ som oppfyller følgende: For hvert
+andregradspolynom $r$ skal det være mulig å finne konstanter $a$, $b$
+og~$c$ slik at
+\[
+r(x) = a \cdot p(x) + b \cdot q(x) + c \cdot t(x)
+\]
+\end{punkt}
 \end{oppgave}
 
 
