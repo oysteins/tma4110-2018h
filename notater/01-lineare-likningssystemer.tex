@@ -63,10 +63,9 @@ Vi har nå funnet ut at systemet~$(\ast)$ har nøyaktig én løsning,
 nemlig $x = 3$ og $y = 1$.
 \end{ex}
 
-% Metoden i eksempelet over er enkel og grei, men kan bli temmelig
-% tungvint å bruke hvis vi har mer enn to ukjente.  Vi 
-
-Vi ser på en annen løsningsmetode for det samme systemet:
+Metoden i eksempelet over er enkel og grei, men kan bli temmelig
+tungvint å bruke hvis vi har mer enn to ukjente.
+Vi ser på en annen løsningsmetode for det samme systemet.
 
 \begin{ex}
 Vi ganger opp den andre likningen med~$2$, og deretter legger vi
@@ -94,7 +93,12 @@ $x = 3$.
 Vi har dermed igjen funnet løsningen $x = 3$ og $y = 6$.
 \end{ex}
 
-% Når vi (i neste notat) skal beskrive en  ...
+Vi skal etter hvert komme frem til en generell fremgangsmåte for å
+løse lineære likningssystemer.  Den fremgangsmåten baserer seg på å
+legge sammen likninger slik som vi gjorde nå.
+
+Før vi går videre løser vi systemet vårt en tredje gang, på en helt
+annen måte:
 
 \begin{ex}
 Vi kan også løse systemet~$(\ast)$ grafisk.  Vi lager et
@@ -221,8 +225,20 @@ Vi bytter ut den andre likningen i systemet med denne nye likningen:
   2x + 5y -   z = 0
 }
 \]
-På samme måte kan vi eliminere $x$ fra den siste likningen ved å
-trekke fra første likning ganget med~$2$:
+Dette systemet er ekvivalent med det vi startet med.  Hvorfor er det
+det?  Den nye likningen følger fra to av likningene vi hadde fra før.
+Dermed må enhver løsning av det opprinnelige systemet også være en
+løsning av det nye systemet.
+
+Men omvendt er det også slik at den opprinnelige midterste likningen
+(som vi nå har tatt vekk) kan vi få ved å legge sammen de to første
+likningene i det nye systemet.  Dermed må enhver løsning av det nye
+systemet også være en løsning av det gamle.
+
+Til sammen betyr dette at de to systemene er ekvivalente.
+
+Vi fortsetter å forenkle systemet.  Vi eliminerer $x$ fra den siste
+likningen ved å trekke fra første likning ganget med~$2$:
 \[
 \systeme{
    x + 2y -  2z = -5,
@@ -230,6 +246,8 @@ trekke fra første likning ganget med~$2$:
         y +  3z = 10
 }
 \]
+Igjen har vi et nytt system som er ekvivalent med det forrige.
+
 Nå vil vi eliminere $y$ fra den siste likningen.  Men det er lettere å
 eliminere $y$ fra den midterste likningen (ved å trekke fra $3$ ganger den
 siste).  Likningenes rekkefølge spiller imidlertid ingen rolle, så vi
@@ -250,16 +268,32 @@ likning ganget med~$3$:
             2z =  8
 }
 \]
-Nå ser vi fra den siste likningen at vi må ha $z = 4$.  Ved å sette
-inn det i den midterste likningen får vi $y = 10 - 3 \cdot 4 = -2$.
-Til slutt får vi ved å sette inn i den øverste likningen at
-$x = -5 - 2 \cdot (-2) + 2 \cdot 4 = 7$.
+Nå ser vi fra den siste likningen at vi må ha:
+\[
+z = 4
+\]
+Ved å sette inn det i den midterste likningen får vi:
+\[
+y = 10 - 3 \cdot 4 = -2
+\]
+Til slutt får vi, ved å sette inn $y$ og~$z$ i den øverste likningen:
+\[
+x = -5 - 2 \cdot (-2) + 2 \cdot 4 = 7
+\]
+Systemet har altså én løsning:
+\[
+x = 7 \qquad
+y = -2 \qquad
+z = 4
+\qedhere
+\]
 \end{ex}
 
 Alle likningssystemene vi skrev opp i dette eksempelet er ekvivalente
 med hverandre, men det siste er mye enklere å håndtere enn det vi
 startet med.  Prosessen vi utførte for å forenkle systemet kalles
-\emph{gauss\-eliminasjon}, og er nærmere beskrevet i neste kapittel.
+\emph{gauss\-eliminasjon}, og blir nærmere beskrevet i
+kapittel~\ref{ch:gausseliminasjon}.
 
 
 \section*{Totalmatrisen til et system}
