@@ -112,72 +112,87 @@ Det finnes ingen løsning.
 
 
 \begin{oppgave}
-\begin{punkt}
-%TODO: to ekvivalente system
-Er følgende to likningssystem ekvivalente? Begrunn svaret ditt.
-$$
-\systeme{
+Er følgende to likningssystemer ekvivalente? Begrunn svaret ditt.
+\[
+\systeme*{
 	x = 1,
 	x + y = 2,
 	x + y + z = 3
 }
-$$
-$$
-\systeme{
+\qquad\qquad
+\systeme*{
 	x = 1,
 	y = 1,
 	z = 1
 }
-$$
-\end{punkt}
-\begin{punkt}
-%TODO: to matriser som ikke er radekvivalente
-Er følgende to matriser radekvivalente? Begrunn svaret ditt.
-$$
-\begin{bmatrix}
-1 & 0 & 0 & 1\\
-1 & 1 & 0 & 1\\
-1 & 1 & 1 & 1
-\end{bmatrix}
-$$
-$$
-\begin{bmatrix}
-0 & 0 & 1 & 1\\
-0 & 1 & 1 & 1\\
-1 & 1 & 1 & 1
-\end{bmatrix}
-$$
-
-\end{punkt}
+\]
 \end{oppgave}
 
 \begin{losning}
-\begin{punkt}
 Likningssystemene er ekvivalente fordi begge har entydig løsning $x=1$, $y=1$ og $z=1$.
-\end{punkt}
-\begin{punkt}
-Hint: Teorem \ref{thm:radekvivalens} sier at radekvivalente totalmatriser alltid er ekvivalente som likningssystem, de har altså like løsninger. Det holder derfor å vise at de korresponderende likningssystemene har ulike løsninger.
+\end{losning}
 
-Merk: Vi ser at den eneste forskjellen på matrisene er at første- og tredje kolonne har byttet plass. Dette svarer til at første- og siste variabel bytter plass i korresponderende likningssystem. Kan du forklare dette?
-\end{punkt}
+
+\begin{oppgave}
+Er følgende to matriser radekvivalente? Begrunn svaret ditt.
+\[
+\begin{amatrix}{3}
+1 & 0 & 0 & 1\\
+1 & 1 & 0 & 1\\
+1 & 1 & 1 & 1
+\end{amatrix}
+\qquad\qquad
+\begin{amatrix}{3}
+0 & 0 & 1 & 1\\
+0 & 1 & 1 & 1\\
+1 & 1 & 1 & 1
+\end{amatrix}
+\]
+\end{oppgave}
+
+\begin{losning}
+Hint: Teorem \ref{thm:radekvivalens} sier at radekvivalente
+totalmatriser alltid er ekvivalente som likningssystem, de har altså
+like løsninger. Det holder derfor å vise at de korresponderende
+likningssystemene har ulike løsninger.
+
+Merk: Vi ser at den eneste forskjellen på matrisene er at første- og
+tredje kolonne har byttet plass. Dette svarer til at første- og siste
+variabel bytter plass i korresponderende likningssystem. Kan du
+forklare dette?
 \end{losning}
 
 
 
 \begin{oppgave}
-	%(TODO: velg tre passende punkter og skriv ferdig oppgaveteksten)
-	La $(1,2)$, $(2,3)$ og $(3,5)$ være tre punkter i planet. Vi skal finne ett andregradspolynom $ax^2 + bx + c$ slik
-	at grafen går gjennom de tre punktene
-	\begin{punkt}
-		Sett opp et lineært likningssystem for $a$, $b$ og~$c$.
-	\end{punkt}
-	\begin{punkt}
-		Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
-	\end{punkt}
-	\begin{punkt}
-		Sjekk at svaret ditt i \textbf{b)} er riktig.
-	\end{punkt}
+La $(1,2)$, $(2,3)$ og $(3,5)$ være tre punkter i planet. Vi skal
+finne et andregradspolynom $ax^2 + bx + c$ slik at grafen går gjennom
+de tre punktene.
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\draw[->] (-1.5,0) -- (5.6,0);
+\draw[->] (0,-0.5) -- (0,5.5);
+\foreach \x in {-1,1,2,3,4,5}
+\draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+\foreach \y in {1,2,3,4,5}
+\draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+\filldraw (1,2) circle [radius=2pt] node[anchor=west] {$(1,2)$};
+\filldraw (2,3) circle [radius=2pt] node[anchor=west] {$(2,3)$};
+\filldraw (3,5) circle [radius=2pt] node[anchor=west] {$(3,5)$};
+\end{tikzpicture}
+\vspace{-5pt}
+\end{center}
+\begin{punkt}
+Sett opp et lineært likningssystem for $a$, $b$ og~$c$.
+\end{punkt}
+\begin{punkt}
+Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
+\end{punkt}
+\begin{punkt}
+Sjekk at svaret ditt i \textbf{b)} er riktig.
+\end{punkt}
 \end{oppgave}
+
 \begin{losning}
 	\begin{punkt}
 		Kravene $p(1)=2$, $p(2)=3$ og $p(3)=5$ gir følgende likningssystem:
@@ -240,7 +255,9 @@ der $a$, $b$, $c$, $d$, $m$ og~$n$ er konstanter, og vi antar at $ad \ne bc$.
 Hvor mange løsninger har systemet?  Finn løsningen(e) uttrykt ved $a$,
 $b$, $c$, $d$, $m$ og~$n$.
 
-Hint: Start med å i) multiplisere første rad med $d$ og andre rad med $b$, eller ii) multiplisere første rad med $c$ og andre rad med $a$. Ta hensyn til at noen variabler kan være null.
+Hint: Start med å (i) multiplisere første rad med $d$ og andre rad med
+$b$, eller (ii) multiplisere første rad med $c$ og andre rad med
+$a$. Ta hensyn til at noen variabler kan være null.
 \end{oppgave}
 \begin{losning}
 Løsningen er
