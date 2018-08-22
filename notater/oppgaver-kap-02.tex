@@ -40,7 +40,9 @@ $
 $
 \end{punkt}
 \end{oppgave}
-
+\begin{losning}
+Matrise (a), (b) og (d) er på trappeform; (a) er på redusert trappeform.
+\end{losning}
 
 \begin{oppgave}
 Løs likningssystemene.
@@ -78,21 +80,124 @@ $
 $
 \end{punkt}
 \begin{punkt}
-(TODO: system med ingen løsninger)
+%TODO: ingen løsninger
+$
+\systeme{
+	x  + 2y - z = 1,
+	2x + 3y - z = -1,
+	3x + 4y - z = 1
+}
+$
 \end{punkt}
 \end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+$x=\frac{5}{2}$, $y=4$ og $z=-3$.
+\end{punkt}
+\begin{punkt}
+Radredusering viser at systemet har en fri variabel. Dette kan også observeres direkte ettersom siste likning er første likning multiplisert med to. Husk at vi nå har mange valg for å løse oppgaven, og vi gir derfor bare en skisse til hvordan du kan komme frem til et endelig svar. Eksempelvis kan vi ende opp med det ekvivalente systemet 
+$$
+\systeme{
+	x + 3y +  6z = 4,
+	    y  +  2z = 0
+}.\\
+$$
+Nå kan vi velge $y$ eller $z$ som fri variabel. Prøv gjerne ulike valg. Du kan sjekke om løsningene dine er korrekt ved å sette inn i likningene du opprinnelig skulle løse.
+\end{punkt}
+\begin{punkt}
+Det finnes ingen løsning.
+\end{punkt}
+\end{losning}
 
 
 \begin{oppgave}
 \begin{punkt}
-Er disse to likningssystemene ekvivalente?
-(TODO: to likningssystemer som er ekvivalente)
+%TODO: to ekvivalente system
+Er følgende to likningssystem ekvivalente? Begrunn svaret ditt.
+$$
+\systeme{
+	x = 1,
+	x + y = 2,
+	x + y + z = 3
+}
+$$
+$$
+\systeme{
+	x = 1,
+	y = 1,
+	z = 1
+}
+$$
 \end{punkt}
 \begin{punkt}
-Er disse to matrisene radekvivalente?
-(TODO: to totalmatriser som ikke er radekvivalente)
+%TODO: to matriser som ikke er radekvivalente
+Er følgende to matriser radekvivalente? Begrunn svaret ditt.
+$$
+\begin{bmatrix}
+1 & 0 & 0 & 1\\
+1 & 1 & 0 & 1\\
+1 & 1 & 1 & 1
+\end{bmatrix}
+$$
+$$
+\begin{bmatrix}
+0 & 0 & 1 & 1\\
+0 & 1 & 1 & 1\\
+1 & 1 & 1 & 1
+\end{bmatrix}
+$$
+
 \end{punkt}
 \end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+Likningssystemene er ekvivalente fordi begge har entydig løsning $x=1$, $y=1$ og $z=1$.
+\end{punkt}
+\begin{punkt}
+Hint: Teorem \ref{thm:radekvivalens} sier at radekvivalente totalmatriser alltid er ekvivalente som likningssystem, de har altså like løsninger. Det holder derfor å vise at de korresponderende likningssystemene har ulike løsninger.
+
+Merk: Vi ser at den eneste forskjellen på matrisene er at første- og tredje kolonne har byttet plass. Dette svarer til at første- og siste variabel bytter plass i korresponderende likningssystem. Kan du forklare dette?
+\end{punkt}
+\end{losning}
+
+
+
+\begin{oppgave}
+	%(TODO: velg tre passende punkter og skriv ferdig oppgaveteksten)
+	La $(1,2)$, $(2,3)$ og $(3,5)$ være tre punkter i planet. Vi skal finne ett andregradspolynom $ax^2 + bx + c$ slik
+	at grafen går gjennom de tre punktene
+	\begin{punkt}
+		Sett opp et lineært likningssystem for $a$, $b$ og~$c$.
+	\end{punkt}
+	\begin{punkt}
+		Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
+	\end{punkt}
+	\begin{punkt}
+		Sjekk at svaret ditt i \textbf{b)} er riktig.
+	\end{punkt}
+\end{oppgave}
+\begin{losning}
+	\begin{punkt}
+		Kravene $p(1)=2$, $p(2)=3$ og $p(3)=5$ gir følgende likningssystem:
+		$$
+		\systeme{
+			a+b+c = 2,
+			4a+2b+c = 3,
+			9a+3b+c = 5
+		}
+		$$
+		
+	\end{punkt}
+	\begin{punkt}
+		Løsningen er $a=\frac{1}{2}$, $b=-\frac{1}{2}$ og~$c=2$.
+	\end{punkt}
+	
+	\begin{punkt}
+		Sett inn $1$, $2$ og~$3$ i polynomet $p(x)=\frac{1}{2}x^2-\frac{1}{2}x+2$ for å se at kravene i \textbf{a)} er oppfylt.  
+	\end{punkt}
+\end{losning}
 
 
 \begin{oppgave}
@@ -108,6 +213,19 @@ Hvilke av de ni forskjellige tilfellene i følgende tabell er mulige?
 \]
 \end{oppgave}
 
+\begin{losning}
+
+La 1 betegne mulig og 0 umulig:
+\[
+\begin{array}{r|c|c|c|}
+& m < n & m = n & m > n \\ \hline
+\text{ingen løsninger}          &   1   &   1   &   1   \\ \hline
+\text{én løsning}               &   0   &   1   &   1   \\ \hline
+\text{uendelig mange løsninger} &   1   &   1   &   1   \\ \hline
+\end{array}
+\]
+\end{losning}
+
 
 \begin{oppgave}
 Se på likningssystemet
@@ -121,21 +239,19 @@ der $a$, $b$, $c$, $d$, $m$ og~$n$ er konstanter, og vi antar at $ad \ne bc$.
 
 Hvor mange løsninger har systemet?  Finn løsningen(e) uttrykt ved $a$,
 $b$, $c$, $d$, $m$ og~$n$.
+
+Hint: Start med å i) multiplisere første rad med $d$ og andre rad med $b$, eller ii) multiplisere første rad med $c$ og andre rad med $a$. Ta hensyn til at noen variabler kan være null.
 \end{oppgave}
+\begin{losning}
+Løsningen er
 
+$$x=\frac{1}{ad-bc}(dm-bn)$$
+$$y=\frac{1}{ad-bc}(an-cm).$$
 
-\begin{oppgave}
-(TODO: velg tre passende punkter og skriv ferdig oppgaveteksten)
+Merk at $ad-bc\neq 0$ ettersom vi har antatt $ad\neq bc$.
 
-tre punkter i planet, vil finne andregradspolynom $ax^2 + bx + c$ slik
-at grafen går gjennom de tre punktene
-\begin{punkt}
-Sett opp et lineært likningssystem for $a$, $b$ og~$c$.
-\end{punkt}
-\begin{punkt}
-Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
-\end{punkt}
-\end{oppgave}
+\end{losning}
+
 
 
 \begin{oppgave}
@@ -150,3 +266,15 @@ Hvis $M \roweq N$, så: $N \roweq M$.
 Hvis $M \roweq L$ og $L \roweq N$, så: $M \roweq N$.
 \end{punkt}
 \end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+	$M$ er trivielt radekvivalent med $M$.
+\end{punkt}
+\begin{punkt}
+	Hint: Alle radoperasjoner er reversible; multiplisere en rad med et ikke-null tall $c$ kan reverseres ved å multiplisere samme rad med $\frac{1}{c}$; bytte om på to rader kan reverseres ved å bytte om på radene igjen; å legge til et multiplum av en rad til en annen kan reverseres ved å trekke fra det som ble lagt til. Dersom $M\roweq N$ betyr det at vi har gjort et endelig antall radoperasjoner $\text{O}_1,\dots,\text{O}_n$ for å lage $N$ fra $M$. Klarer du, ut ifra dette, å finne et endelig antall radoperasjoner som lager $M$ fra $N$?
+\end{punkt}
+\begin{punkt}
+	Hint: Vi antar at det finnes et endelig antall radoperasjoner $\text{O}_1,\dots,\text{O}_n$ som lager $L$ fra $M$, og at det finnes et endelig antall radoperasjoner $\text{O}_{n+1},\dots,\text{O}_{n+m}$ som lager $N$ fra $L$. Klarer du, ut ifra dette, å finne et endelig antall radoperasjoner som lager $N$ fra $M$?
+\end{punkt}
+\end{losning}

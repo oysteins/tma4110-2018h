@@ -15,15 +15,179 @@ $\frac{1}{2} \V{u} - 2 \V{v}$ i planet.
 \end{punkt}
 \end{oppgave}
 
+\begin{losning}
+\begin{punkt}
+	$\V{u} + \V{v}=
+	\begin{bmatrix}
+	2\\
+	3
+	\end{bmatrix}
+	$ og $\frac{1}{2} \V{u} - 2 \V{v}=
+	\begin{bmatrix}
+	\frac{7}{2}\\
+	-1
+	\end{bmatrix}
+	$.
+\end{punkt}
+
+\begin{punkt}
+\end{punkt}
+\begin{center}
+	\begin{tikzpicture}
+	\draw[->] (-1,0) -- (4,0) node[right] {$x$};
+	\draw[->] (0,-1) -- (0,4) node[above] {$y$};
+	\draw[->] (0,0) -- (3,2) node[above] {$\V{u}$};
+	\draw[->] (0,0) -- (-1,1) node[above] {$\V{v}$};
+	\draw[->] (0,0) -- (7/2,-1) node[below] {$\frac{1}{2}\V{u}-2\V{v}$};
+	\draw[->] (0,0) -- (2,3) node[above] {$\V{u}+\V{v}$};
+	\end{tikzpicture}
+\end{center}
+\end{losning}
 
 \begin{oppgave}
-(TODO: noen gitte vektorer, finn ut om en av dem er lineærkombinasjon av de andre)
+%(TODO: noen gitte vektorer, finn ut om en av dem er lineærkombinasjon av de andre)
+Finn ut om en vektor er en lineærkombinasjon av de andre:
+\begin{punkt}
+$$
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix},
+\begin{bmatrix}
+2\\
+3
+\end{bmatrix},
+\begin{bmatrix}
+3\\
+4
+\end{bmatrix}
+$$
+\end{punkt}
+\begin{punkt}
+	$$
+	\begin{bmatrix}
+	1\\
+	2\\
+	3\\
+	4
+	\end{bmatrix},
+	\begin{bmatrix}
+	2\\
+	3\\
+	4\\
+	5
+	\end{bmatrix},
+	\begin{bmatrix}
+	3\\
+	4\\
+	5\\
+	6
+	\end{bmatrix}
+	$$
+\end{punkt}
 \end{oppgave}
-
+\begin{losning}
+\begin{punkt}
+Et vilkårlig valg av en vektor vil kunne skrives som en lineærkombinasjon av de to andre. Det er derfor tre mulige fremgangsmåter som alle er riktig.
+Hint: La $\V{v_1}$ være en av vektorene. Du ønsker å sjekke om $\V{v_1}$ er en lineærkombinasjon av de to resterende vektorene. Dette kan formuleres med likningen $$\V{v_1}=a\V{v_2}+b\V{v_3}$$ hvor $\V{v_2}$ og~$\V{v_3}$ er de to resterende vektorene, og $a$ og~$b$ er ukjente koeffisienter. Prøv å skissere løsningen din i $x$--$y$-planet.
+\end{punkt}
+\begin{punkt}
+Se $\textbf{a)}$, men merk at du ikke kan skissere løsningen din ettersom dette krever fire dimensjoner. 
+\end{punkt}
+\end{losning}
 
 \begin{oppgave}
-(TODO: gitt vektorer u, v, w (to eller tre), finn vektor som ikke er lineærkombinasjon av disse)
+%(TODO: gitt vektorer u, v, w (to eller tre), finn vektor som ikke er lineærkombinasjon av disse)
+Finn en vektor som ikke er en lineærkombinasjon av:
+\begin{punkt}
+	$$
+	\begin{bmatrix}
+	1\\
+	5\\
+	-3
+	\end{bmatrix},
+	\begin{bmatrix}
+	4\\
+	18\\
+	4
+	\end{bmatrix}
+	$$
+\end{punkt}
+\begin{punkt}
+$$
+\begin{bmatrix}
+1\\
+2\\
+3\\
+4
+\end{bmatrix},
+\begin{bmatrix}
+2\\
+3\\
+4\\
+5
+\end{bmatrix},
+\begin{bmatrix}
+3\\
+4\\
+5\\
+6
+\end{bmatrix}
+$$
+\end{punkt}
 \end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+Hint: Vi ønsker å finne en vektor $\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}$ som ikke er en lineærkombinasjon av 
+$
+\begin{bmatrix}
+	1\\
+	5\\
+	-3
+\end{bmatrix}$ og~$
+\begin{bmatrix}
+	4\\
+	18\\
+	4
+\end{bmatrix}$. Vektoren skal altså \emph{ikke} tilfredstille likningen 
+$$x
+\begin{bmatrix}
+1\\
+5\\
+-3
+\end{bmatrix}+y
+\begin{bmatrix}
+4\\
+18\\
+4
+\end{bmatrix}=
+\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix},$$
+som har totalmatrise
+$$\begin{bmatrix}
+1  & 4  & a\\
+5  & 18 & b\\
+-3 & 4  & c
+\end{bmatrix}.$$ Radreduser og velg $a$, $b$ og~$c$ slik at systemet ikke har løsning. Eksempelvis fungerer $a=0$, $b=1$ og~$c=0$.
+\end{punkt}
+\begin{punkt}
+Hint: Som i $\textbf{a)}$, men nå er totalmatrisen
+$$\begin{bmatrix}
+1 & 2 & 3 & a\\
+2 & 3 & 4 & b\\
+3 & 4 & 5 & c\\
+4 & 5 & 6 & d
+\end{bmatrix}.$$
+\end{punkt}
+\end{losning}
 
 
 \begin{oppgave}
@@ -64,3 +228,74 @@ r(x) = a \cdot p(x) + b \cdot q(x) + c \cdot t(x)
 \]
 \end{punkt}
 \end{oppgave}
+\begin{losning}
+Introduksjon til løsning: Vi ønsker å beskrive problemet med lineær algebra. Et polynom er entydig bestemt av koeffisientene sine. Derfor kan all informasjonen om et andregradspolynom $p(x)=ax^2+bx+c$ lagres i vektoren $\V{p}=\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}.$ Summen av to andregradspolynom $$ax^2+bx+c$$ og $$dx^2+ex+f$$ kan skrives $$(a+d)x^2+(b+e)x+(c+f).$$ Vi summerer altså koeffisientene foran tilhørende potens av $x$. Dette svarer akkurat til addisjon av tilhørende vektorer: $$\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}+\begin{bmatrix}
+d\\
+e\\
+f
+\end{bmatrix}=\begin{bmatrix}
+a+d\\
+b+e\\
+c+f
+\end{bmatrix}.$$ Tilsvarende blir en konstant multiplisert med et andregradspolynom multiplisert i hver koeffisient: $$k\cdot(ax^2+bx+c)=(k\cdot a)x^2+(k\cdot b)x+(k\cdot c),$$ som svarer til skalarmultiplikasjon av tilhørende vektor: $$k\cdot \begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}=\begin{bmatrix}
+k\cdot a\\
+k\cdot b\\
+k\cdot c
+\end{bmatrix}.$$
+\begin{punkt}
+I dette lineær algebra-språket blir spørsmålet om $\V{s}=\begin{bmatrix}
+1\\
+8\\
+2
+\end{bmatrix}$ er en lineærkombinasjon av $\V{p}=\begin{bmatrix}
+1\\
+5\\
+-3
+\end{bmatrix}$ og $\V{q}=\begin{bmatrix}
+4\\
+18\\
+4
+\end{bmatrix}.$ Spørsmålet er altså om likningen $$x\begin{bmatrix}
+1\\
+5\\
+-3
+\end{bmatrix}+y\begin{bmatrix}
+4\\
+18\\
+4
+\end{bmatrix}=\begin{bmatrix}
+1\\
+8\\
+2
+\end{bmatrix},$$ 
+
+som svarer til totalmatrisen $$\begin{bmatrix}
+1  & 4  & 1\\
+5  & 18 & 8\\
+-3 & 4  & 2
+\end{bmatrix},$$ har en løsning. Svaret er nei.
+\end{punkt}
+\begin{punkt}
+Hint: I lineær algebra-språk skal du finne en vektor $\V{t}$ slik at alle vektorer $\V{r}$ kan skrives som en lineærkombinasjon av $\V{p}$, $\V{q}$ og~$\V{t}$. La $\V{t}$ være løsningen du fant i oppgave \textbf{3.3} del \textbf{a)}. Du kan nå sjekke at likningen $$x\V{p}+y\V{q}+z\V{t}=\V{r}$$ har en entydig løsning for alle valg av vektorer $\V{r}=\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}.$ Det tilhørende polynomet $t$ - til $\V{t}$ - er altså en løsning på oppgaven.
+
+Merk: Grunnen til at $\V{t}$ fungerer er at den er lineært uavhengig av $\V{p}$ og~$\V{q}$. Derfor får vi tre lineært uavhengige vektorer som til sammen utspenner $\mathbb{R}^3.$
+\end{punkt}
+\end{losning}
+
+
