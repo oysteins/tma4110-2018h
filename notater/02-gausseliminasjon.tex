@@ -33,30 +33,30 @@ er radekvivalente.
 Disse matrisene er radekvivalente, siden vi får den andre matrisen fra
 den første ved å gange øverste rad med~$4$:
 \begin{align*}
-\begin{bmatrix}
- 2 & 5 \\
- 1 & 7
-\end{bmatrix}
+\begin{amatrix}{2}
+ 2 & 5 & 0 \\
+ 1 & 7 & 4
+\end{amatrix}
 &\roweq
-\begin{bmatrix}
- 8 & 20 \\
- 1 &  7
-\end{bmatrix}
+\begin{amatrix}{2}
+ 8 & 20 & 0 \\
+ 1 &  7 & 4
+\end{amatrix}
 \end{align*}
 Merk at vi også kan gå motsatt vei: Ved å gange øverste rad i den
 andre matrisen med $1/4$ får vi tilbake den første matrisen.
 
 Disse to matrisene er også radekvivalente:
 \begin{align*}
-\begin{bmatrix}
- 3 & 1 \\
- 9 & 5
-\end{bmatrix}
+\begin{amatrix}{2}
+ 3 & 1 & 2 \\
+ 9 & 5 & 7
+\end{amatrix}
 &\roweq
-\begin{bmatrix}
- 3 & 1 \\
- 0 & 2
-\end{bmatrix}
+\begin{amatrix}{2}
+ 3 & 1 & 2 \\
+ 0 & 2 & 1
+\end{amatrix}
 \end{align*}
 Her har vi brukt den andre typen radoperasjon: Vi la til $-3$ ganger
 øverste rad i nederste rad for å komme fra den første matrisen til den
@@ -166,9 +166,10 @@ rad i andre rad, legge til $-2$ ganger første rad i tredje rad, bytte
 andre og tredje rad, og legge til $-3$ ganger andre rad i tredje rad.
 
 Den siste matrisen her er på det som kalles trappeform, og da er det
-(som vi så i eksempel~2.5) lett å finne løsningen.  Hvis vi vil
-gjøre det enda lettere, kan vi fortsette med radoperasjoner til vi
-oppnår det som kalles \emph{redusert trappeform}:
+(som vi så i eksempel~\ref{ex:gausseliminasjon}) lett å finne
+løsningen.  Hvis vi vil gjøre det enda lettere, kan vi fortsette med
+radoperasjoner til vi oppnår det som kalles \emph{redusert
+  trappeform}:
 \begin{align*}
 \begin{amatrix}{3}
 1 & 2 & -2 & -5 \\
@@ -438,7 +439,7 @@ Vi kan altså finne løsninger av systemet ved å sette $x_2$ og~$x_4$
 til å være hva vi vil, og deretter bruke disse to likhetene til å
 bestemme $x_1$ og~$x_3$.
 
-Hvis vi for eksempel velger å sette $x_2 = 0$ og $x_4 = 1$, så får vi
+Hvis vi for eksempel velger $x_2 = 0$ og $x_4 = 1$, så får vi
 følgende løsning:
 \[
 \left\{
@@ -472,13 +473,16 @@ $}
 Variabler som vi kan sette til hva vi vil, slik som $x_2$ og~$x_4$ i
 eksempelet over, kalles \defterm{frie variabler}.
 
+\medskip
+
 Når vi løser et lineært likningssystem, og har funnet ut at det har
 minst én løsning, så er det to muligheter.  Den ene muligheten er at
 vi ikke får noen frie variabler (slik som i
 eksempel~\ref{ex:gausseliminasjon1}).  Da har systemet entydig
 løsning.  Den andre muligheten er at det er en eller flere frie
-variabler.  Da har systemet uendelig mange løsninger, siden hver av de
-frie variablene kan settes til å være et hvilket som helst tall.
+variabler (slik som i eksempel~\ref{ex:gausseliminasjon3}).  Da har
+systemet uendelig mange løsninger, siden hver av de frie variablene
+kan settes til å være et hvilket som helst tall.
 
 Dette betyr at det ikke er mulig at vi får for eksempel to løsninger,
 eller tre løsninger, og så videre.  Om det først er mer enn én
@@ -498,7 +502,75 @@ sant:
 
 \section*{Valgfrihet}
 
-Når vi gausseliminerer har vi en viss grad av valgfrihet.
-(TODO)
+Når vi gausseliminerer har vi en viss grad av valgfrihet.  Det som
+står fast er hva vi har lov til å gjøre, nemlig de tre typene
+radoperasjoner, og hva vi vil ende opp med, nemlig (redusert)
+trappeform.  Nøyaktig hvordan vi bruker radoperasjoner for å komme
+frem kan vi velge selv.
+
+Vi tar et enkelt eksempel for å illustrere dette.
+
+\begin{ex}
+Anta at vi vil gausseliminere denne totalmatrisen:
+\[
+\begin{amatrix}{4}
+0 & 2 & 4 & 1 & 7 \\
+3 & 8 & 2 & 0 & 4 \\
+5 & 9 & 2 & 4 & 4
+\end{amatrix}
+\]
+Her er vi nødt til å bytte øverste rad med en av de to andre for å få
+pivotelementet i første rad på riktig sted.  Men vi velger selv
+hvilken av de to radene vi vil flytte til toppen.
+\end{ex}
+
+Vi har også noe frihet når det gjelder valg av frie variabler.
+
+\begin{ex}
+I eksempel~\ref{ex:gausseliminasjon3} endte vi opp med at de to
+variablene $x_2$ og~$x_4$ var frie.  Men vi kunne også ha valgt å la
+$x_1$ og~$x_3$ være frie, som vi skal se nå.
+
+Vi hadde forenklet systemet til følgende:
+\[
+\left\{
+\begin{aligned}
+x_1 &= - 3 x_2 - 7 x_4 + 6 \\
+x_3 &= 2 x_4 + 5
+\end{aligned}
+\right.
+\]
+Vi kan løse den andre likningen her for~$x_4$ og få:
+\[
+x_4 = \frac{x_3 - 5}{2}
+%\frac{1}{2} x_3 - \frac{5}{2}
+\]
+Deretter kan vi sette inn dette i den første likningen og løse
+for~$x_2$:
+\begin{align*}
+x_2
+&= \frac{- x_1 - 7 x_4 + 6}{3} \\
+&= \frac{- x_1 - \frac{7}{2} (x_3 - 5) + 6}{3} \\
+&= - \frac{1}{3} x_1 - \frac{7}{6} x_3 + \frac{47}{6}
+\end{align*}
+Hvis vi nå lar $x_1 = s$ og $x_3 = t$, så har vi følgende generelle
+løsning:
+\[
+\left\{
+\begin{aligned}
+x_1 &= s \\
+x_2 &= - \frac{1}{3} s - \frac{7}{6} t + \frac{47}{6} \\
+x_3 &= t \\
+x_4 &= \frac{1}{2} x_3 - \frac{5}{2}
+\end{aligned}
+\right.
+\]
+Dette ser annerledes ut enn det vi fikk i
+eksempel~\ref{ex:gausseliminasjon3}, men det beskriver nøyaktig de
+samme løsningene.  (Du kan for eksempel sjekke at hvis vi her setter
+$s=-1$ og~$t=7$, så får vi den samme løsningen som da vi valgte
+$x_2=0$ og~$x_4=1$ i eksempel~\ref{ex:gausseliminasjon3}).
+\end{ex}
+
 
 \kapittelslutt
