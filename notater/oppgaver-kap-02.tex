@@ -54,7 +54,28 @@ $
 $
 \end{punkt}
 \begin{punkt}
-(TODO: system med uendelig mange løsninger)
+% 1 0 0 4
+% 0 1 2 0
+% 0 0 0 0
+% ---
+% 1 3 6 4
+% 0 2 4 0
+% 0 0 0 0
+% ---
+% 1 3  6 4
+% 2 8 16 8
+% 0 0  0 0
+% ---
+% 1 3  6 4
+% 2 8 16 8
+% 2 6 12 8
+$
+\systeme{
+  x + 3y +  6z = 4,
+ 2x + 8y + 16z = 8,
+ 2x + 6y + 12z = 8
+}
+$
 \end{punkt}
 \begin{punkt}
 (TODO: system med ingen løsninger)
@@ -113,46 +134,6 @@ Sett opp et lineært likningssystem for $a$, $b$ og~$c$.
 \end{punkt}
 \begin{punkt}
 Løs systemet, og finn andregradspolynomet som går gjennom alle punktene.
-\end{punkt}
-\end{oppgave}
-
-
-\begin{oppgave}
-% 1  4  1
-% 0 -2  3
-% 0  0 17
-% ---
-% 1  4  1
-% 0 -2  3
-% 0  8  5
-% ---
-% 1  4  1
-% 0 -2  3
-%-3 -4  2
-% ---
-% 1  4  1
-% 5 18  8
-%-3  4  2
-La $p$ og~$q$ være følgende polynomer:
-\begin{align*}
-p(x) &= x^2 + 5x - 3 \\
-q(x) &= 4x^2 + 18x + 4
-\end{align*}
-\begin{punkt}
-La $s$ være polynomet $s(x) = x^2 + 8x + 2$.  Finnes det konstanter
-$a$ og~$b$ slik at
-\[
-s(x) = a \cdot p(x) + b \cdot q(x)
-\]
-for alle~$x$?
-\end{punkt}
-\begin{punkt}
-Finn et andregradspolynom $t$ som oppfyller følgende: For hvert
-andregradspolynom $r$ skal det være mulig å finne konstanter $a$, $b$
-og~$c$ slik at
-\[
-r(x) = a \cdot p(x) + b \cdot q(x) + c \cdot t(x)
-\]
 \end{punkt}
 \end{oppgave}
 
