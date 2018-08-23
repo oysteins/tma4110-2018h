@@ -1,0 +1,178 @@
+\input{kapittel}
+
+\kapittel{4}{Lineær uavhengighet}
+\label{ch:linear-uavhengighet}
+
+
+
+\begin{defn}
+La $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ være vektorer i $\R^m$.
+Disse vektorene er \defterm{lineært uavhengige} dersom likningen
+\[
+x_1 \V{v}_1 + x_2 \V{v}_2 + \cdots + x_n \V{v}_n = \V{0}
+\]
+ikke har andre løsninger enn den trivielle løsningen
+$x_1 = x_2 = \cdots = x_n = 0$.
+
+I motsatt tilfelle kalles de \defterm{lineært avhengige}.
+\end{defn}
+
+
+\begin{thm}
+La $A$ være en matrise.  Følgende påstander er ekvivalente:
+\begin{enumerate}
+\item Kolonnene i $A$ er lineært uavhengige.
+\item Likningen $A \V{x} = \V{0}$ har kun den trivielle løsningen.
+\item Vi får ingen frie variabler når vi løser $A \V{x} = \V{0}$.
+\item Når vi gausseliminerer $A$, får vi et lederelement i hver kolonne.
+\end{enumerate}
+\end{thm}
+
+Gitt vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^m$.  For å
+sjekke om de er lineært uavhengige:
+\begin{enumerate}
+\item Lag en matrise
+$A = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots &
+\V{v}_n \end{bmatrix}$ med disse vektorene som kolonner.
+\item Gausseliminer $A$ til trappeform.
+\item Hvis hver kolonne inneholder et lederelement, er vektorene lineært uavhengige.
+Ellers er de lineært avhengige.
+\end{enumerate}
+
+
+\begin{ex}
+Er disse vektorene lineært uavhengige?
+\[
+\V{v}_1 = \vvvv{3}{9}{3}{3}\quad
+\V{v}_2 = \vvvv{2}{7}{2}{4}\quad
+\V{v}_3 = \vvvv{8}{31}{12}{22}
+\]
+\[
+\begin{bmatrix}
+3 & 2 & 8 \\
+9 & 7 & 31 \\
+3 & 2 & 12 \\
+3 & 4 & 22
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+3 & 2 & 8 \\
+0 & 1 & 7 \\
+0 & 0 & 4 \\
+0 & 0 & 0
+\end{bmatrix}
+\]
+Det er lederelementer i alle kolonner.  Dermed er $\V{v}_1$,
+$\V{v}_2$ og $\V{v}_3$ lineært uavhengige.
+\end{ex}
+
+
+\begin{ex}
+Er disse vektorene lineært uavhengige?
+\[
+\V{v}_1 = \vvvv{5}{10}{5}{0}\quad
+\V{v}_2 = \vvvv{3}{7}{5}{4}\quad
+\V{v}_3 = \vvvv{2}{6}{6}{8}
+\]
+
+\[
+\begin{bmatrix}
+5 & 3 & 2 \\
+10 & 7 & 6 \\
+5 & 5 & 6 \\
+0 & 4 & 8
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+5 & 3 & 2 \\
+0 & 1 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\]
+Siste kolonne har ikke noe lederelement.  Dermed er $\V{v}_1$,
+$\V{v}_2$ og $\V{v}_3$ lineært avhengige.
+\end{ex}
+
+
+\begin{ex}
+Er disse vektorene lineært uavhengige?
+\[
+\V{v}_1 = \vvv{8}{7}{4}\quad
+\V{v}_2 = \vvv{14}{-2}{5}\quad
+\V{v}_3 = \vvv{3}{1}{0}\quad
+\V{v}_4 = \vvv{7}{5}{11}\quad
+\]
+
+\[
+\begin{bmatrix}
+8 & 14 & 3 & 7 \\
+7 & -2 & 1 & 5 \\
+4 & 5 & 0 & 11
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+? & ? & ? & ? \\
+? & ? & ? & ? \\
+? & ? & ? & ?
+\end{bmatrix}
+\]
+Kan ikke få lederelement i alle kolonnene.  Dermed er
+$\V{v}_1$, $\V{v}_2$, $\V{v}_3$ og $\V{v}_4$ lineært avhengige.
+\end{ex}
+
+
+\begin{ex}
+Er disse vektorene lineært uavhengige?
+\[
+\V{v}_1 = \vvv{8}{2}{-12}\quad
+\V{v}_2 = \vvv{4}{1}{-6}
+\]
+
+\[
+1 \cdot \V{v}_1 - 2 \cdot \V{v}_2 = \V{0}
+\]
+Vektorene $\V{v}_1$ og $\V{v}_2$ er lineært avhengige.
+\end{ex}
+
+
+
+\begin{thm}
+To vektorer $\V{v}_1$ og $\V{v}_2$ er lineært uavhengige hvis og bare
+hvis ingen av dem er lik en skalar ganger den andre.
+\end{thm}
+
+Med andre ord: De er lineært uavhengige hvis de ikke ligger på en rett
+linje gjennom origo.
+
+For to vektorer i $\R^2$ er det to muligheter: Enten er de lineært
+avhengige, eller så utspenner de hele~$\R^2$.
+
+
+
+\begin{thm}
+Gitt $n$ vektorer  $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^m$.  Hvis
+\begin{enumerate}
+\item en av vektorene er en lineærkombinasjon av de andre, eller
+\item en av vektorene er $\V0$, eller
+\item $n > m$,
+\end{enumerate}
+så er vektorene lineært avhengige.
+\end{thm}
+
+
+
+\begin{thm}
+Gitt $n$ vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^n$.
+
+Da er de lineært uavhengige hvis og bare hvis de utspenner hele $\R^n$,
+altså hvis og bare hvis
+\[
+\Span \{ \V{v}_1, \V{v}_2, \ldots, \V{v}_n \} = \R^n.
+\]
+\end{thm}
+
+
+
+
+\kapittelslutt
