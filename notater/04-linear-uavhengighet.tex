@@ -4,6 +4,51 @@
 \label{ch:linear-uavhengighet}
 
 
+\section*{Definisjonen av lineær uavhengighet}
+
+Vi starter med et eksempel:
+
+\begin{ex}
+La $\V{u}$, $\V{v}$ og~$\V{w}$ være følgende tre vektorer i~$\R^3$:
+\[
+\V{u} = \vvv{4}{4}{9}
+\qquad
+\V{v} = \vvv{1}{1}{0}
+\qquad
+\V{w} = \vvv{1}{1}{1}
+\]
+Disse vektorene oppfyller følgende likhet (det er lett å sjekke):
+\[
+\V{u} = -5 \cdot \V{v} + 9 \cdot \V{w}
+\]
+En slik lineær likhet som knytter sammen vektorer tenker vi på som en
+«avhengighet» mellom vektorene, og vi sier at vektorene $\V{u}$,
+$\V{v}$ og~$\V{w}$ er lineært avhengige fordi det finnes en slik
+sammenheng mellom dem.
+
+Vi kan også skrive likheten vår på følgende måte ved å sette alle
+vektorene på samme side av likhetstegnet:
+\[
+\V{u} + 4 \cdot \V{v} + 9 \cdot \V{w} = \V{0}
+\]
+Det vi har gjort nå er å skrive nullvektoren som en lineærkombinasjon
+av $\V{u}$, $\V{v}$ og~$\V{w}$.  
+\end{ex}
+
+Hvis vi har en liste $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ med
+vektorer, så er det klart at nullvektoren~$\V{0}$ er en
+lineærkombinasjon av disse, fordi vi har likheten
+\[
+0 \cdot \V{v}_1 + 0 \cdot \V{v}_2 + \cdots + 0 \cdot \V{v}_n = \V{0}
+\]
+der vi har satt alle vektene til å være~$0$.
+
+Men spørsmålet vi kan stille er: Kan vi også skrive $\V{0}$ som en
+lineærkombinasjon av vektorene våre på en annen måte, der ikke alle
+vektene er~$0$?  I eksempelet over kunne vi det, men i andre tilfeller
+er det ikke mulig.  Dette er det vi vil bruke som definerende egenskap
+for å si at noen gitte vektorer enten er lineært avhengige eller
+lineært uavhengige.
 
 \begin{defn}
 La $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ være vektorer i $\R^m$.
@@ -17,6 +62,12 @@ $x_1 = x_2 = \cdots = x_n = 0$.
 I motsatt tilfelle kalles de \defterm{lineært avhengige}.
 \end{defn}
 
+\begin{ex}
+% TODO: vektorer som det er lett å se at er lineært uavhengige (uten å gausseliminere)
+\end{ex}
+
+
+\section*{Lineær uavhengighet og matriser}
 
 \begin{thm}
 La $A$ være en matrise.  Følgende påstander er ekvivalente:
@@ -168,7 +219,7 @@ Gitt $n$ vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^n$.
 Da er de lineært uavhengige hvis og bare hvis de utspenner hele $\R^n$,
 altså hvis og bare hvis
 \[
-\Span \{ \V{v}_1, \V{v}_2, \ldots, \V{v}_n \} = \R^n.
+\Sp \{ \V{v}_1, \V{v}_2, \ldots, \V{v}_n \} = \R^n.
 \]
 \end{thm}
 
