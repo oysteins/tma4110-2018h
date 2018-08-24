@@ -3,6 +3,478 @@
 \kapittel{3}{Vektor- og matriselikninger}
 \label{ch:vektor-og-matriselikninger}
 
-(inkluder Mortens tekst her)
+
+
+
+
+
+\noindent%
+
+\noindent
+I denne uken skal vi bruke enkel vektorregning til å analysere lineære ligningssystemer. Vi skal ha et spesielt fokus på $\mathbb{R}^3$, for det går an å visualisere; klarer man det, går det lettere å abstrahere til $\mathbb{R}^n$. Senere i kurset skal vi se hvordan noen av konseptene under kan generaliseres, slik at vi kan konstruere teori som kan behandle matematiske emner som tilsynelatende ser veldig forskjellige ut, men følger akkurat de samme lovene. 
+
+\section*{Vektorregning}
+Inntil videre skal vi skrive vektorer på høykant
+\begin{align*}
+\mathbf{x}=
+\begin{bmatrix}
+x_1  \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix},
+\end{align*}
+kalt søylevektor. Du kan også tenke på dette som et punkt i $\mathbb{R}^n$. De to viktigste regnereglene for vektorer er skalarmultiplikasjon
+\begin{align*}
+a\mathbf{x}=
+\begin{bmatrix}
+ax_1  \\
+ax_2 \\
+\vdots \\
+ax_n
+\end{bmatrix}
+\end{align*}
+og vektoraddisjon
+\begin{align*}
+\mathbf{x}+\mathbf{y}=
+\begin{bmatrix}
+x_1  \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}
++
+\begin{bmatrix}
+y_1  \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_1 + y_1  \\
+x_2 + y_2\\
+\vdots \\
+x_n + y_n
+\end{bmatrix}.
+\end{align*}
+En sammensetning av disse to operasjonene
+\begin{align*}
+a\mathbf{x}+b\mathbf{y}=
+a
+\begin{bmatrix}
+x_1  \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}
++
+b
+\begin{bmatrix}
+y_1  \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+ax_1 + by_1  \\
+ax_2 + by_2\\
+\vdots \\
+ax_n + by_n
+\end{bmatrix}
+\end{align*}
+kalles en \emph{lineærkombinasjon}. Skalarene $a$ og $b$ kalles vekter. Hvis vi har $m$ vektorer $\mathbf{x}_k$, definerer vi \emph{det lineære spennet}, eller
+\begin{equation*}
+\text{Sp}\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_m\}
+\end{equation*}
+som alle lineærkombinasjoner av vektorene, altså alle vektorer på formen
+\begin{equation*}
+a_1\mathbf{x}_1+a_2\mathbf{x}_2+...+a_m\mathbf{x}_m.
+\end{equation*}
+\begin{ex}
+	\begin{equation*}
+	3\begin{bmatrix}1 \\  2 \\ 3 \end{bmatrix}+ 2\begin{bmatrix}4 \\  5 \\ 6 \end{bmatrix}=\begin{bmatrix}11 \\  16 \\ 21 \end{bmatrix}.
+	\end{equation*}
+\end{ex}
+%\begin{center}
+%\begin{tikzpicture}[scale=.9]
+%\draw[->] (-1.5,0) -- (6.5,0);
+%\draw[->] (0,-1.5) -- (0,5.5);
+%\draw[->] (0,0) -- (1,2);
+%\draw[->] (0,0) -- (2,1);
+%\draw[->] (0,0) -- (3,3);
+%\draw[->] (0,0) -- (5,4);
+%\foreach \x in {-1,1,2,3,4,5,6}
+%\draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+%\foreach \y in {-1,1,2,3,4,5}
+%\draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+%\node[anchor=west] at (.2,3.5) {$\begin{bmatrix} 1 \\ 3\end{bmatrix}$};
+%\node[anchor=west] at (1,1.7) {$\begin{bmatrix} 2 \\ 4\end{bmatrix}$};
+%\node[anchor=west] at (3,1) {$3\begin{bmatrix} 1 \\ 3\end{bmatrix}-2\begin{bmatrix} 2 \\ 4\end{bmatrix}=\begin{bmatrix} -1 \\ -2\end{bmatrix}$};
+%\end{tikzpicture}
+%\end{center}
+\begin{ex}
+	\noindent Spennet til vektorene i eksemplet over, er alle vektorer på formen
+	\begin{equation*}
+	a\begin{bmatrix}1 \\  2 \\ 3 \end{bmatrix}+ b\begin{bmatrix}4 \\  5 \\ 6 \end{bmatrix}.
+	\end{equation*}
+\end{ex}
+
+
+\section*{Vektorligninger}
+Ved å ta i bruk lineærkombinasjon, kan vi skrive ligningssystemet fra forrige uke
+\[
+\systeme{
+	x + 2y - 2z = -5,
+	x + 5y + 9z = 33,
+	2x + 5y -  z = 0
+}
+\]
+som vektorligningen
+\begin{equation*}
+x_1
+\begin{bmatrix}
+1     \\
+1   \\
+2   
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+2   \\
+5   \\
+5    
+\end{bmatrix}
++
+x_3
+\begin{bmatrix}
+-2   \\
+9 \\
+-1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+-5   \\
+33 \\
+0 
+\end{bmatrix}.
+\end{equation*}
+Dette gir oss en ny måte å se ligningssystemer på: oppgaven er å finne vektene $x_{1}$, $x_{2}$  og $x_{3}$ slik at s{\o}ylene i matrisen line{\ae}rkombineres til {\aa} bli lik h{\o}yresiden. 
+\begin{ex}
+	Løsningen til systemet over er
+	\begin{equation*}
+	\begin{bmatrix}
+	x_1  \\
+	x_2 \\
+	x_3
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	7  \\
+	-2 \\
+	4
+	\end{bmatrix}
+	\end{equation*}
+	og du kan verifisere at 
+	\begin{equation*}
+	7
+	\begin{bmatrix}
+	1     \\
+	1   \\
+	2   
+	\end{bmatrix}
+	-2
+	\begin{bmatrix}
+	2   \\
+	5   \\
+	5    
+	\end{bmatrix}
+	+
+	4
+	\begin{bmatrix}
+	-2   \\
+	9 \\
+	-1 
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	-5   \\
+	33 \\
+	0 
+	\end{bmatrix}.
+	\end{equation*}
+\end{ex}
+
+\section*{Matriseligninger}
+Produktet av en $n\times n$-matrise og en søylevektor i $\mathbb{R}^n$ defineres som følgende lineærkombinasjon av matrisens søyler
+\begin{equation*}
+\begin{bmatrix}
+a_{11}    &  \cdots & a_{1n}   \\
+\vdots  & \ddots & \vdots\\
+a_{n1}  & \cdots &  a_{nn}  
+\end{bmatrix}
+\begin{bmatrix}
+x_1   \\
+x_2 \\
+\vdots \\
+x_n 
+\end{bmatrix}=
+x_1
+\begin{bmatrix}
+a_{11}     \\
+a_{21}   \\
+\vdots \\
+a_{n1}   
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+a_{12}    \\
+a_{22}    \\
+\vdots \\
+a_{n2}    
+\end{bmatrix}
++
+\cdots
++
+x_n
+\begin{bmatrix}
+a_{1n}   \\
+a_{2n}  \\
+\vdots \\
+a_{3n}  
+\end{bmatrix}.
+\end{equation*}
+\begin{ex}
+	\begin{equation*}
+	\begin{bmatrix}
+	1  &  2  &  -2   \\
+	1  & 5  &  9  \\
+	2  & 5  &  -1  
+	\end{bmatrix}
+	\begin{bmatrix}
+	7   \\
+	-2 \\
+	4 
+	\end{bmatrix}=
+	7
+	\begin{bmatrix}
+	1     \\
+	1   \\
+	2   
+	\end{bmatrix}
+	-
+	2
+	\begin{bmatrix}
+	2   \\
+	5   \\
+	5    
+	\end{bmatrix}
+	+
+	4
+	\begin{bmatrix}
+	-2   \\
+	9 \\
+	-1 
+	\end{bmatrix}.
+	\end{equation*}
+\end{ex}
+\noindent Nå kan vi skrive ligningssystemet fra forrige uke som
+\begin{equation*}
+\begin{bmatrix}
+1  &  2  &  -2   \\
+1  & 5  &  9  \\
+2  & 5  &  -1  
+\end{bmatrix}
+\begin{bmatrix}
+x_1   \\
+x_2 \\
+x_3 
+\end{bmatrix}=
+\begin{bmatrix}
+-5   \\
+33 \\
+0 
+\end{bmatrix}.
+\end{equation*}
+Dersom vi skriver 
+\begin{equation*}
+A=
+\begin{bmatrix}
+1  &  2  &  -2   \\
+1  & 5  &  9  \\
+2  & 5  &  -1  
+\end{bmatrix},
+\end{equation*}
+\begin{equation*}
+\mathbf{x}=
+\begin{bmatrix}
+x_1  \\
+x_2 \\
+x_3
+\end{bmatrix}
+\end{equation*}
+og
+\begin{equation*}
+\mathbf{b}=
+\begin{bmatrix}
+-5   \\
+33 \\
+0 
+\end{bmatrix},
+\end{equation*} 
+kan vi innføre den kompakte notasjonen
+\begin{equation*}
+A\mathbf{x}=\mathbf{b}.
+\end{equation*}
+
+\section*{Eksistens og entydighet av løsninger II}
+Ligningssystemer deler seg naturlig i tre kategorier; de som har en unik løsning, de som har ingen løsning, og de som har uendelig mange løsninger. Vi skal nå gi en geometrisk illustrasjon av hva som skjer i de forskjellige  tilfellene. 
+
+\begin{ex}
+	Hvis vi utf{\o}rer Gauss-eliminasjon p{\aa} systemet
+	\begin{equation*}
+	\begin{bmatrix}2 & 3& 4 \\  3& 4 & 5  \\ 4 &5 & 6 \end{bmatrix}\begin{bmatrix}x_{1} \\  x_{2}\\ x_{3} \end{bmatrix}=
+	\begin{bmatrix}4 \\ 5\\ 3 \end{bmatrix},
+	\end{equation*}
+	f{\aa}r vi 
+	\begin{equation*}
+	\begin{bmatrix}2 & 3& 4 \\  0& 1 & 2  \\ 0 & 1 & 2 \end{bmatrix}\begin{bmatrix}x_{1} \\  x_{2}\\ x_{3} \end{bmatrix}=
+	\begin{bmatrix}4 \\ 2\\ 5 \end{bmatrix}.
+	\end{equation*}
+	De to nederste linjene sier at $x_{2}+2x_{3}$ skal v{\ae}re b{\aa}de 2 og 5. Dette er åpenbart umulig, og systemet har ingen løsning. Grunnen er at søylene ligger i samme i plan i $\mathbb{R}^{3}$, og siden høyresiden ikke ligger i dette planet, er det umulig {\aa} skrive den som en line{\ae}rkombinasjon av disse vektorene.
+\end{ex}
+
+\begin{ex}
+	Hvis vi derimot utf{\o}rer Gauss-eliminasjon p{\aa} systemet
+	\begin{equation*}
+	\begin{bmatrix}2 & 3& 4 \\  3& 4 & 5  \\ 4 &5 & 6 \end{bmatrix}\begin{bmatrix}x_{1} \\  x_{2}\\ x_{3} \end{bmatrix}=
+	\begin{bmatrix}9 \\ 12\\ 15 \end{bmatrix},
+	\end{equation*}
+	f{\aa}r vi 
+	\begin{equation*}
+	\begin{bmatrix}2 & 3& 4 \\  0& 1 & 2  \\ 0 & 1 & 2 \end{bmatrix}\begin{bmatrix}x_{1} \\  x_{2}\\ x_{3} \end{bmatrix}=
+	\begin{bmatrix}9 \\ 3\\ 3 \end{bmatrix},
+	\end{equation*}
+	Nå er to nederste linjene identiske. Søylene i matrisen ligger som kjent i samme plan i $\mathbb{R}^{3}$, men nå ligger tilfeldigvis høyresiden også i dette planet, og systemet kan derfor løses. Hvis du ønsker å skrive en vektor i et plan som en lineærkombinasjon av tre andre vektorer i samme plan, har du uendelig mange måter å gjøre det på, og derfor har ligningssystemet uendelig mange løsninger.
+\end{ex}
+
+\begin{ex}
+	Ligningssystemet 
+	\begin{equation*}
+	\begin{bmatrix}
+	1  &  2  &  -2   \\
+	1  & 5  &  9  \\
+	2  & 5  &  -1  
+	\end{bmatrix}
+	\begin{bmatrix}
+	x_1   \\
+	x_2 \\
+	x_3 
+	\end{bmatrix}=
+	\begin{bmatrix}
+	-5   \\
+	33 \\
+	0
+	\end{bmatrix}.
+	\end{equation*}
+	har som kjent en unik løsning. Vi sier at søylene \emph{spenner ut} $\mathbb{R}^3$, siden alle punkter i $\mathbb{R}^3$ kan skrives som en unik lineærkombinasjon av dem. Merk at søylene i matrisen danner et parallellepiped med volum 2.
+\end{ex}
+
+\noindent Du kan avgjøre hvorvidt tre vektorer i $\mathbb{R}^3$ ligger i samme plan ved å beregne volumet til parallellepipedet spent ut av de tre vektorene. Dersom volumet blir 0, ligger de i samme plan. Dersom søylene i matrisen $A$ kalles $\mathbf{a}_1$, $\mathbf{a}_2$ og $\mathbf{a}_3$, kalles dette volumet \emph{determinanten} til $A$, og er gitt ved
+\begin{equation*}
+\det A= \mathbf{a}_1\cdot \mathbf{a}_2 \times \mathbf{a}_3.
+\end{equation*}
+\begin{ex}	 
+	\begin{equation*}
+	\det
+	\begin{bmatrix}
+	2  &  3  &  4   \\
+	3  & 4  &  5 \\
+	4  & 5  &  6 
+	\end{bmatrix}
+	=0.
+	\end{equation*}
+\end{ex}
+
+
+\noindent Presise kriterier for når et ligningssystem har én, ingen, eller mange løsninger, får vi ikke uten litt mer matematisk maskineri. Men et mentalt bilde av $3\times 3$-systemer kan vi lage oss. 
+\begin{itemize}
+	\item Hvis matrisens søyler danner et parallellepiped har systemet en unik løsning uansett høyreside.
+	\item Hvis matrisens søyler ligger i samme plan, og høyresiden ikke ligger i dette planet, har systemet ingen løsning.
+	\item Hvis matrisens søyler ligger i samme plan, og høyresiden ligger i dette planet, har systemet uendelig mange løsninger.
+\end{itemize}
+
+\section*{En forsmak på lineær uavhengighet}
+Hvis man har en samling vektorer, sier vi at de er lineært avhengige dersom en av vektorene i samlingen kan skrives som en lineærkombinasjon av de andre, for eksempel dersom tre vektorer i $\mathbb{R}^3$ ligger i samme plan.
+\begin{ex}	
+	Hvis du utfører gausseliminasjon på systemet
+	\begin{equation*}
+	\begin{bmatrix}
+	2  &  3  &  4 & 0   \\
+	3  & 4  &  5  & 0\\
+	4  & 5  &  6 & 0 
+	\end{bmatrix}
+	\end{equation*}
+	får du
+	\begin{equation*}
+	\begin{bmatrix}
+	2  &  3  &  4 & 0   \\
+	0  & 1  &  2  & 0\\
+	0  & 0 &  0 & 0 
+	\end{bmatrix}
+	\end{equation*}
+	altså at 
+	\[
+	\systeme{
+		2x + 3y + 4z = 0,
+		y + 2z = 0}.
+	\]
+	setter vi $z=s$, får vi $y=-2s$ av den siste ligningen, og $x=s$ av den første, slik at 
+	\begin{equation*}
+	\begin{bmatrix}
+	x_1  \\
+	x_2 \\
+	x_3
+	\end{bmatrix}
+	=
+	s
+	\begin{bmatrix}
+	1  \\
+	-2 \\
+	1
+	\end{bmatrix}
+	\end{equation*} 
+	er en løsning av systemet for vilkårlige $s$. Dette betyr at søylene i den opprinnelige matrisen er lineært avhengige. Vi dobbeltsjekker:
+	\begin{equation*}
+	\begin{bmatrix}
+	2  \\
+	3 \\
+	4
+	\end{bmatrix}
+	-2
+	\begin{bmatrix}
+	3  \\
+	4 \\
+	5
+	\end{bmatrix}
+	+
+	\begin{bmatrix}
+	4  \\
+	5 \\
+	6
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	0  \\
+	0 \\
+	0
+	\end{bmatrix}
+	\end{equation*}
+\end{ex}
+
+
+
 
 \kapittelslutt
