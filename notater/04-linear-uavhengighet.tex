@@ -67,31 +67,40 @@ I motsatt tilfelle kalles de \defterm{lineært avhengige}.
 \end{ex}
 
 
-\section*{Lineær uavhengighet og matriser}
-
-\begin{thm}
-La $A$ være en matrise.  Følgende påstander er ekvivalente:
-\begin{enumerate}
-\item Kolonnene i $A$ er lineært uavhengige.
-\item Likningen $A \V{x} = \V{0}$ har kun den trivielle løsningen.
-\item Vi får ingen frie variabler når vi løser $A \V{x} = \V{0}$.
-\item Når vi gausseliminerer $A$, får vi et lederelement i hver kolonne.
-\end{enumerate}
-\end{thm}
-
-Gitt vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^m$.  For å
-sjekke om de er lineært uavhengige:
-\begin{enumerate}
-\item Lag en matrise
-$A = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots &
-\V{v}_n \end{bmatrix}$ med disse vektorene som kolonner.
-\item Gausseliminer $A$ til trappeform.
-\item Hvis hver kolonne inneholder et lederelement, er vektorene lineært uavhengige.
-Ellers er de lineært avhengige.
-\end{enumerate}
-
+\section*{Lineær uavhengighet for to vektorer}
 
 \begin{ex}
+Er disse vektorene lineært uavhengige?
+\[
+\V{v}_1 = \vvv{8}{2}{-12}\quad
+\V{v}_2 = \vvv{4}{1}{-6}
+\]
+
+\[
+1 \cdot \V{v}_1 - 2 \cdot \V{v}_2 = \V{0}
+\]
+Vektorene $\V{v}_1$ og $\V{v}_2$ er lineært avhengige.
+\end{ex}
+
+\begin{thm}
+To vektorer $\V{v}_1$ og $\V{v}_2$ er lineært uavhengige hvis og bare
+hvis ingen av dem er lik en skalar ganger den andre.
+\end{thm}
+
+Med andre ord: De er lineært uavhengige hvis de ikke ligger på en rett
+linje gjennom origo.
+
+For to vektorer i $\R^2$ er det to muligheter: Enten er de lineært
+avhengige, eller så utspenner de hele~$\R^2$.
+
+
+
+
+
+\section*{Lineær uavhengighet og matriser}
+
+\begin{ex}
+% TODO: omformuler eksempelet, bruk som introduksjon til teoremet
 Er disse vektorene lineært uavhengige?
 \[
 \V{v}_1 = \vvvv{3}{9}{3}{3}\quad
@@ -116,6 +125,28 @@ Er disse vektorene lineært uavhengige?
 Det er lederelementer i alle kolonner.  Dermed er $\V{v}_1$,
 $\V{v}_2$ og $\V{v}_3$ lineært uavhengige.
 \end{ex}
+
+
+\begin{thm}
+La $A$ være en matrise.  Følgende påstander er ekvivalente:
+\begin{enumerate}
+\item Kolonnene i $A$ er lineært uavhengige.
+\item Likningen $A \V{x} = \V{0}$ har kun den trivielle løsningen.
+\item Vi får ingen frie variabler når vi løser $A \V{x} = \V{0}$.
+\item Når vi gausseliminerer $A$, får vi et lederelement i hver kolonne.
+\end{enumerate}
+\end{thm}
+
+Gitt vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^m$.  For å
+sjekke om de er lineært uavhengige:
+\begin{enumerate}
+\item Lag en matrise
+$A = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots &
+\V{v}_n \end{bmatrix}$ med disse vektorene som kolonner.
+\item Gausseliminer $A$ til trappeform.
+\item Hvis hver kolonne inneholder et lederelement, er vektorene lineært uavhengige.
+Ellers er de lineært avhengige.
+\end{enumerate}
 
 
 \begin{ex}
@@ -172,32 +203,6 @@ Kan ikke få lederelement i alle kolonnene.  Dermed er
 $\V{v}_1$, $\V{v}_2$, $\V{v}_3$ og $\V{v}_4$ lineært avhengige.
 \end{ex}
 
-
-\begin{ex}
-Er disse vektorene lineært uavhengige?
-\[
-\V{v}_1 = \vvv{8}{2}{-12}\quad
-\V{v}_2 = \vvv{4}{1}{-6}
-\]
-
-\[
-1 \cdot \V{v}_1 - 2 \cdot \V{v}_2 = \V{0}
-\]
-Vektorene $\V{v}_1$ og $\V{v}_2$ er lineært avhengige.
-\end{ex}
-
-
-
-\begin{thm}
-To vektorer $\V{v}_1$ og $\V{v}_2$ er lineært uavhengige hvis og bare
-hvis ingen av dem er lik en skalar ganger den andre.
-\end{thm}
-
-Med andre ord: De er lineært uavhengige hvis de ikke ligger på en rett
-linje gjennom origo.
-
-For to vektorer i $\R^2$ er det to muligheter: Enten er de lineært
-avhengige, eller så utspenner de hele~$\R^2$.
 
 
 
