@@ -1,0 +1,319 @@
+\input{kapittel}
+
+\kapittel{6}{Matriser}
+\label{ch:matriser}
+
+
+\section*{Definisjoner og notasjon}
+
+En \defterm{$m \times n$-matrise} er en rektangulær tabell med tall
+som har $m$~tall i høyden og $n$~tall i bredden:
+\[
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+\]
+\defterm{Kolonnene} i matrisen er følgende kolonnevektorer:
+\[
+\vvvv{a_{11}}{a_{21}}{\vdots}{a_{m1}}\qquad
+\vvvv{a_{12}}{a_{22}}{\vdots}{a_{m2}}\qquad
+\cdots\qquad
+\vvvv{a_{1n}}{a_{2n}}{\vdots}{a_{mn}}\qquad
+\]
+\defterm{Radene} i matrisen er følgende radvektorer:
+\begin{gather*}
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}
+\end{bmatrix}
+\\
+\begin{bmatrix}
+a_{21} & a_{22} & \cdots & a_{2n}
+\end{bmatrix}
+\\
+\vdots
+\\
+\begin{bmatrix}
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+\end{gather*}
+
+\begin{ex}
+Her er et eksempel på en $2 \times 3$-matrise:
+\[
+\begin{bmatrix}
+5 & 0 & -2 \\
+3 & 1 &  4
+\end{bmatrix}
+\]
+Kolonnene i denne matrisen er:
+\[
+\vv{5}{3},\quad
+\vv{0}{1}\quad\text{og}\quad
+\vv{-2}{4}
+\]
+Radene er:
+\[
+\begin{bmatrix}
+5 & 0 & -2
+\end{bmatrix}
+\quad\text{og}\quad
+\begin{bmatrix}
+3 & 1 &  4
+\end{bmatrix}
+\qedhere
+\]
+\end{ex}
+
+Noen ganger har vi en liste med vektorer, si
+\[
+\V{v}_1,\ \V{v}_2,\ \ldots,\ \V{v}_n,
+\]
+og vil lage en matrise som har disse vektorene som kolonner.
+Den matrisen kan vi skrive slik:
+\[
+\begin{bmatrix}
+\V{v}_1 & \V{v}_2 & \cdots & \V{v}_n
+\end{bmatrix}
+\]
+Hvis vektorene ligger i~$\R^m$, blir dette en $m \times n$-matrise.
+
+\begin{ex}
+La
+\[
+\V{v}_1 = \vvv{2}{0}{4}
+\qquad\text{og}\qquad
+\V{v}_2 = \vvv{1}{1}{2}
+\]
+være to vektorer i~$\R^3$.  Matrisen
+$\begin{bmatrix} \V{v}_1 & \V{v}_2 \end{bmatrix}$ med disse vektorene
+som kolonner blir da følgende $3 \times 2$-matrise:
+\[
+\begin{bmatrix} \V{v}_1 & \V{v}_2 \end{bmatrix}
+=
+\begin{bmatrix}
+2 & 1 \\
+1 & 0 \\
+2 & 4
+\end{bmatrix}
+\qedhere
+\]
+\end{ex}
+
+
+\section*{Produkt av matrise og vektor}
+
+La
+\[
+A =
+\begin{bmatrix}
+\V{a}_1 & \V{a}_2 & \cdots & \V{a}_n
+\end{bmatrix}
+\]
+være en $m \times n$-matrise med vektorene $\V{a}_1$, $\V{a}_2$,
+\ldots, $\V{a}_n$ som kolonner, og la
+\[
+\V{v} = \vn{v}{n}
+\]
+være en vektor i~$\R^n$.  Vi definerer produktet $A\V{v}$ av $A$
+og~$V$ som lineærkombinasjonen av kolonnene i~$A$ med tallene
+i~$\V{v}$ som vekter:
+\[
+A \V{v} = \V{a}_1 v_1 + \V{a}_2 v_2 + \cdots + \V{a}_n v_n
+\]
+Merk at produktet~$A \V{v}$ bare er definert når bredden av matrisen
+$A$ er lik høyden av vektoren~$\V{v}$.
+
+\begin{ex}
+Vi regner ut produktet av en $2 \times 3$-matrise og en vektor
+i~$\R^3$:
+\[
+\begin{bmatrix}
+5 & 0 & -2 \\
+3 & 1 &  4
+\end{bmatrix}
+\vvv{2}{-1}{3}
+=
+\vv{5}{3} \cdot 2 +
+\vv{0}{1} \cdot (-1) +
+\vv{-2}{4} \cdot 3
+=
+\vv{4}{17}
+\]
+Merk at resultatet blir en vektor i~$\R^2$.
+\end{ex}
+
+\begin{thm}
+Hvis $A$ er en $m \times n$-matrise, $\V{v}$ og~$\V{w}$ er vektorer
+i~$\R^n$ og $c$ er et tall, så har vi følgende likheter:
+\[
+A (\V{v} + \V{w}) = A \V{v} + A \V{w}
+\qquad\text{og}\qquad
+A (c \V{v}) = c (A \V{v})
+\]
+\end{thm}
+
+
+\section*{Sum av matriser}% og multiplikasjon med skalar}
+
+La $A$ og~$B$ være to $m \times n$-matriser:
+\[
+A =
+\begin{bmatrix}
+a_{11} & \cdots & a_{1n} \\
+a_{21} & \cdots & a_{2n} \\
+\vdots & \ddots & \vdots \\
+a_{m1} & \cdots & a_{mn}
+\end{bmatrix}
+\qquad
+B =
+\begin{bmatrix}
+b_{11} & \cdots & b_{1n} \\
+b_{21} & \cdots & b_{2n} \\
+\vdots & \ddots & \vdots \\
+b_{m1} & \cdots & b_{mn}
+\end{bmatrix}
+\]
+% \[
+% A =
+% \begin{bmatrix}
+% a_{11} & a_{12} & \cdots & a_{1n} \\
+% a_{21} & a_{22} & \cdots & a_{2n} \\
+% \vdots & \vdots & \ddots & \vdots \\
+% a_{m1} & a_{m2} & \cdots & a_{mn}
+% \end{bmatrix}
+% \qquad
+% B =
+% \begin{bmatrix}
+% b_{11} & b_{12} & \cdots & b_{1n} \\
+% b_{21} & b_{22} & \cdots & b_{2n} \\
+% \vdots & \vdots & \ddots & \vdots \\
+% b_{m1} & b_{m2} & \cdots & b_{mn}
+% \end{bmatrix}
+% \]
+Vi definerer summen $A+B$ på den mest åpenbare måten -- vi legger
+sammen tallene fra de to matrisene i hver posisjon, og får en ny
+$m \times n$-matrise:
+\[
+A + B =
+\begin{bmatrix}
+a_{11} + b_{11} & a_{12} + b_{12} & \cdots & a_{1n} + b_{1n} \\
+a_{21} + b_{21} & a_{22} + b_{22} & \cdots & a_{2n} + b_{2n} \\
+\vdots          & \vdots          & \ddots & \vdots          \\
+a_{m1} + b_{m1} & a_{m2} + b_{m2} & \cdots & a_{mn} + b_{mn} \\
+\end{bmatrix}
+\]
+
+Produktet av en matrise og et tall defineres også på den åpenbare
+måten:
+\[
+c A =
+\begin{bmatrix}
+c \cdot a_{11} & c \cdot a_{12} & \cdots & c \cdot a_{1n} \\
+c \cdot a_{21} & c \cdot a_{22} & \cdots & c \cdot a_{2n} \\
+\vdots         & \vdots         & \ddots & \vdots         \\
+c \cdot a_{m1} & c \cdot a_{m2} & \cdots & c \cdot a_{mn}
+\end{bmatrix}
+\]
+
+% \begin{ex}
+% TODO: nødvendig med eksempel?
+% \end{ex}
+
+\begin{thm}
+Hvis $A$ og~$B$ er $m \times n$-matriser, $\V{v}$ er en vektor
+i~$\R^n$ og $c$ er et tall, så har vi følgende likheter:
+\[
+(A + B) \V{v} = A \V{v} + B \V{v}
+\qquad\text{og}\qquad
+(c A) \V{v} = c (A \V{v})
+\]
+\end{thm}
+
+
+\section*{Matrisemultiplikasjon}
+
+Nå kommer vi til den viktigste av de aritmetiske operasjonene vi kan
+gjøre med matriser, nemlig \emph{matrisemultiplikasjon}.
+
+Det er litt mer komplisert å beskrive hvordan vi multipliserer
+matriser enn hvordan vi summerer dem.  Det er imidlertid en god grunn
+til at det er slik.  Vi kunne valgt å definere multiplikasjon av
+matriser på tilsvarende måte som sum, men det ville ikke blitt
+spesielt nyttig.  Vi vil nemlig at matrisemultiplikasjon skal oppføre
+seg pent sammen med multiplikasjon av matriser med vektorer.  Spesielt
+vil vi at følgende likhet skal holde:
+\[
+(AB) \V{v} = A (B \V{v})
+\]
+Vi vil altså at vi fritt skal kunne flytte parentesene, akkurat slik
+vi kan gjøre med et produkt av tre tall.
+
+Hvordan kan vi definere produkt av matriser slik at dette fungerer?
+La oss først se på et eksempel.
+
+\begin{ex}
+% TODO eksempel med 3x3 e.l.?
+\end{ex}
+
+\begin{ex}
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+\qquad
+B =
+\begin{bmatrix}
+b_{11} & b_{12} \\
+b_{21} & b_{22}
+\end{bmatrix}
+\]
+\[
+B \vv{1}{0} = \vv{b_{11}}{b_{21}}
+\]
+
+
+\[
+\begin{bmatrix}
+a_{11} b_{11} + a_{12} b_{21} & a_{11} b_{12} + a_{12} b_{22} \\
+a_{21} b_{11} + a_{22} b_{21} & a_{21} b_{12} + a_{21} b_{22}
+\end{bmatrix}
+\]
+\end{ex}
+
+
+\[
+AB =
+\begin{bmatrix}
+A \V{b}_1 & A \V{b}_2 & \cdots & A \V{b}_p
+\end{bmatrix}
+\]
+
+% \[
+% AB =
+% \begin{bmatrix}
+% a_{11} b_{11} + a_{12} b_{21} + \cdots + a_{1n} b_{n1}
+% \end{bmatrix}
+% \]
+
+
+\begin{thm}
+\begin{align*}
+(AB) \V{v} &= A (B \V{v}) \\
+(c A) B &= c (AB) = A (cB) \\
+A(BC) &= (AB)C
+\end{align*}
+\end{thm}
+
+
+\section*{Identitetsmatriser}
+
+
+\section*{Vektorer som matriser}
+
+
+\kapittelslutt
