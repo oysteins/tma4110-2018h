@@ -1,52 +1,84 @@
-% -*- TeX-master: "oving03"; -*-
+% -*- TeX-master: "oving04"; -*-
 \oppgaver{5}
 
 \begin{oppgave}
-Vi skal se på funksjoner $\mathbb{R}\rightarrow \mathbb{R}$. Begrunn om følgende funksjoner er lineære eller ikke:
-
+Finn ut om følgende påstander er sanne eller ikke.
 \begin{punkt}
-$f(x) = 2x$
-\end{punkt}
-
-\begin{punkt}
-$f(x) = 3x+1$
-\end{punkt}
-
-\begin{punkt}
-$f(x) = 3x^2$
-\end{punkt}
-
-\begin{punkt}
-$f(x)= -x$
-\end{punkt}
-
-\begin{punkt}
-$f(x)=e^x$
-\end{punkt}
-
-\begin{punkt}
-$f(x)=\cos (x)$
+Hvis tre vektorer $\V{u}$, $\V{v}$ og~$\V{w}$ er lineært
+avhengige, så finnes det to tall $a$ og~$b$ slik at: 
+\[
+\V{u} = a \cdot \V{v} + b \cdot \V{w}
+\]
 \end{punkt}
 \end{oppgave}
-
-\begin{losning}
-
-\textbf{a)} og \textbf{d)} er lineære; \textbf{b)}, \textbf{c)}, \textbf{e)} og \textbf{f} er ikke.
-
-\noindent
-Hint: Hva er definisjonen av en lineærtransformasjon. Husk $e^{x+y}=e^x\cdot e^y$ for del \textbf{e)} og addisjonsformelen for cosinus i del \textbf{f)}.
-
-\end{losning}
 
 
 \begin{oppgave}
-Vis at en lineærtransformasjon $f:\mathbb{R}\rightarrow \mathbb{R}$ er entydig bestemt av et reelt tall.
+De to bildene viser vektorer i $\mathbb{R} ^2$. 
+	
+\begin{punkt}
+Er vektorene $\V{v}_1$ og~$\V{v}_2$ lineært uavhengige? Utspenner de $\mathbb{R} ^2$? Begrunn svarene dine.
+\begin{center}
+	\begin{tikzpicture}[scale=0.6]
+	\draw[->,above] (0,0) node{} -- (1,2) node{$\V{v}_1$};
+	\draw[->, right] (0,0) node{} -- (2,1) node{$\V{v}_2$};
+	\draw[->] (-1,0) {} -- (3,0) {};
+	\draw[->] (0,-1) {} -- (0,3) {};
+	\end{tikzpicture}
+\end{center}
+\end{punkt}
 
-\noindent 
-Hint: Hvordan ser de lineære funksjonene i oppgave \textbf{1} ut?
+
+
+\begin{punkt}
+Er vektorene $\V{v}_1$, $\V{v}_2$ og~$\V{v}_3$ lineært uavhengige? Utspenner de $\mathbb{R} ^2$? Begrunn svarene dine.
+\begin{center}
+	\begin{tikzpicture}[scale=0.6]
+	\draw[->,above] (0,0) node{} -- (1,2) node{$\V{v}_1$};
+	\draw[->, right] (0,0) node{} -- (2,1) node{$\V{v}_2$};
+	\draw[->, right] (0,0) node{} -- (2,-1) node{$\V{v}_3$};
+	\draw[->] (-1,0) {} -- (3,0) {};
+	\draw[->] (0,-1) {} -- (0,3) {};
+	\end{tikzpicture}
+\end{center}
+\end{punkt}
 \end{oppgave}
 
+\begin{oppgave}
+\begin{punkt}
+Betrakt vektorene
+\[ 
+\begin{bmatrix} \;1\; \\ \;2\; \end{bmatrix}, 
+\begin{bmatrix} \;2\; \\ \;3\; \end{bmatrix}, \dots, 
+\begin{bmatrix} \;99\; \\ \;100\; \end{bmatrix}
+\]
+i $\mathbb{R}^2$. Vis at de utspenner $\mathbb{R}^2$. Er de lineært uavhengig? Begrunn svaret ditt.
+\end{punkt}
 
-\begin{losning}
-Hint: $f(x)=x\cdot f(1)$ hvor $f(1)$ er et reelt tall. Kan du fullføre oppgaven?
-\end{losning}
+\begin{punkt}
+Betrakt vektorene
+\[ 
+\begin{bmatrix} 
+\;1\; \\ 
+\;\vdots\; \\ 
+\;99\; 
+\end{bmatrix}
+\text{ og }
+\begin{bmatrix} 
+\;2\; \\ 
+\;\vdots\; \\ 
+\;100\; 
+\end{bmatrix}
+\]
+i $\mathbb{R}^{99}$. Er de lineært uavhengige? Begrunn svaret ditt.
+
+\end{punkt}
+\end{oppgave}
+
+\begin{oppgave}
+	Kan $n$ lineært avhengige vektorer i $\mathbb{R}^n$ spenne ut $\mathbb{R}^n$? 
+\end{oppgave}
+
+\begin{oppgave}
+	La $m>n$. Må $m$ vektorer i $\mathbb{R}^n$ være lineært avhengige? 
+\end{oppgave}
