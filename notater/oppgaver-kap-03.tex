@@ -1,6 +1,7 @@
 % -*- TeX-master: "oving02"; -*-
 \oppgaver{3}
 
+
 \begin{oppgave}
 La $\V{u} = \vv{3}{2}$ og~$\V{v} = \vv{-1}{1}$ være to vektorer
 i~$\R^2$.
@@ -13,6 +14,7 @@ Regn ut $\V{u} + \V{v}$ og $\frac{1}{2} \V{u} - 2 \V{v}$.
 Tegn en figur som viser vektorene $\V{u}$, $\V{v}$, $\V{u} + \V{v}$ og
 $\frac{1}{2} \V{u} - 2 \V{v}$ i planet.
 \end{punkt}
+
 \end{oppgave}
 
 \begin{losning}
@@ -42,7 +44,9 @@ $\frac{1}{2} \V{u} - 2 \V{v}$ i planet.
 	\draw[->] (0,0) -- (2,3) node[above] {$\V{u}+\V{v}$};
 	\end{tikzpicture}
 \end{center}
+
 \end{losning}
+
 
 \begin{oppgave}
 Skriv alle ligningssystemene fra oppgave~\textbf{2.2} i øving~1 som
@@ -56,6 +60,12 @@ Skriv alle ligningssystemene fra oppgave~\textbf{2.2} i øving~1 som
 \end{punkt}
 
 \end{oppgave}
+
+\begin{losning}
+Se diskusjonen om matrise- og vektorligninger i kapittel \textbf{3}.
+\end{losning}
+
+
 
 \begin{oppgave}
 Løs ligningen $A\V{x}=\V{b}$ for 
@@ -175,6 +185,23 @@ $$
 
 \end{oppgave}
 
+\begin{losning}
+
+\begin{punkt}
+Det er fire frie variabler. Husk at du kan sjekke om det endelige svaret ditt er riktig ved å multiplisere med $A$ og se om resultatet faktisk blir null-vektoren.
+\end{punkt}
+
+\begin{punkt}
+Det finnes ingen løsning.
+\end{punkt}
+
+\begin{punkt}
+$x=\frac{83}{215}$, $y=\frac{187}{215}$ og $z=\frac{156}{215}$.
+\end{punkt}
+
+\end{losning}
+
+
 
 \begin{oppgave}
 %(TODO: noen gitte vektorer, finn ut om en av dem er lineærkombinasjon av de andre)
@@ -219,14 +246,20 @@ $$
 \end{punkt}
 
 \end{oppgave}
+
+
 \begin{losning}
+	
 \begin{punkt}
 Et vilkårlig valg av en vektor vil kunne skrives som en lineærkombinasjon av de to andre. Det er derfor tre mulige fremgangsmåter som alle er riktig.
-Hint: La $\V{v_1}$ være en av vektorene. Du ønsker å sjekke om $\V{v_1}$ er en lineærkombinasjon av de to resterende vektorene. Dette kan formuleres med likningen $$\V{v_1}=a\V{v_2}+b\V{v_3}$$ hvor $\V{v_2}$ og~$\V{v_3}$ er de to resterende vektorene, og $a$ og~$b$ er ukjente koeffisienter. Prøv å skissere løsningen din i $x$--$y$-planet.
+Hint: La $\V{v}_1$ være en av vektorene. Du ønsker å sjekke om $\V{v}_1$ er en lineærkombinasjon av de to resterende vektorene. Dette kan formuleres med likningen $$\V{v}_1=a\V{v}_2+b\V{v}_3$$ hvor $\V{v}_2$ og~$\V{v}_3$ er de to resterende vektorene, og $a$ og~$b$ er ukjente koeffisienter. Spørsmålet er altså om denne likningen har en løsning; som kan sjekkes ved regning. Prøv å skissere løsningen din i $x$--$y$-planet.
 \end{punkt}
+
 \begin{punkt}
-Se $\textbf{a)}$, men merk at du ikke kan skissere løsningen din ettersom dette krever fire dimensjoner. 
+Et vilkårlig valg av en vektor vil kunne skrives som en lineærkombinasjon av de to andre. Fremgangsmåte som i $\textbf{a)}$, men merk at du ikke kan skissere løsningen din ettersom dette krever fire dimensjoner. 
 \end{punkt}
+
+
 \end{losning}
 
 
@@ -248,6 +281,7 @@ Finn en vektor som ikke er en lineærkombinasjon av:
 	\end{bmatrix}
 	$$
 \end{punkt}
+
 \begin{punkt}
 $$
 \begin{bmatrix}
@@ -293,9 +327,11 @@ $$
 	\end{bmatrix}
 	$$
 \end{punkt}
+
 \end{oppgave}
 
 \begin{losning}
+	
 \begin{punkt}
 Hint: Vi ønsker å finne en vektor $\begin{bmatrix}
 a\\
@@ -336,6 +372,7 @@ $$\begin{bmatrix}
 -3 & 4  & c
 \end{bmatrix}.$$ Radreduser og velg $a$, $b$ og~$c$ slik at systemet ikke har løsning. Eksempelvis fungerer $a=0$, $b=1$ og~$c=0$.
 \end{punkt}
+
 \begin{punkt}
 Hint: Som i $\textbf{a)}$, men nå er totalmatrisen
 $$\begin{bmatrix}
@@ -374,13 +411,34 @@ $$\begin{bmatrix}
 \begin{punkt}
 \ldots oppgave \textbf{5. a)}?
 \end{punkt} 
+
 \begin{punkt}
 	\ldots oppgave \textbf{5. b)}?
 \end{punkt} 
+
 \begin{punkt}
 	\ldots oppgave \textbf{5. c)}?
 \end{punkt} 
+
 \end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Spørsmålet gir ikke mening siden vektorene i \textbf{5.}~\textbf{a)} er vektorer i $\mathbb{R}^3$.
+\end{punkt}
+
+\begin{punkt}
+Hint: Ligningen i \textbf{3. b)} har ingen løsning. 
+\end{punkt}
+
+
+\begin{punkt}
+Hint: Ligningen i \textbf{3. c)} har én løsning.
+\end{punkt}
+	
+\end{losning}
 
 
 
@@ -400,6 +458,33 @@ $$\begin{bmatrix}
 	\end{bmatrix}
 \]
 \end{oppgave}
+
+\begin{losning}
+Planet som inneholder 
+$
+\begin{bmatrix}
+-3  \\
+-7 \\
+-3 \\
+\end{bmatrix}$ og $\begin{bmatrix}
+8  \\
+-8 \\
+-4 \\
+\end{bmatrix}
+$ er akkurat det lineære spennet deres. Altså, alle vektorer på formen 
+\[
+a\begin{bmatrix}
+-3  \\
+-7 \\
+-3 \\
+\end{bmatrix} + b\begin{bmatrix}
+8  \\
+-8 \\
+-4 \\
+\end{bmatrix}.
+\] Alle valg av $a$ og $b$ er riktig.
+\end{losning}
+
 
 
 
@@ -433,7 +518,30 @@ slik at $\V{u}$, $\V{v}$ og~$\V{w}$
 	spenner ut $\R^3$, og løs likningen $x\V{u}+y\V{v}+z\V{w}=0$.
 \end{oppgave}
 
+\begin{losning}
+Tre vektorer i $\mathbb{R}^3$ spenner ut et parallellepiped. Disse ligger i et plan hvis og bare hvis volumet til dette parallellepipedet - determinanten - er lik null. Derfor må vi finne en tredje vektor $\V{u}=\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}$ slik at determinanten til $\V{u}$, $\V{v}$ og $\V{w}$ ikke er lik null. Matematisk formulert: $$\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix} \times \begin{bmatrix}
+-3  \\
+-7 \\
+-3 \\
+\end{bmatrix}\cdot \begin{bmatrix}
+8  \\
+-8 \\
+-4 \\
+\end{bmatrix}\neq 0.$$ Det finnes mange valg av $a$, $b$ og $c$ som fungerer. Eksempelvis fungerer $\begin{bmatrix}
+1\\
+-9\\
+20
+\end{bmatrix}$. Likningen $x\V{u}+y\V{v}+z\V{w}=0$ har kun triviell løsning; $x=0$, $y=0$ og $z=0$.
 
+\end{losning}
 
 
 
@@ -458,6 +566,7 @@ La $p$ og~$q$ være følgende polynomer:
 p(x) &= x^2 + 5x - 3 \\
 q(x) &= 4x^2 + 18x + 4
 \end{align*}
+
 \begin{punkt}
 La $s$ være polynomet $s(x) = x^2 + 8x + 2$.  Finnes det konstanter
 $a$ og~$b$ slik at
@@ -466,6 +575,7 @@ s(x) = a \cdot p(x) + b \cdot q(x)
 \]
 for alle~$x$?
 \end{punkt}
+
 \begin{punkt}
 Finn et andregradspolynom $t$ som oppfyller følgende: For hvert
 andregradspolynom $r$ skal det være mulig å finne konstanter $a$, $b$
@@ -474,9 +584,11 @@ og~$c$ slik at
 r(x) = a \cdot p(x) + b \cdot q(x) + c \cdot t(x)
 \]
 \end{punkt}
+
 \end{oppgave}
+
 \begin{losning}
-Introduksjon til løsning: Vi ønsker å beskrive problemet med lineær algebra. Et polynom er entydig bestemt av koeffisientene sine. Derfor kan all informasjonen om et andregradspolynom $p(x)=ax^2+bx+c$ lagres i vektoren $\V{p}=\begin{bmatrix}
+Introduksjon til løsning: Vi ønsker å beskrive problemet med lineær algebra. Et polynom er entydig bestemt av koeffisientene sine. Derfor kan all informasjon om et andregradspolynom $p(x)=ax^2+bx+c$ lagres i vektoren $\V{p}=\begin{bmatrix}
 a\\
 b\\
 c
@@ -501,6 +613,7 @@ k\cdot a\\
 k\cdot b\\
 k\cdot c
 \end{bmatrix}.$$
+
 \begin{punkt}
 I dette lineær algebra-språket blir spørsmålet om $\V{s}=\begin{bmatrix}
 1\\
@@ -534,15 +647,17 @@ som svarer til totalmatrisen $$\begin{bmatrix}
 -3 & 4  & 2
 \end{bmatrix},$$ har en løsning. Svaret er nei.
 \end{punkt}
+
 \begin{punkt}
-Hint: I lineær algebra-språk skal du finne en vektor $\V{t}$ slik at alle vektorer $\V{r}$ kan skrives som en lineærkombinasjon av $\V{p}$, $\V{q}$ og~$\V{t}$. La $\V{t}$ være løsningen du fant i oppgave \textbf{3.3} del \textbf{a)}. Du kan nå sjekke at likningen $$x\V{p}+y\V{q}+z\V{t}=\V{r}$$ har en entydig løsning for alle valg av vektorer $\V{r}=\begin{bmatrix}
+Hint: I lineær algebra-språk skal du finne en vektor $\V{t}$ slik at alle vektorer $\V{r}$ kan skrives som en lineærkombinasjon av $\V{p}$, $\V{q}$ og~$\V{t}$. La $\V{t}$ være løsningen du fant i oppgave \textbf{3.5} del \textbf{a)}. Du kan nå sjekke at likningen $$x\V{p}+y\V{q}+z\V{t}=\V{r}$$ har en entydig løsning for alle valg av vektorer $\V{r}=\begin{bmatrix}
 a\\
 b\\
 c
 \end{bmatrix}.$ Det tilhørende polynomet $t$ - til $\V{t}$ - er altså en løsning på oppgaven.
 
-Merk: Grunnen til at $\V{t}$ fungerer er at den er lineært uavhengig av $\V{p}$ og~$\V{q}$. Derfor får vi tre lineært uavhengige vektorer som til sammen utspenner $\mathbb{R}^3.$
+Merk: Grunnen til at $\V{t}$ fungerer er at den er lineært uavhengig av $\V{p}$ og~$\V{q}$. Derfor får vi tre lineært uavhengige vektorer som til sammen spenner ut $\mathbb{R}^3.$
 \end{punkt}
+
 \end{losning}
 
 
@@ -555,6 +670,15 @@ Merk: Grunnen til at $\V{t}$ fungerer er at den er lineært uavhengig av $\V{p}$
 	La $m<n$. Kan $m$ vektorer spenne ut $\mathbb{R}^n$? 
 \end{oppgave}
 
+\begin{losning}
+Eksempel; $m=1$, $n=1$. En vektor i $\mathbb{R}^2$ spenner ut en linje, altså ikke hele $\mathbb{R}^2$. Dette generaliseres til $\mathbb{R}^n$, svaret er altså nei.
+
+\noindent
+Hint: Dersom $m$ vektorer, $\V{v}_1,\dots,\V{v}_m$, spenner ut $\mathbb{R}^n$ betyr dette at vi alltid kan løse likningen $x_1\V{v}_1+\dots+x_n\V{v}_m=\V{b}$ hvor $\V{b}$ er en vilkårlig vektor i $\mathbb{R}^n$. Dette svarer til $m$ likninger med $n$ ukjente hvor $m<n$. Kan et slikt system alltid ha løsning?
+
+\noindent
+Merk: Senere skal vi se at $m$ vektorer spenner ut et underrom av dimensjon $\leq m$, altså kan de ikke spenne ut hele $\mathbb{R}^n$ dersom $m<n$.
+\end{losning}
 
 
 
