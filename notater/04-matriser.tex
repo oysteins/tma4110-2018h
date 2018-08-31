@@ -4,7 +4,12 @@
 \label{ch:matriser}
 
 
+
 \section*{Definisjoner og notasjon}
+
+%% TODO: definer kolonnevektor (søylevektor) og radvektor
+
+%% TODO: notasjon (v_1, ..., v_n) for kolonnevektor
 
 En \defterm{$m \times n$-matrise} er en rektangulær tabell med tall
 som har $m$~tall i høyden og $n$~tall i bredden:
@@ -67,7 +72,7 @@ Radene er:
 \]
 \end{ex}
 
-Noen ganger har vi en liste med vektorer, si
+Noen ganger har vi en liste med kolonnevektorer, si
 \[
 \V{v}_1,\ \V{v}_2,\ \ldots,\ \V{v}_n,
 \]
@@ -102,6 +107,46 @@ som kolonner blir da følgende $3 \times 2$-matrise:
 \]
 \end{ex}
 
+På samme måte kan vi, hvis vi har en liste med radvektorer
+\[
+\V{r}_1,\ \V{r}_2,\ \ldots,\ \V{r}_m,
+\]
+lage en matrise
+\[
+\begin{bmatrix}
+\V{r}_1 \\
+\V{r}_2 \\
+\vdots \\
+\V{r}_m
+\end{bmatrix}
+\]
+med disse vektorene som rader.
+
+\begin{ex}
+La
+\[
+\V{r}_1 = \begin{bmatrix} 2 & 1 \end{bmatrix},\quad
+\V{r}_2 = \begin{bmatrix} 1 & 0 \end{bmatrix}
+\quad\text{og}\quad
+\V{r}_3 = \begin{bmatrix} 2 & 4 \end{bmatrix}
+\]
+være tre radvektorer.  Da har vi:
+\[
+\begin{bmatrix}
+\V{r}_1 \\
+\V{r}_2 \\
+\V{r}_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 1 \\
+1 & 0 \\
+2 & 4
+\end{bmatrix}
+\qedhere
+\]
+\end{ex}
+
 
 \section*{Produkt av matrise og vektor}
 
@@ -118,7 +163,7 @@ være en $m \times n$-matrise med vektorene $\V{a}_1$, $\V{a}_2$,
 \V{v} = \vn{v}{n}
 \]
 være en vektor i~$\R^n$.  Vi definerer produktet $A\V{v}$ av $A$
-og~$V$ som lineærkombinasjonen av kolonnene i~$A$ med tallene
+og~$\V{v}$ som lineærkombinasjonen av kolonnene i~$A$ med tallene
 i~$\V{v}$ som vekter:
 \[
 A \V{v} = \V{a}_1 v_1 + \V{a}_2 v_2 + \cdots + \V{a}_n v_n
@@ -127,25 +172,64 @@ Merk at produktet~$A \V{v}$ bare er definert når bredden av matrisen
 $A$ er lik høyden av vektoren~$\V{v}$.
 
 \begin{ex}
+\label{ex:Av}
 Vi regner ut produktet av en $2 \times 3$-matrise og en vektor
 i~$\R^3$:
-\[
+\begin{align*}
 \begin{bmatrix}
 5 & 0 & -2 \\
 3 & 1 &  4
 \end{bmatrix}
 \vvv{2}{-1}{3}
-=
+&=
 \vv{5}{3} \cdot 2 +
 \vv{0}{1} \cdot (-1) +
 \vv{-2}{4} \cdot 3
-=
-\vv{4}{17}
-\]
+\\
+&= \vv{5 \cdot 2 + 0 \cdot (-1) + (-2) \cdot 3}
+      {3 \cdot 2 + 1 \cdot (-1) +   4  \cdot 3}
+\\
+&= \vv{4}{17}
+\end{align*}
 Merk at resultatet blir en vektor i~$\R^2$.
 \end{ex}
 
+Når vi skal regne ut et produkt $A \V{v}$ av en matrise og en vektor,
+trenger vi ikke egentlig å skrive opp lineærkombinasjonen av kolonnene
+i $A$ med vekter fra $\V{v}$ slik som vi gjorde i eksempelet over.
+Den andre linjen av utregningen i eksempelet viser en mer direkte måte
+å komme frem på: Tallet som skal være på første posisjon i
+resultatvektoren får vi ved å gange tallene fra første rad i~$A$ med
+tallene i~$\V{v}$, og legge sammen resultatene.  Tallet på andre
+posisjon i resultatvektoren får vi på samme måte fra andre rad i~$A$.
+
+Generelt har vi at dersom
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+\quad\text{og}\quad
+\V{v} = \vn{v}{n},
+\]
+så kan vi regne ut produktet $A \V{v}$ på følgende måte:
+\[
+A \V{v} =
+\vvvv{a_{11} v_1 + a_{12} v_2 + \cdots + a_{1n} v_n}
+     {a_{21} v_1 + a_{22} v_2 + \cdots + a_{2n} v_n}
+     {\vdots}
+     {a_{m1} v_1 + a_{m2} v_2 + \cdots + a_{mn} v_n}
+\]
+(Det er ikke vanskelig å se at dette følger fra definisjonen
+av~$A \V{v}$.)
+
+
+
 \begin{thm}
+\label{thm:Av-lin-komb}
 Hvis $A$ er en $m \times n$-matrise, $\V{v}$ og~$\V{w}$ er vektorer
 i~$\R^n$ og $c$ er et tall, så har vi følgende likheter:
 \[
@@ -155,8 +239,110 @@ A (c \V{v}) = c (A \V{v})
 \]
 \end{thm}
 
+\begin{ex}
+La $A$ og~$\V{v}$ være følgende matrise og vektor:
+\[
+A =
+\begin{bmatrix}
+5 & 0 & -2 \\
+3 & 1 &  4
+\end{bmatrix}
+\quad\text{og}\quad
+\V{v} = \vvv{2}{-1}{3}
+\]
+I eksempel~\ref{ex:Av} regnet vi ut produktet $A \V{v}$.
+Men hva om vi har lyst til å gange $A$ med vektoren $(8, -4, 12)$?
+Siden denne vektoren er lik $4 \cdot \V{v}$ kan vi bruke
+teorem~\ref{thm:Av-lin-komb} og få:
+\[
+A \vvv{8}{-4}{12}
+= A \cdot (4 \cdot \V{v})
+= 4 \cdot (A \cdot \V{v})
+= 4 \cdot \vv{4}{17}
+= \vv{16}{68}
+\]
+Altså: $A$ ganget med vektoren $4 \V{v}$ er det samme som $4$ ganger
+vektoren $A \V{v}$.
+% \[
+% \begin{bmatrix}
+% 5 & 0 & -2 \\
+% 3 & 1 &  4
+% \end{bmatrix}
+% \vvv{2}{-1}{3}
+% = \vv{4}{17}
+% \]
+% Hva om vi vil gange den samme matrisen med vektoren $(8, -4, 12)$?
+% Siden denne vektoren er lik $4 \cdot (2,-1,3)$, kan vi bruke
+% teorem~\ref{thm:Av-lin-komb} og få:
+% \begin{align*}
+% \begin{bmatrix}
+% 5 & 0 & -2 \\
+% 3 & 1 &  4
+% \end{bmatrix}
+% \vvv{8}{-4}{12}
+% &= 
+% \begin{bmatrix}
+% 5 & 0 & -2 \\
+% 3 & 1 &  4
+% \end{bmatrix}
+% \left( 4 \cdot \vvv{2}{-1}{3} \right)
+% \\
+% &=
+% 4 \cdot \left(
+% \begin{bmatrix}
+% 5 & 0 & -2 \\
+% 3 & 1 &  4
+% \end{bmatrix}
+% \vvv{2}{-1}{3} \right)
+% \\
+% &=
+% 4 \cdot \vv{4}{17}
+% = \vv{16}{68}
+% \end{align*}
+\end{ex}
 
-\section*{Sum av matriser}% og multiplikasjon med skalar}
+Det er verdt å merke seg hva som skjer hvis vi ganger en matrise med
+en vektor der nøyaktig ett av tallene er~$1$, og resten er~$0$.  La
+oss teste dette med en eksempelmatrise:
+
+\begin{ex}
+Vi ganger $2 \times 3$-matrisen
+\[
+A =
+\begin{bmatrix}
+5 & 0 & -2 \\
+3 & 1 &  4
+\end{bmatrix}
+\]
+med de tre vektorene
+\[
+\V{e}_1 = \vvv{1}{0}{0},\quad
+\V{e}_2 = \vvv{0}{1}{0}\quad\text{og}\quad
+\V{e}_3 = \vvv{0}{0}{1}
+\]
+og får følgende:
+\begin{align*}
+A \V{e}_1 &= \vv{5}{3} \\
+A \V{e}_2 &= \vv{0}{1} \\
+A \V{e}_3 &= \vv{-2}{4}
+\end{align*}
+Resultatene ble altså de tre kolonnene i~$A$.
+\end{ex}
+
+Generelt har vi at hvis $A$ er en $m \times n$-matrise, og $\V{e}_1$,
+$\V{e}_2$, \ldots, $\V{e}_n$ er vektorene i~$\R^n$ som er slik at
+$\V{e}_i$ har et $1$-tall i sin $i$-te koordinat og bare $0$-er
+ellers, så er
+\[
+A \V{e}_1,\quad
+A \V{e}_2,\quad
+\ldots,\quad
+A \V{e}_n
+\]
+nøyaktig samme vektorer som kolonnene i~$A$.
+
+
+\section*{Sum og skalering av matriser}
 
 La $A$ og~$B$ være to $m \times n$-matriser:
 \[
@@ -206,8 +392,8 @@ a_{m1} + b_{m1} & a_{m2} + b_{m2} & \cdots & a_{mn} + b_{mn} \\
 \end{bmatrix}
 \]
 
-Produktet av en matrise og et tall defineres også på den åpenbare
-måten:
+Produktet av et tall og en matrise defineres også på den åpenbare
+måten -- vi ganger med tallet på hver plass i matrisen:
 \[
 c A =
 \begin{bmatrix}
@@ -233,10 +419,15 @@ i~$\R^n$ og $c$ er et tall, så har vi følgende likheter:
 \end{thm}
 
 
+\section*{Vektorer som matriser}
+
+%TODO
+
+
 \section*{Matrisemultiplikasjon}
 
-Nå kommer vi til den viktigste av de aritmetiske operasjonene vi kan
-gjøre med matriser, nemlig \emph{matrisemultiplikasjon}.
+Nå kommer vi til den mest spennende av de aritmetiske operasjonene vi
+kan gjøre med matriser, nemlig \emph{matrisemultiplikasjon}.
 
 Det er litt mer komplisert å beskrive hvordan vi multipliserer
 matriser enn hvordan vi summerer dem.  Det er imidlertid en god grunn
@@ -256,6 +447,32 @@ La oss først se på et eksempel.
 
 \begin{ex}
 % TODO eksempel med 3x3 e.l.?
+5 0 -2
+3 1 4
+
+2 1
+1 0
+2 4
+
+
+2
+1
+2
+
+1
+0
+4
+
+
+
+
+
+6  -3
+15 19
+
+
+
+
 \end{ex}
 
 \begin{ex}
@@ -313,7 +530,7 @@ A(BC) &= (AB)C
 \section*{Identitetsmatriser}
 
 
-\section*{Vektorer som matriser}
+\section*{Inverser}
 
 
 \kapittelslutt
