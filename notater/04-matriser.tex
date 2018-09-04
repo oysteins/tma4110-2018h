@@ -421,7 +421,58 @@ i~$\R^n$ og $c$ er et tall, så har vi følgende likheter:
 
 \section*{Vektorer som matriser}
 
-%TODO
+Hittil har vi snakket om vektorer og matriser som to forskjellige
+slags ting, men vi kan også velge å se på vektorer som et
+spesialtilfelle av matriser der enten høyden eller bredden er~$1$.
+
+En kolonnevektor
+\[
+\vn{v}{m}
+\]
+kan vi tenke på som en $m \times 1$-matrise, og en radvektor
+\[
+\begin{bmatrix} w_1 & w_2 & \cdots & w_n \end{bmatrix}
+\]
+kan vi tenke på som en $1 \times n$-matrise.
+
+\begin{ex}
+La $\V{v}$ og~$\V{w}$ være henholdsvis en kolonnevektor og en
+radvektor:
+\[
+\V{v} = \vvv{5}{-2}{4}
+\qquad
+\V{w} = \begin{bmatrix} 2 & 3 & 1 \end{bmatrix}
+\]
+Vektoren~$\V{v}$ kan vi også se på som en $3 \times 1$-matrise, og
+vektoren~$\V{w}$ kan vi se på som en $1 \times 3$-matrise.
+
+Hvis vi velger å tenke på $\V{w}$ som en matrise og $\V{v}$ som en
+vektor, så kan vi gange dem sammen med den vanlige regelen for produkt
+av matrise og vektor:
+\begin{align*}
+\V{w} \cdot \V{v}
+&= \begin{bmatrix} 2 & 3 & 1 \end{bmatrix} \cdot \vvv{5}{-2}{4} \\
+&= \begin{bmatrix} 2 \cdot 5 + 3 \cdot (-2) + 1 \cdot 4 \end{bmatrix}
+ = \begin{bmatrix} 8 \end{bmatrix}
+\end{align*}
+Resultatet blir vektoren~$\begin{bmatrix} 8 \end{bmatrix}$ i~$\R^1$.
+En vektor i~$\R^1$ består av kun ett tall, og vi vil vanligvis si at
+en slik vektor er det samme som det ene tallet.  Med andre ord kan vi
+sløyfe klammene og ganske enkelt skrive:
+\[
+\V{w} \cdot \V{v} = 8.\qedhere
+\]
+\end{ex}
+
+Generelt har vi at produktet av en radvektor og en kolonnevektor er
+gitt ved følgende uttrykk:
+\[
+\begin{bmatrix} w_1 & w_2 & \cdots & w_n \end{bmatrix}
+\cdot \vn{v}{n}
+= w_1 v_1 + w_2 v_2 + \cdots + w_n v_n
+\]
+(Merk at det må være like mange tall i radvektoren som i
+kolonnevektoren for at vi skal kunne gange dem sammen.)
 
 
 \section*{Matrisemultiplikasjon}
@@ -446,77 +497,296 @@ Hvordan kan vi definere produkt av matriser slik at dette fungerer?
 La oss først se på et eksempel.
 
 \begin{ex}
-% TODO eksempel med 3x3 e.l.?
-5 0 -2
-3 1 4
+La $A$ og~$B$ være følgende to $2 \times 2$-matriser:
+\[
+A =
+\begin{bmatrix}
+3 & -5 \\
+2 &  7
+\end{bmatrix}
+\qquad
+B =
+\begin{bmatrix}
+4 & 3 \\
+2 & 1
+\end{bmatrix}
+\]
+Vi har lyst til å finne matrisen $AB$ som skal være slik at
+$(AB) \V{v} = A(B(\V{v}))$ for alle vektorer $\V{v}$ i~$\R^2$.
 
-2 1
-1 0
-2 4
+Nå er det lurt å se på de to spesielle vektorene
+\[
+\vv{1}{0}
+\quad\text{og}\quad
+\vv{0}{1}.
+\]
+Vi vet fra tidligere at hvis vi ganger en $2 \times 2$-matrise med en
+av disse vektorene, så får vi ut den første eller den andre kolonnen i
+matrisen.
 
-
-2
-1
-2
-
-1
-0
-4
-
-
-
-
-
-6  -3
-15 19
-
-
-
-
+Vi regner ut:
+\begin{align*}
+B \vv{1}{0} &= \vv{4}{2} \\
+A \left( B \vv{1}{0} \right)
+&=
+\begin{bmatrix}
+3 & -5 \\
+2 &  7
+\end{bmatrix}
+\vv{4}{2}
+= \vv{2}{22}
+\end{align*}
+Det vi er ute etter er at $AB$ skal være slik at
+\[
+(AB)\V{v} = A(B\V{v})
+\]
+for alle vektorer~$\V{v}$.  Spesielt må vi da ha:
+\[
+(AB) \vv{1}{0}
+= A \left( B \vv{1}{0} \right)
+= \vv{2}{22}
+\]
+Men det å gange med vektoren
+\[
+\vv{1}{0}
+\]
+er det samme som å plukke ut første kolonne av matrisen, så vi har nå
+funnet ut at første kolonne i matrisen~$AB$ må være:
+\[
+\vv{2}{22}
+\]
+På samme måte finner vi andre kolonne i~$AB$:
+\begin{align*}
+B \vv{0}{1} &= \vv{3}{1}
+\\
+A \left( B \vv{0}{1} \right)
+&=
+\begin{bmatrix}
+3 & -5 \\
+2 &  7
+\end{bmatrix}
+\vv{3}{1}
+= \vv{4}{13}
+\\
+(AB) \vv{0}{1} &= A \left( B \vv{0}{1} \right) = \vv{4}{13}
+\end{align*}
+Dette betyr at andre kolonne i~$AB$ må være:
+\[
+\vv{4}{13}
+\]
+Dermed kommer vi frem til at produktet av $A$ og~$B$ er:
+\[
+AB =
+\begin{bmatrix}
+ 2 &  4 \\
+22 & 13
+\end{bmatrix}
+\qedhere
+\]
+% % TODO eksempel med 3x3 e.l.?
+% 5 0 -2
+% 3 1 4
+%
+% 2 1
+% 1 0
+% 2 4
+%
+% 2
+% 1
+% 2
+%
+% 1
+% 0
+% 4
+%
+% 6  -3
+% 15 19
 \end{ex}
 
-\begin{ex}
+La oss nå generalisere det vi gjorde i eksempelet.  Foreløpig ser vi
+på generelle $2 \times 2$-matriser, og så tar vi det helt generelle
+tilfellet, med matriser av vilkårlig størrelse, etterpå.
+
+La $A$ og~$B$ være to $2 \times 2$-matriser, og la
+\[
+\V{e}_1 = \vv{1}{0}
+\quad\text{og}\quad
+\V{e}_2 = \vv{0}{1}
+\]
+være de to spesielle vektorene vi brukte i eksempelet over.  La
+$\V{b}_1$ og~$\V{b}_2$ være kolonnene i~$B$, slik at vi har:
+\[
+B = \begin{bmatrix} \V{b}_1 & \V{b}_2 \end{bmatrix}
+\]
+På samme måte som i eksempelet får vi nå:
+\begin{align*}
+(AB) \V{e}_1
+&= A (B \V{e}_1)
+ = A \V{b}_1 \\
+(AB) \V{e}_2
+&= A (B \V{e}_2)
+ = A \V{b}_2 \\
+\end{align*}
+Dette betyr at første kolonne i matrisen~$AB$ må være~$A \V{b}_1$, og
+andre kolonne må være~$A \V{b}_2$.  Vi får altså:
+\[
+AB = \begin{bmatrix} A \V{b}_1 & A \V{b}_2 \end{bmatrix}
+\]
+Hvis vi lar $\V{a}_1$ og~$\V{a}_2$ være radene i~$A$, så gir dette oss
+at:
+\[
+AB =
+\begin{bmatrix}
+\V{a}_1 \V{b}_1 & \V{a}_1 \V{b}_2 \\
+\V{a}_2 \V{b}_1 & \V{a}_2 \V{b}_2
+\end{bmatrix}
+\]
+For å virkelig gjøre dette detaljert, kan vi skrive opp nøyaktig
+hvordan vi finner hvert tall i~$AB$ ut fra hver enkelt av tallene i
+$A$ og~$B$.  Hvis
 \[
 A =
 \begin{bmatrix}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
 \end{bmatrix}
-\qquad
+\quad\text{og}\quad
 B =
 \begin{bmatrix}
 b_{11} & b_{12} \\
 b_{21} & b_{22}
-\end{bmatrix}
+\end{bmatrix},
 \]
+så får vi:
 \[
-B \vv{1}{0} = \vv{b_{11}}{b_{21}}
-\]
-
-
-\[
+AB =
 \begin{bmatrix}
 a_{11} b_{11} + a_{12} b_{21} & a_{11} b_{12} + a_{12} b_{22} \\
 a_{21} b_{11} + a_{22} b_{21} & a_{21} b_{12} + a_{21} b_{22}
 \end{bmatrix}
 \]
-\end{ex}
+Merk hvordan dette siste uttrykket er bygd opp.  Når vi skal finne
+tallet som skal stå på en bestemt posisjon i~$AB$, går vi bortover den
+tilsvarende \emph{raden} i~$A$ og samtidig nedover den tilsvarende
+\emph{kolonnen} i~$B$.  Vi ganger sammen tallene vi finner i~$A$ med
+de vi finner i~$B$, og legger sammen disse produktene.
 
+Alt det vi gjorde nå fungerer helt tilsvarende når vi går til større
+matriser enn $2 \times 2$.  Men for at det skal gå an å gange sammen
+to matriser $A$ og~$B$, må de være «kompatible» i størrelse.  Vi
+finner produktet~$AB$ ved å kombinere rader fra~$A$ med kolonner
+fra~$B$, og for at dette skal gå an, må lengden av radene i~$A$ være
+lik lengden av kolonnene i~$B$.  Det vil si at bredden til~$A$ må være
+lik høyden til~$B$.
 
+Basert på det vi har gjort nå lager vi en generell definisjon av
+matrisemultiplikasjon.
+
+\begin{defn}
+La $A$ være en $m \times n$-matrise med rader
+$\V{a}_1$, $\V{a}_2$, \ldots, $\V{a}_m$,
+og la $B$ være en $m \times p$-matrise med kolonner
+$\V{b}_1$, $\V{b}_2$, \ldots, $\V{b}_p$:
 \[
-AB =
+A = \vn{\V{a}}{n}
+\qquad\qquad
+B = \begin{bmatrix} \V{b}_1 & \V{b}_2 & \cdots & \V{b}_p \end{bmatrix}
+\]
+Da er produktet av $A$ og~$B$ en $m \times p$-matrise definert ved:
+\begin{align*}
+AB &=
 \begin{bmatrix}
-A \V{b}_1 & A \V{b}_2 & \cdots & A \V{b}_p
+\V{a}_1 \V{b}_1 & \V{a}_1 \V{b}_2 & \cdots & \V{a}_1 \V{b}_p \\
+\V{a}_2 \V{b}_1 & \V{a}_2 \V{b}_2 & \cdots & \V{a}_2 \V{b}_p \\
+\vdots          & \vdots          & \ddots & \vdots          \\
+\V{a}_m \V{b}_1 & \V{a}_m \V{b}_2 & \cdots & \V{a}_m \V{b}_p
 \end{bmatrix}
+% \\
+% &= \begin{bmatrix} A \V{b}_1 & A \V{b}_2 & \cdots & A \V{b}_p \end{bmatrix}
+\qedhere
+\end{align*}
+\end{defn}
+
+Hvis vi lar $A$ og~$B$ være som i definisjonen, kan vi også skrive
+produktet slik:
+\[
+AB = \begin{bmatrix} A \V{b}_1 & A \V{b}_2 & \cdots & A \V{b}_p \end{bmatrix}
 \]
 
-% \[
-% AB =
-% \begin{bmatrix}
-% a_{11} b_{11} + a_{12} b_{21} + \cdots + a_{1n} b_{n1}
-% \end{bmatrix}
-% \]
+\begin{ex}
+La $A$ og~$B$ og~$C$ være følgende matriser:
+\[
+A =
+\begin{bmatrix}
+5 & 0 & -2 \\
+3 & 1 &  4
+\end{bmatrix}
+\qquad
+B =
+\begin{bmatrix}
+2 & 1 \\
+1 & 0 \\
+2 & 4
+\end{bmatrix}
+\qquad
+C =
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+\]
+Siden $A$ er en $2 \times 3$-matrise og $B$ er en
+$3 \times 2$-matrise, er $AB$ en $2 \times 2$-matrise.  Vi regner ut
+denne matrisen ved å bruke definisjonen:
+\begin{align*}
+AB
+&=
+\begin{bmatrix}
+5 \cdot 2 + 0 \cdot 1 + (-2) \cdot 2 &
+5 \cdot 1 + 0 \cdot 0 + (-2) \cdot 4 \\
+3 \cdot 2 + 1 \cdot 1 +    4 \cdot 2 &
+3 \cdot 1 + 1 \cdot 0 +    4 \cdot 4
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+ 6 & -3 \\
+15 & 19
+\end{bmatrix}
+\end{align*}
+Hvis vi ganger sammen de samme to matrisene i motsatt rekkefølge, får
+vi en $3 \times 3$-matrise:
+\begin{align*}
+BA
+&=
+\begin{bmatrix}
+2 \cdot 5 + 1 \cdot 3 &
+2 \cdot 0 + 1 \cdot 1 &
+2 \cdot (-2) + 1 \cdot 4 \\
+1 \cdot 5 + 0 \cdot 3 &
+1 \cdot 0 + 0 \cdot 1 &
+1 \cdot (-2) + 0 \cdot 4 \\
+2 \cdot 5 + 4 \cdot 3 &
+2 \cdot 0 + 4 \cdot 1 &
+2 \cdot (-2) + 4 \cdot 4
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+13 &  1 &  0 \\
+ 5 &  0 & -2 \\
+22 &  4 & 12
+\end{bmatrix}
+\end{align*}
 
+Vi kunne også regnet ut for eksempel $CA$ og~$BC$, men produktene $AC$
+og~$CB$ er ikke definert.
+\end{ex}
+
+Vi kan merke oss følgende ting basert på dette eksempelet:
+\begin{itemize}
+\item Matrisemultiplikasjon er \emph{ikke kommutativt}.  Faktorenes rekkefølge spiller altså en rolle %TODO
+\end{itemize}
 
 \begin{thm}
 \begin{align*}
@@ -531,6 +801,9 @@ A(BC) &= (AB)C
 
 
 \section*{Inverser}
+
+
+\section*{Transponering}
 
 
 \kapittelslutt
