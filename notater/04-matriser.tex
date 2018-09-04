@@ -3,6 +3,7 @@
 \kapittel{4}{Matriser}
 \label{ch:matriser}
 
+%% TODO: introduksjon
 
 
 \section*{Definisjoner og notasjon}
@@ -778,32 +779,286 @@ BA
 22 &  4 & 12
 \end{bmatrix}
 \end{align*}
+Produktet av matrisene $B$ og~$C$ blir en $3 \times 2$-matrise:
+\[
+BC =
+\begin{bmatrix}
+ 5 &  8 \\
+ 1 &  2 \\
+14 & 20
+\end{bmatrix}
+\]
+Men produktet $CB$ er ikke definert, siden $C$ er en
+$2 \times 2$-matrise og $B$ en $3 \times 2$-matrise.
 
-Vi kunne også regnet ut for eksempel $CA$ og~$BC$, men produktene $AC$
-og~$CB$ er ikke definert.
+Vi kunne også regnet ut for eksempel $CA$, men $AC$ er ikke definert.
 \end{ex}
 
-Vi kan merke oss følgende ting basert på dette eksempelet:
-\begin{itemize}
-\item Matrisemultiplikasjon er \emph{ikke kommutativt}.  Faktorenes rekkefølge spiller altså en rolle %TODO
-\end{itemize}
+Vi kan nå legge merke til at matrisemultiplikasjon -- i motsetning til
+multiplikasjon av vanlige tall -- ikke er kommutativt.  Det vil si at
+faktorenes rekkefølge spiller en rolle: $AB$ er ikke nødvendigvis det
+samme som~$BA$.
+
+Vi må altså passe på at vi ikke av gammel vane bytter om faktorene når
+vi jobber med et produkt av matriser.  Men mange andre regneregler
+fungerer like bra med matriser som med tall.  Vi tar et teorem med
+noen regneregler for matrisemultiplikasjon.
 
 \begin{thm}
+La $A$ være en $m \times n$-matrise, $B$ en $n \times p$-matrise,
+$\V{v}$ en vektor i~$\R^p$ og $c$ et tall.  Da har vi følgende likheter:
 \begin{align*}
 (AB) \V{v} &= A (B \V{v}) \\
 (c A) B &= c (AB) = A (cB) \\
-A(BC) &= (AB)C
+A(BC) &= (AB)C \\
+% TODO
+% A(B+C) = AB + AC
+% (A+B)C = AC + BC
 \end{align*}
 \end{thm}
+
+% TODO: A^2, A^3, ...
+
+% AB = AC =\> B = C
+
+% AB = 0 =\> A=0 v B=0
 
 
 \section*{Identitetsmatriser}
 
+Når vi ser på multiplikasjon av tall, så er det ett bestemt tall som
+oppfører seg helt spesielt, nemlig tallet~$1$.  Tallet~$1$ oppfører
+seg som et \emph{identitetselement} med hensyn på multiplikasjon.  Det
+betyr at å gange med~$1$ ikke endrer noe.  Hvis vi starter med et
+hvilket som helst tall, og ganger det med~$1$, så får vi bare det
+samme tallet som resultat:
+\[
+a \cdot 1 = a
+\]
+
+Finnes det noe tilsvarende som dette i verdenen av matriser og
+matrisemultiplikasjon?  Med andre ord: Finnes det en matrise~$I$ slik
+at
+\[
+A \cdot I = A
+\]
+for alle matriser~$A$?
+
+Det er ganske tydelig at det ikke gir mening å stille akkurat det
+spørsmålet, for det går ikke an å finne én matrise~$I$ som er slik at
+produktet~$AI$ er definert for alle matriser~$A$ av alle mulige
+størrelser.
+
+Så vi må begrense oss til å se på matriser av én størrelse om gangen.
+Dessuten må vi huske på at matriseproduktet ikke er kommutativt, så
+$AI$ og~$IA$ er ikke nødvendigvis det samme.  For å si at $I$ er et
+identitetselement vil vi at både $AI$ og~$IA$ skal bli lik~$A$.
+
+Det viser seg at å finne identitetselementer bare er mulig hvis vi
+dessuten begrenser oss til \emph{kvadratiske} matriser, altså matriser
+som har samme høyde og bredde.  Da kan vi reformulere spørsmålet vårt
+slik:
+
+Finnes det en $n \times n$-matrise~$I_n$ som er slik at
+\[
+A \cdot I_n = A = I_n \cdot A
+\]
+for alle $n \times n$-matriser~$A$?
+
+Det er ikke vanskelig å se at denne matrisen oppfyller egenskapene vi
+er ute etter:
+\[
+I_n =
+\underbrace{
+\begin{bmatrix}
+1      & 0      & 0      & \cdots & 0 \\
+0      & 1      & 0      & \cdots & 0 \\
+0      & 0      & 1      & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0      & 0      & 0      & \cdots & 1
+\end{bmatrix}
+}_{\text{$n \times n$-matrise}}
+\]
+Matrisen~$I_n$ er en $n \times n$-matrise der det er $1$-tall langs
+diagonalen mellom øverste venstre hjørne og nederste høyre hjørne, og
+bare~$0$ ellers.  Den kalles \emph{identitetsmatrisen} av
+størrelse~$n$.
+
+\begin{ex}
+Identitetsmatrisen av størrelse~$2$ er:
+\[
+I_2 =
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+\]
+Vi sjekker enkelt at vi kan gange en hvilken som helst
+$2 \times 2$-matrise med~$I_2$, til venstre eller høyre, uten at noe
+endres:
+\begin{align*}
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+&=
+\begin{bmatrix}
+a_{11} \cdot 1 + a_{12} \cdot 0 &
+a_{11} \cdot 0 + a_{12} \cdot 1 \\
+a_{21} \cdot 0 + a_{22} \cdot 1 &
+a_{21} \cdot 1 + a_{22} \cdot 0
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+\\[4pt]
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+&=
+\begin{bmatrix}
+1 \cdot a_{11} + 0 \cdot a_{21} &
+1 \cdot a_{12} + 0 \cdot a_{22} \\
+0 \cdot a_{11} + 1 \cdot a_{21} &
+0 \cdot a_{12} + 1 \cdot a_{22}
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{bmatrix}
+\end{align*}
+Vi ser altså at identitetsmatrisen~$I_2$ oppfører seg som et
+identitetselement med hensyn på multiplikasjon av
+$2 \times 2$-matriser.
+\end{ex}
+
 
 \section*{Inverser}
 
+For multiplikasjon av tall har vi identitetselementet~$1$, og vi har
+dessuten \emph{inverser}.  Gitt et tall~$a$ finnes et tall~$a'$,
+inversen til~$a$, som er slik at
+\[
+a \cdot a' = 1.
+\]
+Inversen til~$a$ er selvfølgelig bare tallet~$1/a$.  For eksempel:
+Inversen til tallet~$5$ er $1/5$, og inversen til $3/4$ er $4/3$.
+
+Kan vi på tilsvarende måte finne inverser til matriser?  Igjen må vi
+begrense oss til å se på kvadratiske matriser, og spørsmålet blir:
+
+Gitt en $n \times n$-matrise~$A$, finnes det en matrise $A'$ som er
+slik at likhetene
+\[
+A \cdot A' = I_n = A' \cdot A
+\]
+er oppfylt?
+
+Vi tar et eksempel for å se hvordan noen slike matriser kan se ut.
+
+\begin{ex}
+\label{ex:invers}
+La $A$ og~$B$ være følgende $2 \times 2$-matriser:
+\[
+A =
+\begin{bmatrix}
+ 4 & -2 \\
+ 3 & -1
+\end{bmatrix}
+\quad\text{og}\quad
+B =
+\begin{bmatrix}
+-1/2 & 1 \\
+-3/2 & 2
+\end{bmatrix}
+\]
+Da kan vi regne ut at
+\[
+A \cdot B
+= 
+\begin{bmatrix}
+ 4 & -2 \\
+ 3 & -1
+\end{bmatrix}
+\begin{bmatrix}
+-1/2 & 1 \\
+-3/2 & 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+= I_2
+\]
+og
+\[
+B \cdot A
+= 
+\begin{bmatrix}
+-1/2 & 1 \\
+-3/2 & 2
+\end{bmatrix}
+\begin{bmatrix}
+ 4 & -2 \\
+ 3 & -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+= I_2.
+\]
+Disse matrisene oppfyller altså likhetene
+\[
+A \cdot B = I_2 = B \cdot A.\qedhere
+\]
+\end{ex}
+
+Vi definerer begrepet «invers» ved å bruke disse likhetene.
+
+\begin{defn}
+En \emph{invers} til en $n \times n$-matrise~$A$ er en
+$n \times n$-matrise~$A^{-1}$ som er slik at
+\[
+A \cdot A^{-1} = I_n = A^{-1} \cdot A.\qedhere
+\]
+\end{defn}
+
+\begin{ex}
+I eksempel~\ref{ex:invers} er matrisen~$B$ en invers til~$A$; vi har
+altså at $B^{-1} = A$.  Vi %TODO
+\end{ex}
+
 
 \section*{Transponering}
+
+
+\section*{Matriser og likningssystemer}
+
+
+\section*{Samtidig løsning av flere systemer}
+
+
+\section*{Beregning av inverser}
+
+
+% TODO thm side 130
 
 
 \kapittelslutt
