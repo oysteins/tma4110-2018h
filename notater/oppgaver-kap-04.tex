@@ -123,11 +123,7 @@ $A \vv{1}{0} = \vv{2}{8}$
 og
 $A \vv{1}{1} = \vv{3}{4}$.
 \end{punkt}
-\begin{punkt}
-$A \vv{1}{0} = \vv{3}{5}$ 
-og
-$A \vv{0}{1} = \vv{-1}{0}$.
-\end{punkt}
+
 \begin{punkt}
 $A \begin{bmatrix}
 1\\
@@ -203,11 +199,11 @@ og $A \begin{bmatrix}
 
 
 \begin{losning}
-La $\V{e}_i$ være vektoren med 1 i komponent $i$ og null ellers. Husk at for en $n\times n$-matrise er $A\V{e}_i$ kolonnevektor nummer $i$. Vi kan derfor løse \textbf{a)}, \textbf{c)} og \textbf{d)} direkte; det er jo kolonnevektorene til $A$ som er oppgitt. I del \textbf{b)} og \textbf{e)} må vi skrive ut ligningene vi får, og deretter løse dem direkte. Eksempelvis, hvis vi skriver $A=\begin{bmatrix}
+La $\V{e}_i$ være vektoren med 1 i komponent $i$ og null ellers. Husk at for en $n\times n$-matrise er $A\V{e}_i$ kolonnevektor nummer $i$. Vi kan derfor løse \textbf{a)} og \textbf{c)} direkte; det er jo kolonnevektorene til $A$ som er oppgitt. I del \textbf{b)} og \textbf{d)} må vi skrive ut ligningene vi får, og deretter løse dem direkte. Eksempelvis, hvis vi skriver $A=\begin{bmatrix}
 a_1 & a_2\\
 a_3 & a_4
 \end{bmatrix}
-$ og setter inn kravene fra del \textbf{b)} får vi $$\vv{a_1}{a_3}=\vv{2}{8} \text{ og } \vv{a_1+a_2}{a_3+a_4}=\vv{3}{4}.$$ Dette er fire ligninger med fire ukjente. Tilsvarende fremgangsmåte fungerer i \textbf{e)}, men nå er $A$ en $3\times 3$-matrise. Du kan sjekke om det endelige svaret ditt er korrekt; tilfredstiller $A$ kravene i oppgaven?
+$ og setter inn kravene fra del \textbf{b)} får vi $$\vv{a_1}{a_3}=\vv{2}{8} \text{ og } \vv{a_1+a_2}{a_3+a_4}=\vv{3}{4}.$$ Dette er fire ligninger med fire ukjente. Tilsvarende fremgangsmåte fungerer i \textbf{d)}, men nå er $A$ en $3\times 3$-matrise. Du kan sjekke om det endelige svaret ditt er korrekt; tilfredstiller $A$ kravene i oppgaven?
 \end{losning}
 
 
@@ -226,26 +222,10 @@ $A=\begin{bmatrix}
 1 & 1\\
 1 & 1
 \end{bmatrix}
-$, $\V{b}_1=\vv{1}{1}$ og $\V{b}_2=\vv{2}{2}$
-\end{punkt}
-
-
-\begin{punkt}
-$A=\begin{bmatrix}
-1 & 1\\
-1 & 1
-\end{bmatrix}
 $, $\V{b}_1=\vv{1}{1}$ og $\V{b}_2=\vv{1}{-1}$
 \end{punkt}
 
 
-\begin{punkt}
-$A=\begin{bmatrix}
-1 & 1\\
-1 & -1
-\end{bmatrix}
-$, $\V{b}_1=\vv{1}{2}$ og $\V{b}_2=\vv{3}{-1}$
-\end{punkt}
 
 
 \begin{punkt}
@@ -281,24 +261,9 @@ $
 
 \begin{losning}
 
-\begin{punkt}
-Begge ligningene har uendelig mange løsninger.
-\end{punkt}
-
 
 \begin{punkt}
 Den første har uendelig mange løsninger; den andre har ingen løsning.
-\end{punkt}
-
-\begin{punkt}
-Den første har entydig løsning $\begin{bmatrix} 
-\frac{3}{2}\\
--\frac{1}{2}
-\end{bmatrix}$; den andre har entydig løsning $\begin{bmatrix} 
-\frac{1}{2}\\
-\frac{1}{2}
-\end{bmatrix}.$
-
 \end{punkt}
 
 
@@ -317,30 +282,20 @@ Den første har ingen løsninger; den andre har uendelig mange løsninger.
 La $A$ og $B$ være to gitte $2\times 2$-matriser. Betrakt ligningen $$AX=B,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
 
 \begin{punkt}
-Forklar hvorfor den oppgitte ligningen er ekvaivalent med å løse to $2\times 2$-ligningssystem samtidig. Hvordan generaliseres denne påstanden for $n\times n$-matriser?
+Forklar hvorfor ligningen er ekvaivalent med å løse to $2\times 2$-ligningssystem samtidig. Hvordan generaliseres denne påstanden for $n\times n$-matriser?
 \end{punkt}
 
 \begin{punkt}
-Løs den oppgitte ligningen for $A=\begin{bmatrix}
+Løs ligningen for $A=\begin{bmatrix}
 1 & 1\\
 1 & 1
 \end{bmatrix}
 $ og $B=\begin{bmatrix}
-1 & 2\\
-1 & 2
+1 & 1\\
+1 & -1
 \end{bmatrix}.$
 \end{punkt}
 
-\begin{punkt}
-Løs den oppgitte ligningen for $A=\begin{bmatrix}
-1 & 1\\
-1 & -1
-\end{bmatrix}
-$ og $B=\begin{bmatrix}
-1 & 3\\
-2 & -1
-\end{bmatrix}.$
-\end{punkt}
 
 \end{oppgave}
 
@@ -362,11 +317,6 @@ A\V{x}_1 & A\V{x}_2
 Se \textbf{4.4. a)}.
 \end{punkt}
 
-
-\begin{punkt}
-Se \textbf{4.4. c)}.
-\end{punkt}
-
 \end{losning}
 
 \begin{oppgave}
@@ -382,7 +332,7 @@ Skriv om ligningen til fire ligninger med fire ukjente. Hva er totalmatrisen?
 
 
 \begin{punkt}
-Løs den oppgitte ligningen for 
+Løs ligningen for 
 $A=\begin{bmatrix}
 -1 & 1\\
 1 & -1
@@ -569,13 +519,13 @@ Skisser $A\vv{1}{0}$ og $A\vv{0}{1}$ i planet. Hva har skjedd med $\vv{1}{0}$ og
 \begin{punkt}
 Hva skjer -  geometrisk - med en vilkårlig vektor $\vv{a}{b}$ når vi multipliserer med A?
 
-Hint: $\vv{a}{b}=a\vv{1}{0}+b\vv{0}{1}$ og $A\vv{a}{b}=aA\vv{1}{0}+bA\vv{0}{1}$.
+Hint: $$\vv{a}{b}=a\vv{1}{0}+b\vv{0}{1}$$ og $$A\vv{a}{b}=aA\vv{1}{0}+bA\vv{0}{1}.$$
 \end{punkt}
 
 \begin{punkt}
-Kan du gi en geometrisk forklaring på hvorfor $A$ burde være invertibel? Har du et forslag til hvordan den inverse til $A$ burde påvirke en vilkårlig vektor ved multiplikasjon?
+Kan du gi en geometrisk forklaring på hvorfor $A$ burde være invertibel? Har du et forslag til hvordan multiplikasjon med $A^{-1}$ burde endre en vilkårlig vektor (geometrisk)?
 
-Hint: Hva er den inverse geometriske operasjonen til det du fant i $\textbf{b)}$?
+Hint: Hva er den inverse geometriske operasjonen til den du fant i $\textbf{b)}$?
 \end{punkt}
 
 \begin{punkt}
@@ -626,15 +576,29 @@ Vi finner at $A^{-1}=\begin{bmatrix}
 
 
 \begin{oppgave}
+
+
+\begin{punkt}
+La $\V{v}=\begin{bmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{bmatrix}$ og $\V{w}=\begin{bmatrix}
+w_1\\
+w_2\\
+\vdots\\
+w_n
+\end{bmatrix}$ være to vektorer i~$\mathbb{R}^n$. Vis at prikkproduktet mellom $\V{v}$ og $\V{w}$, $$\V{v}\boldsymbol{\cdot} \V{w}=v_1w_1+v_2w_2+\cdots+v_nw_n,$$ er det samme som matriseproduktet $\V{v}^T\V{w}$.
+\end{punkt}
+
+\begin{punkt}
 La $A=\begin{bmatrix}
 \V{a}_1 & \V{a}_2 & \cdots & \V{a}_n
 \end{bmatrix}
-$ være en $n\times n$-matrise slik at $\V{a}_i\cdot \V{a}_i=1$ og $\V{a}_i\cdot \V{a}_j=1$ for $i\neq j$.
+$ være en $n\times n$-matrise slik at $\V{a}_i \boldsymbol{\cdot} \V{a}_i=1$ og $\V{a}_i\boldsymbol{\cdot} \V{a}_j=0$ for $i\neq j$. Vis at $A^{-1}=A^T$.
 
-\begin{punkt}
-Vis at $A^{-1}=A^T$.
-
-Hint: Hva er radene til $A^T$?
+Hint: Hva er radvektorene til $A^T$?
 \end{punkt}
 
 \begin{punkt}
@@ -642,13 +606,18 @@ Sjekk at $A=\begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
 -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
 \end{bmatrix}$
-tilfredstiller de oppgitte kravene. Bruk \textbf{a)} for å finne $A^{-1}$. Sjekk at svaret ditt er riktig.
+tilfredstiller antagelsene i \textbf{b)}, og bruk dette til å bestemme $A^{-1}$. Sjekk at svaret ditt er riktig.
 \end{punkt}
 
 \end{oppgave}
 
 
 \begin{losning}
+
+\begin{punkt}
+Følger direkte fra definisjonen av matriseproduktet.
+\end{punkt}
+
 
 \begin{punkt}
 Hint: $A^T=\begin{bmatrix}
@@ -669,7 +638,7 @@ $$ Hva er antagelsen i oppgaven? Kan du fullføre opgaven nå?
 
 
 \begin{punkt}
-Den oppgitte matrisen tilfredstiller kravene ettersom $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=0 \text{ og}$$ $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=0.$$ Inversen er derfor $A^{-1}=A^T=\begin{bmatrix}
+Matrisen $A$ tilfredstiller kravene ettersom $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot} \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=0 \text{ og}$$ $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=0.$$ Inversen er derfor $A^{-1}=A^T=\begin{bmatrix}
 \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\\
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
 \end{bmatrix}.$ Du kan sjekke dette ved å bekrefte at både $AA^T$ og $A^TA$ er lik $I$.
