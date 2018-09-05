@@ -46,10 +46,69 @@ $BA\V{v}$
 \end{punkt}
 \end{oppgave}
 
+\begin{losning}
+
+\begin{punkt}
+Gir ikke mening.
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+-36 & 7 & -15\\
+24 & 0 & 6
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+-38 & 3 & 9\\
+14 & 11 & 5\\
+-16 & -8 & -36
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+Gir ikke mening.
+\end{punkt}
+
+\begin{punkt}
+Gir ikke mening.
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+-11\\
+26\\
+-68
+\end{bmatrix}$
+\end{punkt}
+
+
+\begin{punkt}
+$\begin{bmatrix}
+-9\\
+-12
+\end{bmatrix}$
+\end{punkt}
+
+
+\begin{punkt}
+$\begin{bmatrix}
+-299\\
+-204
+\end{bmatrix}$
+\end{punkt}
+
+\end{losning}
 
 \begin{oppgave}
 %(TODO: gitt Av_1 og Av_2, finn Aw, der w er lin.komb. av v_1 og v_2)
+La $\V{v}_1$ og $\V{v}_2$ være vektorer i $\mathbb{R}^2$ slik at $A\V{v}_1=\vv{1}{-1}$ og $A\V{v}_2=\vv{2}{3}$ for en $2\times 2$-matrise $A$. Regn ut $A\V{w}$ for $\V{w}=2\V{v}_1-\V{v}_2$.
 \end{oppgave}
+
+\begin{losning}
+$\vv{0}{-5}$
+\end{losning}
 
 
 \begin{oppgave}
@@ -65,30 +124,559 @@ og
 $A \vv{1}{1} = \vv{3}{4}$.
 \end{punkt}
 \begin{punkt}
-$A \vv{1}{0} = \vv{3}{5}$
+$A \vv{1}{0} = \vv{3}{5}$ 
 og
 $A \vv{0}{1} = \vv{-1}{0}$.
+\end{punkt}
+\begin{punkt}
+$A \begin{bmatrix}
+1\\
+0\\
+0
+\end{bmatrix}
+ =  \begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix} 
+ $, $A \begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix}
+ =  \begin{bmatrix}
+99\\
+-1\\
+145
+\end{bmatrix} 
+$ \newline 
+og $A \begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+ =  \begin{bmatrix}
+-3\\
+0\\
+2
+\end{bmatrix}.
+ $
+\end{punkt}
+
+\begin{punkt}
+$A \begin{bmatrix}
+1\\
+1\\
+1
+\end{bmatrix}
+ =  \begin{bmatrix}
+1\\
+0\\
+2
+\end{bmatrix} 
+ $, $A \begin{bmatrix}
+0\\
+1\\
+1
+\end{bmatrix}
+ =  \begin{bmatrix}
+3\\
+4\\
+5
+\end{bmatrix} 
+$ \newline 
+og $A \begin{bmatrix}
+0\\
+0\\
+-1
+\end{bmatrix}
+ =  \begin{bmatrix}
+0\\
+4\\
+-1
+\end{bmatrix}.
+ $
 \end{punkt}
 \end{oppgave}
 
 
+
+
+\begin{losning}
+La $\V{e}_i$ være vektoren med 1 i komponent $i$ og null ellers. Husk at for en $n\times n$-matrise er $A\V{e}_i$ kolonnevektor nummer $i$. Vi kan derfor løse \textbf{a)}, \textbf{c)} og \textbf{d)} direkte; det er jo kolonnevektorene til $A$ som er oppgitt. I del \textbf{b)} og \textbf{e)} må vi skrive ut ligningene vi får, og deretter løse dem direkte. Eksempelvis, hvis vi skriver $A=\begin{bmatrix}
+a_1 & a_2\\
+a_3 & a_4
+\end{bmatrix}
+$ og setter inn kravene fra del \textbf{b)} får vi $$\vv{a_1}{a_3}=\vv{2}{8} \text{ og } \vv{a_1+a_2}{a_3+a_4}=\vv{3}{4}.$$ Dette er fire ligninger med fire ukjente. Tilsvarende fremgangsmåte fungerer i \textbf{e)}, men nå er $A$ en $3\times 3$-matrise. Du kan sjekke om det endelige svaret ditt er korrekt; tilfredstiller $A$ kravene i oppgaven?
+\end{losning}
+
+
+
+
 \begin{oppgave}
-La
+Løs ligningene
 \[
-A = (TODO:matrise)
+A\V{x}=\V{b}_1\text{ og }A\V{x}=\V{b}_2
 \]
-og la
-\[
-\V{b}_1 = (TODO:vektorer)
-\]
-Løs likningene $A \V{x} = \V{b}_i$.
+samtidig for \ldots
+
+
+\begin{punkt}
+$A=\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}
+$, $\V{b}_1=\vv{1}{1}$ og $\V{b}_2=\vv{2}{2}$
+\end{punkt}
+
+
+\begin{punkt}
+$A=\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}
+$, $\V{b}_1=\vv{1}{1}$ og $\V{b}_2=\vv{1}{-1}$
+\end{punkt}
+
+
+\begin{punkt}
+$A=\begin{bmatrix}
+1 & 1\\
+1 & -1
+\end{bmatrix}
+$, $\V{b}_1=\vv{1}{2}$ og $\V{b}_2=\vv{3}{-1}$
+\end{punkt}
+
+
+\begin{punkt}
+$A=\begin{bmatrix}
+	1 & 2 & 3\\
+	2 & 3 & 4\\
+	3 & 4 & 5\\
+	4 & 5 & 6
+	\end{bmatrix}
+	$,
+$\V{b}_1=
+	\begin{bmatrix}
+	-3  \\
+	-7 \\
+	-3 \\
+	0
+	\end{bmatrix}
+$ og 
+$\V{b}_2=
+	\begin{bmatrix}
+	1  \\
+	1 \\
+	1 \\
+	1
+	\end{bmatrix}
+$
+\end{punkt}
+
+
+
 \end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Begge ligningene har uendelig mange løsninger.
+\end{punkt}
+
+
+\begin{punkt}
+Den første har uendelig mange løsninger; den andre har ingen løsning.
+\end{punkt}
+
+\begin{punkt}
+Den første har entydig løsning $\begin{bmatrix} 
+\frac{3}{2}\\
+-\frac{1}{2}
+\end{bmatrix}$; den andre har entydig løsning $\begin{bmatrix} 
+\frac{1}{2}\\
+\frac{1}{2}
+\end{bmatrix}.$
+
+\end{punkt}
+
+
+\begin{punkt}
+Den første har ingen løsninger; den andre har uendelig mange løsninger.
+\end{punkt}
+
+\end{losning}
+
+
+
+
+
+
+\begin{oppgave}
+La $A$ og $B$ være to gitte $2\times 2$-matriser. Betrakt ligningen $$AX=B,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
+
+\begin{punkt}
+Forklar hvorfor den oppgitte ligningen er ekvaivalent med å løse to $2\times 2$-ligningssystem samtidig. Hvordan generaliseres denne påstanden for $n\times n$-matriser?
+\end{punkt}
+
+\begin{punkt}
+Løs den oppgitte ligningen for $A=\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}
+$ og $B=\begin{bmatrix}
+1 & 2\\
+1 & 2
+\end{bmatrix}.$
+\end{punkt}
+
+\begin{punkt}
+Løs den oppgitte ligningen for $A=\begin{bmatrix}
+1 & 1\\
+1 & -1
+\end{bmatrix}
+$ og $B=\begin{bmatrix}
+1 & 3\\
+2 & -1
+\end{bmatrix}.$
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+\begin{punkt}
+Uttrykk $X$ og $B$ ved kolonnevektorer: $X=\begin{bmatrix}
+\V{x}_1 & \V{x}_2
+\end{bmatrix}$ og $B=\begin{bmatrix}
+\V{b}_1 & \V{b}_2
+\end{bmatrix}.$ Nå kan vi reformulere $AX=B$ som $\begin{bmatrix}
+A\V{x}_1 & A\V{x}_2
+\end{bmatrix}=\begin{bmatrix}
+\V{b}_1 & \V{b}_2
+\end{bmatrix}.$ Vi skal altså løse ligningene $A\V{x}_1=\V{b}_1$ og $A\V{x}_2=\V{b}_2$. Dette kan selvfølgelig gjøres samtidig.
+\end{punkt}
+
+\begin{punkt}
+Se \textbf{4.4. a)}.
+\end{punkt}
+
+
+\begin{punkt}
+Se \textbf{4.4. c)}.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+La $A$, $B$ og $C$ være gitte $2\times 2$-matriser. Betrakt ligningen $$AX+XB=C,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
+
+\begin{punkt}
+Hvorfor kan man \emph{ikke} løse denne ligningen som to $2\times 2$-ligningssystem samtidig?
+\end{punkt}
+
+\begin{punkt}
+Skriv om ligningen til fire ligninger med fire ukjente. Hva er totalmatrisen? 
+\end{punkt}
+
+
+\begin{punkt}
+Løs den oppgitte ligningen for 
+$A=\begin{bmatrix}
+-1 & 1\\
+1 & -1
+\end{bmatrix}$, $B=\begin{bmatrix}
+2 & 1\\
+1 & 2
+\end{bmatrix}$ og $C=\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}.$
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+La $X=\begin{bmatrix}
+x_1 & x_2\\
+x_3 & x_4
+\end{bmatrix}.$ I forrige oppgave ble ligningene for kolonnevektorene $\V{x}_1=\begin{bmatrix}
+x_1\\
+x_3
+\end{bmatrix}$ og $\V{x}_2=\begin{bmatrix}
+x_2\\
+x_4
+\end{bmatrix}$ uavhengige. Vi kunne altså finne $x_1$ og $x_3$ uten at dette påvirket $x_2$ og $x_4$, og vice versa. Dette er ikke sant i denne oppgaven.
+\end{punkt}
+
+\begin{punkt}
+Notasjon: $A=\begin{bmatrix}
+a_1 & a_2\\
+a_3 & a_4
+\end{bmatrix}$, $B=\begin{bmatrix}
+b_1 & b_2\\
+b_3 & b_4
+\end{bmatrix}$ og $C=\begin{bmatrix}
+c_1 & c_2\\
+c_3 & c_4
+\end{bmatrix}$. Totalmatrisen blir da $$\begin{bmatrix}
+a_1+b_1 & b_3 & a_2 & 0 & c_1\\
+b_2 & a_1+b_4 & 0 & a_2 & c_2\\
+a_3 & 0 & a_4+b_1 & b_3 & c_3\\
+0 & a_3 & b_2 & a_4+b_4 & c_4
+\end{bmatrix}.$$ Merk: avhengig av hvordan du nummererte ligningene kan du ha en totalmatrise hvor radene er byttet om på.
+\end{punkt}
+
+
+\begin{punkt}
+Med oppgitte matriser blir totalmatrisen fra \textbf{b)}$$\begin{bmatrix}
+1 & 1 & 1 & 0 & 1\\
+1 & 1 & 0 & 1 & 1\\
+1 & 0 & 1 & 1 & 1\\
+0 & 1 & 1 & 1 & 1
+\end{bmatrix},$$ som har løsning $x_1=\frac{1}{3}$, $x_2=\frac{1}{3}$, $x_3=\frac{1}{3}$ og $x_4=\frac{1}{3}$. Løsningen er altså   
+$$X=\begin{bmatrix}
+\frac{1}{3} & \frac{1}{3}\\
+\frac{1}{3} & \frac{1}{3}
+\end{bmatrix}.$$
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+Er følgende matriser invertible? I så fall, finn den inverse og sjekk at svaret ditt er riktig. 
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 1\\
+1 & -1
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 2\\
+2 & 3\\
+3 & 4
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 2 & 3\\
+2 & 3 & 4\\
+3 & 4 & 5
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 0 & 0\\
+1 & 1 & 0\\
+1 & 1 & 1
+\end{bmatrix}$
+\end{punkt}
+
+
+\end{oppgave}
+
+
+\begin{losning}
+Hint: Du kan sjekke om en $n\times n$-matrise er inverterbar hvis du prøver å finne den inverse ved regning. Dette koker altså ned til å radredusere $\begin{bmatrix}A & I \end{bmatrix}$.
+
+\begin{punkt}
+Ikke invertibel.
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+\frac{1}{2} & \frac{1}{2}\\
+\frac{1}{2} & -\frac{1}{2}
+\end{bmatrix}.$
+\end{punkt}
+
+\begin{punkt}
+Ikke invertibel (den er ikke kvadratisk).
+\end{punkt}
+
+
+\begin{punkt}
+Ikke invertibel.
+\end{punkt}
+
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & -1 & 1
+\end{bmatrix}.$
+\end{punkt}
+
+
+\end{losning}
 
 
 \begin{oppgave}
 % (TODO: A 3x3-matrise, finn c og v\ ne 0 slik at Av = cv
+
+La $A=\begin{bmatrix}
+1 & 0\\
+0 & 0
+\end{bmatrix}$. Kan du finne en ikke-null vektor $\vv{a}{b}$ slik at $A\vv{a}{b}=c\vv{a}{b}$ for en konstant $c$? I så fall, for hvilke valg av $c$ eksisterer en slik ikke-null vektor? Kan du gi en gometrisk forklaring på hva som skjer når du multipliserer $A$ med vektorerene i de ulike tilfellene for $c$?
 \end{oppgave}
 
 
+
+\begin{losning}
+
+Konstanten $c$ kan være 0 eller 1. For $c=1$ må $b=0$ men vi kan velge $a$ fritt. Dette svarer geometrisk til at vektorer som kun har komponent langs $y$-aksen blir null-vektoren etter multiplikasjon med $A$. For $c=0$ må $a=0$ men vi kan velge $b$ fritt. Dette svarer geometrisk til at vektorer som kun har komponent langs $x$-aksen ikke påvirkes av multiplikasjon med $A$.
+
+
+Hint: Vi ønsker at $A\vv{a}{b}=c\vv{a}{b}$, som gir ligningene $a=c\cdot a$ og $0=b\cdot c$. Det er nå to muligheter: 1) $c=1$ og $b=0$, eller 2) $c=0$ og $a=0$.
+
+
+
+\end{losning}
+
+
+
+
+\begin{oppgave}
 % TODO: oppgave med å se grafisk hvordan en matrise (helst 2x2) transformerer vektorer
+
+La $A=\begin{bmatrix}
+0 & -1\\
+1 & 0
+\end{bmatrix}.$
+
+\begin{punkt}
+Skisser $A\vv{1}{0}$ og $A\vv{0}{1}$ i planet. Hva har skjedd med $\vv{1}{0}$ og $\vv{0}{1}$ geometrisk?
+\end{punkt}
+
+\begin{punkt}
+Hva skjer -  geometrisk - med en vilkårlig vektor $\vv{a}{b}$ når vi multipliserer med A?
+
+Hint: $\vv{a}{b}=a\vv{1}{0}+b\vv{0}{1}$ og $A\vv{a}{b}=aA\vv{1}{0}+bA\vv{0}{1}$.
+\end{punkt}
+
+\begin{punkt}
+Kan du gi en geometrisk forklaring på hvorfor $A$ burde være invertibel? Har du et forslag til hvordan den inverse til $A$ burde påvirke en vilkårlig vektor ved multiplikasjon?
+
+Hint: Hva er den inverse geometriske operasjonen til det du fant i $\textbf{b)}$?
+\end{punkt}
+
+\begin{punkt}
+Finn den inverse matrisen til $A$, og verifiser svaret ditt i del $\textbf{c)}$.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+
+Vektorene blir rotert 90 grader mot klokken.
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw[->] (-2,0) -- (2,0) node[right] {$x$};
+	\draw[->] (0,-1) -- (0,2) node[above] {$y$};
+	\draw[->] (0,0) -- (0,1) node[right] {$A\vv{1}{0}$};
+	\draw[->] (0,0) -- (-1,0) node[above] {$A\vv{0}{1}$};
+	%\draw[->] (0,0) -- (7/2,-1) node[below] {$\frac{1}{2}\V{u}-2\V{v}$};
+	%\draw[->] (0,0) -- (2,3) node[above] {$\V{u}+\V{v}$};
+	\end{tikzpicture}
+\end{center}
+
+
+\end{punkt}
+
+\begin{punkt}
+Hint: Dersom vi deler opp en vilkårlig vektor $\vv{a}{b}$ i vektoren $\vv{a}{0}$ langs $x$-aksen og $\vv{0}{b}$ langs $y$-aksen, ser vi fra hintet i oppgaveteksten og $\textbf{a)}$ at hver av disse roteres 90 grader mot klokken. Altså roteres hele vektoren 90 grader mot klokken.
+\end{punkt}
+
+
+\begin{punkt}
+Den omvendte geometriske operasjonen er å rotere 90 grader med klokken. Derfor skulle man tro at det finnes en matrise som gjør dette og er inversen til $A$.
+\end{punkt}
+
+
+\begin{punkt}
+Vi finner at $A^{-1}=\begin{bmatrix}
+0 & 1\\
+-1 & 0
+\end{bmatrix}.$ Du kan nå gjenta \textbf{a)}-\textbf{b)} med $A^{-1}$ i stedet for $A$, og dermed sjekke at $A^{-1}$ roterer en vektor 90 grader med klokken.
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+La $A=\begin{bmatrix}
+\V{a}_1 & \V{a}_2 & \cdots & \V{a}_n
+\end{bmatrix}
+$ være en $n\times n$-matrise slik at $\V{a}_i\cdot \V{a}_i=1$ og $\V{a}_i\cdot \V{a}_j=1$ for $i\neq j$.
+
+\begin{punkt}
+Vis at $A^{-1}=A^T$.
+
+Hint: Hva er radene til $A^T$?
+\end{punkt}
+
+\begin{punkt}
+Sjekk at $A=\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}$
+tilfredstiller de oppgitte kravene. Bruk \textbf{a)} for å finne $A^{-1}$. Sjekk at svaret ditt er riktig.
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Hint: $A^T=\begin{bmatrix}
+\V{a}_1^T\\
+\V{a}_2^T\\
+\vdots\\
+\V{a}_n^T
+\end{bmatrix}$. Derfor blir
+$$A^TA=\begin{bmatrix}
+\V{a}_1^T \V{a}_1 & \V{a}_1^T \V{a}_2 & \cdots & \V{a}_1^T\V{a}_n\\
+\V{a}_2^T \V{a}_1 & \V{a}_2^T \V{a}_2 & \cdots & \V{a}_2^T\V{a}_n\\
+\vdots & \vdots & \ddots & \vdots\\
+\V{a}_n^T \V{a}_1 & \V{a}_n^T \V{a}_2 & \cdots & \V{a}_n^T\V{a}_n
+\end{bmatrix}.
+$$ Hva er antagelsen i oppgaven? Kan du fullføre opgaven nå?
+
+\end{punkt}
+
+
+\begin{punkt}
+Den oppgitte matrisen tilfredstiller kravene ettersom $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=0 \text{ og}$$ $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\cdot \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=0.$$ Inversen er derfor $A^{-1}=A^T=\begin{bmatrix}
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}.$ Du kan sjekke dette ved å bekrefte at både $AA^T$ og $A^TA$ er lik $I$.
+\end{punkt}
+
+
+\end{losning}
+
+
 
