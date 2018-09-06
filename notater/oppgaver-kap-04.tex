@@ -95,12 +95,12 @@ $\begin{bmatrix}
 \end{punkt}
 
 
-\begin{punkt}
-$\begin{bmatrix}
--9\\
--12
-\end{bmatrix}$
-\end{punkt}
+%\begin{punkt}
+%$\begin{bmatrix}
+%-9\\
+%-12
+%\end{bmatrix}$
+%\end{punkt}
 
 
 \begin{punkt}
@@ -109,6 +109,20 @@ $\begin{bmatrix}
 -204
 \end{bmatrix}$
 \end{punkt}
+
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 0\\
+2 & 0\\
+5 & 3
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+69
+\end{punkt}
+
 
 \end{losning}
 
@@ -378,11 +392,11 @@ Uttrykk $X$ og $B$ ved kolonnevektorer: $X=\begin{bmatrix}
 A\V{x}_1 & A\V{x}_2
 \end{bmatrix}=\begin{bmatrix}
 \V{b}_1 & \V{b}_2
-\end{bmatrix}.$ Vi skal altså løse likningene $A\V{x}_1=\V{b}_1$ og $A\V{x}_2=\V{b}_2$. Dette kan selvfølgelig gjøres samtidig.
+\end{bmatrix}.$ Vi skal altså løse likningene $A\V{x}_1=\V{b}_1$ og $A\V{x}_2=\V{b}_2$. Dette kan selvfølgelig gjøres samtidig. 
 \end{punkt}
 
 \begin{punkt}
-Se \textbf{4.4. a)}.
+Likningen som korresponderer til den første kolonnen i $B$ har uendelig mange løsninger; den andre har ingen løsning.
 \end{punkt}
 
 \end{losning}
@@ -438,7 +452,7 @@ x_4
 \end{punkt}
 
 \begin{punkt}
-Notasjon: $A=\begin{bmatrix}
+Innfør notasjon for elementene i matrisene: $A=\begin{bmatrix}
 a_1 & a_2\\
 a_3 & a_4
 \end{bmatrix}$, $B=\begin{bmatrix}
@@ -447,7 +461,7 @@ b_3 & b_4
 \end{bmatrix}$ og $C=\begin{bmatrix}
 c_1 & c_2\\
 c_3 & c_4
-\end{bmatrix}$. Totalmatrisen blir da $$\begin{bmatrix}
+\end{bmatrix}$. Totalmatrisen blir - med denne notasjonen - da $$\begin{bmatrix}
 a_1+b_1 & b_3 & a_2 & 0 & c_1\\
 b_2 & a_1+b_4 & 0 & a_2 & c_2\\
 a_3 & 0 & a_4+b_1 & b_3 & c_3\\
@@ -491,7 +505,7 @@ de ulike tilfellene for $c$?
 
 \begin{losning}
 
-Konstanten $c$ kan være 0 eller 1. For $c=1$ må $b=0$ men vi kan velge $a$ fritt. Dette svarer geometrisk til at vektorer som kun har komponent langs $y$-aksen blir null-vektoren etter multiplikasjon med $A$. For $c=0$ må $a=0$ men vi kan velge $b$ fritt. Dette svarer geometrisk til at vektorer som kun har komponent langs $x$-aksen ikke påvirkes av multiplikasjon med $A$.
+Vektoren må være på formen $\V{v}=\vv{a}{b}$ hvor $a$ og~$b$ er reelle tall. Konstanten $c$ kan være 0 eller 1. For $c=1$ må $b=0$ men vi kan velge $a$ fritt. Dette svarer geometrisk til at vektorer som kun har komponent langs $y$-aksen blir null-vektoren ved multiplikasjon med $A$. For $c=0$ må $a=0$ men vi kan velge $b$ fritt. Dette svarer geometrisk til at vektorer som kun har komponent langs $x$-aksen ikke påvirkes av multiplikasjon med $A$.
 
 
 Hint: Vi ønsker at $A\vv{a}{b}=c\vv{a}{b}$, som gir likningene $a=c\cdot a$ og $0=b\cdot c$. Det er nå to muligheter: 1) $c=1$ og $b=0$, eller 2) $c=0$ og $a=0$.
@@ -560,7 +574,7 @@ Vektorene blir rotert 90 grader mot klokken.
 \end{punkt}
 
 \begin{punkt}
-Hint: Dersom vi deler opp en vilkårlig vektor $\vv{a}{b}$ i vektoren $\vv{a}{0}$ langs $x$-aksen og $\vv{0}{b}$ langs $y$-aksen, ser vi fra hintet i oppgaveteksten og $\textbf{a)}$ at hver av disse roteres 90 grader mot klokken. Altså roteres hele vektoren 90 grader mot klokken.
+Del opp en vilkårlig vektor $\vv{a}{b}$ i vektoren $a\vv{1}{0}$ langs $x$-aksen og $b\vv{0}{1}$ langs $y$-aksen. Husk at $$A\vv{a}{b}=aA\vv{1}{0}+bA\vv{0}{1}.$$ Fra $\textbf{a)}$ ser vi at hver komponent av vektoren roteres 90 grader mot klokken. Altså roteres hele vektoren 90 grader mot klokken.
 \end{punkt}
 
 
@@ -570,7 +584,7 @@ Den omvendte geometriske operasjonen er å rotere 90 grader med klokken. Derfor 
 
 
 \begin{punkt}
-Vi finner at $A^{-1}=\begin{bmatrix}
+Inversen til $A$: $A^{-1}=\begin{bmatrix}
 0 & 1\\
 -1 & 0
 \end{bmatrix}.$ Du kan nå gjenta \textbf{a)}-\textbf{b)} med $A^{-1}$ i stedet for $A$, og dermed sjekke at $A^{-1}$ roterer en vektor 90 grader med klokken.
@@ -660,7 +674,7 @@ $$ Hva er antagelsen i oppgaven? Kan du fullføre opgaven nå?
 Matrisen $A$ tilfredstiller kravene ettersom $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot} \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=0 \text{ og}$$ $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=0.$$ Inversen er derfor $A^{-1}=A\tr=\begin{bmatrix}
 \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\\
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-\end{bmatrix}.$ Du kan sjekke dette ved å bekrefte at både $AA\tr$ og $A\trA$ er lik $I$.
+\end{bmatrix}.$ Du kan sjekke dette ved å bekrefte at både $AA\tr$ og $A\tr A$ er lik $I$.
 \end{punkt}
 
 
