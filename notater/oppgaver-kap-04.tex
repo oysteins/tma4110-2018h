@@ -20,6 +20,9 @@ B =
 \V{v} = \vvv{7}{2}{-4}
 \]
 Regn ut (eller forklar hvorfor uttrykkene ikke gir mening):
+
+\noindent
+\begin{minipage}{0.14\textwidth}
 \begin{punkt}
 $AB$
 \end{punkt}
@@ -29,6 +32,8 @@ $BA$
 \begin{punkt}
 $A^2$
 \end{punkt}
+\end{minipage}
+\begin{minipage}{0.19\textwidth}
 \begin{punkt}
 $B^2$
 \end{punkt}
@@ -38,9 +43,8 @@ $A+B$
 \begin{punkt}
 $(A + I_3) \V{v}$
 \end{punkt}
-\begin{punkt}
-$B\V{v}$
-\end{punkt}
+\end{minipage}
+\begin{minipage}{0.1\textwidth}
 \begin{punkt}
 $BA\V{v}$
 \end{punkt}
@@ -50,6 +54,7 @@ $B^\top$
 \begin{punkt}
 $\V{v}^\top \V{v}$
 \end{punkt}
+\end{minipage}
 \end{oppgave}
 
 \begin{losning}
@@ -108,8 +113,14 @@ $\begin{bmatrix}
 \end{losning}
 
 \begin{oppgave}
-%(TODO: gitt Av_1 og Av_2, finn Aw, der w er lin.komb. av v_1 og v_2)
-La $\V{v}_1$ og $\V{v}_2$ være vektorer i $\mathbb{R}^2$ slik at $A\V{v}_1=\vv{1}{-1}$ og $A\V{v}_2=\vv{2}{3}$ for en $2\times 2$-matrise $A$. Regn ut $A\V{w}$ for $\V{w}=2\V{v}_1-\V{v}_2$.
+La $\V{v}_1$ og $\V{v}_2$ være vektorer i $\mathbb{R}^2$, og $A$ en
+$2 \times 2$-matrise slik at:
+\[
+A\V{v}_1=\vv{1}{-1}
+\quad\text{og}\quad
+A\V{v}_2=\vv{2}{3}
+\]
+Regn ut $A\V{w}$, der $\V{w}=2\V{v}_1-\V{v}_2$.
 \end{oppgave}
 
 \begin{losning}
@@ -118,96 +129,68 @@ $\vv{0}{-5}$
 
 
 \begin{oppgave}
-Løs ligningene
+Løs de to ligningene
+$A\V{x}_1=\V{b}_1$  og $A\V{x}_2=\V{b}_2$,
+der $A$, $\V{b}_1$ og~$\V{b}_2$ er gitt ved:
 \[
-A\V{x}_1=\V{b}_1\text{ og }A\V{x}_1=\V{b}_2
-\]
-samtidig for \ldots
-
-
-\begin{punkt}
-$A=\begin{bmatrix}
-1 & 1\\
-1 & 1
-\end{bmatrix}
-$, $\V{b}_1=\vv{1}{1}$ og $\V{b}_2=\vv{1}{-1}$
-\end{punkt}
-
-
-
-
-\begin{punkt}
-$A=\begin{bmatrix}
+A=\begin{bmatrix}
 	1 & 2 & 3\\
 	2 & 3 & 4\\
 	3 & 4 & 5\\
 	4 & 5 & 6
 	\end{bmatrix}
-	$,
-$\V{b}_1=
+\quad
+\V{b}_1=
 	\begin{bmatrix}
 	-3  \\
 	-7 \\
 	-3 \\
 	0
 	\end{bmatrix}
-$ og 
-$\V{b}_2=
+\quad
+\V{b}_2=
 	\begin{bmatrix}
 	1  \\
 	1 \\
 	1 \\
 	1
 	\end{bmatrix}
-$
-\end{punkt}
-
-
-
+\]
 \end{oppgave}
 
 
 \begin{losning}
-
-
-\begin{punkt}
-Den første har uendelig mange løsninger; den andre har ingen løsning.
-\end{punkt}
-
-
-\begin{punkt}
 Den første har ingen løsninger; den andre har uendelig mange løsninger.
-\end{punkt}
-
 \end{losning}
 
 
 
 \begin{oppgave}
-Er følgende matriser inverterbare? I så fall, finn den inverse og sjekk at svaret ditt er riktig. 
+Er følgende matriser inverterbare? I så fall, finn den inverse og
+sjekk at svaret ditt er riktig.
 
+\vspace{-8pt}\noindent
+\begin{minipage}[t]{0.2\textwidth}
 \begin{punkt}
 $\begin{bmatrix}
 1 & 1\\
 1 & 1
 \end{bmatrix}$
 \end{punkt}
-
 \begin{punkt}
 $\begin{bmatrix}
 1 & 1\\
 1 & -1
 \end{bmatrix}$
 \end{punkt}
-
 \begin{punkt}
 $\begin{bmatrix}
-1 & 2\\
-2 & 3\\
-3 & 4
+1 & 2 & 3 \\
+2 & 3 & 4
 \end{bmatrix}$
 \end{punkt}
-
+\end{minipage}
+\begin{minipage}[t]{0.2\textwidth}
 \begin{punkt}
 $\begin{bmatrix}
 1 & 2 & 3\\
@@ -215,7 +198,6 @@ $\begin{bmatrix}
 3 & 4 & 5
 \end{bmatrix}$
 \end{punkt}
-
 \begin{punkt}
 $\begin{bmatrix}
 1 & 0 & 0\\
@@ -223,8 +205,7 @@ $\begin{bmatrix}
 1 & 1 & 1
 \end{bmatrix}$
 \end{punkt}
-
-
+\end{minipage}
 \end{oppgave}
 
 
@@ -272,12 +253,12 @@ Finn en kvadratisk matrise~$A$ slik at:
 \begin{punkt}
 $A \vv{1}{0} = \vv{3}{5}$
 og
-$A \vv{0}{1} = \vv{-1}{0}$.
+$A \vv{0}{1} = \vv{-1}{0}$
 \end{punkt}
 \begin{punkt}
 $A \vv{1}{0} = \vv{2}{8}$
 og
-$A \vv{1}{1} = \vv{3}{4}$.
+$A \vv{1}{1} = \vv{3}{4}$
 \end{punkt}
 
 \begin{punkt}
@@ -301,7 +282,7 @@ $A \begin{bmatrix}
 -1\\
 145
 \end{bmatrix} 
-$ \newline 
+$% \newline 
 og $A \begin{bmatrix}
 0\\
 0\\
@@ -311,7 +292,7 @@ og $A \begin{bmatrix}
 -3\\
 0\\
 2
-\end{bmatrix}.
+\end{bmatrix}
  $
 \end{punkt}
 
@@ -336,7 +317,7 @@ $A \begin{bmatrix}
 4\\
 5
 \end{bmatrix} 
-$ \newline 
+$% \newline 
 og $A \begin{bmatrix}
 0\\
 0\\
@@ -346,7 +327,7 @@ og $A \begin{bmatrix}
 0\\
 4\\
 -1
-\end{bmatrix}.
+\end{bmatrix}
  $
 \end{punkt}
 \end{oppgave}
@@ -366,7 +347,7 @@ $ og setter inn kravene fra del \textbf{b)} får vi $$\vv{a_1}{a_3}=\vv{2}{8} \t
 
 
 \begin{oppgave}
-La $A$ og $B$ være to gitte $2\times 2$-matriser. Betrakt ligningen $$AX=B,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
+La $A$ og $B$ være to $2\times 2$-matriser. Betrakt ligningen $$AX=B,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
 
 \begin{punkt}
 Forklar hvorfor ligningen er ekvivalent med å løse to $2\times 2$-ligningssystem samtidig. Hvordan generaliseres denne påstanden for $n\times n$-matriser?
@@ -407,7 +388,7 @@ Se \textbf{4.4. a)}.
 \end{losning}
 
 \begin{oppgave}
-La $A$, $B$ og $C$ være gitte $2\times 2$-matriser. Betrakt ligningen $$AX+XB=C,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
+La $A$, $B$ og $C$ være  $2\times 2$-matriser. Betrakt ligningen $$AX+XB=C,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
 
 \begin{punkt}
 Hvorfor kan man \emph{ikke} løse denne ligningen som to $2\times 2$-ligningssystem samtidig?
@@ -419,17 +400,23 @@ Skriv om ligningen til fire ligninger med fire ukjente. Hva er totalmatrisen?
 
 
 \begin{punkt}
-Løs ligningen for 
-$A=\begin{bmatrix}
+Løs ligningen når $A$, $B$ og~$C$ er følgende matriser:
+\[
+A=\begin{bmatrix}
 -1 & 1\\
 1 & -1
-\end{bmatrix}$, $B=\begin{bmatrix}
+\end{bmatrix}
+\qquad
+B=\begin{bmatrix}
 2 & 1\\
 1 & 2
-\end{bmatrix}$ og $C=\begin{bmatrix}
+\end{bmatrix}
+\qquad
+C=\begin{bmatrix}
 1 & 1\\
 1 & 1
-\end{bmatrix}.$
+\end{bmatrix}
+\]
 \end{punkt}
 
 \end{oppgave}
@@ -486,11 +473,18 @@ $$X=\begin{bmatrix}
 
 
 \begin{oppgave}
-% (TODO: A 3x3-matrise, finn c og v\ ne 0 slik at Av = cv
-La $A=\begin{bmatrix}
+La $A$ være følgende matrise:
+\[
+A=\begin{bmatrix}
 1 & 0\\
 0 & 0
-\end{bmatrix}$. Kan du finne en ikke-null vektor $\V{v}$ slik at $A\V{v}=c\V{v}$ for en konstant $c$? I så fall, for hvilke valg av $c$ eksisterer en slik ikke-null vektor? Kan du gi en gometrisk forklaring på hva som skjer når du multipliserer $A$ med vektorerene i de ulike tilfellene for $c$?
+\end{bmatrix}
+\]
+Kan du finne et tall~$c$ og en vektor $\V{v}$ (som ikke skal være
+nullvektoren) slik at $A\V{v}=c\V{v}$?  I så fall, for hvilke valg av
+$c$ eksisterer en slik ikke-null vektor? Kan du gi en geometrisk
+forklaring på hva som skjer når du multipliserer $A$ med vektorene i
+de ulike tilfellene for $c$?
 \end{oppgave}
 
 
@@ -510,31 +504,37 @@ Hint: Vi ønsker at $A\vv{a}{b}=c\vv{a}{b}$, som gir ligningene $a=c\cdot a$ og 
 
 
 \begin{oppgave}
-% TODO: oppgave med å se grafisk hvordan en matrise (helst 2x2) transformerer vektorer
-
-La $A=\begin{bmatrix}
+La $A$, $\V{e}_1$ og~$\V{e}_2$ være gitt ved:
+\[
+A=\begin{bmatrix}
 0 & -1\\
 1 & 0
-\end{bmatrix}.$
+\end{bmatrix}
+\qquad
+\V{e}_1 = \vv{1}{0}
+\qquad
+\V{e}_2 = \vv{0}{1}
+\]
 
 \begin{punkt}
-Skisser $A\vv{1}{0}$ og $A\vv{0}{1}$ i planet. Hva har skjedd med $\vv{1}{0}$ og $\vv{0}{1}$ geometrisk?
+Skisser $A \V{e}_1$ og $A \V{e}_2$ i planet. Hva har skjedd med
+$\V{e}_1$ og $\V{e}_2$ geometrisk?
 \end{punkt}
 
 \begin{punkt}
-Hva skjer --  geometrisk -- med en vilkårlig vektor $\vv{a}{b}$ når vi multipliserer med A?
-
+Hva skjer -- geometrisk -- med en vilkårlig vektor i~$\R^2$ når vi
+multipliserer med A?
 %Hint: $$\vv{a}{b}=a\vv{1}{0}+b\vv{0}{1}$$ og $$A\vv{a}{b}=aA\vv{1}{0}+bA\vv{0}{1}.$$
 \end{punkt}
 
 \begin{punkt}
 Kan du gi en geometrisk forklaring på hvorfor $A$ burde være inverterbar? Har du et forslag til hvordan multiplikasjon med $A^{-1}$ burde endre en vilkårlig vektor (geometrisk)?
-
 %Hint: Hva er den inverse geometriske operasjonen til den du fant i $\textbf{b)}$?
 \end{punkt}
 
 \begin{punkt}
-Finn den inverse matrisen til $A$, og verifiser svaret ditt i del $\textbf{c)}$.
+Finn den inverse matrisen til $A$, og sammenlign med svaret ditt i
+del~$\textbf{c)}$.
 \end{punkt}
 
 \end{oppgave}
