@@ -44,6 +44,12 @@ $B\V{v}$
 \begin{punkt}
 $BA\V{v}$
 \end{punkt}
+\begin{punkt}
+$B^\top$
+\end{punkt}
+\begin{punkt}
+$\V{v}^\top \V{v}$
+\end{punkt}
 \end{oppgave}
 
 \begin{losning}
@@ -109,6 +115,156 @@ La $\V{v}_1$ og $\V{v}_2$ være vektorer i $\mathbb{R}^2$ slik at $A\V{v}_1=\vv{
 \begin{losning}
 $\vv{0}{-5}$
 \end{losning}
+
+
+\begin{oppgave}
+Løs ligningene
+\[
+A\V{x}_1=\V{b}_1\text{ og }A\V{x}_1=\V{b}_2
+\]
+samtidig for \ldots
+
+
+\begin{punkt}
+$A=\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}
+$, $\V{b}_1=\vv{1}{1}$ og $\V{b}_2=\vv{1}{-1}$
+\end{punkt}
+
+
+
+
+\begin{punkt}
+$A=\begin{bmatrix}
+	1 & 2 & 3\\
+	2 & 3 & 4\\
+	3 & 4 & 5\\
+	4 & 5 & 6
+	\end{bmatrix}
+	$,
+$\V{b}_1=
+	\begin{bmatrix}
+	-3  \\
+	-7 \\
+	-3 \\
+	0
+	\end{bmatrix}
+$ og 
+$\V{b}_2=
+	\begin{bmatrix}
+	1  \\
+	1 \\
+	1 \\
+	1
+	\end{bmatrix}
+$
+\end{punkt}
+
+
+
+\end{oppgave}
+
+
+\begin{losning}
+
+
+\begin{punkt}
+Den første har uendelig mange løsninger; den andre har ingen løsning.
+\end{punkt}
+
+
+\begin{punkt}
+Den første har ingen løsninger; den andre har uendelig mange løsninger.
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+Er følgende matriser inverterbare? I så fall, finn den inverse og sjekk at svaret ditt er riktig. 
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 1\\
+1 & -1
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 2\\
+2 & 3\\
+3 & 4
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 2 & 3\\
+2 & 3 & 4\\
+3 & 4 & 5
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 0 & 0\\
+1 & 1 & 0\\
+1 & 1 & 1
+\end{bmatrix}$
+\end{punkt}
+
+
+\end{oppgave}
+
+
+\begin{losning}
+Hint: Du kan sjekke om en $n\times n$-matrise er inverterbar hvis du prøver å finne den inverse ved regning. Dette koker altså ned til å radredusere $\begin{bmatrix}A & I \end{bmatrix}$.
+
+\begin{punkt}
+Ikke inverterbar.
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+\frac{1}{2} & \frac{1}{2}\\
+\frac{1}{2} & -\frac{1}{2}
+\end{bmatrix}.$
+\end{punkt}
+
+\begin{punkt}
+Ikke inverterbar (den er ikke kvadratisk).
+\end{punkt}
+
+
+\begin{punkt}
+Ikke inverterbar.
+\end{punkt}
+
+
+\begin{punkt}
+$\begin{bmatrix}
+1 & 0 & 0 \\
+-1 & 1 & 0 \\
+0 & -1 & 1
+\end{bmatrix}.$
+\end{punkt}
+
+
+\end{losning}
+
+
+
 
 
 \begin{oppgave}
@@ -210,79 +366,10 @@ $ og setter inn kravene fra del \textbf{b)} får vi $$\vv{a_1}{a_3}=\vv{2}{8} \t
 
 
 \begin{oppgave}
-Løs ligningene
-\[
-A\V{x}=\V{b}_1\text{ og }A\V{x}=\V{b}_2
-\]
-samtidig for \ldots
-
-
-\begin{punkt}
-$A=\begin{bmatrix}
-1 & 1\\
-1 & 1
-\end{bmatrix}
-$, $\V{b}_1=\vv{1}{1}$ og $\V{b}_2=\vv{1}{-1}$
-\end{punkt}
-
-
-
-
-\begin{punkt}
-$A=\begin{bmatrix}
-	1 & 2 & 3\\
-	2 & 3 & 4\\
-	3 & 4 & 5\\
-	4 & 5 & 6
-	\end{bmatrix}
-	$,
-$\V{b}_1=
-	\begin{bmatrix}
-	-3  \\
-	-7 \\
-	-3 \\
-	0
-	\end{bmatrix}
-$ og 
-$\V{b}_2=
-	\begin{bmatrix}
-	1  \\
-	1 \\
-	1 \\
-	1
-	\end{bmatrix}
-$
-\end{punkt}
-
-
-
-\end{oppgave}
-
-
-\begin{losning}
-
-
-\begin{punkt}
-Den første har uendelig mange løsninger; den andre har ingen løsning.
-\end{punkt}
-
-
-\begin{punkt}
-Den første har ingen løsninger; den andre har uendelig mange løsninger.
-\end{punkt}
-
-\end{losning}
-
-
-
-
-
-
-\begin{oppgave}
 La $A$ og $B$ være to gitte $2\times 2$-matriser. Betrakt ligningen $$AX=B,$$ hvor $X$ er en ukjent $2\times 2$-matrise.
 
 \begin{punkt}
-Forklar hvorfor ligningen er ekvaivalent med å løse to $2\times 2$-ligningssystem samtidig. Hvordan generaliseres denne påstanden for $n\times n$-matriser?
+Forklar hvorfor ligningen er ekvivalent med å løse to $2\times 2$-ligningssystem samtidig. Hvordan generaliseres denne påstanden for $n\times n$-matriser?
 \end{punkt}
 
 \begin{punkt}
@@ -399,93 +486,11 @@ $$X=\begin{bmatrix}
 
 
 \begin{oppgave}
-Er følgende matriser invertible? I så fall, finn den inverse og sjekk at svaret ditt er riktig. 
-
-\begin{punkt}
-$\begin{bmatrix}
-1 & 1\\
-1 & 1
-\end{bmatrix}$
-\end{punkt}
-
-\begin{punkt}
-$\begin{bmatrix}
-1 & 1\\
-1 & -1
-\end{bmatrix}$
-\end{punkt}
-
-\begin{punkt}
-$\begin{bmatrix}
-1 & 2\\
-2 & 3\\
-3 & 4
-\end{bmatrix}$
-\end{punkt}
-
-\begin{punkt}
-$\begin{bmatrix}
-1 & 2 & 3\\
-2 & 3 & 4\\
-3 & 4 & 5
-\end{bmatrix}$
-\end{punkt}
-
-\begin{punkt}
-$\begin{bmatrix}
-1 & 0 & 0\\
-1 & 1 & 0\\
-1 & 1 & 1
-\end{bmatrix}$
-\end{punkt}
-
-
-\end{oppgave}
-
-
-\begin{losning}
-Hint: Du kan sjekke om en $n\times n$-matrise er inverterbar hvis du prøver å finne den inverse ved regning. Dette koker altså ned til å radredusere $\begin{bmatrix}A & I \end{bmatrix}$.
-
-\begin{punkt}
-Ikke invertibel.
-\end{punkt}
-
-\begin{punkt}
-$\begin{bmatrix}
-\frac{1}{2} & \frac{1}{2}\\
-\frac{1}{2} & -\frac{1}{2}
-\end{bmatrix}.$
-\end{punkt}
-
-\begin{punkt}
-Ikke invertibel (den er ikke kvadratisk).
-\end{punkt}
-
-
-\begin{punkt}
-Ikke invertibel.
-\end{punkt}
-
-
-\begin{punkt}
-$\begin{bmatrix}
-1 & 0 & 0 \\
--1 & 1 & 0 \\
-0 & -1 & 1
-\end{bmatrix}.$
-\end{punkt}
-
-
-\end{losning}
-
-
-\begin{oppgave}
 % (TODO: A 3x3-matrise, finn c og v\ ne 0 slik at Av = cv
-
 La $A=\begin{bmatrix}
 1 & 0\\
 0 & 0
-\end{bmatrix}$. Kan du finne en ikke-null vektor $\vv{a}{b}$ slik at $A\vv{a}{b}=c\vv{a}{b}$ for en konstant $c$? I så fall, for hvilke valg av $c$ eksisterer en slik ikke-null vektor? Kan du gi en gometrisk forklaring på hva som skjer når du multipliserer $A$ med vektorerene i de ulike tilfellene for $c$?
+\end{bmatrix}$. Kan du finne en ikke-null vektor $\V{v}$ slik at $A\V{v}=c\V{v}$ for en konstant $c$? I så fall, for hvilke valg av $c$ eksisterer en slik ikke-null vektor? Kan du gi en gometrisk forklaring på hva som skjer når du multipliserer $A$ med vektorerene i de ulike tilfellene for $c$?
 \end{oppgave}
 
 
@@ -517,15 +522,15 @@ Skisser $A\vv{1}{0}$ og $A\vv{0}{1}$ i planet. Hva har skjedd med $\vv{1}{0}$ og
 \end{punkt}
 
 \begin{punkt}
-Hva skjer -  geometrisk - med en vilkårlig vektor $\vv{a}{b}$ når vi multipliserer med A?
+Hva skjer --  geometrisk -- med en vilkårlig vektor $\vv{a}{b}$ når vi multipliserer med A?
 
-Hint: $$\vv{a}{b}=a\vv{1}{0}+b\vv{0}{1}$$ og $$A\vv{a}{b}=aA\vv{1}{0}+bA\vv{0}{1}.$$
+%Hint: $$\vv{a}{b}=a\vv{1}{0}+b\vv{0}{1}$$ og $$A\vv{a}{b}=aA\vv{1}{0}+bA\vv{0}{1}.$$
 \end{punkt}
 
 \begin{punkt}
-Kan du gi en geometrisk forklaring på hvorfor $A$ burde være invertibel? Har du et forslag til hvordan multiplikasjon med $A^{-1}$ burde endre en vilkårlig vektor (geometrisk)?
+Kan du gi en geometrisk forklaring på hvorfor $A$ burde være inverterbar? Har du et forslag til hvordan multiplikasjon med $A^{-1}$ burde endre en vilkårlig vektor (geometrisk)?
 
-Hint: Hva er den inverse geometriske operasjonen til den du fant i $\textbf{b)}$?
+%Hint: Hva er den inverse geometriske operasjonen til den du fant i $\textbf{b)}$?
 \end{punkt}
 
 \begin{punkt}
