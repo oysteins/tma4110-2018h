@@ -49,10 +49,10 @@ $(A + I_3) \V{v}$
 $BA\V{v}$
 \end{punkt}
 \begin{punkt}
-$B^\top$
+$B\tr$
 \end{punkt}
 \begin{punkt}
-$\V{v}^\top \V{v}$
+$\V{v}\tr \V{v}$
 \end{punkt}
 \end{minipage}
 \end{oppgave}
@@ -594,16 +594,16 @@ w_1\\
 w_2\\
 \vdots\\
 w_n
-\end{bmatrix}$ være to vektorer i~$\mathbb{R}^n$. Vis at prikkproduktet mellom $\V{v}$ og $\V{w}$, $$\V{v}\boldsymbol{\cdot} \V{w}=v_1w_1+v_2w_2+\cdots+v_nw_n,$$ er det samme som matriseproduktet $\V{v}^T\V{w}$.
+\end{bmatrix}$ være to vektorer i~$\mathbb{R}^n$. Vis at prikkproduktet mellom $\V{v}$ og $\V{w}$, $$\V{v}\boldsymbol{\cdot} \V{w}=v_1w_1+v_2w_2+\cdots+v_nw_n,$$ er det samme som matriseproduktet $\V{v}\tr\V{w}$.
 \end{punkt}
 
 \begin{punkt}
 La $A=\begin{bmatrix}
 \V{a}_1 & \V{a}_2 & \cdots & \V{a}_n
 \end{bmatrix}
-$ være en $n\times n$-matrise slik at $\V{a}_i \boldsymbol{\cdot} \V{a}_i=1$ og $\V{a}_i\boldsymbol{\cdot} \V{a}_j=0$ for $i\neq j$. Vis at $A^{-1}=A^T$.
+$ være en $n\times n$-matrise slik at $\V{a}_i \boldsymbol{\cdot} \V{a}_i=1$ og $\V{a}_i\boldsymbol{\cdot} \V{a}_j=0$ for $i\neq j$. Vis at $A^{-1}=A\tr$.
 
-Hint: Hva er radvektorene til $A^T$?
+Hint: Hva er radvektorene til $A\tr$?
 \end{punkt}
 
 \begin{punkt}
@@ -625,17 +625,17 @@ Følger direkte fra definisjonen av matriseproduktet.
 
 
 \begin{punkt}
-Hint: $A^T=\begin{bmatrix}
-\V{a}_1^T\\
-\V{a}_2^T\\
+Hint: $A\tr=\begin{bmatrix}
+\V{a}_1\tr\\
+\V{a}_2\tr\\
 \vdots\\
-\V{a}_n^T
+\V{a}_n\tr
 \end{bmatrix}$. Derfor blir
-$$A^TA=\begin{bmatrix}
-\V{a}_1^T \V{a}_1 & \V{a}_1^T \V{a}_2 & \cdots & \V{a}_1^T\V{a}_n\\
-\V{a}_2^T \V{a}_1 & \V{a}_2^T \V{a}_2 & \cdots & \V{a}_2^T\V{a}_n\\
+$$A\tr A=\begin{bmatrix}
+\V{a}_1\tr \V{a}_1 & \V{a}_1\tr \V{a}_2 & \cdots & \V{a}_1\tr\V{a}_n\\
+\V{a}_2\tr \V{a}_1 & \V{a}_2\tr \V{a}_2 & \cdots & \V{a}_2\tr\V{a}_n\\
 \vdots & \vdots & \ddots & \vdots\\
-\V{a}_n^T \V{a}_1 & \V{a}_n^T \V{a}_2 & \cdots & \V{a}_n^T\V{a}_n
+\V{a}_n\tr \V{a}_1 & \V{a}_n\tr \V{a}_2 & \cdots & \V{a}_n\tr\V{a}_n
 \end{bmatrix}.
 $$ Hva er antagelsen i oppgaven? Kan du fullføre opgaven nå?
 
@@ -643,10 +643,10 @@ $$ Hva er antagelsen i oppgaven? Kan du fullføre opgaven nå?
 
 
 \begin{punkt}
-Matrisen $A$ tilfredstiller kravene ettersom $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot} \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=0 \text{ og}$$ $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=0.$$ Inversen er derfor $A^{-1}=A^T=\begin{bmatrix}
+Matrisen $A$ tilfredstiller kravene ettersom $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot} \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=1,$$ $$\vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}=0 \text{ og}$$ $$\vv{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}\boldsymbol{\cdot}  \vv{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=0.$$ Inversen er derfor $A^{-1}=A\tr=\begin{bmatrix}
 \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}\\
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-\end{bmatrix}.$ Du kan sjekke dette ved å bekrefte at både $AA^T$ og $A^TA$ er lik $I$.
+\end{bmatrix}.$ Du kan sjekke dette ved å bekrefte at både $AA\tr$ og $A\trA$ er lik $I$.
 \end{punkt}
 
 
