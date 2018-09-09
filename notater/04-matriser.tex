@@ -3,14 +3,28 @@
 \kapittel{4}{Matriser}
 \label{ch:matriser}
 
-%% TODO: introduksjon
+Nå har vi fått erfaring med å bruke matriser i et par forskjellige
+sammenhenger.  Vi har lært å løse et lineært likningssystem ved å
+sette opp totalmatrisen til systemet og gausseliminere den (ved hjelp
+av radoperasjoner på matrisen), og vi har sett at et lineært
+likningssystem kan skrives på formen
+\[
+A \V{x} = \V{b}
+\]
+der vi har samlet alle koeffisientene i matrisen~$A$.  For å få denne
+likningen til å gi mening, definerte vi hvordan vi kan gange en
+matrise med en vektor og få ut en vektor.
+
+I tillegg til dette matrise--vektor-produktet finnes det en hel rekke
+andre aritmetiske operasjoner vi kan utføre på matriser.  I dette
+kapitlet tar vi en grundig gjennomgang av disse operasjonene.
 
 
 \section*{Definisjoner og notasjon}
 
-%% TODO: definer kolonnevektor (søylevektor) og radvektor
+%% TODO: definer kolonnevektor (søylevektor) og radvektor?
 
-%% TODO: notasjon (v_1, ..., v_n) for kolonnevektor
+%% TODO: notasjon (v_1, ..., v_n) for kolonnevektor?
 
 En \defterm{$m \times n$-matrise} er en rektangulær tabell med tall
 som har $m$~tall i høyden og $n$~tall i bredden:
@@ -147,6 +161,51 @@ være tre radvektorer.  Da har vi:
 \qedhere
 \]
 \end{ex}
+
+Noen ganger vil vi bruke tilsvarende notasjon for å bygge opp en
+matrise av andre matriser, eller av en kombinasjon av matriser og
+vektorer.
+
+\begin{ex}
+\label{ex:ABv}
+La $A$ og~$B$ være matriser, og $\V{v}$ en vektor, slik som dette:
+\[
+A =
+\begin{bmatrix}
+3 & 1 \\
+0 & 2 \\
+7 & 1
+\end{bmatrix}
+\qquad
+B =
+\begin{bmatrix}
+ 5 & 9 & 2 \\
+-1 & 5 & 4 \\
+10 & 0 & 3
+\end{bmatrix}
+\qquad
+\V{v} = \vvv{6}{8}{-5}
+\]
+Da kan vi skrive $\begin{bmatrix} A & B & \V{v} \end{bmatrix}$ for
+matrisen som inneholder alle tallene fra disse tre satt ved siden av
+hverandre:
+\[
+\begin{bmatrix} A & B & \V{v} \end{bmatrix}
+=
+\begin{bmatrix}
+3 & 1 &  5 & 9 & 2 & 6 \\
+0 & 2 & -1 & 5 & 4 & 8 \\
+7 & 1 & 10 & 0 & 3 & -5
+\end{bmatrix}
+\qedhere
+\]
+\end{ex}
+
+En $n \times n$-matrise, altså en matrise med like mange rader og
+kolonner, kaller vi for en \defterm{kvadratisk} matrise.  For eksempel
+er matrisen~$B$ i eksempel~\ref{ex:ABv} en kvadratisk matrise, mens
+$A$ ikke er det.
+
 
 
 \section*{Produkt av matrise og vektor}
@@ -405,10 +464,6 @@ c \cdot a_{m1} & c \cdot a_{m2} & \cdots & c \cdot a_{mn}
 \end{bmatrix}
 \]
 
-% \begin{ex}
-% TODO: nødvendig med eksempel?
-% \end{ex}
-
 \begin{thm}
 Hvis $A$ og~$B$ er $m \times n$-matriser, $\V{v}$ er en vektor
 i~$\R^n$ og $c$ er et tall, så har vi følgende likheter:
@@ -584,24 +639,6 @@ AB =
 \end{bmatrix}
 \qedhere
 \]
-% % TODO eksempel med 3x3 e.l.?
-% 5 0 -2
-% 3 1 4
-%
-% 2 1
-% 1 0
-% 2 4
-%
-% 2
-% 1
-% 2
-%
-% 1
-% 0
-% 4
-%
-% 6  -3
-% 15 19
 \end{ex}
 
 La oss nå generalisere det vi gjorde i eksempelet.  Foreløpig ser vi
@@ -805,23 +842,114 @@ fungerer like bra med matriser som med tall.  Vi tar et teorem med
 noen regneregler for matrisemultiplikasjon.
 
 \begin{thm}
-La $A$ være en $m \times n$-matrise, $B$ en $n \times p$-matrise,
-$\V{v}$ en vektor i~$\R^p$ og $c$ et tall.  Da har vi følgende likheter:
-\begin{align*}
-(AB) \V{v} &= A (B \V{v}) \\
-(c A) B &= c (AB) = A (cB) \\
-A(BC) &= (AB)C \\
-% TODO
-% A(B+C) = AB + AC
-% (A+B)C = AC + BC
-\end{align*}
+La $A$, $B$ og~$C$ være matriser, $\V{v}$ en vektor, og $c$ et tall.
+I hver del av teoremet antar vi at størrelsene på matrisene og
+vektoren er slik at alle operasjonene som brukes er definert.
+\begin{enumerate}
+\item[(a)]
+Matrisemultiplikasjon er en assosiativ operasjon:
+\[
+A(BC) = (AB)C
+\]
+Et spesialtilfelle av dette er følgende:
+\[
+(AB) \V{v} = A (B \V{v})
+\]
+\item[(b)]
+Å skalere et matriseprodukt er det samme som å skalere én av faktorene
+og deretter multiplisere:
+\[
+(c A) B = c (AB) = A (cB)
+\]
+\item[(c)]
+Matrisemultiplikasjon distribuerer over addisjon av matriser:
+\[
+A(B+C) = AB + AC
+\quad\text{og}\quad
+(A+B)C = AC + BC
+\]
+\end{enumerate}
 \end{thm}
 
-% TODO: A^2, A^3, ...
+% TODO:
 
 % AB = AC =\> B = C
 
 % AB = 0 =\> A=0 v B=0
+
+
+\section*{Transponering}
+
+Vi har hittil snakket om aritmetiske operasjoner på matriser som
+tilsvarer operasjoner vi kan gjøre med tall: addisjon og
+multiplikasjon.  Operasjonen \emph{transponering}, derimot, er helt
+spesiell for matriser, og går ut på at vi bytter om rader og kolonner.
+
+\begin{defn}
+La
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+\]
+være en $m \times n$-matrise.  Den \defterm{transponerte} av~$A$ er
+$n \times m$-matrisen
+\[
+A\tr =
+\begin{bmatrix}
+a_{11} & a_{21} & \cdots & a_{m1} \\
+a_{12} & a_{22} & \cdots & a_{m2} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{1n} & a_{2n} & \cdots & a_{mn}
+\end{bmatrix}
+\]
+der radene og kolonnene i~$A$ er byttet om.
+\end{defn}
+
+\begin{ex}
+Hvis vi lar $A$ være matrisen
+\[
+A =
+\begin{bmatrix}
+5 & 0 & -2 \\
+3 & 1 &  4
+\end{bmatrix},
+\]
+så er den transponerte av~$A$ gitt ved:
+\[
+A\tr =
+\begin{bmatrix}
+ 5 & 3 \\
+ 0 & 1 \\
+-2 & 4
+\end{bmatrix}
+\]
+Hvis vi transponerer denne matrisen igjen, så kommer vi tilbake til
+utgangspunktet:
+\[
+(A\tr)\tr = A\qedhere
+\]
+\end{ex}
+
+Vi tar med noen regneregler for transponering.
+
+\begin{thm}
+For enhver matrise~$A$ har vi at å transponere to ganger gir den
+opprinnelige matrisen:
+\[
+(A\tr)\tr = A
+\]
+Hvis $A$ og~$B$ er matriser sik at produktet~$AB$ er definert, så er
+den transponerte av produktet lik produktet av de transponerte, i
+motsatt rekkefølge:
+\[
+(AB)\tr = B\tr \cdot A\tr
+\]
+\end{thm}
 
 
 \section*{Identitetsmatriser}
@@ -855,9 +983,8 @@ $AI$ og~$IA$ er ikke nødvendigvis det samme.  For å si at $I$ er et
 identitetselement vil vi at både $AI$ og~$IA$ skal bli lik~$A$.
 
 Det viser seg at å finne identitetselementer bare er mulig hvis vi
-dessuten begrenser oss til \emph{kvadratiske} matriser, altså matriser
-som har samme høyde og bredde.  Da kan vi reformulere spørsmålet vårt
-slik:
+dessuten begrenser oss til kvadratiske matriser.  Da kan vi
+reformulere spørsmålet vårt slik:
 
 Finnes det en $n \times n$-matrise~$I_n$ som er slik at
 \[
@@ -946,6 +1073,30 @@ identitetselement med hensyn på multiplikasjon av
 $2 \times 2$-matriser.
 \end{ex}
 
+% TODO I_n \V{b} = \V{b}
+
+\section*{Potenser av matriser}
+
+Hvis $A$ er en kvadratisk matrise, så kan vi gange $A$ med seg selv.
+Vi definerer potenser av~$A$ på tilsvarende måte som potenser av tall:
+\begin{align*}
+A^2 &= A \cdot A, \\
+A^3 &= A \cdot A \cdot A,
+\end{align*}
+og så videre.  Generelt definerer vi at $A$ opphøyd i $n$-te er
+produktet av $A$ med seg selv $n$~ganger:
+\[
+A^n = \underbrace{A \cdot A \cdot \cdots \cdot A}_{\text{$n$~ganger}}
+\]
+Et spesielt tilfelle er å opphøye i~$0$-te.  For tall har vi definert
+at $a^0 = 1$.  Men vi vet jo at for matriser spiller
+identitetsmatrisen den samme rollen som $1$ gjør for tall.  Derfor
+definerer vi at en $n \times n$-matrise opphøyd i~$0$-te blir
+identitetsmatrisen av størrelse~$n$:
+\[
+A^0 = I_n
+\]
+
 
 \section*{Inverser}
 
@@ -958,9 +1109,8 @@ a \cdot a' = 1.
 Inversen til~$a$ er selvfølgelig bare tallet~$1/a$.  For eksempel:
 Inversen til tallet~$5$ er $1/5$, og inversen til $3/4$ er $4/3$.
 
-Kan vi på tilsvarende måte finne inverser til matriser?  Igjen må vi
-begrense oss til å se på kvadratiske matriser, og spørsmålet blir:
-
+Kan vi på tilsvarende måte finne inverser til matriser?  Igjen
+begrenser vi oss til å se på kvadratiske matriser, og spørsmålet blir:
 Gitt en $n \times n$-matrise~$A$, finnes det en matrise $A'$ som er
 slik at likhetene
 \[
@@ -1042,21 +1192,405 @@ A \cdot A^{-1} = I_n = A^{-1} \cdot A.\qedhere
 
 \begin{ex}
 I eksempel~\ref{ex:invers} er matrisen~$B$ en invers til~$A$; vi har
-altså at $B^{-1} = A$.  Vi %TODO
+altså at $A^{-1} = B$.  Vi får dessuten at $A$ er en invers til~$B$,
+slik at $B^{-1} = A$.
 \end{ex}
 
 
-\section*{Transponering}
+
+% TODO: bruk A^{-1} til å løse Ax=b
+
+% mer som er med i boken?
+
+% TODO:  inversen er entydig?
 
 
-\section*{Matriser og likningssystemer}
+% \section*{Eksistens av inverser}
+
+% \begin{thm}
+% La $A$ være en $m \times n$-matrise.
+% Følgende påstander er ekvivalente:
+% \begin{enumerate}
+% \item $A$ har en venstreinvers.
+% \item Likningen $A \V{x} = \V{b}$ har løsning for alle vektorer~$\V{b}$ i~$\R^n$.
+% \item Kolonnene i~$A$ utspenner~$\R^n$.
+% \item Når vi gausseliminerer~$A$, får vi en matrise med pivotelementer i alle rader.
+% \end{enumerate}
+% \end{thm}
+
+
+
+% \section*{Matriser og likningssystemer} % TODO ???
+
 
 
 \section*{Samtidig løsning av flere systemer}
 
+Vi husker at et lineært likningssystem kan skrives som en
+matriselikning $A \V{x} = \V{b}$, og at vi løser det ved å
+gausseliminere totalmatrisen
+$\begin{amatrix}{1} A & \V{b} \end{amatrix}$.
+
+Anta nå at vi vil løse flere systemer
+\begin{align*}
+A \V{x}_1 &= \V{b}_1 \\
+A \V{x}_2 &= \V{b}_2 \\
+          &\ \ \vdots \\
+A \V{x}_t &= \V{b}_t
+\end{align*}
+med samme koeffisientmatrise~$A$, men forskjellige høyresidevektorer
+$\V{b}_1$, $\V{b}_2$, \ldots, $\V{b}_t$.  Det kan vi selvsagt gjøre
+ved å utføre gausseliminasjon på totalmatrisene til alle systemene:
+\begin{align*}
+& \begin{amatrix}{1} A & \V{b}_1 \end{amatrix} \\
+& \begin{amatrix}{1} A & \V{b}_2 \end{amatrix} \\
+& \qquad\vdots \\
+& \begin{amatrix}{1} A & \V{b}_t \end{amatrix}
+\end{align*}
+Men da gjør vi egentlig den samme gausseliminasjonen mange ganger.
+Det eneste som blir forskjellig er hva vi får i siste kolonne.  Vi kan
+spare oss for arbeid ved å slå sammen totalmatrisene til den ene
+matrisen
+\[
+\left[
+\begin{array}{c|cccc} A & \V{b}_1 & \V{b}_2 & \cdots & \V{b}_t \end{array}
+\right],
+\]
+og gausseliminere den.
+
+\begin{ex}
+La $A$ være følgende matrise:
+\[
+A =
+\begin{bmatrix}
+2 & -2 \\
+1 &  3
+\end{bmatrix}
+\]
+Vi vil løse disse tre systemene:
+\[
+A \V{x}_1 = \vv{-2}{7}
+\qquad
+A \V{x}_2 = \vv{10}{1}
+\qquad
+A \V{x}_3 = \vv{-4}{0}
+\]
+Vi lager en kombinert totalmatrise for alle systemene, og
+gausseliminerer den:
+\begin{align*}
+\left[
+\begin{array}{cc|ccc}
+2 & -2 & -2 & 10 & -4 \\
+1 &  3 &  7 &  1 &  0
+\end{array}
+\right]
+&\roweq
+\left[
+\begin{array}{cc|ccc}
+1 &  3 &  7 &  1 &  0 \\
+2 & -2 & -2 & 10 & -4
+\end{array}
+\right]
+\\
+&\roweq
+\left[
+\begin{array}{cc|ccc}
+1 &  3 &   7 &  1 &  0 \\
+0 & -8 & -16 &  8 & -4
+\end{array}
+\right]
+\\
+&\roweq
+\left[
+\begin{array}{cc|ccc}
+1 & 3 & 7 &  1 &   0 \\
+0 & 1 & 2 & -1 & 1/2
+\end{array}
+\right]
+\\
+&\roweq
+\left[
+\begin{array}{cc|ccc}
+1 & 0 & 1 &  4 & -3/2 \\
+0 & 1 & 2 & -1 &  1/2
+\end{array}
+\right]
+\end{align*}
+Den siste matrisen her er på redusert trappeform, og nå kan vi finne
+løsningene av de tre systemene ved å se på de tre høyresidene i denne
+matrisen:
+\[
+\V{x}_1 = \vv{1}{2}
+\qquad
+\V{x}_2 = \vv{4}{-1}
+\qquad
+\V{x}_3 = \vv{-3/2}{1/2}
+\qedhere
+\]
+\end{ex}
+
 
 \section*{Beregning av inverser}
 
+La oss nå se på hvordan vi kan regne ut inverser.  Anta at vi har en
+$n \times n$-matrise~$A$.  Vi vil finne ut om den er inverterbar, og i
+så fall vil vi finne inversmatrisen~$A^{-1}$.
+
+Vi ser på likningen
+\[
+AX = I_n,
+\]
+der $X$ er en ukjent $n \times n$-matrise.  Hvis vi lar $\V{x}_1$,
+$\V{x}_2$, \ldots, $\V{x}_n$ være kolonnene i~$X$, altså
+\[
+X = \begin{bmatrix} \V{x}_1 & \V{x}_2 & \cdots & \V{x}_n \end{bmatrix},
+\]
+så kan vi skrive produktet $AX$ slik:
+\[
+AX = \begin{bmatrix} A \V{x}_1 & A \V{x}_2 & \cdots & A \V{x}_n \end{bmatrix}
+\]
+La oss kalle kolonnene i identitetsmatrisen~$I_n$ for $\V{e}_1$,
+$\V{e}_2$, \ldots, $\V{e}_n$.  Det vil si at $\V{e}_i$ er den vektoren
+i~$\R^n$ som har et $1$-tall på posisjon~$i$, og bare $0$-er ellers.
+
+Nå kan vi, ved å se på hver kolonne, skrive om likningen $AX = I_n$
+til disse $n$ likningene:
+\begin{align*}
+A \V{x}_1 &= \V{e}_1 \\
+A \V{x}_2 &= \V{e}_2 \\
+          &\ \ \vdots \\
+A \V{x}_n &= \V{e}_n
+\end{align*}
+Nå kan vi bruke teknikken vi beskrev over for å løse flere
+likningssystemer samtidig.  Da må vi gausseliminere matrisen
+\[
+\left[
+\begin{array}{c|cccc} A & \V{e}_1 & \V{e}_2 & \cdots & \V{e}_n \end{array}
+\right]
+\]
+for å løse disse systemene.
+
+La oss ta et eksempel for å se hvordan dette blir i praksis.
+
+\begin{ex}
+\label{ex:invers}
+Vi vil forsøke å invertere følgende matrise:
+\[
+A =
+\begin{bmatrix}
+1 & -1 & -3 \\
+0 &  1 &  3 \\
+2 & -2 & -1
+\end{bmatrix}
+\]
+Vi følger ideene beskrevet over, så vi finner en matrise $X$ slik at
+$AX = I_3$ ved å løse følgende tre systemer:
+\[
+A \V{x}_1 = \vvv{1}{0}{0}
+\quad
+A \V{x}_2 = \vvv{0}{1}{0}
+\quad
+A \V{x}_3 = \vvv{0}{0}{1}
+\]
+Vi setter opp den kombinerte totalmatrisen for de tre systemene og
+gausseliminerer:
+\begin{align*}
+\left[
+\begin{array}{@{}ccc|ccc@{}}
+1 & -1 & -3 & 1 & 0 & 0 \\
+0 & 1 & 3 & 0 & 1 & 0 \\
+2 & -2 & -1 & 0 & 0 & 1
+\end{array}
+\right]
+&
+\roweq
+\left[
+\begin{array}{ccc|ccc}
+1 & -1 & -3 & 1 & 0 & 0 \\
+0 & 1 & 3 & 0 & 1 & 0 \\
+0 & 0 & 5 & -2 & 0 & 1
+\end{array}
+\right]
+\\
+&\roweq
+\left[
+\begin{array}{ccc|ccc}
+1 & -1 & -3 & 1 & 0 & 0 \\
+0 & 1 & 3 & 0 & 1 & 0 \\
+0 & 0 & 1 & -\frac{2}{5} & 0 & \frac{1}{5}
+\end{array}
+\right]
+\\
+&\roweq
+\left[
+\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 1 & 0 \\
+0 & 1 & 3 & 0 & 1 & 0 \\
+0 & 0 & 1 & -\frac{2}{5} & 0 & \frac{1}{5}
+\end{array}
+\right]
+\\
+&\roweq
+\left[
+\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & 1 & 0 \\
+0 & 1 & 0 & \frac{6}{5} & 1 & -\frac{3}{5} \\
+0 & 0 & 1 & -\frac{2}{5} & 0 & \frac{1}{5}
+\end{array}
+\right]
+\end{align*}
+Vi får altså følgende løsninger:
+\[
+\V{x}_1 = \vvv{1}{6/5}{-2/5}
+\quad
+\V{x}_2 = \vvv{1}{1}{0}
+\quad
+\V{x}_3 = \vvv{0}{-3/5}{1/5}
+\]
+Nå finner vi matrisen~$X$ ved å bruke $\V{x}_1$, $\V{x}_2$
+og~$\V{x}_3$ som kolonner:
+\[
+X =
+\begin{bmatrix}
+1 & 1 & 0 \\
+6/5 & 1 & -3/5 \\
+-2/5 & 0 & 1/5
+\end{bmatrix}
+\]
+Vi har funnet $X$ ved å løse likningen $AX = I_3$, så vi vet at dette
+stemmer.  Det kan likevel være lurt å sjekke dette ved å gange sammen
+$A$ og~$X$, for å være sikre på at vi ikke har regnet feil.
+
+Hvis du prøver å gange dem sammen motsatt vei, vil du oppdage at vi
+også har $XA = I_3$.  Dette betyr at $X$ er inversen til~$A$.
+\end{ex}
+
+
+% TODO tekst
+
+\begin{lem}
+\label{lem:invers}
+La $A$ og~$B$ være $n \times n$-matriser.  Dersom
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}
+\roweq
+\begin{amatrix}{1} I_n & B \end{amatrix},
+\]
+så er $AB = I_n$.
+\end{lem}
+\begin{proof}
+Vi viste over (i diskusjonen før eksempel~\ref{ex:invers}) at vi kan
+løse likningen $AX = I_n$ ved å gausseliminere matrisen
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}.
+\]
+Nå har vi antatt at
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}
+\roweq
+\begin{amatrix}{1} I_n & B \end{amatrix},
+\]
+og siden den andre matrisen her er på redusert trappeform, er det den
+vi ender opp med når vi gausseliminerer.  Det vil si at $X = B$ er
+løsningen av likningen $AX = I_n$, altså har vi $AB = I_n$.
+\end{proof}
+
+% TODO tekst
+
+\begin{thm}
+\label{thm:invers}
+La $A$ være en $n \times n$-matrise.
+\begin{enumerate}
+\item[(a)] $A$ er inverterbar hvis og bare hvis $A \roweq I_n$.
+\item[(b)] Hvis $A$ er inverterbar, så kan vi finne inversen ved å
+gausseliminere matrisen
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}
+\]
+til redusert trappeform og lese av høyre halvdel av den resulterende
+matrisen.  Med andre ord: Resultatet av gausseliminasjonen blir
+følgende matrise:
+\[
+\begin{amatrix}{1} I_n & A^{-1} \end{amatrix}
+\]
+\end{enumerate}
+\end{thm}
+\begin{proof}
+Når vi gausseliminerer matrisen
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}
+\]
+til redusert trappeform, må venstre halvdel av den resulterende
+matrisen enten bli $I_n$, eller en matrise med minst én nullrad.  Men
+i høyre halvdel kan det ikke bli noen nullrader, for enhver rad vi får
+etter å ha gjort radoperasjoner på $I_n$ er på formen
+\[
+a_1 \V{r}_1 + a_2 \V{r}_2 + \cdots + a_n \V{r}_n
+\]
+der $\V{r}_1$, $\V{r}_2$, \ldots, $\V{r}_n$ er radene i $I_n$ og minst
+en $a_i$ er ulik~$0$.  Dette betyr at hvis vi får en nullrad i venstre
+halvdel av trappeformmatrisen, så har likningen $AX = I_n$ ingen
+løsning, og dermed er $A$ ikke inverterbar.  Dermed har vi vist én
+halvdel av påstanden i del~(a): Hvis $A$ er inverterbar, så må vi ha
+$A \roweq I_n$.
+
+La oss nå anta at $A \roweq I_n$.  Vi vil vise at da er $A$
+inverterbar, og at metoden beskrevet i del~(b) gir riktig svar.  La
+$B$ være matrisen vi får som svar ved å bruke denne metoden.  Det vil
+si at følgende matriser er begynnelsen og slutten av
+gausseliminasjonen vi utfører:
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}
+\roweq
+\begin{amatrix}{1} I_n & B \end{amatrix},
+\]
+Nå sier lemma~\ref{lem:invers} at $AB = I_n$.
+
+La oss stokke litt om på kolonnene i matrisen
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}
+\]
+og isteden se på følgende matrise:
+\[
+\begin{amatrix}{1} I_n & A \end{amatrix}
+\]
+Hvis vi utfører akkurat de samme radoperasjonene på denne som vi
+gjorde i gausseliminasjonen av den første matrisen, så får vi akkurat
+samme resultat, men med tilsvarende omstokking av kolonnene, altså:
+\[
+\begin{amatrix}{1} B & I_n \end{amatrix}
+\]
+Dette betyr at disse matrisene er radekvivalente:
+\[
+\begin{amatrix}{1} B & I_n \end{amatrix}
+\roweq
+\begin{amatrix}{1} I_n & A \end{amatrix}
+\]
+Ved å bruke lemma~\ref{lem:invers} igjen, på denne siste
+radekvivalensen, får vi at $BA = I_n$.
+
+Vi har altså vist at vi har
+\[
+AB = I_n = BA,
+\]
+som betyr at $B$ er inversen til~$A$.  Det vil si at vi har bevist
+andre halvdel av del~(a) (hvis $A \roweq I_n$, så er $A$ inverterbar),
+og vi har bevist at metoden i del~(b) gir riktig svar.
+\end{proof}
+
+Det alt dette betyr i praksis er at hvis vi har en matrise~$A$ som vi
+har lyst til å invertere, hvis det er mulig, så setter vi opp matrisen
+\[
+\begin{amatrix}{1} A & I_n \end{amatrix}
+\]
+og gausseliminerer.  Da er det to muligheter.  Enten får vi en nullrad
+i venstre halvdel, og da er $A$ ikke inverterbar.  Eller så kommer vi
+frem til redusert trappeform uten noen nullrad i venstre halvdel, og
+da har vi matrisen
+\[
+\begin{amatrix}{1} I_n & A^{-1} \end{amatrix}
+\]
+der inversen til~$A$ kan leses av i høyre halvdel.
 
 % TODO thm side 130
 
