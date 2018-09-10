@@ -122,7 +122,7 @@ Er disse vektorene lineært uavhengige?
 0 & 0 & 0
 \end{bmatrix}
 \]
-Det er lederelementer i alle kolonner.  Dermed er $\V{v}_1$,
+Det er pivotelementer i alle kolonner.  Dermed er $\V{v}_1$,
 $\V{v}_2$ og $\V{v}_3$ lineært uavhengige.
 \end{ex}
 
@@ -134,7 +134,7 @@ La $A$ være en matrise.  Følgende påstander er ekvivalente:
 \item Kolonnene i $A$ er lineært uavhengige.
 \item Likningen $A \V{x} = \V{0}$ har kun den trivielle løsningen.
 \item Vi får ingen frie variabler når vi løser $A \V{x} = \V{0}$.
-\item Når vi gausseliminerer $A$, får vi et lederelement i hver kolonne.
+\item Når vi gausseliminerer $A$, får vi et pivotelement i hver kolonne.
 \end{enumerate}
 \end{thm}
 
@@ -145,7 +145,7 @@ sjekke om de er lineært uavhengige:
 $A = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots &
 \V{v}_n \end{bmatrix}$ med disse vektorene som kolonner.
 \item Gausseliminer $A$ til trappeform.
-\item Hvis hver kolonne inneholder et lederelement, er vektorene lineært uavhengige.
+\item Hvis hver kolonne inneholder et pivotelement, er vektorene lineært uavhengige.
 Ellers er de lineært avhengige.
 \end{enumerate}
 
@@ -173,7 +173,7 @@ Er disse vektorene lineært uavhengige?
 0 & 0 & 0
 \end{bmatrix}
 \]
-Siste kolonne har ikke noe lederelement.  Dermed er $\V{v}_1$,
+Siste kolonne har ikke noe pivotelement.  Dermed er $\V{v}_1$,
 $\V{v}_2$ og $\V{v}_3$ lineært avhengige.
 \end{ex}
 
@@ -200,7 +200,7 @@ Er disse vektorene lineært uavhengige?
 ? & ? & ? & ?
 \end{bmatrix}
 \]
-Kan ikke få lederelement i alle kolonnene.  Dermed er
+Kan ikke få pivotelement i alle kolonnene.  Dermed er
 $\V{v}_1$, $\V{v}_2$, $\V{v}_3$ og $\V{v}_4$ lineært avhengige.
 \end{ex}
 
