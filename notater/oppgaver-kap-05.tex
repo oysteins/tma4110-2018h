@@ -1,6 +1,112 @@
 % -*- TeX-master: "oving04"; -*-
 \oppgaver{5}
 
+
+\begin{oppgave}
+\begin{punkt}
+Sjekk om vektorene $$
+\begin{bmatrix}
+1\\
+2\\
+3
+\end{bmatrix}, \quad \begin{bmatrix}
+2\\
+3\\
+4
+\end{bmatrix}, \quad \begin{bmatrix}
+3\\
+4\\
+5
+\end{bmatrix}.
+$$
+\end{punkt}
+
+\begin{punkt}
+Finn en vektor $\V{v}$ som ikke er en lineærkombinasjon av vektorene i $\textbf{a)}$.
+\end{punkt}
+
+\begin{punkt}
+Bruk teorien om lineært uavhengige vektorer til å vise at vektorene i $\textbf{a)}$ og vektoren $\V{v}$ til sammen spenner $\mathbb{R}^3$.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+Ved å radredusere matrisen $$A=\begin{bmatrix}
+1 & 2 & 3\\
+2 & 3 & 4\\
+3 & 4 & 5
+\end{bmatrix}$$ ser vi at vi får en fri variabel dersom vi prøver å løse $A\V{x}=\V{0}$. Eller ekvivalent har vi ikke et lederelement i hver rad. Teorem \ref{thm:linuavh} sier da at vektorene er lineært avhengige.
+\end{punkt}
+
+\begin{punkt}
+Lik fremgangsmåte som oppgave 5 kapittel 3.
+\end{punkt}
+
+
+\begin{punkt}
+Du kan sjekke at to vilkårlige vektorer fra $\textbf{a)}$ og vektoren du fant i $\textbf{b)}$ er lineært uavhengige. Det er altså tre lineært uavhengige vektorer i det lineære spanet til vektorene i \textbf{a)} og \textbf{b)}. Derfor spenner vektorene $\mathbb{R}^3$ (Teorem \ref{thm:linuavhspan}).
+\end{punkt}
+
+\end{losning}
+
+
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Sjekk at vektorene $$\begin{bmatrix}
+1\\
+5\\
+-3
+\end{bmatrix}, \quad \begin{bmatrix}
+4\\
+18\\
+4
+\end{bmatrix}$$ er lineært uavhengige.
+\end{punkt}
+
+\begin{punkt}
+Finn en tredje vektor som til sammen med vektorene i $\textbf{a)}$ spenner ut $\mathbb{R}^3$.
+\end{punkt}
+
+\begin{punkt}
+Sammenlign med oppgave \textbf{9.} \textbf{b)} kapittel 3.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Radreduser matrisen med oppgitte vektorer som kolonner eller sjekk at ikke $$\begin{bmatrix}
+1\\
+5\\
+-3
+\end{bmatrix}=c\begin{bmatrix}
+4\\
+18\\
+4
+\end{bmatrix}$$ for et tall $c$ direkte.
+\end{punkt}
+
+\begin{punkt}
+Som i forrige oppgave, du må finne en vektor som ikke er en lineærkombinasjon av de oppgitte vektorene. Hvorfor?
+\end{punkt}
+
+\begin{punkt}
+Vektoren du fant i \textbf{b)} løser oppgave \textbf{9.} \textbf{b)} kapittel 3; husk informasjonen om et annengradspolynom $p(x)=ax^2+bx+c$ kan lagres -- entydig -- i en vektor $$\V{p}=\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}.$$
+\end{punkt}
+
+\end{losning}
+
+
+
 \begin{oppgave}
 Finn ut om følgende påstander er sanne eller ikke.
 \begin{punkt}
@@ -20,6 +126,10 @@ La $m>n$. Vi kan ha $m$ lineært uavhengige vektorer i $\mathbb{R}^n$.
 \end{punkt}
 
 \end{oppgave}
+
+\begin{losning}
+Påstand \textbf{a)} og \textbf{b)} er sanne; \textbf{c)} er ikke.
+\end{losning}
 
 
 
@@ -59,6 +169,19 @@ Er vektorene $\V{v}_1$, $\V{v}_2$ og~$\V{v}_3$ lineært uavhengige? Utspenner de
 \end{punkt}
 \end{oppgave}
 
+\begin{losning}
+
+\begin{punkt}
+Ja, de er lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
+\end{punkt}
+
+\begin{punkt}
+Nei, de er ikke lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
+\end{punkt}
+
+\end{losning}
+
+
 \begin{oppgave}
 \begin{punkt}
 Betrakt vektorene
@@ -90,7 +213,30 @@ i $\mathbb{R}^{99}$. Er de lineært uavhengige? Spenner de ut $\mathbb{R}^{99}$?
 \end{punkt}
 \end{oppgave}
 
+\begin{losning}
 
+\begin{punkt}
+Ja, de er lineært uavhengige. Dette kan sjekkes direkte ved å utforske om likningen 
+\[ 
+\begin{bmatrix} 
+\;1\; \\ 
+\;\vdots\; \\ 
+\;99\; 
+\end{bmatrix}
+=c
+\begin{bmatrix} 
+\;2\; \\ 
+\;\vdots\; \\ 
+\;100\; 
+\end{bmatrix}
+\] har noen løsning for tallet $c$. Nei, de spenner ikke ut $\mathbb{R}^{99}$; en trenger minst nittini vektorer for å få til dette (Teorem \ref{thm:linuavhspan}).
+\end{punkt}
+
+\begin{punkt}
+Nei, de er ikke lineært uavhengige; en kan maksimalt ha to lineært uavhengige vektorer i $\mathbb{R}^2$ (Teorem \ref{thm:linavhspan}). Ja, de spenner ut $\mathbb{R}^2$; samlingen inneholder to lineært uavhngeige vektorer (Teorem \ref{thm:linuavhspan}).
+\end{punkt}
+
+\end{losning}
 
 
 \begin{oppgave}
@@ -109,8 +255,46 @@ uavhengige.
 \end{punkt}
 \end{oppgave}
 
+\begin{losning}
+
+\begin{punkt}
+Feil.
+
+\noindent
+Hint: Husk at matriseproduktet $A\V{v}$ er en lineærkombinasjon av kolonnene til $A$ med komponentene til $\V{v}$ som koeffisienter. Det finnes mange moteksempler \ldots 
+
+Mer Hint: Det kan være lurt å velge $A$ slik at kolonnene er lineært avhengige.
+\end{punkt}
+
+
+\begin{punkt}
+Riktig.
+
+\noindent
+Spesialtilfellet $t=2$: Antagelsen er at $A\V{v}_1$ og $A\V{v}_2$ er lineært uavhengige. 
+
+Den kritiske observasjonen for å løse oppgaven: regneregler for matriser gir oss at hvis $\V{u}=c\V{w}$, så $$A\V{u}=A(c\V{w})=c(A\V{w}).$$ To vektorer som ligger på samme linje -- er lineært avhengige -- ligger altså fortsatt på samme linje etter multiplikasjon med $A$ (rent geometrisk).
+
+Logisk konklusjon: Men vektorene $A\V{v}_1$ og $A\V{v}_2$ er antatt lineært uavhengig, de ligger altså ikke på samme linje. Derfor kan ikke $\V{v}_1$ og $\V{v}_2$ være lineært avhengig; hvis de var lineært avhengig ville $A\V{v}_1$ og $A\V{v}_2$ vært lineært avhengig basert på observasjonen ovenfor.
+
+Kan du nå løse oppgaven for en generell $t>1$? 
+
+\noindent
+Hint: 'ligger på linje' betyr lineært avhengig i løsningen ovenfor.
+
+\end{punkt}
+
+
+
+\end{losning}
+
 
 
 \begin{oppgave}
 Vis at påstand 1. og 2. i teorem \ref{thm:linuavh} er ekvivalente.
 \end{oppgave}
+
+\begin{losning}
+Hint: likningen $A\V{x}=\V{0}$ er ekvivalent med at en lineærkombinasjon av kolonnene til $A$ er lik null-vektoren. Hva er definisjonen på lineær uavhengighet?
+\end{losning}
+
