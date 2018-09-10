@@ -1195,12 +1195,111 @@ A \cdot B = I_2 = B \cdot A.\qedhere
 Vi definerer begrepet «invers» ved å bruke disse likhetene.
 
 \begin{defn}
-En \emph{invers} til en $n \times n$-matrise~$A$ er en
-$n \times n$-matrise~$A^{-1}$ som er slik at
+La $A$ være en $n \times n$-matrise.  En \defterm{invers} til~$A$ er
+en $n \times n$-matrise~$B$ som er slik at
 \[
-A \cdot A^{-1} = I_n = A^{-1} \cdot A.\qedhere
+A \cdot B = I_n = B \cdot A.
 \]
+En matrise er \defterm{inverterbar} hvis den har en invers.
 \end{defn}
+
+Denne definisjonen leder til noen åpenbare spørsmål:
+\begin{itemize}
+\item Finnes det kvadratiske matriser som ikke har noen invers?  (Det
+at vi har gitt et eget navn, «inverterbar», til matriser som har
+invers hinter ganske sterkt om at det bør finnes matriser som ikke har
+invers også.)
+\item Kan en matrise ha mer enn én invers?
+\end{itemize}
+
+Vi kan ganske enkelt besvare det første spørsmålet ved å se på et
+eksempel.
+
+\begin{ex}
+Er matrisen
+\[
+A =
+\begin{bmatrix}
+1 & 1 \\
+0 & 0
+\end{bmatrix}
+\]
+inverterbar?
+
+La oss skje hva som skjer hvis vi antar at det finnes en matrise
+\[
+B =
+\begin{bmatrix}
+b_{11} & b_{12} \\
+b_{21} & b_{22}
+\end{bmatrix}
+\]
+som er en invers til~$A$.  Da må vi ha at $AB = I_2$, altså:
+\[
+\begin{bmatrix}
+1 & 1 \\
+0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+b_{11} & b_{12} \\
+b_{21} & b_{22}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+\]
+Men produktet på venstre side her er:
+\[
+\begin{bmatrix}
+b_{11} + b_{21} & b_{12} + b_{22} \\
+0               & 0
+\end{bmatrix}
+\]
+Dermed får vi at $0 = 1$, noe som ikke er mulig.  Det kan altså ikke
+finnes noen slik $B$ som er en invers til~$A$, så $A$ er ikke
+inverterbar.
+\end{ex}
+
+La oss nå ta for oss spørsmålet om hvorvidt samme matrise kan ha flere
+inverser.  Svaret er at det kan den ikke, og det kan vi vise ganske
+enkelt ut fra definisjonen av invers.
+
+\begin{thm}
+Hvis en matrise er inverterbar, så har den nøyaktig én invers.
+\end{thm}
+\begin{proof}
+La $A$ være en inverterbar $n \times n$-matrise.  Anta at $B$ er en
+invers til~$A$, og at $C$ også er en invers til~$A$; det vil si at
+\[
+A \cdot B = I_n = B \cdot A
+\qquad\text{og}\qquad
+A \cdot C = I_n = C \cdot A.
+\]
+Vi vil vise at $B$ og~$C$ ikke kan være forskjellige, altså at vi nå
+må ha $B = C$.
+
+La oss ta utgangspunkt i produktet $BAC$.  Dette kan vi skrive som
+enten $(BA) \cdot C$ eller $B \cdot (AC)$, og i hvert tilfelle får vi
+(ved å bruke likhetene over) at uttrykket i parentes blir
+identitetsmatrisen.  Vi setter dette sammen og får:
+\[
+C
+ = I_n \cdot C
+ = (BA) \cdot C
+ = B \cdot (AC)
+ = B \cdot I_n
+ = B
+\]
+Vi har altså kommet frem til at $B = C$, så inversen er entydig.
+\end{proof}
+
+Nå som vi vet at en matrise~$A$ ikke kan ha mer enn én invers, kan vi
+slutte å snakke om «en invers til~$A$» i ubestemt form, og gå over til
+å isteden si «inversen til~$A$» i bestemt form.  Vi definerer dessuten
+en notasjon for inversen.  Hvis $A$ er en inverterbar matrise, så
+skriver vi $A^{-1}$ for inversen til~$A$.
 
 \begin{ex}
 I eksempel~\ref{ex:invers} er matrisen~$B$ en invers til~$A$; vi har
@@ -1208,9 +1307,92 @@ altså at $A^{-1} = B$.  Vi får dessuten at $A$ er en invers til~$B$,
 slik at $B^{-1} = A$.
 \end{ex}
 
+Hvorfor er inverser interessante?  Én grunn er at de kan fortelle oss
+noe om løsninger av likninger.
 
+Hvis vi skal løse en likning
+\[
+ax = b
+\]
+der $a$ og~$b$ er tall, så vil vi selvfølgelig dele på~$a$ for å få
+$x$ alene på venstresiden.  Det er det samme som å gange med inversen
+til~$a$.
 
-% TODO: bruk A^{-1} til å løse Ax=b
+Når vi skal løse en matriselikning
+\[
+A \V{x} = \V{b},
+\]
+så kan vi ikke dele på~$A$.  Men hvis $A$ er inverterbar, så kan vi
+nesten gjøre det likevel, for da kan vi gange med inversen til~$A$.
+Det gjør at vi kan konkludere med at likningen er løsbar -- uansett
+hva høyresidevektoren~$\V{b}$ er -- og dessuten at løsningen må være
+entydig.  Vi skriver opp dette som et teorem.
+
+\begin{thm}
+\label{thm:invers-Ax=b}
+La $A$ være en $n \times n$-matrise, og $\V{b}$ en vektor i~$\R^n$.
+Hvis $A$ er inverterbar, så har likningen $A \V{x} = \V{b}$ entydig
+løsning, og løsningen er $\V{x} = A^{-1} \cdot \V{b}$.
+\end{thm}
+\begin{proof}
+Vi sjekker ved innsetting at $\V{x} = A^{-1} \cdot \V{b}$ er en
+løsning av likningen.  Vi har:
+\[
+A \cdot (A^{-1} \cdot \V{b})
+ = (A \cdot A^{-1}) \cdot \V{b}
+ = I_n \cdot \V{b}
+ = \V{b}
+\]
+Det betyr at $\V{x} = A^{-1} \cdot \V{b}$ er en løsning.
+
+Nå må vi sjekke at den er entydig.  Fra likningen $A \V{x} = \V{b}$
+får vi ved å gange til venstre med $A^{-1}$ på begge sider av
+likhetstegnet:
+\[
+A^{-1} A \V{x} = A^{-1} \V{b}
+\]
+Men siden $A^{-1} A = I_n$ kan venstresiden her forenkles til
+$I_n \V{x}$, som bare er~$\V{x}$.  Dermed har vi:
+\[
+\V{x} = A^{-1} \V{b}
+\]
+Det betyr at dette er den eneste løsningen av likningen, og beviset er
+ferdig.
+\end{proof}
+
+\begin{ex}
+La oss se på følgende likning:
+\[
+\begin{bmatrix}
+ 4 & -2 \\
+ 3 & -1
+\end{bmatrix}
+\V{x}
+=
+\vv{2}{5}
+\]
+Fra eksempel~\ref{ex:invers} vet vi at matrisen på venstresiden av
+denne likningen er inverterbar, og at inversen er:
+\[
+\begin{bmatrix}
+-1/2 & 1 \\
+-3/2 & 2
+\end{bmatrix}
+\]
+Da sier teorem~\ref{thm:invers-Ax=b} at likningen har entydig løsning,
+og at løsningen er:
+\[
+\V{x} =
+\begin{bmatrix}
+-1/2 & 1 \\
+-3/2 & 2
+\end{bmatrix}
+\vv{2}{5}
+=
+\vv{4}{7}
+\qedhere
+\]
+\end{ex}
 
 % mer som er med i boken?
 
@@ -1385,7 +1567,7 @@ for å løse disse systemene.
 La oss ta et eksempel for å se hvordan dette blir i praksis.
 
 \begin{ex}
-\label{ex:invers}
+\label{ex:invertering}
 Vi vil forsøke å invertere følgende matrise:
 \[
 A =
@@ -1491,7 +1673,7 @@ La $A$ og~$B$ være $n \times n$-matriser.  Dersom
 så er $AB = I_n$.
 \end{lem}
 \begin{proof}
-Vi viste over (i diskusjonen før eksempel~\ref{ex:invers}) at vi kan
+Vi viste over (i diskusjonen før eksempel~\ref{ex:invertering}) at vi kan
 løse likningen $AX = I_n$ ved å gausseliminere matrisen
 \[
 \begin{amatrix}{1} A & I_n \end{amatrix}.
