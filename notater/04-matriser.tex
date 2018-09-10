@@ -13,7 +13,8 @@ A \V{x} = \V{b}
 \]
 der vi har samlet alle koeffisientene i matrisen~$A$.  For å få denne
 likningen til å gi mening, definerte vi hvordan vi kan gange en
-matrise med en vektor og få ut en vektor.
+$m \times n$-matrise med en vektor i~$\R^n$ og få ut en vektor
+i~$\R^m$.
 
 I tillegg til dette matrise--vektor-produktet finnes det en hel rekke
 andre aritmetiske operasjoner vi kan utføre på matriser.  I dette
@@ -663,7 +664,7 @@ På samme måte som i eksempelet får vi nå:
  = A \V{b}_1 \\
 (AB) \V{e}_2
 &= A (B \V{e}_2)
- = A \V{b}_2 \\
+ = A \V{b}_2
 \end{align*}
 Dette betyr at første kolonne i matrisen~$AB$ må være~$A \V{b}_1$, og
 andre kolonne må være~$A \V{b}_2$.  Vi får altså:
@@ -680,7 +681,7 @@ AB =
 \end{bmatrix}
 \]
 For å virkelig gjøre dette detaljert, kan vi skrive opp nøyaktig
-hvordan vi finner hvert tall i~$AB$ ut fra hver enkelt av tallene i
+hvordan vi finner hvert tall i~$AB$ ut fra hvert enkelt av tallene i
 $A$ og~$B$.  Hvis
 \[
 A =
@@ -1113,20 +1114,20 @@ A^0 = I_n
 \section*{Inverser}
 
 For multiplikasjon av tall har vi identitetselementet~$1$, og vi har
-dessuten \emph{inverser}.  Gitt et tall~$a$ finnes et tall~$a'$,
+dessuten \emph{inverser}.  Gitt et tall~$a$ finnes et tall~$b$,
 inversen til~$a$, som er slik at
 \[
-a \cdot a' = 1.
+a \cdot b = 1.
 \]
 Inversen til~$a$ er selvfølgelig bare tallet~$1/a$.  For eksempel:
 Inversen til tallet~$5$ er $1/5$, og inversen til $3/4$ er $4/3$.
 
 Kan vi på tilsvarende måte finne inverser til matriser?  Igjen
 begrenser vi oss til å se på kvadratiske matriser, og spørsmålet blir:
-Gitt en $n \times n$-matrise~$A$, finnes det en matrise $A'$ som er
+Gitt en $n \times n$-matrise~$A$, finnes det en matrise $B$ som er
 slik at likhetene
 \[
-A \cdot A' = I_n = A' \cdot A
+A \cdot B = I_n = B \cdot A
 \]
 er oppfylt?
 
@@ -1203,11 +1204,11 @@ A \cdot B = I_n = B \cdot A.
 En matrise er \defterm{inverterbar} hvis den har en invers.
 \end{defn}
 
-Denne definisjonen leder til noen åpenbare spørsmål:
+Denne definisjonen gir opphav til noen åpenbare spørsmål:
 \begin{itemize}
-\item Finnes det kvadratiske matriser som ikke har noen invers?  (Det
-at vi har gitt et eget navn, «inverterbar», til matriser som har
-invers hinter ganske sterkt om at det bør finnes matriser som ikke har
+\item Finnes det kvadratiske matriser som ikke har noen invers?  (Vi
+har gitt et eget navn, «inverterbar», til matriser som har invers.
+Dette hinter ganske sterkt om at det bør finnes matriser som ikke har
 invers også.)
 \item Kan en matrise ha mer enn én invers?
 \end{itemize}
@@ -1257,7 +1258,8 @@ b_{11} + b_{21} & b_{12} + b_{22} \\
 0               & 0
 \end{bmatrix}
 \]
-Dermed får vi at $0 = 1$, noe som ikke er mulig.  Det kan altså ikke
+Dermed får vi (ved å se på tallene nederst til høyre i matrisene som
+skal være like) at $0 = 1$, noe som ikke er mulig.  Det kan altså ikke
 finnes noen slik $B$ som er en invers til~$A$, så $A$ er ikke
 inverterbar.
 \end{ex}
@@ -1296,10 +1298,10 @@ Vi har altså kommet frem til at $B = C$, så inversen er entydig.
 \end{proof}
 
 Nå som vi vet at en matrise~$A$ ikke kan ha mer enn én invers, kan vi
-slutte å snakke om «en invers til~$A$» i ubestemt form, og gå over til
-å isteden si «inversen til~$A$» i bestemt form.  Vi definerer dessuten
-en notasjon for inversen.  Hvis $A$ er en inverterbar matrise, så
-skriver vi $A^{-1}$ for inversen til~$A$.
+slutte å snakke om «en invers til~$A$» i ubestemt form.  Isteden sier
+vi «inversen til~$A$» i bestemt form.  Vi definerer dessuten en
+notasjon for inversen.  Hvis $A$ er en inverterbar matrise, så skriver
+vi $A^{-1}$ for inversen til~$A$.
 
 \begin{ex}
 I eksempel~\ref{ex:invers} er matrisen~$B$ en invers til~$A$; vi har
@@ -1394,9 +1396,11 @@ og at løsningen er:
 \]
 \end{ex}
 
-% mer som er med i boken?
-
-% TODO:  inversen er entydig?
+Nå vet vi ganske mye om inverser av matriser -- men ikke hvordan vi
+regner ut en invers.  Vi kommer til dette snart, men først skal vi se
+på en generell teknikk for å løse flere likningssystemer samtidig.
+Denne teknikken skal vi deretter bruke til å utlede en metode for å
+regne ut inverser.
 
 
 % \section*{Eksistens av inverser}
@@ -1534,8 +1538,11 @@ Vi ser på likningen
 \[
 AX = I_n,
 \]
-der $X$ er en ukjent $n \times n$-matrise.  Hvis vi lar $\V{x}_1$,
-$\V{x}_2$, \ldots, $\V{x}_n$ være kolonnene i~$X$, altså
+der $X$ er en ukjent $n \times n$-matrise.  Hvis vi lar
+\[
+\V{x}_1,\ \V{x}_2,\ \ldots,\ \V{x}_n
+\]
+være kolonnene i~$X$, altså
 \[
 X = \begin{bmatrix} \V{x}_1 & \V{x}_2 & \cdots & \V{x}_n \end{bmatrix},
 \]
@@ -1543,9 +1550,12 @@ så kan vi skrive produktet $AX$ slik:
 \[
 AX = \begin{bmatrix} A \V{x}_1 & A \V{x}_2 & \cdots & A \V{x}_n \end{bmatrix}
 \]
-La oss kalle kolonnene i identitetsmatrisen~$I_n$ for $\V{e}_1$,
-$\V{e}_2$, \ldots, $\V{e}_n$.  Det vil si at $\V{e}_i$ er den vektoren
-i~$\R^n$ som har et $1$-tall på posisjon~$i$, og bare $0$-er ellers.
+La oss gi navn til kolonnene i identitetsmatrisen~$I_n$ også:
+\[
+I_n = \begin{bmatrix} \V{e}_1 & \V{e}_2 & \ldots & \V{e}_n \end{bmatrix}
+\]
+Det vil si at $\V{e}_i$ er den vektoren i~$\R^n$ som har et $1$-tall
+på posisjon~$i$, og bare $0$-er ellers.
 
 Nå kan vi, ved å se på hver kolonne, skrive om likningen $AX = I_n$
 til disse $n$ likningene:
@@ -1555,8 +1565,8 @@ A \V{x}_2 &= \V{e}_2 \\
           &\ \ \vdots \\
 A \V{x}_n &= \V{e}_n
 \end{align*}
-Nå kan vi bruke teknikken vi beskrev over for å løse flere
-likningssystemer samtidig.  Da må vi gausseliminere matrisen
+Dermed kan vi bruke teknikken vi beskrev over for å løse flere
+likningssystemer samtidig.  Da må vi gauss\-eliminere matrisen
 \[
 \left[
 \begin{array}{c|cccc} A & \V{e}_1 & \V{e}_2 & \cdots & \V{e}_n \end{array}
@@ -1652,15 +1662,22 @@ X =
 \end{bmatrix}
 \]
 Vi har funnet $X$ ved å løse likningen $AX = I_3$, så vi vet at dette
-stemmer.  Det kan likevel være lurt å sjekke dette ved å gange sammen
+stemmer.  Det kan likevel være lurt å sjekke det ved å gange sammen
 $A$ og~$X$, for å være sikre på at vi ikke har regnet feil.
 
 Hvis du prøver å gange dem sammen motsatt vei, vil du oppdage at vi
-også har $XA = I_3$.  Dette betyr at $X$ er inversen til~$A$.
+også har $XA = I_3$.  Dette betyr at $X$ er inversen til~$A$, altså at
+$A^{-1} = X$.
 \end{ex}
 
+I eksempelet løste vi likningen $AX = I_3$, og det viste seg at
+matrisen~$X$ som vi fant også oppfylte likheten $XA = I_3$, slik at vi
+kunne konkludere med at $A^{-1} = X$.
 
-% TODO tekst
+Dette var ikke en tilfeldighet -- det er faktisk alltid nok å løse
+likningen $AX = I_n$ for å finne inversen til~$A$.  Vi skal bevise
+dette, men vi tar først et lemma (hjelperesultat) som vi skal bruke i
+beviset vårt.
 
 \begin{lem}
 \label{lem:invers}
@@ -1689,7 +1706,8 @@ vi ender opp med når vi gausseliminerer.  Det vil si at $X = B$ er
 løsningen av likningen $AX = I_n$, altså har vi $AB = I_n$.
 \end{proof}
 
-% TODO tekst
+Nå er vi klare for å bevise at metoden vår for å finne inverser
+fungerer.
 
 \begin{thm}
 \label{thm:invers}
@@ -1722,7 +1740,7 @@ etter å ha gjort radoperasjoner på $I_n$ er på formen
 a_1 \V{r}_1 + a_2 \V{r}_2 + \cdots + a_n \V{r}_n
 \]
 der $\V{r}_1$, $\V{r}_2$, \ldots, $\V{r}_n$ er radene i $I_n$ og minst
-en $a_i$ er ulik~$0$.  Dette betyr at hvis vi får en nullrad i venstre
+én $a_i$ er ulik~$0$.  Dette betyr at hvis vi får en nullrad i venstre
 halvdel av trappeformmatrisen, så har likningen $AX = I_n$ ingen
 løsning, og dermed er $A$ ikke inverterbar.  Dermed har vi vist én
 halvdel av påstanden i del~(a): Hvis $A$ er inverterbar, så må vi ha
