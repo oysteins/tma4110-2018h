@@ -9,6 +9,7 @@
 Vi starter med et eksempel:
 
 \begin{ex}
+\label{ex:lin-uavh-intro}
 La $\V{u}$, $\V{v}$ og~$\V{w}$ være følgende tre vektorer i~$\R^3$:
 \[
 \V{u} = \vvv{4}{4}{9}
@@ -29,7 +30,7 @@ sammenheng mellom dem.
 Vi kan også skrive likheten vår på følgende måte ved å sette alle
 vektorene på samme side av likhetstegnet:
 \[
-\V{u} + 4 \cdot \V{v} + 9 \cdot \V{w} = \V{0}
+\V{u} + 5 \cdot \V{v} - 9 \cdot \V{w} = \V{0}
 \]
 Det vi har gjort nå er å skrive nullvektoren som en lineærkombinasjon
 av $\V{u}$, $\V{v}$ og~$\V{w}$.  
@@ -54,7 +55,7 @@ lineært uavhengige.
 La $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ være vektorer i $\R^m$.
 Disse vektorene er \defterm{lineært uavhengige} dersom likningen
 \[
-x_1 \V{v}_1 + x_2 \V{v}_2 + \cdots + x_n \V{v}_n = \V{0}
+\V{v}_1 \cdot x_1 + \V{v}_2 \cdot x_2 + \cdots + \V{v}_n \cdot x_n = \V{0}
 \]
 ikke har andre løsninger enn den trivielle løsningen
 $x_1 = x_2 = \cdots = x_n = 0$.
@@ -63,8 +64,31 @@ I motsatt tilfelle kalles de \defterm{lineært avhengige}.
 \end{defn}
 
 \begin{ex}
-% TODO: vektorer som det er lett å se at er lineært uavhengige (uten å gausseliminere)
+Se på vektorene
+\[
+\V{v}_1 = \vvv{3}{-2}{0}
+\qquad\text{og}\qquad
+\V{v}_2 = \vvv{0}{0}{4}
+\]
+i $\R^3$.  Likningen
+\[
+\V{v}_1 x_1 + \V{v}_2 x_2 = \V{0}
+\]
+medfører at $3x_1 = 0$ og $4 x_2 = 0$, altså $x_1 = x_2 = 0$, så den
+har bare den trivielle løsningen.  Dermed er $\V{v}_1$ og~$\V{v}_2$
+lineært uavhengige.
 \end{ex}
+
+\begin{ex}
+Vektorene $\V{u}$, $\V{v}$ og~$\V{w}$ i
+eksempel~\ref{ex:lin-uavh-intro} er lineært avhengige, siden likningen
+\[
+\V{u} x_1 + \V{v} x_2 + \V{w} x_3 = \V{0}
+\]
+har ikketrivielle løsninger (for eksempel løsningen $x_1 = 1$,
+$x_2 = 5$ og~$x_3 = -9$).
+\end{ex}
+
 
 
 \section*{Lineær uavhengighet for to vektorer}
@@ -97,7 +121,7 @@ avhengige, eller så utspenner de hele~$\R^2$.
 
 
 
-\section*{Lineær uavhengighet og matriser}
+\section*{Hvordan sjekke lineær uavhengighet}
 
 \begin{ex}
 % TODO: omformuler eksempelet, bruk som introduksjon til teoremet
