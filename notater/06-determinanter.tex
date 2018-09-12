@@ -1,0 +1,201 @@
+\input{kapittel}
+
+\kapittel{6}{Determinanter}
+\label{ch:determinanter}
+
+En matrise inneholder mange tall og dermed mye informasjon -- så mye
+at det kan være litt overveldende.  Vi kan kondensere ned all
+informasjonen i en kvadratisk matrise til ett enkelt tall som kalles
+\emph{determinanten} til matrisen.  Dette ene tallet sier oss en hel
+del om hvordan matrisen oppfører seg.
+
+Vi har to forskjellige notasjoner for determinanter.
+Hvis
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{bmatrix}
+\]
+er en $n \times n$-matrise, så skriver vi enten
+\[
+\det A
+\]
+eller
+\[
+\begin{vmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{vmatrix}
+\]
+for determinanten til~$A$.%  De to notasjonene betyr akkurat det samme.
+
+%TODO mer intro
+
+
+\section*{Determinanter for $2 \times 2$-matriser}
+
+For en $2 \times 2$-matrise
+\[
+A =
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\]
+er determinanten definert ved:
+\[
+\det A =
+\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}
+= ad - bc
+\]
+Determinanten har en fin geometrisk tolkning.  Vi ser på de to
+kolonnene i~$A$ som vektorer i~$\R^2$, tegner dem som piler i planet,
+og lager et parallellogram med disse som to av sidene.  Dette
+paralellogrammet kan vi kalle parallellogrammet utspent av de to
+vektorene.
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\draw[->] (-1,0) -- (10,0);
+\draw[->] (0,-1) -- (0,6);
+\draw (2,2pt) -- (2,-6pt) node[anchor=north] {$b$};
+\draw (7,0pt) -- (7,-6pt) node[anchor=north] {$a$};
+%\draw (9,0pt) -- (9,-6pt) node[anchor=north] {$a + b$};
+\draw (2pt,1.5) -- (-6pt,1.5) node[anchor=east] {$c$};
+\draw (0,4) -- (-6pt,4) node[anchor=east] {$d$};
+%\draw (0,5.5) -- (-6pt,5.5) node[anchor=east] {$c + d$};
+\draw[->] (0,0) -- (7,1.5);
+\draw[->] (0,0) -- (2,4);
+\draw[dashed] (7,1.5) -- (9,5.5);
+\draw[dashed] (2,4) -- (9,5.5);
+\node[anchor=west] at (7.2,1.3) {$\vv{a}{c}$};
+\node[anchor=south] at (1.8,4) {$\vv{b}{d}$};
+\end{tikzpicture}
+\\
+{\small \textit{Parallellogrammet utspent av kolonnene i~$A$}}
+\end{center}
+
+La oss beregne arealet av dette parallellogrammet.  Vi tegner på noen
+hjelpelinjer:
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\draw[->] (-1,0) -- (10,0);
+\draw[->] (0,-1) -- (0,6);
+\draw (2,2pt) -- (2,-6pt) node[anchor=north] {$b$};
+\draw (7,0pt) -- (7,-6pt) node[anchor=north] {$a$};
+\draw (9,0pt) -- (9,-6pt) node[anchor=north] {$a + b$};
+\draw (2pt,1.5) -- (-6pt,1.5) node[anchor=east] {$c$};
+\draw (0,4) -- (-6pt,4) node[anchor=east] {$d$};
+\draw (0,5.5) -- (-6pt,5.5) node[anchor=east] {$c + d$};
+\draw[->] (0,0) -- (7,1.5);
+\draw[->] (0,0) -- (2,4);
+\draw (7,1.5) -- (9,5.5);
+\draw (2,4) -- (9,5.5);
+\draw (0,5.5) -- (9,5.5);
+\draw (9,0) -- (9,5.5);
+\draw (0,4) -- (2,4);
+\draw (2,5.5) -- (2,4);
+\draw (7,0) -- (7,1.5);
+\draw (7,1.5) -- (9,1.5);
+\end{tikzpicture}
+\\
+{\small \textit{Vi beregner arealet av parallellogrammet}}
+\end{center}
+Vi kan finne arealet av parallellogrammet ved å starte med arealet av
+det store rektangelet, som er
+\[
+(a + b) (c + d),
+\]
+og trekke fra arealene av de to små rektanglene og de fire trekantene
+som omgir parallellogrammet.  Vi ser at hvert av de små rektanglene
+har areal~$bc$, at de to trekantene øverst og nederst til sammen har
+areal~$ac$, og at trekantene til venstre og høyre til sammen har
+areal~$bd$.  Det betyr at arealet av parallellogrammet er:
+\begin{align*}
+& \!\!\!\!\!\!\!\!(a + b) (c + d) - 2bc - ac - bd \\
+&= ac + ad + bc + bd - 2bc - ac - bd \\
+&= ad - bc \\
+&= \det A
+\end{align*}
+Vi kommer altså frem til at arealet av parallellogrammet utspent av
+kolonnene i~$A$ er lik determinanten til~$A$.  Denne utregningen var
+imidlertid litt avhengig av hvordan disse to kolonnevektorene er
+plassert i forhold til hverandre i planet.  Hvis vi hadde byttet plass
+på kolonnene, så ville vi isteden fått $bc - ad$ som areal.  Da ville
+altså determinanten vært negativ.
+
+Det som holder i alle tilfeller, er at arealet av parallellogrammet
+utspent av kolonnene i~$A$ er lik absoluttverdien til determinanten:
+\[
+\abs{\det A}
+\]
+
+\medskip
+
+Så determinanten gir oss arealet til et parallellogram.  Men hva
+forteller det oss om matrisen~$A$?
+
+Vi kan tenke på~$A$ som en transformasjon av planet der hver
+vektor~$\V{x}$ i~$\R^2$ sendes til vektoren~$A \V{x}$.  Determinanten
+sier noe om hvordan planet endres under denne transformasjonen.
+
+La
+\[
+\V{e}_1 = \vv{1}{0}
+\qquad\text{og}\qquad
+\V{e}_2 = \vv{0}{1}
+\]
+være de to enhetsvektorene i~$\R^2$, og se på kvadratet utspent av
+disse:
+\begin{center}
+\begin{tikzpicture}[scale=2]
+\draw[->] (-.6,0) -- (1.6,0);
+\draw[->] (0,-.2) -- (0,1.2);
+\draw[->,thick] (0,0) -- (1,0);
+\draw[->,thick] (0,0) -- (0,1);
+\node[anchor=north] at (1,0) {$\V{e}_1$};
+\node[anchor=east] at (0,1) {$\V{e}_2$};
+\draw (1,0) -- (1,1) -- (0,1);
+\end{tikzpicture}
+\\
+{\small \textit{Enhetskvadratet}}
+\end{center}
+
+
+\section*{Determinanter for $3 \times 3$-matriser}
+
+
+
+\section*{Den generelle definisjonen}
+
+
+
+\section*{Kofaktorekspansjon}
+
+
+
+\section*{Determinanter og radoperasjoner}
+
+
+
+\section*{Triangulære matriser}
+
+
+
+\section*{Flere regneregler}
+
+
+
+\section*{Karakterisering av inverterbarhet}
+
+
+\kapittelslutt
+
