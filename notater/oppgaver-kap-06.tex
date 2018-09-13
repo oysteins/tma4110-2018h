@@ -134,6 +134,80 @@ Hint: Velg et referansepunkt og se på differansen fra de andre vektorene. Du ha
 
 
 \begin{oppgave}
+La $\V{e}_1$ og~$\V{e}_2$ være enhetsvektorene i~$\R^2$:
+\[
+\V{e}_1 = \vv{1}{0}
+\qquad\text{og}\qquad
+\V{e}_2 = \vv{0}{1}
+\]
+En $2 \times 2$-matrise $A$ kan beskrives ved hjelp av fire tall
+$\alpha_1$, $\alpha_2$, $\theta$ og~$\varphi$, der:
+\begin{align*}
+\alpha_1\ &\text{er lengden av vektoren $A \V{e}_1$} \\
+\alpha_2\ &\text{er lengden av vektoren $A \V{e}_2$} \\
+\theta  \ &\text{er vinkelen (mot klokken) opp til vektoren $A \V{e}_1$} \\
+\varphi \ &\text{er vinkelen (mot klokken) fra $A \V{e}_1$ til $A \V{e}_2$}
+\end{align*}
+Disse er illustrert på figuren under.
+\begin{center}
+\begin{tikzpicture}[scale=.5,baseline=30pt]
+\draw[->] (-1,0) -- (10,0);
+\draw[->] (0,-.2) -- (0,5);
+\draw[->] (0,0) -- (6,3.46);
+\draw[->] (0,0) -- (1.73,3);
+\node[anchor=west] at (6,3.46) {$A \V{e}_1$};
+\node[anchor=south] at (1.73,3) {$A \V{e}_2$};
+\centerarc[](0,0)(0:30:2);
+\centerarc[](0,0)(30:60:2.3);
+\node at (2.4,0.7) {$\theta$};
+\node at (2,1.9) {$\varphi$};
+\node at (4.5,2) {$\alpha_1$};
+\node at (0.5,2) {$\alpha_2$};
+\end{tikzpicture}
+\end{center}
+\begin{punkt}
+Hvordan kan du, basert på tallene $\alpha_1$, $\alpha_2$, $\theta$
+og~$\varphi$, se om determinanten til~$A$ er positiv, negativ
+eller~$0$?
+\end{punkt}
+\begin{punkt}
+Forklar hvordan determinanten til~$A$ endrer seg hvis vi endrer én av
+de fire verdiene $\alpha_1$, $\alpha_2$, $\theta$ og~$\varphi$, mens
+vi lar de tre andre forbli som de er.
+\end{punkt}
+\begin{punkt}
+Finn $\det A$ uttrykt ved $\alpha_1$, $\alpha_2$, $\theta$
+og~$\varphi$.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+Vi kan anta at vinklene $\theta$ og~$\varphi$ ligger i intervallet
+$[-\pi,\pi)$.
+\begin{punkt}
+Det er kun vinkelen $\varphi$ som har noe å si for om determinanten er
+positiv, negativ eller~$0$.  Determinanten er~$0$ hvis $\varphi$
+er~$0$ eller~$-\pi$, og ellers har determinanten samme fortegn
+som~$\varphi$.
+\end{punkt}
+\begin{punkt}
+Hvis vi øker $\alpha_1$ eller $\alpha_2$, så øker determinanten; hvis
+vi minsker en av disse, så minker determinanten.
+
+Hvis vi varierer $\varphi$ innenfor intervallet $[-\pi/2, \pi/2]$, så
+øker determinanten når $\varphi$ øker.  I intervallene $[-\pi,-\pi/2]$
+og $[\pi/2,\pi)$ er det omvendt.
+
+Å variere $\theta$ har ingen effekt på determinanten.
+\end{punkt}
+\begin{punkt}
+$\det A = \alpha_1 \alpha_2 \sin \varphi$
+\end{punkt}
+\end{losning}
+
+
+
+\begin{oppgave}
 La $A$ være matrisen \[
 \begin{bmatrix}
 \;a & b & 0 & 0\;\\
@@ -177,7 +251,17 @@ Anta at $A$ er en inverterbar matrise. Da har vi at $$\text{det}(A^{-1})=\frac{1
 \end{punkt}
 
 \begin{punkt}
-Determinanten er definert for alle $m\times n$-matriser.
+Hvis $A$ og~$B$ er $n \times n$-matriser, så er
+\[
+\det (A + B) = \det A + \det B.
+\]
+\end{punkt}
+
+\begin{punkt}
+Hvis $A$ og~$B$ er $n \times n$-matriser, så er
+\[
+\det (AB) = \det (BA).
+\]
 \end{punkt}
 
 \end{oppgave}
@@ -199,7 +283,60 @@ Hint: $AA^{-1}=I$ og $\text{det}(AB)=\text{det}(A)\text{det}(B)$.
 \end{punkt}
 
 \begin{punkt}
-Feil; determinanten er kun definert dersom $m=n$.
+Usant.
+\end{punkt}
+
+\begin{punkt}
+Sant.  Produktregelen for determinant gir:
+\[
+\det (AB)
+ = (\det A)(\det B)
+ = (\det B)(\det A)
+ = \det (BA)
+\]
 \end{punkt}
 
 \end{losning}
+
+
+\begin{oppgave}
+La $A$ være en $n \times n$-matrise, og la $\V{u}$ og~$\V{v}$ være
+vektorer i~$\R^n$.  Anta at $\V{u} \ne \V{v}$, men at
+$A \V{u} = A \V{v}$.  Hva kan du da si om determinanten til~$A$?
+\end{oppgave}
+
+\begin{losning}
+TODO
+\end{losning}
+
+
+\begin{oppgave}
+La $A$ være en $m \times n$-matrise slik at
+\[
+\det (A\tr \cdot A) \ne 0.
+\]
+Hva kan du da si om $m$ og~$n$?
+\end{oppgave}
+
+\begin{losning}
+TODO
+\end{losning}
+
+
+\begin{oppgave}
+La $A$ være følgende matrise:
+\[
+A =
+\begin{bmatrix}
+ 3 & 0 & 2 & -2 & 1 & 0 & 1 & -1 \\
+-1 & 1 & 5 &  1 & 4 & 1 & 1 &  2
+\end{bmatrix}
+\]
+Finn $\det (A \cdot A\tr)$ og $\det (A\tr \cdot A)$.
+\end{oppgave}
+
+\begin{losning}
+TODO
+\end{losning}
+
+
