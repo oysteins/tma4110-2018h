@@ -30,15 +30,11 @@ Begrunn svarene dine.
 \end{oppgave}
 
 \begin{losning}
+Vektorene $\V{v}_1$ og~$\V{v}_2$ er lineært uavhengige og spenner
+ut~$\R^2$.
 
-\begin{punkt}
-Ja, de er lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
-\end{punkt}
-
-\begin{punkt}
-Nei, de er ikke lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
-\end{punkt}
-
+Vektorene $\V{w}_1$, $\V{w}_2$ og~$\V{w}_3$ er lineært avhengige og
+spenner ut~$\R^2$.
 \end{losning}
 
 
@@ -94,7 +90,9 @@ Finn en tredje vektor $\V{v}$ som sammen med vektorene i $\textbf{a)}$ er lineæ
 
 
 \begin{punkt}
-Vis at $\V{v}$ og vektorene i $\textbf{a)}$ til sammen spenner ut $\mathbb{R}^3$. Sammenlign med oppgave \textbf{9.} \textbf{b)} kapittel 3.
+Vis at $\V{v}$ og vektorene i $\textbf{a)}$ til sammen spenner ut
+$\mathbb{R}^3$. Sammenlign med oppgave \textbf{9.} \textbf{b)} i
+kapittel~\ref{ch:vektor-og-matriselikninger}.
 \end{punkt}
 
 \end{oppgave}
@@ -102,7 +100,10 @@ Vis at $\V{v}$ og vektorene i $\textbf{a)}$ til sammen spenner ut $\mathbb{R}^3$
 \begin{losning}
 
 \begin{punkt}
-Radreduser matrisen med oppgitte vektorer som kolonner eller sjekk at ikke $$\begin{bmatrix}
+Radreduser matrisen med oppgitte vektorer som kolonner eller sjekk
+direkte at det ikke finnes noe tall $c$ slik at:
+\[
+\begin{bmatrix}
 1\\
 5\\
 -3
@@ -110,7 +111,8 @@ Radreduser matrisen med oppgitte vektorer som kolonner eller sjekk at ikke $$\be
 4\\
 18\\
 4
-\end{bmatrix}$$ for et tall $c$ direkte.
+\end{bmatrix}
+\]
 \end{punkt}
 
 \begin{punkt}
@@ -158,7 +160,8 @@ er lineært uavhengige.
 \end{punkt}
 
 \begin{punkt}
-Finn en vektor $\V{v}$ som er lineært uavhengig av alle vektorene i $\textbf{a)}$.
+Finn en vektor $\V{v}$ som er lineært uavhengig av hver av vektorene i
+$\textbf{a)}$.
 \end{punkt}
 
 \begin{punkt}
@@ -173,7 +176,7 @@ Ved å radredusere matrisen $$A=\begin{bmatrix}
 1 & 2 & 3\\
 2 & 3 & 4\\
 3 & 4 & 5
-\end{bmatrix}$$ ser vi at vi får en fri variabel dersom vi prøver å løse $A\V{x}=\V{0}$. Eller ekvivalent har vi ikke et lederelement i hver rad. Teorem \ref{thm:linuavh} sier da at vektorene er lineært avhengige.
+\end{bmatrix}$$ ser vi at vi får en fri variabel dersom vi prøver å løse $A\V{x}=\V{0}$. Eller ekvivalent har vi ikke et pivotelement i hver kolonne. Teorem~\ref{thm:linuavh} sier da at vektorene er lineært avhengige.
 \end{punkt}
 
 \begin{punkt}
