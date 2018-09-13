@@ -93,63 +93,136 @@ $x_2 = 5$ og~$x_3 = -9$).
 
 \section*{Lineær uavhengighet for to vektorer}
 
+Hvis vi ser på bare to vektorer, er det ikke vanskelig å sjekke om de
+er lineært uavhengige eller ikke.
+
 \begin{ex}
-Er disse vektorene lineært uavhengige?
+\label{ex:to-vektorer-lin-avh}
+Vi undersøker om følgende vektorer er lineært uavhengige:
 \[
-\V{v}_1 = \vvv{8}{2}{-12}\quad
+\V{v}_1 = \vvv{8}{2}{-12}
+\qquad\text{og}\qquad
 \V{v}_2 = \vvv{4}{1}{-6}
 \]
-
+Siden vi har $\V{v}_1 = 2 \cdot \V{v}_2$, får vi at nullvektoren kan
+skrives som en ikketriviell lineærkombinasjon av $\V{v}_1$ og~$\V{2}$
+på denne måten:
 \[
 1 \cdot \V{v}_1 - 2 \cdot \V{v}_2 = \V{0}
 \]
-Vektorene $\V{v}_1$ og $\V{v}_2$ er lineært avhengige.
+Vektorene $\V{v}_1$ og $\V{v}_2$ er derfor lineært avhengige.
 \end{ex}
 
+I dette eksempelet hadde vi at den ene vektoren kunne skrives som et
+tall ganger den andre, og ut fra det fant vi at vektorene var lineært
+avhengige.
+
 \begin{thm}
-To vektorer $\V{v}_1$ og $\V{v}_2$ er lineært uavhengige hvis og bare
+\label{thm:lin-uavh-2}
+To vektorer $\V{u}$ og $\V{v}$ er lineært uavhengige hvis og bare
 hvis ingen av dem er lik en skalar ganger den andre.
 \end{thm}
+\begin{proof}
+Påstanden i teoremet kan også formuleres slik: Vektorene er lineært
+\emph{avhengige} hvis og bare hvis en av dem er lik en skalar ganger
+den andre.  Vi viser dette.
 
-Med andre ord: De er lineært uavhengige hvis de ikke ligger på en rett
-linje gjennom origo.
+Anta først at $\V{u}$ og~$\V{v}$ er lineært avhengige.  Da finnes
+to tall $a$ og~$b$ slik at
+\[
+\V{u} \cdot a + \V{v} \cdot b = \V{0}
+\]
+og minst én av $a$ og~$b$ er ulik~$0$.  Hvis $a \ne 0$, får vi
+\[
+\V{u} = - \frac{b}{a} \V{v}.
+\]
+Hvis $b \ne 0$, får vi
+\[
+\V{v} = - \frac{a}{b} \V{u}.
+\]
+I begge tilfeller har vi at én av vektorene er en skalar ganger den
+andre.
 
-For to vektorer i $\R^2$ er det to muligheter: Enten er de lineært
-avhengige, eller så utspenner de hele~$\R^2$.
+Nå viser vi den motsatt implikasjonen.  Anta derfor at én av vektorene
+er en skalar ganger den andre.  Hvis $\V{u} = c \cdot \V{v}$ for en
+skalar~$c$, så får vi:
+\[
+\V{u} \cdot 1 + \V{v} \cdot (-c) = \V{0}.
+\]
+Hvis $\V{v} = d \cdot \V{u}$ for en skalar~$d$, så får vi:
+\[
+\V{u} \cdot d + \V{v} \cdot (-1) = \V{0}.
+\]
+I begge tilfeller har vi en ikketriviell løsning av likningen
+$\V{u} \cdot x_1 + \V{v} \cdot x_2 = \V{0}$,
+og det betyr at vektorene er lineært avhengige.
+\end{proof}
 
+Teoremet kan også formuleres slik: Vektorene er lineært uavhengige
+hvis og bare hvis de ikke ligger på en rett linje gjennom origo.
 
+Hvis vi har to vektorer i $\R^2$, er det to muligheter: Enten er de
+lineært avhengige, eller så utspenner de hele~$\R^2$.
 
+% TODO: eksempel med figurer
 
 
 \section*{Hvordan sjekke lineær uavhengighet}
+
+Det å sjekke om vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ er
+lineært uavhengige, er (fra definisjonen) det samme som å sjekke om
+likningen
+\[
+\V{v}_1 \cdot x_1 + \V{v}_2 \cdot x_2 + \cdots + \V{v}_n \cdot x_n = \V{0}
+\]
+har uendelig mange løsninger, eller bare én.  Denne likningen kan vi
+selvfølgelig løse på vanlig måte, ved å gausseliminere totalmatrisen:
+\[
+\begin{amatrix}{4}
+\V{v}_1 & \V{v}_2 & \cdots & \V{v}_n & \V{0}
+\end{amatrix}
+\]
+
 
 \begin{ex}
 % TODO: omformuler eksempelet, bruk som introduksjon til teoremet
 Er disse vektorene lineært uavhengige?
 \[
-\V{v}_1 = \vvvv{3}{9}{3}{3}\quad
-\V{v}_2 = \vvvv{2}{7}{2}{4}\quad
-\V{v}_3 = \vvvv{8}{31}{12}{22}
+\V{u} = \vvvv{3}{9}{3}{3},\qquad
+\V{v} = \vvvv{2}{7}{2}{4}\qquad\text{og}\qquad
+\V{w} = \vvvv{8}{31}{12}{22}
 \]
+Vi setter opp totalmatrisen for likningssystemet
 \[
-\begin{bmatrix}
-3 & 2 & 8 \\
-9 & 7 & 31 \\
-3 & 2 & 12 \\
-3 & 4 & 22
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-3 & 2 & 8 \\
-0 & 1 & 7 \\
-0 & 0 & 4 \\
-0 & 0 & 0
-\end{bmatrix}
+\V{u} \cdot x + \V{v} \cdot y + \V{w} \cdot z = \V{0},
 \]
-Det er pivotelementer i alle kolonner.  Dermed er $\V{v}_1$,
-$\V{v}_2$ og $\V{v}_3$ lineært uavhengige.
+og gausseliminerer den:
+\[
+\begin{amatrix}{3}
+3 & 2 & 8  & 0 \\
+9 & 7 & 31 & 0  \\
+3 & 2 & 12 & 0  \\
+3 & 4 & 22 & 0 
+\end{amatrix}
+\sim
+\begin{amatrix}{3}
+3 & 2 & 8 & 0  \\
+0 & 1 & 7 & 0  \\
+0 & 0 & 4 & 0  \\
+0 & 0 & 0 & 0 
+\end{amatrix}
+\]
+Vi kunne fortsatt videre til redusert trappeform, men allerede her er
+det tydelig at vi får kun én løsning: $x = y = z = 0$.  Dette betyr at
+vektorene $\V{u}$, $\V{v}$ og~$\V{w}$ er lineært uavhengige.
 \end{ex}
 
+Det essensielle vi trenger å få ut av gausseliminasjonen for å sjekke
+lineær uavhengighet, er om det blir noen frie variabler eller ikke.
+Merk også at vi ikke egentlig trenger å ta med høyresidevektoren i
+gausseliminasjonen nå.  I og med at det er bare $0$-er der fra
+begynnelsen av, kan det aldri bli noe annet enn~$0$, uansett hvilke
+radoperasjoner vi utfører.
 
 \begin{thm}
 \label{thm:linuavh}
@@ -161,9 +234,22 @@ La $A$ være en matrise.  Følgende påstander er ekvivalente:
 \item Når vi gausseliminerer $A$, får vi et pivotelement i hver kolonne.
 \end{enumerate}
 \end{thm}
+\begin{proof}
+Påstand~2 er bare en omskrivning av definisjonen av lineær
+uavhengighet til en matriselikning.  Påstand~3 forklarer hvordan vi
+kan se at likningen $A \V{x} = \V{0}$ ikke har mer enn én løsning
+(husk at vi vet at den alltid har $\V{x} = \V{0}$ som løsning).
+Påstand~4 er en omformulering av påstand~3, der vi utnytter at vi vet
+at den siste kolonnen i totalmatrisen uansett bare består av $0$-er,
+så vi trenger ikke ta den med i gausseliminasjonen.
+\end{proof}
 
-Gitt vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^m$.  For å
-sjekke om de er lineært uavhengige:
+Teorem~\ref{thm:linuavh} gir oss en grei metode for å sjekke lineær
+uavhengighet.  Hvis vi har vektorer
+\[
+\V{v}_1,\ \V{v}_2,\ \ldots,\ \V{v}_n
+\]
+i $\R^m$, kan vi finne ut om de er lineært uavhengige på denne måten:
 \begin{enumerate}
 \item Lag en matrise
 $A = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots &
@@ -172,16 +258,23 @@ $A = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots &
 \item Hvis hver kolonne inneholder et pivotelement, er vektorene lineært uavhengige.
 Ellers er de lineært avhengige.
 \end{enumerate}
+Når du gjør dette, bør du imidlertid ikke bare følge denne oppskriften
+slavisk (og du må for all del ikke pugge slike fremgangsmåter som
+dette), men huske på at det du egentlig gjør er å sjekke om likningen
+\[
+\V{v}_1 \cdot x_1 + \V{v}_2 \cdot x_2 + \cdots + \V{v}_n \cdot x_n = \V{0}
+\]
+har entydig løsning eller ikke.
 
 
 \begin{ex}
 Er disse vektorene lineært uavhengige?
 \[
-\V{v}_1 = \vvvv{5}{10}{5}{0}\quad
-\V{v}_2 = \vvvv{3}{7}{5}{4}\quad
+\V{v}_1 = \vvvv{5}{10}{5}{0},\qquad
+\V{v}_2 = \vvvv{3}{7}{5}{4}\qquad\text{og}\qquad
 \V{v}_3 = \vvvv{2}{6}{6}{8}
 \]
-
+Vi gausseliminerer matrisen $\begin{bmatrix} \V{v}_1 & \V{v}_2 & \V{v}_3 \end{bmatrix}$:
 \[
 \begin{bmatrix}
 5 & 3 & 2 \\
@@ -203,33 +296,31 @@ $\V{v}_2$ og $\V{v}_3$ lineært avhengige.
 
 
 \begin{ex}
+\label{ex:for-mange-vektorer}
 Er disse vektorene lineært uavhengige?
 \[
-\V{v}_1 = \vvv{8}{7}{4}\quad
-\V{v}_2 = \vvv{14}{-2}{5}\quad
-\V{v}_3 = \vvv{3}{1}{0}\quad
+\V{v}_1 = \vvv{8}{7}{4},\quad
+\V{v}_2 = \vvv{14}{-2}{5},\quad
+\V{v}_3 = \vvv{3}{1}{0},\quad
 \V{v}_4 = \vvv{7}{5}{11}\quad
 \]
-
+For å sjekke dette kan vi gausseliminere denne matrisen:
 \[
 \begin{bmatrix}
 8 & 14 & 3 & 7 \\
 7 & -2 & 1 & 5 \\
 4 & 5 & 0 & 11
 \end{bmatrix}
-\sim
-\begin{bmatrix}
-? & ? & ? & ? \\
-? & ? & ? & ? \\
-? & ? & ? & ?
-\end{bmatrix}
 \]
-Kan ikke få pivotelement i alle kolonnene.  Dermed er
-$\V{v}_1$, $\V{v}_2$, $\V{v}_3$ og $\V{v}_4$ lineært avhengige.
+Men vi trenger ikke egentlig å utføre gausseliminasjonen.  Vi ser med
+en gang at uansett hva som skjer, så kan vi ikke få mer enn tre
+pivotelementer (ett i hver rad).  Dermed kan det ikke bli
+pivotelementer i alle de fire kolonnene, så vektorene $\V{v}_1$,
+$\V{v}_2$, $\V{v}_3$ og $\V{v}_4$ er lineært avhengige.
 \end{ex}
 
-
-
+Vi lister opp noen forskjellige betingelser som kan være nyttige å se
+etter for å oppdage at vektorer er lineært \emph{avhengige}.
 
 \begin{thm}
 \label{thm:linavhspan}
@@ -241,7 +332,54 @@ Gitt $n$ vektorer  $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^m$.  Hvis
 \end{enumerate}
 så er vektorene lineært avhengige.
 \end{thm}
+\begin{proof}
+Anta først at én vektor~$\V{v}_k$ er en lineærkombinasjon av de andre:
+\[
+\V{v}_k = \sum_{i \ne k} a_i \V{v}_i
+\]
+Da kan vi sette $a_k = -1$ og få:
+\[
+\sum_{i = 1}^n a_i \V{v}_i = \V{0}
+\]
+Her har vi en ikketriviell lineærkombinasjon av vektorene våre (vi vet
+ikke hva alle $a_i$-ene er, men vi vet i hvert fall at én av dem,
+$a_k$, ikke er~$0$).  Det betyr at vektorene er lineært avhengige.
 
+Nå går vi videre til å se på den andre antagelsen i teoremet.  Hvis
+$\V{v}_k = \V{0}$, så kan vi definere tall $a_1$, $a_2$, \ldots, $a_n$
+ved:
+\[
+a_i =
+\begin{cases}
+0 & \text{hvis $i \ne k$} \\
+1 & \text{hvis $i = k$}
+\end{cases}
+\]
+Da får vi at
+\[
+\sum_{i = 1}^n a_i \V{v}_i = \V{0},
+\]
+og vektorene er lineært avhengige.
+
+Til slutt ser vi på den tredje antagelsen.  Akkurat som i
+eksempel~\ref{ex:for-mange-vektorer} får vi her at når vi
+gausseliminerer matrisen
+\[
+\begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots & \V{v}_n \end{bmatrix},
+\]
+så får vi maksimalt $m$ pivotelementer (ett i hver rad), men vi
+trenger $n$ pivotelementer (ett i hver kolonne) for at vektorene skal
+være lineært uavhengige.  Når $n > m$ går ikke det an, så da er de
+lineært avhengige.
+\end{proof}
+
+Den første betingelsen i teorem~\ref{thm:linavhspan} er ikke bare
+tilstrekkelig for å få lineær avhengighet, den er ekvivalent med at
+vektorene er lineært avhengige.  Vi viser dette også.
+
+\begin{thm}
+TODO
+\end{thm}
 
 
 \begin{thm}
