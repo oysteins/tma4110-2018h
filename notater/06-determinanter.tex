@@ -23,9 +23,7 @@ a_{n1} & a_{n2} & \cdots & a_{nn}
 er en $n \times n$-matrise, så skriver vi enten
 \[
 \det A
-\]
-eller
-\[
+\qquad\text{eller}\qquad
 \begin{vmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
@@ -33,7 +31,10 @@ a_{21} & a_{22} & \cdots & a_{2n} \\
 a_{n1} & a_{n2} & \cdots & a_{nn}
 \end{vmatrix}
 \]
-for determinanten til~$A$.%  De to notasjonene betyr akkurat det samme.
+for determinanten til~$A$.  De to notasjonene betyr akkurat det samme.
+Den første er praktisk å bruke når vi har en variabel som står for
+matrisen vi vil ta determinanten av; den andre når vi vil liste opp
+alle tallene i matrisen.
 
 %TODO mer intro
 
@@ -107,7 +108,7 @@ hjelpelinjer:
 \draw (7,1.5) -- (9,1.5);
 \end{tikzpicture}
 \\
-{\small \textit{Vi beregner arealet av parallellogrammet}}
+{\small \textit{Parallellogramarealberegningshjelpefigur}}
 \end{center}
 Vi kan finne arealet av parallellogrammet ved å starte med arealet av
 det store rektangelet, som er
@@ -168,6 +169,60 @@ disse:
 \\
 {\small \textit{Enhetskvadratet}}
 \end{center}
+Nå vil vi se på hva som skjer med dette kvadratet dersom vi sender
+hvert punkt $\V{v}$ i~$\R^2$ til $A \V{v}$, der $A$ er en
+$2 \times 2$-matrise.
+
+\begin{center}
+\begin{tabular}{cl}
+$\det A > 0$ &
+\begin{tikzpicture}[scale=.5,baseline=30pt]
+\draw[->] (-1,0) -- (10,0);
+\draw[->] (0,-.2) -- (0,5);
+\draw[fill=gray!35] (0,0) -- (6,1) -- (8,4) -- (2,3) -- cycle;
+\draw[->] (0,0) -- (6,1);
+\draw[->] (0,0) -- (2,3);
+\draw (2,3) -- (8,4) -- (6,1);
+\node at (4,2) {$\det A$};
+\node[anchor=west] at (6,1) {$A \V{e}_1$};
+\node[anchor=south] at (2,3) {$A \V{e}_2$};
+\end{tikzpicture}
+\\[38pt]
+$\det A < 0$ &
+\begin{tikzpicture}[scale=.5,baseline=30pt]
+\draw[->] (-1,0) -- (10,0);
+\draw[->] (0,-.2) -- (0,5);
+\draw[fill=gray!35] (0,0) -- (6,1) -- (8,4) -- (2,3) -- cycle;
+\draw[->] (0,0) -- (6,1);
+\draw[->] (0,0) -- (2,3);
+\draw (2,3) -- (8,4) -- (6,1);
+\node at (4,2) {$- \det A$};
+\node[anchor=west] at (6,1) {$A \V{e}_2$};
+\node[anchor=south] at (2,3) {$A \V{e}_1$};
+\end{tikzpicture}
+\\[38pt]
+$\det A = 0$ &
+\begin{tikzpicture}[scale=.5,baseline=30pt]
+\draw[->] (-1,0) -- (10,0);
+\draw[->] (0,-.2) -- (0,5);
+\draw[->] (0,0) -- (4,1);
+\draw[->] (0,0) -- (8,2);
+\node[anchor=south] at (4,1) {$A \V{e}_1$};
+\node[anchor=south] at (8,2) {$A \V{e}_2$};
+\end{tikzpicture}
+\\[38pt]
+$\det A = 0$ &
+\begin{tikzpicture}[scale=.5,baseline=30pt]
+\draw[->] (-1,0) -- (10,0);
+\draw[->] (0,-.2) -- (0,5);
+\draw[->] (0,0) -- (5,2);
+\filldraw (0,0) circle [radius=2pt];
+\node[anchor=west] at (5,2) {$A \V{e}_2$};
+\node[anchor=north west] at (0,0) {$A \V{e}_1$};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
 
 
 \section*{Determinanter for $3 \times 3$-matriser}
