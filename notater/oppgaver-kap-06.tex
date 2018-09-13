@@ -3,36 +3,34 @@
 
 \begin{oppgave}
 Regn ut determinanten til følgende matriser og avgjør -- basert på dette -- om kolonnene er lineært uavhengige:
-\begin{punkt}
-$$\begin{bmatrix}
+\vspace{-8pt}
+\[
+\text{\textbf{a)}}
+\begin{bmatrix}
 1 & 2\\
 1 & 2
-\end{bmatrix}$$
-\end{punkt}
-
-\begin{punkt}
-$$\begin{bmatrix}
+\end{bmatrix}
+\ %
+\text{\textbf{b)}}
+\begin{bmatrix}
 1 & 2\\
 2 & 1
-\end{bmatrix}$$
-\end{punkt}
-
-\begin{punkt}
-$$\begin{bmatrix}
+\end{bmatrix}
+\ %
+\text{\textbf{c)}}
+\begin{bmatrix}
 1 & 2 & 3\\
 2 & 3 & 4\\
 3 & 4 & 5
-\end{bmatrix}$$
-\end{punkt}
-
-\begin{punkt}
-$$\begin{bmatrix}
+\end{bmatrix}
+\ %
+\text{\textbf{d)}}
+\begin{bmatrix}
 8 & -7 & 0\\
 -8 & -7 & 3\\
 -4 & 5 & -8
-\end{bmatrix}$$
-\end{punkt}
-
+\end{bmatrix}
+\]
 \end{oppgave}
 
 \begin{losning}
@@ -57,31 +55,14 @@ $$\begin{bmatrix}
 
 
 \begin{oppgave}
-Hva er sammenhengen mellom areal/volum og determinanten? Regn ut og skisser arealet av parallellepipedet utspent av følgende vektorer i $\mathbb{R}^2$:
-
-\begin{punkt}
-$$
-\begin{bmatrix}
-1\\
-1
-\end{bmatrix} \quad \begin{bmatrix}
-2\\
-2
-\end{bmatrix}$$
-\end{punkt}
-
-
-\begin{punkt}
-$$
-\begin{bmatrix}
-1\\
-2
-\end{bmatrix} \quad \begin{bmatrix}
-2\\
-1
-\end{bmatrix}$$
-\end{punkt}
-
+Regn ut og skisser arealet av parallellogrammet utspent av følgende
+vektorer i $\R^2$:
+\\[4pt]
+\textbf{a)}
+$\vv{1}{2}$, $\vv{2}{1}$
+\qquad
+\textbf{b)}
+$\vv{1}{1}$, $\vv{2}{2}$
 \end{oppgave}
 
 \begin{losning}
@@ -122,7 +103,7 @@ $$
 
 
 \begin{oppgave}
-La $T$ være tetraederet i $\mathbb{R}^3$ med $(8,8,4)$, $(16,0,0)$, $(1,1,9)$ og~$(8,11,-4)$ som hjørner. Regn ut volumet av $T$.
+Regn ut volumet av tetraederet i $\mathbb{R}^3$ med $(8,8,4)$, $(16,0,0)$, $(1,1,9)$ og~$(8,11,-4)$ som hjørner.
 \end{oppgave}
 
 \begin{losning}
@@ -134,12 +115,9 @@ Hint: Velg et referansepunkt og se på differansen fra de andre vektorene. Du ha
 
 
 \begin{oppgave}
-La $\V{e}_1$ og~$\V{e}_2$ være enhetsvektorene i~$\R^2$:
-\[
-\V{e}_1 = \vv{1}{0}
-\qquad\text{og}\qquad
-\V{e}_2 = \vv{0}{1}
-\]
+La $\V{e}_1 = \bigl[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \bigr]$
+og~$\V{e}_2 = \bigl[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \bigr]$
+være enhetsvektorene i~$\R^2$.
 En $2 \times 2$-matrise $A$ kan beskrives ved hjelp av fire tall
 $\alpha_1$, $\alpha_2$, $\theta$ og~$\varphi$, der:
 \begin{align*}
@@ -152,7 +130,7 @@ Disse er illustrert på figuren under.
 \begin{center}
 \begin{tikzpicture}[scale=.5,baseline=30pt]
 \draw[->] (-1,0) -- (10,0);
-\draw[->] (0,-.2) -- (0,5);
+\draw[->] (0,-.2) -- (0,4);
 \draw[->] (0,0) -- (6,3.46);
 \draw[->] (0,0) -- (1.73,3);
 \node[anchor=west] at (6,3.46) {$A \V{e}_1$};
@@ -217,11 +195,11 @@ La $A$ være matrisen \[
 \end{bmatrix}.
 \]
 \begin{punkt}
-Hva er determinanten til $A$ uttrykt ved $a, b, c$ og $x, y, z$?
+Finn $\det A$ uttrykt ved $a, b, c$ og $x, y, z$.
 \end{punkt}
 
 \begin{punkt}
-For hvilke verdier av  $a, b, c$ og $x, y, z$ er $A$ inverterbar?
+For hvilke $a, b, c$ og $x, y, z$ er $A$ inverterbar?
 \end{punkt}
 \end{oppgave}
 
@@ -239,11 +217,10 @@ Vi må ha at $b$, $c$, $x$ og~$y$ alle ikke er lik null.
 \end{losning}
 
 \begin{oppgave}
-
 Avgjør om følgende påstander er sanne eller ikke. Gi et bevis eller moteksempel i hvert tilfelle.
 
 \begin{punkt}
-La $A$ og $B$ være $n\times n$-matriser. Hvis $AB$ er invertibel, så er både $A$ og $B$ invertible.
+La $A$ og $B$ være $n\times n$-matriser. Hvis $AB$ er inverterbar, så er både $A$ og $B$ inverterbare.
 \end{punkt}
 
 \begin{punkt}

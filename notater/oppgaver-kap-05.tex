@@ -4,32 +4,71 @@
 
 
 \begin{oppgave}
-Sjekk om vektorene 
-	$$
-	\begin{bmatrix}
-	8  \\
-	-8 \\
-	-4 \\
-	-6
-	\end{bmatrix},
-	\begin{bmatrix}
-	-7  \\
-	-7 \\
-	5 \\
-	6
-	\end{bmatrix},
-	\begin{bmatrix}
-	0  \\
-	3 \\
-	-8 \\
-	-4
-	\end{bmatrix}
-	$$ er lineært uavhengige.
+De to bildene viser vektorer i $\mathbb{R} ^2$. 
+\begin{center}
+	\begin{tikzpicture}[scale=0.6,baseline=(O)]
+	\draw[->,above] (0,0) node{} -- (1,2) node{$\V{v}_1$};
+	\draw[->, right] (0,0) node{} -- (2,1) node{$\V{v}_2$};
+	\draw[->] (-1,0) {} -- (3,0) {};
+	\draw[->] (0,-1) {} -- (0,3) {};
+        \node (O) at (0,0) {};
+	\end{tikzpicture}
+\hspace{10pt}
+	\begin{tikzpicture}[scale=0.6,baseline=(O)]
+	\draw[->,above] (0,0) node{} -- (1,2) node{$\V{w}_1$};
+	\draw[->, right] (0,0) node{} -- (2,1) node{$\V{w}_2$};
+	\draw[->, right] (0,0) node{} -- (2,-1) node{$\V{w}_3$};
+	\draw[->] (-1,0) {} -- (3,0) {};
+	\draw[->] (0,-1) {} -- (0,3) {};
+        \node (O) at (0,0) {};
+	\end{tikzpicture}
+\end{center}
+I hvert tilfelle:
+Er vektorene på tegningen lineært uavhengige?
+Utspenner de~$\R^2$?
+Begrunn svarene dine.
 \end{oppgave}
 
 \begin{losning}
-De er lineært uavhengige.
+
+\begin{punkt}
+Ja, de er lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
+\end{punkt}
+
+\begin{punkt}
+Nei, de er ikke lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
+\end{punkt}
+
 \end{losning}
+
+
+% \begin{oppgave}
+% Sjekk om vektorene 
+% 	$$
+% 	\begin{bmatrix}
+% 	8  \\
+% 	-8 \\
+% 	-4 \\
+% 	-6
+% 	\end{bmatrix},
+% 	\begin{bmatrix}
+% 	-7  \\
+% 	-7 \\
+% 	5 \\
+% 	6
+% 	\end{bmatrix},
+% 	\begin{bmatrix}
+% 	0  \\
+% 	3 \\
+% 	-8 \\
+% 	-4
+% 	\end{bmatrix}
+% 	$$ er lineært uavhengige.
+% \end{oppgave}
+
+% \begin{losning}
+% De er lineært uavhengige.
+% \end{losning}
 
 
 
@@ -167,17 +206,19 @@ avhengige, så finnes det to tall $a$ og~$b$ slik at:
 \end{punkt}
 
 \begin{punkt}
-Vi må ha $n$ lineært uavhengige vektorer for å spenne ut $\mathbb{R}^n$
+Hvis $\V{u}$ og~$\V{v}$ er lineært uavhengige,
+og $\V{v}$ og~$\V{w}$ er lineært uavhengige,
+så er $\V{u}$, $\V{v}$ og~$\V{w}$ lineært uavhengige.
 \end{punkt}
 
 \begin{punkt}
-La $m>n$. Vi kan ha $m$ lineært uavhengige vektorer i $\mathbb{R}^n$.
+Hvis $m>n$, så kan vi ikke ha $m$ lineært uavhengige vektorer i $\R^n$.
 \end{punkt}
 
 \end{oppgave}
 
 \begin{losning}
-Påstand \textbf{a)} og \textbf{b)} er sanne; \textbf{c)} er ikke.
+Påstand \textbf{a)} og \textbf{b)} er usanne; \textbf{c)} er sann.
 \end{losning}
 
 
@@ -187,105 +228,61 @@ Påstand \textbf{a)} og \textbf{b)} er sanne; \textbf{c)} er ikke.
 
 
 
-\begin{oppgave}
-De to bildene viser vektorer i $\mathbb{R} ^2$. 
-	
-\begin{punkt}
-Er vektorene $\V{v}_1$ og~$\V{v}_2$ lineært uavhengige? Utspenner de $\mathbb{R} ^2$? Begrunn svarene dine.
-\begin{center}
-	\begin{tikzpicture}[scale=0.6]
-	\draw[->,above] (0,0) node{} -- (1,2) node{$\V{v}_1$};
-	\draw[->, right] (0,0) node{} -- (2,1) node{$\V{v}_2$};
-	\draw[->] (-1,0) {} -- (3,0) {};
-	\draw[->] (0,-1) {} -- (0,3) {};
-	\end{tikzpicture}
-\end{center}
-\end{punkt}
+% \begin{oppgave}
+% \begin{punkt}
+% Betrakt vektorene
+% \[ 
+% \begin{bmatrix} \;1\; \\ \;2\; \end{bmatrix}, 
+% \begin{bmatrix} \;2\; \\ \;3\; \end{bmatrix}, \dots, 
+% \begin{bmatrix} \;99\; \\ \;100\; \end{bmatrix}
+% \]
+% i $\mathbb{R}^2$. Vis at de utspenner $\mathbb{R}^2$. Er de lineært uavhengig? Begrunn svaret ditt.
+% \end{punkt}
 
+% \begin{punkt}
+% Betrakt vektorene
+% \[ 
+% \begin{bmatrix} 
+% \;1\; \\ 
+% \;\vdots\; \\ 
+% \;99\; 
+% \end{bmatrix}
+% \text{ og }
+% \begin{bmatrix} 
+% \;2\; \\ 
+% \;\vdots\; \\ 
+% \;100\; 
+% \end{bmatrix}
+% \]
+% i $\mathbb{R}^{99}$. Er de lineært uavhengige? Spenner de ut $\mathbb{R}^{99}$? Begrunn svarene dine.
 
+% \end{punkt}
+% \end{oppgave}
 
-\begin{punkt}
-Er vektorene $\V{v}_1$, $\V{v}_2$ og~$\V{v}_3$ lineært uavhengige? Utspenner de $\mathbb{R} ^2$? Begrunn svarene dine.
-\begin{center}
-	\begin{tikzpicture}[scale=0.6]
-	\draw[->,above] (0,0) node{} -- (1,2) node{$\V{v}_1$};
-	\draw[->, right] (0,0) node{} -- (2,1) node{$\V{v}_2$};
-	\draw[->, right] (0,0) node{} -- (2,-1) node{$\V{v}_3$};
-	\draw[->] (-1,0) {} -- (3,0) {};
-	\draw[->] (0,-1) {} -- (0,3) {};
-	\end{tikzpicture}
-\end{center}
-\end{punkt}
-\end{oppgave}
+% \begin{losning}
 
-\begin{losning}
+% \begin{punkt}
+% Ja, de er lineært uavhengige. Dette kan sjekkes direkte ved å utforske om likningen 
+% \[ 
+% \begin{bmatrix} 
+% \;1\; \\ 
+% \;\vdots\; \\ 
+% \;99\; 
+% \end{bmatrix}
+% =c
+% \begin{bmatrix} 
+% \;2\; \\ 
+% \;\vdots\; \\ 
+% \;100\; 
+% \end{bmatrix}
+% \] har noen løsning for tallet $c$. Nei, de spenner ikke ut $\mathbb{R}^{99}$; en trenger minst nittini vektorer for å få til dette (Teorem \ref{thm:linuavhspan}).
+% \end{punkt}
 
-\begin{punkt}
-Ja, de er lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
-\end{punkt}
+% \begin{punkt}
+% Nei, de er ikke lineært uavhengige; en kan maksimalt ha to lineært uavhengige vektorer i $\mathbb{R}^2$ (Teorem \ref{thm:linavhspan}). Ja, de spenner ut $\mathbb{R}^2$; samlingen inneholder to lineært uavhengeige vektorer (Teorem \ref{thm:linuavhspan}).
+% \end{punkt}
 
-\begin{punkt}
-Nei, de er ikke lineært uavhengige. Ja, de spenner ut $\mathbb{R}^2$.
-\end{punkt}
-
-\end{losning}
-
-
-\begin{oppgave}
-\begin{punkt}
-Betrakt vektorene
-\[ 
-\begin{bmatrix} \;1\; \\ \;2\; \end{bmatrix}, 
-\begin{bmatrix} \;2\; \\ \;3\; \end{bmatrix}, \dots, 
-\begin{bmatrix} \;99\; \\ \;100\; \end{bmatrix}
-\]
-i $\mathbb{R}^2$. Vis at de utspenner $\mathbb{R}^2$. Er de lineært uavhengig? Begrunn svaret ditt.
-\end{punkt}
-
-\begin{punkt}
-Betrakt vektorene
-\[ 
-\begin{bmatrix} 
-\;1\; \\ 
-\;\vdots\; \\ 
-\;99\; 
-\end{bmatrix}
-\text{ og }
-\begin{bmatrix} 
-\;2\; \\ 
-\;\vdots\; \\ 
-\;100\; 
-\end{bmatrix}
-\]
-i $\mathbb{R}^{99}$. Er de lineært uavhengige? Spenner de ut $\mathbb{R}^{99}$? Begrunn svarene dine.
-
-\end{punkt}
-\end{oppgave}
-
-\begin{losning}
-
-\begin{punkt}
-Ja, de er lineært uavhengige. Dette kan sjekkes direkte ved å utforske om likningen 
-\[ 
-\begin{bmatrix} 
-\;1\; \\ 
-\;\vdots\; \\ 
-\;99\; 
-\end{bmatrix}
-=c
-\begin{bmatrix} 
-\;2\; \\ 
-\;\vdots\; \\ 
-\;100\; 
-\end{bmatrix}
-\] har noen løsning for tallet $c$. Nei, de spenner ikke ut $\mathbb{R}^{99}$; en trenger minst nittini vektorer for å få til dette (Teorem \ref{thm:linuavhspan}).
-\end{punkt}
-
-\begin{punkt}
-Nei, de er ikke lineært uavhengige; en kan maksimalt ha to lineært uavhengige vektorer i $\mathbb{R}^2$ (Teorem \ref{thm:linavhspan}). Ja, de spenner ut $\mathbb{R}^2$; samlingen inneholder to lineært uavhengeige vektorer (Teorem \ref{thm:linuavhspan}).
-\end{punkt}
-
-\end{losning}
+% \end{losning}
 
 
 \begin{oppgave}
@@ -339,13 +336,13 @@ Hint: 'ligger på linje' betyr lineært avhengig i løsningen ovenfor.
 
 
 
-\begin{oppgave}
-Vis at påstand 1. og 2. i teorem \ref{thm:linuavh} er ekvivalente.
-\end{oppgave}
+% \begin{oppgave}
+% Vis at påstand 1. og 2. i teorem \ref{thm:linuavh} er ekvivalente.
+% \end{oppgave}
 
-\begin{losning}
-Hint: likningen $A\V{x}=\V{0}$ er ekvivalent med at en lineærkombinasjon av kolonnene til $A$ er lik null-vektoren. Hva er definisjonen på lineær uavhengighet?
-\end{losning}
+% \begin{losning}
+% Hint: likningen $A\V{x}=\V{0}$ er ekvivalent med at en lineærkombinasjon av kolonnene til $A$ er lik null-vektoren. Hva er definisjonen på lineær uavhengighet?
+% \end{losning}
 
 
 
