@@ -293,7 +293,10 @@ $A \V{u} = A \V{v}$.  Hva kan du da si om determinanten til~$A$?
 \end{oppgave}
 
 \begin{losning}
-TODO
+Determinanten må være lik null.
+
+\noindent
+Hint: Vi antar at $A\V{u}-A\V{v}=0$ for $\V{u}-\V{v}\neq 0$. Ved regnereglene for matriser blir dette $A(\V{u}-\V{v})=0$. Likningen $A\V{x}=\V{0}$ har altså en ikke-triviell løsning; $\V{x}=\V{u}-\V{v}$. Dette betyr -- fra Teorem \ref{thm:linuavh} -- at kolonnene til $A$ er lineært avhengige. Hva kan du nå si om determinanten til $A$?
 \end{losning}
 
 
@@ -306,7 +309,16 @@ Hva kan du da si om $m$ og~$n$?
 \end{oppgave}
 
 \begin{losning}
-TODO
+$m\geq n$.
+
+\noindent
+Skisse til løsning: Hva skjer hvis vi antar $m<n$? Svar: Siden kolonnene til $A$ er vektorer i $\mathbb{R}^n$ og vi har $n>m$ vektorer, må kolonnene til $A$ være lineært avhengige. Husk at $$A\tr A=\begin{bmatrix}
+\V{a}_1\tr \V{a}_1 & \V{a}_1\tr \V{a}_2 & \cdots & \V{a}_1\tr\V{a}_n\\
+\V{a}_2\tr \V{a}_1 & \V{a}_2\tr \V{a}_2 & \cdots & \V{a}_2\tr\V{a}_n\\
+\vdots & \vdots & \ddots & \vdots\\
+\V{a}_n\tr \V{a}_1 & \V{a}_n\tr \V{a}_2 & \cdots & \V{a}_n\tr\V{a}_n
+\end{bmatrix},
+$$ hvor $\V{a}_1,\dots,\V{a}_n$ er kolonnene til $A$. Du kan nå bruke at kolonnene til $A$ er lineæret avhengige til å argumentere for at kolonnene til $A\tr A $ er lineært avhengige. Derfor må determinanten være lik null. 
 \end{losning}
 
 
@@ -323,7 +335,7 @@ Finn $\det (A \cdot A\tr)$ og $\det (A\tr \cdot A)$.
 \end{oppgave}
 
 \begin{losning}
-TODO
+$\det (A \cdot A\tr)=336$, $\det (A\tr \cdot A)=0$.
 \end{losning}
 
 
