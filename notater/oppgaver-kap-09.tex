@@ -1,6 +1,128 @@
 % -*- TeX-master: "oving07"; -*-
 \oppgaver{9}
 
+
+\begin{oppgave}
+Sjekk om følgende funksjoner er lineære. Hvis ja, sjekk om den er injektiv og surjektiv.
+
+\begin{punkt}
+$T(\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix})=\begin{bmatrix}
+8x-7y\\
+3z-8x-7y\\
+5y-4x-8z\\
+6y-6x-4z
+\end{bmatrix}.$
+\end{punkt}
+
+\begin{punkt}
+$T(\begin{bmatrix}
+x\\
+y\\
+z\\
+w
+\end{bmatrix})=\begin{bmatrix}
+x\\
+y\\
+z\\
+w
+\end{bmatrix}\boldsymbol{\cdot }\begin{bmatrix}
+x\\
+y\\
+z\\
+w
+\end{bmatrix}.$
+
+\end{punkt}
+
+\begin{punkt}
+$T(\begin{bmatrix}
+x\\
+y\\
+z\\
+w
+\end{bmatrix})=\begin{bmatrix}
+x\\
+y\\
+z\\
+w
+\end{bmatrix}\boldsymbol{\cdot }\begin{bmatrix}
+1\\
+2\\
+3\\
+4
+\end{bmatrix}.$
+
+\end{punkt}
+
+\begin{punkt}
+$T(\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+x_4\\
+x_5
+\end{bmatrix})=\begin{bmatrix}
+2x_1-5x_2+3x_3+4x_4\\
+2x_1-4x_2+7x_3+2x_4+x_5\\
+-6x_1+15x_2-9x_3-12x_4+x_5\\
+4x_1-8x_2+14x_3+5x_4-6x_5\\
+-2x_1+5x_2+4x_3+5x_4-4x_5
+\end{bmatrix}.$
+
+\end{punkt}
+
+
+\end{oppgave}
+
+\begin{losning}
+
+
+\begin{punkt}
+$$\begin{bmatrix}
+8 & -7 & 0\\
+-8 & -7 & 3\\
+-4 & 5 & -8\\
+-6 & 6 & -4
+\end{bmatrix}$$
+Injektiv, ikke surjektiv.
+\end{punkt}
+
+\begin{punkt}
+Ikke lineær.
+\end{punkt}
+
+\begin{punkt}
+$$\begin{bmatrix}
+1 & 2 & 3 & 4
+\end{bmatrix}$$
+Surjektiv, ikke injektiv.
+\end{punkt}
+
+\begin{punkt}
+$$
+\begin{bmatrix}
+2 & -5 & 3 & 4 & 0 \\
+2 & -4 & 7 & 2 & 1 \\
+-6 & 15 & -9 & -12 & 1 \\
+4 & -8 & 14 & 5 & -6 \\
+-2 & 5 & 4 & 5 & -4
+\end{bmatrix}
+$$
+Injektiv og surjektiv.
+
+\noindent 
+Husk: Du har regnet ut determinanten til denne matrisen tidligere.
+
+\end{punkt}
+
+\end{losning}
+
+
+
 \begin{oppgave}
 \label{oppg:1dlintrans}
 Vi skal se på funksjoner $\mathbb{R}\rightarrow \mathbb{R}$. Begrunn om følgende funksjoner er lineære eller ikke:
@@ -44,10 +166,59 @@ Hint: Hva er definisjonen av en lineærtransformasjon. Husk $e^{x+y}=e^x\cdot e^
 Vis at en lineærtransformasjon $f:\mathbb{R}\rightarrow \mathbb{R}$ er entydig bestemt av et reelt tall.
 
 \noindent 
-Hint: Hvordan ser de lineære funksjonene i oppgave \ref{oppg:1dlintrans} ut?
+Hint: Hvordan ser de lineære funksjonene i forrige oppgave ut?
 \end{oppgave}
 
 
 \begin{losning}
 Hint: $f(x)=x\cdot f(1)$ hvor $f(1)$ er et reelt tall. Kan du fullføre oppgaven?
 \end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+La $f$ og $g$ være funksjoner $\mathbb{R}\rightarrow \mathbb{R}$ gitt ved $$f(x)=2^x \quad \text{og} \quad g(x)=x^3-x.$$ Vis at $f$ er injektiv men ikke surjektiv; $g$ er surjektiv men ikke injektiv.
+
+\end{punkt}
+\begin{punkt}
+Kan en eller begge tilfellene i del \textbf{a)} skje for en lineærtrasnformasjon $L$ fra $\mathbb{R}^n$ til $\mathbb{R}^n$? Hva med $\mathbb{R}^n$ til $\mathbb{R}^m$?
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Hint: Du kan løse oppgaven ved å bruke definisjonene for injektiv og surjektiv direkte.
+\end{punkt}
+
+\begin{punkt}
+Nei i tilefellet $\mathbb{R}^n\rightarrow \mathbb{R}^n$; injektiv, surjektiv og inverterbar er det samme for kvadratiske matriser. Ja i tilfellet $\mathbb{R}^n\rightarrow \mathbb{R}^m$.
+
+
+\noindent
+Merk: Dette er altså en helt spesiell egenskap for lineære funksjoner som er gitt av \emph{kvadratiske} matriser.
+\end{punkt}
+
+
+\end{losning}
+
+\begin{oppgave}
+\begin{punkt}
+La $C^\infty$ være undermengden av alle funksjoner som er uendelig mange ganger deriverbar; kan deriveres et vilkårlig antal ganger. Vis at dette er et underrom av vektorrommet av alle kontinuerlige funksjoner.
+\end{punkt}
+
+\begin{punkt}
+Vis at funksjonen $T:C^\infty\rightarrow C^\infty$ som er gitt ved derivasjon, $$T(f)=f',$$ er en lineærtransformasjon.
+
+\noindent
+Hint: I matte 1 lærte vi regneregler for derivasjon av i) en sum av to funksjoner og ii) en funksjon multiplisert med en konstant.
+\end{punkt}
+
+\begin{punkt}
+Vis at $T$ har uendelig mange egenverdier.
+
+\noindent 
+Hint: Husker du hvilken funksjon fra matte 1 som ikke endrer seg ved derivasjon? Hva betyr dette mtp. oppgaven? Kan du modifisere denne litt for å løse oppgaven?
+\end{punkt}
+\end{oppgave}
