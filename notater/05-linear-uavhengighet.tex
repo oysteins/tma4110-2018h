@@ -115,7 +115,8 @@ Vektorene $\V{v}_1$ og $\V{v}_2$ er derfor lineært avhengige.
 
 I dette eksempelet hadde vi at den ene vektoren kunne skrives som et
 tall ganger den andre, og ut fra det fant vi at vektorene var lineært
-avhengige.
+avhengige.  Vi viser at dette generelt er nok til å bestemme om to
+vektorer er lineært uavhengige eller ikke.
 
 \begin{thm}
 \label{thm:lin-uavh-2}
@@ -158,11 +159,11 @@ $\V{u} \cdot x_1 + \V{v} \cdot x_2 = \V{0}$,
 og det betyr at vektorene er lineært avhengige.
 \end{proof}
 
-Teoremet kan også formuleres slik: Vektorene er lineært uavhengige
-hvis og bare hvis de ikke ligger på en rett linje gjennom origo.
+Teoremet sier altså at to vektorer er lineært uavhengige hvis og bare
+hvis de ikke ligger på en rett linje gjennom origo.
 
-Hvis vi har to vektorer i $\R^2$, er det to muligheter: Enten er de
-lineært avhengige, eller så utspenner de hele~$\R^2$.
+% Hvis vi har to vektorer i $\R^2$, er det to muligheter: Enten er de
+% lineært avhengige, eller så utspenner de hele~$\R^2$.
 
 % TODO: eksempel med figurer
 
@@ -220,16 +221,19 @@ vektorene $\V{u}$, $\V{v}$ og~$\V{w}$ er lineært uavhengige.
 Det essensielle vi trenger å få ut av gausseliminasjonen for å sjekke
 lineær uavhengighet, er om det blir noen frie variabler eller ikke.
 Merk også at vi ikke egentlig trenger å ta med høyresidevektoren i
-gausseliminasjonen nå.  I og med at det er bare $0$-er der fra
-begynnelsen av, kan det aldri bli noe annet enn~$0$, uansett hvilke
-radoperasjoner vi utfører.
+gausseliminasjonen.  I og med at det er bare $0$-er der fra
+begynnelsen av, kan det aldri bli noe annet enn~$0$ der, uansett
+hvilke radoperasjoner vi utfører.
+
+Vi skriver opp et teorem basert på det vi har observert nå.
 
 \begin{thm}
 \label{thm:linuavh}
 La $A$ være en matrise.  Følgende påstander er ekvivalente:
 \begin{enumerate}
 \item Kolonnene i $A$ er lineært uavhengige.
-\item Likningen $A \V{x} = \V{0}$ har kun den trivielle løsningen.
+\item Likningen $A \V{x} = \V{0}$ har bare den trivielle løsn\-ingen
+$\V{x} = \V{0}$.
 \item Vi får ingen frie variabler når vi løser $A \V{x} = \V{0}$.
 \item Når vi gausseliminerer $A$, får vi et pivotelement i hver kolonne.
 \end{enumerate}
@@ -319,6 +323,10 @@ pivotelementer i alle de fire kolonnene, så vektorene $\V{v}_1$,
 $\V{v}_2$, $\V{v}_3$ og $\V{v}_4$ er lineært avhengige.
 \end{ex}
 
+Som vi så i dette siste eksempelet, trenger vi ikke alltid å
+gausseliminere for å finne ut om vektorer er lineært uavhengige eller
+ikke.  Noen ganger kan vi se det på enklere måter.
+
 Vi lister opp noen forskjellige betingelser som kan være nyttige å se
 etter for å oppdage at vektorer er lineært \emph{avhengige}.
 
@@ -341,13 +349,15 @@ Da kan vi sette $a_k = -1$ og få:
 \[
 \sum_{i = 1}^n a_i \V{v}_i = \V{0}
 \]
-Her har vi en ikketriviell lineærkombinasjon av vektorene våre (vi vet
-ikke hva alle $a_i$-ene er, men vi vet i hvert fall at én av dem,
-$a_k$, ikke er~$0$).  Det betyr at vektorene er lineært avhengige.
+Her har vi skrevet nullvektoren som en ikketriviell lineærkombinasjon
+av vektorene våre (vi vet ikke hva alle $a_i$-ene er, men vi vet i
+hvert fall at én av dem, $a_k$, ikke er~$0$).  Det betyr at vektorene
+er lineært avhengige.
 
-Nå går vi videre til å se på den andre antagelsen i teoremet.  Hvis
-$\V{v}_k = \V{0}$, så kan vi definere tall $a_1$, $a_2$, \ldots, $a_n$
-ved:
+Nå går vi videre til å se på den andre antagelsen i teoremet, så vi
+antar at én av vektorene i listen er nullvektoren.  Hvis
+$\V{v}_k = \V{0}$, så kan vi definere $n$ tall $a_1$, $a_2$, \ldots,
+$a_n$ ved:
 \[
 a_i =
 \begin{cases}
@@ -369,8 +379,8 @@ gausseliminerer matrisen
 \]
 så får vi maksimalt $m$ pivotelementer (ett i hver rad), men vi
 trenger $n$ pivotelementer (ett i hver kolonne) for at vektorene skal
-være lineært uavhengige.  Når $n > m$ går ikke det an, så da er de
-lineært avhengige.
+være lineært uavhengige.  Når $n > m$ går ikke det an, så da er
+vektorene lineært avhengige.
 \end{proof}
 
 Den første betingelsen i teorem~\ref{thm:linavhspan} er ikke bare
@@ -378,22 +388,101 @@ tilstrekkelig for å få lineær avhengighet, den er ekvivalent med at
 vektorene er lineært avhengige.  Vi viser dette også.
 
 \begin{thm}
-TODO
+\label{thm:lin-uavh-lin-komb}
+Vektorene $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^m$ er lineært
+uavhengige hvis og bare hvis ingen av dem kan skrives som en
+lineærkombinasjon av de andre.
 \end{thm}
+\begin{proof}
+Påstanden i teoremet er det samme som å si at vektorene er lineært
+avhengige hvis og bare hvis en av dem kan skrives som en
+lineærkombinasjon av de andre.
 
+I teorem~\ref{thm:linavhspan} viste vi at dersom en av vektorene er en
+lineærkombinasjon av de andre, så er de lineært avhengige.  Det
+gjenstår å vise at dersom vektorene er lineært avhengige, så er en av
+dem en lineærkombinasjon av de andre.
+
+Anta at vektorene er lineært avhengige, altså at vi har
+\[
+a_1 \V{v}_1 + a_2 \V{v}_2 + \cdots + a_n \V{v}_n = \V{0},
+\]
+der minst én av $a_i$-ene er ulik~$0$.  Velg en~$k$ slik at $a_k \ne 0$.
+Da har vi:
+\[
+a_k \V{v}_k = \sum_{i \ne k} (-a_i) \V{v}_i
+\]
+Siden $a_k \ne 0$ kan vi dele på $a_k$ og få:
+\[
+\V{v}_k = \sum_{i \ne k} \frac{-a_i}{a_k} \cdot \V{v}_i
+\]
+Dermed er vektoren $\V{v}_k$ en lineærkombinasjon av de andre
+vektorene i listen.
+\end{proof}
+
+
+\section*{Like mange vektorer som dimensjonen}
+
+Til slutt ser vi på hva vi kan si om lineær uavhengighet hvis vi ser
+på $n$ vektorer i~$\R^n$.  Nå har vi altså like mange vektorer som
+dimensjonen til rommet vektorene bor i.
+
+Hvis vi har to vektorer i~$\R^2$, så kan vi skille mellom følgende tre
+tilfeller:
+\begin{enumerate}
+\item Begge vektorene er nullvektoren.  Da utspenner de bare mengden
+bestående av nullvektoren, og de er lineært avhengige.
+\item Minst én av vektorene er ulik~$\V{0}$, og vektorene ligger på
+samme linje.  Da utspenner de denne linjen, og de er lineært
+avhengige.
+\item Vektorene ligger ikke på samme linje, de peker altså i hver sin
+retning.  Da utspenner de hele planet, og de er lineært uavhengige.
+\end{enumerate}
+
+Hvis vi har tre vektorer i~$\R^3$, så kan vi skille mellom fire
+tilfeller:
+\begin{enumerate}
+\item Alle er nullvektoren.  Da utspenner de bare mengden bestående av
+nullvektoren, og de er lineært avhengige.
+\item Minst én av vektorene er ulik~$\V{0}$, og vektorene ligger på
+samme linje.  Da utspenner de denne linjen, og de er lineært
+avhengige.
+\item Vektorene ligger ikke på samme linje, men det finnes et plan
+i~$\R^3$ som inneholder alle tre.  Da utspenner de dette planet, og de
+er lineært avhengige.
+\item Vektorene ligger ikke i samme plan.  Da utspenner de
+hele~$\R^3$, og de er lineært uavhengige.
+\end{enumerate}
+
+Generelt har vi at $n$ vektorer i~$\R^n$ enten er lineært avhengige og
+utspenner en mengde som er mindre enn~$\R^n$, eller så er de lineært
+uavhengige og utspenner hele~$\R^n$.
 
 \begin{thm}
 \label{thm:linuavhspan}
-Gitt $n$ vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i $\R^n$.
-
-Da er de lineært uavhengige hvis og bare hvis de utspenner hele $\R^n$,
-altså hvis og bare hvis
+Hvis vi har $n$ vektorer $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_n$ i
+$\R^n$, så er de lineært uavhengige hvis og bare hvis de utspenner
+hele $\R^n$, altså hvis og bare hvis
 \[
 \Sp \{ \V{v}_1, \V{v}_2, \ldots, \V{v}_n \} = \R^n.
 \]
 \end{thm}
-
-
+\begin{proof}
+La
+\[
+A = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \ldots & \V{v}_n \end{bmatrix}
+\]
+være $n \times n$-matrisen med vektorene våre som kolonner.  Vi vet at
+vektorene er lineært uavhengige hvis og bare hvis vi får
+pivotelementer i alle kolonner når vi gausseliminerer~$A$.  Men siden
+$A$ er kvadratisk, er dette det samme som at vi får pivotelementer i
+alle rader.  Det er igjen ekvivalent med at
+\[
+A \V{x} = \V{b}
+\]
+har løsning for alle vektorer~$\V{b}$ i~$\R^n$, som er det samme som
+at kolonnene i~$A$ utspenner~$\R^n$.
+\end{proof}
 
 
 \kapittelslutt
