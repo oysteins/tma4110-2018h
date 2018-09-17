@@ -339,3 +339,304 @@ $\det (A \cdot A\tr)=336$, $\det (A\tr \cdot A)=0$.
 \end{losning}
 
 
+
+
+
+
+\begin{oppgave}
+
+Finn egenverdier og tilhørende egenvektorer til følgende matriser.
+
+\begin{punkt}
+$$\begin{bmatrix}
+1 & 2\\
+2 & 1
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+$$\begin{bmatrix}
+1 & 2 & 0\\
+2 & 1 & 0\\
+0 & 0 & 0
+\end{bmatrix}$$
+\end{punkt}
+
+
+\begin{punkt}
+$$\begin{bmatrix}
+4 & 0 & 3\\
+-2 & 1 & 3\\
+-2 & 0 & 4
+\end{bmatrix}$$
+\end{punkt}
+
+
+\begin{punkt}
+$$\begin{bmatrix}
+4 & 2 & 3\\
+-1 & 1 & -3\\
+2 & 4 & 9
+\end{bmatrix}$$
+
+\noindent
+Hint: Hvis ikke $\lambda=1$ fungerer, prøv $\lambda=2$. Hvis ikke $\lambda=2$ fungerer, prøv $\lambda=3$\ldots
+\end{punkt}
+
+
+\end{oppgave}
+
+
+\begin{losning}
+I svarene nedenfor vil vi liste opp egenvektorer, og deretter egenrommet til hver egenverdi i samme rekkefølge.
+\begin{punkt}
+Egenverdier: 3, $-1$. Egenrom: linjen utspent av $\vv{1}{1}$, $\vv{-1}{1}$ utenom origo.
+\end{punkt}
+
+\begin{punkt}
+Egenverdier: 3, $-1$, 0. Egenrom: Linjen utspent av $\begin{bmatrix} 
+1\\
+1\\
+0
+\end{bmatrix}}$, $\begin{bmatrix} 
+-1\\
+1\\
+0
+\end{bmatrix}}$, $\begin{bmatrix} 
+0\\
+0\\
+1
+\end{bmatrix}}$ utenom origo.
+
+\end{punkt}
+
+\begin{punkt}
+Egenverdier: 1, 2, 3. Egenrom: Linjen utspent av $\begin{bmatrix} 
+0\\
+1\\
+0
+\end{bmatrix}}$, $\begin{bmatrix} 
+-1\\
+2\\
+2
+\end{bmatrix}}$, $\begin{bmatrix} 
+-1\\
+1\\
+1
+\end{bmatrix}}$ utenom origo.
+\end{punkt}
+
+\begin{punkt}
+Egenverdi: 3, 8. Egenrom: Planet utspent av $\begin{bmatrix} 
+-2\\
+1\\
+0
+\end{bmatrix}}$ og $\begin{bmatrix} 
+-3\\
+0\\
+1
+\end{bmatrix}}$ utenom origo, linjen utspent av $\begin{bmatrix} 
+1\\
+-1\\
+2
+\end{bmatrix}}$ utenom origo.
+\end{punkt}
+
+
+
+\end{losning}
+
+
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Regn ut egenverdiene til $$\begin{bmatrix}
+1 & 0\\
+0 & 0
+\end{bmatrix},
+$$ og finn tilhørende egenrom. 
+\end{punkt}
+
+\begin{punkt}
+Skissér egenrommene.
+
+\noindent 
+
+Hint: Du har løst denne oppgaven tidligere.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Egenverdi: 0,1. Egenrom: $x$-aksen og $y$-aksen (uten origo).
+\end{punkt}
+
+\begin{punkt}
+Vektorer langs $y$-aksen blir null-vektoren ved multiplikasjon av $A$; vektorer langs $x$-aksen er uendret ved muliplikasjon av $A$.
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+Regn ut egenvektorene til $$\frac{1}{2}\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix},
+$$ og finn tilhørende egenrom.
+
+\end{punkt}
+
+\begin{punkt}
+Skissér egenrommene.
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Egenverdi: 0,1. Egenrom: linjene utspent av $(1,1)$ og $(-1,1)$ (uten origo).
+\end{punkt}
+
+\begin{punkt}
+Vektorer langs $(1,-1)$-linjen blir null-vektoren ved multiplikasjon; vektorer langs $(-1,1)$-linjen er uendret ved muliplikasjon.
+
+\noindent
+Merk: Man kan tolke $x$-aksen som linjen utspent av $(1,0)$ og $y$-aksen som linjen utspent av $(-1,1)$. Dette er altså helt lik situasjonen som i forrige oppgave, men nå er egenrommene rotert med 45 grader.
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Vis at $$\frac{1}{2}\begin{bmatrix}
+0 & -1\\
+1 & 0
+\end{bmatrix},
+$$ ikke har noen egenverdier.
+
+\end{punkt}
+
+\begin{punkt}
+Gi en geometrisk forklaring på del \textbf{a)}.
+
+\noindent
+Hint: Du har sett på de geometriske egenskapene til matrisen tidligere.
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Dersom vi prøver å løse $\text{det}(A-\lambda I)=0$ får vi polynomlikningen $\lambda^2+1=0$. Denne har ingen (reelle) løsninger.
+\end{punkt}
+
+\begin{punkt}
+Matrisen roterer vektorer med 90 grader. Men en likning på formen $A\V{x}=c\V{x}$ betyr at $A$ skalerer $\V{x}$ med en faktor $c$ uten at $\V{x}$ roteres.
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+Regn ut egenverdiene til $$A=\begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 2 & 0 & 0\\
+0 & 0 & -5 & 0\\
+0 & 0 & 0 & 77
+\end{bmatrix},
+$$ og finn tilhørende egenrom.
+
+\end{punkt}
+
+\begin{punkt}
+Gi en geometrisk tolkning av egenrommene.
+\end{punkt}
+
+\begin{punkt}
+$A$ er en $4\times 4$-matrise. Er det alltid enkelt å finne egenverdiene til en $4\times 4$-matrise? Mer generelt, er det alltid enkelt å finne egenverdiene til $n\times n$-matriser?
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Egenverdi 1, 2, $-5$, 77. Egenrom: $x_1$-aksen, $x_2$-aksen, $x_3$-aksen, $x_4$-aksen.
+\end{punkt}
+
+\begin{punkt}
+Vektorer på $x_1$-aksen endres ikke; vektorer på $x_2$-aksen skaleres med 2; vektorer på $x_3$-aksen flippes (multiplikasjon $-1$) og skaleres med 5; vektorer langs $x_4$-aksen skaleres med 77.
+\end{punkt}
+
+\begin{punkt}
+Nei. Vi må løse en fjerdegradslinking, som kan bli meget vanskelig. For generell $n$: Nei; vi må løse $n$-tegradslikninger.
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+La $A$ være en $n\times n$-matrise slik at $A^2=A$. Vis at $A$ kun kan ha null og en som egenverdier.
+\end{oppgave}
+
+\begin{losning}
+Full løsning: Hvis $c$ er en egenverdi tilfredstiller den -- per definisjon -- $A\V{x}=c\V{x}$ for en ikke-null vektor $\V{x}$. Kombiner dette med antagelsen om at $A^2\V{x}=A\V{x}$ for å se at $\V{x}$ tilfredstiller $c^2\V{x}=c\V{x}$. Omformuler denne likningen til $(c^2-c)\V{x}=0$. Ettersom $\V{x}$ ikke er null-vektoren, må en komponent i $\V{x}$ ikke være lik null (hvorfor?), og derfor må $c^2-c=0$. Dette er en andregradslikning med løsning $c=0$ eller $c=1$.
+\end{losning}
+
+\begin{oppgave}
+
+\begin{punkt}
+Finn vektorene som svarer til at $$\V{e}_1\vv{1}{0}\quad \text{og}\quad\V{e}_2= \vv{0}{1}$$ er blitt rotert med $\theta$ radianer.
+\end{punkt}
+
+\begin{punkt}
+Utled formelen for $2 \times 2$-matrisen $T_\theta$ som roterer vektorer $\theta$ radianer mot klokken ved multiplikasjon.
+
+\noindent
+Hint: Hva skjer når du multipliserer $T_\theta$ med $\V{e}_1$ og $\V{e}_2$?
+\end{punkt}
+
+\begin{punkt}
+For hvilke verdier av $\theta$ har $T_\theta$ en egenverdi? Gi en geometrisk forklaring.
+\end{punkt}
+
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+$\vv{\cos\theta}{\sin\theta}$, $\vv{-\sin\theta}{\cos\theta}$
+\end{punkt}
+
+\begin{punkt}
+Matrisen er akkurat den som har svaret i del \textbf{a)} som kolonner:
+$$T_\theta=\begin{bmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+Vi må ha $\theta=0$; ingen rotasjon.
+\end{punkt}
+
+\end{losning}
+
