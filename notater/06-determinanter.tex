@@ -87,7 +87,7 @@ vektorene.
 La oss beregne arealet av dette parallellogrammet.  Vi tegner på noen
 hjelpelinjer:
 \begin{center}
-\begin{tikzpicture}[scale=.7]
+\begin{tikzpicture}[scale=.6]
 \draw[->] (-1,0) -- (10,0);
 \draw[->] (0,-1) -- (0,6);
 \draw (2,2pt) -- (2,-6pt) node[anchor=north] {$b$};
@@ -145,7 +145,7 @@ Så determinanten gir oss arealet til et parallellogram.  Men hva
 forteller det oss om matrisen~$A$?
 
 Vi kan tenke på~$A$ som en transformasjon av planet der hver
-vektor~$\V{x}$ i~$\R^2$ sendes til vektoren~$A \V{x}$.  Determinanten
+vektor~$\V{v}$ i~$\R^2$ sendes til vektoren~$A \V{v}$.  Determinanten
 sier noe om hvordan planet endres under denne transformasjonen.
 
 La
@@ -158,6 +158,7 @@ være de to enhetsvektorene i~$\R^2$, og se på kvadratet utspent av
 disse:
 \begin{center}
 \begin{tikzpicture}[scale=2]
+\draw[fill=gray!35] (0,0) -- (0,1) -- (1,1) -- (1,0) -- cycle;
 \draw[->] (-.6,0) -- (1.6,0);
 \draw[->] (0,-.2) -- (0,1.2);
 \draw[->,thick] (0,0) -- (1,0);
@@ -165,14 +166,24 @@ disse:
 \node[anchor=north] at (1,0) {$\V{e}_1$};
 \node[anchor=east] at (0,1) {$\V{e}_2$};
 \draw (1,0) -- (1,1) -- (0,1);
+\node at (.5,.5) {$1$};
 \end{tikzpicture}
 \\
 {\small \textit{Enhetskvadratet}}
 \end{center}
 Nå vil vi se på hva som skjer med dette kvadratet dersom vi sender
-hvert punkt $\V{v}$ i~$\R^2$ til $A \V{v}$, der $A$ er en
-$2 \times 2$-matrise.
+hvert punkt $\V{v}$ i~$\R^2$ til $A \V{v}$, der
+\[
+A = \begin{bmatrix} \V{a}_1 & \V{a}_2 \end{bmatrix}
+\]
+er en $2 \times 2$-matrise med $\V{a}_1$ og~$\V{a}_2$ som kolonner.
+Da sendes vektoren $\V{e}_1$ til $\V{a}_1$, og vektoren $\V{e}_2$
+sendes til~$\V{a}_2$.  Alle vektorene som ligger inni enhetskvadratet
+i forrige figur sendes til vektorer som ligger inni parallellogrammet
+utspent av $\V{a}_1$ og~$\V{a}_2$.
 
+Vi skisserer noen forskjellige muligheter, for forskjellige valg av
+matrisen~$A$:
 \begin{center}
 \begin{tabular}{cl}
 $\det A > 0$ &
@@ -184,10 +195,10 @@ $\det A > 0$ &
 \draw[->] (0,0) -- (2,3);
 \draw (2,3) -- (8,4) -- (6,1);
 \node at (4,2) {$\det A$};
-\node[anchor=west] at (6,1) {$A \V{e}_1$};
-\node[anchor=south] at (2,3) {$A \V{e}_2$};
+\node[anchor=west] at (6,1) {$\V{a}_1$};
+\node[anchor=south] at (2,3) {$\V{a}_2$};
 \end{tikzpicture}
-\\[38pt]
+\\[44pt]
 $\det A < 0$ &
 \begin{tikzpicture}[scale=.5,baseline=30pt]
 \draw[->] (-1,0) -- (10,0);
@@ -197,32 +208,53 @@ $\det A < 0$ &
 \draw[->] (0,0) -- (2,3);
 \draw (2,3) -- (8,4) -- (6,1);
 \node at (4,2) {$- \det A$};
-\node[anchor=west] at (6,1) {$A \V{e}_2$};
-\node[anchor=south] at (2,3) {$A \V{e}_1$};
+\node[anchor=west] at (6,1) {$\V{a}_2$};
+\node[anchor=south] at (2,3) {$\V{a}_1$};
 \end{tikzpicture}
-\\[38pt]
+\\[44pt]
 $\det A = 0$ &
 \begin{tikzpicture}[scale=.5,baseline=30pt]
 \draw[->] (-1,0) -- (10,0);
 \draw[->] (0,-.2) -- (0,5);
 \draw[->] (0,0) -- (4,1);
-\draw[->] (0,0) -- (8,2);
-\node[anchor=south] at (4,1) {$A \V{e}_1$};
-\node[anchor=south] at (8,2) {$A \V{e}_2$};
+\draw[->] (0,0) -- (6,1.5);
+\draw (0,0) -- (8,2);
+\node[anchor=south] at (4,1) {$\V{a}_1$};
+\node[anchor=south] at (6,1.5) {$\V{a}_2$};
+%\node[anchor=west] at (8,2) {$\V{a}_1 + \V{a}_2$};
 \end{tikzpicture}
-\\[38pt]
+\\[44pt]
 $\det A = 0$ &
 \begin{tikzpicture}[scale=.5,baseline=30pt]
 \draw[->] (-1,0) -- (10,0);
 \draw[->] (0,-.2) -- (0,5);
 \draw[->] (0,0) -- (5,2);
 \filldraw (0,0) circle [radius=2pt];
-\node[anchor=west] at (5,2) {$A \V{e}_2$};
-\node[anchor=north west] at (0,0) {$A \V{e}_1$};
+\node[anchor=west] at (5,2) {$\V{a}_2$};
+\node[anchor=north west] at (0,0) {$\V{a}_1$};
 \end{tikzpicture}
 \end{tabular}
 \end{center}
 
+I den første figuren har vi en matrise med positiv determinant.  Da
+gjør transformasjonen $\V{v} \mapsto A\V{v}$ at enhetskvadratet
+skaleres til et parallellogram med areal $\det A$.  Hvis $\det A > 1$
+betyr dette at planet «blåses opp»; hvis $0 < \det A < 1$ betyr det at
+planet «krympes sammen».
+
+I den andre figuren har vi en matrise med negativ determinant.  Da er
+situasjonen helt lik som i den første figuren, bortsett fra at det er
+$(- \det A)$ som er arealet.  Da får vi at med $\det A < -1$ blir
+planet «blåst opp», og med $-1 < \det A < 0$ blir det «krympet
+sammen».
+
+I den tredje og den fjerde figuren har vi situasjoner der
+determinanten er~$0$.  Det vil si at parallellogrammet utspent av
+kolonnene i~$A$ har areal~$0$.  Det blir altså ikke et virkelig
+parallellogram i disse tilfellene; det har kollapset til et
+«degenerert» parallellogram som er bare en linje.  På samme måte vil
+transformasjonen $\V{v} \mapsto A \V{v}$ i disse tilfellene kollapse
+hele planet ned til linjen utspent av $\V{a}_1$ og~$\V{a}_2$.
 
 
 \section*{Determinanter for $3 \times 3$-matriser}
@@ -263,9 +295,9 @@ a_{31} & a_{32}
 \end{vmatrix}
 \end{align*}
 Her er det også en geometrisk tolkning.  Vi kan tegne opp kolonnene
-i~$A$ som piler i~$\R^3$, og lage et parallellepiped med disse pilene
-som tre av sidene.  Dette kaller vi for parallellepipedet utspent av
-de tre vektorene.  Da har vi at volumet av parallellepipedet utspent
+i~$A$ som piler i~$\R^3$, og lage et parallell\-epiped med disse pilene
+som tre av sidene.  Dette kaller vi for parallell\-epipedet utspent av
+de tre vektorene.  Da har vi at volumet av parallell\-epipedet utspent
 av kolonnene i~$A$ er lik absoluttverdien av determinanten til~$A$.
 
 
@@ -387,7 +419,7 @@ med~$0$):
   1 \begin{vmatrix} 0 & 1 \\ 0 & 5 \end{vmatrix}
 - 2 \begin{vmatrix} 2 & 1 \\ 7 & 5 \end{vmatrix}
 + 1 \begin{vmatrix} 2 & 0 \\ 7 & 0 \end{vmatrix}
- = -6 \\
+ = -6
 \end{align*}
 Ved å sette inn disse i uttrykket for $\det A$ får vi:
 \[
@@ -519,11 +551,11 @@ utnytte for å spare oss for en del arbeid når vi skal regne ut
 determinanter, spesielt hvis vi har store matriser.
 
 \begin{thm}
+\label{thm:det-radop}
 La $A$ være en $n \times n$-matrise, og la $B$ være en matrise vi får
 ved å utføre en radoperasjon på~$A$.  Da har vi følgende sammenheng
 mellom determinantene til $A$ og~$B$, basert på hvilken type
 radoperasjon vi utførte:
-\\
 \[
 \begin{array}{ll}
 \text{Radoperasjon} & \text{Resultat} \\\hline
@@ -537,6 +569,7 @@ radoperasjon vi utførte:
 \]
 \end{thm}
 
+\medskip
 La oss bruke dette teoremet til å beregne en determinant.
 
 \begin{ex}
@@ -656,8 +689,9 @@ praktisk å kofaktorekspandere langs første kolonne.  Da får vi bare
 ett ledd i ekspansjonen, nemlig tallet øverst til venstre i matrisen
 ganget med determinanten til matrisen der første rad og kolonne er
 fjernet.  Denne matrisen er igjen øvre triangulær.  Så fortsetter vi
-med kofaktorekspansjon langs første kolonne i hvert steg nedover.  Til
-slutt ender vi opp med å bare gange sammen alle tallene på diagonalen.
+med kofaktorekspansjon langs første kolonne i hvert steg nedover.  Det
+vi ender opp med til slutt er å bare gange sammen alle tallene på
+diagonalen.
 
 Vi oppsummerer dette i et teorem.
 
@@ -670,12 +704,72 @@ er determinanten til~$A$ lik produktet av tallene på diagonalen i~$A$:
 \]
 \end{thm}
 
+\begin{ex}
+Ved å bruke teoremet kan vi skrive opp determinanten til en triangulær
+matrise direkte, uten å måtte beregne andre determinanter først:
+\[
+\begin{vmatrix}
+1 &  1 &  4 \\
+0 & -2 &  3 \\
+0 &  0 &  5
+\end{vmatrix}
+= 1 \cdot (-2) \cdot 5
+\qedhere
+\]
+\end{ex}
+
+Hvis vi skal beregne determinanten til en stor og stygg matrise, er
+det en god strategi å bruke radoperasjoner for å skrive om matrisen
+til øvre triangulær form (og holde orden på hvordan determinanten
+endrer seg ved hjelp av teorem~\ref{thm:det-radop}), og så regne ut
+determinanten til den triangulære matrisen ved hjelp av
+teorem~\ref{thm:det-diag}.
+
 
 \section*{Flere regneregler}
 
+Vi tar med et par regneregler til for determinanter.
+
+\begin{thm}
+\label{thm:det-produkt}
+Determinanten til et produkt av to matriser er produktet av
+determinantene.  Altså: Hvis $A$ og~$B$ er to $n \times n$-matriser,
+så er
+\[
+\det (AB) = (\det A) (\det B).
+\]
+\end{thm}
+
+\begin{thm}
+\label{thm:det-tr}
+Determinanten endrer seg ikke når vi transponerer matrisen.  Altså:
+Hvis $A$ er en $n \times n$-matrise, så er
+\[
+\det A = \det A\tr.
+\]
+\end{thm}
 
 
 \section*{Karakterisering av inverterbarhet}
+
+Vi kan bruke determinanten til å sjekke om en matrise er inverterbar
+eller ikke.  Dette kan dessuten knyttes sammen med hvorvidt kolonnene
+i matrisen vår er lineært uavhengige, og hva det utspenner.
+
+Følgende teorem gir en presis sammenheng mellom inverterbarhet,
+determinant, lineær uavhengighet og mengden utspent av kolonnene.
+
+\begin{thm}
+\label{thm:karakterisering-inverterbar}
+La $A$ være en $n \times n$-matrise.  Følgende påstander er
+ekvivalente:
+\begin{enumerate}
+\item $A$ er inverterbar.
+\item $\det A \ne 0$.
+\item Kolonnene i~$A$ er lineært uavhengige.
+\item Kolonnene i~$A$ utspenner~$\R^n$.
+\end{enumerate}
+\end{thm}
 
 
 \kapittelslutt
