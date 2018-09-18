@@ -198,7 +198,7 @@ $\det A > 0$ &
 \node[anchor=west] at (6,1) {$\V{a}_1$};
 \node[anchor=south] at (2,3) {$\V{a}_2$};
 \end{tikzpicture}
-\\[38pt]
+\\[44pt]
 $\det A < 0$ &
 \begin{tikzpicture}[scale=.5,baseline=30pt]
 \draw[->] (-1,0) -- (10,0);
@@ -211,7 +211,7 @@ $\det A < 0$ &
 \node[anchor=west] at (6,1) {$\V{a}_2$};
 \node[anchor=south] at (2,3) {$\V{a}_1$};
 \end{tikzpicture}
-\\[38pt]
+\\[44pt]
 $\det A = 0$ &
 \begin{tikzpicture}[scale=.5,baseline=30pt]
 \draw[->] (-1,0) -- (10,0);
@@ -223,7 +223,7 @@ $\det A = 0$ &
 \node[anchor=south] at (6,1.5) {$\V{a}_2$};
 %\node[anchor=west] at (8,2) {$\V{a}_1 + \V{a}_2$};
 \end{tikzpicture}
-\\[38pt]
+\\[44pt]
 $\det A = 0$ &
 \begin{tikzpicture}[scale=.5,baseline=30pt]
 \draw[->] (-1,0) -- (10,0);
@@ -244,15 +244,17 @@ planet «krympes sammen».
 
 I den andre figuren har vi en matrise med negativ determinant.  Da er
 situasjonen helt lik som i den første figuren, bortsett fra at det er
-$(- \det A)$ som er arealet.
+$(- \det A)$ som er arealet.  Da får vi at med $\det A < -1$ blir
+planet «blåst opp», og med $-1 < \det A < 0$ blir det «krympet
+sammen».
 
-I den tredje og fjerde figuren har vi situasjoner der determinanten
-er~$0$.  Det vil si at parallellogrammet utspent av kolonnene i~$A$
-har areal~$0$.  Det blir altså ikke et virkelig parallellogram i disse
-tilfellene, det har kollapset til et «degenerert» parallellogram som
-er bare en linje.  På samme måte vil transformasjonen
-$\V{v} \mapsto A \V{v}$ i disse tilfellene kollapse hele planet ned
-til linjen utspent av $\V{a}_1$ og~$\V{a}_2$.
+I den tredje og den fjerde figuren har vi situasjoner der
+determinanten er~$0$.  Det vil si at parallellogrammet utspent av
+kolonnene i~$A$ har areal~$0$.  Det blir altså ikke et virkelig
+parallellogram i disse tilfellene; det har kollapset til et
+«degenerert» parallellogram som er bare en linje.  På samme måte vil
+transformasjonen $\V{v} \mapsto A \V{v}$ i disse tilfellene kollapse
+hele planet ned til linjen utspent av $\V{a}_1$ og~$\V{a}_2$.
 
 
 \section*{Determinanter for $3 \times 3$-matriser}
@@ -293,9 +295,9 @@ a_{31} & a_{32}
 \end{vmatrix}
 \end{align*}
 Her er det også en geometrisk tolkning.  Vi kan tegne opp kolonnene
-i~$A$ som piler i~$\R^3$, og lage et parallellepiped med disse pilene
-som tre av sidene.  Dette kaller vi for parallellepipedet utspent av
-de tre vektorene.  Da har vi at volumet av parallellepipedet utspent
+i~$A$ som piler i~$\R^3$, og lage et parallell\-epiped med disse pilene
+som tre av sidene.  Dette kaller vi for parallell\-epipedet utspent av
+de tre vektorene.  Da har vi at volumet av parallell\-epipedet utspent
 av kolonnene i~$A$ er lik absoluttverdien av determinanten til~$A$.
 
 
@@ -417,7 +419,7 @@ med~$0$):
   1 \begin{vmatrix} 0 & 1 \\ 0 & 5 \end{vmatrix}
 - 2 \begin{vmatrix} 2 & 1 \\ 7 & 5 \end{vmatrix}
 + 1 \begin{vmatrix} 2 & 0 \\ 7 & 0 \end{vmatrix}
- = -6 \\
+ = -6
 \end{align*}
 Ved å sette inn disse i uttrykket for $\det A$ får vi:
 \[
@@ -554,7 +556,6 @@ La $A$ være en $n \times n$-matrise, og la $B$ være en matrise vi får
 ved å utføre en radoperasjon på~$A$.  Da har vi følgende sammenheng
 mellom determinantene til $A$ og~$B$, basert på hvilken type
 radoperasjon vi utførte:
-\\
 \[
 \begin{array}{ll}
 \text{Radoperasjon} & \text{Resultat} \\\hline
@@ -568,6 +569,7 @@ radoperasjon vi utførte:
 \]
 \end{thm}
 
+\medskip
 La oss bruke dette teoremet til å beregne en determinant.
 
 \begin{ex}
@@ -687,8 +689,9 @@ praktisk å kofaktorekspandere langs første kolonne.  Da får vi bare
 ett ledd i ekspansjonen, nemlig tallet øverst til venstre i matrisen
 ganget med determinanten til matrisen der første rad og kolonne er
 fjernet.  Denne matrisen er igjen øvre triangulær.  Så fortsetter vi
-med kofaktorekspansjon langs første kolonne i hvert steg nedover.  Til
-slutt ender vi opp med å bare gange sammen alle tallene på diagonalen.
+med kofaktorekspansjon langs første kolonne i hvert steg nedover.  Det
+vi ender opp med til slutt er å bare gange sammen alle tallene på
+diagonalen.
 
 Vi oppsummerer dette i et teorem.
 
