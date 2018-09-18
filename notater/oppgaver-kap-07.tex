@@ -1,0 +1,477 @@
+% -*- TeX-master: "oving05"; -*-
+\oppgaver{7}
+
+\begin{oppgave}
+
+Finn egenverdier og tilhørende egenvektorer til følgende matriser.
+
+\begin{punkt}
+$$\begin{bmatrix}
+1 & 2\\
+2 & 1
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+$$\begin{bmatrix}
+1 & 2 & 0\\
+2 & 1 & 0\\
+0 & 0 & 0
+\end{bmatrix}$$
+\end{punkt}
+
+
+\begin{punkt}
+$$\begin{bmatrix}
+0 & 1 \\
+0 & 0 
+\end{bmatrix}$$
+
+\end{punkt}
+
+
+\begin{punkt}
+$$\begin{bmatrix}
+4 & 2 & 3\\
+-1 & 1 & -3\\
+2 & 4 & 9
+\end{bmatrix}$$
+
+\noindent
+Hint: Polynomdivisjon. Hvis ikke $\lambda=1$ fungerer, prøv $\lambda=2$. Hvis ikke $\lambda=2$ fungerer, prøv $\lambda=3$\ldots
+\end{punkt}
+
+
+\end{oppgave}
+
+
+\begin{losning}
+I svarene nedenfor vil vi liste opp egenvektorer, og deretter egenrommet til hver egenverdi i samme rekkefølge.
+
+\begin{punkt}
+Egenverdier: 3, $-1$. Egenrom: linjen utspent av $\vv{1}{1}$, $\vv{-1}{1}$ utenom origo.
+\end{punkt}
+
+\begin{punkt}
+Egenverdier: 3, $-1$, 0. Egenrom: Linjen utspent av $\begin{bmatrix} 
+1\\
+1\\
+0
+\end{bmatrix}$, $\begin{bmatrix} 
+-1\\
+1\\
+0
+\end{bmatrix}$, $\begin{bmatrix} 
+0\\
+0\\
+1
+\end{bmatrix}$ utenom origo.
+
+\end{punkt}
+
+\begin{punkt}
+Egenverdi: 0. Egenrom: Linjen utspent av $\begin{bmatrix} 
+1\\
+0
+\end{bmatrix}$ utenom origo.
+
+\noindent
+Merk: Dette er et eksempel på at geometrisk multiplisitet er strengt mindre enn algebraisk multiplisitet.
+\end{punkt}
+
+\begin{punkt}
+Egenverdi: 3, 8. Egenrom: Planet utspent av $\begin{bmatrix} 
+-2\\
+1\\
+0
+\end{bmatrix}$ og $\begin{bmatrix} 
+-3\\
+0\\
+1
+\end{bmatrix}$ utenom origo, linjen utspent av $\begin{bmatrix} 
+1\\
+-1\\
+2
+\end{bmatrix}$ utenom origo.
+
+\noindent:
+Merk: Dette er et eksempel på at egenvektorer med lik egenverdi kan være lineært uavhengige.
+\end{punkt}
+
+
+
+\end{losning}
+
+
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Regn ut egenverdiene til $$\begin{bmatrix}
+1 & 0\\
+0 & 0
+\end{bmatrix},
+$$ og finn tilhørende egenrom. 
+\end{punkt}
+
+\begin{punkt}
+Skissér egenrommene.
+
+\noindent 
+
+Hint: Du har løst denne oppgaven tidligere.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Egenverdi: 0,1. Egenrom: $x$-aksen og $y$-aksen (uten origo).
+\end{punkt}
+
+\begin{punkt}
+Vektorer langs $y$-aksen blir null-vektoren ved multiplikasjon av $A$; vektorer langs $x$-aksen er uendret ved muliplikasjon av $A$.
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+Regn ut egenvektorene til $$\frac{1}{2}\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix},
+$$ og finn tilhørende egenrom.
+
+\end{punkt}
+
+\begin{punkt}
+Skissér egenrommene.
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Egenverdi: 0,1. Egenrom: linjene utspent av $(1,1)$ og $(-1,1)$ (uten origo).
+\end{punkt}
+
+\begin{punkt}
+Vektorer langs $(1,-1)$-linjen blir null-vektoren ved multiplikasjon; vektorer langs $(-1,1)$-linjen er uendret ved muliplikasjon.
+
+\noindent
+Merk: Man kan tolke $x$-aksen som linjen utspent av $(1,0)$ og $y$-aksen som linjen utspent av $(-1,1)$. Dette er altså helt lik situasjonen som i forrige oppgave, men nå er egenrommene rotert med 45 grader.
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Vis at $$\begin{bmatrix}
+0 & -1\\
+1 & 0
+\end{bmatrix},
+$$ ikke har noen egenverdier.
+
+\end{punkt}
+
+\begin{punkt}
+Gi en geometrisk forklaring på del \textbf{a)}.
+
+\noindent
+Hint: Du har sett på de geometriske egenskapene til matrisen tidligere.
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Dersom vi prøver å løse $\text{det}(A-\lambda I)=0$ får vi polynomlikningen $\lambda^2+1=0$. Denne har ingen (reelle) løsninger.
+\end{punkt}
+
+\begin{punkt}
+Matrisen roterer vektorer med 90 grader. Men en likning på formen $A\V{x}=c\V{x}$ betyr at $A$ skalerer $\V{x}$ med en faktor $c$ uten at $\V{x}$ roteres.
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+Regn ut egenverdiene til $$A=\begin{bmatrix}
+1 & 2 & 3 & 4\\
+0 & 2 & 3 & 4\\
+0 & 0 & -5 & 0\\
+0 & 0 & 0 & 77
+\end{bmatrix}.
+$$
+
+\end{punkt}
+
+\begin{punkt}
+Finn egenrommene til de ulike egenverdiene.
+\end{punkt}
+
+\begin{punkt}
+$A$ er en $4\times 4$-matrise. Er det alltid enkelt å finne egenverdiene til en $4\times 4$-matrise? Mer generelt, er det alltid enkelt å finne egenverdiene til $n\times n$-matriser?
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Egenverdier: 1, 2, $-5$, 77. 
+
+\noindent
+Hint: Hva er determinanten til en matrise på trappeform?
+\end{punkt}
+
+\begin{punkt}
+
+1: Linjen utspent av $\begin{bmatrix}
+1\\
+0\\
+0\\
+0
+\end{bmatrix}$ utenom origo; 2: Linjen utspent av $\begin{bmatrix}
+2\\
+1\\
+0\\
+0
+\end{bmatrix}$ utenom origo; $-5$: linjen utspent av $\begin{bmatrix}
+-5\\
+-6\\
+14\\
+0
+\end{bmatrix}$ utenom origo; 77: linjen utspent av $\begin{bmatrix}
+-5\\
+-6\\
+14\\
+0
+\end{bmatrix}$ utenom origo.
+
+\end{punkt}
+
+\begin{punkt}
+Nei. Vi må løse en fjerdegradslinking, som kan bli meget vanskelig. For generell $n$: Nei; vi må løse $n$-tegradslikninger.
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+La $A$ være en $n\times n$-matrise slik at $A^2=A$. Vis at $A$ kun kan ha null og en som egenverdier.
+
+\noindent
+Hint: $A\V{x}=c\V{x}$ og $A^2\V{x}=c^2\V{x}$, hva antar vi?
+\end{oppgave}
+
+\begin{losning}
+Full løsning: Hvis $c$ er en egenverdi tilfredstiller den -- per definisjon -- $A\V{x}=c\V{x}$ for en ikke-null vektor $\V{x}$. Kombiner dette med antagelsen om at $A^2\V{x}=A\V{x}$ for å se at $\V{x}$ tilfredstiller $c^2\V{x}=c\V{x}$. Omformuler denne likningen til $(c^2-c)\V{x}=0$. Ettersom $\V{x}$ ikke er null-vektoren, må en komponent i $\V{x}$ ikke være lik null (hvorfor?), og derfor må $c^2-c=0$. Dette er en andregradslikning med løsning $c=0$ eller $c=1$.
+\end{losning}
+
+\begin{oppgave}
+
+\begin{punkt}
+Finn vektorene som svarer til at $$\V{e}_1\vv{1}{0}\quad \text{og}\quad\V{e}_2= \vv{0}{1}$$ er blitt rotert med $\theta$ radianer.
+\end{punkt}
+
+\begin{punkt}
+Utled formelen for $2 \times 2$-matrisen $T_\theta$ som roterer vektorer $\theta$ radianer mot klokken ved multiplikasjon.
+
+\noindent
+Hint: Hva skjer når du multipliserer $T_\theta$ med $\V{e}_1$ og $\V{e}_2$?
+\end{punkt}
+
+\begin{punkt}
+For hvilke verdier av $\theta$ har $T_\theta$ en egenverdi? Gi en geometrisk forklaring.
+\end{punkt}
+
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+$\vv{\cos\theta}{\sin\theta}$, $\vv{-\sin\theta}{\cos\theta}$
+\end{punkt}
+
+\begin{punkt}
+Matrisen er akkurat den som har svaret i del \textbf{a)} som kolonner:
+$$T_\theta=\begin{bmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+Vi må ha $\theta=0$; ingen rotasjon.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+Avgjør om følgende påstander er sanne eller ikke. Begrunn svaret ditt.
+
+\begin{punkt}
+En $n\times n$-matrise har alltid $n$ egenverdier.
+\end{punkt}
+
+\begin{punkt}
+Dersom $A$ har en ikke-null egenverdi $c$, så kan ikke $A$ være lik null-matrisen.
+\end{punkt}
+
+\begin{punkt}
+To egenvektorer til en matrise $A$ som svarer til to ulike egenverdier kan være lineært avhengige.
+\end{punkt}
+
+\begin{punkt}
+To egenvektorer til en matrise $A$ som svarer til samme egenverdi kan være lineært uavhengige.
+\end{punkt}
+
+
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Feil. Vi får generelt et $n$-tegradspolynom som kan ha null til $n$ løsninger (Det er altså maksimalt $n$ egenverdier). Det har vært mange eksempler på dette tidligere i øvingen.
+\end{punkt}
+
+\begin{punkt}
+Sant. Vi har -- per definisjon -- en ikke-null vektor $\V{x}$ som tilfredstiller $A\V{x}=c\V{x}$ hvor $c\neq 0$. Derfor har vi funnet en vektor $\V{x}$ slik at $A\V{x}$ ikke er lik null-vektoren. Men da kan $A$ umulig være null-matrisen; hvis alle elementene i $A$ var lik null ville $A\V{x}$ vært lik null for alle valg av $\V{x}$.
+\end{punkt}
+
+\begin{punkt}
+Feil. To egenvektorer som har ulike egenverdier er alltid lineært uavhengige. 
+
+\noindent
+Hint: Anta at $A\V{v}_1=c_1\V{v}_1$ og $A\V{v}_1=c_1\V{v}_1$ hvor $c_1\neq c_2$. Hvis også $\V{v}_1=a\V{v}_2$ for en konstant $a$ kan vi kombinere likningene for å få at $$A\V{v}_1=a(A\V{v}_2)=ac_2\V{v}_2=c_2\V{v}_1.$$ Men nå er $A\V{v}_1$ lik $c_1\V{v}_1$ og $c_2\V{v}_2$, som gir $(c_1-c_2)\V{v}_1=\V{0}$. Vektoren $\V{v}_1$ er ikke null-vektoren -- fordi den er en egenvektor -- og derfor må $c_1=c_2$. Dette er altså umulig.
+
+\noindent
+Intuisjon: $A$ skalerer en egenvektor med tilhørende egenverdi, og på grunn av egenskapen $A(c\V{x})=c(A\V{x})=c\cdot\text{egenverdi}\cdot\V{x}=\text{egenverdi}\cdot(c\V{x})$, skaleres også alle vektorene på linjen utspent av $\V{x}$ med denne egenverdien. To lineært avhengige vektorer ligger på samme linje -- i samme egenrom -- altså må $A$ skalere dem med samme egenverdi. Det er akkurat dette som er skrevet ut matematisk i hintet ovenfor!
+\end{punkt}
+
+\begin{punkt}
+Sant. Det er et eksempel i en tidligere oppgave.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+La $A$ være en $n\times n$-matrise. Vis at $A$ og dens transponerte $A\tr$ har like egenverdier.
+
+\noindent
+Hint: Husk at determinanten til en matrise $B$ og dens transponerte $B\tr$ er like.
+\end{oppgave}
+
+\begin{losning}
+Hint: Egenverdiene til $A$ er løsninger på polynomet $\text{det}(A-\lambda I)=0$. Tilsvarende er egenverdiene til $A\tr$ løsninger på polynomet $\text{det}(A\tr-\lambda I)=0$. Observer at $(A-\lambda I)\tr=A\tr-\lambda I$. Bruk hintet i oppgaveteksten på matrisen $B=A-\lambda\tr$.
+\end{losning}
+
+
+\begin{oppgave}
+Følgende tall er hentet fra SSB sin statistikk om folketall ved inngangen av 2. kvartal 2018:
+
+\begin{table}[h]
+\begin{tabular}{lll}
+           & Trondheim & Steinkjer \\
+Folketall & 194128    & 22081     \\
+Utflytting & 22081     & 209      
+\end{tabular}
+\end{table}
+
+\begin{punkt}
+I en enkel modell antar vi at utflyttinger ikke endres fra år til år og at all utflytting fra Trondheim skjer til Steinkjer og vice versa. Gi en Markov prosess som beskriver denne modellen.
+\end{punkt}
+
+\begin{punkt}
+Hva er folketallet i Trondheim og Steinkjer i 2020 (under denne modellen)?
+\end{punkt}
+
+\begin{punkt}
+Finnes det en likevektsvektor for denne prosessen? Hva er folketallet i Trondheim og Steinkjer langt inn i fremtiden?
+\end{punkt}
+
+\begin{punkt}
+Virker modellen rimelig basert på svaret i del \textbf{c)}?
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+
+\begin{punkt}
+Modellen er beskrevet av den stokastiske matrisen $$P=\begin{bmatrix}
+\frac{191706}{194128} & \frac{209}{22081}\\
+\frac{2422}{194128} & \frac{21872}{22081}\\
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+$\V{x}_2=P^2\V{x}_0\simeq \vv{189751}{26458.4}$.
+\end{punkt}
+
+\begin{punkt}
+Ja, den finnes fordi vi har en regulær stokastisk matrise. Ved å bruke likevektsvektoren finner vi at folketallet er ca. 93262.7 i Trondheim og 122940 i Steinkjer.
+\end{punkt}
+
+\begin{punkt}
+Nei: Det er mindre folk i Trondheim enn i Steinkjer.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+\begin{punkt}
+La $P$ og $Q$ være stokastiske $2\times 2$-matriser. Vis at produktet $PQ$ er stokastisk.
+
+\noindent
+Hint: Skriv $P$ og $Q$ på elementform. Bruk dette for å uttrykke elementene til $PQ$ ved elementene til $P$ og $Q$. Hva må du vise at produktet tilfredstiller? Hva vet vi basert på antagelsen?
+
+\end{punkt}
+\begin{punkt}
+Kan man mer generelt si at produktet av to stokastiske $n\times n$-matriser er stokastisk?
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Notasjon: $$P=\begin{bmatrix}
+p_{11} & p_{12}\\
+p_{21} & p_{22}
+\end{bmatrix},\quad Q=\begin{bmatrix}
+q_{11} & q_{12}\\
+q_{21} & q_{22}
+\end{bmatrix}$$
+
+Produktet er $$PQ=\begin{bmatrix}
+p_{11}q_{11}+p_{12}q_{21} & p_{11}q_{21}+p_{12}q_{22}\\
+p_{21}q_{11}+p_{22}q_{21} & p_{21}q_{21}+p_{22}q_{22}
+\end{bmatrix}$$
+\end{punkt}
+
+Vi må vise at sumen av elementene i kolonne 1 og 2 i $PQ$ er lik 1. Første kolonne: $$p_{11}q_{11}+p_{12}q_{21}+p_{21}q_{11}+p_{22}q_{21}=q_{11}(p_{11}+p_{21})+q_{21}(p_{12}+p_{22}).$$ Summene inni parantesene er begge lik en fordi $P$ er stokastisk. Derfor er altså summen av første kolonne $q_{11}+q_{21}$ som også er lik en siden $Q$ er stokastisk. Samme type argument kan brukes for andre kolonne.
+
+\begin{punkt}
+Ja. Samme triks som er illustrert ovenfor fungerer for $n\times n$-matriser (ved å faktorisere ut elementene fra $Q$ i hver sum bruker du at $P$ er stokastisk til å få en sum av en kolonne i $Q$ som også er lik en). 
+\end{punkt}
+
+\end{losning}
