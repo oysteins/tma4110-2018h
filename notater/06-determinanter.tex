@@ -227,22 +227,448 @@ $\det A = 0$ &
 
 \section*{Determinanter for $3 \times 3$-matriser}
 
+For en $3 \times 3$-matrise
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\]
+er determinanten definert ved:
+\begin{align*}
+\det A &=
+\begin{vmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}
+\\
+&=
+a_{11}
+\begin{vmatrix}
+a_{22} & a_{23} \\
+a_{32} & a_{33}
+\end{vmatrix}
+- a_{12}
+\begin{vmatrix}
+a_{21} & a_{23} \\
+a_{31} & a_{33}
+\end{vmatrix}
++ a_{13}
+\begin{vmatrix}
+a_{21} & a_{22} \\
+a_{31} & a_{32}
+\end{vmatrix}
+\end{align*}
+Her er det også en geometrisk tolkning.  Vi kan tegne opp kolonnene
+i~$A$ som piler i~$\R^3$, og lage et parallellepiped med disse pilene
+som tre av sidene.  Dette kaller vi for parallellepipedet utspent av
+de tre vektorene.  Da har vi at volumet av parallellepipedet utspent
+av kolonnene i~$A$ er lik absoluttverdien av determinanten til~$A$.
 
 
 \section*{Den generelle definisjonen}
 
+Vi definerer determinanten til en vilkårlig stor kvadratisk matrise
+etter samme mønster som determinanten til en $3 \times 3$-matrise.
+
+\begin{defn}
+La
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{bmatrix}
+\]
+være en $n \times n$-matrise.  \defterm{Determinanten} til~$A$, som
+har notasjonen $\det A$, defineres på følgende måte.
+\begin{enumerate}
+\item Hvis $n = 1$, så har vi at
+$A = \begin{bmatrix} a_{11} \end{bmatrix}$, og da definerer vi at
+$\det A = a_{11}$.
+\item Hvis $n > 1$, innfører vi først noen hjelpevariabler.  For hver
+$i$ og~$j$ fra $1$ til~$n$ setter vi $A_{ij}$ til å være
+$(n-1) \times (n-1)$-matrisen vi får ved å fjerne rad~$i$ og
+kolonne~$j$ fra~$A$, og vi setter
+\[
+C_{ij} = (-1)^{i + j} \det A_{ij}
+\]
+til å være determinanten til denne matrisen, med et fortegn som
+avhenger av $i$ og~$j$.  Determinanten til~$A$ defineres ved:
+\[
+\det A = \sum_{j=1}^n a_{1j} C_{1j}\qedhere
+\]
+\end{enumerate}
+\end{defn}
+
+Tallene $C_{ij}$ i definisjonen kalles \defterm{kofaktorer} av~$A$.
+
+Det er ikke vanskelig å se at hvis vi setter inn en
+$2 \times 2$-matrise eller en $3 \times 3$-matrise i denne generelle
+definisjonen, så får vi bare de vanlige reglene for determinanter av
+$2 \times 2$- og $3 \times 3$-matriser.
+
+For å få litt erfaring med å bruke definisjonen på større matriser
+regner vi ut determinanten av en $4 \times 4$-matrise.
+
+\begin{ex}
+\label{ex:det-4x4}
+La $A$ være følgende $4 \times 4$-matrise:
+\[
+A =
+\begin{bmatrix}
+3 & 0 & 2 & 4 \\
+1 & 2 & 1 & 0 \\
+2 & 0 & 1 & 0 \\
+7 & 0 & 5 & 3
+\end{bmatrix}
+\]
+Vi regner ut determinanten til~$A$.  Fra definisjonen får vi:
+\begin{align*}
+\det A &=
+3 \begin{vmatrix}
+2 & 1 & 0 \\
+0 & 1 & 0 \\
+0 & 5 & 3
+\end{vmatrix}
+- 0 \begin{vmatrix}
+1 & 1 & 0 \\
+2 & 1 & 0 \\
+7 & 5 & 3
+\end{vmatrix}
+\\
+&\qquad
++ 2 \begin{vmatrix}
+1 & 2 & 0 \\
+2 & 0 & 0 \\
+7 & 0 & 3
+\end{vmatrix}
+- 4 \begin{vmatrix}
+1 & 2 & 1 \\
+2 & 0 & 1 \\
+7 & 0 & 5
+\end{vmatrix}
+\end{align*}
+Vi regner ut hver av $3 \times 3$-determinantene som trengs (merk at
+vi ikke trenger å regne ut den andre, for den skal uansett ganges
+med~$0$):
+\begin{align*}
+\begin{vmatrix}
+2 & 1 & 0 \\
+0 & 1 & 0 \\
+0 & 5 & 3
+\end{vmatrix}
+&=
+  2 \begin{vmatrix} 1 & 0 \\ 5 & 3 \end{vmatrix}
+- 1 \begin{vmatrix} 0 & 0 \\ 0 & 3 \end{vmatrix}
++ 0 \begin{vmatrix} 0 & 1 \\ 0 & 5 \end{vmatrix}
+ = 6 \\
+\begin{vmatrix}
+1 & 2 & 0 \\
+2 & 0 & 0 \\
+7 & 0 & 3
+\end{vmatrix}
+&=
+  1 \begin{vmatrix} 0 & 0 \\ 0 & 3 \end{vmatrix}
+- 2 \begin{vmatrix} 2 & 0 \\ 7 & 3 \end{vmatrix}
++ 0 \begin{vmatrix} 2 & 0 \\ 7 & 0 \end{vmatrix}
+ = -12 \\
+\begin{vmatrix}
+1 & 2 & 1 \\
+2 & 0 & 1 \\
+7 & 0 & 5
+\end{vmatrix}
+&=
+  1 \begin{vmatrix} 0 & 1 \\ 0 & 5 \end{vmatrix}
+- 2 \begin{vmatrix} 2 & 1 \\ 7 & 5 \end{vmatrix}
++ 1 \begin{vmatrix} 2 & 0 \\ 7 & 0 \end{vmatrix}
+ = -6 \\
+\end{align*}
+Ved å sette inn disse i uttrykket for $\det A$ får vi:
+\[
+\det A = 3 \cdot 6 - 0 + 2 \cdot (-12) - 4 \cdot (-6) = 18
+\]
+Vi har altså regnet ut at $\det A = 18$.
+\end{ex}
+
+Ved hjelp av definisjonen kan vi regne ut determinanten til en hvilken
+som helst kvadratisk matrise, men det kan bli veldig mye jobb.  I
+eksempelet så vi at determinanten til en $4 \times 4$-matrise er
+definert ut fra determinantene til fire $3 \times 3$-matriser, og hver
+av disse er igjen definert ut fra determinantene til tre
+$2 \times 2$-matriser.  Hvis vi går til større matriser, blir
+arbeidsmengden fort enormt stor.
+
+I løpet av dette kapitlet skal vi se på noen lure teknikker for å
+regne ut determinanter på mindre arbeidskrevende måter.
 
 
 \section*{Kofaktorekspansjon}
 
+I definisjonen av determinanten går vi gjennom første rad i matrisen,
+og ser på tallene
+\[
+a_{11},\ a_{12},\ \ldots,\ a_{1n}.
+\]
+Hvert tall $a_{1j}$ ganges med den tilhørende kofaktoren~$C_{1j}$, og
+til slutt summerer vi alle disse produktene.
+
+Det er imidlertid ikke nødvendig å gå langs første rad når vi gjør
+dette.  Det fungerer like bra å gå langs en annen rad og følge det
+samme systemet, og resultatet blir det samme.  Det går dessuten an å
+gå langs en hvilken som helst kolonne med samme system.  Vi
+oppsummerer dette i følgende teorem.
+
+\begin{thm}
+La $A$ være en $n \times n$-matrise, der $n > 1$, og la $A_{ij}$
+og~$C_{ij}$ være som i definisjonen av determinant.  Da har vi
+\[
+\det A
+= \sum_{j=1}^n a_{kj} C_{kj}
+= \sum_{i=1}^n a_{il} C_{il}
+\]
+for alle $k$ og~$l$ slik at $1 \le k \le n$ og $1 \le l \le n$.
+\end{thm}
+
+Å regne ut determinanten ved å beregne en sum av tall fra matrisen
+ganget med kofaktorer slik som i teoremet kalles
+\defterm{kofaktor\-ekspansjon}.  Vi sier at vi gjør kofaktorekspansjon
+langs rad~$k$ eller langs kolonne~$l$.
+
+La oss nå regne ut den samme determinanten som i
+eksempel~\ref{ex:det-4x4}, men på en lurere måte.
+
+\begin{ex}
+Vi lar igjen $A$ være denne $4 \times 4$-matrisen:
+\[
+A =
+\begin{bmatrix}
+3 & 0 & 2 & 4 \\
+1 & 2 & 1 & 0 \\
+2 & 0 & 1 & 0 \\
+7 & 0 & 5 & 3
+\end{bmatrix}
+\]
+Vi kan observere at den andre kolonnen inneholder nesten bare nuller,
+så det er lurt å gjøre kofaktor\-ekspansjon langs den.  Da får vi:
+\begin{align*}
+\det A &=
+- 0 \begin{vmatrix}
+1 & 1 & 0 \\
+2 & 1 & 0 \\
+7 & 5 & 3
+\end{vmatrix}
++ 2 \begin{vmatrix}
+3 & 2 & 4 \\
+2 & 1 & 0 \\
+7 & 5 & 3
+\end{vmatrix}
+\\
+&\qquad
+- 0 \begin{vmatrix}
+3 & 2 & 4 \\
+1 & 1 & 0 \\
+7 & 5 & 3
+\end{vmatrix}
++ 0 \begin{vmatrix}
+3 & 2 & 4 \\
+1 & 1 & 0 \\
+2 & 1 & 0
+\end{vmatrix}
+\\
+&= 2 \cdot \left( 4 \cdot \begin{vmatrix} 2 & 1 \\ 7 & 5 \end{vmatrix} +
+                  3 \cdot \begin{vmatrix} 3 & 2 \\ 2 & 1 \end{vmatrix} \right)
+\\
+&= 2 \cdot (4 \cdot 3 + 3 \cdot (-1))
+ = 18
+\end{align*}
+Vi fikk samme resultat som i eksempel~\ref{ex:det-4x4}, men med mindre
+arbeid, siden vi bare trengte å regne ut én $3 \times 3$-determinant.
+\end{ex}
+
+Vi må passe på at vi får fortegnene i kofaktorene riktig.  Når vi gjør
+kofaktorekspansjon langs første rad (slik som i definisjonen) eller
+langs første kolonne, starter vi alltid med positivt fortegn i det
+første leddet.  Men når vi ekspanderer langs en annen rad eller
+kolonne, kan det hende vi må starte med negativt fortegn.  Det kan
+være nyttig å bruke følgende diagram som en huskeregel for hvilket
+fortegn vi skal ha i de forskjellige kofaktorene:
+\[
+\begin{bmatrix}
++ & - & + & - & \cdots \\
+- & + & - & + & \cdots \\
++ & - & + & - & \cdots \\
+- & + & - & + & \cdots \\
+\vdots & \vdots & \vdots & \vdots & \ddots
+\end{bmatrix}
+\]
 
 
 \section*{Determinanter og radoperasjoner}
 
+Hvis vi utfører en radoperasjon på en matrise, så får vi en ny
+matrise.  Den matrisen har ikke nødvendigvis samme determinant som den
+opprinnelige, men det viser seg at determinanten endrer seg på ganske
+kontrollerte måter når vi utfører radoperasjoner.  Dette kan vi
+utnytte for å spare oss for en del arbeid når vi skal regne ut
+determinanter, spesielt hvis vi har store matriser.
+
+\begin{thm}
+La $A$ være en $n \times n$-matrise, og la $B$ være en matrise vi får
+ved å utføre en radoperasjon på~$A$.  Da har vi følgende sammenheng
+mellom determinantene til $A$ og~$B$, basert på hvilken type
+radoperasjon vi utførte:
+\\
+\[
+\begin{array}{ll}
+\text{Radoperasjon} & \text{Resultat} \\\hline
+\textup{Gange en rad med et tall~$k$} &
+\det B = k \cdot \det A \\\hline
+\textup{Legge til et multiplum}\\\textup{av én rad i en annen} &
+\det B = \det A \\\hline
+\textup{Bytte om to rader} &
+\det B = - \det A \\\hline
+\end{array}
+\]
+\end{thm}
+
+La oss bruke dette teoremet til å beregne en determinant.
+
+\begin{ex}
+\label{ex:det-radop}
+Vi regner ut $\det A$, der
+\[
+A =
+\begin{bmatrix}
+3 & 3 & 12 \\
+2 & 2 & 13 \\
+4 & 2 & 19
+\end{bmatrix}
+\]
+Vi får:
+\begin{align*}
+\det A &=
+\begin{vmatrix}
+3 & 3 & 12 \\
+2 & 2 & 13 \\
+4 & 2 & 19
+\end{vmatrix}
+=
+3 \cdot
+\begin{vmatrix}
+1 & 1 &  4 \\
+2 & 2 & 13 \\
+4 & 2 & 19
+\end{vmatrix}
+\\
+&=
+3 \cdot
+\begin{vmatrix}
+1 &  1 &  4 \\
+0 &  0 &  5 \\
+0 & -2 &  3
+\end{vmatrix}
+=
+- 3 \cdot
+\begin{vmatrix}
+1 &  1 &  4 \\
+0 & -2 &  3 \\
+0 &  0 &  5
+\end{vmatrix}
+\\
+&= -3 \cdot 1 \cdot \begin{vmatrix} -2 & 3 \\ 0 & 5 \end{vmatrix}
+\\
+&= -3 \cdot 1 \cdot (-2) \cdot 5
+= 30
+\end{align*}
+Her startet vi med å gjøre radoperasjoner på matrisen, samtidig som vi
+holdt styr på hvordan determinanten endret seg.
+
+Først ganget vi øverste rad med~$1/3$.  Det medførte at determinanten
+til den nye matrisen ble $1/3$ ganger determinanten til~$A$, så vi
+måtte gange den med~$3$ for at tallene skal bli like.  En hendig måte
+å huske hvordan dette fungerer er å tenke på det som å sette et tall
+utenfor parentes.  På samme måte som vi kan trekke ut et $3$-tall fra
+en parentes og få
+\[
+(3 + 3 + 12) = 3 \cdot (1 + 1 + 12),
+\]
+kan vi trekke ut et $3$-tall fra en rad i en determinant.
+
+Etterpå trakk vi fra multipler av første rad i de to andre radene, men
+det medførte ingen endring av determinanten.
+
+Så byttet vi de to nederste radene, og det gjorde at determinanten
+skifter fortegn.
+
+Til slutt gjorde vi kofaktorekspansjon langs den første kolonnen.
+Siden vi ved å utføre radoperasjoner hadde sørget for å få bare nuller
+under diagonalen, ble kofaktorekspansjonen enkel og grei.
+\end{ex}
 
 
 \section*{Triangulære matriser}
 
+Vi sier at en $n \times n$-matrise er \defterm{øvre triangulær} hvis
+alle tall under diagonalen er~$0$, altså hvis den er på følgende form:
+\[
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+0      & a_{22} & a_{23} & \cdots & a_{2n} \\
+0      & 0      & a_{33} & \cdots & a_{3n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0      & 0      & 0      & \cdots & a_{nn}
+\end{bmatrix}
+\]
+Tilsvarende sier vi at en $n \times n$-matrise er \defterm{nedre
+  triangulær} hvis alle tall over diagonalen er~$0$, altså hvis den
+er på følgende form:
+\[
+\begin{bmatrix}
+a_{11} & 0      & 0      & \cdots & 0      \\
+a_{21} & a_{22} & 0      & \cdots & 0      \\
+a_{31} & a_{32} & a_{33} & \cdots & 0      \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & a_{n3} & \cdots & a_{nn}
+\end{bmatrix}
+\]
+
+\begin{ex}
+I eksempel~\ref{ex:det-radop} brukte vi radoperasjoner til å skrive om
+matrisen vår til følgende:
+\[
+\begin{bmatrix}
+1 &  1 &  4 \\
+0 & -2 &  3 \\
+0 &  0 &  5
+\end{bmatrix}
+\]
+Denne matrisen er øvre triangulær.
+\end{ex}
+
+Hvis vi skal finne determinanten til en øvre triangulær matrise er det
+praktisk å kofaktorekspandere langs første kolonne.  Da får vi bare
+ett ledd i ekspansjonen, nemlig tallet øverst til venstre i matrisen
+ganget med determinanten til matrisen der første rad og kolonne er
+fjernet.  Denne matrisen er igjen øvre triangulær.  Så fortsetter vi
+med kofaktorekspansjon langs første kolonne i hvert steg nedover.  Til
+slutt ender vi opp med å bare gange sammen alle tallene på diagonalen.
+
+Vi oppsummerer dette i et teorem.
+
+\begin{thm}
+\label{thm:det-diag}
+La $A$ være en (øvre eller nedre) triangulær $n \times n$-matrise.  Da
+er determinanten til~$A$ lik produktet av tallene på diagonalen i~$A$:
+\[
+\det A = a_{11} \cdot a_{22} \cdot a_{33} \cdots a_{nn}\qedhere
+\]
+\end{thm}
 
 
 \section*{Flere regneregler}
