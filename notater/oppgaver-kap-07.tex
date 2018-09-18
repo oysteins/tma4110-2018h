@@ -335,9 +335,6 @@ En $n\times n$-matrise har alltid $n$ egenverdier.
 Dersom $A$ har en ikke-null egenverdi $c$, så kan ikke $A$ være lik null-matrisen.
 \end{punkt}
 
-\begin{punkt}
-To egenvektorer til en matrise $A$ som svarer til to ulike egenverdier kan være lineært avhengige.
-\end{punkt}
 
 \begin{punkt}
 To egenvektorer til en matrise $A$ som svarer til samme egenverdi kan være lineært uavhengige.
@@ -357,15 +354,6 @@ Feil. Vi får generelt et $n$-tegradspolynom som kan ha null til $n$ løsninger 
 Sant. Vi har -- per definisjon -- en ikke-null vektor $\V{x}$ som tilfredstiller $A\V{x}=c\V{x}$ hvor $c\neq 0$. Derfor har vi funnet en vektor $\V{x}$ slik at $A\V{x}$ ikke er lik null-vektoren. Men da kan $A$ umulig være null-matrisen; hvis alle elementene i $A$ var lik null ville $A\V{x}$ vært lik null for alle valg av $\V{x}$.
 \end{punkt}
 
-\begin{punkt}
-Feil. To egenvektorer som har ulike egenverdier er alltid lineært uavhengige. 
-
-\noindent
-Hint: Anta at $A\V{v}_1=c_1\V{v}_1$ og $A\V{v}_1=c_1\V{v}_1$ hvor $c_1\neq c_2$. Hvis også $\V{v}_1=a\V{v}_2$ for en konstant $a$ kan vi kombinere likningene for å få at $$A\V{v}_1=a(A\V{v}_2)=ac_2\V{v}_2=c_2\V{v}_1.$$ Men nå er $A\V{v}_1$ lik $c_1\V{v}_1$ og $c_2\V{v}_2$, som gir $(c_1-c_2)\V{v}_1=\V{0}$. Vektoren $\V{v}_1$ er ikke null-vektoren -- fordi den er en egenvektor -- og derfor må $c_1=c_2$. Dette er altså umulig.
-
-\noindent
-Intuisjon: $A$ skalerer en egenvektor med tilhørende egenverdi, og på grunn av egenskapen $A(c\V{x})=c(A\V{x})=c\cdot\text{egenverdi}\cdot\V{x}=\text{egenverdi}\cdot(c\V{x})$, skaleres også alle vektorene på linjen utspent av $\V{x}$ med denne egenverdien. To lineært avhengige vektorer ligger på samme linje -- i samme egenrom -- altså må $A$ skalere dem med samme egenverdi. Det er akkurat dette som er skrevet ut matematisk i hintet ovenfor!
-\end{punkt}
 
 \begin{punkt}
 Sant. Det er et eksempel i en tidligere oppgave.
