@@ -463,3 +463,113 @@ Ja. Samme triks som er illustrert ovenfor fungerer for $n\times n$-matriser (ved
 \end{punkt}
 
 \end{losning}
+
+
+
+\begin{oppgave}
+La $A$ være en $n \times n$-matrise som har $n$ forskjellige
+egenvektorer
+$\lambda_1$, $\lambda_2$, \ldots, $\lambda_n$.
+Lag en $n \times n$-matrise
+\[
+V = \begin{bmatrix} \V{v}_1 & \V{v}_2 & \cdots & \V{v}_n \end{bmatrix},
+\]
+der $\V{v}_1$ er en egenvektor som hører til egenverdien~$\lambda_1$,
+og $\V{v}_2$ er en egenvektor som hører til egenverdien~$\lambda_2$,
+og så videre.
+\begin{punkt}
+Kan du finne ut om matrisen~$V$ er inverterbar eller ikke?
+\end{punkt}
+\begin{punkt}
+Dersom $V$ er inverterbar, hvordan ser matrisen $V^{-1} A V$ ut?
+\end{punkt}
+\begin{punkt}
+Finn en $3 \times 3$-matrise som har egenverdier $1$, $2$ og~$3$, med
+tilhørende egenvektorer
+\[
+\vvv{1}{3}{2},\quad
+\vvv{2}{6}{5}\quad\text{og}\quad
+\vvv{1}{4}{2}.
+\]
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+Vi vet at egenvektorer som hører til forskjellige egenverdier er
+lineært uavhengige, og da følger det fra
+teorem~\ref{thm:karakterisering-inverterbar} at matrisen~$V$ er
+inverterbar.
+\end{punkt}
+\begin{punkt}
+Vi regner ut
+\begin{align*}
+V^{-1} A V
+&= V^{-1} \begin{bmatrix} A \V{v}_1 & A \V{v}_2 & \cdots & A \V{v}_n \end{bmatrix} \\
+&= V^{-1} \begin{bmatrix} \lambda_1 \V{v}_1 & \lambda_2 \V{v}_2 & \cdots & \lambda_n \V{v}_n \end{bmatrix} \\
+&= \begin{bmatrix} V^{-1} \lambda_1 \V{v}_1 & V^{-1} \lambda_2 \V{v}_2 & \cdots & V^{-1} \lambda_n \V{v}_n \end{bmatrix} \\
+&= \begin{bmatrix} \lambda_1 V^{-1} \V{v}_1 & \lambda_2 V^{-1} \V{v}_2 & \cdots & \lambda_n V^{-1} \V{v}_n \end{bmatrix} \\
+&=
+D
+\begin{bmatrix} V^{-1} \V{v}_1 & V^{-1} \V{v}_2 & \cdots & V^{-1} \V{v}_n \end{bmatrix} \\
+&= D V^{-1} V \\
+&= D,
+\end{align*}
+der
+\[
+D =
+\begin{bmatrix}
+\lambda_1 & 0         & \cdots & 0 \\
+0         & \lambda_2 & \cdots & 0 \\
+\vdots    & \vdots    & \ddots & \vdots \\
+0         & 0         & \cdots & \lambda_n
+\end{bmatrix}
+\]
+er diagonalmatrisen bestående av egenverdiene til~$A$.
+
+Da kan vi dessuten legge merke til at vi har
+\[
+A = V V^{-1} A V V^{-1} = V D V^{-1}.
+\]
+(Oppgaven spurte ikke om dette, men det er likevel en interessant
+observasjon, og den hjelper oss med å løse neste deloppgave.)
+\end{punkt}
+\begin{punkt}
+Lag en diagonalmatrise~$D$ med egenverdiene på diagonalen, og en
+matrise~$V$ med egenvektorene som kolonner:
+\[
+D =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 3
+\end{bmatrix}
+\quad\text{og}\quad
+V =
+\begin{bmatrix}
+1 & 2 & 1 \\
+3 & 6 & 4 \\
+2 & 5 & 2
+\end{bmatrix}
+\]
+Da ser du fra del~(b) at matrisen $A = VDV^{-1}$ oppfyller kravene i
+oppgaven.  Regn ut inversen til~$V$ på vanlig måte; da får du:
+\[
+V^{-1} =
+\begin{bmatrix}
+ 8 & -1 & -2 \\
+-2 &  0 &  1 \\
+-3 &  1 &  0
+\end{bmatrix}
+\]
+Nå kan du gange sammen matrisene og ende opp med:
+\[
+A = VDV^{-1} =
+\begin{bmatrix}
+ -9 & 2 & 2 \\
+-36 & 9 & 6 \\
+-22 & 4 & 6
+\end{bmatrix}
+\]
+\end{punkt}
+\end{losning}
