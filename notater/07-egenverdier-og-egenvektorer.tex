@@ -3,9 +3,32 @@
 \kapittel{7}{Egenverdier og egenvektorer}
 \label{ch:egenverdier-og-egenvektorer}
 
-% TODO intro
+Det er ofte hensiktsmessig å tenke på en matrise ikke bare som en
+tabell med tall, men som en transformasjon av vektorer.  Hvis $A$ er
+en $m \times n$-matrise, så gir $A$ en transformasjon
+\[
+\V{v} \mapsto A \V{v}
+\]
+fra $\R^n$ til~$\R^m$.  Vi kan anvende $A$ på en vektor~$\V{v}$
+i~$\R^n$, og den vektoren transformeres til en vektor~$A \V{v}$
+i~$\R^m$.
+
+Hvis $A$ er en $n \times n$-matrise, altså en kvadratisk matrise, så
+sender den vektorer i~$\R^n$ til andre vektorer som også er i~$\R^n$.
+Generelt kan vektoren $A \V{v}$ være veldig forskjellig fra~$\V{v}$,
+men noen ganger er den ikke det.  Hvis virkningen av~$A$ på~$\V{v}$ er
+det samme som å bare gange opp $\V{v}$ med et tall, så kalles $\V{v}$
+en \emph{egenvektor} for~$A$, og tallet kalles en \emph{egenverdi}.
+
+I dette kapitlet skal vi se hvordan vi kan finne alle egenverdiene og
+egenvektorene til en matrise, og vi skal se noen interessante
+egenskaper de har.
+
 
 \section*{Definisjon av egenverdier og egenvektorer}
+
+Vi starter med et enkelt eksempel, slik at vi har et konkret tilfelle
+vi kan ha i tankene når vi kommer til definisjonen.
 
 \begin{ex}
 \label{ex:egenverdier-intro}
@@ -109,13 +132,12 @@ egenverdibegrepet ganske meningsløst.
 \begin{merk}
 Det er vanlig å bruke den greske bokstaven~$\lambda$ som variabelnavn
 for egenverdier.  Vi kunne i og for seg brukt en hvilken som helst
-annen bokstav, men siden det er $\lambda$ man vanligvis bruker, så
+annen bokstav, men siden det er $\lambda$ folk vanligvis bruker, så
 gjør vi det.  Navnet på bokstaven uttales «lambda», og den tilsvarer
 bokstaven \emph{l} i det latinske alfabetet.
-% Hvis vi for eksempel
-% skriver navnet på filosofen Platon på hans eget språk, så er $\lambda$
-% den andre bokstaven: $\Pi\lambda\alpha\tau\omicron\nu$.
-% Πλάτων.
+Hvis vi for eksempel
+skriver navnet på filosofen Platon på hans eget språk, så er $\lambda$
+den andre bokstaven: \textPi\textlambda\textalpha\texttau\textomega\textnu.
 \end{merk}
 
 \begin{ex}
@@ -168,7 +190,10 @@ at vi har kommet frem til en generell metode for å finne alle
 egenverdiene og egenvektorene til en matrise.
 \end{ex}
 
-% TODO tekst
+I eksempelet så vi at vi ut fra én egenvektor kunne finne uendelig
+mange egenvektorer som hørte til den samme egenverdien.  Vi formulerer
+dette generelt som et teorem.  (Beviset får du enkelt ved å
+generalisere det vi gjorde i eksempelet.)
 
 \begin{thm}
 \label{thm:egenvektor-sp}
@@ -181,14 +206,123 @@ egenvektorer som hører til egenverdien~$\lambda$.
 \end{thm}
 % TODO bevis?
 
-% \section*{Noen todimensjonale eksempler} ikke egen seksjon?
+En annen ting som vi enkelt kan se ut fra definisjonen av egenverdier
+og egenvektorer, er hva som skal til for at en matrise skal ha~$0$ som
+egenverdi.  Hvis vi setter inn $0$ for~$\lambda$ i likheten
+\[
+A \V{v} = \lambda \V{v},
+\]
+så får vi $A \V{v} = \V{0}$.  Det vil si at en matrise $A$ har $0$ som
+egenverdi hvis og bare hvis likningen
+\[
+A \V{x} = \V{0}
+\]
+har ikketrivielle løsninger, og dette er igjen sant hvis og bare hvis
+$A$ ikke er inverterbar.  Vi formulerer dette også som et teorem.
 
-% TODO refleksjon, rotasjon, projeksjon
+\begin{thm}
+\label{thm:egenverdi-0}
+En $n \times n$-matrise~$A$ har $0$ som egenverdi hvis og bare hvis
+den ikke er inverterbar.
+\end{thm}
 
-% TODO thm:egenverdi-0
+
+\section*{Noen geometriske eksempler}
+
+Før vi utleder den generelle fremgangsmåten for å regne ut egenverdier
+og egenvektorer, tar vi noen enkle eksempler der vi kan se geometrisk
+hva egenverdiene og egenvektorene må være.
+
+\begin{ex}
+La $A$ være matrisen
+\[
+A =
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\]
+Da er
+\[
+A \vv{v_1}{v_2} = \vv{v_2}{v_1}
+\]
+for enhver vektor $(v_1, v_2)$ i~$\R^2$.  Virkningen av~$A$ er altså
+en refleksjon om diagonallinjen som går gjennom origo og punktet
+$(1,1)$.
+\begin{center}
+\begin{tikzpicture}[scale=.25]
+\draw[->] (-6,0) -- (10,0);
+\draw[->] (0,-5) -- (0,8);
+\draw (-5,-5) -- (8,8);
+\filldraw (7,2) circle [radius=3pt];
+\filldraw (2,7) circle [radius=3pt];
+\draw[<->,shorten <=4pt,shorten >=4pt] (7,2) to[bend right=20] (2,7);
+\end{tikzpicture}
+\\
+{\small \textit{Matrisen~$A$ reflekterer vektorene om diagonalen}}
+\end{center}
+Vi ser lett at alle punkter på denne diagonalen sendes til seg selv,
+så disse oppfyller likheten
+\[
+A \V{v} = \V{v},
+\]
+og er altså egenvektorer tilhørende egenverdien~$1$.  Når vi tenker
+oss litt mer om, finner vi dessuten ut at alle punkter på den omvendte
+diagonalen reflekteres gjennom origo slik at de oppfyller likheten
+\[
+A \V{v} = - \V{v}
+\]
+og er egenvektorer tilhørende egenverdien~$-1$.  Da har vi funnet at
+alle vektorene på disse to diagonallinjene (unntatt nullvektoren,
+selvsagt) er egenvektorer:
+\begin{center}
+\begin{tikzpicture}[scale=.25]
+\draw[->] (-6,0) -- (6,0);
+\draw[->] (0,-6) -- (0,6);
+\draw (-6,-6) -- (6,6);
+\draw (-6,6) -- (6,-6);
+\end{tikzpicture}
+\\
+{\small \textit{Egenvektorene er på diagonalene}}
+\end{center}
+Men for alle andre vektorer~$\V{v}$ i planet gjør refleksjonen av
+$A \V{v}$ peker i en annen retning enn~$\V{v}$, så det finnes ikke
+flere egenvektorer.
+\end{ex}
+
+\begin{ex}
+La $A$ være matrisen
+\[
+A =
+\begin{bmatrix}
+0 & -1 \\
+1 &  0
+\end{bmatrix}
+\]
+Da er
+\[
+A \vv{v_1}{v_2} = \vv{-v_2}{v_1}
+\]
+for enhver vektor $(v_1, v_2)$ i~$\R^2$.  Virkningen av~$A$ er altså
+å rotere planet med~$90^{\circ}$.
+\begin{center}
+\begin{tikzpicture}[scale=.3]
+\draw[->] (-6,0) -- (10,0);
+\draw[->] (0,-2) -- (0,8);
+\filldraw (5.3,2.7) circle [radius=3pt];
+\filldraw (-2.7,5.3) circle [radius=3pt];
+\centerarc[->](0,0)(30:115:6);
+\end{tikzpicture}
+\\
+{\small \textit{Matrisen~$A$ roterer planet}}
+\end{center}
+Dermed kan ikke $A$ ha noen egenvektorer, siden enhver vektor (utenom
+nullvektoren) sendes til en som peker i en annen retning.
+\end{ex}
 
 
-\section*{Hvordan finne dem}
+
+\section*{Hvordan finne egenverdier/-vektorer}
 
 Gitt en $n \times n$-matrise~$A$, hvordan kan vi finne alle
 egenverdiene og egenvektorene dens?
@@ -832,10 +966,6 @@ enn de som er et multippel $c \cdot \V{v}_i$ av én av vektorene i
 listen.
 \end{enumerate}
 \end{thm}
-
-\section*{Markovkjeder}
-
-% TODO markovkjeder!
 
 
 \kapittelslutt
