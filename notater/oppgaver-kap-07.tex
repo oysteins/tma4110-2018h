@@ -271,12 +271,123 @@ Nei. Vi må løse en fjerdegradslinking, som kan bli meget vanskelig. For genere
 \end{losning}
 
 
+\begin{oppgave}
+La $A$ være følgende matrise:
+\[
+A =
+\begin{bmatrix}
+ 28 & 30 & -20 & -2 \\
+ 6 & 40 & -10 & -4 \\
+ 4 & 10 & 20 & -6 \\
+ 2 & 20 & -30 & 32
+\end{bmatrix}
+\]
+\begin{punkt}
+Hvilke av vektorene
+\[
+\vvvv{0}{0}{0}{0},\ %
+\vvvv{1}{2}{3}{4},\ %
+\vvvv{3}{2}{2}{1},\ %
+\vvvv{1}{0}{0}{0},\ %
+\vvvv{2}{1}{2}{3},\ %
+\vvvv{3}{2}{1}{2}\ \text{og}\ %
+\vvvv{4}{3}{2}{1}
+\]
+er egenvektorer for~$A$?
+\end{punkt}
+\begin{punkt}
+Finn alle egenverdiene til~$A$, og de tilhørende egenrommene.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+Vi vet at nullvektoren per definisjon ikke er en egenvektor.  Vi
+ganger $A$ med hver av de andre vektorene, og ser hva vi får:
+\begin{align*}
+A \vvvv{1}{2}{3}{4} &= \vvvv{20}{40}{60}{80} = 20 \vvvv{1}{2}{3}{4} \\
+A \vvvv{3}{2}{2}{1} &= \vvvv{102}{74}{66}{18} \\
+A \vvvv{1}{0}{0}{0} &= \vvvv{28}{6}{4}{2} \\
+A \vvvv{2}{1}{2}{3} &= \vvvv{40}{20}{40}{60} = 20 \vvvv{2}{1}{2}{3} \\
+A \vvvv{3}{2}{1}{2} &= \vvvv{120}{80}{40}{80} = 40 \vvvv{3}{2}{1}{2} \\
+A \vvvv{4}{3}{2}{1} &= \vvvv{160}{120}{80}{40} = 40 \vvvv{4}{3}{2}{1}
+\end{align*}
+Vi fant fire egenvektorer, tilhørende de to egenverdiene $20$ og~$40$.
+Vi ser ganske lett at de to vektorene
+\[
+\vvvv{3}{2}{2}{1}
+\quad\text{og}\quad\vvvv{1}{0}{0}{0}
+\]
+ikke er egenvektorer.
+\end{punkt}
+\begin{punkt}
+La
+\[
+\V{v}_1 = \vvvv{1}{2}{3}{4}
+\quad\text{og}\quad
+\V{v}_1 = \vvvv{2}{1}{2}{3}
+\]
+være egenvektorene fra del~(a) som hører til egenverdien~$20$, og la
+\[
+\V{w}_1 = \vvvv{3}{2}{1}{2}
+\quad\text{og}\quad
+\V{w}_1 = \vvvv{4}{3}{2}{1}
+\]
+være egenvektorene fra del~(a) som hører til egenverdien~$40$.  Du kan
+sjekke at $\V{v}_1$ og~$\V{v}_2$ er lineært uavhengige (ingen av dem
+er en skalar ganger den andre) og at $\V{w}_1$ og~$\V{w}_2$ er lineært
+uavhengige.  Det betyr at
+\[
+\V{v}_1,\ \V{v}_2,\ \V{w}_1\ \text{og}\ \V{w}_2
+\]
+er lineært uavhengige, siden vi vet at det ikke kan finnes lineære
+avhengigheter mellom egenvektorer som hører til forskjellige
+egenverdier (teorem~\ref{thm:egenvektorer-lin-uavh}~(a)).
+
+(Merk at det er nødvendig å først sjekke at $\V{v}_1$ og~$\V{v}_2$ er
+lineært uavhengige og at $\V{w}_1$ og~$\V{w}_2$ er lineært uavhengige.
+Du kan ikke bare bruke teorem~\ref{thm:egenvektorer-lin-uavh}~(a)
+direkte på alle de fire vektorene, fordi de ikke hører til fire
+forskjellige egenverdier.)
+
+Hvis det nå finnes en vektor $\V{u}$ som enten
+\begin{enumerate}
+\item \ldots{} er en egenvektor tilhørende~$20$ som ikke ligger i
+$\Sp \{ \V{v}_1, \V{v}_2 \}$, eller
+\item \ldots{} er en egenvektor tilhørende~$40$ som ikke ligger i
+$\Sp \{ \V{w}_1, \V{w}_2 \}$, eller
+\item \ldots{} er en egenvektor som tilhører en annen egenverdi enn
+$20$ eller~$40$,
+\end{enumerate}
+så får vi at
+\[
+\V{v}_1,\ \V{v}_2,\ \V{w}_1\ \V{w}_2\ \text{og}\ \V{u}
+\]
+er fem lineært uavhengige vektorer i~$\R^4$.  Det er ikke mulig, så
+det kan ikke finnes noen slik vektor~$\V{u}$.
+
+Dette betyr at vi har funnet alle egenverdier og egenvektorer for~$A$,
+og de er:
+\begin{align*}
+&\text{Egenverdien~$20$ med egenrom $\Sp \{ \V{v}_1, \V{v}_2 \}$} \\
+&\text{Egenverdien~$40$ med egenrom $\Sp \{ \V{w}_1, \V{w}_2 \}$}
+\end{align*}
+\end{punkt}
+\end{losning}
+
+
 
 \begin{oppgave}
-La $A$ være en $n\times n$-matrise slik at $A^2=A$. Vis at $A$ kun kan ha null og en som egenverdier.
+La $A$ være en $n\times n$-matrise slik at $A^2=A$.
+Hva kan du da si om egenverdiene til~$A$?
+%Vis at $A$ kun kan ha null og en som egenverdier.
 
 \noindent
-Hint: $A\V{x}=c\V{x}$ og $A^2\V{x}=c^2\V{x}$, hva antar vi?
+Hint:
+Prøv å finne noen forskjellige matriser~$A$ som er slik at $A^2 = A$.
+Kan du finne en slik matrise som ikke har noen egenverdier?
+En som har én egenverdi?  To egenverdier?  Flere enn to?
+% $A\V{x}=c\V{x}$ og $A^2\V{x}=c^2\V{x}$, hva antar vi?
 \end{oppgave}
 
 \begin{losning}
@@ -370,98 +481,6 @@ Hint: Husk at determinanten til en matrise $B$ og dens transponerte $B\tr$ er li
 
 \begin{losning}
 Hint: Egenverdiene til $A$ er løsninger på polynomet $\text{det}(A-\lambda I)=0$. Tilsvarende er egenverdiene til $A\tr$ løsninger på polynomet $\text{det}(A\tr-\lambda I)=0$. Observer at $(A-\lambda I)\tr=A\tr-\lambda I$. Bruk hintet i oppgaveteksten på matrisen $B=A-\lambda\tr$.
-\end{losning}
-
-
-\begin{oppgave}
-Følgende tall er hentet fra SSB sin statistikk om folketall ved inngangen av 2. kvartal 2018:
-
-\begin{table}[h]
-\begin{tabular}{lll}
-           & Trondheim & Steinkjer \\
-Folketall & 194128    & 22081     \\
-Utflytting & 22081     & 209      
-\end{tabular}
-\end{table}
-
-\begin{punkt}
-I en enkel modell antar vi at utflyttinger ikke endres fra år til år og at all utflytting fra Trondheim skjer til Steinkjer og vice versa. Gi en Markov-prosess som beskriver denne modellen.
-\end{punkt}
-
-\begin{punkt}
-Hva er folketallet i Trondheim og Steinkjer i 2020 (under denne modellen)?
-\end{punkt}
-
-\begin{punkt}
-Finnes det en likevektsvektor for denne prosessen? Hva er folketallet i Trondheim og Steinkjer langt inn i fremtiden?
-\end{punkt}
-
-\begin{punkt}
-Virker modellen rimelig basert på svaret i del \textbf{c)}?
-\end{punkt}
-
-\end{oppgave}
-
-\begin{losning}
-
-
-\begin{punkt}
-Modellen er beskrevet av den stokastiske matrisen $$P=\begin{bmatrix}
-\frac{191706}{194128} & \frac{209}{22081}\\
-\frac{2422}{194128} & \frac{21872}{22081}\\
-\end{bmatrix}$$
-\end{punkt}
-
-\begin{punkt}
-$\V{x}_2=P^2\V{x}_0\simeq \vv{189751}{26458.4}$.
-\end{punkt}
-
-\begin{punkt}
-Ja, den finnes fordi vi har en regulær stokastisk matrise. Ved å bruke likevektsvektoren finner vi at folketallet er ca. 93262.7 i Trondheim og 122940 i Steinkjer.
-\end{punkt}
-
-\begin{punkt}
-Nei: Det er mindre folk i Trondheim enn i Steinkjer.
-\end{punkt}
-
-\end{losning}
-
-\begin{oppgave}
-\begin{punkt}
-La $P$ og $Q$ være stokastiske $2\times 2$-matriser. Vis at produktet $PQ$ er stokastisk.
-
-\noindent
-Hint: Skriv $P$ og $Q$ på elementform. Bruk dette for å uttrykke elementene til $PQ$ ved elementene til $P$ og $Q$. Hva må du vise at produktet tilfredsstiller? Hva vet vi basert på antagelsen?
-
-\end{punkt}
-\begin{punkt}
-Kan man mer generelt si at produktet av to stokastiske $n\times n$-matriser er stokastisk?
-\end{punkt}
-\end{oppgave}
-
-\begin{losning}
-
-\begin{punkt}
-Notasjon: $$P=\begin{bmatrix}
-p_{11} & p_{12}\\
-p_{21} & p_{22}
-\end{bmatrix},\quad Q=\begin{bmatrix}
-q_{11} & q_{12}\\
-q_{21} & q_{22}
-\end{bmatrix}$$
-
-Produktet er $$PQ=\begin{bmatrix}
-p_{11}q_{11}+p_{12}q_{21} & p_{11}q_{21}+p_{12}q_{22}\\
-p_{21}q_{11}+p_{22}q_{21} & p_{21}q_{21}+p_{22}q_{22}
-\end{bmatrix}$$
-\end{punkt}
-
-Vi må vise at sumen av elementene i kolonne 1 og 2 i $PQ$ er lik 1. Første kolonne: $$p_{11}q_{11}+p_{12}q_{21}+p_{21}q_{11}+p_{22}q_{21}=q_{11}(p_{11}+p_{21})+q_{21}(p_{12}+p_{22}).$$ Summene inni parantesene er begge lik en fordi $P$ er stokastisk. Derfor er altså summen av første kolonne $q_{11}+q_{21}$ som også er lik en siden $Q$ er stokastisk. Samme type argument kan brukes for andre kolonne.
-
-\begin{punkt}
-Ja. Samme triks som er illustrert ovenfor fungerer for $n\times n$-matriser (ved å faktorisere ut elementene fra $Q$ i hver sum bruker du at $P$ er stokastisk til å få en sum av en kolonne i $Q$ som også er lik en). 
-\end{punkt}
-
 \end{losning}
 
 
