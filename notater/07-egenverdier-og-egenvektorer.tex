@@ -168,8 +168,20 @@ at vi har kommet frem til en generell metode for å finne alle
 egenverdiene og egenvektorene til en matrise.
 \end{ex}
 
+% TODO tekst
 
-% \section*{Noen todimensjonale eksempler}
+\begin{thm}
+\label{thm:egenvektor-sp}
+Anta at $\lambda$ er en egenverdi for en $n \times n$-matrise~$A$, og
+at $\V{v}$ er en tilhørende egenvektor.  Da er alle multipler
+$c \V{v}$ av vektoren~$\V{v}$, der $c$ er et tall som ikke er~$0$,
+også egenvektorer som hører til egenverdien~$\lambda$.  Med andre ord
+er alle vektorer i mengden $\Sp \{\V{v}\}$, unntatt nullvektoren,
+egenvektorer som hører til egenverdien~$\lambda$.
+\end{thm}
+% TODO bevis?
+
+% \section*{Noen todimensjonale eksempler} ikke egen seksjon?
 
 % TODO refleksjon, rotasjon, projeksjon
 
@@ -583,6 +595,129 @@ Egenverdiene til en diagonalmatrise er tallene på diagonalen.
 
 \section*{Lineær uavhengighet av egenvektorer}
 
+Vi skal nå ta en ganske omfattende diskusjon om hvorvidt egenvektorer
+er lineært uavhengige av hverandre, og hva vi kan si om vektorer som
+ligger i mengden utspent av noen egenvektorer. %TODO
+
+\medskip
+\noindent\textbf{Første tilfelle: Én egenvektor.}
+\\\textit{Oppsett}:
+\begin{align*}
+\V{v}_1   \ &\text{-- egenvektor} \\
+\lambda_1 \ &\text{-- tilhørende egenverdi}
+\end{align*}
+\textit{Resultat}:\\
+Enhver vektor $\V{w}$ i $\Sp \{\V{v}_1\}$, utenom
+nullvektoren, er en egenvektor som hører til egenverdien~$\lambda_1$.
+(Dette viste vi i teorem~\ref{thm:egenvektor-sp}.)
+
+\medskip
+\noindent\textbf{Andre tilfelle: To egenvektorer.}
+\\Oppsett:
+\begin{align*}
+\V{v}_1,\ \V{v}_2     \ &\text{-- egenvektorer} \\
+\lambda_1,\ \lambda_2 \ &\text{-- tilhørende egenverdier (forskjellige)}
+\end{align*}
+Resultater:
+\begin{enumerate}
+\item[(a)] Vektorene $\V{v}_1$ og~$\V{v}_2$ er lineært uavhengige.
+\item[(b)] Hver vektor $\V{w}$ som er i $\Sp \{ \V{v}_1, \V{v}_2 \}$,
+men ikke i $\Sp \{ \V{v}_1 \}$ eller $\Sp \{ \V{v}_2 \}$, er ikke en
+egenvektor.
+\end{enumerate}
+\begin{proof}[Bevis for del~(a)]
+Vi vet at hverken $\V{v}_1$ eller~$\V{v}_2$ kan være nullvektoren,
+siden de er egenvektorer.  Hvis de skulle vært lineært avhengige,
+ville derfor $\V{v}_2$ vært i $\Sp \{ \V{v}_1 \}$.  Men da ville
+$\V{v}_2$ hørt til egenverdi~$\lambda_1$ (ved
+teorem~\ref{thm:egenvektor-sp}), og ikke~$\lambda_2$.
+\end{proof}
+\begin{proof}[Bevis for del~(b)]
+Vi har to vektorer $\V{v}_1$ og~$\V{v}_2$ som er lineært uavhengige av
+hverandre, så vi kan tenke på dem som to piler som peker i
+forskjellige retninger:
+\begin{center}
+\begin{tikzpicture}[scale=.35]
+\draw[->] (0,0) -- (3,1) node[anchor=north,inner sep=7pt,pos=.9] {$\V{v}_1$};
+\draw[->] (0,0) -- (1,4) node[anchor=east,inner sep=6pt] {$\V{v}_2$};
+\end{tikzpicture}
+\\
+{\small \textit{To glade vektorer}}
+\end{center}
+Vektoren $\V{w}$ ligger i $\Sp \{ \V{v}_1, \V{v}_2 \}$, altså i planet
+utspent av $\V{v}_1$ og~$\V{v}_2$.
+Dette betyr at $\V{w}$ er en lineærkombinasjon av $\V{v}_1$
+og~$\V{v}_2$, så det finnes tall $c_1$ og~$c_2$ slik at
+\[
+\V{w} = c_1 \V{v}_1 + c_2 \V{v}_2.
+\]
+Vi tegner inn en slik vektor $\V{w}$ på tegningen vår, og får med
+hvordan den er en lineærkombinasjon av $\V{v}_1$ og~$\V{v}_2$:
+\begin{center}
+\begin{tikzpicture}[scale=.35]
+\draw[->] (0,0) -- (3,1) node[anchor=north,inner sep=7pt,pos=.9] {$\V{v}_1$};
+\draw[->] (0,0) -- (1,4) node[anchor=east,inner sep=6pt] {$\V{v}_2$};
+\draw[->] (0,0) -- (4.5,1.5) node[anchor=north,inner sep=7pt,pos=1.1] {$c_1 \V{v}_1$};
+\draw[->] (0,0) -- (2,8) node[anchor=east,inner sep=6pt] {$c_2 \V{v}_2$};
+\draw[->] (0,0) -- (6.5,9.5) node[anchor=west] {$\V{w}$};
+\draw[dashed] (2,8) -- (6.5,9.5);
+\draw[dashed] (4.5,1.5) -- (6.5,9.5);
+\end{tikzpicture}
+\\
+{\small \textit{Vektoren~$\V{w}$ er en lineærkombinasjon av $\V{v}_1$ og~$\V{v}_2$}}
+\end{center}
+Vi er interessert i om $\V{w}$ er en egenvektor eller ikke, altså om
+det finnes et tall~$\lambda$ slik at $A \V{w} = \lambda \V{w}$.  Vi
+ser på uttrykket $A \V{w}$.  Siden vi vet at $\V{v}_1$ og~$\V{v}_2$ er
+egenvektorer tilhørende egenverdiene $\lambda_1$ og~$\lambda_2$, får
+vi:
+\[
+A \V{w}
+ = A c_1 \V{v}_1 + A c_2 \V{v}_2
+ = \lambda_1 c_1 \V{v}_1 + \lambda_2 c_2 \V{v}_2
+\]
+Vi tegner inn $A \V{w}$ også på tegningen vår:
+\begin{center}
+\begin{tikzpicture}[scale=.35]
+\draw[->] (0,0) -- (3,1) node[anchor=north,inner sep=7pt,pos=.9] {$\V{v}_1$};
+\draw[->] (0,0) -- (1,4) node[anchor=east,inner sep=6pt] {$\V{v}_2$};
+\draw[->] (0,0) -- (4.5,1.5) node[anchor=north,inner sep=7pt,pos=1.1] {$c_1 \V{v}_1$};
+\draw[->] (0,0) -- (2,8) node[anchor=east,inner sep=6pt] {$c_2 \V{v}_2$};
+\draw[->] (0,0) -- (6.5,9.5) node[anchor=west] {$\V{w}$};
+\draw[dashed] (2,8) -- (6.5,9.5);
+\draw[dashed] (4.5,1.5) -- (6.5,9.5);
+\draw[->] (0,0) -- (12,4) node[anchor=north,inner sep=7pt,pos=1.05] {$\lambda_1 c_1 \V{v}_1$};
+\draw[->] (0,0) -- (2.5,10) node[anchor=east,inner sep=6pt,pos=1.05] {$\lambda_2 c_2 \V{v}_2$};
+\draw[->] (0,0) -- (14.5,14) node[anchor=west,inner sep=6pt,pos=.95] {$A \V{w}$};
+\draw[dashed] (12,4) -- (14.5,14);
+\draw[dashed] (2.5,10) -- (14.5,14);
+\end{tikzpicture}
+\\
+{\small \textit{Vektoren $A \V{w}$ må peke i en annen\\
+ retning enn $\V{w}$ fordi $\lambda_1 \ne \lambda_2$}}
+\end{center}
+Denne siste figuren viser at $\V{w}$ ikke kan være en egenvektor.  Den
+eneste muligheten for å få $A \V{w}$ til å peke i samme retning
+som~$\V{w}$ er å anta at $\lambda_1 = \lambda_2$, og vi har jo antatt
+akkurat det motsatte, nemlig at $\lambda_1 \ne \lambda_2$.
+
+Disse figurene er det man bør se for seg for å forstå hva som skjer,
+men vi skal fullføre beviset på en rent algebraisk måte som ikke
+avhenger av figurene.
+
+%TODO
+\end{proof}
+
+% TODO tekst
+
+\begin{thm}
+% TODO ????
+\end{thm}
+
+
+% TODO
+
+
 \begin{lem}
 \label{lem:egenvek-lin-uavh-2}
 La $A$ være en $n \times n$-matrise, og anta at $\V{v}_1$ og~$\V{v}_2$
@@ -678,6 +813,10 @@ slutt får vi at alle vektorene
 er lineært uavhengige.
 \end{proof}
 
+
+\section*{Markovkjeder}
+
+% TODO markovkjeder!
 
 
 \kapittelslutt
