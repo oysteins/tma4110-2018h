@@ -132,7 +132,7 @@ Det betyr at $3$ er en egenverdi for matrisen~$A$, og at $\V{v}$ er en
 egenvektor som hører til egenverdien~$3$.
 
 Finnes det flere egenvektorer?  Hvis vi ser på en vektor som er
-qparallell med~$\V{v}$, altså som er på formen $\V{w} = c \cdot \V{v}$
+parallell med~$\V{v}$, altså som er på formen $\V{w} = c \cdot \V{v}$
 der $c$ er et tall, så får vi:
 \[
 A \V{w}
@@ -168,8 +168,20 @@ at vi har kommet frem til en generell metode for å finne alle
 egenverdiene og egenvektorene til en matrise.
 \end{ex}
 
+% TODO tekst
 
-% \section*{Noen todimensjonale eksempler}
+\begin{thm}
+\label{thm:egenvektor-sp}
+Anta at $\lambda$ er en egenverdi for en $n \times n$-matrise~$A$, og
+at $\V{v}$ er en tilhørende egenvektor.  Da er alle multipler
+$c \V{v}$ av vektoren~$\V{v}$, der $c$ er et tall som ikke er~$0$,
+også egenvektorer som hører til egenverdien~$\lambda$.  Med andre ord
+er alle vektorer i mengden $\Sp \{\V{v}\}$, unntatt nullvektoren,
+egenvektorer som hører til egenverdien~$\lambda$.
+\end{thm}
+% TODO bevis?
+
+% \section*{Noen todimensjonale eksempler} ikke egen seksjon?
 
 % TODO refleksjon, rotasjon, projeksjon
 
@@ -583,101 +595,247 @@ Egenverdiene til en diagonalmatrise er tallene på diagonalen.
 
 \section*{Lineær uavhengighet av egenvektorer}
 
-\begin{lem}
-\label{lem:egenvek-lin-uavh-2}
-La $A$ være en $n \times n$-matrise, og anta at $\V{v}_1$ og~$\V{v}_2$
-er egenvektorer for~$A$ som hører til to forskjellige egenverdier
-$\lambda_1$ og~$\lambda_2$.  Da er $\V{v}_1$ og~$\V{v}_2$ lineært
-uavhengige.
-\end{lem}
-\begin{proof}
-TODO
-\end{proof}
+Vi skal nå ta en ganske omfattende diskusjon om hvorvidt egenvektorer
+er lineært uavhengige av hverandre, og hva vi kan si om vektorer som
+ligger i mengden utspent av noen gitte egenvektorer.
 
-\begin{lem}
-\label{lem:egenvek-lin-uavh}
-La $A$ være en $n \times n$-matrise.  Anta at
+Hele diskusjonen kommer til å bli konkludert med et fint og flott
+teorem (teorem~\ref{thm:egenvektorer-lin-uavh}), men la oss ikke se på
+konklusjonen helt med en gang.  For å prøve å forstå hvordan man kunne
+kommet frem til det teoremet på egen hånd, skal vi bygge oss opp mot
+det i små steg.  Vi begynner med å se på én egenvektor, og deretter to
+egenvektorer som hører til forskjellige egenverdier.  Vi ser hva vi
+kan si om disse, og etter hvert kommer vi til å nærme oss et generelt
+resultat.
+
+Gjennom alt det vi skal gjøre nå lar vi $A$ være en
+$n \times n$-matrise.
+
+Vi vet fra før (teorem~\ref{thm:egenvektor-sp}) at hvis vi har en
+egenvektor~$\V{v}$ som hører til en egenverdi~$\lambda$, så er enhver
+vektor i $\Sp \{ \V{v} \}$, utenom nullvektoren, også en egenvektor
+som hører til~$\lambda$.  Vi har altså:
+
+\smallskip
+\noindent\emph{Hvis $\V{w}$ er en skalar ganger en egenvektor~$\V{v}$,
+ og ikke er lik nullvektoren,
+ så er $\V{w}$ en egenvektor tilhørende samme egenverdi som~$\V{v}$.}
+\smallskip
+
+Dette enkle og greie resultatet skal vi utnytte når vi nå går videre
+til å se på flere egenvektorer som hører til forskjellige egenverdier.
+
+\smallskip
+La oss se på hva vi kan si hvis vi har to egenvektorer
 \[
-\V{v}_1,\ \V{v}_2,\ \ldots,\ \V{v}_s
+\V{v}_1\ \text{og}\ \V{v}_2
 \]
-er egenvektorer for~$A$, og la
+som hører til to forskjellige egenverdier
 \[
-\lambda_1,\ \lambda_2,\ \ldots,\ \lambda_s
+\lambda_1\ \text{og}\ \lambda_2.
 \]
-være de tilhørende egenverdiene.  Anta at vektorene $\V{v}_1$,
-$\V{v}_2$, \ldots, $\V{v}_s$ er lineært uavhengige, og at alle tallene
-$\lambda_1$, $\lambda_2$, \ldots, $\lambda_s$ er ulike.  La $\V{w}$
-være en egenvektor for~$A$ med tilhørende egenverdi~$\lambda$.  Da har
-vi følgende.
-\begin{enumerate}
-\item[(a)] Hvis $\V{w}$ er en lineærkombinasjon
+Vi vet at alle vektorer i $\Sp \{ \V{v}_1 \}$ er egenvektorer som
+hører til egenverdien~$\lambda_1$.  Dermed er det klart at $\V{v}_2$
+ikke kan være i $\Sp \{ \V{v}_1 \}$, siden $\V{v}_2$ hører til
+egenverdien~$\lambda_2$.  På samme måte ser vi at $\V{v}_1$ ikke kan
+være i $\Sp \{ \V{v}_2 \}$.  Dermed ser vi (ved å bruke
+teorem~\ref{thm:lin-uavh-2}, eller ved å tenke selv) at vektorene
+$\V{v}_1$ og~$\V{v}_2$ er lineært uavhengige.  Vi har altså vist:
+
+\smallskip
+\noindent\emph{To egenvektorer som hører til forskjellige egenverdier
+  må være lineært uavhengige.}
+\smallskip
+
+Dette betyr at vi kan se for oss de to vektorene $\V{v}_1$
+og~$\V{v}_2$ som to piler som peker i forskjellige retninger:
+\begin{center}
+\begin{tikzpicture}[scale=.35]
+\draw[->] (0,0) -- (3,1) node[anchor=north,inner sep=7pt,pos=.9] {$\V{v}_1$};
+\draw[->] (0,0) -- (1,4) node[anchor=east,inner sep=6pt] {$\V{v}_2$};
+\end{tikzpicture}
+\\
+{\small \textit{De to egenvektorene våre}}
+\end{center}
+
+La oss nå se hva vi kan si om en vektor $\V{w}$ i
+$\Sp \{ \V{v}_1, \V{v}_2 \}$, altså i planet utspent av $\V{v}_1$
+og~$\V{v}_2$.  En slik vektor $\V{w}$ er en lineærkombinasjon av
+$\V{v}_1$ og~$\V{v}_2$, så det finnes tall $c_1$ og~$c_2$ slik at
 \[
-\V{w} = c_1 \V{v}_1 + c_2 \V{v}_2 + \cdots + c_s \V{v}_s
+\V{w} = c_1 \V{v}_1 + c_2 \V{v}_2.
 \]
-av de andre egenvektorene, så er
+For det første: Hvis $c_2 = 0$, så er $\V{w}$ bare et tall
+ganger~$\V{v}_1$, og da vet vi at den er en egenvektor som hører til
+egenverdien~$\lambda_1$.  På samme måte får vi at hvis $c_1 = 0$, så
+er $\V{w}$ en egenvektor som hører til egenverdien~$\lambda_2$.  Men
+hva kan vi si dersom både $c_1$ og~$c_2$ er forskjellige fra~$0$,
+altså dersom $\V{w}$ ikke ligger i $\Sp \{\V{v}_1\}$ eller i
+$\Sp \{\V{v}_2\}$?
+
+Vi tegner inn $\V{w}$ på tegningen vår, og får med hvordan den er en
+lineærkombinasjon av $\V{v}_1$ og~$\V{v}_2$:
+\begin{center}
+\begin{tikzpicture}[scale=.35]
+\draw[->] (0,0) -- (3,1) node[anchor=north,inner sep=7pt,pos=.9] {$\V{v}_1$};
+\draw[->] (0,0) -- (1,4) node[anchor=east,inner sep=6pt] {$\V{v}_2$};
+\draw[->] (0,0) -- (4.5,1.5) node[anchor=north,inner sep=7pt,pos=1.1] {$c_1 \V{v}_1$};
+\draw[->] (0,0) -- (2,8) node[anchor=east,inner sep=6pt] {$c_2 \V{v}_2$};
+\draw[->] (0,0) -- (6.5,9.5) node[anchor=west] {$\V{w}$};
+\draw[dashed] (2,8) -- (6.5,9.5);
+\draw[dashed] (4.5,1.5) -- (6.5,9.5);
+\end{tikzpicture}
+\\
+{\small \textit{Vektoren~$\V{w}$ er en lineærkombinasjon av $\V{v}_1$ og~$\V{v}_2$}}
+\end{center}
+Nå vil vi finne ut om $\V{w}$ er en egenvektor eller ikke, altså om
+det finnes et tall~$\lambda$ slik at $A \V{w} = \lambda \V{w}$.  Vi
+ser på uttrykket $A \V{w}$.  Siden vi vet at $\V{v}_1$ og~$\V{v}_2$ er
+egenvektorer tilhørende egenverdiene $\lambda_1$ og~$\lambda_2$, får
+vi:
 \[
-\lambda = \lambda_i
+A \V{w}
+ = A c_1 \V{v}_1 + A c_2 \V{v}_2
+ = \lambda_1 c_1 \V{v}_1 + \lambda_2 c_2 \V{v}_2
+\]
+Vi tegner inn $A \V{w}$ også på tegningen vår:
+\begin{center}
+\begin{tikzpicture}[scale=.35]
+\draw[->] (0,0) -- (3,1) node[anchor=north,inner sep=7pt,pos=.9] {$\V{v}_1$};
+\draw[->] (0,0) -- (1,4) node[anchor=east,inner sep=6pt] {$\V{v}_2$};
+\draw[->] (0,0) -- (4.5,1.5) node[anchor=north,inner sep=7pt,pos=1.1] {$c_1 \V{v}_1$};
+\draw[->] (0,0) -- (2,8) node[anchor=east,inner sep=6pt] {$c_2 \V{v}_2$};
+\draw[->] (0,0) -- (6.5,9.5) node[anchor=west] {$\V{w}$};
+\draw[dashed] (2,8) -- (6.5,9.5);
+\draw[dashed] (4.5,1.5) -- (6.5,9.5);
+\draw[->] (0,0) -- (12,4) node[anchor=north,inner sep=7pt,pos=1.05] {$\lambda_1 c_1 \V{v}_1$};
+\draw[->] (0,0) -- (2.5,10) node[anchor=east,inner sep=6pt,pos=1.05] {$\lambda_2 c_2 \V{v}_2$};
+\draw[->] (0,0) -- (14.5,14) node[anchor=west,inner sep=6pt,pos=.95] {$A \V{w}$};
+\draw[dashed] (12,4) -- (14.5,14);
+\draw[dashed] (2.5,10) -- (14.5,14);
+\end{tikzpicture}
+\\
+{\small \textit{Vektoren $A \V{w}$ må peke i en annen\\
+ retning enn $\V{w}$ fordi $\lambda_1 \ne \lambda_2$}}
+\end{center}
+Denne siste figuren viser at $\V{w}$ ikke kan være en egenvektor.  Den
+eneste muligheten for å få $A \V{w}$ til å peke i samme retning
+som~$\V{w}$ er å anta at $\lambda_1 = \lambda_2$, og vi har jo antatt
+akkurat det motsatte, nemlig at $\lambda_1 \ne \lambda_2$.
+
+Denne figuren er det man bør se for seg for å forstå hva som skjer,
+men vi kan vise det samme på en mer presis og rent algebraisk måte som
+ikke avhenger av figuren.
+
+Hvis vi ganger $\V{w}$ med et tall~$\lambda$, så får vi:
+\[
+\lambda \V{w} = \lambda c_1 \V{v}_1 + \lambda c_2 \V{v}_2
+\]
+Og vi så at hvis vi ganger $A$ med~$\V{w}$, så får vi:
+\[
+A \V{w} = \lambda_1 c_1 \V{v}_1 + \lambda_2 c_2 \V{v}_2
+\]
+Hvis $\V{w}$ er en egenverdi, så finnes det en $\lambda$ slik at
+$A \V{w} = \lambda \V{w}$, og dermed:
+\[
+\lambda_1 c_1 \V{v}_1 + \lambda_2 c_2 \V{v}_2 = \lambda c_1 \V{v}_1 + \lambda c_2 \V{v}_2
+\]
+Siden $\V{v}_1$ og~$\V{v}_2$ er lineært uavhengige, betyr dette at
+\[
+\lambda_1 c_1 = \lambda c_1
 \qquad\text{og}\qquad
-\V{w} = c_i \V{v}_i
+\lambda_2 c_2 = \lambda c_2.
 \]
-for en~$i$.
-\item[(b)] Hvis $\lambda$ ikke er lik en av $\lambda_1$, $\lambda_2$,
-\ldots, $\lambda_s$, så er alle vektorene
+Men vi har antatt at både $c_1$ og~$c_2$ er forskjellige fra~$0$ og at
+$\lambda_1 \ne \lambda_2$, og da er dette umulig.  Det vil si at
+$\V{w}$ ikke er en egenvektor.
+
+Nå har vi vist:
+
+\smallskip
+\noindent\emph{Hvis $\V{w}$ er en lineærkombinasjon av to egenvektorer som
+  hører til forskjellige egenverdier, så er det to muligheter: Enten
+  er $\V{w}$ lik en skalar ganger én av de to egenvektorene, eller så
+  er $\V{w}$ ikke en egenvektor.}
+\smallskip
+
+Nå går vi videre til å se på tre egenvektorer
 \[
-\V{v}_1,\ \V{v}_2,\ \ldots,\ \V{v}_s,\ \V{w}
+\V{v}_1,\ \V{v}_2\ \text{og}\ \V{v}_3
 \]
-lineært uavhengige.
-\end{enumerate}
-\end{lem}
-\begin{proof}
-TODO
-\end{proof}
+som hører til forskjellige egenverdier
+\[
+\lambda_1,\ \lambda_2\ \text{og}\ \lambda_3.
+\]
+Da kan vi bruke det vi nettopp viste til å konkludere med at ingen av
+disse egenvektorene kan være en lineærkombinasjon av de andre to.  For
+hvis $\V{v}_3$ skulle vært i $\Sp \{ \V{v}_1, \V{v}_2 \}$, så ville vi
+fått at den enten er nullvektoren, eller en skalar ganger $\V{v}_1$
+eller $\V{v}_2$ (men da ville den hatt $\lambda_1$ eller $\lambda_2$
+som tilhørende egenverdi istedenfor~$\lambda_3$), eller så ville den
+ikke vært en egenvektor i det hele tatt.  Alle disse alternativene er
+utelukket, siden vi har antatt at $\V{v}_3$ er en egenvektor
+tilhørende egenverdien~$\lambda_3$.
+
+På samme måte får vi at $\V{v}_2$ ikke kan være i
+$\Sp \{ \V{v}_1, \V{v}_3 \}$ og at $\V{v}_1$ ikke kan være i
+$\Sp \{ \V{v}_2, \V{v}_3 \}$.
+
+Siden vi har vist at ingen av de tre vektorene er en lineærkombinasjon
+av de andre to, får vi (fra teorem~\ref{thm:lin-uavh-lin-komb}) at de
+er lineært uavhengige.  Vi har altså vist:
+
+\smallskip
+\noindent\emph{Tre egenvektorer som hører til forskjellige egenverdier
+  må være lineært uavhengige.}
+\smallskip
+
+Men vi trenger ikke å gi oss der.  Ved et helt tilsvarende argument
+som det vi hadde i tilfellet med to vektorer kan
+vi vise:
+
+\smallskip
+\noindent\emph{Hvis $\V{w}$ er en lineærkombinasjon av tre egenvektorer som
+  hører til forskjellige egenverdier, så er det to muligheter: Enten
+  er $\V{w}$ lik en skalar ganger én av de tre egenvektorene, eller så
+  er $\V{w}$ ikke en egenvektor.}
+\smallskip
+
+Hvis du fremdeles henger med, så ser du antagelig hvordan vi nå kan gå
+videre til:
+
+\smallskip
+\noindent\emph{Fire egenvektorer som hører til forskjellige egenverdier
+  må være lineært uavhengige.}
+\smallskip
+
+Herfra kan vi fortsette på akkurat samme måte, og vi får de samme
+resultatene for enhver liste av vilkårlig mange egenvektorer som hører
+til forskjellige egenverdier.  Da har vi kommet til slutten på vår
+lange diskusjon om lineær uavhengighet for egenvektorer, og vi
+oppsummerer det vi har funnet ut i et teorem.
 
 \begin{thm}
-\label{thm:egenvek-lin-uavh}
-La $A$ være en $n \times n$-matrise.  Anta at $\V{v}_1$, $\V{v}_2$,
-\ldots, $\V{v}_t$ er er egenvektorer for~$A$ som hører til
-forskjellige egenverdier $\lambda_1$, $\lambda_2$, \ldots,
-$\lambda_t$.
-Da er vektorene
+\label{thm:egenvektorer-lin-uavh}
+La $\lambda_1$, $\lambda_2$, \ldots, $\lambda_t$ være
+forskjellige egenverdier for en matrise~$A$, og la $\V{v}_1$,
+$\V{v}_2$, \ldots, $\V{v}_t$ være egenvektorer som hører til hver av
+disse egenverdiene.  Da har vi:
+\begin{enumerate}
+\item[(a)] Vektorene $\V{v}_1$, $\V{v}_2$, \ldots, $\V{v}_t$ er lineært uavhengige.
+\item[(b)] I mengden
 \[
-\V{v}_1,\ \V{v}_2,\ \ldots,\ \V{v}_t
+\Sp \{ \V{v}_1,\ \V{v}_2,\ \cdots,\ \V{v}_t \}
 \]
-lineært uavhengige.
+utspent av egenvektorene vi ser på finnes det ingen andre egenvektorer
+enn de som er et multippel $c \cdot \V{v}_i$ av én av vektorene i
+listen.
+\end{enumerate}
 \end{thm}
-\begin{proof}
-Hvis vi har bare én egenvektor i listen vår (altså hvis $t=1$), så er
-den lineært uavhengig fordi den ikke er nullvektoren.  Hvis vi har to
-egenvektorer ($t=2$), så får vi fra lemma~\ref{lem:egenvek-lin-uavh-2}
-at de er lineært uavhengige.
 
-Anta at $t > 2$.  Da kan vi bruke lemma~\ref{lem:egenvek-lin-uavh}~(b)
-flere ganger for å komme frem til at de er lineært uavhengige.
+\section*{Markovkjeder}
 
-Lemma~\ref{lem:egenvek-lin-uavh-2} gir oss at $\V{v}_1$ og~$\V{v}_2$
-er lineært uavhengige.  Vi bruker lemma~\ref{lem:egenvek-lin-uavh}~(b)
-på
-\[
-\V{v}_1,\ \V{v}_2
-\qquad\text{og}\qquad
-\V{v}_3,
-\]
-og får at alle disse er lineært uavhengige.  Da kan vi bruke
-lemma~\ref{lem:egenvek-lin-uavh}~(b) på
-\[
-\V{v}_1,\ \V{v}_2,\ \V{v}_3,
-\qquad\text{og}\qquad
-\V{v}_4,
-\]
-og vi får igjen at alle disse er lineært uavhengige.  Slik kan vi
-utvide med én og en vektor mens vi bevarer lineær uavhengighet, og til
-slutt får vi at alle vektorene
-\[
-\V{v}_1,\ \V{v}_2,\ \ldots,\ \V{v}_t
-\]
-er lineært uavhengige.
-\end{proof}
-
+% TODO markovkjeder!
 
 
 \kapittelslutt

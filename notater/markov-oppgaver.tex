@@ -1,0 +1,93 @@
+\begin{oppgave}
+Følgende tall er hentet fra SSB sin statistikk om folketall ved inngangen av 2. kvartal 2018:
+
+\begin{table}[h]
+\begin{tabular}{lll}
+           & Trondheim & Steinkjer \\
+Folketall & 194128    & 22081     \\
+Utflytting & 22081     & 209      
+\end{tabular}
+\end{table}
+
+\begin{punkt}
+I en enkel modell antar vi at utflyttinger ikke endres fra år til år og at all utflytting fra Trondheim skjer til Steinkjer og vice versa. Gi en Markov-prosess som beskriver denne modellen.
+\end{punkt}
+
+\begin{punkt}
+Hva er folketallet i Trondheim og Steinkjer i 2020 (under denne modellen)?
+\end{punkt}
+
+\begin{punkt}
+Finnes det en likevektsvektor for denne prosessen? Hva er folketallet i Trondheim og Steinkjer langt inn i fremtiden?
+\end{punkt}
+
+\begin{punkt}
+Virker modellen rimelig basert på svaret i del \textbf{c)}?
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+
+\begin{punkt}
+Modellen er beskrevet av den stokastiske matrisen $$P=\begin{bmatrix}
+\frac{191706}{194128} & \frac{209}{22081}\\
+\frac{2422}{194128} & \frac{21872}{22081}\\
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+$\V{x}_2=P^2\V{x}_0\simeq \vv{189751}{26458.4}$.
+\end{punkt}
+
+\begin{punkt}
+Ja, den finnes fordi vi har en regulær stokastisk matrise. Ved å bruke likevektsvektoren finner vi at folketallet er ca. 93262.7 i Trondheim og 122940 i Steinkjer.
+\end{punkt}
+
+\begin{punkt}
+Nei: Det er mindre folk i Trondheim enn i Steinkjer.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+\begin{punkt}
+La $P$ og $Q$ være stokastiske $2\times 2$-matriser. Vis at produktet $PQ$ er stokastisk.
+
+\noindent
+Hint: Skriv $P$ og $Q$ på elementform. Bruk dette for å uttrykke elementene til $PQ$ ved elementene til $P$ og $Q$. Hva må du vise at produktet tilfredsstiller? Hva vet vi basert på antagelsen?
+
+\end{punkt}
+\begin{punkt}
+Kan man mer generelt si at produktet av to stokastiske $n\times n$-matriser er stokastisk?
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Notasjon: $$P=\begin{bmatrix}
+p_{11} & p_{12}\\
+p_{21} & p_{22}
+\end{bmatrix},\quad Q=\begin{bmatrix}
+q_{11} & q_{12}\\
+q_{21} & q_{22}
+\end{bmatrix}$$
+
+Produktet er $$PQ=\begin{bmatrix}
+p_{11}q_{11}+p_{12}q_{21} & p_{11}q_{21}+p_{12}q_{22}\\
+p_{21}q_{11}+p_{22}q_{21} & p_{21}q_{21}+p_{22}q_{22}
+\end{bmatrix}$$
+\end{punkt}
+
+Vi må vise at sumen av elementene i kolonne 1 og 2 i $PQ$ er lik 1. Første kolonne: $$p_{11}q_{11}+p_{12}q_{21}+p_{21}q_{11}+p_{22}q_{21}=q_{11}(p_{11}+p_{21})+q_{21}(p_{12}+p_{22}).$$ Summene inni parantesene er begge lik en fordi $P$ er stokastisk. Derfor er altså summen av første kolonne $q_{11}+q_{21}$ som også er lik en siden $Q$ er stokastisk. Samme type argument kan brukes for andre kolonne.
+
+\begin{punkt}
+Ja. Samme triks som er illustrert ovenfor fungerer for $n\times n$-matriser (ved å faktorisere ut elementene fra $Q$ i hver sum bruker du at $P$ er stokastisk til å få en sum av en kolonne i $Q$ som også er lik en). 
+\end{punkt}
+
+\end{losning}
+
+
+
