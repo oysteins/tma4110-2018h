@@ -10,6 +10,8 @@
 %\usepackage{hyperref}
 %\usepackage{enumerate}
 \usepackage{ifthen}
+\usepackage{textgreek}
+\usepackage{multirow}
 
 %\usepackage{sectsty}
 \setsecheadstyle{\bfseries\large}
@@ -28,7 +30,12 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 
+\newcommand{\M}{\mathcal{M}} % vektorrom av matriser
+\newcommand{\C}{\mathcal{C}} % vektorrom av kontinuerlige funksjoner
+
 \newcommand{\abs}[1]{|#1|}
+\newcommand{\intersect}{\cap}
+\newcommand{\union}{\cup}
 
 \newcommand{\roweq}{\sim}
 \DeclareMathOperator{\Sp}{Sp}
@@ -46,6 +53,8 @@
 }{%
   \end{array}\right]
 }
+
+\newcommand{\boks}[1]{\framebox{\strut $#1$}}
 
 % \newcounter{notatnr}
 % \newcommand{\notatnr}[2]
