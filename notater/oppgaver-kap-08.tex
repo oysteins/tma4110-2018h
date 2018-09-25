@@ -122,6 +122,108 @@ TODO: detaljer.
 
 
 \begin{oppgave}
+La $V$ være et vektorrom.
+Vis at følgende påstander følger fra vektorromsaksiomene.
+% [Alternativt:]
+% Finn ut om følgende påstander må være sanne
+% eller ikke, ved å enten vise at de følger fra aksiomene eller at det
+% finnes et vektorrom der de ikke stemmer.
+\begin{punkt}
+Det additive identitetselementet er entydig.  Det finnes altså
+nøyaktig én vektor~$\V{0}$ i~$V$ som er slik at
+$\V{u} + \V{0} = \V{u}$ for alle vektorer~$\V{u}$.
+\end{punkt}
+\begin{punkt}
+Hvis $\V{u} + \V{v} = \V{u} + \V{w}$ for tre vektorer $\V{u}$, $\V{v}$
+og~$\V{w}$ i~$V$, så følger det at $\V{v} = \V{w}$.
+\end{punkt}
+\begin{punkt}
+Additive inverser er entydige.  For hver vektor~$\V{u}$ i~$V$ finnes
+det altså kun én vektor~$-\V{u}$ i~$V$ som er slik at
+$\V{u} + (-\V{u}) = \V{0}$.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+Hvis $\V{0}_1$ og~$\V{0}_2$ er identitetselementer, så har vi:
+\begin{align*}
+\V{0}_1
+ &= \V{0}_1 + \V{0}_2 &&\text{(V3), $\V{0}_2$ er identitetselement} \\
+ &= \V{0}_2 + \V{0}_1 &&\text{(V2)} \\
+ &= \V{0}_2           &&\text{(V3), $\V{0}_1$ er identitetselement}
+\end{align*}
+\end{punkt}
+\begin{punkt}
+Fra likheten $\V{u} + \V{v} = \V{u} + \V{w}$ får du, ved å bruke
+aksiom~(V2) på begge sider:
+\[
+\V{v} + \V{u} = \V{w} + \V{u}
+\]
+Vi vet fra aksiom~(V4) at $\V{u}$ har en additiv invers~$-\V{u}$.
+Legg til denne på hver side av likheten over; da får du:
+\[
+(\V{v} + \V{u}) + (-\V{u}) = (\V{w} + \V{u}) + (-\V{u})
+\]
+% Ved å først bruke aksiom~(V3), deretter (V2), (V4), (V2), (V1), får
+% du at $\V{v}$ kan omskrives slik:
+% \begin{align*}
+% \V{v}
+%  &\stackrel{\text{(V3)}}{=} \V{v} + \V{0}
+%   \stackrel{\text{(V2)}}{=} \V{0} + \V{v}
+%   \stackrel{\text{(V4)}}{=} (\V{u} + (-\V{u})) + \V{v} \\
+%  &\stackrel{\text{(V2)}}{=} (-\V{u} + \V{u}) + \V{v}
+%   \stackrel{\text{(V1)}}{=} -\V{u} + (\V{u} + \V{v})
+% \end{align*}
+% På samme måte får du:
+% \begin{align*}
+% \V{w}
+%  &\stackrel{\text{(V3)}}{=} \V{w} + \V{0}
+%   \stackrel{\text{(V2)}}{=} \V{0} + \V{w}
+%   \stackrel{\text{(V4)}}{=} (\V{u} + (-\V{u})) + \V{w} \\
+%  &\stackrel{\text{(V2)}}{=} (-\V{u} + \V{u}) + \V{w}
+%   \stackrel{\text{(V1)}}{=} -\V{u} + (\V{u} + \V{w})
+% \end{align*}
+%---
+%v = v + 0 = 0 + v = (u + -u) + v = (-u + u) + v = -u + (u + v)
+%w = w + 0 = 0 + w = (u + -u) + w = (-u + u) + w = -u + (u + w)
+%----
+Bruk aksiom~(V1) på begge sider:
+\[
+\V{v} + (\V{u} + (-\V{u})) = \V{w} + (\V{u} + (-\V{u}))
+\]
+Bruk aksiom~(V4):
+\[
+\V{v} + \V{0} = \V{w} + \V{0}
+\]
+Bruk aksiom~(V3):
+\[
+\V{v} = \V{w}
+\]
+\end{punkt}
+\begin{punkt}
+Bruk resultatet vist i del~\textbf{b)}.  Hvis to vektorer $\V{v}$
+og~$\V{w}$ begge er additive inverser til~$\V{u}$, så har vi
+\[
+\V{u} + \V{v} = \V{0} = \V{u} + \V{w},
+\]
+og da gir resultatet fra del~\textbf{b)} at
+\[
+\V{v} = \V{w}.
+\]
+\end{punkt}
+\end{losning}
+
+
+\begin{oppgave}
+\end{oppgave}
+
+\begin{losning}
+TODO
+\end{losning}
+
+
+\begin{oppgave}
 \end{oppgave}
 
 \begin{losning}
