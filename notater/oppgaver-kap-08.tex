@@ -21,9 +21,425 @@ vil ha oppgaver med:
 
 
 \begin{oppgave}
+Finn en basis for kolonnerommet, nullrommet og radrommet, regn ut dimensjonen i hvert tilfelle, og sjekk om $\begin{bmatrix}
+0\\
+1\\
+-2\\
+3\\
+-1\\
+-1\\
+1
+\end{bmatrix}$ ligger i nullrommet og om $\begin{bmatrix}
+-1\\
+-1\\
+-1\\
+-1
+\end{bmatrix}$ ligger i kolonnerommet -- hvis spørsmålet gir mening -- for matrisen \ldots
+
+\begin{punkt}
+\ldots$\begin{bmatrix}
+\;0 & 1 & 1 & 0 & 0 & 0 & 1\;\\
+\;0 & 0 & 0 & 0 & 1 & 0 & 1\;\\
+\;0 & 0 & 0 & 0 & 0 & 1 & 1\;\\
+\;0 & 0 & 0 & 0 & 0 & 0 & 0\;
+\end{bmatrix}$ 
+\end{punkt}
+
+\begin{punkt}
+\ldots$\begin{bmatrix}
+	1 & 2 & 3\\
+	2 & 3 & 4\\
+	3 & 4 & 5\\
+	4 & 5 & 6
+	\end{bmatrix}$ 
+\end{punkt}
+
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Matrisen har fire frie variabler og tre pivotelement. Dimensjonen på nullrommet er derfor lik fire, mens dimensjonen på kolonnerommet (og derfor også radrommet) er lik tre. For å finne en basis holder det å finne fire lineært uavhengige vektorer i nullrommet og tre lineært uavhengige vektorer i kolonnerommet (og radrommet).
+
+
+\noindent
+Eksempel på valg av basis: Du kan ta kolonnene og radene som svarer til pivotelementene for å finne basis for kolonne- og radrommet; kolonnene som svarer til pivotelement er alltid lineært uavhengige, og vi har tre slike kolonner. Basis for kolonnerommet: kolonne 2, 5 og 6. Basis for radrommet: rad 1, 2 og 3. Matrisen er allerede radredusert, og ligningene for nullrommet er $$x_1+x_2+x_7=0$$ $$x_5+x_7=0$$ $$x_6+x_7=0.$$ Vi kan ta $x_1$, $x_3$, $x_4$ og~$x_7$ som frie variabler. Da blir en parametrisering av nullrommet
+$$\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+x_4\\
+x_5\\
+x_6\\
+x_7
+\end{bmatrix}=\begin{bmatrix}
+x_1\\
+-x_1-x_7\\
+x_3\\
+x_4\\
+-x_7\\
+-x_7\\
+x_7
+\end{bmatrix}=x_1\begin{bmatrix}
+1\\
+-1\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}+x_3\begin{bmatrix}
+0\\
+0\\
+1\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}+x_4\begin{bmatrix}
+0\\
+0\\
+0\\
+1\\
+0\\
+0\\
+0
+\end{bmatrix}+x_7\begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+-1\\
+-1\\
+1
+\end{bmatrix}.$$ Vi kan f. eks ta $$\begin{bmatrix}
+1\\
+-1\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix},\quad \begin{bmatrix}
+0\\
+0\\
+1\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}, \quad \begin{bmatrix}
+0\\
+0\\
+0\\
+1\\
+0\\
+0\\
+0
+\end{bmatrix}, \quad \begin{bmatrix}
+0\\
+0\\
+0\\
+0\\
+-1\\
+-1\\
+1
+\end{bmatrix}$$ som basis.
+
+Den første vektoren ligger i nullrommet fordi 
+$$\begin{bmatrix}
+\;0 & 1 & 1 & 0 & 0 & 0 & 1\;\\
+\;0 & 0 & 0 & 0 & 1 & 0 & 1\;\\
+\;0 & 0 & 0 & 0 & 0 & 1 & 1\;\\
+\;0 & 0 & 0 & 0 & 0 & 0 & 0\;
+\end{bmatrix}
+\begin{bmatrix}
+0\\
+1\\
+-2\\
+3\\
+-1\\
+-1\\
+1
+\end{bmatrix}=
+\begin{bmatrix}
+0\\
+0\\
+0\\
+0
+\end{bmatrix}.
+ $$
+ 
+Den andre vektoren ligger ikke i kolonnerommet fordi systemet med totalmatrise 
+$$
+\begin{bmatrix}
+\;0 & 1 & 1 & 0 & 0 & 0 & 1 & -1 \;\\
+\;0 & 0 & 0 & 0 & 1 & 0 & 1 & -1 \;\\
+\;0 & 0 & 0 & 0 & 0 & 1 & 1 & -1 \;\\
+\;0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 \;
+\end{bmatrix}
+$$
+umulig kan ha løsning; den siste raden svarer til ligningen $0=-1$.
+\end{punkt}
+
+\begin{punkt}
+
+Ved radredusering ser vi at det er en fri variabel og to pivotelement. Derfor er dimensjonen på kolonnerommet (radrommet) lik to og dimensjonen på nullromet lik en. Du kan finne en basis for alle underrommene på samme måte som i del $\textbf{a)}$.
+
+\noindent
+Husk: Du kan sjekke om svaret ditt er riktig: Du trenger to lineært uavhengige vektorer i kolonnerommet (radrommet) og en ikke-null vektor i nullrommet. Ligger svaret ditt i ønsket underrom? Er vektorene i hvert underrom lineært uavhengige?
+
+Spørsmålet om den første vektoren gir ikke mening. Den andre vektoren ligger i kolonnerommet; du kan sjekke at ligningssystemet med totalmatrise 
+$$
+\begin{bmatrix}
+	1 & 2 & 3 & -1\\
+	2 & 3 & 4 & -1\\
+	3 & 4 & 5 & -1\\
+	4 & 5 & 6 & -1
+	\end{bmatrix}
+$$ har løsning.
+
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Bruk definisjonen av et vektorrom til å vise at $\mathbb{R}^3$ er et vektorrom.
+\end{punkt}
+
+\begin{punkt}
+Finn en basis for $\mathbb{R}^3$. Vis at det faktisk er en basis.
+\end{punkt}
+
+\begin{punkt}
+Bruk definisjonen av et vektorrom til å vise at $\mathbb{P}^2$, mengden av alle annengradspolynom, er et vektorrom med følgende operasjoner:
+$$(a_0+a_1x+a_2x^2)+(b_0+b_1x+b_2x^2)=(a_0+b_0)+(a_1+b_1)x+(a_2+b_2)x^2$$
+$$c\cdot (a_0+a_1x+a_2x^2)=(ca_0)+(ca_1)x+(ca_2)x^2$$
+\end{punkt}
+
+\begin{punkt}
+Vis at $1$, $x$ og $x^2$ er en basis for $\mathbb{P}^2$. 
+\end{punkt}
+
+\begin{punkt}
+Innfør koordinater for denne basisen og sammenlign med $\mathbb{R}^3$. Hva er koordinatene til $1+2x+3x^2$?
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Null-vektoren er $$\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}.$$ Den skalare enheten er tallet $1$. Du kan nå sjekke vektorromaksiomene.
+\end{punkt}
+
+\begin{punkt}
+Vi kan f. eks velge $$\V{e}_1=\begin{bmatrix}
+1\\
+0\\
+0
+\end{bmatrix}, \quad \V{e}_2=\begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix} \quad \V{e}_3=\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}.$$ En basis er -- per definisjon -- en samling som spenner ut og er lineært uavhengig.
+
+\noindent
+Spenner ut: En vilkårlig vektor $$\V{v}=\begin{bmatrix}
+v_1\\
+v_2\\
+v_3
+\end{bmatrix}$$ kan skrives $\V{v}=v_1\V{e}_1+v_2\V{e}_2+v_3\V{e}_3$.
+
+\noindent
+Lineær uavhengig: Dette kan sjekkes på mange måter. La oss bruke definisjonen direkte. Gitt en ligning $$x_1\V{e}_1+x_2\V{e}_2+x_3\V{e}_3=\V{0},$$ så må vi vise at vi kun har triviell løsning: Dersom vi regner ut venstresiden får vi $$\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=\begin{bmatrix}
+0\\
+0\\
+0
+\end{bmatrix}$$ som er nøyaktig det vi ville vise.
+\end{punkt}
+
+\begin{punkt}
+Null-vektoren er null-funksjonen; $\V{0}:\mathbb{R}\rightarrow \mathbb{R}$, $\V{0}(x)=0$. Du kan tenke på dette som polynomet $\V{0}=0+0x+0x^2$. Den skalare enheten er tallet $1$. Du kan nå sjekke vektorromaksiomene.
+\end{punkt}
+
+\begin{punkt}
+Helt lik løsning som illustrert i $\textbf{b)}$ dersom du bytter $\V{e}_1$ med $1$, $\V{e}_2$ med $x$ og $\V{e}_3$ med $x^2$.
+\end{punkt}
+
+\begin{punkt}
+I koordinatene til denne basisen svarer et polynom $a_0+a_1x+a_2x^2$ til vektoren $\begin{bmatrix}
+a_0\\
+a_1\\
+a_2
+\end{bmatrix}.$ Spesielt blir $1+2x+3x^3$ vektoren $\begin{bmatrix}
+1\\
+2\\
+3
+\end{bmatrix}.$ Etter vi har innført koordinater er $\mathbb{P}^2$ helt lik $\mathbb{R}^3$.
+
+
+\noindent
+Merk: Det var dette du brukte for å løse oppgave $\textbf{3.9.}$
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+Avgjør om følgende plan i $\mathbb{R}^3$ er underrom.
+\begin{punkt}$
+\begin{bmatrix}
+1\\
+-1\\
+1
+\end{bmatrix}+t\begin{bmatrix}
+1\\
+2\\
+3
+\end{bmatrix}+
+s\begin{bmatrix}
+2\\
+3\\
+4
+\end{bmatrix},$ $t$ og $s$ frie.
+\end{punkt}
+
+\begin{punkt}$
+\begin{bmatrix}
+1\\
+1\\
+1
+\end{bmatrix}+t\begin{bmatrix}
+1\\
+2\\
+3
+\end{bmatrix}+
+s\begin{bmatrix}
+2\\
+3\\
+4
+\end{bmatrix},$ $t$ og $s$ frie.
+\end{punkt}
+
+\begin{punkt}
+Bruk $\textbf{a)}$ og $\textbf{b)}$ til å avgjøre om vektorene $$\begin{bmatrix}
+1\\
+-1\\
+1
+\end{bmatrix}\text{ og }\begin{bmatrix}
+1\\
+1\\
+1
+\end{bmatrix}$$ligger i kolonnerommet til 
+$$
+\begin{bmatrix}
+1 & 2\\
+2 & 3\\
+3 & 4
+\end{bmatrix}.
+$$
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Ikke underrom; du kan f. eks sjekke at planet ikke går gjennom origo.
+\end{punkt}
+
+\begin{punkt}
+Underrom; du kan f. eks sjekke at $\begin{bmatrix}
+1\\
+1\\
+1
+\end{bmatrix}$ er en lineærkombinasjon av de to andre.
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+1\\
+-1\\
+1
+\end{bmatrix}$ ligger i kolonnerommet (vektoren løfter planet opp fra origo); $\begin{bmatrix}
+1\\
+-1\\
+1
+\end{bmatrix}$ ligger ikke i kolonnerommet (vektoren løfter ikke planet opp fra origo). 
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+Et vektorrom er trivielt hvis det kun består av nullvektoren. La $A$ være en $m\times n$-matrise hvor $m<n$. Avgjør om følgende påstander er sanne.
+\begin{punkt}
+Kolonnerommet er ikke trivielt.
+\end{punkt}
+
+\begin{punkt}
+Nullrommet er ikke trivielt.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Usant. Kolonnerommet er alltid trivielt for null-matrisen.
+\end{punkt}
+
+\begin{punkt}
+Sant. Matrisen $A$ består av $n$ kolonnevektorer i $\mathbb{R}^m$ hvor $n>m$. Kolonnevektorene må derfor være lineært avhengige.
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+La $V$ være et vektorrom, og la $U_1$ og~$U_2$ være to underrom
+av~$V$.  Hvilke av følgende påstander kan vi da konkludere med?
+\begin{punkt}
+Snittet $U_1 \intersect U_2$ er et underrom av~$V$.
+\end{punkt}
+\begin{punkt}
+Unionen $U_1 \union U_2$ er et underrom av~$V$.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+Snittet er et underrom; unionen er ikke nødvendigvis et underrom.
+
+
+\noindent
+Union: Det er mange moteksempler. Du kan f. eks ta to linjer i $\mathbb{R}^2$ som kun krysser hverandre i origo.
+
+\noindent
+Snitt: $U_1$ og $U_2$ inneholder null og er lukket under vektorromsoperasjonene. Husk at $U_1 \cap U_2$ betyr $U_1$ og $U_2$. Null-vektoren ligger i $U_1$ og $U_2$ og derfor i $U_1\cap U_2$; summen av to vektorer i $U_1\cap U_2$ ligger i både $U_1$ og $U_2$ igjen ($U_1$ og $U_2$ er underrom); et skalarmultiplum av en vektor i $U_1\cap U_2$ ligger i både $U_1$ og $U_2$ igjen ($U_1$ og $U_2$ er underrom).
+\end{losning}
+
+
+\begin{oppgave}
+
 \begin{punkt}
 Finn en basis for vektorrommet $\M_{m \times n}$.  Hva er dimensjonen?
 \end{punkt}
+
 \begin{punkt}
 Se på følgende delmengder av~$\M_n$:
 \begin{align*}
@@ -33,13 +449,59 @@ W \colon &\text{alle matriser~$A$ slik at $A = A\tr$}
 \end{align*}
 Hvilke av disse mengdene er underrom av~$\M_n$?
 \end{punkt}
+
 \begin{punkt}
 For de mengdene i del~\textbf{b)} som er underrom, hva er dimensjonen?
 \end{punkt}
 \end{oppgave}
 
 \begin{losning}
-TODO
+\begin{punkt}
+La $M_{i,j}$ være $m\times n$-matrisen som har 1 i posisjon $(i,j)$ og 0 ellers. Samlingen $M_{i,j}$, $i=1,\dots m$, $j=1,\dots n$ er en basis. Dimensjonen er antall element i en basis: $mn$.
+\end{punkt}
+
+\begin{punkt}
+$U$ og $W$ er underrom; $V$ er ikke.
+\end{punkt}
+
+\begin{punkt}
+\noindent
+Basis for $U$: Matrisene $M_{i,i}$ for $i=1,\dots,n$.
+
+\noindent
+Dimensjonen til $U$: $n$
+
+\noindent
+Basis for $W$: Matrisene $M_{i,j}+M_{j,i}$ for $i\neq j$ og $M_{i,i}$ for $i=j$.
+
+\noindent
+Hint: Element $(i,j)$ må være likt som element $(j,i)$ for symmetriske matriser, derfor inneholder $M_{i,j}+M_{j,i}$ akkurat den informasjonen du trenger.
+
+
+\noindent 
+Dimensjonen til $W$: $1+2+3+\dots +n=\frac{n(n+1)}{2}$ (vi trenger bare å telle elementene langs og under diagonalen).
+\end{punkt}
+
+
+\end{losning}
+
+
+\begin{oppgave}
+La $\lambda$ være en egenverdi til en $n\times n$-matrise $A$. Vis at egenrommet til $\lambda$ er et underrom av $\mathbb{R}^n$.
+\end{oppgave}
+
+\begin{losning}
+Det holder å vise at egenrommet til $\lambda$ er lukket under vektorromsoperasjonene og inneholder null-vektoren.
+
+\noindent
+Null-vektoren: Dette følger direkte fra definisjonen (egenrommet til $\lambda$ består av egenvektorene og null-vektoren).
+
+
+\noindent
+Addisjon: Hvis $\V{x}$ og $\V{y}$ er to vektorer i egenrommet til $\lambda$ har vi per definisjon at $A\V{x}=\lambda \V{x}$ og $A\V{y}A=\lambda \V{y}$ (i spesialtilfellet $\V{0}$ har vi alltid $A\V{0}=\V{0}=\lambda \V{0}$). Vi må vise at $\V{x}+\V{y}$ er en egenvektor til $\lambda$: $$A(\V{x}+\V{y})=A\V{x}+A\V{y}=\lambda \V{x}+ \V{y}=\lambda(\V{x}+\V{y}),$$ $\V{x}+\V{y}$ er altså i egenrommet.
+
+\noindent
+Skalarmultiplikasjon: Hvis $\V{x}$ er i egenrommet til $\lambda$ og $c$ er en konstant har vi at $$A(c\lambda\V{x})=c(A \V{x})=c(\lambda \V{x})=\lambda(c \V{x}),$$ som betyr at $c\V{x}$ ligger i egenrommet til $\lambda$.
 \end{losning}
 
 
@@ -59,7 +521,14 @@ $\C(E)$, der $E$ er en delmengde av~$D$?
 \end{oppgave}
 
 \begin{losning}
-TODO
+\begin{punkt}
+For å svare på spørsmålet må vi utforske om den finnes konstanter $a$, $b$ og $c$ slik at $$a\cos(x)+b\sin(x)+c\tan(x)=0$$ for alle $x$ i $D$. Velg $x=0$ for å se at $a=0$ ettersom $\sin(0)=0$ og $\tan(0)=0$. Vi har $\tan(x)=\frac{\sin(x)}{\cos(x)}$ som gir ligningen $$b\sin(x)=-c\frac{\sin(x)}{\cos(x)}.$$ Sinus er aldri null på $D$ slik at vi kan stryke $\sin(x)$ og få ligningen $$\cos(x)=\frac{-c}{b}.$$ Men Cosinus er helt klart ikke konstant på $D$, så det kan ikke finnes noen ikke-trivielle løsninger. Vektorene er altså lineært uavhengige.
+\end{punkt}
+
+\begin{punkt}
+Ja. Eksempel på løsning:La $E$ være ett punkt i $D$ (du kan velge dette punktet vilkårlig). En funksjon fra ett punkt til $\mathbb{R}$ er jo bare et tall i $\mathbb{R}$. Vektorrommet $\C(E)$ er altså bare vektorrommet $\mathbb{R}$. Tre vektorer (tall) i $\mathbb{R}$ er selvfølgelig lineært avhengige.
+\end{punkt}
+
 \end{losning}
 
 
@@ -72,7 +541,7 @@ enn to?
 \end{oppgave}
 
 \begin{losning}
-TODO
+Vektorrommet må bestå av ett element; null-vektoren. Med en gang det finnes en ikke-null vektor $\V{v}$ får vi uendelige mange vektorer; $t\V{v}$ hvor $t$ er et tall.
 \end{losning}
 
 
@@ -101,26 +570,13 @@ Er $V$ et vektorrom?
 \begin{losning}
 Ja, $V$ er et vektorrom.
 
-TODO: forklar hvorfor hvert aksiom holder.  Få med hva som er additiv
-identitet ($\boks{1}$) og invers ($\boks{1/a}$).
+Additiv identitet: $\boks{1}$, Additiv invers: $\boks{1/a}$.
+
+TODO: forklar hvorfor hvert aksiom holder.
 \end{losning}
 
 
-\begin{oppgave}
-La $V$ være et vektorrom, og la $U_1$ og~$U_2$ være to underrom
-av~$V$.  Hvilke av følgende påstander kan vi da konkludere med?
-\begin{punkt}
-Snittet $U_1 \intersect U_2$ er et underrom av~$V$.
-\end{punkt}
-\begin{punkt}
-Unionen $U_1 \union U_2$ er et underrom av~$V$.
-\end{punkt}
-\end{oppgave}
 
-\begin{losning}
-Snittet er et underrom; unionen er ikke nødvendigvis et underrom.
-TODO: detaljer.
-\end{losning}
 
 
 \begin{oppgave}
@@ -218,18 +674,66 @@ og da gir resultatet fra del~\textbf{b)} at
 
 
 \begin{oppgave}
+
+La $\mathbb{R}^\infty$ være vektorrommet av uendelig lange strenger med tall, $$(a_0,a_1,a_2,\dots),$$ hvor kun et endelig antall komponenter er forskjellig fra null. Operasjonene er gitt punktvis:
+$$(a_0,a_1,\dots)+(b_0,b_1,\dots)=(a_0+b_0,a_1+b_1,\dots)$$
+$$c(a_0,a_1,\dots)={(ca_0,ca_1,\dots)}.$$ La $\V{e}_n$ være strengen med tallet 1 i posisjon $n$ og 0 ellers, eks: $$\V{e}_2=(0,1,0,0,0,\dots).$$
+
+\begin{punkt}
+Vis at $\mathbb{R}^\infty$ ikke er et endeligdimensjonalt vektorrom.
+
+\noindent
+Hint: Du må vise at du kan finne en undermengde av $\mathbb{R}^\infty$ som ikke er utspent av et endelig antall vektorer.
+\end{punkt}
+
+\begin{punkt}
+Vis at $\V{e}_1,\V{e}_2,\V{e}_3,\dots$ er en basis for $\mathbb{R}^\infty$.
+\end{punkt}
+
+\begin{punkt}
+La $\mathbb{P}$ være vektorrommet av polynomer (av vilkårlig grad). Operasjonene er tilsvarende som for $\mathbb{P}^2$; vi legger sammen koeffisienter foran like potenser av $x$ og multipliserer en skalar med hver koeffisient. Vis at $1,x,x^2,x^3\dots$ er en basis for $\mathbb{P}$. Bruk denne basisen til å innføre koordinater. Hvilket vektorrom er dette?
+\end{punkt}
+
+
+\begin{punkt}
+Vis at $\C(\mathbb{R})$ er uendeligdimensjonalt.
+
+\noindent
+Hint: Del \textbf{c)}.
+\end{punkt}
+
 \end{oppgave}
 
 \begin{losning}
-TODO
+
+\begin{punkt}
+Samlingen $\V{e}_1,\V{e}_2,\V{e}_3,\dots$ kan ikke genereres av et endelig antall vektorer. Derfor finnes det ikke et endelig antall vektorer som spenner ut $\mathbb{R}^\infty$.
+
+\noindent
+Grunn: Et endelig antall vektorer, $\V{v}_1,\V{v}_2,\dots,\V{v}_k$, kan kun påvirke komponenter opp til en viss posisjon $N$ (fordi alle vektorene bare har et endelig antall komponenter ulik null). Derfor kan ikke $\V{e}_{N+1}$ -- eller mer generelt $\V{e}_M$ hvor $M>N$ -- skrives som en lineærkombinasjon av $\V{v}_1,\V{v}_2,\dots,\V{v}_k$.
+\end{punkt}
+
+\begin{punkt}
+Vi må vise at $\V{e}_1,\V{e}_e,\V{e}_3,\dots$ 1) spenner ut og 2) er lineært uavhengige.
+
+\noindent
+1) En vektor kan skrives som en lineærkombinasjon av $\V{e}_k$'ene som svarer til komponentene som er ulik null. Matematisk: En vektor i $\mathbb{R}^\infty$ er på formen $(a_0,a_1,\ldots)$ hvor kun et endelig antall $a_k\neq 0$. Vi har altså et endelig antall komponenter $a_{i_1},a_{i_2}\dots,a_{i_n}$ som er forskjellig fra null. Nå ser vi at $$(a_0,a_1,\ldots)=a_{i_1}\V{e}_{i_1}+a_{i_2}\V{e}_{i_2}+\dots+a_{i_n}\V{e}_{i_n}.$$ En vilkårlig vektor kan altså skrives som en lineærkombinasjon av $\V{e}_1,\V{e}_e,\V{e}_3,\dots$, som er akkurat det vi ønsket å vise.
+
+\noindent 
+2) Vi må sjekke at for en vikårlig endelig delmengde $\V{e}_{i_1},\V{e}_{i_2},\dots\V{e}_{i_n}$, så har ligningen $$x_{i_1}\V{e}_{i_1}+x_{i_2}\V{e}_{i_2}\dots+x_{i_n}\V{e}_{i_n}=(0,0,0,\dots)$$ kun triviell løsning. Men denne ligningen betyr akkurat at alle $x_{i_k}$'ene er lik null.
+\end{punkt}
+
+
+\begin{punkt}
+Argumentet er helt likt som i del $\textbf{b)}$ hvis vi bytter $\V{e}_1$ med 1, $\V{e}_2$ med $x$, $\V{e}_3$ med $x^2$,\ldots I disse koordinatene får vi vektorrommet $\mathbb{R}^\infty$.
+\end{punkt}
+
+\begin{punkt}
+Polynomer er kontinuerlige funksjoner, og $\mathbb{P}$ er et underrom av $\C(\mathbb{R})$. Vi har sett at dette underrommet er uendeligdimensjonalt, derfor må hele rommet være uendeligdimensjonalt.
+\end{punkt}
+
 \end{losning}
 
 
-\begin{oppgave}
-\end{oppgave}
-
-\begin{losning}
-TODO
-\end{losning}
 
 
