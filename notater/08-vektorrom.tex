@@ -4,4 +4,148 @@
 \label{ch:vektorrom}
 
 
+
+Nå har vi lært ganske mye lineær algebra.  Vi startet med lineære
+likningssystemer, og så hvordan disse kan løses ved gausseliminasjon.
+
+% TODO intro
+
+\section*{Vektorer slik vi kjenner dem}
+
+% TODO om \R^n
+% tegninger \R^0, \R^1, \R^2, ...
+% vektor: pil/punkt/koordinater (kolonnevektor)
+
+\section*{Hva kan vi gjøre med vektorer?}
+
+% TODO addisjon og skalarmultiplikasjon
+
+\section*{Aksiomer for vektorrom}
+
+% TODO beskriv alle aksiomene
+
+\onecolumn % TODO: skulle vært flytende figur, som plasseres på egen side
+\begin{center}
+\textbf{Vektorromsaksiomene}
+
+\begin{tabular}{rlll}
+\multirow{4}{*}{aksiomer for addisjon $\left\{\rule{10pt}{0pt}\right.$} &
+  (V1) & For alle vektorer $\V{u}$, $\V{v}$ og~$\V{w}$ er $(\V{u} + \V{v}) + \V{w} = \V{u} + (\V{v} + \V{w})$
+       & \emph{Vektoraddisjon er assosiativ} \\
+& (V2) & For alle vektorer $\V{u}$ og~$\V{v}$ er $\V{u} + \V{v} = \V{v} + \V{u}$
+       & \emph{Vektoraddisjon er kommutativ} \\
+\end{tabular}
+\end{center}
+\twocolumn
+
+\section*{Definisjonen av vektorrom}
+
+% TODO tekst
+
+\begin{defn} % TODO skrives bedre
+Et \defterm{vektorrom} er en mengde~$V$ sammen med to operasjoner:
+\begin{align*}
+\text{addisjon av vektorer: } & \V{u} + \V{v} \\
+\text{skalarmultiplikasjon: } & c \cdot \V{u}
+\end{align*}
+Addisjonen skal være definert for alle elementer $\V{u}$ og~$\V{v}$
+i~$V$, og skalarmultiplikasjonen for alle skalarer~$c$ og alle $\V{u}$
+i~$V$.  Resultatet av operasjonene skal alltid være et element i~$V$.
+Mengden~$V$ og de to operasjonene må oppfylle vektorromsaksiomene
+(V1)--(V8).
+
+Elementene i~$V$ kalles \defterm{vektorer}.
+\end{defn}
+
+% TODO tekst
+
+\begin{ex}
+For hver $n \ge 0$ har vi at $\R^n$ er et vektorrom.
+\end{ex}
+
+
+\section*{Eksempler på vektorrom}
+
+% TODO eksempler på vektorrom:
+% underrom av \R^2, \Sp (1,1)
+% \C(D) (med oppg/eks)
+% \C^\infty(D)?
+% polynomfunksjoner?
+% alle funksjoner D \to \R?
+% \R^\N (med oppg/eks)
+% \M_{m \times n}, \M_n
+
+
+\section*{Underrom}
+
+\begin{defn}
+Et \defterm{underrom} av et vektorrom~$V$ er en delmengde
+$U \subseteq V$ som i seg selv utgjør et vektorrom, med addisjon og
+skalarmultiplikasjon definert på samme måte som i~$V$.
+\end{defn}
+
+% TODO eks \Sp(1,1) i \R^2
+
+% TODO eks (a,1) i \R^2
+
+\begin{thm}
+\label{thm:underrom}
+% TODO
+\end{thm}
+
+\begin{thm}
+\label{thm:underrom-sp}
+En mengde $\Sp \{ \V{v}_1, \V{v}_2, \ldots, \V{v}_t \}$ utspent av vektorer
+i et vektorrom~$V$ er alltid et underrom av~$V$.
+\end{thm}
+
+
+\section*{Endeligdimensjonale og uendeligdimensjonale vektorrom}
+
+\begin{defn}
+% TODO endeligdimensjonal/uendeligdim
+\end{defn}
+
+% TODO eks \R^n
+
+% TODO eks \R^\N (eller annet, for eksempel polynomer?)
+
+
+\section*{Basis}
+
+% TODO def basis
+
+% TODO eks basiser for \R^3 eller \R^2
+
+% TODO standardbasis \R^n
+
+% TODO thm hver vektor kan skrives entydig som lineærkombinasjon av basisvektorene,
+%      def koordinater mhp basis, med notasjon
+
+% TODO eks, tegning med skrå koordinater i \R^2
+
+
+% TODO thm redusere utspennende mengde til basis
+
+% TODO thm alle end.dim. vektorrom har basis (følger direkte fra forrige thm)
+
+
+% TODO thm underrom av end.dim. er end.dim.
+
+% TODO thm hver lin. uavh. mengde kan utvides til basis
+
+
+\section*{Dimensjon}
+
+% TODO thm gitt basis B med |B|=n, da er hver mengde med mer enn n elementer lin. avhengig
+
+% TODO thm hver basis for samme (end.dim.) vektorrom har samme størrelse (direkte fra forrige thm)
+
+% TODO def dimensjon, notasjon dim V
+
+
+
+% TODO: radrom, kolonnerom, nullrom: her eller i eget kapittel?
+
+
 \kapittelslutt
