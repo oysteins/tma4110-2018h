@@ -855,6 +855,52 @@ en basis for~$V$, har vi altså
 % TODO def dimensjon, notasjon dim V
 
 
+\section*{Vektorrom tilknyttet en matrise}
+
+Hittil i dette kapitlet har vi vært veldig generelle og abstrakte, og
+ting har kanskje blitt litt høytflyvende.  Vi avslutter kapitlet med
+noe litt mer håndfast, der vi ikke trenger å tenke på helt generelle
+vektorrom, men bare på underrom av~$\R^n$.
+
+Hvis $A$ er en $m \times n$-matrise, så er det visse underrom
+av~$\R^n$ og av~$\R^m$ som er nært knyttet til~$A$, og det er noen
+interessante sammenhenger mellom disse rommene.
+
+\medskip\noindent\textbf{Nullrommet. }%
+Vi definerer \defterm{nullrommet} til en $m \times n$-matrise~$A$ som
+løsningsmengden til likningen $A \x = \0$, altså delmengden
+\[
+\Null A = \{ \x \in \R^n \mid A \x = \0 \}
+\]
+av $\R^n$.  I utgangspunktet er dette bare en mengde av vektorer
+i~$\R^n$, men vi kan raskt finne ut at det faktisk er et underrom ved
+å sjekke at det oppfyller de tre kriteriene i teorem~\ref{thm:underrom}:
+\begin{enumerate}
+\item Vi ser at nullvektoren er i $\Null A$, siden den er en løsning
+av likningen $A \x = \0$.
+\item Hvis $\u$ og~$\v$ er vektorer i $\Null A$, så har vi at
+$A \u = \0$ og $A \v = \0$.  Da får vi
+\[
+A (\u + \v) = A \u + A \v = \0 + \0 = \0,
+\]
+som betyr at summen $\u + \v$ også er i $\Null A$.
+\item Hvis $\u$ er i $\Null A$ og $c$ er en skalar, så får vi
+\[
+A \cdot (c \cdot \u) = c \cdot (A \u) = c \cdot \0 = \0,
+\]
+slik at $c \cdot \u$ også er i $\Null A$.
+\end{enumerate}
+
+\medskip\noindent\textbf{Kolonnerommet. }%
+Vi definerer \defterm{kolonnerommet} til en $m \times n$-matrise
+\[
+A = \begin{bmatrix} \V{a}_1 & \V{a}_2 & \cdots & \V{a}_n \end{bmatrix}
+\]
+som underrommet av $\R^m$ utspent av kolonnene i~$A$:
+\[
+\Col A = \Sp \{ \V{a}_1, \V{a}_2, \ldots, \V{a}_n \}
+\]
+
 
 % TODO: radrom, kolonnerom, nullrom: her eller i eget kapittel?
 
