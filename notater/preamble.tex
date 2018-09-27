@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
 \usepackage[total={17cm,27cm}]{geometry}
 \usepackage[table]{xcolor}
 %\usepackage{tabularx}
@@ -12,6 +13,7 @@
 \usepackage{ifthen}
 \usepackage{textgreek}
 \usepackage{multirow}
+\usepackage{placeins}
 
 %\usepackage{sectsty}
 \setsecheadstyle{\bfseries\large}
@@ -22,6 +24,7 @@
 \usetikzlibrary{arrows.meta}
 \def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
     { \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+\usepackage{pgfornament}
 
 \newcommand{\defterm}[1]{\emph{#1}}
 
@@ -32,6 +35,8 @@
 
 \newcommand{\M}{\mathcal{M}} % vektorrom av matriser
 \newcommand{\C}{\mathcal{C}} % vektorrom av kontinuerlige funksjoner
+\renewcommand{\P}{\mathcal{P}} % vektorrom av polynomer
+\newcommand{\B}{\mathscr{B}} % basis
 
 \newcommand{\abs}[1]{|#1|}
 \newcommand{\intersect}{\cap}
@@ -39,14 +44,23 @@
 
 \newcommand{\roweq}{\sim}
 \DeclareMathOperator{\Sp}{Sp}
-
 \newcommand{\tr}{^\top}
+\newcommand{\koord}[2]{[\,{#1}\,]_{#2}} % koordinater mhp basis
 
 \newcommand{\V}[1]{\mathbf{#1}}
 \newcommand{\vv}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\vvS}[2]{\left[ \begin{smallmatrix} #1 \\ #2 \end{smallmatrix} \right]}
 \newcommand{\vvv}[3]{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}}
 \newcommand{\vvvv}[4]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \end{bmatrix}}
+\newcommand{\vvvvv}[5]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \\ #5 \end{bmatrix}}
 \newcommand{\vn}[2]{\vvvv{#1_1}{#1_2}{\vdots}{#1_#2}}
+
+\renewcommand{\u}{\V{u}}
+\renewcommand{\v}{\V{v}}
+\newcommand{\w}{\V{w}}
+\renewcommand{\b}{\V{b}}
+\newcommand{\x}{\V{x}}
+\newcommand{\0}{\V{0}}
 
 \newenvironment{amatrix}[1]{% "augmented matrix"
   \left[\begin{array}{*{#1}{c}|c}
