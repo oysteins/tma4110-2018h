@@ -3,38 +3,73 @@
 
 
 \begin{oppgave}
-Finn en basis for kolonnerommet, nullrommet og radrommet, regn ut dimensjonen i hvert tilfelle, og sjekk om $\begin{bmatrix}
-0\\
-1\\
--2\\
-3\\
--1\\
--1\\
-1
-\end{bmatrix}$ ligger i nullrommet og om $\begin{bmatrix}
--1\\
--1\\
--1\\
--1
-\end{bmatrix}$ ligger i kolonnerommet -- hvis spørsmålet gir mening -- for matrisen \ldots
-
-\begin{punkt}
-\ldots$\begin{bmatrix}
+La $A$ og~$B$ være følgende matriser:
+\[
+A =
+\begin{bmatrix}
 \;0 & 1 & 1 & 0 & 0 & 0 & 1\;\\
 \;0 & 0 & 0 & 0 & 1 & 0 & 1\;\\
 \;0 & 0 & 0 & 0 & 0 & 1 & 1\;\\
 \;0 & 0 & 0 & 0 & 0 & 0 & 0\;
-\end{bmatrix}$ 
-\end{punkt}
-
+\end{bmatrix}
+\qquad
+B =
+\begin{bmatrix}
+ 1 & 2 & 3\\
+ 2 & 3 & 4\\
+ 3 & 4 & 5\\
+ 4 & 5 & 6
+\end{bmatrix}
+\]
 \begin{punkt}
-\ldots$\begin{bmatrix}
-	1 & 2 & 3\\
-	2 & 3 & 4\\
-	3 & 4 & 5\\
-	4 & 5 & 6
-	\end{bmatrix}$ 
+Finn en basis for kolonnerommet, nullrommet og radrommet til~$A$, og
+finn dimensjonen til hvert av disse rommene.
 \end{punkt}
+\begin{punkt}
+Gjør det samme for matrisen~$B$.
+\end{punkt}
+\begin{punkt}
+Ligger vektoren $(0, 1, -2, 3, -1, -1, 1)$ i nullrommet til~$A$?
+\end{punkt}
+\begin{punkt}
+Ligger vektoren $(-1, -1, -1, -1)$ i kolonnerommet til~$A$?  Ligger den
+i kolonnerommet til~$B$?
+\end{punkt}
+% I hver del: Finn en basis for kolonnerommet, nullrommet og radrommet
+% til~$A$, finn dimensjonen til hvert av disse rommene, og sjekk om
+% vektoren
+% $\begin{bmatrix}
+% 0\\
+% 1\\
+% -2\\
+% 3\\
+% -1\\
+% -1\\
+% 1
+% \end{bmatrix}$ ligger i nullrommet og om $\begin{bmatrix}
+% -1\\
+% -1\\
+% -1\\
+% -1
+% \end{bmatrix}$ ligger i kolonnerommet -- hvis spørsmålet gir mening -- for matrisen \ldots
+
+% \begin{punkt}
+% \ldots$\begin{bmatrix}
+% \;0 & 1 & 1 & 0 & 0 & 0 & 1\;\\
+% \;0 & 0 & 0 & 0 & 1 & 0 & 1\;\\
+% \;0 & 0 & 0 & 0 & 0 & 1 & 1\;\\
+% \;0 & 0 & 0 & 0 & 0 & 0 & 0\;
+% \end{bmatrix}$ 
+% \end{punkt}
+
+% \begin{punkt}
+% \ldots$\begin{bmatrix}
+% 	1 & 2 & 3\\
+% 	2 & 3 & 4\\
+% 	3 & 4 & 5\\
+% 	4 & 5 & 6
+% 	\end{bmatrix}$ 
+% \end{punkt}
 
 
 \end{oppgave}
@@ -128,8 +163,18 @@ x_7
 -1\\
 1
 \end{bmatrix}$$ som basis.
+\end{punkt}
 
-Den første vektoren ligger i nullrommet fordi 
+\begin{punkt}
+
+Ved radredusering ser vi at det er en fri variabel og to pivotelement. Derfor er dimensjonen på kolonnerommet (radrommet) lik to og dimensjonen på nullromet lik en. Du kan finne en basis for alle underrommene på samme måte som i del $\textbf{a)}$.
+
+\noindent
+Husk: Du kan sjekke om svaret ditt er riktig: Du trenger to lineært uavhengige vektorer i kolonnerommet (radrommet) og en ikke-null vektor i nullrommet. Ligger svaret ditt i ønsket underrom? Er vektorene i hvert underrom lineært uavhengige?
+\end{punkt}
+
+\begin{punkt}
+Vektoren ligger i nullrommet fordi 
 $$\begin{bmatrix}
 \;0 & 1 & 1 & 0 & 0 & 0 & 1\;\\
 \;0 & 0 & 0 & 0 & 1 & 0 & 1\;\\
@@ -152,8 +197,10 @@ $$\begin{bmatrix}
 0
 \end{bmatrix}.
  $$
- 
-Den andre vektoren ligger ikke i kolonnerommet fordi systemet med totalmatrise 
+\end{punkt}
+
+\begin{punkt}
+Vektoren ligger ikke i kolonnerommet til~$A$ fordi systemet med totalmatrise 
 $$
 \begin{bmatrix}
 \;0 & 1 & 1 & 0 & 0 & 0 & 1 & -1 \;\\
@@ -163,16 +210,8 @@ $$
 \end{bmatrix}
 $$
 umulig kan ha løsning; den siste raden svarer til ligningen $0=-1$.
-\end{punkt}
 
-\begin{punkt}
-
-Ved radredusering ser vi at det er en fri variabel og to pivotelement. Derfor er dimensjonen på kolonnerommet (radrommet) lik to og dimensjonen på nullromet lik en. Du kan finne en basis for alle underrommene på samme måte som i del $\textbf{a)}$.
-
-\noindent
-Husk: Du kan sjekke om svaret ditt er riktig: Du trenger to lineært uavhengige vektorer i kolonnerommet (radrommet) og en ikke-null vektor i nullrommet. Ligger svaret ditt i ønsket underrom? Er vektorene i hvert underrom lineært uavhengige?
-
-Spørsmålet om den første vektoren gir ikke mening. Den andre vektoren ligger i kolonnerommet; du kan sjekke at ligningssystemet med totalmatrise 
+Vektoren ligger i kolonnerommet til~$B$; du kan sjekke at ligningssystemet med totalmatrise 
 $$
 \begin{bmatrix}
 	1 & 2 & 3 & -1\\
@@ -181,7 +220,6 @@ $$
 	4 & 5 & 6 & -1
 	\end{bmatrix}
 $$ har løsning.
-
 \end{punkt}
 
 \end{losning}
@@ -190,11 +228,15 @@ $$ har løsning.
 \begin{oppgave}
 
 \begin{punkt}
-Finn en basis for $\mathcal{P}_2$. Vis at det faktisk er en basis. Mer generelt, skriv ned en basis for $\mathcal{P}_n$
+Finn en basis for $\P_2$. Vis at det faktisk er en basis.
 \end{punkt}
 
 \begin{punkt}
-Hva er koordinatene til $1+2x+3x^2$ i basisen du fant for $\mathcal{P}_2$?
+Hva er koordinatene til $1+2x+3x^2$ i basisen du fant for $\P_2$?
+\end{punkt}
+
+\begin{punkt}
+Finn en basis for $\P_n$, der $n \ge 0$.
 \end{punkt}
 
 \end{oppgave}
@@ -233,58 +275,37 @@ Merk: Du innførte koordinater for å løse oppgave $\textbf{3.9.}$
 
 
 \begin{oppgave}
-Avgjør om følgende plan i $\mathbb{R}^3$ er underrom.
-\begin{punkt}$
-\begin{bmatrix}
-1\\
--1\\
-1
-\end{bmatrix}+t\begin{bmatrix}
-1\\
-2\\
-3
-\end{bmatrix}+
-s\begin{bmatrix}
-2\\
-3\\
-4
-\end{bmatrix},$ $t$ og $s$ frie.
-\end{punkt}
-
-\begin{punkt}$
-\begin{bmatrix}
-1\\
-1\\
-1
-\end{bmatrix}+t\begin{bmatrix}
-1\\
-2\\
-3
-\end{bmatrix}+
-s\begin{bmatrix}
-2\\
-3\\
-4
-\end{bmatrix},$ $t$ og $s$ frie.
-\end{punkt}
-
+La $\V{a}_1$, $\V{a}_2$, $\u$ og~$\v$ være følgende vektorer i~$\R^3$:
+\[
+\V{a}_1 = \vvv{1}{2}{3}
+\quad
+\V{a}_2 = \vvv{2}{3}{4}
+\quad
+\u = \vvv{1}{-1}{1}
+\quad
+\v = \vvv{1}{1}{1}
+\]
 \begin{punkt}
-Bruk $\textbf{a)}$ og $\textbf{b)}$ til å avgjøre om vektorene $$\begin{bmatrix}
-1\\
--1\\
-1
-\end{bmatrix}\text{ og }\begin{bmatrix}
-1\\
-1\\
-1
-\end{bmatrix}$$ligger i kolonnerommet til 
-$$
-\begin{bmatrix}
-1 & 2\\
-2 & 3\\
-3 & 4
-\end{bmatrix}.
-$$
+Se på planet i~$\R^3$ som består av alle vektorer på formen
+\[
+\u + s \cdot \V{a}_1 + t \cdot \V{a}_2
+\]
+der $s$ og~$t$ er vilkårlige tall.  Er dette planet et underrom
+av~$\R^3$?
+\end{punkt}
+\begin{punkt}
+Er planet som består av alle vektorer på formen
+\[
+\v + s \cdot \V{a}_1 + t \cdot \V{a}_2
+\]
+et underrom av~$\R^3$?
+\end{punkt}
+\begin{punkt}
+La $A = \begin{bmatrix} \V{a}_1 & \V{a}_2 \end{bmatrix}$
+være matrisen som har $\V{a}_1$ og~$\V{a}_2$ som kolonner.
+Ligger vektoren~$\u$ i kolonnerommet til denne matrisen?
+Hva med~$\v$?
+Sammenlign med det du fant ut i del~$\textbf{a)}$ og~$\textbf{b)}$.
 \end{punkt}
 \end{oppgave}
 
@@ -320,13 +341,18 @@ Prøv gjerne å tegne situasjonen i denne oppgaven.
 \end{losning}
 
 \begin{oppgave}
-Et vektorrom er trivielt hvis det kun består av nullvektoren. La $A$ være en $m\times n$-matrise hvor $m<n$. Avgjør om følgende påstander er sanne.
+% Vi kan si at et vektorrom er \emph{trivielt} hvis det kun består av
+% nullvektoren.
+La $A$ være en $m\times n$-matrise hvor $m<n$.
+Hvilke av følgende påstander kan vi da konkludere med?
 \begin{punkt}
-Kolonnerommet er ikke trivielt.
+%Kolonnerommet til~$A$ er ikke trivielt.
+$\dim \Col A > 0$
 \end{punkt}
 
 \begin{punkt}
-Nullrommet er ikke trivielt.
+%Nullrommet til~$A$ er ikke trivielt.
+$\dim \Null A > 0$
 \end{punkt}
 
 \end{oppgave}
@@ -334,11 +360,12 @@ Nullrommet er ikke trivielt.
 \begin{losning}
 
 \begin{punkt}
-Usant. Kolonnerommet er alltid trivielt for null-matrisen.
+Usant.  For eksempel får vi $\dim \Col A = 0$ hvis $A$ er nullmatrisen.
 \end{punkt}
 
 \begin{punkt}
-Sant. Matrisen $A$ består av $n$ kolonnevektorer i $\mathbb{R}^m$ hvor $n>m$. Kolonnevektorene må derfor være lineært avhengige.
+Sant. Matrisen $A$ består av $n$ kolonnevektorer i $\R^m$ hvor $n>m$.
+Kolonnevektorene må derfor være lineært avhengige.
 \end{punkt}
 
 \end{losning}
@@ -360,7 +387,7 @@ Snittet er et underrom; unionen er ikke nødvendigvis et underrom.
 
 
 \noindent
-Union: Det er mange moteksempler. Du kan f. eks ta to linjer i $\mathbb{R}^2$ som kun krysser hverandre i origo.
+Union: Det er mange moteksempler. Du kan f. eks ta to linjer i $\R^2$ som kun krysser hverandre i origo.
 
 \noindent
 Snitt: $U_1$ og $U_2$ inneholder null og er lukket under vektorromsoperasjonene. Husk at $U_1 \cap U_2$ betyr $U_1$ og $U_2$. Null-vektoren ligger i $U_1$ og $U_2$ og derfor i $U_1\cap U_2$; summen av to vektorer i $U_1\cap U_2$ ligger i både $U_1$ og $U_2$ igjen ($U_1$ og $U_2$ er underrom); et skalarmultiplum av en vektor i $U_1\cap U_2$ ligger i både $U_1$ og $U_2$ igjen ($U_1$ og $U_2$ er underrom).
@@ -423,11 +450,20 @@ Dimensjonen til $W$: $1+2+3+\dots +n=\frac{n(n+1)}{2}$ (vi trenger bare å telle
 \begin{oppgave}
 
 \begin{punkt}
-Lag et diagram som forklarer hvordan $\mathcal{P}_n$, $\mathcal{P}$, $\C (\mathbb{R})$, $\C^n(\mathbb{R})$ og~$\C^\infty(\mathbb{R})$ er underrom av hverandre.
+Forklar hvilke av vektorrommene
+\begin{align*}
+& \P_n \quad \text{(for forskjellige~$n$)} \\
+& \P \\
+& \C(\R) \\
+& \C^n(\R) \quad \text{(for forskjellige~$n$)} \\
+& \C^\infty(\R)
+\end{align*}
+som er underrom av hverandre.
 \end{punkt}
 
 \begin{punkt}
-Hvilke av vektorrommene i $\textbf{a)}$ er endeligdimensjonale? Hva med uendeligdimensjonale?
+Hvilke av vektorrommene i $\textbf{a)}$ er endeligdimensjonale?
+Hvilke er uendeligdimensjonale?
 \end{punkt}
 
 
@@ -436,11 +472,29 @@ Hvilke av vektorrommene i $\textbf{a)}$ er endeligdimensjonale? Hva med uendelig
 \begin{losning}
 
 \begin{punkt}
-$$\mathcal{P}_n \subset \mathcal{P} \subset \C^\infty(\mathbb{R}) \subset \C^n(\mathbb{R}) \subset \C (\mathbb{R});$$ $n$-gradspolynomer er spesielt polynom; polynom er spesielt uendelig mange ganger deriverbare; uendelig mange ganger deriverbare funksjoner er spesielt deriverbare $n$ ganger; $n$ ganger deriverbare funksjoner er spesielt kontinuerlige (deriverbar impliserer kontinuitet).
+Vektorrommene~$\P_n$, for forskjellige~$n$, er underrom av hverandre:
+\[
+\P_0 \subset \P_1 \subset \P_2 \subset \cdots
+\]
+På samme måte er vektorrommene~$\C^n(\R)$, for forskjellige~$n$, også
+underrom av hverandre:
+\[
+\C^1(\R) \subset \C^2(\R) \subset \C^3(\R) \subset \cdots
+\]
+For hver~$n$ har vi:
+\[
+\P_n \subset \P \subset \C^\infty(\R) \subset \C^n(\R) \subset \C(\R)
+\]
+Alle $n$-tegradspolynomer er polynomer;
+alle polynomer er uendelig mange ganger deriverbare;
+alle uendelig mange ganger deriverbare funksjoner er deriverbare $n$ ganger;
+alle $n$ ganger deriverbare funksjoner er kontinuerlige (deriverbar impliserer kontinuitet).
 \end{punkt}
 
 \begin{punkt}
-Du har vist at $\mathcal{P}_n$ har en endelig basis tidligere, og er derfor endeligdimensjonalt. Vi har sett at $\mathcal{P}$ er uendeligdimensjonalt i notatet. Derfor er resten av vektorrommene uendeligdimensjonale; alle har et uendeligdimensjonalt underrom. 
+Du har vist at $\P_n$ har en endelig basis tidligere, og det er derfor endeligdimensjonalt.
+Vi har sett at $\P$ er uendeligdimensjonalt i notatet.
+Derfor er resten av vektorrommene uendeligdimensjonale; alle har et uendeligdimensjonalt underrom. 
 \end{punkt}
 
 
@@ -479,14 +533,40 @@ Hint: Parantes betyr hva man skal regne ut først.
 \end{losning}
 
 \begin{oppgave}
-La $$\mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\}$$ være mengden av heltall.
+Vi skriver
+\[
+\Z=\{\dots,-2,-1,0,1,2,\dots\}
+\]
+for mengden av heltall.
+% I denne oppgaven skal vi se på to
+% forskjellige måter man kan prøve å gjøre $\Z$ til et vektorrom.  I
+% hvert tilfelle skal du finne ut om det faktisk blir et vektorrom eller
+% ikke.
 
 \begin{punkt}
-Er $\mathbb{Z}$ et underrom av $\mathbb{R}$?
+Hvis vi tenker på elementene i vektorrommet~$\R^1$ som bare tall,
+%(istedenfor kolonnevektorer med ett tall i),
+kan vi se på $\Z$ som en delmengde av~$\R^1$.
+Er $\Z$ et underrom av $\R^1$?
 \end{punkt}
 
 \begin{punkt}
-Definer addisjon i $\mathbb{Z}$ på vanlig måte, og definer en skalarmultiplikasjon $$r\ast n=\lfloor rn\rfloor$$ hvor $\lfloor rn \rfloor$ runner ned til nærmeste heltall. Er $\mathbb{Z}$ -- med disse operasjonene -- et vektorrom?
+Nå prøver vi å gjøre~$\Z$ til et vektorrom ved å definere
+vektoraddisjon og skalarmultiplikasjon direkte.  Definer
+vektoraddisjon som vanlig addisjon av tall, og definer
+skalarmultiplikasjon av et reelt tall~$r$ og et heltall~$n$ ved
+\[
+r \ast n = \lfloor rn \rfloor,
+\]
+der uttrykket $\lfloor rn \rfloor$ betyr tallet~$rn$ rundet ned til et
+heltall.  (Vi bruker symbolet~$\ast$ for skalarmultiplikasjonen her
+for å ikke blande den sammen med vanlig multiplikasjon av tall.)
+
+% Definer addisjon i $\mathbb{Z}$ på vanlig måte, og definer en
+% skalarmultiplikasjon $$r\ast n=\lfloor rn\rfloor$$ hvor
+% $\lfloor rn \rfloor$ runner ned til nærmeste heltall.
+
+Er $\Z$ -- med disse operasjonene -- et vektorrom?
 \end{punkt}
 
 \end{oppgave}
@@ -531,7 +611,7 @@ Vektorrommet må bestå av ett element; null-vektoren. Med en gang det finnes en
 
 
 \begin{oppgave}
-La $\lambda$ være en egenverdi til en $n\times n$-matrise $A$. Vis at egenrommet til $\lambda$ er et underrom av $\mathbb{R}^n$.
+La $\lambda$ være en egenverdi til en $n\times n$-matrise $A$. Vis at egenrommet til $\lambda$ er et underrom av $\R^n$.
 \end{oppgave}
 
 \begin{losning}
@@ -576,7 +656,7 @@ For å svare på spørsmålet må vi utforske om det finnes konstanter $a$, $b$ 
 Ja. 
 
 \noindent
-Eksempel på løsning:La $E$ være ett punkt i $D$ (du kan velge dette punktet vilkårlig). En funksjon fra ett punkt til $\mathbb{R}$ er jo bare et tall i $\mathbb{R}$. Vektorrommet $\C(E)$ er altså bare vektorrommet $\mathbb{R}$. Tre vektorer (tall) i $\mathbb{R}$ er selvfølgelig lineært avhengige (vektorrommet er endimensjonalt).
+Eksempel på løsning:La $E$ være ett punkt i $D$ (du kan velge dette punktet vilkårlig). En funksjon fra ett punkt til $\R$ er jo bare et tall i $\R$. Vektorrommet $\C(E)$ er altså bare vektorrommet $\R$. Tre vektorer (tall) i $\R$ er selvfølgelig lineært avhengige (vektorrommet er endimensjonalt).
 \end{punkt}
 
 \end{losning}
@@ -678,14 +758,31 @@ og da gir resultatet fra del~\textbf{b)} at
 \begin{oppgave} \textbf{Utfordring}
 
 \noindent
-Vi har kun definert hva en basis er for endeligdimensjonale vektorrom. For å definere en basis til et -- potensielt uendeligdimensjonalt -- vektorrom, må vi først forstå hva i) spenne ut og ii) lineær uavhengighet skal bety.
+Vi har kun definert hva en basis er for endeligdimensjonale
+vektorrom. For å definere en basis til et
+uendeligdimensjonalt vektorrom, må vi først forstå hva i) spenne ut
+og ii) lineær uavhengighet skal bety for uendelige mengder.
+
+\smallskip
+\noindent
+Hvis $S$ er en uendelig mengde av vektorer i et vektorrom~$V$,
+så definerer vi følgende:
 
 \noindent
-i) En delmengde $S$, av et vektorrom $V$, \emph{spenner ut} $V$ dersom alle vektorer $\V{v}$ i $V$ kan skrives som en lineærkombinasjon av et endelig antall vektorer i $S$.
+i) Vi sier at $S$ \emph{spenner ut} $V$ dersom enhver vektor $\V{v}$ i
+$V$ kan skrives som en lineærkombinasjon av et endelig antall vektorer
+i~$S$.
 
 \noindent
-ii) En delmengde $S$, av et vektorrom $V$, er \emph{lineært uavhengig} dersom alle ligninger $$x_1\V{s}_1+\dots x_n\V{s}_n=\V{0},$$ hvor $\V{s}_i$'ene er vektorer i $S$, kun har den trivielle løsningen; $x_i=0$ for alle $i$.
+ii) Vi sier at $S$ er \emph{lineært uavhengig} dersom enhver
+ligning
+\[
+x_1\V{s}_1+\dots x_n\V{s}_n=\V{0}
+\]
+(hvor $\V{s}_i$-ene er vektorer i $S$) kun har den trivielle løsningen
+$x_i=0$ for alle $i$.
 
+\smallskip
 \noindent
 Nå kan vi definere en basis:
 
@@ -697,7 +794,7 @@ Vis at vi får tilbake den gamle definisjonen av en basis for endeligdimensjonal
 \end{punkt}
 
 \begin{punkt}
-Foreslå en basis for $\mathcal{P}$.
+Foreslå en basis for $\P$.
 \end{punkt}
 
 \begin{punkt}
@@ -715,7 +812,7 @@ Hvis $V$ er endeligdimensjonalt ser vi at definisjonen for å spenne ut er den s
 \end{punkt}
 
 \begin{punkt}
-En naturlig basis for $\mathcal{P}_n$ er gitt av $1,x\dots,x^n$. Dette er akkurat hva vi trenger for å få alle $n$-gradspolynom. Basert på dette virker det rimelig at $\beta=\{1,x,x^2,x^3,\dots\}$ er en basis for $\mathcal{P}$ (da burde vi akkurat ha det vi trenger for å få alle polynomer av vilkårlig grad). 
+En naturlig basis for $\P_n$ er gitt av $1,x\dots,x^n$. Dette er akkurat hva vi trenger for å få alle $n$-gradspolynom. Basert på dette virker det rimelig at $\beta=\{1,x,x^2,x^3,\dots\}$ er en basis for $\P$ (da burde vi akkurat ha det vi trenger for å få alle polynomer av vilkårlig grad). 
 \end{punkt}
 
 \begin{punkt}
