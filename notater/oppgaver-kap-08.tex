@@ -81,7 +81,7 @@ Matrisen har fire frie variabler og tre pivotelement. Dimensjonen på nullrommet
 
 
 \noindent
-Eksempel på valg av basis: Du kan ta kolonnene og radene som svarer til pivotelementene for å finne basis for kolonne- og radrommet; kolonnene som svarer til pivotelement er alltid lineært uavhengige, og vi har tre slike kolonner. Basis for kolonnerommet: kolonne 2, 5 og 6. Basis for radrommet: rad 1, 2 og 3. Matrisen er allerede radredusert, og ligningene for nullrommet er $$x_1+x_2+x_7=0$$ $$x_5+x_7=0$$ $$x_6+x_7=0.$$ Vi kan ta $x_1$, $x_3$, $x_4$ og~$x_7$ som frie variabler. Da blir en parametrisering av nullrommet
+Eksempel på valg av basis: Du kan ta kolonnene og radene som svarer til pivotelementene for å finne basis for kolonne- og radrommet; kolonnene som svarer til pivotelement er alltid lineært uavhengige, og vi har tre slike kolonner. Basis for kolonnerommet: kolonne 2, 5 og 6. Basis for radrommet: rad 1, 2 og 3. Matrisen er allerede radredusert, og likningene for nullrommet er $$x_1+x_2+x_7=0$$ $$x_5+x_7=0$$ $$x_6+x_7=0.$$ Vi kan ta $x_1$, $x_3$, $x_4$ og~$x_7$ som frie variabler. Da blir en parametrisering av nullrommet
 $$\begin{bmatrix}
 x_1\\
 x_2\\
@@ -209,9 +209,9 @@ $$
 \;0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 \;
 \end{bmatrix}
 $$
-umulig kan ha løsning; den siste raden svarer til ligningen $0=-1$.
+umulig kan ha løsning; den siste raden svarer til likningen $0=-1$.
 
-Vektoren ligger i kolonnerommet til~$B$; du kan sjekke at ligningssystemet med totalmatrise 
+Vektoren ligger i kolonnerommet til~$B$; du kan sjekke at likningssystemet med totalmatrise 
 $$
 \begin{bmatrix}
 	1 & 2 & 3 & -1\\
@@ -251,7 +251,7 @@ Vi kan f. eks velge $1$, $x$ og $x^2$. En basis er -- per definisjon -- en samli
 Spenner ut: En vilkårlig vektor $a+bx+cx^2$ er trivielt en lineærkombinasjon $a\cdot 1+b\cdot x+c\cdot x^2$ av $1$, $x$ og $x^2$.
 
 \noindent
-Lineær uavhengig: Gitt en ligning $a\cdot 1+b\cdot x+c\cdot x^2=0$, så må vi vise at vi kun har triviell løsning. Men et andregradspolynom kan maksimalt ha to nullpunkt, altså kan ligningen umulig holde hvis ikke $a=0$, $b=0$ og~$c=0$; vi har kun triviell løsning.
+Lineær uavhengig: Gitt en likning $a\cdot 1+b\cdot x+c\cdot x^2=0$, så må vi vise at vi kun har triviell løsning. Men et andregradspolynom kan maksimalt ha to nullpunkt, altså kan likningen umulig holde hvis ikke $a=0$, $b=0$ og~$c=0$; vi har kun triviell løsning.
 \end{punkt}
 
 
@@ -649,7 +649,7 @@ $\C(E)$, der $E$ er en delmengde av~$D$?
 
 \begin{losning}
 \begin{punkt}
-For å svare på spørsmålet må vi utforske om det finnes konstanter $a$, $b$ og $c$ slik at $$a\cos(x)+b\sin(x)+c\tan(x)=0$$ for alle $x$ i $D$. Velg $x=0$ for å se at $a=0$ ettersom $\sin(0)=0$ og $\tan(0)=0$. Vi har $\tan(x)=\frac{\sin(x)}{\cos(x)}$ som gir ligningen $$b\sin(x)=-c\frac{\sin(x)}{\cos(x)}$$ for alle $x$ i $D$ . Sinus er aldri null for $x\neq 0$ i $D$ slik at vi kan stryke $\sin(x)$ -- på denne delen av $D$ -- og få ligningen $$\cos(x)=\frac{-c}{b}.$$ Men Cosinus er helt klart ikke konstant for alle $x\neq 0$ i $D$, så det kan ikke finnes noen ikke-trivielle løsninger. Vektorene er altså lineært uavhengige.
+For å svare på spørsmålet må vi utforske om det finnes konstanter $a$, $b$ og $c$ slik at $$a\cos(x)+b\sin(x)+c\tan(x)=0$$ for alle $x$ i $D$. Velg $x=0$ for å se at $a=0$ ettersom $\sin(0)=0$ og $\tan(0)=0$. Vi har $\tan(x)=\frac{\sin(x)}{\cos(x)}$ som gir likningen $$b\sin(x)=-c\frac{\sin(x)}{\cos(x)}$$ for alle $x$ i $D$ . Sinus er aldri null for $x\neq 0$ i $D$ slik at vi kan stryke $\sin(x)$ -- på denne delen av $D$ -- og få likningen $$\cos(x)=\frac{-c}{b}.$$ Men Cosinus er helt klart ikke konstant for alle $x\neq 0$ i $D$, så det kan ikke finnes noen ikke-trivielle løsninger. Vektorene er altså lineært uavhengige.
 \end{punkt}
 
 \begin{punkt}
@@ -775,7 +775,7 @@ i~$S$.
 
 \noindent
 ii) Vi sier at $S$ er \emph{lineært uavhengig} dersom enhver
-ligning
+likning
 \[
 x_1\V{s}_1+\dots x_n\V{s}_n=\V{0}
 \]
@@ -784,17 +784,23 @@ $x_i=0$ for alle $i$.
 
 \smallskip
 \noindent
-Nå kan vi definere en basis:
+Nå kan vi definere en basis for vilkårlige vektorrom:
 
 \noindent
-En \emph{basis} $\beta$ til et vektorrom $V$, er en undermengde som spenner ut og er lineært uavhengig.
+En delmengde~$\B$ av et vektorrom~$V$ er en \emph{basis} for~$V$
+dersom den spenner ut~$V$ og er lineært uavhengig.
+
+\smallskip\noindent
+(Her definerer vi en basis som en mengde og ikke en liste,
+siden det blir vanskelig å ha en rekkefølge på basisvektorene
+når det kan være uendelig mange av dem.)
+
+% \begin{punkt}
+% Vis at vi får tilbake den gamle definisjonen av en basis for endeligdimensjonale vektorrom.
+% \end{punkt}
 
 \begin{punkt}
-Vis at vi får tilbake den gamle definisjonen av en basis for endeligdimensjonale vektorrom.
-\end{punkt}
-
-\begin{punkt}
-Foreslå en basis for $\P$.
+Foreslå en basis for det uendeligdimensjonale vektorrommet $\P$.
 \end{punkt}
 
 \begin{punkt}
@@ -807,22 +813,22 @@ Vis at forslaget ditt er en basis.
 \begin{losning}
 
 
+% \begin{punkt}
+% Hvis $V$ er endeligdimensjonalt ser vi at definisjonen for å spenne ut er den samme. For lineært uavhengig hadde vi at $\V{v}_1,\dots,\V{v}_n$ er lineært uavhengige dersom $$x_1\V{v}_1+\dots+x_n\V{v}_n=\V{0}$$ kun har triviell løsning. I den nye definisjonen har vi at alle likninger $$x_1\V{v}_{i_1}+\dots+x_k\V{v}_{i_k}=\V{0},$$ hvor $\{\V{v}_{i_1},\dots,\V{v}_{i_k}\}$ er en endelig delmengde av $\{\V{v}_1,\dots,\V{v}_n\}$, kun har triviell løsning. Vi kan spesielt ta $\{\V{v}_1,\dots,\V{v}_n\}$ som en delmengde av seg selv for å få tilbake den gamle definisjonen.
+% \end{punkt}
+
 \begin{punkt}
-Hvis $V$ er endeligdimensjonalt ser vi at definisjonen for å spenne ut er den samme. For lineært uavhengig hadde vi at $\V{v}_1,\dots,\V{v}_n$ er lineært uavhengige dersom $$x_1\V{v}_1+\dots+x_n\V{v}_n=\V{0}$$ kun har triviell løsning. I den nye definisjonen har vi at alle ligninger $$x_1\V{v}_{i_1}+\dots+x_k\V{v}_{i_k}=\V{0},$$ hvor $\{\V{v}_{i_1},\dots,\V{v}_{i_k}\}$ er en endelig delmengde av $\{\V{v}_1,\dots,\V{v}_n\}$, kun har triviell løsning. Vi kan spesielt ta $\{\V{v}_1,\dots,\V{v}_n\}$ som en delmengde av seg selv for å få tilbake den gamle definisjonen.
+En naturlig basis for $\P_n$ er gitt av $1,x\dots,x^n$. Dette er akkurat hva vi trenger for å få alle $n$-gradspolynom. Basert på dette virker det rimelig at $\B=\{1,x,x^2,x^3,\dots\}$ er en basis for $\P$ (da burde vi akkurat ha det vi trenger for å få alle polynomer av vilkårlig grad). 
 \end{punkt}
 
 \begin{punkt}
-En naturlig basis for $\P_n$ er gitt av $1,x\dots,x^n$. Dette er akkurat hva vi trenger for å få alle $n$-gradspolynom. Basert på dette virker det rimelig at $\beta=\{1,x,x^2,x^3,\dots\}$ er en basis for $\P$ (da burde vi akkurat ha det vi trenger for å få alle polynomer av vilkårlig grad). 
-\end{punkt}
-
-\begin{punkt}
-Spenner ut: Et vilkårlig polynom kan skrives på formen $a_0x^{i_0}+a_1x^{i_1}+\dots +a_kx^{i_k}$ hvor $$i_0<i_1<\dots<i_k$$ er naturlige tall. Men dette polynomet er automatisk en linieærkombinasjon av $x^{i_0},x^{i_1},\dots,x^{i_k}$ som er en delmengde av $\beta$.
+Spenner ut: Et vilkårlig polynom kan skrives på formen $a_0x^{i_0}+a_1x^{i_1}+\dots +a_kx^{i_k}$ hvor $$i_0<i_1<\dots<i_k$$ er naturlige tall. Men dette polynomet er automatisk en linieærkombinasjon av $x^{i_0},x^{i_1},\dots,x^{i_k}$ som er en delmengde av $\B$.
 
 \noindent
-Lineært uavhengig: Gitt en ligning på formen $$a_0x^{i_0}+a_1x^{i_1}+\dots +a_kx^{i_k}=0,$$ må vi vise at den kun har triviell løsning. Men dette er et $i_k$-gradspolynom, og har derfor maksimalt $i_k$ nullpunkt; polynomet kan umulig være null for alle tall $x$. Dette viser at vi kun har triviell løsning.
+Lineært uavhengig: Gitt en likning på formen $$a_0x^{i_0}+a_1x^{i_1}+\dots +a_kx^{i_k}=0,$$ må vi vise at den kun har triviell løsning. Men dette er et $i_k$-gradspolynom, og har derfor maksimalt $i_k$ nullpunkt; polynomet kan umulig være null for alle tall $x$. Dette viser at vi kun har triviell løsning.
 
 \noindent
-Dette viser at $\beta$ spenner ut og er lineært uavhengig, som er definisjonen på en basis.
+Dette viser at $\B$ spenner ut og er lineært uavhengig, som er definisjonen på en basis.
 \end{punkt}
 
 \end{losning}
