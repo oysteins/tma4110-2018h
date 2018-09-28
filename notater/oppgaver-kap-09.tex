@@ -122,6 +122,45 @@ Husk: Du har regnet ut determinanten til denne matrisen tidligere.
 \end{losning}
 
 
+\begin{oppgave}
+Finn en $2\times$.matrise som \ldots
+\begin{punkt}
+\ldots speiler vektorer om $x$-aksen.
+\end{punkt}
+\begin{punkt}
+\ldots roterer vektorer 135 grader mot klokken.
+\end{punkt}
+\begin{punkt}
+\ldots speiler vektorer om linjen $x=-y$.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+I \textbf{a)} og \textbf{b)} finner vi ut av hva matrisen gjør på standardbasisen $\V{e}_1$ og $\V{e}_2$. Dette er kolonnevektorene til matrisen vi ønsker å finne. I \textbf{c)} observerer vi at speiling om linjen $x=-y$ kan dekomponeres i å speile om $x$-aksen og deretter rotere 135 grader; komposisjonen av lineærtransformasjonene i \textbf{a)} og \textbf{b)}. Husk at komposisjon av lineærtransformasjoner svarer til produkt av matriser.
+
+\begin{punkt}
+$$\begin{bmatrix}
+1 & 0\\
+0 & -1
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+$$\begin{bmatrix}
+-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}  & -\frac{1}{\sqrt{2}} 
+\end{bmatrix}$$
+\end{punkt}
+
+\begin{punkt}
+$$\begin{bmatrix}
+-\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} 
+\end{bmatrix}$$
+\end{punkt}
+
+\end{losning}
+
 
 \begin{oppgave}
 \label{oppg:1dlintrans}
@@ -181,10 +220,25 @@ La $f$ og $g$ være funksjoner $\mathbb{R}\rightarrow \mathbb{R}$ gitt ved $$f(x
 
 \end{punkt}
 \begin{punkt}
-Kan en eller begge tilfellene i del \textbf{a)} skje for en lineærtrasnformasjon $L$ fra $\mathbb{R}^n$ til $\mathbb{R}^n$? Hva med $\mathbb{R}^n$ til $\mathbb{R}^m$?
+Kan en eller begge tilfellene i del \textbf{a)} skje for en lineærtrasnformasjon fra $\mathbb{R}^n$ til $\mathbb{R}^n$? Hva med $\mathbb{R}^n$ til $\mathbb{R}^m$?
 \end{punkt}
 
 \end{oppgave}
+
+\begin{oppgave}
+Anta at $T:\mathbb{R}^n\rightarrow \mathbb{R}^n$ er en lineærtransformasjon som kan faktoriseres $T=L \circ G$, hvor $L:\mathbb{R}^m\rightarrow \mathbb{R}^n$, $G:\mathbb{R}^n\rightarrow \mathbb{R}^m$ og~$m<n$. Kan $T$ være en isomorfi?
+\end{oppgave}
+
+\begin{losning}
+Nei.
+
+\noindent
+Intuisjon: Vi kan ikke gå gjennom et mindre vektorrom og forvente å få tilbake all informasjonen vi opprinnelig hadde. På matriseform svarer dette akkurat til at $m$ ligninger med $n$ ukjente ikke nødvendigvis har løsning for $m<n$.
+
+\noindent
+Forklaring: Lineærtransformasjonene kan representeres av matriser. Matrisen til $L$ har $m<n$ kolonner i $\mathbb{R}^n$. Kolonnene kan derfor ikke spenne ut $\mathbb{R}^n$; bildet til $L$ kan ikke være hele $\mathbb{R}^n$. Men bildet til $T$ er inneholdt i bildet til $L$: vektorer på formen $T(\V{v})$ er spesielt på formen $L(G(\V{v}))$.
+\end{losning}
+
 
 \begin{losning}
 
@@ -203,21 +257,292 @@ Merk: Dette er altså en helt spesiell egenskap for lineære funksjoner som er g
 
 \end{losning}
 
+
+
+
+
 \begin{oppgave}
+Vi skal se på lineærtransformasjoner $\mathcal{P}\rightarrow \mathcal{P}$.
+
 \begin{punkt}
-La $C^\infty$ være undermengden av alle funksjoner som er uendelig mange ganger deriverbar; kan deriveres et vilkårlig antal ganger. Vis at dette er et underrom av vektorrommet av alle kontinuerlige funksjoner.
+La $T$ være funksjonen som er gitt ved derivasjon, og $G$ være funksjonen som multipliserer polynom med $x$:
+$$T(p(x))=p'(x),$$
+$$G(p(x))=x\cdot p(x).$$ Vis at $T$ og $G$ er lineære.
+
+\end{punkt}
+
+
+\begin{punkt}
+Gi en beskrivelse av bildet til $G$.
 \end{punkt}
 
 \begin{punkt}
-Vis at funksjonen $T:C^\infty\rightarrow C^\infty$ som er gitt ved derivasjon, $$T(f)=f',$$ er en lineærtransformasjon.
+Vis at $T(G(p))=p+G(T(p))$.
+\end{punkt}
+
+\begin{punkt}
+Er $T$ injektiv? Surjektiv? Hva med $G$?
+\end{punkt}
+
+\begin{punkt}
+Avgjør om $T$ og $G$ kan beskrives som lineærtransformasjoner fra $\mathcal{P}_n$ til $\mathcal{P}_n$. Hvis mulig for en eller begge, innfør koordinater for standardbasisen til $\mathcal{P}_n$ og skriv lineærtransformasjonen på matriseform.
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+\begin{punkt}
+For å sjekke om en funksjon $T:\mathcal{P}\rightarrow \mathcal{P}$ er lineær, må vi sjekke to krav: i) $T(p_1(x)+p_2(x))=T(p_1(x))+T(p_2(x))$ for alle polynom $p_1(x)$ og $p_2(x)$, og ii) $T(c\cdot p(x))=cT(p(x))$ for alle polynom $p(x)$ og skalarer $c$.
+
 
 \noindent
-Hint: I matte 1 lærte vi regneregler for derivasjon av i) en sum av to funksjoner og ii) en funksjon multiplisert med en konstant.
+$T$: Se oppgaven som mer generelt tar for seg derivasjon av glatte funksjoner. Alternativ løsning: Et polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Derivasjon av $p$ er $T(p(x))=a_1+2a_2x+3a_3x^2+\dots+na_nx^{n-1}$. Du kan eksplisitt sjekke at denne formelen er lineær (tilfredstiller i) og ii)).
+
+
+\noindent
+$G$: i) $$G(p_1(x)+p_2(x))=x\cdot(p_1(x)+p_2(x))=x\cdot p_1(x)+x\cdot p_2(x)=G(p_1(x))+G(p_2(x)).$$ ii) $$G(c\cdot p(x))=x\cdot(c\cdot p(x))=c\cdot(x\cdotp(x))=cG(p(x)).$$
+
+
+\end{punkt}
+
+\begin{punkt}
+Bildet til $G$ er alle polynom $p(x)$ som kan skrives på formen $p(x)=G(q(x))$ for et polynom $q(x)$. Med andre ord $p(x)=xq(x)$. Bildet er derfor alle polynom som har $x$ som en faktor, eller -- ekvivalent -- minst et nullpunkt i $x=0$.
+\end{punkt}
+
+\begin{punkt}
+Hvis vi bruker produktregelen for derivasjon (matte 1), ser vi at 
+$$(x\cdot p(x))'=x'\cdot p(x)+x\cdot p'(x)=p(x)+x\cdot p'(x).$$
+Dette er akkurat det vi ønsker å vise:
+$$T(G(p(x)))=p(x)+G(T(p(x))).$$
+
+\noindent
+Alternativ løsning: Vi kan også løse oppgaven direkte ved regning. Et polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Du kan regne ut høyre og venstre side av ligningen vi ønsker å vise for å se at likheten holder.
+\end{punkt}
+
+\begin{punkt}
+En lineærtransformasjon fra $\mathcal{P}_n$ til $\mathcal{P}_n$ skal ta inn et $n$-gradspolynom og gi ut et $n$-gradspolynom i tillegg til å være lineær. Derivasjon er lineært og sender et $n$-gradspolynom til et $(n-1)$-gradspolynom, som spesielt er et $n$-gradspolynom (koeffisienten foran $x^n$ er lik null). $T$ gir derfor mening som en lineærtransformasjon $\mathcal{P}_n\rightarrow \mathcal{P}_n$. Transformasjonen $G$, på den andre siden, multipliserer med $x$ og øker derfor graden fra $n$ til $(n+1)$, og gir derfor ikke mening som en lineærtransformasjon $\mathcal{P}_n\rightarrow \mathcal{P}_n$.
+
+\noindent
+Standardbasisen til $\mathcal{P}_n$ er gitt ved $1,x,\dots,x^n$. Fra den eksplisitte formelen for $T(p(x))$ i løsningen for del $\textbf{a)}$ ser vi at $$T[p(x)]_\beta=T\begin{bmatrix}
+a_0\\
+a_1\\
+a_2\\
+\vdots\\
+a_{n-1}\\
+a_n
+\end{bmatrix}=\begin{bmatrix}
+a_1\\
+2a_2\\
+3a_3\\
+\vdots\\
+na_n\\
+0
+\end{bmatrix}.$$ Dette kan skrives 
+$$\begin{bmatrix}
+0 & 1 & 0 & 0 & \dots & 0 & 0\\
+0 & 0 & 2 & 0 & \dots & 0 & 0\\
+0 & 0 & 0 & 3 & \dots & 0 & 0\\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & 0 & 0 & \dots & 0 & na_n\\
+0 & 0 & 0 & 0 & \dots & 0 & 0
+\end{bmatrix}\begin{bmatrix}
+a_0\\
+a_1\\
+a_2\\
+\vdots\\
+a_{n-1}\\
+a_n
+\end{bmatrix}=\begin{bmatrix}
+a_1\\
+2a_2\\
+3a_3\\
+\vdots\\
+na_n\\
+0
+\end{bmatrix}$$ som viser at $$\begin{bmatrix}
+0 & 1 & 0 & 0 & \dots & 0 & 0\\
+0 & 0 & 2 & 0 & \dots & 0 & 0\\
+0 & 0 & 0 & 3 & \dots & 0 & 0\\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & 0 & 0 & \dots & 0 & na_n\\
+0 & 0 & 0 & 0 & \dots & 0 & 0
+\end{bmatrix}$$ er $T$ på matriseform.
+\end{punkt}
+
+
+\end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+Finn en basis $\beta$ for $\mathcal{P}_2$ slik at $$[p]_\beta=\begin{bmatrix}
+p(0)\\
+p'(0)\\
+\frac{p''(0)}{2}
+\end{bmatrix}$$
+er koordinatene til et andregradspolynom $p$.
+\end{punkt}
+
+\begin{punkt}
+Finn en basis $\beta '$ for $\mathcal{P}_2$ slik at $$[p]_{\beta '}=\begin{bmatrix}
+p(0)\\
+p(1)\\
+p(2)
+\end{bmatrix}$$
+er koordinatene til et andregradspolynom $p$.
+\end{punkt}
+
+\begin{punkt}
+Hva er koordinatene til $x^2$ med hensyn på disse to koordinatsystemene? 
+\end{punkt}
+
+\begin{punkt}
+Finn en lineærtransformasjon som endrer koordinater mellom $\beta$ og $\beta '$. Sjekk at matrisen din gir riktig svar for koordinatene du fant i \textbf{c)}.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Dette er standardbasisen $1$, $x$ og~$x^2$.
+
+\noindent
+Forklaring: Vi ønsker å skrive et vilkårlig andregradspolynom på formen $p(x)=p(0)f_1(x)+p'(0)f_2(x)+\frac{p''(0)}{2}f_3(x)$. Dette er akkurat hva $f_1=1$, $f_2=x$ og~$f_3=x^2$ tilfredstiller: Gitt $p(x)=a+bx+cx^2$ ser vi at $p(0)=a$, $p'(0)=b$ og $\frac{p''(0)}{2}=c$ ved regning; dette er akkurat koeffisientene foran $1$, $x$ og $x^2$. Alternativ løsning: For en mer systematisk fremgangsmåte kan du følge metoden som er beskrevet i del $\textbf{b)}$.
+\end{punkt}
+
+\begin{punkt}
+Vi må finne tre polynom $e_(x)$, $e_2(x)$ og $e_3(x)$ som utgjør en basis slik at et vilkårlig polynom kan skrives på formen $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$ (da blir koordinatene $\begin{bmatrix}
+p(0)\\
+p(1)\\
+p(2)
+\end{bmatrix}$). Dette skjer akkurat dersom $e_1(x)$ tilfredstiller $$e_1(0)=1\quad e_1(1)=0 \quad e_1(2)=0,$$ $e_2(x)$ tilfredstiller $$e_2(0)=0\quad e_2(1)=1 \quad e_2(2)=0,$$ $e_3(x)$ tilfredstiller $$e_3(0)=0\quad e_3(1)=0 \quad e_3(2)=1$$ (sett inn i ligningen for $p(x)$ uttrykt ved $e_i$'ene for å se dette).
+
+\noindent
+
+$e_1$: Polynomet kan skrives på formen $a_0+a_1 x+a_2x^2$, og vi krever -- fra ligningene for $e_1$ -- ovenfor at $$a_0=1\quad a_0+a_1+a_2=0 \quad a_0+2a_1+4a_2=0.$$ Dette er tre likninger med tre ukjente, og vi bruker radreduksjon for å se at løsningen er $a_0=1$, $a_1=-\frac{3}{2}$ og~$a_2=\frac{1}{2}$. Polynomet er derfor $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$. Alternativ løsning: $e_1(1)=0$ og $e_1(2)=0$ betyr at $(x-1)$ og $(x-2)$ er faktorer av $e_1$. Derfor må $e_1(x)=a(x-1)(x-2)$. Kravet $e_1(0)=1$ gir nå $1=a\cdot(-1)\cdot (-2)$ slik at $a=\frac{1}{2}$. Derfor er $e_1(x)=\frac{1}{2}(x-1)(x-2)$. Du kan gange ut for å se at dette er det samme polynomet som vi fant ovenfor.
+
+\noindent
+$e_2$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige ligninger -- gir polynomet $e_2(x)=2x-x^2$.
+
+\noindent
+$e_3$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige ligninger -- gir polynomet $e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$.
+
+\noindent
+Vi har nå tre polynom $e_1$, $e_2$ og $e_3$ som spenner $\mathcal{P}_2$ (det er konstruert slik at alle polynom kan skrives $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$). Det gjenstår kun å vise at de er lineært uavhengige. Men dette følger også fra hvordan $e_i$'ene er konstruert: Gitt en ligning $$x_1e_1(x)+x_2e_2(x)+x_3e_3(x)=0$$ kan du sette inn for $x=0,1,2$ for å se at $x_1=0$, $x_2=0$ og $x_3=0$ på grunn av ligningene som definerer $e_i$'ene.
+\end{punkt}
+
+\begin{punkt}
+Koordinatene til $x^2$: $$[x]_\beta=\begin{bmatrix}
+p(0)\\
+p'(0)\\
+\frac{p''(0)}{2}
+\end{bmatrix}=\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix},$$ $$[x]_{\beta'}=\begin{bmatrix}
+p(0)\\
+p(1)\\
+p(2)
+\end{bmatrix}=\begin{bmatrix}
+0\\
+1\\
+4
+\end{bmatrix}.$$
+\end{punkt}
+
+\begin{punkt}
+For å endre koordinater mellom ulike basiser uttrykker vi den ene basisen ved den andre basisen. Det er desidert enklest å uttrykke $\beta '$ ved $\beta$ ettersom $\beta$ er standardbasisen til $\mathcal{P}_2$. Vi har faktisk allerede gjort dette: $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$, $e_2(x)=2x-x^2$ og~$e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$. Matrisen som endrer koordinater er derfor
+$$
+\begin{bmatrix}
+1 & 0 & 0\\
+-\frac{3}{2} & 2 & -\frac{1}{2}\\
+\frac{1}{2} & -1 & \frac{1}{2}
+\end{bmatrix}.$$
+
+\noindent
+Vi sjekker at matrisen gir riktig endring av koordinater for $x^2$:
+$$
+\begin{bmatrix}
+1 & 0 & 0\\
+-\frac{3}{2} & 2 & -\frac{1}{2}\\
+\frac{1}{2} & -1 & \frac{1}{2}
+\end{bmatrix}\begin{bmatrix}
+0\\
+1\\
+4
+\end{bmatrix}=\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}.$$
+
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+La $T_\theta$ være den abstrakte lineærtransformasjonen $\mathbb{R}^2\rightarrow \mathbb{R}^2$ som roterer vektorer $\theta$ grader.
+
+\begin{punkt}
+Skriv $T_\theta$ på matriseform i standardbasisen for $\mathbb{R}^n$.
+\end{punkt}
+
+\begin{punkt}
+Bevis den trigonometriske ligningen
+$$\cos(2\theta)=\cos^2(\theta)-\sin^2 (\theta).$$
+
+\noindent
+Hint: Komposisjon er multiplikasjon.
+\end{punkt}
+
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+$$[T_\theta]=\begin{bmatrix}
+T_\theta(\V{e}_1) & T_\theta(\V{e}_2)
+\end{bmatrix} = \begin{bmatrix}
+\cos(\theta) & -\sin(\theta)\\
+\sin(\theta) & \cos(\theta)
+\end{bmatrix}$$
+
+\end{punkt}
+
+\begin{punkt}
+Å bruke $T_\theta$ to ganger svarer til å rotere med en vinkel $\theta$ to ganger: $T_\theta \circ T_\theta=T_{2\theta}$.
+På matriseform har vi derfor $$[T_\theta]^2= \begin{bmatrix}
+\cos(2\theta) & -\sin(2\theta)\\
+\sin(2\theta) & \cos(2\theta)
+\end{bmatrix}.$$ Vi kan også regne ut dette produktet direkte:
+$$[T_\theta]^2=\begin{bmatrix}
+\cos^2(\theta)-\sin^2(\theta) & -2\cos(\theta)\sin(\theta)\\
+2\cos(\theta)\sin(\theta) & \cos^2(\theta)-\sin^2(\theta)
+\end{bmatrix}.$$ Fra element $(1,1)$, eller $(2,2)$, ser vi at $\cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)$.
+
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Vis at funksjonen $T:\C^\infty(\mathbb{R})\rightarrow \C^\infty(\mathbb{R})$ som er gitt ved derivasjon, $$T(f)=f',$$ er en lineærtransformasjon.
+
+\noindent
+Hint: I matte 1 lærte vi regneregler for derivasjon av i) en sum av to funksjoner og ii) en funksjon multiplisert med en konstant. Du kan bruke disse.
 \end{punkt}
 
 \begin{punkt}
 Finn kjernen $\ker T$ av lineærtransformasjonen~$T$.
-Er $\ker T$ et endeligdimensjonalt vektorrom?  I så fall: Finn en basis.
+Er $\ker T$ et endeligdimensjonalt vektorrom?  I så fall: Finn en basis. Hva slags ligning ender du opp med å løse?
 \end{punkt}
 
 \begin{punkt}
@@ -226,6 +551,38 @@ Vis at $T$ har uendelig mange egenverdier.
 %       for at dette skal gi mening
 
 \noindent 
-Hint: Husker du hvilken funksjon fra matte 1 som ikke endrer seg ved derivasjon? Hva betyr dette mtp. oppgaven? Kan du modifisere denne litt for å løse oppgaven?
+Hint: Husk definisjonen av en egenvektor til $\lambda$; $T(f)=\lambda f$.
 \end{punkt}
+
+\begin{punkt}
+Er $T$ surjektiv?
+
+\noindent
+Hint: Analysens fundamentalteorem.
+\end{punkt}
+
 \end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Derivasjonsreglene fra matte 1: 
+$$(f+g)'=f'+g',$$ $$(cf)'=cf'.$$ Funksjonen vår er derivasjon; $T(f)=f'$. Ligningene fra matte 1 kan omformuleres til $$T(f+g)=T(f)+T(g),$$ $$T(cf)=cT(f).$$ Dette er definisjonen på at $T$ er lineær.
+\end{punkt}
+
+\begin{punkt}
+Kjernen til $T$, $\ker T$, er definert som alle glatte funksjoner $f$ slik at $f'=0$. Kjernen er, med andre ord, alle løsningene på differensialligningen $f'=0$. Dette er de konstante funksjonene $f(x)=c$ hvor $c$ er et reelt tall. Vi kan ta $f=1$ som en basis for kjernen; en vilkårlig $g(x)=c$ i kjernen er da $g=cf$. Dette betyr at kjernen er endimensjonal og spesielt er den endeligdimensjonal.
+\end{punkt}
+
+\begin{punkt}
+En egenvektor til $T$ med egenverdi $\lambda$, er en vektor/funksjon $f$ slik at $T(f)=\lambda f$, eller $f'=\lambda f$. Dette er en differensiallikning med generell løsning $x_0e^{\lambda x}$. Spesielt betyr dette at alle valg av $\lambda$ gir egenverdier til $T$. Det er uendelig mange reelle tall, og derfor uendelig mange egenverdier.
+\end{punkt}
+
+\begin{punkt}
+Ja.
+
+\noindent
+Forklaring: $T$ er surjektiv hvis det for alle glatte funksjoner $f$, finnes en glatt funksjon $F$ slik at $f=T(F)(=F')$. Husk at fundamentalteoremet i analyse sier at $F(x)=\int_a^x f(t)dt$ (for alle valg av $a$, vi kan f. eks ta $a=0$) er en antiderivert til $f$. Men dette betyr at $f=F'=T(F)$. Er $F$ glatt? $F'=f$, så den er en gang deriverbar, og $F^{(n)}=f^{(n)}$ for $n>1$, så den er glatt fordi $f$ er glatt. Vi har derfor funnet en glatt $F$ som tilfredstiller $T(F)=f$ for en vilkårlig vektor $f$.
+\end{punkt}
+
+\end{losning}
