@@ -2,24 +2,6 @@
 \oppgaver{8}
 
 
-\linje
-TODO --
-vil ha oppgaver med:
-\begin{itemize}
-\item aksiomene -- noe som er og noe som ikke er vektorrom\\
-(Hvor nær kan man komme å være et vektorrom uten å faktisk være det?
- For hvert av de åtte aksiomene: Går det an å oppfylle alle aksiomene unntatt dette?)
-\item underrom -- både av $\R^n$ og av andre
-\item basis for kolonnerom, nullrom, (radrom), egenrom
-\item basis for andre rom
-\item koordinater med hensyn på en basis
-\item basisskifte?  (usikker på om vi vil bruke notasjonen fra boka)
-\item dimensjon, kanskje noe om uendeligdimensjonale rom
-\item kanskje noe knyttet til beviset for at alle vektorrom har basis?
-\end{itemize}
-\linje
-
-
 \begin{oppgave}
 Finn en basis for kolonnerommet, nullrommet og radrommet, regn ut dimensjonen i hvert tilfelle, og sjekk om $\begin{bmatrix}
 0\\
@@ -208,83 +190,31 @@ $$ har løsning.
 \begin{oppgave}
 
 \begin{punkt}
-Bruk definisjonen av et vektorrom til å vise at $\mathbb{R}^3$ er et vektorrom.
+Finn en basis for $\mathcal{P}_2$. Vis at det faktisk er en basis. Mer generelt, skriv ned en basis for $\mathcal{P}_n$
 \end{punkt}
 
 \begin{punkt}
-Finn en basis for $\mathbb{R}^3$. Vis at det faktisk er en basis.
-\end{punkt}
-
-\begin{punkt}
-Bruk definisjonen av et vektorrom til å vise at $\mathbb{P}^2$, mengden av alle annengradspolynom, er et vektorrom med følgende operasjoner:
-$$(a_0+a_1x+a_2x^2)+(b_0+b_1x+b_2x^2)=(a_0+b_0)+(a_1+b_1)x+(a_2+b_2)x^2$$
-$$c\cdot (a_0+a_1x+a_2x^2)=(ca_0)+(ca_1)x+(ca_2)x^2$$
-\end{punkt}
-
-\begin{punkt}
-Vis at $1$, $x$ og $x^2$ er en basis for $\mathbb{P}^2$. 
-\end{punkt}
-
-\begin{punkt}
-Innfør koordinater for denne basisen og sammenlign med $\mathbb{R}^3$. Hva er koordinatene til $1+2x+3x^2$?
+Hva er koordinatene til $1+2x+3x^2$ i basisen du fant for $\mathcal{P}_2$?
 \end{punkt}
 
 \end{oppgave}
 
 \begin{losning}
 
-\begin{punkt}
-Null-vektoren er $$\begin{bmatrix}
-0\\
-0\\
-0
-\end{bmatrix}.$$ Den skalare enheten er tallet $1$. Du kan nå sjekke vektorromaksiomene.
-\end{punkt}
 
 \begin{punkt}
-Vi kan f. eks velge $$\V{e}_1=\begin{bmatrix}
-1\\
-0\\
-0
-\end{bmatrix}, \quad \V{e}_2=\begin{bmatrix}
-0\\
-1\\
-0
-\end{bmatrix} \quad \V{e}_3=\begin{bmatrix}
-0\\
-0\\
-1
-\end{bmatrix}.$$ En basis er -- per definisjon -- en samling som spenner ut og er lineært uavhengig.
+Vi kan f. eks velge $1$, $x$ og $x^2$. En basis er -- per definisjon -- en samling som spenner ut og er lineært uavhengig.
 
 \noindent
-Spenner ut: En vilkårlig vektor $$\V{v}=\begin{bmatrix}
-v_1\\
-v_2\\
-v_3
-\end{bmatrix}$$ kan skrives $\V{v}=v_1\V{e}_1+v_2\V{e}_2+v_3\V{e}_3$.
+Spenner ut: En vilkårlig vektor $a+bx+cx^2$ er trivielt en lineærkombinasjon $a\cdot 1+b\cdot x+c\cdot x^2$ av $1$, $x$ og $x^2$.
 
 \noindent
-Lineær uavhengig: Dette kan sjekkes på mange måter. La oss bruke definisjonen direkte. Gitt en ligning $$x_1\V{e}_1+x_2\V{e}_2+x_3\V{e}_3=\V{0},$$ så må vi vise at vi kun har triviell løsning: Dersom vi regner ut venstresiden får vi $$\begin{bmatrix}
-x_1\\
-x_2\\
-x_3
-\end{bmatrix}=\begin{bmatrix}
-0\\
-0\\
-0
-\end{bmatrix}$$ som er nøyaktig det vi ville vise.
+Lineær uavhengig: Gitt en ligning $a\cdot 1+b\cdot x+c\cdot x^2=0$, så må vi vise at vi kun har triviell løsning. Men et andregradspolynom kan maksimalt ha to nullpunkt, altså kan ligningen umulig holde hvis ikke $a=0$, $b=0$ og~$c=0$; vi har kun triviell løsning.
 \end{punkt}
 
-\begin{punkt}
-Null-vektoren er null-funksjonen; $\V{0}:\mathbb{R}\rightarrow \mathbb{R}$, $\V{0}(x)=0$. Du kan tenke på dette som polynomet $\V{0}=0+0x+0x^2$. Den skalare enheten er tallet $1$. Du kan nå sjekke vektorromaksiomene.
-\end{punkt}
 
 \begin{punkt}
-Helt lik løsning som illustrert i $\textbf{b)}$ dersom du bytter $\V{e}_1$ med $1$, $\V{e}_2$ med $x$ og $\V{e}_3$ med $x^2$.
-\end{punkt}
-
-\begin{punkt}
-I koordinatene til denne basisen svarer et polynom $a_0+a_1x+a_2x^2$ til vektoren $\begin{bmatrix}
+I koordinatene til basisen vi valgte i $\textbf{a)}$ svarer et polynom $a_0+a_1x+a_2x^2$ til vektoren $\begin{bmatrix}
 a_0\\
 a_1\\
 a_2
@@ -292,11 +222,11 @@ a_2
 1\\
 2\\
 3
-\end{bmatrix}.$ Etter vi har innført koordinater er $\mathbb{P}^2$ helt lik $\mathbb{R}^3$.
+\end{bmatrix}.$
 
 
 \noindent
-Merk: Det var dette du brukte for å løse oppgave $\textbf{3.9.}$
+Merk: Du innførte koordinater for å løse oppgave $\textbf{3.9.}$
 \end{punkt}
 
 \end{losning}
@@ -377,11 +307,14 @@ $\begin{bmatrix}
 1\\
 -1\\
 1
-\end{bmatrix}$ ligger i kolonnerommet (vektoren løfter planet opp fra origo); $\begin{bmatrix}
+\end{bmatrix}$ ligger ikke i kolonnerommet (vektoren løfter kolonnerommet, som er et plan, opp fra origo); $\begin{bmatrix}
 1\\
--1\\
+1\\
 1
-\end{bmatrix}$ ligger ikke i kolonnerommet (vektoren løfter ikke planet opp fra origo). 
+\end{bmatrix}$ ligger i kolonnerommet (vektoren løfter ikke kolonnerommet, som er et plan, opp fra origo). 
+
+\noindent
+Prøv gjerne å tegne situasjonen i denne oppgaven.
 \end{punkt}
 
 \end{losning}
@@ -486,63 +419,33 @@ Dimensjonen til $W$: $1+2+3+\dots +n=\frac{n(n+1)}{2}$ (vi trenger bare å telle
 \end{losning}
 
 
+
 \begin{oppgave}
-La $\lambda$ være en egenverdi til en $n\times n$-matrise $A$. Vis at egenrommet til $\lambda$ er et underrom av $\mathbb{R}^n$.
+
+\begin{punkt}
+Lag et diagram som forklarer hvordan $\mathcal{P}_n$, $\mathcal{P}$, $\C (\mathbb{R})$, $\C^n(\mathbb{R})$ og~$\C^\infty(\mathbb{R})$ er underrom av hverandre.
+\end{punkt}
+
+\begin{punkt}
+Hvilke av vektorrommene i $\textbf{a)}$ er endeligdimensjonale? Hva med uendeligdimensjonale?
+\end{punkt}
+
+
 \end{oppgave}
 
 \begin{losning}
-Det holder å vise at egenrommet til $\lambda$ er lukket under vektorromsoperasjonene og inneholder null-vektoren.
 
-\noindent
-Null-vektoren: Dette følger direkte fra definisjonen (egenrommet til $\lambda$ består av egenvektorene og null-vektoren).
-
-
-\noindent
-Addisjon: Hvis $\V{x}$ og $\V{y}$ er to vektorer i egenrommet til $\lambda$ har vi per definisjon at $A\V{x}=\lambda \V{x}$ og $A\V{y}A=\lambda \V{y}$ (i spesialtilfellet $\V{0}$ har vi alltid $A\V{0}=\V{0}=\lambda \V{0}$). Vi må vise at $\V{x}+\V{y}$ er en egenvektor til $\lambda$: $$A(\V{x}+\V{y})=A\V{x}+A\V{y}=\lambda \V{x}+ \V{y}=\lambda(\V{x}+\V{y}),$$ $\V{x}+\V{y}$ er altså i egenrommet.
-
-\noindent
-Skalarmultiplikasjon: Hvis $\V{x}$ er i egenrommet til $\lambda$ og $c$ er en konstant har vi at $$A(c\lambda\V{x})=c(A \V{x})=c(\lambda \V{x})=\lambda(c \V{x}),$$ som betyr at $c\V{x}$ ligger i egenrommet til $\lambda$.
-\end{losning}
-
-
-\begin{oppgave}
-La mengden $D$ være det åpne intervallet mellom $-\pi/2$ og~$\pi/2$:
-\[
-D = \left( - \frac{\pi}{2}, \frac{\pi}{2} \right)
-\]
-Se på funksjonene $\sin$, $\cos$ og~$\tan$ som vektorer i~$\C(D)$.
 \begin{punkt}
-Er de lineært uavhengige?
-\end{punkt}
-\begin{punkt}
-Kan du få et annet svar ved å isteden se på dem som vektorer i
-$\C(E)$, der $E$ er en delmengde av~$D$?
-\end{punkt}
-\end{oppgave}
-
-\begin{losning}
-\begin{punkt}
-For å svare på spørsmålet må vi utforske om den finnes konstanter $a$, $b$ og $c$ slik at $$a\cos(x)+b\sin(x)+c\tan(x)=0$$ for alle $x$ i $D$. Velg $x=0$ for å se at $a=0$ ettersom $\sin(0)=0$ og $\tan(0)=0$. Vi har $\tan(x)=\frac{\sin(x)}{\cos(x)}$ som gir ligningen $$b\sin(x)=-c\frac{\sin(x)}{\cos(x)}.$$ Sinus er aldri null på $D$ slik at vi kan stryke $\sin(x)$ og få ligningen $$\cos(x)=\frac{-c}{b}.$$ Men Cosinus er helt klart ikke konstant på $D$, så det kan ikke finnes noen ikke-trivielle løsninger. Vektorene er altså lineært uavhengige.
+$$\mathcal{P}_n \subset \mathcal{P} \subset \C^\infty(\mathbb{R}) \subset \C^n(\mathbb{R}) \subset \C (\mathbb{R});$$ $n$-gradspolynomer er spesielt polynom; polynom er spesielt uendelig mange ganger deriverbare; uendelig mange ganger deriverbare funksjoner er spesielt deriverbare $n$ ganger; $n$ ganger deriverbare funksjoner er spesielt kontinuerlige (deriverbar impliserer kontinuitet).
 \end{punkt}
 
 \begin{punkt}
-Ja. Eksempel på løsning:La $E$ være ett punkt i $D$ (du kan velge dette punktet vilkårlig). En funksjon fra ett punkt til $\mathbb{R}$ er jo bare et tall i $\mathbb{R}$. Vektorrommet $\C(E)$ er altså bare vektorrommet $\mathbb{R}$. Tre vektorer (tall) i $\mathbb{R}$ er selvfølgelig lineært avhengige.
+Du har vist at $\mathcal{P}_n$ har en endelig basis tidligere, og er derfor endeligdimensjonalt. Vi har sett at $\mathcal{P}$ er uendeligdimensjonalt i notatet. Derfor er resten av vektorrommene uendeligdimensjonale; alle har et uendeligdimensjonalt underrom. 
 \end{punkt}
+
 
 \end{losning}
 
-
-\begin{oppgave}
-Hvis $V$ er et vektorrom som er en endelig mengde, hva kan du da si om
-antall elementer i~$V$?
-\\
-Hint: Kan $V$ ha null elementer?  Ett element?  To elementer?  Flere
-enn to?
-\end{oppgave}
-
-\begin{losning}
-Vektorrommet må bestå av ett element; null-vektoren. Med en gang det finnes en ikke-null vektor $\V{v}$ får vi uendelige mange vektorer; $t\V{v}$ hvor $t$ er et tall.
-\end{losning}
 
 
 \begin{oppgave}
@@ -570,13 +473,113 @@ Er $V$ et vektorrom?
 \begin{losning}
 Ja, $V$ er et vektorrom.
 
-Additiv identitet: $\boks{1}$, Additiv invers: $\boks{1/a}$.
+Additiv identitet: $\boks{1}$, Additiv invers: $\boks{1/a}$. Du kan nå sjekke aksiomene (V1)--(V8)
 
-TODO: forklar hvorfor hvert aksiom holder.
+Hint: Parantes betyr hva man skal regne ut først.
+\end{losning}
+
+\begin{oppgave}
+La $$\mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\}$$ være mengden av heltall.
+
+\begin{punkt}
+Er $\mathbb{Z}$ et underrom av $\mathbb{R}$?
+\end{punkt}
+
+\begin{punkt}
+Definer addisjon i $\mathbb{Z}$ på vanlig måte, og definer en skalarmultiplikasjon $$r\ast n=\lfloor rn\rfloor$$ hvor $\lfloor rn \rfloor$ runner ned til nærmeste heltall. Er $\mathbb{Z}$ -- med disse operasjonene -- et vektorrom?
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Nei. 
+
+\noindent
+$\mathbb{Z}$ er ikke lukket under skalarmultiplikasjon: Hvis du multipliserer et heltall med et reelt tall får du ikke nødvendigvis et heltall. Eksempel: $\frac{1}{2}\cdot 3=\frac{3}{2}$ er ikke et heltall.
+\end{punkt}
+
+\begin{punkt}
+Nei.
+
+\noindent
+Du kan for eksempel sjekke at $(ab)\ast n \neq a\ast (b\ast n)$ for alle valg av relle tall $a$ og $b$, og heltall $n$. 
+
+\noindent
+Eksempel: $\lfloor \frac{1}{2}\cdot 1 \rfloor =0$ slik at $2 \ast(\frac{1}{2}\ast 1)=0$. Men $$(2\cdot \frac{1}{2})\ast 1=1 \ast 1=1.$$
+
+
+\noindent
+Merk: Vi viste altså at $\mathbb{Z}$ med denne skalarmultiplikasjonen umulig kan være et vektorrom. Mer generelt kan man vise at det ikke finnes noen vektorromstruktur på $\mathbb{Z}$. Dette henger sammen med at noen typer uendelig er større enn andre.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+Hvis $V$ er et vektorrom som er en endelig mengde, hva kan du da si om
+antall elementer i~$V$?
+\\
+Hint: Kan $V$ ha null elementer?  Ett element?  To elementer?  Flere
+enn to?
+\end{oppgave}
+
+\begin{losning}
+Vektorrommet må bestå av ett element; null-vektoren. Med en gang det finnes en ikke-null vektor $\V{v}$ får vi uendelige mange vektorer; $t\V{v}$ hvor $t$ er et tall.
+\end{losning}
+
+
+\begin{oppgave}
+La $\lambda$ være en egenverdi til en $n\times n$-matrise $A$. Vis at egenrommet til $\lambda$ er et underrom av $\mathbb{R}^n$.
+\end{oppgave}
+
+\begin{losning}
+Det holder å vise at egenrommet til $\lambda$ er lukket under vektorromsoperasjonene og inneholder null-vektoren.
+
+\noindent
+Null-vektoren: Dette følger direkte fra definisjonen (egenrommet til $\lambda$ består av egenvektorene og null-vektoren).
+
+
+\noindent
+Addisjon: Hvis $\V{x}$ og $\V{y}$ er to vektorer i egenrommet til $\lambda$ har vi per definisjon at $A\V{x}=\lambda \V{x}$ og $A\V{y}=\lambda \V{y}$ (i spesialtilfellet $\V{0}$ har vi alltid $A\V{0}=\V{0}=\lambda \V{0}$). Vi må vise at $\V{x}+\V{y}$ er en egenvektor til $\lambda$: $$A(\V{x}+\V{y})=A\V{x}+A\V{y}=\lambda \V{x}+ \lambda \V{y}=\lambda(\V{x}+\V{y}),$$ $\V{x}+\V{y}$ er altså i egenrommet.
+
+\noindent
+Skalarmultiplikasjon: Hvis $\V{x}$ er i egenrommet til $\lambda$ og $c$ er en konstant har vi at $$A(c\V{x})=c(A \V{x})=c(\lambda \V{x})=\lambda(c \V{x}),$$ som betyr at $c\V{x}$ ligger i egenrommet til $\lambda$.
 \end{losning}
 
 
 
+
+
+\begin{oppgave}
+La mengden $D$ være det åpne intervallet mellom $-\pi/2$ og~$\pi/2$:
+\[
+D = \left( - \frac{\pi}{2}, \frac{\pi}{2} \right)
+\]
+Se på funksjonene $\sin$, $\cos$ og~$\tan$ som vektorer i~$\C(D)$.
+\begin{punkt}
+Er de lineært uavhengige?
+\end{punkt}
+\begin{punkt}
+Kan du få et annet svar ved å isteden se på dem som vektorer i
+$\C(E)$, der $E$ er en delmengde av~$D$?
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+For å svare på spørsmålet må vi utforske om det finnes konstanter $a$, $b$ og $c$ slik at $$a\cos(x)+b\sin(x)+c\tan(x)=0$$ for alle $x$ i $D$. Velg $x=0$ for å se at $a=0$ ettersom $\sin(0)=0$ og $\tan(0)=0$. Vi har $\tan(x)=\frac{\sin(x)}{\cos(x)}$ som gir ligningen $$b\sin(x)=-c\frac{\sin(x)}{\cos(x)}$$ for alle $x$ i $D$ . Sinus er aldri null for $x\neq 0$ i $D$ slik at vi kan stryke $\sin(x)$ -- på denne delen av $D$ -- og få ligningen $$\cos(x)=\frac{-c}{b}.$$ Men Cosinus er helt klart ikke konstant for alle $x\neq 0$ i $D$, så det kan ikke finnes noen ikke-trivielle løsninger. Vektorene er altså lineært uavhengige.
+\end{punkt}
+
+\begin{punkt}
+Ja. 
+
+\noindent
+Eksempel på løsning:La $E$ være ett punkt i $D$ (du kan velge dette punktet vilkårlig). En funksjon fra ett punkt til $\mathbb{R}$ er jo bare et tall i $\mathbb{R}$. Vektorrommet $\C(E)$ er altså bare vektorrommet $\mathbb{R}$. Tre vektorer (tall) i $\mathbb{R}$ er selvfølgelig lineært avhengige (vektorrommet er endimensjonalt).
+\end{punkt}
+
+\end{losning}
 
 
 \begin{oppgave}
@@ -672,67 +675,62 @@ og da gir resultatet fra del~\textbf{b)} at
 \end{punkt}
 \end{losning}
 
-
-\begin{oppgave}
-
-La $\mathbb{R}^\infty$ være vektorrommet av uendelig lange strenger med tall, $$(a_0,a_1,a_2,\dots),$$ hvor kun et endelig antall komponenter er forskjellig fra null. Operasjonene er gitt punktvis:
-$$(a_0,a_1,\dots)+(b_0,b_1,\dots)=(a_0+b_0,a_1+b_1,\dots)$$
-$$c(a_0,a_1,\dots)={(ca_0,ca_1,\dots)}.$$ La $\V{e}_n$ være strengen med tallet 1 i posisjon $n$ og 0 ellers, eks: $$\V{e}_2=(0,1,0,0,0,\dots).$$
-
-\begin{punkt}
-Vis at $\mathbb{R}^\infty$ ikke er et endeligdimensjonalt vektorrom.
+\begin{oppgave} \textbf{Utfordring}
 
 \noindent
-Hint: Du må vise at du kan finne en undermengde av $\mathbb{R}^\infty$ som ikke er utspent av et endelig antall vektorer.
-\end{punkt}
-
-\begin{punkt}
-Vis at $\V{e}_1,\V{e}_2,\V{e}_3,\dots$ er en basis for $\mathbb{R}^\infty$.
-\end{punkt}
-
-\begin{punkt}
-La $\mathbb{P}$ være vektorrommet av polynomer (av vilkårlig grad). Operasjonene er tilsvarende som for $\mathbb{P}^2$; vi legger sammen koeffisienter foran like potenser av $x$ og multipliserer en skalar med hver koeffisient. Vis at $1,x,x^2,x^3\dots$ er en basis for $\mathbb{P}$. Bruk denne basisen til å innføre koordinater. Hvilket vektorrom er dette?
-\end{punkt}
-
-
-\begin{punkt}
-Vis at $\C(\mathbb{R})$ er uendeligdimensjonalt.
+Vi har kun definert hva en basis er for endeligdimensjonale vektorrom. For å definere en basis til et -- potensielt uendeligdimensjonalt -- vektorrom, må vi først forstå hva i) spenne ut og ii) lineær uavhengighet skal bety.
 
 \noindent
-Hint: Del \textbf{c)}.
+i) En delmengde $S$, av et vektorrom $V$, \emph{spenner ut} $V$ dersom alle vektorer $\V{v}$ i $V$ kan skrives som en lineærkombinasjon av et endelig antall vektorer i $S$.
+
+\noindent
+ii) En delmengde $S$, av et vektorrom $V$, er \emph{lineært uavhengig} dersom alle ligninger $$x_1\V{s}_1+\dots x_n\V{s}_n=\V{0},$$ hvor $\V{s}_i$'ene er vektorer i $S$, kun har den trivielle løsningen; $x_i=0$ for alle $i$.
+
+\noindent
+Nå kan vi definere en basis:
+
+\noindent
+En \emph{basis} $\beta$ til et vektorrom $V$, er en undermengde som spenner ut og er lineært uavhengig.
+
+\begin{punkt}
+Vis at vi får tilbake den gamle definisjonen av en basis for endeligdimensjonale vektorrom.
+\end{punkt}
+
+\begin{punkt}
+Foreslå en basis for $\mathcal{P}$.
+\end{punkt}
+
+\begin{punkt}
+Vis at forslaget ditt er en basis.
 \end{punkt}
 
 \end{oppgave}
 
+
 \begin{losning}
 
+
 \begin{punkt}
-Samlingen $\V{e}_1,\V{e}_2,\V{e}_3,\dots$ kan ikke genereres av et endelig antall vektorer. Derfor finnes det ikke et endelig antall vektorer som spenner ut $\mathbb{R}^\infty$.
+Hvis $V$ er endeligdimensjonalt ser vi at definisjonen for å spenne ut er den samme. For lineært uavhengig hadde vi at $\V{v}_1,\dots,\V{v}_n$ er lineært uavhengige dersom $$x_1\V{v}_1+\dots+x_n\V{v}_n=\V{0}$$ kun har triviell løsning. I den nye definisjonen har vi at alle ligninger $$x_1\V{v}_{i_1}+\dots+x_k\V{v}_{i_k}=\V{0},$$ hvor $\{\V{v}_{i_1},\dots,\V{v}_{i_k}\}$ er en endelig delmengde av $\{\V{v}_1,\dots,\V{v}_n\}$, kun har triviell løsning. Vi kan spesielt ta $\{\V{v}_1,\dots,\V{v}_n\}$ som en delmengde av seg selv for å få tilbake den gamle definisjonen.
+\end{punkt}
+
+\begin{punkt}
+En naturlig basis for $\mathcal{P}_n$ er gitt av $1,x\dots,x^n$. Dette er akkurat hva vi trenger for å få alle $n$-gradspolynom. Basert på dette virker det rimelig at $\beta=\{1,x,x^2,x^3,\dots\}$ er en basis for $\mathcal{P}$ (da burde vi akkurat ha det vi trenger for å få alle polynomer av vilkårlig grad). 
+\end{punkt}
+
+\begin{punkt}
+Spenner ut: Et vilkårlig polynom kan skrives på formen $a_0x^{i_0}+a_1x^{i_1}+\dots +a_kx^{i_k}$ hvor $$i_0<i_1<\dots<i_k$$ er naturlige tall. Men dette polynomet er automatisk en linieærkombinasjon av $x^{i_0},x^{i_1},\dots,x^{i_k}$ som er en delmengde av $\beta$.
 
 \noindent
-Grunn: Et endelig antall vektorer, $\V{v}_1,\V{v}_2,\dots,\V{v}_k$, kan kun påvirke komponenter opp til en viss posisjon $N$ (fordi alle vektorene bare har et endelig antall komponenter ulik null). Derfor kan ikke $\V{e}_{N+1}$ -- eller mer generelt $\V{e}_M$ hvor $M>N$ -- skrives som en lineærkombinasjon av $\V{v}_1,\V{v}_2,\dots,\V{v}_k$.
-\end{punkt}
-
-\begin{punkt}
-Vi må vise at $\V{e}_1,\V{e}_e,\V{e}_3,\dots$ 1) spenner ut og 2) er lineært uavhengige.
+Lineært uavhengig: Gitt en ligning på formen $$a_0x^{i_0}+a_1x^{i_1}+\dots +a_kx^{i_k}=0,$$ må vi vise at den kun har triviell løsning. Men dette er et $i_k$-gradspolynom, og har derfor maksimalt $i_k$ nullpunkt; polynomet kan umulig være null for alle tall $x$. Dette viser at vi kun har triviell løsning.
 
 \noindent
-1) En vektor kan skrives som en lineærkombinasjon av $\V{e}_k$'ene som svarer til komponentene som er ulik null. Matematisk: En vektor i $\mathbb{R}^\infty$ er på formen $(a_0,a_1,\ldots)$ hvor kun et endelig antall $a_k\neq 0$. Vi har altså et endelig antall komponenter $a_{i_1},a_{i_2}\dots,a_{i_n}$ som er forskjellig fra null. Nå ser vi at $$(a_0,a_1,\ldots)=a_{i_1}\V{e}_{i_1}+a_{i_2}\V{e}_{i_2}+\dots+a_{i_n}\V{e}_{i_n}.$$ En vilkårlig vektor kan altså skrives som en lineærkombinasjon av $\V{e}_1,\V{e}_e,\V{e}_3,\dots$, som er akkurat det vi ønsket å vise.
-
-\noindent 
-2) Vi må sjekke at for en vikårlig endelig delmengde $\V{e}_{i_1},\V{e}_{i_2},\dots\V{e}_{i_n}$, så har ligningen $$x_{i_1}\V{e}_{i_1}+x_{i_2}\V{e}_{i_2}\dots+x_{i_n}\V{e}_{i_n}=(0,0,0,\dots)$$ kun triviell løsning. Men denne ligningen betyr akkurat at alle $x_{i_k}$'ene er lik null.
-\end{punkt}
-
-
-\begin{punkt}
-Argumentet er helt likt som i del $\textbf{b)}$ hvis vi bytter $\V{e}_1$ med 1, $\V{e}_2$ med $x$, $\V{e}_3$ med $x^2$,\ldots I disse koordinatene får vi vektorrommet $\mathbb{R}^\infty$.
-\end{punkt}
-
-\begin{punkt}
-Polynomer er kontinuerlige funksjoner, og $\mathbb{P}$ er et underrom av $\C(\mathbb{R})$. Vi har sett at dette underrommet er uendeligdimensjonalt, derfor må hele rommet være uendeligdimensjonalt.
+Dette viser at $\beta$ spenner ut og er lineært uavhengig, som er definisjonen på en basis.
 \end{punkt}
 
 \end{losning}
+
+
 
 
 
