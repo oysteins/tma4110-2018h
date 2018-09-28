@@ -3,24 +3,79 @@
 \kapittel{8}{Vektorrom}
 \label{ch:vektorrom}
 
+I de foregående kapitlene har vi tatt en lang vandring gjennom den
+lineære algebraens jungel.  Nå skal vi gå opp på en fjelltopp og skue
+ut over landskapet vi har vandret gjennom.
 
+Det sentrale temaet i dette kapitlet og det neste er å generalisere og
+abstrahere ideene vi har jobbet med til nå.  Vi skal definere begrepet
+\emph{vektorrom}, som egentlig bare betyr en mengde med vektorer slik
+som $\R^2$ eller~$\R^3$.  Men definisjonen vår av vektorrom kommer til
+å være så generell at vi også kan ha vektorrom som ser helt annerledes
+ut.  Dette betyr at vi skal bli vant til at vektorer kan være mye mer
+enn kolonnevektorene vi kjenner til -- for eksempel kan en funksjon
+eller en matrise også være en vektor.
 
-Nå har vi lært ganske mye lineær algebra.  Vi startet med lineære
-likningssystemer, og så hvordan disse kan løses ved gausseliminasjon.
-Derfra har vi gått en lang vei.  Ved å innføre vektorer og matriser
-fikk vi fine måter å beskrive lineære likningssystemer på, noe som
-både ga oss en bedre forståelse av slike systemer og åpnet for at vi
-kunne se på andre relaterte problemer.
+I neste kapittel skal vi innføre det andre sentrale konseptet vi
+trenger for å drive med lineær algebra på en generell måte, nemlig
+\emph{lineærtransformasjoner}.  En lineærtransformasjon er en funksjon
+fra et vektorrom til et annet.  Men den kan ikke være en hvilken som
+helst funksjon -- vi krever at den skal \emph{bevare
+  vektorromsstrukturen}.
 
+Den generelle formuleringen av lineær algebra ved hjelp av vektorrom
+og lineærtransformasjoner gir flere fordeler.  Den gir oss et språk og
+en del teknikker som (etter hvert som vi blir vant til dem) gjør mange
+problemer mye mer lettfattelige.  Og den gjør at vi kan anvende lineær
+algebra innen andre områder av matematikk, for eksempel til å løse
+differensiallikninger, som vi skal se på senere.
 
-
+% , og vi vil oppdage at det er
+% mye større enn den delen vi har gått gjennom.
 
 % TODO intro
+% Nå har vi lært ganske mye lineær algebra.  Vi startet med lineære
+% likningssystemer, og så hvordan disse kan løses ved gausseliminasjon.
+% Derfra har vi gått en lang vei.  Ved å innføre vektorer og matriser
+% fikk vi fine måter å beskrive lineære likningssystemer på, noe som
+% både ga oss en bedre forståelse av slike systemer og åpnet for at vi
+% kunne se på andre relaterte problemer.
+
+Vi kan stille oss selv spørsmålet
+\begin{quote}
+\emph{Hva handler lineær algebra egentlig om?}
+\end{quote}
+Hva som blir et naturlig svar på dette spørsmålet endrer seg etter
+hvert som vi lærer mer lineær algebra.  Helt i begynnelsen ville vi
+antagelig sagt at lineær algebra handler om å løse lineære
+likningssystemer.  Litt senere kunne vi si at lineær algebra handler
+om vektorer og matriser.  Etter at vi har kommet oss gjennom dette
+kapitlet og det neste, vil vi antagelig besvare spørsmålet med:
+\begin{quote}
+\emph{Lineær algebra handler om vektorrom og\\lineærtransformasjoner.}
+\end{quote}
+Og da har vi en ganske god forståelse av lineær algebra.
+
 
 \section*{Vektorer slik vi kjenner dem}
 
 Vi er vant til vektorer i $\R^2$ og i $\R^3$, og mer generelt
-i~$\R^n$.  For $\R^2$ og~$\R^3$ har vi en geometrisk tolkning av
+i~$\R^n$.  Vi vet dessuten at hver av disse mengdene utgjør hver sin
+separate verden av vektorer.  For eksempel kan vi alltid legge sammen
+to vektorer som begge er i~$\R^2$, men det gir ikke mening å legge
+sammen en vektor i~$\R^2$ med en vektor i~$\R^3$:
+\[
+\vv{5}{2} + \vvv{3}{1}{4}
+\quad\text{er ikke definert.}
+\]
+Når vi legger sammen to vektorer i~$\R^2$, blir summen igjen en vektor
+i~$\R^2$, og når vi ganger en vektor i~$\R^2$ med en skalar, får vi
+også en vektor i~$\R^2$ som resultat.  Vi holder oss altså alltid
+innenfor den samme verdenen når vi tar lineærkombinasjoner av
+vektorer.  En slik verden av vektorer er det vi kaller et vektorrom.
+
+\smallskip
+For $\R^2$ og~$\R^3$ har vi en geometrisk tolkning av
 vektorer: Vi kan tenke på en vektor som et punkt i planet/rommet,
 eller som pilen som peker fra origo til dette punktet.  Men et punkt
 har også koordinater, og det er de vi vanligvis bruker når vi skal
@@ -84,7 +139,58 @@ Disse kriteriene kaller vi \emph{aksiomene} for et vektorrom.
 
 \section*{Aksiomer for vektorrom}
 
-% TODO beskriv alle aksiomene
+Aksiomene for vektorrom er åtte regneregler som holder for vektorene
+i~$\R^n$, og som er essensielle for at vektorer skal oppføre seg slik
+vi synes at vektorer skal oppføre seg.  Vi nummerer aksiomene (V1),
+(V2), \ldots, (V8).  Du finner alle sammen i en fin liste på
+side~\pageref{fig:aksiomene}.
+
+Det første aksiomet, (V1), sier at det ikke har noe å si hvor vi
+setter parentesene når vi legger sammen vektorer:
+\[
+(\V{u} + \V{v}) + \V{w} = \V{u} + (\V{v} + \V{w})
+\]
+Dette betyr at vi kan skrive en sum
+\[
+\V{u} + \V{v} + \V{w}
+\]
+uten parenteser, fordi vi får samme resultat om vi legger sammen
+$\V{u}$ og~$\V{v}$ først, eller legger sammen $\V{v}$ og~$\V{w}$
+først.  Mer generelt betyr det at vi kan skrive alle slags lengre
+summer
+\[
+\u_1 + \u_2 + \cdots \u_n
+\]
+uten parenteser.  På fint matematikkspråk kalles dette at addisjonen
+er en \emph{assosiativ} operasjon.
+
+Dette ser kanskje så åpenbart ut at det ikke skulle være nødvendig å
+gjøre noe stort nummer ut av det.  Men det er likevel nødvendig å ha
+det med som et krav, fordi vi i utgangspunktet sier at vi kan definere
+vektoraddisjonen til å gjøre akkurat hva vi vil, og det er fullt mulig
+å definere en operasjon som ikke er slik at parenteser kan flyttes
+fritt.
+
+Aksiom~(V2) sier at rekkefølgen ikke spiller noen rolle når vi adderer
+vektorer:
+\[
+\u + \v = \v + \u
+\]
+Det fine navnet på denne egenskapen er at addisjonen er
+\emph{kommutativ}.
+
+Aksiom~(V3) sier at det skal finnes en nullvektor.  I~$\R^n$ er vi
+vant til å si at nullvektoren er vektoren som består av bare nuller.
+Men nå vil vi definere nullvektoren ut fra hvordan den oppfører seg
+med hensyn på addisjonsoperasjonen.  Den definerende egenskapen for en
+nullvektor~$\0$ er at det å legge til nullvektoren ikke endrer noe,
+altså at
+\[
+\u + \0 = \u
+\]
+for alle vektorer~$\u$.
+
+% TODO beskriv resten av aksiomene
 
 \begin{figure*}[p] % TODO: figuren havner på kapitlets siste side
 \begin{center}
@@ -176,6 +282,7 @@ for alle vektorer $\V{u}$, og alle skalarer~$a$ og~$b$.
 \end{center}
 \end{minipage}
 \end{center}
+\label{fig:aksiomene}
 \end{figure*}
 
 
