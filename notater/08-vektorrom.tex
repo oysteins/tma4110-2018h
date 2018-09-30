@@ -41,11 +41,12 @@ differensiallikninger, som vi skal se på senere.
 % både ga oss en bedre forståelse av slike systemer og åpnet for at vi
 % kunne se på andre relaterte problemer.
 
+\medskip
 Vi kan stille oss selv spørsmålet
 \begin{quote}
 \emph{Hva handler lineær algebra egentlig om?}
 \end{quote}
-Hva som blir et naturlig svar på dette spørsmålet endrer seg etter
+Hva som er et naturlig svar på dette spørsmålet endrer seg etter
 hvert som vi lærer mer lineær algebra.  Helt i begynnelsen ville vi
 antagelig sagt at lineær algebra handler om å løse lineære
 likningssystemer.  Litt senere kunne vi si at lineær algebra handler
@@ -138,59 +139,6 @@ Disse kriteriene kaller vi \emph{aksiomene} for et vektorrom.
 
 
 \section*{Aksiomer for vektorrom}
-
-Aksiomene for vektorrom er åtte regneregler som holder for vektorene
-i~$\R^n$, og som er essensielle for at vektorer skal oppføre seg slik
-vi synes at vektorer skal oppføre seg.  Vi nummerer aksiomene (V1),
-(V2), \ldots, (V8).  Du finner alle sammen i en fin liste på
-side~\pageref{fig:aksiomene}.
-
-Det første aksiomet, (V1), sier at det ikke har noe å si hvor vi
-setter parentesene når vi legger sammen vektorer:
-\[
-(\V{u} + \V{v}) + \V{w} = \V{u} + (\V{v} + \V{w})
-\]
-Dette betyr at vi kan skrive en sum
-\[
-\V{u} + \V{v} + \V{w}
-\]
-uten parenteser, fordi vi får samme resultat om vi legger sammen
-$\V{u}$ og~$\V{v}$ først, eller legger sammen $\V{v}$ og~$\V{w}$
-først.  Mer generelt betyr det at vi kan skrive alle slags lengre
-summer
-\[
-\u_1 + \u_2 + \cdots \u_n
-\]
-uten parenteser.  På fint matematikkspråk kalles dette at addisjonen
-er en \emph{assosiativ} operasjon.
-
-Dette ser kanskje så åpenbart ut at det ikke skulle være nødvendig å
-gjøre noe stort nummer ut av det.  Men det er likevel nødvendig å ha
-det med som et krav, fordi vi i utgangspunktet sier at vi kan definere
-vektoraddisjonen til å gjøre akkurat hva vi vil, og det er fullt mulig
-å definere en operasjon som ikke er slik at parenteser kan flyttes
-fritt.
-
-Aksiom~(V2) sier at rekkefølgen ikke spiller noen rolle når vi adderer
-vektorer:
-\[
-\u + \v = \v + \u
-\]
-Det fine navnet på denne egenskapen er at addisjonen er
-\emph{kommutativ}.
-
-Aksiom~(V3) sier at det skal finnes en nullvektor.  I~$\R^n$ er vi
-vant til å si at nullvektoren er vektoren som består av bare nuller.
-Men nå vil vi definere nullvektoren ut fra hvordan den oppfører seg
-med hensyn på addisjonsoperasjonen.  Den definerende egenskapen for en
-nullvektor~$\0$ er at det å legge til nullvektoren ikke endrer noe,
-altså at
-\[
-\u + \0 = \u
-\]
-for alle vektorer~$\u$.
-
-% TODO beskriv resten av aksiomene
 
 \begin{figure*}[p] % TODO: figuren havner på kapitlets siste side
 \begin{center}
@@ -285,13 +233,116 @@ for alle vektorer $\V{u}$, og alle skalarer~$a$ og~$b$.
 \label{fig:aksiomene}
 \end{figure*}
 
+Aksiomene for vektorrom er åtte regneregler som holder for vektorene
+i~$\R^n$, og som er essensielle for at vektorer skal oppføre seg slik
+vi synes at vektorer skal oppføre seg.  Vi nummerer aksiomene (V1),
+(V2), \ldots, (V8).  Du finner alle sammen i en fin liste på
+side~\pageref{fig:aksiomene}.
+
+Det første aksiomet, (V1), sier at det ikke har noe å si hvor vi
+setter parentesene når vi legger sammen vektorer:
+\[
+(\V{u} + \V{v}) + \V{w} = \V{u} + (\V{v} + \V{w})
+\]
+Dette betyr at vi kan skrive en sum
+\[
+\V{u} + \V{v} + \V{w}
+\]
+uten parenteser, fordi vi får samme resultat om vi legger sammen
+$\V{u}$ og~$\V{v}$ først, eller legger sammen $\V{v}$ og~$\V{w}$
+først.  Mer generelt betyr det at vi kan skrive alle slags lengre
+summer
+\[
+\u_1 + \u_2 + \cdots \u_n
+\]
+uten parenteser.  På fint matematikkspråk kalles dette at addisjonen
+er en \emph{assosiativ} operasjon.
+
+Dette ser kanskje så åpenbart ut at det ikke skulle være nødvendig å
+gjøre noe stort nummer ut av det.  Men det er likevel nødvendig å ha
+det med som et krav, fordi vi i utgangspunktet sier at vi kan definere
+vektoraddisjonen til å gjøre akkurat hva vi vil, og det er fullt mulig
+å definere en operasjon som ikke er slik at parenteser kan flyttes
+fritt.
+
+For å gjøre det helt klart at assosiativitet ikke er noe vi kan ta for
+gitt, kan det være nyttig å tenke på at du kjenner godt til minst én
+operasjon som ikke er assosiativ, nemlig opphøyd-i-operasjonen.  Med
+den operasjonen har det en betydning hvor vi setter parentesene, for
+\[
+(a^b)^c
+\quad\text{og}\quad
+a^{(b^c)}
+\]
+er ikke det samme.
+
+Aksiom~(V2) sier at rekkefølgen ikke spiller noen rolle når vi adderer
+vektorer:
+\[
+\u + \v = \v + \u
+\]
+Det fine navnet på denne egenskapen er at addisjonen er
+\emph{kommutativ}.
+
+Aksiom~(V3) sier at det skal finnes en \emph{nullvektor}.  I~$\R^n$ er
+vi vant til å si at nullvektoren er vektoren som består av bare
+nuller.  Men nå vil vi definere nullvektoren ut fra hvordan den
+oppfører seg med hensyn på addisjonsoperasjonen.  Den definerende
+egenskapen for en nullvektor~$\0$ er at det å legge til nullvektoren
+ikke endrer noe, altså at
+\[
+\u + \0 = \u
+\]
+for alle vektorer~$\u$.
+
+Aksiom~(V4) sier at hver vektor har en \emph{additiv invers}.  Det
+betyr at for hver vektor~$\u$ skal det være mulig å finne en
+vektor~$\v$ slik at
+\[
+\u + \v = \0.
+\]
+Vektoren~$\v$ er da den additive inversen til~$\u$, og vi kaller den
+for~$-\u$.
+
+De fire første aksiomene handler bare om addisjonsoperasjonen.  De
+fire siste handler om skalarmultiplikasjon.
+
+Aksiom~(V5) sier at skalarmultiplikasjonen er \emph{kompatibel} med
+det å gange sammen tall, i den forstand at å gange en vektor med ett
+og ett tall er det samme som å gange sammen tallene først og så
+multiplisere med vektoren:
+\[
+(ab) \cdot \u = a \cdot (b \cdot \u)
+\]
+
+Aksiom~(V6) sier at det å gange en vektor med tallet~$1$ alltid gir
+oss den samme vektoren tilbake:
+\[
+1 \cdot \u = \u
+\]
+Vi kan altså si at tallet~$1$ er et \emph{identitetselement} for
+skalarmultiplikasjonen.
+
+Aksiomene (V7) og~(V8) sier at vi kan gange ut parenteser slik vi er
+vant med, både når vi har en sum av vektorer og når vi har en sum av
+tall:
+\begin{align*}
+a \cdot (\u + \v) &= a \u + a \v \\
+(a + b) \cdot \u  &= a \u + b \u
+\end{align*}
+Dette kalles at skalarmultiplikasjonen er \emph{distributiv} over
+addisjon.
+
+% \FloatBarrier
 
 \section*{Definisjonen av vektorrom}
 
-% TODO tekst
+De åtte aksiomene (V1)--(V8) er det vi vil kreve for at noe skal
+kvalifisere til å være et vektorrom.  Nå er vi derfor klare for å
+skrive ned definisjonen av vektorrom.
 
-\begin{defn} % TODO skrives bedre
-Et \defterm{vektorrom} er en mengde~$V$ sammen med to operasjoner:
+\begin{defn}
+La $V$ være en mengde, og anta at vi har definert to operasjoner:
 \begin{align*}
 \text{addisjon av vektorer: } & \V{u} + \V{v} \\
 \text{skalarmultiplikasjon: } & c \cdot \V{u}
@@ -299,26 +350,64 @@ Et \defterm{vektorrom} er en mengde~$V$ sammen med to operasjoner:
 Addisjonen skal være definert for alle elementer $\V{u}$ og~$\V{v}$
 i~$V$, og skalarmultiplikasjonen for alle skalarer~$c$ og alle $\V{u}$
 i~$V$.  Resultatet av operasjonene skal alltid være et element i~$V$.
-Mengden~$V$ og de to operasjonene må oppfylle vektorromsaksiomene
-(V1)--(V8).
 
-Elementene i~$V$ kalles \defterm{vektorer}.
+Dersom mengden~$V$ og de to operasjonene oppfyller vektorromsaksiomene
+(V1)--(V8), så sier vi at $V$ er et \defterm{vektorrom}, og vi kaller
+elementene i~$V$ for \defterm{vektorer}.
 \end{defn}
 
-% TODO tekst
+Aksiomene for vektorrom er valgt ut som de egenskapene ved $\R^n$ som
+anses som å være essensielle.  Derfor er selvsagt hver $\R^n$ et
+vektorrom.  Men poenget med å gi en så generell definisjon er at det
+også finnes flere vektorrom enn disse.
+
+Som et første eksempel kan vi se at en delmengde av~$\R^n$ også kan
+være et vektorrom.
 
 \begin{ex}
-For hver $n \ge 0$ har vi at $\R^n$ er et vektorrom.
+\label{ex:underrom1}
+Se på mengden
+\[
+U = \Sp \left\{ \vv{1}{1} \right\}
+\]
+utspent av vektoren $\vvS{1}{1}$ i~$\R^2$, altså denne linjen:
+\begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[->] (-5,0) -- (5,0);
+\draw[->] (0,-3) -- (0,3);
+\draw (-3,-3) -- (3,3) node[anchor=north west] {$U$};
+\end{tikzpicture}
+\end{center}
+Hvis vi lar addisjonen og skalarmultiplikasjonen være definert som
+i~$\R^2$, så kan vi sjekke at mengden~$U$ i seg selv også blir et
+vektorrom.
+
+Resultatet av å addere eller skalarmultiplisere vektorer i~$U$ blir
+alltid en vektor i~$U$, slik at det gir mening å definere operasjonene
+på denne måten.
+
+Nullvektoren~$\vvS{0}{0}$ i~$\R^2$ er med i~$U$ og fungerer også som
+nullvektor for~$U$, slik at aksiom~(V3) er oppfylt.  For alle
+vektorer~$\u$ i~$U$ er også den additive inversen~$-\u$ med i~$U$,
+slik at aksiom~(V4) er oppfylt.  Vi ser lett at alle de andre
+aksiomene også holder for~$U$, siden de holder for~$\R^2$.
+
+Vektorrommet~$U$ er geometrisk sett en linje, akkurat som~$\R^1$.  Det
+fungerer altså litt som å plassere en kopi av~$\R^1$ på skrå inne
+i~$\R^2$.
 \end{ex}
 
-% TODO underrom av \R^2, \Sp (1,1)
 
 \section*{Eksempler på vektorrom}
 
 La oss nå se på noen vektorrom som er virkelig forskjellige fra de
-gamle og kjente rommene $\R^n$.
+gamle og kjente rommene $\R^n$.  Vektorrommene vi definerer her vil vi
+bruke senere, så det er lurt å prøve å bli kjent med dem.  For hvert
+av disse vektorrommene er det lett (men litt tid- og plasskrevende) å
+sjekke at alle vektorromsaksiomene holder.  Du bør prøve å sjekke det
+selv, for i hvert fall ett av vektorrommene vi ser på.
 
-\medskip\noindent\textbf{Polynomer. }%
+\medskip\noindent\textbf{Polynomer av begrenset grad. }%
 Vi skriver $\P_n$ for mengden av alle polynomer av grad~$n$ eller
 lavere, altså alle funksjoner på formen
 \begin{align*}
@@ -345,30 +434,10 @@ der vi ganger alle koeffisientene i $p$ med~$c$:
 \]
 Med disse operasjonene er $\P_n$ et vektorrom.
 
+\medskip\noindent\textbf{Alle polynomer. }%
 Vi skriver $\P$ for mengden av alle polynomer av vilkårlig grad.  Med
 addisjon og skalarmultiplikasjon definert som i $\P_n$ blir $\P$ også
 et vektorrom.
-
-\medskip\noindent\textbf{Funksjonsrom. }%
-Vi skriver $\R^D$ for mengden av reelle funksjoner definert på et
-område~$D$, der $D \subseteq \R$.  Mengden $\R^D$ består altså av
-alle funksjoner
-\[
-f \colon D \to \R.
-\]
-Vi kan definere addisjon og skalarmultiplikasjon av funksjoner på en
-naturlig måte.  Summen $f + g$ av to funksjoner $f$ og~$g$ blir en
-funksjon gitt ved
-\[
-(f + g)(x) = f(x) + g(x),
-\]
-og produktet $cf$ av en skalar~$c$ og en funksjon~$f$ blir en funksjon
-gitt ved
-\[
-(cf)(x) = c \cdot (f(x)).
-\]
-Med disse operasjonene blir mengden $\R^D$ et vektorrom.
-Det er lett å sjekke at alle aksiomene holder.  %TODO mer
 
 \begin{ex}
 Vi ser på tre funksjoner $f$, $g$ og~$h$, gitt ved
@@ -377,10 +446,10 @@ f(x) &= x^2, \\
 g(x) &= 3x^2 + x, \\
 h(x) &= x^2.
 \end{align*}
-Disse er vektorer i vektorrommet~$\R^\R$ av funksjoner fra $\R$
-til~$\R$.  Dette betyr at vi kan regne med dem som vektorer -- vi kan
-for eksempel ta lineærkombinasjoner av dem.  Lineærkombinasjonen
-$5f + g$ blir funksjonen gitt ved
+Disse er polynomer av grad~$2$, så de er vektorer i
+vektorrommet~$\P_2$.  Dette betyr at vi kan regne med dem som vektorer
+-- vi kan for eksempel ta lineærkombinasjoner av dem.
+Lineærkombinasjonen $5f + g$ blir funksjonen gitt ved
 \[
 (5f + g)(x) = 5 \cdot f(x) + g(x) = 8x^2 + x.
 \]
@@ -392,6 +461,28 @@ tre vektorene, finner vi ganske raskt ut at
 \]
 som betyr at $f$, $g$ og~$h$ er lineært avhengige.
 \end{ex}
+
+\medskip\noindent\textbf{Kontinuerlige funksjoner. }%
+Vi skriver $\C(D)$ for mengden av alle kontinuerlige funksjoner
+definert på et område~$D$, der $D \subseteq \R$.  Mengden $\C(D)$
+består altså av alle funksjoner som er på formen
+\[
+f \colon D \to \R
+\]
+og er kontinuerlige.
+
+Vi kan definere addisjon og skalarmultiplikasjon av funksjoner på en
+naturlig måte.  Summen $f + g$ av to funksjoner $f$ og~$g$ blir en
+funksjon gitt ved
+\[
+(f + g)(x) = f(x) + g(x),
+\]
+og produktet $cf$ av en skalar~$c$ og en funksjon~$f$ blir en funksjon
+gitt ved
+\[
+(cf)(x) = c \cdot (f(x)).
+\]
+Med disse operasjonene blir mengden $\C(D)$ et vektorrom.
 
 \begin{ex}
 \label{ex:sin-cos-lin-uavh}
@@ -424,6 +515,20 @@ kan vi ikke ha at $f$ er en skalar ganger $g$.  Altså er $f$ og~$g$
 lineært uavhengige vektorer i~$\C(\R)$.
 \end{ex}
 
+\medskip\noindent\textbf{Deriverbare og glatte funksjoner. }%
+Vi skriver $\C^1(D)$ for mengden av alle funksjoner
+\[
+f \colon D \to \R
+\]
+som er deriverbare, og mer generelt $\C^n(D)$ for mengden av alle
+funksjoner som er deriverbare $n$~ganger.  Funksjoner som er
+deriverbare uendelig mange ganger kalles \emph{glatte} funksjoner, og
+vi skriver $\C^\infty(D)$ for mengden av alle glatte funksjoner fra
+$D$ til~$\R$.
+
+Med addisjon og skalarmultiplikasjon definert på samme måte som
+i~$\C(D)$ blir mengdene $\C^n(D)$ og $\C^\infty(D)$ også vektorrom.
+
 \medskip\noindent\textbf{Uendelige lister. }%
 Vi skriver $\R^\N$ for mengden av alle uendelige lister
 \[
@@ -438,12 +543,28 @@ c \cdot (a_i)_{i \in \N} &= (c \cdot a_i)_{i \in \N}
 Da er $\R^\N$ et vektorrom.
 
 \begin{ex}
+Se på de tre vektorene
+\begin{align*}
+\u &= (1, 2, 3, 4, 5, \ldots) \\
+\v &= (1, 1, 1, 1, 1, \ldots) \\
+\w &= (1, 3, 5, 7, 9, \ldots)
+\end{align*}
+i vektorrommet~$\R^\N$.  Er vektoren~$\w$ en lineærkombinasjon av $\u$
+og~$\v$?
 
+Hvis vi ganger~$\u$ med to, så får vi:
+\[
+2 \u = (2, 4, 6, 8, 10, \ldots)
+\]
+Nå kan vi trekke fra~$\v$ og ende opp med:
+\[
+2 \u - \v = (1, 3, 5, 7, 9, \ldots)
+\]
+Vi ser altså at $\w = 2 \u - \v$, så vi kan konkludere med at
+vektoren~$\w$ er en lineærkombinasjon av $\u$ og~$\v$.
 \end{ex}
 
-% TODO sammenheng mellom \R^D og \R^\N
-
-\medskip\noindent\textbf{Matriserom. }%
+\medskip\noindent\textbf{Matriser. }%
 Vi skriver $\M_{m \times n}$ for mengden av alle
 $m \times n$-matriser.  Vi har allerede (i kapittel~\ref{ch:matriser})
 definert hvordan vi legger sammen matriser, og hvordan vi ganger en
@@ -453,18 +574,11 @@ definerer vi en egen notasjon, $\M_n$, for vektorrommet som består av
 alle $n \times n$-matriser.
 
 
-% TODO eksempler på vektorrom:
-
-% \C(D) (med oppg/eks)
-% \C^\infty(D)?
-% polynomfunksjoner?
-% alle funksjoner D \to \R?
-% \R^\N (med oppg/eks)
-% \M_{m \times n}, \M_n
-
-% \FloatBarrier
-
 \section*{Underrom}
+
+I eksempel~\ref{ex:underrom1} så vi at en linje i~$\R^2$ kunne være et
+vektorrom i seg selv.  Et slikt vektorrom som ligger inni et annet
+vektorrom kalles et underrom.
 
 \begin{defn}
 Et \defterm{underrom} av et vektorrom~$V$ er en delmengde
@@ -473,17 +587,18 @@ skalarmultiplikasjon definert på samme måte som i~$V$.
 \end{defn}
 
 \begin{ex}
-Mengden
+\label{ex:underrom2}
+Som i eksempel~\ref{ex:underrom1} lar vi $U$ være delmengden
 \[
-\Sp \left\{ \vv{1}{1} \right\}
+U = \Sp \left\{ \vv{1}{1} \right\}
 \]
-er et underrom av~$\R^2$.
-% TODO mer forklaring?
+av~$\R^2$.  Da er $U$ et underrom av~$\R^2$.
 \end{ex}
 
-% TODO eks \P_0 \subseteq \P_1 \subseteq \P_2 ...
-%          \P_n \subseteq \P \subseteq \C(\R)
-%          \C(D) \subseteq \R^D
+% eks \P_0 \subseteq \P_1 \subseteq \P_2 ...
+%     \P_n \subseteq \P \subseteq \C(\R)
+%     \C(D) \subseteq \R^D
+% (gis som oppgave isteden)
 
 \begin{ex}
 \label{ex:ikke-underrom}
@@ -497,10 +612,6 @@ horisontale linjen vist her:
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-5.5,0) -- (5.8,0);
 \draw[->] (0,-1.3) -- (0,2.8);
-% \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
-% \draw (\x,5pt) -- (\x,-5pt);
-% \foreach \y in {-1,1,2}
-% \draw (5pt,\y) -- (-5pt,\y);
 \draw (-5.5,1) -- (5.5,1) node[anchor=south west] {$U$};
 \end{tikzpicture}
 \end{center}
@@ -643,7 +754,22 @@ En \defterm{basis} for et vektorrom~$V$ er en liste
 av vektorer som både utspenner~$V$ og er lineært uavhengige.
 \end{defn}
 
-% TODO merknad om å se på basis som liste istedenfor mengde
+\begin{merk}
+Det er to forskjellige måter å definere en basis på.  Enten sier man
+at en basis er en \emph{mengde} med vektorer, eller så sier man (som
+vi gjør) at en basis er en \emph{liste} med vektorer.  Forskjellen er
+at i en mengde har ikke elementene noen bestemt rekkefølge, mens i en
+liste er det ett bestemt element som er det første, ett som er det
+andre, og så videre.
+
+Det viktigste med en basis er å ha vektorer som utspenner det aktuelle
+vektorrommet og er lineært uavhengige, og det har man uansett om man
+velger å plassere dem i en mengde eller en liste.  Forskjellen dukker
+opp når man vil bruke basisen til å innføre koordinater (som vi skal
+gjøre ganske snart).  Da må elementene i basisen ha en rekkefølge.
+Hvis vi hadde valgt å definere en basis som en mengde, ville vi fått
+litt ekstra jobb for å få definert koordinater på en skikkelig måte.
+\end{merk}
 
 \begin{ex}
 La oss se på vektorrommet~$\R^3$.
@@ -746,9 +872,18 @@ koordinatvektoren til~$f$ blir vektoren
 \]
 i~$\R^2$.  På denne måten kan vi gå fra å snakke om funksjoner i~$U$
 til å snakke om vektorer i~$\R^2$.
-\end{ex}
 
-% TODO tekst
+La oss nå se på funksjonen~$2f$, som er lineærkombinasjonen
+\[
+2f = 8 \sin - 14 \cos
+\]
+av vektorene $\sin$ og~$\cos$.  Det betyr at den har koordinatvektor
+\[
+\koord{2f}{\B} = \vv{8}{-14}
+\]
+med hensyn på basisen~$\B$.  Vi ser at å gange vektoren med~$2$
+tilsvarer å gange koordinatvektoren med~$2$.
+\end{ex}
 
 \begin{thm}
 \label{thm:koordinater-lin-komb}
@@ -959,7 +1094,7 @@ en basis for~$V$, har vi altså
 \]
 \end{defn}
 
-% TODO def dimensjon, notasjon dim V
+% TODO tekst? eks?
 
 
 \section*{Vektorrom tilknyttet en matrise}
