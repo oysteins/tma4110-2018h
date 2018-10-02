@@ -2,6 +2,197 @@
 
 \kapittel{10}{Projeksjon}
 \label{ch:projeksjon}
+\section*{Skalarproduktet}
+La $\V{v}$ og $\V{w}$ være kolonnevektorer i $\R^n$. Skalarproduktet mellom dem er definert som
+\[
+ \V{v}\cdot  \V{w} = v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}^T\V{w}.
+ \] 
+ Resultatet blir en skalar, derav navnet. Vi definerer lengden til en vektor $\V v$ som 
+ \[
+ \|v\|=\sqrt{\V{v}^T\V{v}},
+ \]
+ og vi sier at $\V{v}$ og $\V{w}$ er ortogonale dersom 
+\[
+ \V{v}^T  \V{w} = 0.
+ \]
+I $\R^2$ og $\R^3$ er vinkelen $\pi/2$ mellom ortogonale vektorer. Vi kan også definere skalarprodukt for rekkevektorer
+ \[
+ \V{v}\cdot  \V{w} =\V{v}\V{w}^T.
+ \] 
+ \begin{ex}
+ Vektorene $\V{v}=[1,1,0,0]$ og $\V{w}=[0,0,1,1]$ er ortogonale. 
+ \end{ex}
 
+ \begin{ex}
+ Vektoren $\V{v}=\frac{\V{w}}{\|\V{w}\|}$ har lengde 1 for alle $\V w \neq 0$.
+ \end{ex}
+ 
+ \section*{Projeksjon i $\R^2$}
+Vi bruker skalarproduktet til å projisere vektorer på hverandre. Det sentrale spørsmålet er: hvor lange er de røde og blå lengdene i figuren under? 
+ \begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[-latex,thick] (0,0) -- (7,1);
+\draw[-latex,thick] (0,0) -- (3,6);
+\draw[-, thick, red] (0,0) -- (27/50*7,27/50*1);
+\draw[-,thick, blue] (27/50*7,27/50*1) -- (3,6);
+\draw[-]  (27/50*7-1/7,27/50*1+1-1/77) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\draw[-]  (27/50*7+1,27/50*1+1/7) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\node[anchor=east] at (9,1.2) {\footnotesize $\V{v}$};
+\node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
+\node[anchor=east,red] at (3,-.5) {\footnotesize $w_{\V{v}}$};
+\node[anchor=east,blue] at (5.5,3) {\footnotesize $w_{\V{v}^{\perp}}$};
+%\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
+%\draw (\x,5pt) -- (\x,-5pt);
+%\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
+%\draw (5pt,\y) -- (-5pt,\y);
+%\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
+%\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
+%\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
+%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
+%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
+%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
+%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Hva er projeksjon?}}
+\end{center}
+I to dimensjoner er det lett å vise at skalarproduktet også kan beregnes som 
+\[
+ \V{v}\cdot  \V{w} = \|\V v\| \|\V w\| \cos \theta,
+ \] 
+der $\theta$ er vinkelen mellom $\V{v}$ og $\V{w}$. Vet man det, kan man beregne den røde lengden:
+\[
+w_{\V{v}}=\|\V w\| \cos \theta=\frac{\|\V v\|}{\|\V v\|} \|\V w\| \cos \theta =\frac{\V v \cdot \V w}{\|\V v\|}.
+\]
+Den blå lengden kan så beregnes med pytagoras:
+\[
+w_{\V{v}^{\perp}}=\sqrt{\|\V w\|^2-\left(\frac{\V v \cdot \V w}{\|\V v\|}\right)^2}.
+\]
+Denne lengden kalles $\V w$ sin skalarprojeksjon på normalen til $\V w$. Hvis vi tenker at de røde og blå lengdene er vektorer, kan de skrives
+\[
+\V w_{\V{v}}=w_{\V{v}}\frac{\V v}{\|\V v\|}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=\frac{\V v \cdot \V w}{\V v \cdot \V v}\V v
+\]
+og
+\[
+\V w - \V w_{\V{v}}.
+\]
+ \begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[-latex,thick] (0,0) -- (7,1);
+\draw[-latex,thick] (0,0) -- (3,6);
+\draw[-latex, thick, red] (0,0) -- (27/50*7,27/50*1);
+\draw[-latex,thick, blue] (27/50*7,27/50*1) -- (3,6);
+\draw[-]  (27/50*7-1/7,27/50*1+1-1/77) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\draw[-]  (27/50*7+1,27/50*1+1/7) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\node[anchor=east] at (9,1.2) {\footnotesize $\V{v}$};
+\node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
+\node[anchor=east,red] at (3,-.5) {\footnotesize $\V w_{\V{v}}$};
+\node[anchor=east,blue] at (5.5,3) {\footnotesize $\V w_{\V{v}^{\perp}}$};
+%\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
+%\draw (\x,5pt) -- (\x,-5pt);
+%\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
+%\draw (5pt,\y) -- (-5pt,\y);
+%\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
+%\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
+%\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
+%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
+%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
+%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
+%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Hva er projeksjon II?}}
+\end{center}
+Tenker man på projeksjonene til $\V w$ på $\V v$ og $\V v^{\perp}$ som en lengder, kalles det skalarprojeksjon, og tenker man på det som vektorer, kalles det vektorprojeksjon. Det er egentlig ett fett hva man foretrekker.
+
+%Vi skal ta dette for god fisk, og definere
+%\[
+% \theta = \cos^{-1} \frac{ \V{v}\cdot  \V{w}}{\|v\| \|w\|} 
+% \] 
+%som vinkelen mellom vektorer i $\R^n$.
+ 
+
+
+% \section*{Projeksjon i $\R^3$}
+
+ \section*{Projeksjon i $\R^n$}
+En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
+\[
+ P=P^2.
+ \]
+ Denne ligningen sier at intet nytt skjer om du benytter lineærtransformasjonen for andre gang, og det er nettopp den egenskapen vi er ute etter når vi projiserer. Hvis du projiserer $\V w_{\V v}$ på $\V v$, får du $\V w_{\V v}$. Kanskje vi skal definere
+ \[
+ P_{\V v}=
+ \]
+ og 
+ \[
+ P_{\V v^{\perp}}=
+ \]
+ \begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[-latex,thick] (0,0) -- (7,1);
+\draw[-latex,thick] (0,0) -- (3,6);
+\draw[-latex, thick, red] (0,0) -- (27/50*7,27/50*1);
+\draw[-latex,thick, blue] (27/50*7,27/50*1) -- (3,6);
+\draw[-]  (27/50*7-1/7,27/50*1+1-1/77) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\draw[-]  (27/50*7+1,27/50*1+1/7) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\node[anchor=east] at (9,1.2) {\footnotesize $\V{v}$};
+\node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
+\node[anchor=east,red] at (3.5,-.8) {\footnotesize $P_{\V{v}}(\V w)$};
+\node[anchor=east,blue] at (7,3) {\footnotesize $P_{\V{v}^{\perp}}(\V w)$};
+%\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
+%\draw (\x,5pt) -- (\x,-5pt);
+%\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
+%\draw (5pt,\y) -- (-5pt,\y);
+%\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
+%\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
+%\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
+%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
+%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
+%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
+%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Hva er projeksjon III?}}
+\end{center}
+ 
+
+\section*{Ortogonal basis}
+En ortogonal mengde er en mengde vekorer $\V v_1$, $\V v_2$, ...,$\V v_n$, slik at
+\[
+\V v_i \cdot \V v_k
+\]
+for alle vektorer $\V v_i$ og $\V v_k$ i mengden. 
+\begin{ex}
+Den vanlige basisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ er en ortogonal mengde.
+\end{ex}
+
+\begin{ex}
+Gram-Schmidt
+\end{ex}
+
+\section*{Minste kvadraters metode}
+Dette er en teknikk for å 'løse' systemer med flere likninger enn ukjente. Kort fortalt projiserer den høyresiden ned i kolonnerommet til matrisen, for å finne punktet med kortest avstand til høyresiden.
 
 \kapittelslutt

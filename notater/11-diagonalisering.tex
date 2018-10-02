@@ -1,0 +1,69 @@
+\input{kapittel}
+
+\kapittel{11}{Diagonalisering}
+\label{ch:diagonalisering}
+\section*{Distinkte egenverdier}
+La $A$ være en $n \times n$-matrise med egenverdier $\lambda_1$, $\lambda_2$,$\cdots$, $\lambda_n$, og tilhørende egenvektorer $\V{v}_1$, $\V{v}_2\dots \V{v}_n$. For hvert par av egenverdier og egenvektorer gjelder
+\[
+A\V{v}_k=\lambda \V{v}_k.
+\]
+Disse $n$ ligningene kan like gjerne organiseres i en matriseligning
+\[
+AP=PD, 
+\]
+der 
+\[
+D=
+\begin{bmatrix}
+\lambda_1      & 0      & 0      & \cdots & 0 \\
+0      & \lambda_2      & 0      & \cdots & 0 \\
+0      & 0      & \lambda_3      & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0      & 0      & 0      & \cdots & \lambda_n
+\end{bmatrix}
+\]
+og 
+\[
+P=
+\begin{bmatrix}
+\V{v}_1 & \V{v}_2 & \cdots & \V{v}_n
+\end{bmatrix}.
+\]
+Fra teorem HEIHEIHEI vet vi at $\V{v}_1$, $\V{v}_2\dots \V{v}_n$ er lineært uavhengige, og dermed at matrisen $P$ har en invers. Vi ganger med $P^{-1}$ fra venstre og får
+\[
+P^{-1}AP=D.
+\]
+Denne operasjonen kalles å \emph{diagonalisere} $A$. 
+
+\begin{ex}	
+Vi diagonaliserer matrisen 
+\[
+A=
+\begin{bmatrix}
+2     & 1 \\
+1      & 2
+\end{bmatrix}.
+\]
+\end{ex}
+
+\begin{thm}
+En $n \times n$-matrise $A$ kan diagonaliseres dersom den har $n$ lineært uavhengige egenvektorer.
+\end{thm}
+
+\section*{Ikke distinkte egenverdier}
+Teorem HIHIHI har en slags triviell aura over seg. Så klart man kan diagonlisere en matrise dersom den har $n$ lineært uavhengige egenvektorer - det er jo bare å stille opp likningene for egenvektorene i matriseform. Dersom alle egenverdiene er forskjellige, finnes det automatisk $n$ lineært uavhengige egenvektor. Det er først når vi har doble egenverdier det blir interessant.
+
+\begin{ex}
+La oss finne den doble egenverdien til matrisen
+\end{ex}
+
+
+
+\section*{Symmetriske matriser}
+Dersom matrisen er symmetrisk, går det an å vise at ingen 
+\begin{ex}
+La oss prøve å finne egenverdiene til denne matrisen hvis karakteristiske polynom ikke har noen røtter
+\end{ex}
+
+
+\kapittelslutt

@@ -1,0 +1,262 @@
+\input{kapittel}
+
+\kapittel{12}{Komplekse tall}
+\label{ch:komplekse-tall}
+\section*{Den imaginære enheten}
+Generelt er det slik at en polynomlikning
+\[
+a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0=0
+\]
+ikke nødvendigvis har $n$ løsninger. For eksempel har likningen 
+\[
+x^2+1=0
+\]
+ingen reell løsning. Men hva skjer om vi prøver å løse den med annengradsformelen? Vi får
+\[
+x=\frac{\sqrt{-4}}{2}=\frac{\sqrt{4\cdot (-1)}}{2}=\frac{2\sqrt{-1}}{2}=\sqrt{-1}.
+\]
+Vi gir det en spesiell plass i våre hjerter ved å donere en bokstav
+\[
+i=\sqrt{-1},
+\]
+og døpe det \emph{den imaginære enheten}. Nå kan vi skrive kvadratroten av alle negative tall på en pen måte:
+\begin{equation*}
+\sqrt{-4}=\sqrt{4\cdot (-1)}=\sqrt{4}\cdot \sqrt{(-1)}=2i
+\end{equation*}
+
+
+Hvis vi løser likningen
+\[
+x^2+x+1=0
+\]
+får vi 
+\[
+x=\frac{-1\pm \sqrt{-3}}{2}=\frac{-1\pm \sqrt{3}i}{2}=-\frac{1}{2}\pm\frac{\sqrt{3}}{2}i
+\]
+Dette inspirerer oss til å definere \emph{komplekse tall} som 
+\[
+z=a+bi.
+\]
+Her er $a$ og $b$ reelle tall. De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$, og skrives Re $z$ og Im $z$. 
+
+Hvis du plukker opp en tilfeldig bok i tallteori eller kompleks analyse, er det bevist følgende teorem et eller annet sted. Beviset er litt for hardt for dette kurset, men vi kommer til å trenge resultatet.
+\begin{thm}
+En polynomlikning
+\[
+a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0=0
+\]
+har $n$ komplekse løsninger.
+\end{thm}
+
+\section*{Operasjoner på komplekse tall}
+La $z=2+3i$ og $w=4+5i$. De kan adderes
+\[
+z+w=2+4+(3+5)i=6+8i,
+\]
+subtraheres
+\[
+z-w=2-4+(3-5)i=-2-2i,
+\]
+og ganges 
+\begin{align*}
+z\cdot w&=(2+3i)\cdot(4+5i)\\&=2\cdot 4+3\cdot 4i+2\cdot 5i+3\cdot 5 i^2\\&=8-15+(12+10)i=-7+22i.
+\end{align*}
+De kan også deles
+\begin{align*}
+\frac{z}{w}&=\frac{2+3i}{4+5i}=\frac{2+3i}{4+5i}\cdot\frac{4-5i}{4-5i}\\&=\frac{8+15+(12-10)i}{16+25}=\frac{22}{41}-\frac{2}{41}i.
+\end{align*}
+Hva skjedde her? La $z=a+bi$. Vi ganget oppe og nede med '$z$ konjugert'
+\[
+\overline z =a-bi.
+\]
+Merk at $z\overline z$ blir et reelt tall. 
+
+\section*{Det komplekse planet}
+
+Et komplekst tall har en viss ytre likhet med vektorer i $\R^2$. Hvis komponentene til $\V x$ er $x_1$ og $x_2$ og enhetsvektorer i koordinatretningene er $\V{e}_1$ og $\V{e}_2$, skriver vi gjerne
+\[
+\V{x}=x_1 \V{e}_1+x_2 \V{e}_2.
+\]
+På lignende vis kan vi tenke at realdelen $a$ og imaginærdelen $b$ er komponenter i en vektor, og avmerke $z$ i \emph{det komplekse planet}.
+\begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[->] (-4,0) -- (7,0);
+\draw[->] (0,-4) -- (0,6);
+\node[anchor=east] at (9.8,0) {\footnotesize Re $z$};
+\node[anchor=south] at (0,6.8) {\footnotesize Im $z$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
+\draw (\x,5pt) -- (\x,-5pt);
+\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
+\draw (5pt,\y) -- (-5pt,\y);
+\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
+\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
+\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
+%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
+%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
+%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
+%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Det komplekse planet}}
+\end{center}
+
+\section*{Polar form}
+La $r$ være avstanden fra $z$ til origo i det komplekse planet, og la $\theta$ være vinkelen $z$ gjør med den reelle aksen. Noen enkle geometriske betraktninger gir oss at 
+\begin{align*}
+a=\text{Re}\, z = r\cos \theta \\
+b=\text{Im}\, z = r\sin \theta \\
+\end{align*}
+
+\begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[->] (-5,0) -- (8,0);
+\draw[->] (0,-2.5) -- (0,6);
+\node[anchor=west] at (9,0) {\footnotesize Re $z$};
+\node[anchor=south] at (0,7) {\footnotesize Im $z$};
+\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
+\draw (\x,5pt) -- (\x,-5pt);
+\foreach \y in {-2,-1,1,2,3,4,5}
+\draw (5pt,\y) -- (-5pt,\y);
+\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$z=a+bi$};
+%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
+%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
+%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
+%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+\draw[-] (0,0) to (4,5);
+\node[anchor=south] at (2,3) {\footnotesize $r$};
+\draw (3,0) arc (0:51:3);
+\node[anchor=south] at (3.3,1.1) {\footnotesize $\theta$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Polare koordinater}}
+\end{center}
+Formlene over gir $a$ og $b$ som funksjon av $r$ og $\theta$. Litt mer enkel trigonometri gir den andre veien
+\begin{align*}
+r&=a^2+b^2=z\overline z \\
+\theta&= \begin{cases} \tan \frac{b}{a} \quad &\text{for}\; a>0\\ \tan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \end{cases}
+\end{align*}
+Formelen for $\theta$ må deles opp i to tilfeller siden
+\[
+\frac{b}{a}=\frac{-b}{-a} \quad \text{og} \quad \frac{-b}{a}=\frac{b}{-a}.
+\]
+ Tangens ser ikke forskjell på disse, og skjønner ikke av seg selv om $z$ ligger til høyre eller venstre for den imaginære aksen.
+
+
+\section*{Eulers formel}
+Fra envariabel kalkulus husker du kanskje de tre taylorrekkene
+\[
+e^{x}=1+x+\frac{x^{2}}{2}+\frac{x^{3}}{3!}+\dots=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}, 
+\]
+\[
+\sin{x}=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\dots=\sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n+1}}{(2n+1)!} 
+\]
+og
+\[
+\cos{x}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\dots=\sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n}}{(2n)!}
+\]
+Dersom vi skriver 
+\[
+\cos{x}=1+\frac{(ix)^{2}}{2!}+\frac{(ix)^{4}}{4!}-\dots=\sum_{n=0}^{\infty}\frac{(ix)^{2n}}{(2n)!}
+\]
+og 
+\[
+i\sin{x}=ix+\frac{(ix)^{3}}{3!}+\frac{(ix)^{5}}{5!}-\dots=\sum_{n=0}^{\infty}\frac{(ix)^{2n+1}}{(2n+1)!}
+\]
+og legger disse sammen, får vi 
+\[
+\cos x + i\sin x=\sum_{n=0}^{\infty}\frac{(ix)^{n}}{n!}=e^{ix}.
+\]
+Dette er kun en symbolsk manipulasjon, vi vet strengt tatt ikke hva som skjer med konvergensen til en taylorrekke når du ganger den med $i$, men det er allikevel en plausibel hypotese at det er går fint å definere
+\[
+e^{ix}=\cos x + i\sin x,
+\]
+som kalles \emph{Eulers formel}. Vanlige regneregler for eksponensialfunksjonen er lette å utlede herfra.
+Tar vi Eulers formel for god fisk, kan vi skrive komplekse tall veldig kompakt på polar form:
+\[
+z=r(\cos \theta+i\sin \theta)=re^{i\theta}.
+\]
+
+
+\section*{Røtter av komplekse tall}
+Et spesialtilfelle av teorem HÅHÅHÅ kan vi analysere med det vi kjenner til så langt, nemlig komplekse $n$-te røtter, altså løsninger av 
+\[
+z^n=a
+\]
+for et vilkårlig komplekst talll $a$. Dette er en polynomlikning i $z$, og vi skal se med egne øyne at den alltid har $n$ løsninger. Vi begynner med å skrive $a$ på polar form med valgfritt antall omdreininger rundt origo
+\[
+a = re^{i \theta}=re^{i \theta+2m\pi}.
+\]
+Dersom vi skriver 
+\[
+\sqrt[n]{a}=a^{1/n} = (re^{i \theta+2m\pi})^{1/n}=\sqrt[n]{r}e^{i \theta/n+2m\pi/n},
+\]
+ser vi at det nå finnes $n$ potensielle verdier for $\sqrt[n]{a}$, alle sammen gyldige løsninger av $z^n=a$. Hvis du velger $0\leq m \leq n-1$ får du ut alle sammen. 
+\begin{ex}
+Vi finner alle løsninger av ligningen
+\[
+z^5=-1.
+\]
+Siden 
+\[
+-1=e^{i\pi+2m\pi},
+\]
+får vi at 
+\[
+\sqrt[5]{-1}=e^{i\pi/5+2m\pi/5},
+\]
+og for $0\leq m\leq 4$ spyttes ut
+\[
+\sqrt[5]{-1}=e^{i\pi/5},\;e^{i3\pi/5},\;e^{i5\pi/5}=-1,\; e^{i7\pi/5}\; \text{og}\; e^{i9\pi/5}.
+\]
+\begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[->] (-5,0) -- (7,0);
+\draw[->] (0,-3.1) -- (0,5);
+\node[anchor=west] at (8,0) {\footnotesize Re $z$};
+\node[anchor=south] at (0,6) {\footnotesize Im $z$};
+%\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9}
+%\draw (\x,5pt) -- (\x,-5pt);
+%\foreach \y in {-2,-1,1,2,3,4,5,6}
+%\draw (5pt,\y) -- (-5pt,\y);
+\filldraw (-3,0) circle [radius=3pt] node[anchor=south]{};
+
+\filldraw (3*0.80901699437,3*0.587785252294) circle [radius=3pt] node[anchor=south] {};
+\node[anchor=west] at (3.2*0.80901699437,3.6*0.587785252294) {$e^{i\pi/5}\; (m=0)$};
+\filldraw (-3*.30901699437,3*0.95105651629) circle [radius=3pt] node[anchor=east] {};
+\node[anchor=west] at (-8*.30901699437,4*0.95105651629) {$e^{i3\pi/5}\;(m=1)$};
+\node[anchor=south] at (-4,.3) {$-1$};
+\filldraw (-3*.30901699437,-3*0.95105651629) circle [radius=3pt] node[anchor=east] {};
+\node[anchor=west] at (-8*.30901699437,-4*0.95105651629) {$e^{i7\pi/5}$};
+\filldraw (3*0.80901699437,-3*0.587785252294) circle [radius=3pt] node[anchor=south] {};
+\node[anchor=west] at (3.2*0.80901699437,-3.6*0.587785252294) {$e^{i9\pi/5}\; (m=4)$};
+
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+%\draw[-] (0,0) to (4,5);
+%\node[anchor=south] at (2,3) {\footnotesize $r$};
+\draw (3,0) arc (0:360:3);
+%\node[anchor=south] at (3.3,1.1) {\footnotesize $\theta$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Femterøttene til -1}}
+\end{center}
+Merk hvordan røttene spres jevnt på en sirkel om origo. Merk også at om vi lar $m> 4$ eller $m<0$, får vi røtter som allerede er listet opp.
+\end{ex}
+\kapittelslutt
