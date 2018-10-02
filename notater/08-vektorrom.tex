@@ -990,8 +990,6 @@ et slikt rom.  Vi skriver dette enda tydeligere i et nytt teorem.
 Ethvert endeligdimensjonalt vektorrom har en basis.
 \end{thm}
 
-% TODO thm underrom av end.dim. er end.dim.
-
 % TODO thm hver lin. uavh. mengde kan utvides til basis
 
 
@@ -1096,6 +1094,21 @@ en basis for~$V$, har vi altså
 
 % TODO tekst? eks?
 
+Det er en enkel og grei sammenheng mellom dimensjon og underrom: Et
+underrom kan aldri ha større dimensjon enn vektorrommet det er
+underrom av.  Vi formulerer dette som et teorem.
+
+\begin{thm}
+La $V$ være et vektorrom med et underrom~$U$.  Hvis $V$ er
+endeligdimensjonalt, så er $U$ også endeligdimensjonalt, og
+\[
+\dim U \le \dim V.
+\]
+\end{thm}
+% TODO bevis
+
+% TODO tekst? eks?
+
 
 \section*{Vektorrom tilknyttet en matrise}
 
@@ -1167,8 +1180,246 @@ som kolonnerommet til den transponerte matrisen:
 \Row A = \Col A\tr
 \]
 
+Vi tar nå et ganske langt eksempel der vi ser på hva vi kan si om
+nullrommet, kolonnerommet og rad\-rommet til en matrise.
 
-% TODO: radrom, kolonnerom, nullrom: her eller i eget kapittel?
+\begin{ex}
+La $A$ være følgende matrise:
+\[
+A =
+\begin{bmatrix}
+1 & 2 & 1 &  2 & 0 \\
+2 & 4 & 3 &  7 & 1 \\
+1 & 2 & 2 &  5 & 1 \\
+3 & 6 & 6 & 15 & 3
+\end{bmatrix}
+\]
+Vi vil prøve å beskrive nullrommet, kolonnerommet og radrommet
+til~$A$.
+
+For å finne nullrommet, må vi løse likningen
+\[
+A \x = \0.
+\]
+Det gjør vi ved å gausseliminere matrisen~$A$.  Da får vi (her er
+mellomregningen utelatt):
+\[
+\begin{bmatrix}
+1 & 2 & 1 &  2 & 0 \\
+2 & 4 & 3 &  7 & 1 \\
+1 & 2 & 2 &  5 & 1 \\
+3 & 6 & 6 & 15 & 3
+\end{bmatrix}
+\roweq
+\begin{bmatrix}
+1 & 2 & 0 & -1 & -1 \\
+0 & 0 & 1 &  3 & 1 \\
+0 & 0 & 0 &  0 & 0 \\
+0 & 0 & 0 &  0 & 0
+\end{bmatrix}
+\]
+Vi får tre frie variabler, og den generelle løsningen blir:
+% x1 = -2x2 + x4 + x5
+% x2 fri
+% x3 = -3x4 - x5
+% x4 fri
+% x5 fri
+\[
+\x = \vvvvv{-2}{1}{0}{0}{0} r +
+     \vvvvv{1}{0}{-3}{1}{0} s +
+     \vvvvv{1}{0}{-1}{0}{1} t
+\]
+Dette betyr at de tre vektorene
+\[
+\u = \vvvvv{-2}{1}{0}{0}{0},\quad
+\v = \vvvvv{1}{0}{-3}{1}{0}\quad
+\text{og}\quad
+\w = \vvvvv{1}{0}{-1}{0}{1}
+\]
+utspenner nullrommet til~$A$.  De er dessuten lineært uavhengige: Legg
+merke til at i posisjon to, fire og fem -- som tilsvarer de tre frie
+variablene -- har én av vektorene tallet~$1$ og de andre to
+tallet~$0$.  Dermed ser vi lett at ingen av dem kan være en
+lineærkombinasjon av de to andre, slik at de må være lineært
+uavhengige.  Dette betyr at
+\[
+(\u, \v, \w)
+\]
+er en basis for nullrommet~$\Null A$.
+
+Når det gjelder kolonnerommet og radrommet, har vi direkte fra
+definisjonene at dissee rommene kan beskrives slik:
+\begin{align*}
+\Col A &=
+\Sp \left\{
+\vvvv{1}{2}{1}{3},\ %
+\vvvv{2}{4}{2}{6},\ %
+\vvvv{1}{3}{2}{6},\ %
+\vvvv{2}{7}{5}{15},\ %
+\vvvv{0}{1}{1}{3}
+\right\}
+\\
+\Row A &=
+\Sp \left\{
+\vvvvv{1}{2}{1}{ 2}{0},\ %
+\vvvvv{2}{4}{3}{ 7}{1},\ %
+\vvvvv{1}{2}{2}{ 5}{1},\ %
+\vvvvv{3}{6}{6}{15}{3}
+\right\}
+\end{align*}
+Men her har vi bare en utspennende mengde for hvert av rommene.  Den
+beste måten å beskrive et vektorrom på er å gi en basis.  Det viser
+seg at vi kan finne basiser for kolonnerommet og radrommet til~$A$ ved
+å se på hva som skjer når vi gausseliminerer~$A$.
+
+La oss ta kolonnerommet først.  Se på trappeformmatrisen vi endte opp
+med.  Den har pivotelementer i første og tredje kolonne.  Hvis vi
+stokker om på kolonnene i~$A$ slik at første og tredje kolonne kommer
+først, og gjør det samme med trappeformmatrisen, så blir disse
+matrisene også radekvivalente (fordi dette tilsvarer at vi bytter om
+kolonnene på samme måte i hver matrise vi får underveis i
+gausselimineringen):
+\[
+\left[
+\begin{array}{cc|ccc}
+1 & 1 & 2 &  2 & 0 \\
+2 & 3 & 4 &  7 & 1 \\
+1 & 2 & 2 &  5 & 1 \\
+3 & 6 & 6 & 15 & 3
+\end{array}
+\right]
+\roweq
+\left[
+\begin{array}{cc|ccc}
+1 & 0 & 2 & -1 & -1 \\
+0 & 1 & 0 &  3 & 1 \\
+0 & 0 & 0 &  0 & 0 \\
+0 & 0 & 0 &  0 & 0
+\end{array}
+\right]
+\]
+La oss nå lage en matrise
+\[
+C =
+\begin{bmatrix}
+1 & 1 \\
+2 & 3 \\
+1 & 2 \\
+3 & 6
+\end{bmatrix}
+\]
+av første og tredje kolonne i~$A$ (de to kolonnene som ender opp med
+pivotelementer i trappeformmatrisen), og la oss kalle de tre andre
+kolonnene i~$A$ for
+\[
+\b_1 = \vvvv{2}{4}{2}{6},\ %
+\b_2 = \vvvv{2}{7}{5}{15},\ %
+\b_3 = \vvvv{0}{1}{1}{3}.
+\]
+Matrisen vi fikk ved å stokke om kolonnene i~$A$ kan da beskrives som
+\[
+\left[
+\begin{array}{c|ccc}
+C & \b_1 & \b_2 & \b_3
+\end{array}
+\right].
+\]
+Vi ser fra trappeformmatrisen at kolonnene i~$C$ er lineært
+uavhengige, og at systemene
+\[
+C \x = \b_1,\quad
+C \x = \b_2\quad\text{og}\quad
+C \x = \b_3
+\]
+har løsninger, slik at hver av vektorene $\b_1$, $\b_2$ og~$\b_3$ er
+en lineærkombinasjon av kolonnene i~$C$.  Dette betyr at
+\[
+\left(
+\vvvv{1}{2}{1}{3},\ %
+\vvvv{1}{3}{2}{6}
+\right)
+\]
+er en basis for kolonnerommet~$\Col A$.
+
+Det er litt enklere å se hvordan gausseliminasjonen gir oss en basis
+for radrommet.  Vi kan se at hvis to matriser er radekvivalente, så
+har de samme radrom.  Når vi utfører en radoperasjon er det nemlig
+slik at alle rader i den nye matrisen er lineærkombinasjoner av radene
+i den gamle matrisen (dette kan du ganske enkelt sjekke selv).
+Dessuten kan vi alltid finne en «omvendt» radoperasjon som tar oss
+tilbake til den gamle matrisen, slik at alle rader i den gamle
+matrisen er lineærkombinasjoner av radene i den nye.  Altså har
+matrisene samme radrom.
+
+Dette betyr at for å beskrive radrommet til~$A$ kan vi like godt se på
+trappeformmatrisen vi fikk ved å gausseliminere~$A$.  Der ser vi lett
+at alle radene som ikke er nullrader må være lineært uavhengige.  Vi
+får dermed at
+\[
+\left(
+\vvvvv{1}{2}{0}{-1}{-1},\ %
+\vvvvv{0}{0}{1}{3}{1}
+\right)
+\]
+er en basis for radrommet~$\Row A$.
+\end{ex}
+
+Metodene vi brukte i eksempelet for å finne basiser for nullrommet,
+kolonnerommet og radrommet fungerer generelt for en hvilken som helst
+matrise.  Vi ser dermed at vi kan beskrive dimensjonene til disse tre
+rommene ved hjelp av antall frie variabler og antall pivotelementer i
+trappeformmatrisen.
+
+% TODO: burde beskrevet metodene skikkelig på en generell måte,
+%       og bevist følgende teorem
+
+\begin{thm}
+\label{thm:dim-null-col-row}
+La $A$ være en $m \times n$-matrise, og la $E$ være trappeformmatrisen
+vi får når vi gausseliminerer~$A$.  Da har vi:
+\begin{enumerate}
+\item[(a)] Dimensjonen til nullrommet til~$A$ er lik antall frie
+variabler vi får når vi løser likningssystemet $A \x = \b$, altså
+antall kolonner uten pivotelement i~$E$.
+\item[(b)] Dimensjonen til kolonnerommet til~$A$ er lik antall kolonner
+med pivotelementer i~$E$.
+\item[(c)] Dimensjonen til radrommet til~$A$ er lik antall rader som
+ikke er null i~$E$.
+\end{enumerate}
+\end{thm}
+
+Siden det er ett pivotelement i hver rad som ikke er null, får vi ved
+å kombinere del~(b) og~(c) i dette teoremet at kolonnerommet og
+radrommet har samme dimensjon.  Vi skriver opp dette også som et
+teorem.
+
+\begin{thm}
+\label{thm:dim-row=dim-col}
+La $A$ være en $m \times n$-matrise.  Da har kolonnerommet og
+radrommet til~$A$ samme dimensjon:
+\[
+\dim \Col A = \dim \Row A
+\]
+\end{thm}
+
+Dette ene tallet, som både er dimensjonen til kolonnerommet og
+dimensjonen til radrommet, kalles \defterm{rangen} til matrisen.  Vi
+skriver:
+\[
+\rank A = \dim \Col A = \dim \Row A
+\]
+
+Siden enhver kolonne i trappeformmatrisen enten inneholder et
+pivotelement eller gir opphav til en fri variabel for likningen
+$A \x = \0$, får vi følgende resultat ved å kombinere del~(a) og~(b)
+fra teorem~\ref{thm:dim-null-col-row}.
+
+\begin{thm}
+La $A$ være en $m \times n$-matrise.  Da er
+\[
+\dim \Null A + \rank A = n.
+\]
+\end{thm}
 
 
 \kapittelslutt
