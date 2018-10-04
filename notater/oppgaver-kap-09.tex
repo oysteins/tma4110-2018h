@@ -141,11 +141,11 @@ Surjektiv, ikke injektiv.
 \begin{oppgave}
 Finn standardmatrisen til lineærtransformasjonen
 \begin{punkt}
-\ldots{} $T \colon \R^2 \to \R^2$ som
+\ldots{} $S \colon \R^2 \to \R^2$ som
 speiler planet om $x$-aksen.
 \end{punkt}
 \begin{punkt}
-\ldots{} $S \colon \R^2 \to \R^2$ som
+\ldots{} $R \colon \R^2 \to \R^2$ som
 roterer planet med $\frac{3}{4}\pi$.
 \end{punkt}
 % \begin{punkt}
@@ -154,43 +154,66 @@ roterer planet med $\frac{3}{4}\pi$.
 \end{oppgave}
 
 \begin{losning}
-I \textbf{a)} og \textbf{b)} finner vi ut av hva matrisen gjør på standardbasisen $\V{e}_1$ og $\V{e}_2$. Dette er kolonnevektorene til matrisen vi ønsker å finne. I \textbf{c)} observerer vi at speiling om linjen $x=-y$ kan dekomponeres i å speile om $x$-aksen og deretter rotere 135 grader; komposisjonen av lineærtransformasjonene i \textbf{a)} og \textbf{b)}. Husk at komposisjon av lineærtransformasjoner svarer til produkt av matriser.
-
+Se på hva matrisen gjør med standardbasisen $(\e_1, \e_2)$. Dette blir
+kolonnene i matrisen vi ønsker å finne.
 \begin{punkt}
-$$\begin{bmatrix}
+\[
+\begin{bmatrix}
 1 & 0\\
 0 & -1
-\end{bmatrix}$$
+\end{bmatrix}
+\]
 \end{punkt}
 
 \begin{punkt}
-$$\begin{bmatrix}
+\[
+\begin{bmatrix}
 -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 \frac{1}{\sqrt{2}}  & -\frac{1}{\sqrt{2}} 
-\end{bmatrix}$$
+\end{bmatrix}
+\]
 \end{punkt}
 
-\begin{punkt}
-$$\begin{bmatrix}
--\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
-\frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} 
-\end{bmatrix}$$
-\end{punkt}
+% I \textbf{c)} observerer vi at speiling om linjen $x=-y$ kan
+% dekomponeres i å speile om $x$-aksen og deretter rotere 135 grader;
+% komposisjonen av lineærtransformasjonene i \textbf{a)} og
+% \textbf{b)}. Husk at komposisjon av lineærtransformasjoner svarer til
+% produkt av matriser.
 
+% \begin{punkt}
+% $$\begin{bmatrix}
+% -\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+% \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} 
+% \end{bmatrix}$$
+% \end{punkt}
 \end{losning}
 
 
 \begin{oppgave}
-La $T$ og~$S$ være som i forrige oppgave.  Finn standardmatrisene til
-sammensetningene $S \fcomp T$ og $T \fcomp S$.  Gi en geometrisk
+La $S$ og~$R$ være som i forrige oppgave.  Finn standardmatrisene til
+sammensetningene $S \fcomp R$ og $R \fcomp S$.  Gi en geometrisk
 beskrivelse av hva disse lineærtransformasjonene gjør.
 \end{oppgave}
 
 \begin{losning}
-$$\begin{bmatrix}
+Standardmatrisen til $S \fcomp R$ er:
+\[
+\begin{bmatrix}
+-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} 
+\end{bmatrix}
+\]
+Standardmatrisen til $R \fcomp S$ er:
+\[
+\begin{bmatrix}
 -\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
 \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} 
-\end{bmatrix}$$
+\end{bmatrix}
+\]
+Lineærtransformasjonen $S \fcomp R$ speiler planet om linjen
+$y = -2x$.
+Lineærtransformasjonen $R \fcomp S$ speiler planet om linjen
+$y = 2x$.
 \end{losning}
 
 
@@ -319,6 +342,7 @@ $$
 1
 \end{bmatrix}.$$
 
+% TODO: få med motsatt vei også
 \end{punkt}
 
 \end{losning}
@@ -608,11 +632,18 @@ For å sjekke om en funksjon $T:\mathcal{P}\rightarrow \mathcal{P}$ er lineær, 
 
 
 \noindent
-$T$: Se oppgaven som mer generelt tar for seg derivasjon av glatte funksjoner. Alternativ løsning: Et polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Derivasjon av $p$ er $T(p(x))=a_1+2a_2x+3a_3x^2+\dots+na_nx^{n-1}$. Du kan eksplisitt sjekke at denne formelen er lineær (tilfredstiller i) og ii)).
+$D$: Se oppgaven som mer generelt tar for seg derivasjon av glatte funksjoner. Alternativ løsning: Et polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Derivasjon av $p$ er $D(p(x))=a_1+2a_2x+3a_3x^2+\dots+na_nx^{n-1}$. Du kan eksplisitt sjekke at denne formelen er lineær (tilfredstiller i) og ii)).
 
 
 \noindent
-$G$: i) $$G(p_1(x)+p_2(x))=x\cdot(p_1(x)+p_2(x))=x\cdot p_1(x)+x\cdot p_2(x)=G(p_1(x))+G(p_2(x)).$$ ii) $$G(c\cdot p(x))=x\cdot(c\cdot p(x))=c\cdot(x\cdotp(x))=cG(p(x)).$$
+$G$: i)
+\begin{align*}
+G(p_1(x)+p_2(x))
+&=x\cdot(p_1(x)+p_2(x)) \\
+&=x\cdot p_1(x)+x\cdot p_2(x) \\
+&=G(p_1(x))+G(p_2(x)).
+\end{align*}
+ii) $$G(c\cdot p(x))=x\cdot(c\cdot p(x))=c\cdot(x\cdotp(x))=cG(p(x)).$$
 
 
 \end{punkt}
@@ -624,61 +655,100 @@ Bildet til $G$ er alle polynom $p(x)$ som kan skrives på formen $p(x)=G(q(x))$ 
 \begin{punkt}
 Hvis vi bruker produktregelen for derivasjon (matte 1), ser vi at 
 $$(x\cdot p(x))'=x'\cdot p(x)+x\cdot p'(x)=p(x)+x\cdot p'(x).$$
-Dette er akkurat det vi ønsker å vise:
-$$T(G(p(x)))=p(x)+G(T(p(x))).$$
-
-\noindent
-Alternativ løsning: Vi kan også løse oppgaven direkte ved regning. Et polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Du kan regne ut høyre og venstre side av likningen vi ønsker å vise for å se at likheten holder.
+Dermed får vi:
+\[
+D(G(p(x)))=p(x)+G(D(p(x)))
+\]
+Dette betyr at
+\[
+(D \fcomp G)(p) - (G \fcomp D)(p) = p
+\]
+for ethver polynom~$p$, og det vil si at
+\[
+(D \fcomp G) - (G \fcomp D) = \id_{\P}
+\]
+% Alternativ løsning: Vi kan også løse oppgaven direkte ved regning. Et
+% polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Du kan regne ut
+% høyre og venstre side av likningen vi ønsker å vise for å se at
+% likheten holder.
 \end{punkt}
 
 \begin{punkt}
-En lineærtransformasjon fra $\mathcal{P}_n$ til $\mathcal{P}_n$ skal ta inn et $n$-gradspolynom og gi ut et $n$-gradspolynom i tillegg til å være lineær. Derivasjon er lineært og sender et $n$-gradspolynom til et $(n-1)$-gradspolynom, som spesielt er et $n$-gradspolynom (koeffisienten foran $x^n$ er lik null). $T$ gir derfor mening som en lineærtransformasjon $\mathcal{P}_n\rightarrow \mathcal{P}_n$. Transformasjonen $G$, på den andre siden, multipliserer med $x$ og øker derfor graden fra $n$ til $(n+1)$, og gir derfor ikke mening som en lineærtransformasjon $\mathcal{P}_n\rightarrow \mathcal{P}_n$.
+La $\e_0$, $\e_1$, $\e_2$ og~$\e_3$ være polynomene gitt ved:
+\begin{align*}
+\e_0(x) &= 1 &
+\e_2(x) &= x^2 \\
+\e_1(x) &= x &
+\e_3(x) &= x^3
+\end{align*}
+Da er $(\e_0, \e_1, \e_2)$ en basis for~$\P_2$, og
+$(\e_0, \e_1, \e_2, \e_3)$ en basis for~$\P_3$.
 
-\noindent
-Standardbasisen til $\mathcal{P}_n$ er gitt ved $1,x,\dots,x^n$. Fra den eksplisitte formelen for $T(p(x))$ i løsningen for del $\textbf{a)}$ ser vi at $$T[p(x)]_\beta=T\begin{bmatrix}
-a_0\\
-a_1\\
-a_2\\
-\vdots\\
-a_{n-1}\\
-a_n
-\end{bmatrix}=\begin{bmatrix}
-a_1\\
-2a_2\\
-3a_3\\
-\vdots\\
-na_n\\
-0
-\end{bmatrix}.$$ Dette kan skrives 
-$$\begin{bmatrix}
-0 & 1 & 0 & 0 & \dots & 0 & 0\\
-0 & 0 & 2 & 0 & \dots & 0 & 0\\
-0 & 0 & 0 & 3 & \dots & 0 & 0\\
-\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-0 & 0 & 0 & 0 & \dots & 0 & na_n\\
-0 & 0 & 0 & 0 & \dots & 0 & 0
-\end{bmatrix}\begin{bmatrix}
-a_0\\
-a_1\\
-a_2\\
-\vdots\\
-a_{n-1}\\
-a_n
-\end{bmatrix}=\begin{bmatrix}
-a_1\\
-2a_2\\
-3a_3\\
-\vdots\\
-na_n\\
-0
-\end{bmatrix}$$ som viser at $$\begin{bmatrix}
-0 & 1 & 0 & 0 & \dots & 0 & 0\\
-0 & 0 & 2 & 0 & \dots & 0 & 0\\
-0 & 0 & 0 & 3 & \dots & 0 & 0\\
-\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-0 & 0 & 0 & 0 & \dots & 0 & na_n\\
-0 & 0 & 0 & 0 & \dots & 0 & 0
-\end{bmatrix}$$ er $T$ på matriseform.
+Med hensyn på disse basisene får vi følgende matriser:
+\begin{align*}
+\text{Matrisen for~$D_3$:} &
+\begin{bmatrix}
+0 & 1 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 3
+\end{bmatrix}
+\\
+\text{Matrisen for~$G_3$:} &
+\begin{bmatrix}
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+% En lineærtransformasjon fra $\mathcal{P}_n$ til $\mathcal{P}_n$ skal ta inn et $n$-gradspolynom og gi ut et $n$-gradspolynom i tillegg til å være lineær. Derivasjon er lineært og sender et $n$-gradspolynom til et $(n-1)$-gradspolynom, som spesielt er et $n$-gradspolynom (koeffisienten foran $x^n$ er lik null). $T$ gir derfor mening som en lineærtransformasjon $\mathcal{P}_n\rightarrow \mathcal{P}_n$. Transformasjonen $G$, på den andre siden, multipliserer med $x$ og øker derfor graden fra $n$ til $(n+1)$, og gir derfor ikke mening som en lineærtransformasjon $\mathcal{P}_n\rightarrow \mathcal{P}_n$.
+
+% \noindent
+% Standardbasisen til $\mathcal{P}_n$ er gitt ved $1,x,\dots,x^n$. Fra den eksplisitte formelen for $T(p(x))$ i løsningen for del $\textbf{a)}$ ser vi at $$T[p(x)]_\beta=T\begin{bmatrix}
+% a_0\\
+% a_1\\
+% a_2\\
+% \vdots\\
+% a_{n-1}\\
+% a_n
+% \end{bmatrix}=\begin{bmatrix}
+% a_1\\
+% 2a_2\\
+% 3a_3\\
+% \vdots\\
+% na_n\\
+% 0
+% \end{bmatrix}.$$ Dette kan skrives 
+% $$\begin{bmatrix}
+% 0 & 1 & 0 & 0 & \dots & 0 & 0\\
+% 0 & 0 & 2 & 0 & \dots & 0 & 0\\
+% 0 & 0 & 0 & 3 & \dots & 0 & 0\\
+% \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+% 0 & 0 & 0 & 0 & \dots & 0 & na_n\\
+% 0 & 0 & 0 & 0 & \dots & 0 & 0
+% \end{bmatrix}\begin{bmatrix}
+% a_0\\
+% a_1\\
+% a_2\\
+% \vdots\\
+% a_{n-1}\\
+% a_n
+% \end{bmatrix}=\begin{bmatrix}
+% a_1\\
+% 2a_2\\
+% 3a_3\\
+% \vdots\\
+% na_n\\
+% 0
+% \end{bmatrix}$$ som viser at $$\begin{bmatrix}
+% 0 & 1 & 0 & 0 & \dots & 0 & 0\\
+% 0 & 0 & 2 & 0 & \dots & 0 & 0\\
+% 0 & 0 & 0 & 3 & \dots & 0 & 0\\
+% \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+% 0 & 0 & 0 & 0 & \dots & 0 & na_n\\
+% 0 & 0 & 0 & 0 & \dots & 0 & 0
+% \end{bmatrix}$$ er $T$ på matriseform.
 \end{punkt}
 
 
@@ -702,7 +772,13 @@ Hva kan du si om dimensjonene til $U$, $V$ og~$W$?
 \end{oppgave}
 
 \begin{losning}
-TODO
+\begin{punkt}
+$T$ må være injektiv, og $S$ må være surjektiv.
+\end{punkt}
+\begin{punkt}
+Vi får at $\dim U = \dim W$ siden $U \iso W$, og $\dim V \ge \dim U$
+siden $T$ er injektiv.
+\end{punkt}
 \end{losning}
 
 
@@ -757,7 +833,8 @@ Kjernen til $D$, $\ker D$, er definert som alle glatte funksjoner $f$ slik at $f
 \end{punkt}
 
 \begin{punkt}
-En egenvektor til $D$ med egenverdi $\lambda$, er en vektor/funksjon $f$ slik at $D(f)=\lambda f$, eller $f'=\lambda f$. Dette er en differensiallikning med generell løsning $x_0e^{\lambda x}$. Spesielt betyr dette at alle valg av $\lambda$ gir egenverdier til $D$. Det er uendelig mange reelle tall, og derfor uendelig mange egenverdier.
+En egenvektor til $D$ med egenverdi $\lambda$, er en vektor/funksjon $f$ slik at $D(f)=\lambda f$, eller $f'=\lambda f$. Dette er en differensiallikning med generell løsning $x_0e^{\lambda x}$. Spesielt betyr dette at alle valg av $\lambda$ gir egenverdier til $D$.
+%Det er uendelig mange reelle tall, og derfor uendelig mange egenverdier.
 \end{punkt}
 
 \begin{punkt}
