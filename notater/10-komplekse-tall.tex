@@ -1,6 +1,6 @@
 \input{kapittel}
 
-\kapittel{12}{Komplekse tall}
+\kapittel{10}{Komplekse tall}
 \label{ch:komplekse-tall}
 \section*{Den imaginære enheten}
 Generelt er det slik at en polynomlikning
@@ -15,38 +15,32 @@ ingen reell løsning. Men hva skjer om vi prøver å løse den med annengradsfor
 \[
 x=\frac{\sqrt{-4}}{2}=\frac{\sqrt{4\cdot (-1)}}{2}=\frac{2\sqrt{-1}}{2}=\sqrt{-1}.
 \]
-Vi gir det en spesiell plass i våre hjerter ved å donere en bokstav
+Vi gir dette 'tallet' en spesiell plass i våre hjerter ved å donere en bokstav
 \[
 i=\sqrt{-1},
 \]
-og døpe det \emph{den imaginære enheten}. Nå kan vi skrive kvadratroten av alle negative tall på en pen måte:
+og døpe det \emph{den imaginære enheten}. Vi forutsetter at den imaginære enheten oppfører seg som en vanlig kvadratrot
+\[
+i^2=\sqrt{-1}\cdot\sqrt{-1}=-1.
+\]
+Dersom vi forutsetter at $i$ ellers oppfører seg som vanlige tall, kan vi skrive kvadratroten av negative tall på en pen måte:
 \begin{equation*}
-\sqrt{-4}=\sqrt{4\cdot (-1)}=\sqrt{4}\cdot \sqrt{(-1)}=2i
+\sqrt{-4}=\sqrt{4\cdot (-1)}=\sqrt{4}\cdot \sqrt{(-1)}=2i.
 \end{equation*}
-
-
-Hvis vi løser likningen
+Løser vi likningen
 \[
 x^2+x+1=0
 \]
 får vi 
 \[
-x=\frac{-1\pm \sqrt{-3}}{2}=\frac{-1\pm \sqrt{3}i}{2}=-\frac{1}{2}\pm\frac{\sqrt{3}}{2}i
+x=\frac{-1\pm \sqrt{-3}}{2}=\frac{-1\pm \sqrt{3}i}{2}=-\frac{1}{2}\pm\frac{\sqrt{3}}{2}i,
 \]
-Dette inspirerer oss til å definere \emph{komplekse tall} som 
+og dette inspirerer oss til å definere \emph{komplekse tall} som 
 \[
 z=a+bi.
 \]
-Her er $a$ og $b$ reelle tall. De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$, og skrives Re $z$ og Im $z$. 
+Her er $a$ og $b$ reelle tall. De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$, og skrives gjerne Re $z$ og Im $z$. 
 
-Hvis du plukker opp en tilfeldig bok i tallteori eller kompleks analyse, er det bevist følgende teorem et eller annet sted. Beviset er litt for hardt for dette kurset, men vi kommer til å trenge resultatet.
-\begin{thm}
-En polynomlikning
-\[
-a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0=0
-\]
-har $n$ komplekse løsninger.
-\end{thm}
 
 \section*{Operasjoner på komplekse tall}
 La $z=2+3i$ og $w=4+5i$. De kan adderes
@@ -70,6 +64,8 @@ Hva skjedde her? La $z=a+bi$. Vi ganget oppe og nede med '$z$ konjugert'
 \overline z =a-bi.
 \]
 Merk at $z\overline z$ blir et reelt tall. 
+
+
 
 \section*{Det komplekse planet}
 
@@ -106,6 +102,7 @@ På lignende vis kan vi tenke at realdelen $a$ og imaginærdelen $b$ er komponen
 \\
 {\small \textit{Det komplekse planet}}
 \end{center}
+Nå tenker du sikkert at det er på sin plass å sjekke om vektorromsaksiomene holder for de komplekse tallene. Til tross for den ytre likheten med $\R^2$, er ikke dette en spesielt naturlig ting å gjøre. Dessverre. Mer om dette på slutten av kapitlet. 
 
 \section*{Polar form}
 La $r$ være avstanden fra $z$ til origo i det komplekse planet, og la $\theta$ være vinkelen $z$ gjør med den reelle aksen. Noen enkle geometriske betraktninger gir oss at 
@@ -145,14 +142,14 @@ b=\text{Im}\, z = r\sin \theta \\
 \end{center}
 Formlene over gir $a$ og $b$ som funksjon av $r$ og $\theta$. Litt mer enkel trigonometri gir den andre veien
 \begin{align*}
-r&=a^2+b^2=z\overline z \\
+r&=a^2+b^2 \\
 \theta&= \begin{cases} \tan \frac{b}{a} \quad &\text{for}\; a>0\\ \tan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \end{cases}
 \end{align*}
 Formelen for $\theta$ må deles opp i to tilfeller siden
 \[
 \frac{b}{a}=\frac{-b}{-a} \quad \text{og} \quad \frac{-b}{a}=\frac{b}{-a}.
 \]
- Tangens ser ikke forskjell på disse, og skjønner ikke av seg selv om $z$ ligger til høyre eller venstre for den imaginære aksen.
+ Tangensfunksjonen ser ikke forskjell på disse, og skjønner derfor ikke av seg selv om $z$ ligger til høyre eller venstre for den imaginære aksen. Vi skriver også $|z|=r=\sqrt{a^2+b^2}=z\overline z$ for avstanden fra $z$ til origo. Dette tallet kalles gjerne absoluttverdi eller modulus til $z$. Vinkelen $\theta$ kalles argumentet til $z$.
 
 
 \section*{Eulers formel}
@@ -188,14 +185,29 @@ Tar vi Eulers formel for god fisk, kan vi skrive komplekse tall veldig kompakt p
 \[
 z=r(\cos \theta+i\sin \theta)=re^{i\theta}.
 \]
+Hvis vi substituerer $nx$ for $x$ i Eulers formel, får vi de Moivres formel
+\[
+e^{inx}=\cos nx + i\sin nx.
+\]
 
+\begin{ex}
+Eulers formel gir at $e^{\pi/2 i}=i$, $e^{\pi i}=-1$, $e^{3\pi/2 i}=-i$ og $e^{2\pi}=1$.
+\end{ex}
 
 \section*{Røtter av komplekse tall}
-Et spesialtilfelle av teorem HÅHÅHÅ kan vi analysere med det vi kjenner til så langt, nemlig komplekse $n$-te røtter, altså løsninger av 
+Hvis du plukker opp en tilfeldig bok i tallteori eller kompleks analyse, er det bevist følgende teorem et eller annet sted. Teoremet heter algebraens fundamentalteorem.
+\begin{thm}
+En polynomlikning
+\[
+a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
+\]
+har $n$ komplekse løsninger.
+\end{thm}
+Beviset er litt for hardt for dette kurset, men et spesialtilfelle av teoremet kan vi analysere med det vi kjenner til så langt, nemlig komplekse $n$-te røtter.  Dette er løsninger av polynomlikningen
 \[
 z^n=a
 \]
-for et vilkårlig komplekst talll $a$. Dette er en polynomlikning i $z$, og vi skal se med egne øyne at den alltid har $n$ løsninger. Vi begynner med å skrive $a$ på polar form med valgfritt antall omdreininger rundt origo
+for et vilkårlig komplekst tall $a$. Vi skal se med egne øyne at denne likningen alltid har $n$ løsninger. Vi begynner med å skrive $a$ på polar form med valgfritt antall omdreininger rundt origo
 \[
 a = re^{i \theta}=re^{i \theta+2m\pi}.
 \]
@@ -257,6 +269,24 @@ og for $0\leq m\leq 4$ spyttes ut
 \\
 {\small \textit{Femterøttene til -1}}
 \end{center}
-Merk hvordan røttene spres jevnt på en sirkel om origo. Merk også at om vi lar $m> 4$ eller $m<0$, får vi røtter som allerede er listet opp.
+Merk hvordan røttene sprer seg jevnt ut på en sirkel om origo. Merk også at om vi lar $m> 4$ eller $m<0$, får vi røtter som allerede er listet opp.
 \end{ex}
+
+\section*{Går alt dette greit?}
+Dette har vært et litt 'kjapt' kapittel. Vi har jo ikke vist noe som helst, bare definert komplekse tall og slengt ut en masse regneregler uten å argumentere for at dette går greit, eller at det i det hele tatt finnes et tallsystem der likningen
+\[
+x^2+1
+\]
+har en løsning. 
+
+Konstruksjonen av de reelle tallene $\R$ fra de rasjonale tallene $\Q$ er komplisert nok til at selv matematikkstudenter ikke blir plaget nevneverdig med det. Den formelle konstruksjonen av $\mathbb C$ fra $\R$ er ikke på langt nær så komplisert, men man trenger fremdeles noen konsepter som ligger noe utenfor det vi kan gjøre i dette kurset.
+
+De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. Det at de er ordnet, betyr at man alltid kan avgjøre hvilket av to reelle tall som er størst, og kropp betyr at de tilfredsstiller noen aksiomer som er til forveksling like vektorromsaksiomene, og noen andre aksiomer i tillegg. Vi begrenser oss til å nevne at de reelle tallene er inkludert i de komplekse 
+\[
+\N \subset \Z \subset \Q \subset \R \subset \mathbb C
+\]
+samt at de komplekse tallene ikke er ordnede.
+
+Når man definerer et vektorrom og sjekker vektorromsaksiomene, ligger det gjerne en kropp og lurer i bånn. Det er fra denne kroppen man henter komponentene i vektoren dersom det er naturlig å ha komponenter, og det er der man henter skalarene man multipliserer vektorer med. Til nå har vi stort sett brukt $\R$ som kropp i vektorrommene, men nå skal vi begynne å bruke $\mathbb C$ i tillegg. Vi sier gjerne at vi har et vektorrom over en bestemt kropp; for eksempel er $\R^n$ et vektorrom over $\R$.
+
 \kapittelslutt
