@@ -2,29 +2,46 @@
 \oppgaver{9}
 
 
-\begin{oppgave}
-Sjekk om følgende funksjoner er lineære. Hvis ja, sjekk om den er injektiv og surjektiv.
+% TODO
+% flere enkle oppgaver
+% ker og im ved hjelp av nullrom og kolonnerom
+% kan radrommet trekkes inn?  A^\tr?
+% isomorfi
+% kan et vektorrom være isomorft med ekte underrom?  (f.eks. \R^\N eller \P)
+% isomorfi \R^\N \iso \P
+% \Hom(V,W): sjekk at er vektorrom, finn dimensjon hvis V og W end.dim.
+% T \colon V_1 \to V_2 ; T_* \colon \Hom(V_1,W) \to \Hom(V_2,W)
+% ^-- konkrete eksempler?
+% få med dimensjon i noen oppgaver, og bruk rank A + dim Null A = n
+% lin.tr. gitt ved basis (ikke nødvendigvis standardbasisen)
+% alle end.dim. isomorfe med \R^n (bevise?  bruke?)
+% finne prebilder for lin.tr gitt ved matrise (og for lintr som ikke er gitt ved matrise?)
+% vis at T(\0) = \0 (må først vise at 0\u = \0)
 
+\begin{oppgave}
+Finn ut om funksjonen~$T$ er en lineærtransformasjon.  Hvis den er
+det: Finn standardmatrisen til~$T$, regn ut $\ker T$ og $\im T$, og
+finn ut om $T$ er injektiv, og om den er surjektiv.
 \begin{punkt}
-$T(\begin{bmatrix}
+$T\left( \begin{bmatrix}
 x\\
 y\\
 z
-\end{bmatrix})=\begin{bmatrix}
+\end{bmatrix} \right)=\begin{bmatrix}
 8x-7y\\
 3z-8x-7y\\
 5y-4x-8z\\
 6y-6x-4z
-\end{bmatrix}.$
+\end{bmatrix}$
 \end{punkt}
 
 \begin{punkt}
-$T(\begin{bmatrix}
+$T\left( \begin{bmatrix}
 x\\
 y\\
 z\\
 w
-\end{bmatrix})=\begin{bmatrix}
+\end{bmatrix} \right)=\begin{bmatrix}
 x\\
 y\\
 z\\
@@ -34,17 +51,16 @@ x\\
 y\\
 z\\
 w
-\end{bmatrix}.$
-
+\end{bmatrix}$
 \end{punkt}
 
 \begin{punkt}
-$T(\begin{bmatrix}
+$T\left( \begin{bmatrix}
 x\\
 y\\
 z\\
 w
-\end{bmatrix})=\begin{bmatrix}
+\end{bmatrix} \right)=\begin{bmatrix}
 x\\
 y\\
 z\\
@@ -54,26 +70,26 @@ w
 2\\
 3\\
 4
-\end{bmatrix}.$
-
+\end{bmatrix}$
 \end{punkt}
 
-\begin{punkt}
-$T(\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-x_4\\
-x_5
-\end{bmatrix})=\begin{bmatrix}
-2x_1-5x_2+3x_3+4x_4\\
-2x_1-4x_2+7x_3+2x_4+x_5\\
--6x_1+15x_2-9x_3-12x_4+x_5\\
-4x_1-8x_2+14x_3+5x_4-6x_5\\
--2x_1+5x_2+4x_3+5x_4-4x_5
-\end{bmatrix}.$
-
-\end{punkt}
+% \begin{punkt}
+% {\small
+% $T\left( \begin{bmatrix}
+% x_1\\
+% x_2\\
+% x_3\\
+% x_4\\
+% x_5
+% \end{bmatrix} \right)=\begin{bmatrix}
+% 2x_1-5x_2+3x_3+4x_4\\
+% 2x_1-4x_2+7x_3+2x_4+x_5\\
+% -6x_1+15x_2-9x_3-12x_4+x_5\\
+% 4x_1-8x_2+14x_3+5x_4-6x_5\\
+% -2x_1+5x_2+4x_3+5x_4-4x_5
+% \end{bmatrix}$
+% }
+% \end{punkt}
 
 
 \end{oppgave}
@@ -102,37 +118,39 @@ $$\begin{bmatrix}
 Surjektiv, ikke injektiv.
 \end{punkt}
 
-\begin{punkt}
-$$
-\begin{bmatrix}
-2 & -5 & 3 & 4 & 0 \\
-2 & -4 & 7 & 2 & 1 \\
--6 & 15 & -9 & -12 & 1 \\
-4 & -8 & 14 & 5 & -6 \\
--2 & 5 & 4 & 5 & -4
-\end{bmatrix}
-$$
-Injektiv og surjektiv.
+% \begin{punkt}
+% $$
+% \begin{bmatrix}
+% 2 & -5 & 3 & 4 & 0 \\
+% 2 & -4 & 7 & 2 & 1 \\
+% -6 & 15 & -9 & -12 & 1 \\
+% 4 & -8 & 14 & 5 & -6 \\
+% -2 & 5 & 4 & 5 & -4
+% \end{bmatrix}
+% $$
+% Injektiv og surjektiv.
 
-\noindent 
-Husk: Du har regnet ut determinanten til denne matrisen tidligere.
+% \noindent 
+% Husk: Du har regnet ut determinanten til denne matrisen tidligere.
 
-\end{punkt}
+% \end{punkt}
 
 \end{losning}
 
 
 \begin{oppgave}
-Finn en $2\times$.matrise som \ldots
+Finn standardmatrisen til lineærtransformasjonen
 \begin{punkt}
-\ldots speiler vektorer om $x$-aksen.
+\ldots{} $T \colon \R^2 \to \R^2$ som
+speiler planet om $x$-aksen.
 \end{punkt}
 \begin{punkt}
-\ldots roterer vektorer 135 grader mot klokken.
+\ldots{} $S \colon \R^2 \to \R^2$ som
+roterer planet med $\frac{3}{4}\pi$.
 \end{punkt}
-\begin{punkt}
-\ldots speiler vektorer om linjen $x=-y$.
-\end{punkt}
+% \begin{punkt}
+% \ldots{} speiler vektorer om linjen $x=-y$.
+% \end{punkt}
 \end{oppgave}
 
 \begin{losning}
@@ -163,129 +181,422 @@ $$\begin{bmatrix}
 
 
 \begin{oppgave}
-\label{oppg:1dlintrans}
-Vi skal se på funksjoner $\mathbb{R}\rightarrow \mathbb{R}$. Begrunn om følgende funksjoner er lineære eller ikke:
-
-\begin{punkt}
-$f(x) = 2x$
-\end{punkt}
-
-\begin{punkt}
-$f(x) = 3x+1$
-\end{punkt}
-
-\begin{punkt}
-$f(x) = 3x^2$
-\end{punkt}
-
-\begin{punkt}
-$f(x)= -x$
-\end{punkt}
-
-\begin{punkt}
-$f(x)=e^x$
-\end{punkt}
-
-\begin{punkt}
-$f(x)=\cos (x)$
-\end{punkt}
+La $T$ og~$S$ være som i forrige oppgave.  Finn standardmatrisene til
+sammensetningene $S \fcomp T$ og $T \fcomp S$.  Gi en geometrisk
+beskrivelse av hva disse lineærtransformasjonene gjør.
 \end{oppgave}
 
 \begin{losning}
-
-\textbf{a)} og \textbf{d)} er lineære; \textbf{b)}, \textbf{c)}, \textbf{e)} og \textbf{f} er ikke.
-
-\noindent
-Hint: Hva er definisjonen av en lineærtransformasjon. Husk $e^{x+y}=e^x\cdot e^y$ for del \textbf{e)} og addisjonsformelen for cosinus i del \textbf{f)}.
-
-\end{losning}
-
-
-\begin{oppgave}
-Vis at en lineærtransformasjon $f:\mathbb{R}\rightarrow \mathbb{R}$ er entydig bestemt av et reelt tall.
-
-\noindent 
-Hint: Hvordan ser de lineære funksjonene i forrige oppgave ut?
-\end{oppgave}
-
-
-\begin{losning}
-Hint: $f(x)=x\cdot f(1)$ hvor $f(1)$ er et reelt tall. Kan du fullføre oppgaven?
+$$\begin{bmatrix}
+-\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}} 
+\end{bmatrix}$$
 \end{losning}
 
 
 \begin{oppgave}
 \begin{punkt}
-La $f$ og $g$ være funksjoner $\mathbb{R}\rightarrow \mathbb{R}$ gitt ved $$f(x)=2^x \quad \text{og} \quad g(x)=x^3-x.$$ Vis at $f$ er injektiv men ikke surjektiv; $g$ er surjektiv men ikke injektiv.
-
+Finn en basis $\B$ for $\mathcal{P}_2$ slik at
+\[
+\koord{p}{\B}
+ =
+\vvv{p(0)}{p'(0)}{\frac{p''(0)}{2}}
+\]
+er koordinatene til et andregradspolynom $p$.
 \end{punkt}
+
 \begin{punkt}
-Kan en eller begge tilfellene i del \textbf{a)} skje for en lineærtrasnformasjon fra $\mathbb{R}^n$ til $\mathbb{R}^n$? Hva med $\mathbb{R}^n$ til $\mathbb{R}^m$?
+Finn en basis $\mathscr{C}$ for $\mathcal{P}_2$ slik at
+\[
+\koord{p}{\mathscr{C}}
+ =
+\vvv{p(0)}{p(1)}{p(2)}
+\]
+er koordinatene til et andregradspolynom $p$.
+\end{punkt}
+
+\begin{punkt}
+La $p$ være gitt ved $p(x) = x^2$.
+Finn koordinatene til~$p$ med hensyn på henholdsvis $\B$ og~$\mathscr{C}$.
+\end{punkt}
+
+\begin{punkt}
+Finn lineærtransformasjoner som oversetter mellom disse basisene,
+altså
+$T \colon \R^3 \to \R^3$ og
+$S \colon \R^3 \to \R^3$
+% \[
+% T \colon \R^3 \to \R^3
+% \quad\text{og}\quad
+% S \colon \R^3 \to \R^3
+% \]
+slik at
+\[
+T( \koord{p}{\B} ) = \koord{p}{\mathscr{C}}
+\quad\text{og}\quad
+S( \koord{p}{\mathscr{C}} ) = \koord{p}{\B}
+\]
+for alle polynomer~$p$.
+Sjekk at $T$ og~$S$ gir riktig resultat for koordinatene du fant i
+del~\textbf{c)}.
 \end{punkt}
 
 \end{oppgave}
 
+\begin{losning}
+
+\begin{punkt}
+Dette er standardbasisen $1$, $x$ og~$x^2$.
+
+\noindent
+Forklaring: Vi ønsker å skrive et vilkårlig andregradspolynom på formen $p(x)=p(0)f_1(x)+p'(0)f_2(x)+\frac{p''(0)}{2}f_3(x)$. Dette er akkurat hva $f_1=1$, $f_2=x$ og~$f_3=x^2$ tilfredstiller: Gitt $p(x)=a+bx+cx^2$ ser vi at $p(0)=a$, $p'(0)=b$ og $\frac{p''(0)}{2}=c$ ved regning; dette er akkurat koeffisientene foran $1$, $x$ og $x^2$. Alternativ løsning: For en mer systematisk fremgangsmåte kan du følge metoden som er beskrevet i del $\textbf{b)}$.
+\end{punkt}
+
+\begin{punkt}
+Vi må finne tre polynom $e_(x)$, $e_2(x)$ og $e_3(x)$ som utgjør en basis slik at et vilkårlig polynom kan skrives på formen $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$ (da blir koordinatene $\begin{bmatrix}
+p(0)\\
+p(1)\\
+p(2)
+\end{bmatrix}$). Dette skjer akkurat dersom $e_1(x)$ tilfredstiller $$e_1(0)=1\quad e_1(1)=0 \quad e_1(2)=0,$$ $e_2(x)$ tilfredstiller $$e_2(0)=0\quad e_2(1)=1 \quad e_2(2)=0,$$ $e_3(x)$ tilfredstiller $$e_3(0)=0\quad e_3(1)=0 \quad e_3(2)=1$$ (sett inn i likningen for $p(x)$ uttrykt ved $e_i$'ene for å se dette).
+
+\noindent
+
+$e_1$: Polynomet kan skrives på formen $a_0+a_1 x+a_2x^2$, og vi krever -- fra likningene for $e_1$ -- ovenfor at $$a_0=1\quad a_0+a_1+a_2=0 \quad a_0+2a_1+4a_2=0.$$ Dette er tre likninger med tre ukjente, og vi bruker radreduksjon for å se at løsningen er $a_0=1$, $a_1=-\frac{3}{2}$ og~$a_2=\frac{1}{2}$. Polynomet er derfor $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$. Alternativ løsning: $e_1(1)=0$ og $e_1(2)=0$ betyr at $(x-1)$ og $(x-2)$ er faktorer av $e_1$. Derfor må $e_1(x)=a(x-1)(x-2)$. Kravet $e_1(0)=1$ gir nå $1=a\cdot(-1)\cdot (-2)$ slik at $a=\frac{1}{2}$. Derfor er $e_1(x)=\frac{1}{2}(x-1)(x-2)$. Du kan gange ut for å se at dette er det samme polynomet som vi fant ovenfor.
+
+\noindent
+$e_2$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige likninger -- gir polynomet $e_2(x)=2x-x^2$.
+
+\noindent
+$e_3$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige likninger -- gir polynomet $e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$.
+
+\noindent
+Vi har nå tre polynom $e_1$, $e_2$ og $e_3$ som spenner $\mathcal{P}_2$ (det er konstruert slik at alle polynom kan skrives $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$). Det gjenstår kun å vise at de er lineært uavhengige. Men dette følger også fra hvordan $e_i$'ene er konstruert: Gitt en likning $$x_1e_1(x)+x_2e_2(x)+x_3e_3(x)=0$$ kan du sette inn for $x=0,1,2$ for å se at $x_1=0$, $x_2=0$ og $x_3=0$ på grunn av likningene som definerer $e_i$'ene.
+\end{punkt}
+
+\begin{punkt}
+Koordinatene til $x^2$: $$[x]_\B=\begin{bmatrix}
+p(0)\\
+p'(0)\\
+\frac{p''(0)}{2}
+\end{bmatrix}=\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix},$$ $$[x]_{\mathscr{C}}=\begin{bmatrix}
+p(0)\\
+p(1)\\
+p(2)
+\end{bmatrix}=\begin{bmatrix}
+0\\
+1\\
+4
+\end{bmatrix}.$$
+\end{punkt}
+
+\begin{punkt}
+For å endre koordinater mellom ulike basiser uttrykker vi den ene basisen ved den andre basisen. Det er desidert enklest å uttrykke $\mathscr{C}$ ved $\B$ ettersom $\B$ er standardbasisen til $\mathcal{P}_2$. Vi har faktisk allerede gjort dette: $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$, $e_2(x)=2x-x^2$ og~$e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$. Matrisen som endrer koordinater er derfor
+$$
+\begin{bmatrix}
+1 & 0 & 0\\
+-\frac{3}{2} & 2 & -\frac{1}{2}\\
+\frac{1}{2} & -1 & \frac{1}{2}
+\end{bmatrix}.$$
+
+\noindent
+Vi sjekker at matrisen gir riktig endring av koordinater for $x^2$:
+$$
+\begin{bmatrix}
+1 & 0 & 0\\
+-\frac{3}{2} & 2 & -\frac{1}{2}\\
+\frac{1}{2} & -1 & \frac{1}{2}
+\end{bmatrix}\begin{bmatrix}
+0\\
+1\\
+4
+\end{bmatrix}=\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}.$$
+
+\end{punkt}
+
+\end{losning}
+
+
+
 \begin{oppgave}
-Anta at $T:\mathbb{R}^n\rightarrow \mathbb{R}^n$ er en lineærtransformasjon som kan faktoriseres $T=L \circ G$, hvor $L:\mathbb{R}^m\rightarrow \mathbb{R}^n$, $G:\mathbb{R}^n\rightarrow \mathbb{R}^m$ og~$m<n$. Kan $T$ være en isomorfi?
+La $T_\theta \colon \R^2 \to \R^2$ være lineærtransformasjonen som
+roterer vektorer med vinkelen $\theta$.
+
+\begin{punkt}
+Finn standardmatrisen for $T_\theta$.
+\end{punkt}
+
+\begin{punkt}
+Bevis den trigonometriske likningen
+\vspace{-4pt}
+\[
+\cos(2\theta)=\cos^2(\theta)-\sin^2 (\theta).
+\vspace{-3pt}
+\]
+Hint: Sammenlign $T_{2\theta}$ og~$T_{\theta} \fcomp T_{\theta}$.
+\end{punkt}
+
+
 \end{oppgave}
 
 \begin{losning}
-Nei.
 
-\noindent
-Intuisjon: Vi kan ikke gå gjennom et mindre vektorrom og forvente å få tilbake all informasjonen vi opprinnelig hadde. På matriseform svarer dette akkurat til at $m$ ligninger med $n$ ukjente ikke nødvendigvis har løsning for $m<n$.
+\begin{punkt}
+$$[T_\theta]=\begin{bmatrix}
+T_\theta(\V{e}_1) & T_\theta(\V{e}_2)
+\end{bmatrix} = \begin{bmatrix}
+\cos(\theta) & -\sin(\theta)\\
+\sin(\theta) & \cos(\theta)
+\end{bmatrix}$$
 
-\noindent
-Forklaring: Lineærtransformasjonene kan representeres av matriser. Matrisen til $L$ har $m<n$ kolonner i $\mathbb{R}^n$. Kolonnene kan derfor ikke spenne ut $\mathbb{R}^n$; bildet til $L$ kan ikke være hele $\mathbb{R}^n$. Men bildet til $T$ er inneholdt i bildet til $L$: vektorer på formen $T(\V{v})$ er spesielt på formen $L(G(\V{v}))$.
+\end{punkt}
+
+\begin{punkt}
+Å bruke $T_\theta$ to ganger svarer til å rotere med en vinkel $\theta$ to ganger: $T_\theta \circ T_\theta=T_{2\theta}$.
+På matriseform har vi derfor $$[T_\theta]^2= \begin{bmatrix}
+\cos(2\theta) & -\sin(2\theta)\\
+\sin(2\theta) & \cos(2\theta)
+\end{bmatrix}.$$ Vi kan også regne ut dette produktet direkte:
+$$[T_\theta]^2=\begin{bmatrix}
+\cos^2(\theta)-\sin^2(\theta) & -2\cos(\theta)\sin(\theta)\\
+2\cos(\theta)\sin(\theta) & \cos^2(\theta)-\sin^2(\theta)
+\end{bmatrix}.$$ Fra element $(1,1)$, eller $(2,2)$, ser vi at $\cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)$.
+
+\end{punkt}
+
 \end{losning}
 
+
+% \begin{oppgave}
+% \label{oppg:1dlintrans}
+% Vi skal se på funksjoner $\mathbb{R}\rightarrow \mathbb{R}$. Begrunn om følgende funksjoner er lineære eller ikke:
+
+% \begin{punkt}
+% $f(x) = 2x$
+% \end{punkt}
+
+% \begin{punkt}
+% $f(x) = 3x+1$
+% \end{punkt}
+
+% \begin{punkt}
+% $f(x) = 3x^2$
+% \end{punkt}
+
+% \begin{punkt}
+% $f(x)= -x$
+% \end{punkt}
+
+% \begin{punkt}
+% $f(x)=e^x$
+% \end{punkt}
+
+% \begin{punkt}
+% $f(x)=\cos (x)$
+% \end{punkt}
+% \end{oppgave}
+
+% \begin{losning}
+
+% \textbf{a)} og \textbf{d)} er lineære; \textbf{b)}, \textbf{c)}, \textbf{e)} og \textbf{f} er ikke.
+
+% \noindent
+% Hint: Hva er definisjonen av en lineærtransformasjon. Husk $e^{x+y}=e^x\cdot e^y$ for del \textbf{e)} og addisjonsformelen for cosinus i del \textbf{f)}.
+
+% \end{losning}
+
+
+% \begin{oppgave}
+% Vis at en lineærtransformasjon $f:\mathbb{R}\rightarrow \mathbb{R}$ er entydig bestemt av et reelt tall.
+
+% \noindent 
+% Hint: Hvordan ser de lineære funksjonene i forrige oppgave ut?
+% \end{oppgave}
+
+
+% \begin{losning}
+% Hint: $f(x)=x\cdot f(1)$ hvor $f(1)$ er et reelt tall. Kan du fullføre oppgaven?
+% \end{losning}
+
+
+% \begin{oppgave}
+% La $V$ og $W$ være endeligdimensjonale vektorrom slik at $\dim V = n$
+% og~$\dim W = m$.  Hva kan du si om tallene $m$ og~$n$ dersom det
+% finnes en lineærtransformasjon $T \colon V \to W$ som er \ldots
+% \begin{punkt}
+% \ldots{} injektiv, men ikke surjektiv?
+% \end{punkt}
+% \begin{punkt}
+% \ldots{} surjektiv, men ikke injektiv?
+% \end{punkt}
+% \begin{punkt}
+% \ldots{} både injektiv og surjektiv?
+% \end{punkt}
+% \end{oppgave}
+
+% \begin{losning}
+% \begin{punkt}
+% $m > n$
+% \end{punkt}
+% \begin{punkt}
+% $m < n$
+% \end{punkt}
+% \begin{punkt}
+% $m = n$
+% \end{punkt}
+% \end{losning}
+
+
+% \begin{oppgave}
+% \begin{punkt}
+% La $f$ og $g$ være funksjoner $\mathbb{R}\rightarrow \mathbb{R}$ gitt ved $$f(x)=2^x \quad \text{og} \quad g(x)=x^3-x.$$ Vis at $f$ er injektiv men ikke surjektiv; $g$ er surjektiv men ikke injektiv.
+
+% \end{punkt}
+% \begin{punkt}
+% Kan en eller begge tilfellene i del \textbf{a)} skje for en lineærtrasnformasjon fra $\mathbb{R}^n$ til $\mathbb{R}^n$? Hva med $\mathbb{R}^n$ til $\mathbb{R}^m$?
+% \end{punkt}
+
+% \end{oppgave}
+
+% \begin{losning}
+
+% \begin{punkt}
+% Hint: Du kan løse oppgaven ved å bruke definisjonene for injektiv og surjektiv direkte.
+% \end{punkt}
+
+% \begin{punkt}
+% Nei i tilefellet $\mathbb{R}^n\rightarrow \mathbb{R}^n$; injektiv, surjektiv og inverterbar er det samme for kvadratiske matriser. Ja i tilfellet $\mathbb{R}^n\rightarrow \mathbb{R}^m$.
+
+
+% \noindent
+% Merk: Dette er altså en helt spesiell egenskap for lineære funksjoner som er gitt av \emph{kvadratiske} matriser.
+% \end{punkt}
+
+
+% \end{losning}
+
+
+
+
+% \begin{oppgave}
+% Anta at $T:\mathbb{R}^n\rightarrow \mathbb{R}^n$ er en lineærtransformasjon som kan faktoriseres $T=L \circ G$, hvor $L:\mathbb{R}^m\rightarrow \mathbb{R}^n$, $G:\mathbb{R}^n\rightarrow \mathbb{R}^m$ og~$m<n$. Kan $T$ være en isomorfi?
+% \end{oppgave}
+
+% \begin{losning}
+% Nei.
+
+% \noindent
+% Intuisjon: Vi kan ikke gå gjennom et mindre vektorrom og forvente å få tilbake all informasjonen vi opprinnelig hadde. På matriseform svarer dette akkurat til at $m$ likninger med $n$ ukjente ikke nødvendigvis har løsning for $m<n$.
+
+% \noindent
+% Forklaring: Lineærtransformasjonene kan representeres av matriser. Matrisen til $L$ har $m<n$ kolonner i $\mathbb{R}^n$. Kolonnene kan derfor ikke spenne ut $\mathbb{R}^n$; bildet til $L$ kan ikke være hele $\mathbb{R}^n$. Men bildet til $T$ er inneholdt i bildet til $L$: vektorer på formen $T(\V{v})$ er spesielt på formen $L(G(\V{v}))$.
+% \end{losning}
+
+
+\begin{oppgave}
+Vi skriver $\Hom(V,W)$ for mengden av alle lineærtransformasjoner fra
+$V$ til~$W$.
+\begin{punkt}
+Definer en passende addisjon og skalarmultiplikasjon på~$\Hom(V,W)$
+slik at det blir et vektorrom.
+\end{punkt}
+\begin{punkt}
+Vis at $\Hom(\R^n, \R^m) \iso \M_{m \times n}$.
+\end{punkt}
+% \begin{punkt}
+% Vis at hvis $V$ er et endeligdimensjonalt vektorrom, så er
+% $\Hom(V, \R^1) \iso V$.
+% \end{punkt}
+\end{oppgave}
 
 \begin{losning}
-
 \begin{punkt}
-Hint: Du kan løse oppgaven ved å bruke definisjonene for injektiv og surjektiv direkte.
+Vi adderer og skalarmultipliserer lineærtransformasjoner på den
+åpenbare måten:
+\begin{align*}
+(T + S)(\v) &= T(\v) + S(\v) \\
+(cT)(\v) &= c \cdot (T(\v))
+\end{align*}
 \end{punkt}
-
 \begin{punkt}
-Nei i tilefellet $\mathbb{R}^n\rightarrow \mathbb{R}^n$; injektiv, surjektiv og inverterbar er det samme for kvadratiske matriser. Ja i tilfellet $\mathbb{R}^n\rightarrow \mathbb{R}^m$.
-
-
-\noindent
-Merk: Dette er altså en helt spesiell egenskap for lineære funksjoner som er gitt av \emph{kvadratiske} matriser.
+Definer en lineærtransformasjon
+\[
+\varphi \colon \Hom(\R^n, \R^m) \to \M_{m \times n}
+\]
+ved at $\varphi(T)$ er standardmatrisen til~$T$.  Definer en
+lineærtransformasjon
+\[
+\psi \colon \M_{m \times n} \to \Hom(\R^n, \R^m)
+\]
+ved at $\psi(A)$ er lineærtransformasjonen som har $A$ som
+standardmatrise.  Da er $\varphi$ og~$\psi$ hverandres inverser, og vi
+får at $\Hom(\R^n, \R^m) \iso \M_{m \times n}$.
 \end{punkt}
-
-
 \end{losning}
-
 
 
 
 
 \begin{oppgave}
-Vi skal se på lineærtransformasjoner $\mathcal{P}\rightarrow \mathcal{P}$.
+La $D \colon \P \to \P$ være funksjonen som sender hvert polynom til
+den deriverte av polynomet:
+\[
+D(p) = p'
+\]
+La $G \colon \P \to \P$ være funksjonen som ganger polynomet den får
+inn med~$x$:
+\[
+G(p) = q,
+\quad\text{der\ \ $q(x) = x \cdot p(x)$.}
+\]
 
 \begin{punkt}
-La $T$ være funksjonen som er gitt ved derivasjon, og $G$ være funksjonen som multipliserer polynom med $x$:
-$$T(p(x))=p'(x),$$
-$$G(p(x))=x\cdot p(x).$$ Vis at $T$ og $G$ er lineære.
-
-\end{punkt}
-
-
-\begin{punkt}
-Gi en beskrivelse av bildet til $G$.
-\end{punkt}
-
-\begin{punkt}
-Vis at $T(G(p))=p+G(T(p))$.
-\end{punkt}
-
-\begin{punkt}
-Er $T$ injektiv? Surjektiv? Hva med $G$?
+Vis at $D$ og~$G$ er lineærtransformasjoner.
 \end{punkt}
 
 \begin{punkt}
-Avgjør om $T$ og $G$ kan beskrives som lineærtransformasjoner fra $\mathcal{P}_n$ til $\mathcal{P}_n$. Hvis mulig for en eller begge, innfør koordinater for standardbasisen til $\mathcal{P}_n$ og skriv lineærtransformasjonen på matriseform.
+Finn bildet og kjernen til $D$ og til~$G$.
+% Gi en beskrivelse av bildet til $G$.
+\end{punkt}
+
+\begin{punkt}
+Finn ut om $D$ og~$G$ er injektive og/eller surjektive.
+\end{punkt}
+
+\begin{punkt}
+% Vis at $D(G(p))=p+G(D(p))$ for alle $p$ i~$\P$.
+Beskriv lineærtransformasjonen
+$
+(D \fcomp G) - (G \fcomp D).
+$
+\end{punkt}
+
+% \begin{punkt}
+% Er $T$ injektiv? Surjektiv? Hva med $G$?
+% \end{punkt}
+
+% \begin{punkt}
+% Avgjør om $T$ og $G$ kan beskrives som lineærtransformasjoner fra $\mathcal{P}_n$ til $\mathcal{P}_n$. Hvis mulig for en eller begge, innfør koordinater for standardbasisen til $\mathcal{P}_n$ og skriv lineærtransformasjonen på matriseform.
+% \end{punkt}
+
+\begin{punkt}
+Nå begrenser vi oss til endeligdimensjonale polynomvektorrom.  For
+hvert positive heltall~$n$ definerer vi lineærtransformasjoner
+\[
+D_n \colon \P_n \to P_{n-1}
+\quad\text{og}\quad
+G_n \colon \P_{n-1} \to P_n
+\]
+på samme måte som vi definerte $D$ og~$G$.  Velg en passende basis for
+hvert av vektorrommene $\P_2$ og~$\P_3$, og finn matrisene for $D_3$
+og~$G_3$ med hensyn på disse basisene.
 \end{punkt}
 
 \end{oppgave}
@@ -317,7 +628,7 @@ Dette er akkurat det vi ønsker å vise:
 $$T(G(p(x)))=p(x)+G(T(p(x))).$$
 
 \noindent
-Alternativ løsning: Vi kan også løse oppgaven direkte ved regning. Et polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Du kan regne ut høyre og venstre side av ligningen vi ønsker å vise for å se at likheten holder.
+Alternativ løsning: Vi kan også løse oppgaven direkte ved regning. Et polynom er på formen $p(x)=a_0+a_1x+\dots +a_nx^n$. Du kan regne ut høyre og venstre side av likningen vi ønsker å vise for å se at likheten holder.
 \end{punkt}
 
 \begin{punkt}
@@ -375,187 +686,58 @@ na_n\\
 
 
 \begin{oppgave}
+La $U$, $V$ og~$W$ være endeligdimensjonale vektorrom, og
+anta at vi har lineærtransformasjoner
+\[
+U \xrightarrow{T} V \xrightarrow{S} W
+\]
+slik at sammensetningen $S \fcomp T$ er en isomorfi.
 \begin{punkt}
-Finn en basis $\beta$ for $\mathcal{P}_2$ slik at $$[p]_\beta=\begin{bmatrix}
-p(0)\\
-p'(0)\\
-\frac{p''(0)}{2}
-\end{bmatrix}$$
-er koordinatene til et andregradspolynom $p$.
+Kan du ut fra dette konkludere med om $T$ og~$S$ er injektive og/eller
+surjektive?
 \end{punkt}
-
 \begin{punkt}
-Finn en basis $\beta '$ for $\mathcal{P}_2$ slik at $$[p]_{\beta '}=\begin{bmatrix}
-p(0)\\
-p(1)\\
-p(2)
-\end{bmatrix}$$
-er koordinatene til et andregradspolynom $p$.
+Hva kan du si om dimensjonene til $U$, $V$ og~$W$?
 \end{punkt}
-
-\begin{punkt}
-Hva er koordinatene til $x^2$ med hensyn på disse to koordinatsystemene? 
-\end{punkt}
-
-\begin{punkt}
-Finn en lineærtransformasjon som endrer koordinater mellom $\beta$ og $\beta '$. Sjekk at matrisen din gir riktig svar for koordinatene du fant i \textbf{c)}.
-\end{punkt}
-
 \end{oppgave}
 
 \begin{losning}
-
-\begin{punkt}
-Dette er standardbasisen $1$, $x$ og~$x^2$.
-
-\noindent
-Forklaring: Vi ønsker å skrive et vilkårlig andregradspolynom på formen $p(x)=p(0)f_1(x)+p'(0)f_2(x)+\frac{p''(0)}{2}f_3(x)$. Dette er akkurat hva $f_1=1$, $f_2=x$ og~$f_3=x^2$ tilfredstiller: Gitt $p(x)=a+bx+cx^2$ ser vi at $p(0)=a$, $p'(0)=b$ og $\frac{p''(0)}{2}=c$ ved regning; dette er akkurat koeffisientene foran $1$, $x$ og $x^2$. Alternativ løsning: For en mer systematisk fremgangsmåte kan du følge metoden som er beskrevet i del $\textbf{b)}$.
-\end{punkt}
-
-\begin{punkt}
-Vi må finne tre polynom $e_(x)$, $e_2(x)$ og $e_3(x)$ som utgjør en basis slik at et vilkårlig polynom kan skrives på formen $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$ (da blir koordinatene $\begin{bmatrix}
-p(0)\\
-p(1)\\
-p(2)
-\end{bmatrix}$). Dette skjer akkurat dersom $e_1(x)$ tilfredstiller $$e_1(0)=1\quad e_1(1)=0 \quad e_1(2)=0,$$ $e_2(x)$ tilfredstiller $$e_2(0)=0\quad e_2(1)=1 \quad e_2(2)=0,$$ $e_3(x)$ tilfredstiller $$e_3(0)=0\quad e_3(1)=0 \quad e_3(2)=1$$ (sett inn i ligningen for $p(x)$ uttrykt ved $e_i$'ene for å se dette).
-
-\noindent
-
-$e_1$: Polynomet kan skrives på formen $a_0+a_1 x+a_2x^2$, og vi krever -- fra ligningene for $e_1$ -- ovenfor at $$a_0=1\quad a_0+a_1+a_2=0 \quad a_0+2a_1+4a_2=0.$$ Dette er tre likninger med tre ukjente, og vi bruker radreduksjon for å se at løsningen er $a_0=1$, $a_1=-\frac{3}{2}$ og~$a_2=\frac{1}{2}$. Polynomet er derfor $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$. Alternativ løsning: $e_1(1)=0$ og $e_1(2)=0$ betyr at $(x-1)$ og $(x-2)$ er faktorer av $e_1$. Derfor må $e_1(x)=a(x-1)(x-2)$. Kravet $e_1(0)=1$ gir nå $1=a\cdot(-1)\cdot (-2)$ slik at $a=\frac{1}{2}$. Derfor er $e_1(x)=\frac{1}{2}(x-1)(x-2)$. Du kan gange ut for å se at dette er det samme polynomet som vi fant ovenfor.
-
-\noindent
-$e_2$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige ligninger -- gir polynomet $e_2(x)=2x-x^2$.
-
-\noindent
-$e_3$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige ligninger -- gir polynomet $e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$.
-
-\noindent
-Vi har nå tre polynom $e_1$, $e_2$ og $e_3$ som spenner $\mathcal{P}_2$ (det er konstruert slik at alle polynom kan skrives $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$). Det gjenstår kun å vise at de er lineært uavhengige. Men dette følger også fra hvordan $e_i$'ene er konstruert: Gitt en ligning $$x_1e_1(x)+x_2e_2(x)+x_3e_3(x)=0$$ kan du sette inn for $x=0,1,2$ for å se at $x_1=0$, $x_2=0$ og $x_3=0$ på grunn av ligningene som definerer $e_i$'ene.
-\end{punkt}
-
-\begin{punkt}
-Koordinatene til $x^2$: $$[x]_\beta=\begin{bmatrix}
-p(0)\\
-p'(0)\\
-\frac{p''(0)}{2}
-\end{bmatrix}=\begin{bmatrix}
-0\\
-0\\
-1
-\end{bmatrix},$$ $$[x]_{\beta'}=\begin{bmatrix}
-p(0)\\
-p(1)\\
-p(2)
-\end{bmatrix}=\begin{bmatrix}
-0\\
-1\\
-4
-\end{bmatrix}.$$
-\end{punkt}
-
-\begin{punkt}
-For å endre koordinater mellom ulike basiser uttrykker vi den ene basisen ved den andre basisen. Det er desidert enklest å uttrykke $\beta '$ ved $\beta$ ettersom $\beta$ er standardbasisen til $\mathcal{P}_2$. Vi har faktisk allerede gjort dette: $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$, $e_2(x)=2x-x^2$ og~$e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$. Matrisen som endrer koordinater er derfor
-$$
-\begin{bmatrix}
-1 & 0 & 0\\
--\frac{3}{2} & 2 & -\frac{1}{2}\\
-\frac{1}{2} & -1 & \frac{1}{2}
-\end{bmatrix}.$$
-
-\noindent
-Vi sjekker at matrisen gir riktig endring av koordinater for $x^2$:
-$$
-\begin{bmatrix}
-1 & 0 & 0\\
--\frac{3}{2} & 2 & -\frac{1}{2}\\
-\frac{1}{2} & -1 & \frac{1}{2}
-\end{bmatrix}\begin{bmatrix}
-0\\
-1\\
-4
-\end{bmatrix}=\begin{bmatrix}
-0\\
-0\\
-1
-\end{bmatrix}.$$
-
-\end{punkt}
-
-\end{losning}
-
-
-
-\begin{oppgave}
-La $T_\theta$ være den abstrakte lineærtransformasjonen $\mathbb{R}^2\rightarrow \mathbb{R}^2$ som roterer vektorer $\theta$ grader.
-
-\begin{punkt}
-Skriv $T_\theta$ på matriseform i standardbasisen for $\mathbb{R}^n$.
-\end{punkt}
-
-\begin{punkt}
-Bevis den trigonometriske ligningen
-$$\cos(2\theta)=\cos^2(\theta)-\sin^2 (\theta).$$
-
-\noindent
-Hint: Komposisjon er multiplikasjon.
-\end{punkt}
-
-
-\end{oppgave}
-
-\begin{losning}
-
-\begin{punkt}
-$$[T_\theta]=\begin{bmatrix}
-T_\theta(\V{e}_1) & T_\theta(\V{e}_2)
-\end{bmatrix} = \begin{bmatrix}
-\cos(\theta) & -\sin(\theta)\\
-\sin(\theta) & \cos(\theta)
-\end{bmatrix}$$
-
-\end{punkt}
-
-\begin{punkt}
-Å bruke $T_\theta$ to ganger svarer til å rotere med en vinkel $\theta$ to ganger: $T_\theta \circ T_\theta=T_{2\theta}$.
-På matriseform har vi derfor $$[T_\theta]^2= \begin{bmatrix}
-\cos(2\theta) & -\sin(2\theta)\\
-\sin(2\theta) & \cos(2\theta)
-\end{bmatrix}.$$ Vi kan også regne ut dette produktet direkte:
-$$[T_\theta]^2=\begin{bmatrix}
-\cos^2(\theta)-\sin^2(\theta) & -2\cos(\theta)\sin(\theta)\\
-2\cos(\theta)\sin(\theta) & \cos^2(\theta)-\sin^2(\theta)
-\end{bmatrix}.$$ Fra element $(1,1)$, eller $(2,2)$, ser vi at $\cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)$.
-
-\end{punkt}
-
+TODO
 \end{losning}
 
 
 \begin{oppgave}
-
+La $D \colon \C^\infty(\mathbb{R})\rightarrow \C^\infty(\mathbb{R})$
+være funksjonen som er gitt ved derivasjon:
+\[
+D(f)=f'
+\]
 \begin{punkt}
-Vis at funksjonen $T:\C^\infty(\mathbb{R})\rightarrow \C^\infty(\mathbb{R})$ som er gitt ved derivasjon, $$T(f)=f',$$ er en lineærtransformasjon.
-
-\noindent
-Hint: I matte 1 lærte vi regneregler for derivasjon av i) en sum av to funksjoner og ii) en funksjon multiplisert med en konstant. Du kan bruke disse.
+Vis at $D$ er en lineærtransformasjon.
+\\
+Hint: I Matematikk~1 lærte vi regneregler for derivasjon av i) en sum
+av to funksjoner og ii) en funksjon multiplisert med en konstant. Du
+kan bruke disse.
 \end{punkt}
 
 \begin{punkt}
-Finn kjernen $\ker T$ av lineærtransformasjonen~$T$.
-Er $\ker T$ et endeligdimensjonalt vektorrom?  I så fall: Finn en basis. Hva slags ligning ender du opp med å løse?
+Finn kjernen $\ker D$ av lineærtransformasjonen~$D$.
+Er $\ker D$ et endeligdimensjonalt vektorrom?  I så fall: Finn en basis.
+%Hva slags likning ender du opp med å løse?
 \end{punkt}
 
 \begin{punkt}
-Vis at $T$ har uendelig mange egenverdier.
+%Vis at $D$ har uendelig mange egenverdier.
+Finn alle egenverdiene til~$D$.
 % TODO: må definere egenverdier for lineærtransformasjoner
 %       for at dette skal gi mening
-
-\noindent 
-Hint: Husk definisjonen av en egenvektor til $\lambda$; $T(f)=\lambda f$.
+%
+% \noindent 
+% Hint: Husk definisjonen av en egenvektor til $\lambda$; $D(f)=\lambda f$.
 \end{punkt}
 
 \begin{punkt}
-Er $T$ surjektiv?
+Er $D$ surjektiv?
 
 \noindent
 Hint: Analysens fundamentalteorem.
@@ -567,22 +749,53 @@ Hint: Analysens fundamentalteorem.
 
 \begin{punkt}
 Derivasjonsreglene fra matte 1: 
-$$(f+g)'=f'+g',$$ $$(cf)'=cf'.$$ Funksjonen vår er derivasjon; $T(f)=f'$. Ligningene fra matte 1 kan omformuleres til $$T(f+g)=T(f)+T(g),$$ $$T(cf)=cT(f).$$ Dette er definisjonen på at $T$ er lineær.
+$$(f+g)'=f'+g',$$ $$(cf)'=cf'.$$ Funksjonen vår er derivasjon; $D(f)=f'$. Likningene fra matte 1 kan omformuleres til $$D(f+g)=D(f)+D(g),$$ $$D(cf)=cD(f).$$ Dette er definisjonen på at $D$ er lineær.
 \end{punkt}
 
 \begin{punkt}
-Kjernen til $T$, $\ker T$, er definert som alle glatte funksjoner $f$ slik at $f'=0$. Kjernen er, med andre ord, alle løsningene på differensialligningen $f'=0$. Dette er de konstante funksjonene $f(x)=c$ hvor $c$ er et reelt tall. Vi kan ta $f=1$ som en basis for kjernen; en vilkårlig $g(x)=c$ i kjernen er da $g=cf$. Dette betyr at kjernen er endimensjonal og spesielt er den endeligdimensjonal.
+Kjernen til $D$, $\ker D$, er definert som alle glatte funksjoner $f$ slik at $f'=0$. Kjernen er, med andre ord, alle løsningene på differensiallikningen $f'=0$. Dette er de konstante funksjonene $f(x)=c$ hvor $c$ er et reelt tall. Vi kan ta $f=1$ som en basis for kjernen; en vilkårlig $g(x)=c$ i kjernen er da $g=cf$. Dette betyr at kjernen er endimensjonal og spesielt er den endeligdimensjonal.
 \end{punkt}
 
 \begin{punkt}
-En egenvektor til $T$ med egenverdi $\lambda$, er en vektor/funksjon $f$ slik at $T(f)=\lambda f$, eller $f'=\lambda f$. Dette er en differensiallikning med generell løsning $x_0e^{\lambda x}$. Spesielt betyr dette at alle valg av $\lambda$ gir egenverdier til $T$. Det er uendelig mange reelle tall, og derfor uendelig mange egenverdier.
+En egenvektor til $D$ med egenverdi $\lambda$, er en vektor/funksjon $f$ slik at $D(f)=\lambda f$, eller $f'=\lambda f$. Dette er en differensiallikning med generell løsning $x_0e^{\lambda x}$. Spesielt betyr dette at alle valg av $\lambda$ gir egenverdier til $D$. Det er uendelig mange reelle tall, og derfor uendelig mange egenverdier.
 \end{punkt}
 
 \begin{punkt}
 Ja.
 
 \noindent
-Forklaring: $T$ er surjektiv hvis det for alle glatte funksjoner $f$, finnes en glatt funksjon $F$ slik at $f=T(F)(=F')$. Husk at fundamentalteoremet i analyse sier at $F(x)=\int_a^x f(t)dt$ (for alle valg av $a$, vi kan f. eks ta $a=0$) er en antiderivert til $f$. Men dette betyr at $f=F'=T(F)$. Er $F$ glatt? $F'=f$, så den er en gang deriverbar, og $F^{(n)}=f^{(n)}$ for $n>1$, så den er glatt fordi $f$ er glatt. Vi har derfor funnet en glatt $F$ som tilfredstiller $T(F)=f$ for en vilkårlig vektor $f$.
+Forklaring: $D$ er surjektiv hvis det for alle glatte funksjoner $f$, finnes en glatt funksjon $F$ slik at $f=D(F)(=F')$. Husk at fundamentalteoremet i analyse sier at $F(x)=\int_a^x f(t)dt$ (for alle valg av $a$, vi kan f. eks ta $a=0$) er en antiderivert til $f$. Men dette betyr at $f=F'=D(F)$. Er $F$ glatt? $F'=f$, så den er en gang deriverbar, og $F^{(n)}=f^{(n)}$ for $n>1$, så den er glatt fordi $f$ er glatt. Vi har derfor funnet en glatt $F$ som tilfredstiller $D(F)=f$ for en vilkårlig vektor $f$.
 \end{punkt}
 
+\end{losning}
+
+
+\begin{oppgave}
+Kan et vektorrom være isomorft med et ekte underrom av seg selv?
+Med andre ord: 
+Er det mulig å finne et vektorrom $V$ med et underrom $U$
+slik at $U \iso V$, uten at $U$  er hele vektorrommet~$V$?
+\end{oppgave}
+
+\begin{losning}
+Dette er ikke mulig for endeligdimensjonale vektorrom, fordi
+dimensjonen til~$U$ blir mindre enn dimensjonen til~$V$, og da kan de
+ikke være isomorfe.
+
+Men det \emph{er} mulig hvis vi ser på et uendeligdimensjonalt
+vektorrom~$V$.  Ta for eksempel $V = \R^\N$, og la $U$ være
+underrommet som består av alle uendelige lister der det første tallet
+er~$0$, altså alle lister på formen
+\[
+(0, a_2, a_3, a_4, \ldots ).
+\]
+Da kan vi definere lineærtransformasjoner $T \colon U \to V$ og
+$S \colon V \to U$ ved:
+\begin{align*}
+T\big( (0, a_2, a_3, a_4, \ldots) \big)
+&= (a_2, a_3, a_4, \ldots) \\
+S\big( (a_1, a_2, a_3, \ldots) \big)
+&= (0, a_1, a_2, a_3, \ldots)
+\end{align*}
+Vi ser at disse blir hverandres inverser, så $U$ og~$V$ er isomorfe.
 \end{losning}
