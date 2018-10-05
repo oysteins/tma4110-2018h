@@ -2,22 +2,6 @@
 \oppgaver{9}
 
 
-% TODO
-% flere enkle oppgaver
-% ker og im ved hjelp av nullrom og kolonnerom
-% kan radrommet trekkes inn?  A^\tr?
-% isomorfi
-% kan et vektorrom være isomorft med ekte underrom?  (f.eks. \R^\N eller \P)
-% isomorfi \R^\N \iso \P
-% \Hom(V,W): sjekk at er vektorrom, finn dimensjon hvis V og W end.dim.
-% T \colon V_1 \to V_2 ; T_* \colon \Hom(V_1,W) \to \Hom(V_2,W)
-% ^-- konkrete eksempler?
-% få med dimensjon i noen oppgaver, og bruk rank A + dim Null A = n
-% lin.tr. gitt ved basis (ikke nødvendigvis standardbasisen)
-% alle end.dim. isomorfe med \R^n (bevise?  bruke?)
-% finne prebilder for lin.tr gitt ved matrise (og for lintr som ikke er gitt ved matrise?)
-% vis at T(\0) = \0 (må først vise at 0\u = \0)
-
 \begin{oppgave}
 Finn ut om funksjonen~$T$ er en lineærtransformasjon.  Hvis den er
 det: Finn standardmatrisen til~$T$, regn ut $\ker T$ og $\im T$, og
@@ -544,13 +528,18 @@ $$[T_\theta]^2=\begin{bmatrix}
 % \end{losning}
 
 \begin{oppgave}
-Avgjør om følgende påstand er korrekt. Funksjoner på formen $f(x)=ax+b$ er nøyaktig lineærtransformasjonene $\mathbb{R}^1\rightarrow \mathbb{R}^1$.
+Avgjør om følgende påstand er korrekt:
+En funksjon $T \colon \R^1 \to \R^1$ er en lineærtransformasjon
+hvis og bare hvis $T$ kan skrives på formen $T(x) = ax + b$,
+der $a$ og~$b$ er konstanter.
 \end{oppgave}
 \begin{losning}
 Feil.
 
 \noindent
-De lineære funksjonene $\mathbb{R}^1\rightarrow \mathbb{R}^1$ er på formen $f(x)=ax$ (vi kan tenke på konstanten $a$ som en $1\times 1$-matrise).
+Lineærtransformasjonene $\mathbb{R}^1\rightarrow \mathbb{R}^1$ er på
+formen $T(x)=ax$ (vi kan tenke på konstanten $a$ som en
+$1\times 1$-matrise).
 \end{losning}
 
 \begin{oppgave}
