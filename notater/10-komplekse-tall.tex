@@ -39,7 +39,7 @@ og dette inspirerer oss til å definere \emph{komplekse tall} som
 \[
 z=a+bi.
 \]
-Her er $a$ og $b$ reelle tall. De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$, og skrives gjerne Re $z$ og Im $z$. 
+Her er $a$ og $b$ reelle tall. De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$, og skrives gjerne Re $z$ og Im $z$. Mengden av alle komplekse tall kalles $\mathbb C$. Dersom $b=0$, er $z$ reell, og vi ser at de reelle tallene er inneholdt i de komplekse, $\mathbb R \subset \mathbb C$.
 
 
 \section*{Operasjoner på komplekse tall}
@@ -102,7 +102,7 @@ På lignende vis kan vi tenke at realdelen $a$ og imaginærdelen $b$ er komponen
 \\
 {\small \textit{Det komplekse planet}}
 \end{center}
-Nå tenker du sikkert at det er på sin plass å sjekke om vektorromsaksiomene holder for de komplekse tallene. Til tross for den ytre likheten med $\R^2$, er ikke dette en spesielt naturlig ting å gjøre. Dessverre. Mer om dette på slutten av kapitlet. 
+Nå tenker du sikkert at det er på sin plass å sjekke om vektorromsaksiomene holder for de komplekse tallene. Til tross for den ytre likheten med $\R^2$, er ikke dette en spesielt naturlig ting å gjøre, men mange av de vanlige geometriske operasjonene man gjør på vektorer i $\R^2$, fungerer fint på komplekse tall. Mer om dette til slutt. 
 
 \section*{Polar form}
 La $r$ være avstanden fra $z$ til origo i det komplekse planet, og la $\theta$ være vinkelen $z$ gjør med den reelle aksen. Noen enkle geometriske betraktninger gir oss at 
@@ -273,7 +273,7 @@ Merk hvordan røttene sprer seg jevnt ut på en sirkel om origo. Merk også at o
 \end{ex}
 
 \section*{Går alt dette greit?}
-Dette har vært et litt 'kjapt' kapittel. Vi har jo ikke vist noe som helst, bare definert komplekse tall og slengt ut en masse regneregler uten å argumentere for at dette går greit, eller at det i det hele tatt finnes et tallsystem der likningen
+Dette har vært et litt 'kjapt' kapittel. Vi har jo ikke vist noe som helst, bare definert komplekse tall, sagt at $\sqrt{-1}$ oppfører seg som tallene vi kjenner fra før, og slengt ut en masse regneregler uten å argumentere for at dette går greit, eller at det i det hele tatt finnes et tallsystem der likningen
 \[
 x^2+1
 \]
@@ -281,12 +281,14 @@ har en løsning.
 
 Konstruksjonen av de reelle tallene $\R$ fra de rasjonale tallene $\Q$ er komplisert nok til at selv matematikkstudenter ikke blir plaget nevneverdig med det. Den formelle konstruksjonen av $\mathbb C$ fra $\R$ er ikke på langt nær så komplisert, men man trenger fremdeles noen konsepter som ligger noe utenfor det vi kan gjøre i dette kurset.
 
-De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. Det at de er ordnet, betyr at man alltid kan avgjøre hvilket av to reelle tall som er størst, og kropp betyr at de tilfredsstiller noen aksiomer som er til forveksling like vektorromsaksiomene, og noen andre aksiomer i tillegg. Vi begrenser oss til å nevne at de reelle tallene er inkludert i de komplekse 
-\[
-\N \subset \Z \subset \Q \subset \R \subset \mathbb C
-\]
-samt at de komplekse tallene ikke er ordnede.
+De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. Det at de er ordnet, betyr at man alltid kan avgjøre hvilket av to reelle tall som er størst, og kropp betyr at de tilfredsstiller noen aksiomer som er til forveksling like vektorromsaksiomene, og noen andre aksiomer i tillegg. De komplekse tallene er et eksempel på en kropp som ikke er ordnet, siden man ikke kan si om et komplekst tall er større enn et annet, akkurat som vi ikke i $\R^2$ kan si at en vektor er større enn en annen.
+%Vi begrenser oss til å nevne at de reelle tallene er inkludert i de komplekse 
+%\[
+%\N \subset \Z \subset \Q \subset \R \subset \mathbb C
+%\]
+%samt at de komplekse tallene ikke er ordnede.
 
-Når man definerer et vektorrom og sjekker vektorromsaksiomene, ligger det gjerne en kropp og lurer i bånn. Det er fra denne kroppen man henter komponentene i vektoren dersom det er naturlig å ha komponenter, og det er der man henter skalarene man multipliserer vektorer med. Til nå har vi stort sett brukt $\R$ som kropp i vektorrommene, men nå skal vi begynne å bruke $\mathbb C$ i tillegg. Vi sier gjerne at vi har et vektorrom over en bestemt kropp; for eksempel er $\R^n$ et vektorrom over $\R$.
+Siden det er en ytre likhet mellom $\mathbb C$ og $\R^2$, kan det være fristende å sjekke vektorromsaksiomene for å få bekreftelse på at $\mathbb C$ er et vektorrom. Dette går helt fint, $\mathbb C$ er forsåvidt et vektorrom, men det er imidlertid ikke en spesielt hensiktsmessig å se på det slik, for vi kan klare litt bedre. I neste kapittel skal vi se hvordan.
+
 
 \kapittelslutt
