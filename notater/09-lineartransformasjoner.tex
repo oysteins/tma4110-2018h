@@ -292,12 +292,23 @@ Vi definerer en funksjon $T \colon \R^2 \to \R^2$ ved:
 \[
 T\left( \vv{x_1}{x_2} \right) = \vv{x_1 + 2 x_2}{x_1 + 1}
 \]
-% TODO
+Nå kan vi for eksempel legge merke til at
+\[
+T\left( \vv{1}{1} \right) = \vv{3}{2},
+\quad\text{men}\quad
+T\left( 2 \cdot \vv{1}{1} \right) = \vv{6}{3}.
+\]
+Vi har altså
+\[
+T\left( 2 \cdot \vv{1}{1} \right) \ne 2 \cdot T\left( \vv{1}{1} \right),
+\]
+så $T$ er ikke en lineærtransformasjon.
 \end{ex}
 
-% TODO to eksempler
+% TODO tekst
 
 \begin{thm}
+\label{thm:lin-tr-lin-komb}
 Hvis $T \colon V \to W$ er en lineærtransformasjon, så oppfyller den
 følgende.
 \begin{enumerate}
@@ -316,9 +327,41 @@ T(\0) = \0
 \end{thm}
 % TODO bevis
 
-% TODO eks
+\begin{ex}
+Anta at $T \colon \R^2 \to \R^2$ er en lineærtransformasjon slik at
+\[
+T\left( \vv{2}{3} \right) = \vv{1}{1}
+\quad\text{og}\quad
+T\left( \vv{0}{5} \right) = \vv{3}{1}.
+\]
+Kan vi ut fra dette finne ut hva
+\[
+T\left( \vv{8}{2} \right)
+\]
+må være?  Vi ser at vi kan skrive $\vvS{8}{2}$ som en
+lineærkombinasjon av $\vvS{2}{3}$ og~$\vvS{0}{5}$:
+\[
+\vv{8}{2} = 4 \cdot \vv{2}{3} - 2 \cdot \vv{0}{5}
+\]
+Ved å bruke teorem~\ref{thm:lin-tr-lin-komb}~(a) får vi nå:
+\begin{align*}
+T\left( \vv{8}{2} \right)
+&= T\left( 4 \cdot \vv{2}{3} - 2 \cdot \vv{0}{5} \right) \\
+&= 4 \cdot T\left( \vv{2}{3} \right) - 2 \cdot T\left( \vv{0}{5} \right) \\
+&= 4 \cdot \vv{1}{1} - 2 \cdot \vv{3}{1}
+ = \vv{-2}{2}
+\end{align*}
+Mer generelt kan vi se at siden de to vektorene
+\[
+\vv{2}{3}
+\quad\text{og}\quad
+\vv{0}{5}
+\]
+utspenner~$\R^2$, er det nok å vite hva $T$ gjør med hver av disse for
+å vite hva den gjør med en hvilken som helst vektor.
+\end{ex}
 
-% TODO sum og skalarprodukt lineærtransformasjon?
+% TODO eks med \C(\R)?
 
 
 \section*{Lineær utvidelse fra basis}
@@ -327,8 +370,12 @@ T(\0) = \0
 % gitt vektorrom V, W og en basis B for V
 % enhver funksjon B -> W utvides entydig til en lin.tr. V -> W
 
+% flytte til senere i kapitlet?  droppe?
+
 
 \section*{Kjerne og bilde}
+
+% TODO tekst
 
 \begin{defn}
 La $T \colon V \to W$ være en lineærtransformasjon.  \defterm{Kjernen}
@@ -339,7 +386,53 @@ nullvektoren i~$W$:
 \]
 \end{defn}
 
-% TODO eksempel i \R^2, med tegning av im og ker
+\begin{ex}
+La $T \colon \R^2 \to \R^2$ være lineærtransformasjonen gitt ved:
+\[
+T \left( \vv{x_1}{x_2} \right) = \vv{x_1-x_2}{x_2-x_1}
+\]
+Vi vil finne kjernen og bildet til~$T$.
+
+Vi ser at en vektor $\vvS{x_1}{x_2}$ blir sendt til nullvektoren hvis
+og bare hvis de to komponentene $x_1$ og~$x_2$ er samme tall, så
+kjernen blir mengden
+\[
+\ker T = \left\{ \vv{a}{a}\ \middle|\ a \in \R \right\}.
+\]
+Siden
+\[
+x_2 - x_1 = - (x_1 - x_2),
+\]
+ser vi at alle vektorer vi når ved å anvende~$T$ må være på formen
+\[
+\vv{a}{-a}.
+\]
+Vi ser dessuten at vi kan nå alle slike vektorer, siden vi for hvert
+tall~$a$ har at
+\[
+T \left( \vv{a}{0} \right) = \vv{a}{-a}.
+\]
+Det betyr at
+\[
+\im T = \left\{ \vv{a}{-a}\ \middle|\ a \in \R \right\}.
+\]
+Vi har altså at både kjernen og bildet er rette linjer i~$\R^2$:
+\begin{center}
+\begin{tikzpicture}[scale=.16]
+\draw[->] (-10,0) -- (10,0);
+\draw[->] (0,-10) -- (0,10);
+\draw (-10,-10) -- (10,10) node[anchor=north west] {$\ker T$};
+\draw (-10,10) -- (10,-10) node[anchor=south west] {$\im T$};
+\end{tikzpicture}
+\end{center}
+Spesielt betyr dette at både bildet og kjernen er underrom av~$\R^2$.
+\end{ex}
+
+I eksempelet hadde vi en lineærtransformasjon med $\R^2$ som både
+domene og kodomene, og vi så at både bildet og kjernen ble underrom
+av~$\R^2$.  Dette var ingen tilfeldighet, for vi kan vise generelt at
+kjernen til en lineærtransformasjon alltid må være et underrom av
+domenet, og bildet alltid et underrom av kodomenet.
 
 \begin{thm}
 La $T \colon V \to W$ være en lineærtransformasjon.
@@ -359,14 +452,47 @@ injektiv.
 Hvis $T$ er injektiv, så er det maksimalt én vektor i~$V$ som $T$
 sender til nullvektoren i~$W$.  Men vi vet jo at $T$ må sende
 nullvektoren i~$V$ til nullvektoren i~$W$.  Dermed får vi at
-$\ker T = \{ \0 \}$.
-% TODO tekst
+$\ker T = \{ \0 \}$.  Vi kan også vise at den motsatte implikasjonen
+holder, og da får vi følgende teorem.
 
 \begin{thm}
 En lineærtransformasjon $T \colon V \to W$ er injektiv hvis og bare
 hvis $\ker T = \{ \0 \}$.
 \end{thm}
-% TODO bevis
+\begin{proof}
+Vi har allerede vist at hvis $T$ er injektiv, så er
+$\ker T = \{ \0 \}$.  Da gjenstår det å vise at hvis
+$\ker T = \{ \0 \}$, så er $T$ injektiv.
+
+Vi antar derfor at $\ker T = \{ \0 \}$, og vi ser på to vektorer $\u$
+og~$\v$ i~$V$ som er slik at
+\[
+T(\u) = T(\v).
+\]
+Vi vil vise at dette medfører at $\u$ og~$\v$ må være den samme
+vektoren.  Vi kan flytte over $T(\v)$ til venstre side og få:
+\[
+T(\u) - T(\v) = \0.
+\]
+Men $T(\u) - T(\v)$ er det samme som $T(\u-\v)$, siden $T$ er en
+lineærtransformasjon.  Dermed har vi
+\[
+T(\u - \v) = \0,
+\]
+som betyr at $\u - \v$ ligger i kjernen til~$T$.  Antagelsen vi
+startet med var at den eneste vektoren i kjernen til~$T$ er
+nullvektoren, så dette vil si at
+\[
+\u - \v = \0,
+\]
+altså at $\u = \v$.  Vi har altså vist at hvis $T(\u) = T(\v)$, så er
+$\u = \v$, og det vil si at $T$ er injektiv.
+\end{proof}
+
+Dette teoremet forteller oss at det er lettere å finne ut om en
+lineærtransformasjon~$T$ er injektiv enn om en vilkårlig funksjon er
+injektiv.  Det eneste vi trenger å sjekke er hva kjernen er, altså
+hvilke vektorer $T$ sender til nullvektoren.
 
 
 \section*{Lineærtransformasjoner gitt ved matriser}
@@ -385,10 +511,40 @@ T(c\u) &= A \cdot (c\u) = c \cdot (A\u) = c \cdot T(\u)
 for alle vektorer $\u$ og~$\v$ i~$V$, og alle skalarer~$c$.
 
 \begin{ex}
-% TODO
+La $A$ være $3 \times 2$-matrisen
+\[
+A =
+\begin{bmatrix}
+1 & -3 \\
+3 & 5 \\
+-1 & 7
+\end{bmatrix},
+\]
+og definer en lineærtransformasjon $T \colon \R^2 \to \R^3$ ved
+\[
+T(\x) = A \x.
+\]
+Det å spesifisere $T$ på denne måten gjør at vi kan besvare spørsmål
+om~$T$ ved å benytte regneteknikkene vi kjenner for matriser.
+% TODO resten av eksempelet
 \end{ex}
 
-% TODO tekst
+Som vi så i eksempelet, kan vi alltid få til å besvare spørsmål av
+typen «hva er $T(\v)$?» og «finnes det noen $x$ slik at $T(\x) = \b$?»
+når lineærtransformasjonen~$T$ er definert ved en matrise~$A$.  Vi kan
+også bruke matrisen til å regne ut kjernen og bildet til~$T$.
+
+Kjernen $\ker T$ er definert som mengden av alle vektorer~$\v$ slik at
+$T(\v) = \0$.  Men når $T(\x) = A\x$ for alle~$\x$, blir dette det
+samme som mengden av alle vektorer~$\v$ slik at $A\v = \0$, og det er
+nullrommet til~$A$.  Vi får altså at $\ker T = \Null A$.
+
+Bildet $\im T$ er alle vektorer som kan skrives som $T(\v)$.  Når
+$T(\x) = A\x$, blir dette det samme som alle vektorer som kan skrives
+som $A\v$.  Det er det samme som alle lineærkombinasjoner av kolonnene
+i~$A$, altså kolonnerommet til~$A$.  Vi får altså at $\im T = \Col A$.
+
+Vi oppsummerer det vi har vist nå i et teorem.
 
 \begin{thm}
 La $A$ være en $m \times n$-matrise, og la $T \colon \R^n \to \R^m$
@@ -399,6 +555,13 @@ være lineærtransformasjonen gitt ved $T(\x) = A\x$.  Da er
 \im T = \Col A.
 \]
 \end{thm}
+
+Det er altså mange grunner til at det er fordelaktig å ha
+lineærtransformasjonene våre gitt ved matriser.  Hvis vi har en
+lineærtransformasjon $T \colon \R^n \to \R^m$ som ikke er gitt ved en
+matrise, kan det derfor være nyttig å prøve å finne en matrise~$A$
+slik at $T(\x) = A\x$ for alle vektorer~$\x$ i~$\R^n$.  I det neste
+eksempelet gjør vi nettopp dette.
 
 \begin{ex}
 La $\e_1 = \vvS{1}{0}$ og $\e_2 = \vvS{0}{1}$ være enhetsvektorene
@@ -445,7 +608,7 @@ Da har vi altså at $T(\x) = A\x$ for alle vektorer~$\x$ i~$\R^2$.
 På samme måte som i dette eksempelet kan vi skrive enhver
 lineærtransformasjon $T \colon \R^n \to \R^m$ på matriseform ved å
 lage en matrise av vektorene som $T$ sender enhetsvektorene i~$\R^n$
-til.
+til.  Vi beskriver det generelle tilfellet i et teorem.
 
 \begin{thm}
 \label{thm:standardmatrise}
@@ -488,6 +651,9 @@ for alle vektorer~$\x$ i~$V$.
 
 \section*{Isomorfi}
 
+Til slutt i dette kapitlet ser vi på hvordan vi kan bruke
+lineærtransformasjoner til å beskrive at to vektorrom er «strukturelt like». %TODO
+
 \begin{defn}
 La $T \colon V \to W$ være en lineærtransformasjon.  En
 \defterm{invers} til~$T$ er en lineærtransformasjon $S \colon W \to V$
@@ -495,12 +661,14 @@ som er slik at
 \begin{align*}
 S(T(\v)) &= \v &&\text{for alle $\v$ i~$V$, og} \\
 T(S(\w)) &= \w &&\text{for alle $\w$ i~$W$.}
+% TODO formulere ved at sammensetningene er \id_V, \id_W
 \end{align*}
 \end{defn}
 
 \begin{defn}
 Hvis $T \colon V \to W$ er en lineærtransformasjon som har en invers,
 så er $T$ en \defterm{isomorfi}.  Da sier vi dessuten at vektorrommene
+$V$ og~$W$ er \defterm{isomorfe}, og vi skriver $V \iso W$.
 \end{defn}
 
  %TODO
