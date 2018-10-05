@@ -293,7 +293,7 @@ $e_2$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige likninger -- 
 $e_3$: Samme fremgangsmåte som for $e_1$ -- med litt forskjellige likninger -- gir polynomet $e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$.
 
 \noindent
-Vi har nå tre polynom $e_1$, $e_2$ og $e_3$ som spenner $\mathcal{P}_2$ (det er konstruert slik at alle polynom kan skrives $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$). Det gjenstår kun å vise at de er lineært uavhengige. Men dette følger også fra hvordan $e_i$'ene er konstruert: Gitt en likning $$x_1e_1(x)+x_2e_2(x)+x_3e_3(x)=0$$ kan du sette inn for $x=0,1,2$ for å se at $x_1=0$, $x_2=0$ og $x_3=0$ på grunn av likningene som definerer $e_i$'ene.
+Vi har nå tre polynom $e_1$, $e_2$ og $e_3$ som spenner $\mathcal{P}_2$ (det er konstruert slik at alle polynom kan skrives $p(x)=p(0)e_1(x)+p(1)e_2(x)+p(2)e_3(x)$). Det gjenstår kun å vise at de er lineært uavhengige. Men dette følger også fra hvordan $e_i$-ene er konstruert: Gitt en likning $$x_1e_1(x)+x_2e_2(x)+x_3e_3(x)=0$$ kan du sette inn for $x=0,1,2$ for å se at $x_1=0$, $x_2=0$ og $x_3=0$ på grunn av likningene som definerer $e_i$-ene.
 \end{punkt}
 
 \begin{punkt}
@@ -316,14 +316,34 @@ p(2)
 \end{bmatrix}.$$
 \end{punkt}
 
-\begin{punkt}
-For å endre koordinater mellom ulike basiser uttrykker vi den ene basisen ved den andre basisen. Det er desidert enklest å uttrykke $\mathscr{C}$ ved $\B$ ettersom $\B$ er standardbasisen til $\mathcal{P}_2$. Vi har faktisk allerede gjort dette: $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$, $e_2(x)=2x-x^2$ og~$e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$. Matrisen som endrer koordinater er derfor
+\begin{punkt} 
+Husk at en $3\times 3$-matrise er bestemt av hvordan den endrer standardbasisen i $\mathbb{R}^3$.  
+
+
+\noindent
+$T$: I koordinatene til standardbasisen for $\mathcal{P}_2$ har vi at $[1]_\B=\V{e}_1$, $[x]_\B=\V{e}_2$ og~$[x^2]_\B=\V{e}_3$, hvor $\V{e}_i$ er den $i$-te standardbasisen for $\mathbb{R}^3$, per definisjon av koordinater til en basis. Fra kommentaren ovenfor må vi ha at $T[1]_\B=[1]_\mathscr{C}$, $T[x]_\B=[x]_\mathscr{C}$, $T[x^2]_\B=[x^2]_\mathscr{C}$. Basisen $\mathscr{C}$ er konstruert slik at første koordinat er evaluering i 0, andre koordinat er evaluering i 1 og tredje koordinat er evaluering i 2. Derfor har vi
 $$
+T=
+\begin{bmatrix}
+T\V{e}_1 & T\V{e}_2 & T\V{e}_3
+\end{bmatrix} =
+\begin{bmatrix}
+1 & 0 & 0\\
+1 & 1 & 1\\
+1 & 2 & 4
+\end{bmatrix}.
+$$
+
+\noindent
+$S$: Samme fremgang som for $T$. Husk at $e_1(x)=1-\frac{3}{2}x+\frac{1}{2}x^2$, $e_2(x)=2x-x^2$ og~$e_3(x)=-\frac{1}{2}x+\frac{1}{2}x^2$. I koordinatene til $\B$ har vi da at $[e_1]_\B=\vvv{1}{-\frac{3}{2}}{\frac{1}{2}}$, $[e_2]_\B=\vvv{0}{2}{-1}$ og~$[e_3]_\B=\vvv{0}{-\frac{1}{2}}{\frac{1}{2}}$. Dette gir
+$$S=
 \begin{bmatrix}
 1 & 0 & 0\\
 -\frac{3}{2} & 2 & -\frac{1}{2}\\
 \frac{1}{2} & -1 & \frac{1}{2}
 \end{bmatrix}.$$
+
+
 
 \noindent
 Vi sjekker at matrisen gir riktig endring av koordinater for $x^2$:
@@ -340,7 +360,7 @@ $$
 0\\
 0\\
 1
-\end{bmatrix}.$$
+\end{bmatrix}.$$ Dette viser at $S$ endrer koordinatene til $x^2$ som ønsket. Gjør tilsvarende regning for $T$.
 
 % TODO: få med motsatt vei også
 \end{punkt}
@@ -523,6 +543,15 @@ $$[T_\theta]^2=\begin{bmatrix}
 % Forklaring: Lineærtransformasjonene kan representeres av matriser. Matrisen til $L$ har $m<n$ kolonner i $\mathbb{R}^n$. Kolonnene kan derfor ikke spenne ut $\mathbb{R}^n$; bildet til $L$ kan ikke være hele $\mathbb{R}^n$. Men bildet til $T$ er inneholdt i bildet til $L$: vektorer på formen $T(\V{v})$ er spesielt på formen $L(G(\V{v}))$.
 % \end{losning}
 
+\begin{oppgave}
+Avgjør om følgende påstand er korrekt. Funksjoner på formen $f(x)=ax+b$ er nøyaktig lineærtransformasjonene $\mathbb{R}^1\rightarrow \mathbb{R}^1$.
+\end{oppgave}
+\begin{losning}
+Feil.
+
+\noindent
+De lineære funksjonene $\mathbb{R}^1\rightarrow \mathbb{R}^1$ er på formen $f(x)=ax$ (vi kan tenke på konstanten $a$ som en $1\times 1$-matrise).
+\end{losning}
 
 \begin{oppgave}
 Vi skriver $\Hom(V,W)$ for mengden av alle lineærtransformasjoner fra
@@ -647,9 +676,29 @@ ii) $$G(c\cdot p(x))=x\cdot(c\cdot p(x))=c\cdot(x\cdotp(x))=cG(p(x)).$$
 
 
 \end{punkt}
+Bildet til $D$ er alle polynom som kan skrives som den deriverte til et annet polynom. Gitt et polynom $$p(x)=a_0+a_1x+\dots+a_nx^n$$ ser vi at $$P(x)=a_0x+\frac{a_1}{2}x^2+\frac{a_2}{3}x^3+\dots +\frac{a_n}{n+1}x^{n+1}$$ er en antiderivert til $p$; $P'=p$. Men dette betyr jo akkurat at $p=D(P)$. Så bildet til $D$ er $\mathcal{P}$; alle polynom kan skrives som den deriverte til en antiderivert.
+
+
+\noindent
+Kjernen til $D$ er alle polynom som sendes til null, dvs. alle polynom som har derivert lik null. Dette er de konstante polynomene. Kjernen til $D$ er alle konstante polynom.
+
 
 \begin{punkt}
-Bildet til $G$ er alle polynom $p(x)$ som kan skrives på formen $p(x)=G(q(x))$ for et polynom $q(x)$. Med andre ord $p(x)=xq(x)$. Bildet er derfor alle polynom som har $x$ som en faktor, eller -- ekvivalent -- minst et nullpunkt i $x=0$.
+Bildet til $G$ er alle polynom $p(x)$ som kan skrives på formen $p(x)=G(q(x))$ for et polynom $q(x)$. Med andre ord $p(x)=xq(x)$. Bildet er derfor alle polynom som har $x$ som en faktor, eller -- ekvivalent -- minst et nullpunkt i $x=0$. 
+
+
+\noindent
+Kjernen til $G$ er alle polynom som sendes er lik $0$ hvis vi multipliserer det med $x$. Dette er kun sant for null-polynomet. Kjernen til $G$ består kun av null-polynomet.
+
+
+
+\end{punkt}
+
+\begin{punkt}
+Husk at en lineærtransformasjon $T:V\rightarrow W$ er injektiv hvis og bare hvis kjernen kun består av null-vektoren; surjektiv hvis og bare hvis bildet er $W$ (vi treffer alt).
+
+\noindent
+Fra forrige deloppgave følger det at $D$ er surjektiv, men ikke injektiv; $G$ er injektiv, men ikke surjektiv.
 \end{punkt}
 
 \begin{punkt}
@@ -841,38 +890,38 @@ En egenvektor til $D$ med egenverdi $\lambda$, er en vektor/funksjon $f$ slik at
 Ja.
 
 \noindent
-Forklaring: $D$ er surjektiv hvis det for alle glatte funksjoner $f$, finnes en glatt funksjon $F$ slik at $f=D(F)(=F')$. Husk at fundamentalteoremet i analyse sier at $F(x)=\int_a^x f(t)dt$ (for alle valg av $a$, vi kan f. eks ta $a=0$) er en antiderivert til $f$. Men dette betyr at $f=F'=D(F)$. Er $F$ glatt? $F'=f$, så den er en gang deriverbar, og $F^{(n)}=f^{(n)}$ for $n>1$, så den er glatt fordi $f$ er glatt. Vi har derfor funnet en glatt $F$ som tilfredstiller $D(F)=f$ for en vilkårlig vektor $f$.
+Forklaring: $D$ er surjektiv hvis det for alle glatte funksjoner $f$, finnes en glatt funksjon $F$ slik at $f=D(F)(=F')$. Husk at fundamentalteoremet i analyse sier at $F(x)=\int_a^x f(t)dt$ (for alle valg av $a$, vi kan f. eks ta $a=0$) er en antiderivert til $f$. Men dette betyr at $f=F'=D(F)$. Er $F$ glatt? $F'=f$, så den er en gang deriverbar, og $F^{(n+1)}=f^{(n)}$ for $n>1$, så den er glatt fordi $f$ er glatt. Vi har derfor funnet en glatt $F$ som tilfredstiller $D(F)=f$ for en vilkårlig vektor $f$.
 \end{punkt}
 
 \end{losning}
 
 
-\begin{oppgave}
-Kan et vektorrom være isomorft med et ekte underrom av seg selv?
-Med andre ord: 
-Er det mulig å finne et vektorrom $V$ med et underrom $U$
-slik at $U \iso V$, uten at $U$  er hele vektorrommet~$V$?
-\end{oppgave}
+%\begin{oppgave}
+%Kan et vektorrom være isomorft med et ekte underrom av seg selv?
+%Med andre ord: 
+%Er det mulig å finne et vektorrom $V$ med et underrom $U$
+%slik at $U \iso V$, uten at $U$  er hele vektorrommet~$V$?
+%\end{oppgave}
 
-\begin{losning}
-Dette er ikke mulig for endeligdimensjonale vektorrom, fordi
-dimensjonen til~$U$ blir mindre enn dimensjonen til~$V$, og da kan de
-ikke være isomorfe.
+%\begin{losning}
+%Dette er ikke mulig for endeligdimensjonale vektorrom, fordi
+%dimensjonen til~$U$ blir mindre enn dimensjonen til~$V$, og da kan de
+%ikke være isomorfe.
 
-Men det \emph{er} mulig hvis vi ser på et uendeligdimensjonalt
-vektorrom~$V$.  Ta for eksempel $V = \R^\N$, og la $U$ være
-underrommet som består av alle uendelige lister der det første tallet
-er~$0$, altså alle lister på formen
-\[
-(0, a_2, a_3, a_4, \ldots ).
-\]
-Da kan vi definere lineærtransformasjoner $T \colon U \to V$ og
-$S \colon V \to U$ ved:
-\begin{align*}
-T\big( (0, a_2, a_3, a_4, \ldots) \big)
-&= (a_2, a_3, a_4, \ldots) \\
-S\big( (a_1, a_2, a_3, \ldots) \big)
-&= (0, a_1, a_2, a_3, \ldots)
-\end{align*}
-Vi ser at disse blir hverandres inverser, så $U$ og~$V$ er isomorfe.
-\end{losning}
+%Men det \emph{er} mulig hvis vi ser på et uendeligdimensjonalt
+%vektorrom~$V$.  Ta for eksempel $V = \R^\N$, og la $U$ være
+%underrommet som består av alle uendelige lister der det første tallet
+%er~$0$, altså alle lister på formen
+%\[
+%(0, a_2, a_3, a_4, \ldots ).
+%\]
+%Da kan vi definere lineærtransformasjoner $T \colon U \to V$ og
+%$S \colon V \to U$ ved:
+%\begin{align*}
+%T\big( (0, a_2, a_3, a_4, \ldots) \big)
+%&= (a_2, a_3, a_4, \ldots) \\
+%S\big( (a_1, a_2, a_3, \ldots) \big)
+%&= (0, a_1, a_2, a_3, \ldots)
+%\end{align*}
+%Vi ser at disse blir hverandres inverser, så $U$ og~$V$ er isomorfe.
+%\end{losning}
