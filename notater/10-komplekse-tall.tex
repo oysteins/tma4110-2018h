@@ -7,7 +7,7 @@ Generelt er det slik at en polynomlikning
 \[
 a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0=0
 \]
-ikke nødvendigvis har $n$ løsninger. For eksempel har likningen 
+ikke nødvendigvis har $n$ reelle løsninger. For eksempel har likningen 
 \[
 x^2+1=0
 \]
@@ -104,13 +104,12 @@ På lignende vis kan vi tenke at realdelen $a$ og imaginærdelen $b$ er komponen
 \end{center}
 Nå tenker du sikkert at det er på sin plass å sjekke om vektorromsaksiomene holder for de komplekse tallene. Til tross for den ytre likheten med $\R^2$, er ikke dette en spesielt naturlig ting å gjøre, men mange av de vanlige geometriske operasjonene man gjør på vektorer i $\R^2$, fungerer fint på komplekse tall. Mer om dette til slutt. 
 
-\section*{Polar form}
+\section*{Noen trigonometriske betraktninger}
 La $r$ være avstanden fra $z$ til origo i det komplekse planet, og la $\theta$ være vinkelen $z$ gjør med den reelle aksen. Noen enkle geometriske betraktninger gir oss at 
 \begin{align*}
 a=\text{Re}\, z = r\cos \theta \\
-b=\text{Im}\, z = r\sin \theta \\
+b=\text{Im}\, z = r\sin \theta.
 \end{align*}
-
 \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-5,0) -- (8,0);
@@ -181,7 +180,7 @@ Dette er kun en symbolsk manipulasjon, vi vet strengt tatt ikke hva som skjer me
 e^{ix}=\cos x + i\sin x,
 \]
 som kalles \emph{Eulers formel}. Vanlige regneregler for eksponensialfunksjonen er lette å utlede herfra.
-Tar vi Eulers formel for god fisk, kan vi skrive komplekse tall veldig kompakt på polar form:
+Tar vi Eulers formel for god fisk, kan vi skrive komplekse tall veldig kompakt på \emph{polar form:}
 \[
 z=r(\cos \theta+i\sin \theta)=re^{i\theta}.
 \]
@@ -203,19 +202,19 @@ a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
 \]
 har $n$ komplekse løsninger.
 \end{thm}
-Beviset er litt for hardt for dette kurset, men et spesialtilfelle av teoremet kan vi analysere med det vi kjenner til så langt, nemlig komplekse $n$-te røtter.  Dette er løsninger av polynomlikningen
+\noindent Beviset er litt for hardt for dette kurset, men et spesialtilfelle av teoremet kan vi analysere med det vi kjenner til så langt, nemlig komplekse $n$-te røtter.  Dette er løsninger av polynomlikningen
 \[
-z^n=a
+z^n=w
 \]
-for et vilkårlig komplekst tall $a$. Vi skal se med egne øyne at denne likningen alltid har $n$ løsninger. Vi begynner med å skrive $a$ på polar form med valgfritt antall omdreininger rundt origo
+for et vilkårlig komplekst tall $w$. Vi skal se med egne øyne at denne likningen alltid har $n$ løsninger. Vi begynner med å skrive $w$ på polar form med valgfritt antall omdreininger rundt origo
 \[
-a = re^{i \theta}=re^{i \theta+2m\pi}.
+w = re^{i \theta}=re^{i \theta+2m\pi}.
 \]
 Dersom vi skriver 
 \[
-\sqrt[n]{a}=a^{1/n} = (re^{i \theta+2m\pi})^{1/n}=\sqrt[n]{r}e^{i \theta/n+2m\pi/n},
+\sqrt[n]{w}=w^{1/n} = (re^{i \theta+2m\pi})^{1/n}=\sqrt[n]{r}e^{i \theta/n+2m\pi/n},
 \]
-ser vi at det nå finnes $n$ potensielle verdier for $\sqrt[n]{a}$, alle sammen gyldige løsninger av $z^n=a$. Hvis du velger $0\leq m \leq n-1$ får du ut alle sammen. 
+ser vi at det nå finnes $n$ potensielle verdier for $\sqrt[n]{w}$, alle sammen gyldige løsninger av $z^n=w$. Hvis du velger $0\leq m \leq n-1$ får du ut alle sammen. 
 \begin{ex}
 Vi finner alle løsninger av ligningen
 \[
@@ -281,23 +280,38 @@ har en løsning.
 
 Konstruksjonen av de reelle tallene $\R$ fra de rasjonale tallene $\Q$ er komplisert nok til at selv matematikkstudenter ikke blir plaget nevneverdig med det. Den formelle konstruksjonen av $\mathbb C$ fra $\R$ er ikke på langt nær så komplisert, men man trenger fremdeles noen konsepter som ligger noe utenfor det vi kan gjøre i dette kurset.
 
-De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. Det at de er ordnet, betyr at man alltid kan avgjøre hvilket av to reelle tall som er størst, og kropp betyr at de tilfredsstiller noen aksiomer som er til forveksling like vektorromsaksiomene, og noen andre aksiomer i tillegg. De komplekse tallene er et eksempel på en kropp som ikke er ordnet, siden man ikke kan si om et komplekst tall er større enn et annet, akkurat som vi ikke i $\R^2$ kan si at en vektor er større enn en annen.
+De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. Det at de er ordnet, betyr at man alltid kan avgjøre hvilket av to reelle tall som er størst, og kropp betyr at de tilfredsstiller noen aksiomer som er til forveksling like vektorromsaksiomene, og noen andre aksiomer i tillegg. De komplekse tallene er et eksempel på en kropp som ikke er ordnet, siden man ikke kan si om et komplekst tall er større enn et annet, akkurat som vi ikke i $\R^2$ kan si at en vektor er større enn en annen. (Du kan si at en vektor er lengre enn en annen, men det er ikke noen ordning, for to forskjellige vektorer kan være like lange. To reelle tall er like store kun dersom de er identiske.)
 %Vi begrenser oss til å nevne at de reelle tallene er inkludert i de komplekse 
 %\[
 %\N \subset \Z \subset \Q \subset \R \subset \mathbb C
 %\]
 %samt at de komplekse tallene ikke er ordnede.
 
-Siden det er en ytre likhet mellom $\mathbb C$ og $\R^2$, kan det være fristende å sjekke vektorromsaksiomene for å få bekreftelse på at $\mathbb C$ er et vektorrom. Dette går helt fint, $\mathbb C$ er forsåvidt et vektorrom, men det er imidlertid ikke en spesielt hensiktsmessig å se på det slik, for vi kan klare litt bedre. I neste kapittel skal vi se hvordan.
+Siden det er en ytre likhet mellom $\mathbb C$ og $\R^2$, kan det være fristende å sjekke vektorromsaksiomene for å få bekreftelse på at $\mathbb C$ er et vektorrom. Dette går helt fint, $\mathbb C$ er forsåvidt et vektorrom, men det er ikke spesielt hensiktsmessig å se på det akkurat slik, for vi kan klare litt bedre. I neste kapittel skal vi se hvordan.
 
-\section*{Oppgaver}
-
-Finn $z$
-\[
-z^2-z+5 \\
-\]
-
-\noindent Beregn $(1+2i)^3$, $\frac{5}{-3+4i}$ og $\left(\frac{2+i}{3-2i}\right)^2$. \\
-
-\noindent Vis at $(\overline z)^n=\overline{z^n}$. Hint: de Moivres formel. \\
+%\section*{Oppgaver}
+%
+%Finn $z$, der
+%\[
+%z^2-z+5=0 \\
+%\]
+%\[
+%z^3=2i \\
+%\]
+%\[
+%z^4=2 \\
+%\]
+%\[
+%z^5=2+2i \\
+%\]
+%
+%
+%
+%\noindent Beregn $(1+2i)^3$, $\frac{5}{-3+4i}$ og $\left(\frac{2+i}{3-2i}\right)^2$. \\
+%
+%\noindent Skriv $(1+2i)^3$, $\frac{5}{-3+4i}$ og $\left(\frac{2+i}{3-2i}\right)^2$ på polar form. \\
+%
+%\noindent Merk av $(1+2i)^3$, $\frac{5}{-3+4i}$ og $\left(\frac{2+i}{3-2i}\right)^2$ i det komplekse planet. \\
+%
+%\noindent Vis at $(\overline z)^n=\overline{z^n}$. Hint: de Moivres formel. \\
 \kapittelslutt
