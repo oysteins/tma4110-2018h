@@ -14,7 +14,10 @@ Slike funksjoner kaller vi lineærtransformasjoner.
 
 \section*{Funksjoner}
 
-En \defterm{funksjon} består av tre ting:
+Siden lineærtransformasjoner er en spesiell type funksjoner, begynner
+vi med å ta en gjennomgang av en del generelle ting om funksjoner som
+vi kommer til å få bruk for.  Aller først definerer vi presist hva en
+funksjon er for noe.  En \defterm{funksjon} består av tre ting:
 \begin{enumerate}
 \item En mengde som kalles funksjonens \defterm{domene}.
 \item En mengde som kalles funksjonens \defterm{kodomene}.
@@ -40,7 +43,34 @@ La $f \colon \R \to \R$ være funksjonen definert ved
 f(x) = 3x^2 + 1
 \quad\text{for alle $x$ i~$\R$.}
 \]
-% TODO
+Da har vi for eksempel at
+\[
+f(5) = 3 \cdot 5^2 + 1 = 76.
+\]
+Vi kan tegne grafen til funksjonen:
+\begin{center}
+\begin{tikzpicture}[scale=.5]
+\begin{axis}[
+axis y line=center,
+axis x line=middle,
+% axis equal,
+%grid=both,
+xmax=9,xmin=-9,
+ymin=-2,ymax=78,
+% xlabel=$x$,ylabel=$y$,
+% xtick={-10,...,10},
+% ytick={-10,...,10},
+width=15cm,
+anchor=center,
+]
+\addplot[black] {3*x^2 + 1} ;
+\end{axis}
+% \draw[->] (-5,0) -- (5,0);
+% \draw[->] (0,-3) -- (0,100);
+% \addplot {3*x^2 + 1};
+\end{tikzpicture}
+\qedhere
+\end{center}
 \end{ex}
 
 Men det er verdt å merke seg at både domenet og kodomenet kan være
@@ -104,7 +134,8 @@ av~$B$.
 \end{defn}
 
 Det følger umiddelbart fra definisjonen at en funksjon
-$f \colon A \to B$ er surjektiv hvis og bare hvis $\im f = B$.
+$f \colon A \to B$ er surjektiv hvis og bare hvis bildet til
+funksjonen er hele kodomenet: $\im f = B$.
 
 \begin{ex}
 Vi finner bildene til hver av funksjonene $f$, $g$ og~$h$ fra
@@ -151,7 +182,7 @@ h\left(\vvv{1}{0}{1}\right) = \vv{1}{1} = h\left(\vvv{0}{1}{0}\right)
 Dette vil si at $h$ ikke er injektiv.
 \end{ex}
 
-% TODO tekst
+Vi definerer to konsepter til som har med funksjoner å gjøre.
 
 \begin{defn}
 For enhver mengde~$A$ finnes en \defterm{identitetsfunksjon}
@@ -172,12 +203,32 @@ $g \fcomp f \colon A \to C$ definert ved
 \]
 \end{defn}
 
+\begin{ex}
+La $f \colon \R \to \R$ og $g \colon \R \to \R$ være funksjoner
+definert ved:
+\begin{align*}
+f(x) &= \sin x + 1 \\
+g(x) &= x^2 + 5x
+\end{align*}
+Da er sammensetningene $f \fcomp g$ og $g \fcomp f$ også funksjoner
+fra $\R$ til~$\R$, og de er gitt ved:
+\begin{align*}
+(f \fcomp g)(x) &= \sin (x^2 + 5x) + 1 \\
+(g \fcomp f)(x) &= (\sin x + 1)^2 + 5(\sin x + 1)\qedhere
+\end{align*}
+\end{ex}
+
 % TODO tekst
 
 
 \section*{Definisjon av lineærtransformasjoner}
 
-% TODO tekst
+Nå som vi har det grunnleggende om funksjoner på plass, går vi videre
+til å definere lineærtransformasjoner.  En lineærtransformasjon er en
+funksjon mellom vektorrom som bevarer vektorromsstrukturen.  Det vil
+si at vi kan utføre addisjon eller skalarmultiplikasjon før vi
+anvender funksjonen eller etterpå, og resultatet skal bli det samme.
+Vi gjør dette presist i følgende definisjon.
 
 \begin{defn}
 La $V$ og~$W$ være vektorrom.  En funksjon $T \colon V \to W$ er en
@@ -191,13 +242,6 @@ kriterier:
 \qedhere
 \end{enumerate}
 \end{defn}
-
-Strukturen til et vektorrom er gitt ved de to operasjonene addisjon og
-skalarmultiplikasjon.  Vi sier at en lineærtransformasjon
-$T \colon V \to W$ bevarer vektorromsstrukturen siden vi alltid får
-samme resultat om vi %TODO skriv ferdig
-
-% TODO forklare «bevarer vektorromsstrukturen»
 
 Vi kan illustrere de to kravene til en lineærtransformasjon slik:
 \begin{center}
@@ -261,7 +305,7 @@ Vi kan illustrere de to kravene til en lineærtransformasjon slik:
 \end{center}
 
 \begin{ex}
-Vi definerer en funksjon $T \colon \R^3 \to \R^2$ ved:
+Vi definerer $T \colon \R^3 \to \R^2$ ved:
 \[
 T\left( \vvv{x_1}{x_2}{x_3} \right) = \vv{2x_3}{x_1-3x_2}
 \]
@@ -288,7 +332,7 @@ definisjonen, så den er en lineærtransformasjon.
 \end{ex}
 
 \begin{ex}
-Vi definerer en funksjon $T \colon \R^2 \to \R^2$ ved:
+Vi definerer $T \colon \R^2 \to \R^2$ ved:
 \[
 T\left( \vv{x_1}{x_2} \right) = \vv{x_1 + 2 x_2}{x_1 + 1}
 \]
@@ -305,7 +349,8 @@ T\left( 2 \cdot \vv{1}{1} \right) \ne 2 \cdot T\left( \vv{1}{1} \right),
 så $T$ er ikke en lineærtransformasjon.
 \end{ex}
 
-% TODO tekst
+Her er noen egenskaper ved lineærtransformasjoner som følger ganske
+enkelt fra definisjonen, kombinert med aksiomene for vektorrom:
 
 \begin{thm}
 \label{thm:lin-tr-lin-komb}
@@ -361,21 +406,73 @@ utspenner~$\R^2$, er det nok å vite hva $T$ gjør med hver av disse for
 å vite hva den gjør med en hvilken som helst vektor.
 \end{ex}
 
-% TODO eks med \C(\R)?
+Nå har vi sett noen eksempler på lineærtransformasjon mellom vektorrom
+på formen~$\R^n$.  Vi tar med ett eksempel på en lineærtransformasjon
+der domenet er et litt annerledes vektorrom.
 
+\begin{ex}
+Vi husker fra forrige kapittel at $\C(\R)$ er vektorrommet som består
+av alle kontinuerlige funksjoner fra $\R$ til~$\R$.  La
+$T \colon \C(\R) \to \R^2$ være funksjonen gitt ved:
+\[
+T(f) = \vv{f(0)}{f(1)}
+\]
+Hvis vi for eksempel ser på en funksjon $f \colon \R \to \R$ i
+$\C(\R)$ gitt ved
+\[
+f(x) = 3x^2 + 1,
+\]
+så har vi:
+\[
+T(f) = \vv{f(0)}{f(1)} = \vv{4}{1}
+\]
+Vi sjekker at $T$ er en lineærtransformasjon:
+\begin{align*}
+T(f + g)
+&= \vv{(f+g)(0)}{(f+g)(1)}
+ = \vv{f(0) + g(0)}{f(1) + g(1)} \\
+&= \vv{f(0)}{f(1)} + \vv{g(0)}{g(1)}
+ = T(f) + T(g) \\[8pt]
+T(cf)
+&= \vv{(cf)(0)}{(cf)(1)}
+ = c \cdot \vv{f(0)}{f(1)}
+ = c \cdot T(f)
+\end{align*}
+Vi kan observere at for enhver vektor~$\vvS{a}{b}$ i~$\R^2$ kan vi
+definere en funksjon~$f$ i~$\C(\R)$ ved
+\[
+f(x) = (b - a) x + a,
+\]
+og da får vi:
+\[
+T(f) = \vv{f(0)}{f(1)} = \vv{a}{b}
+\]
+Dette betyr at funksjonen~$T$ treffer alle vektorene i~$\R^2$, slik at
+$\im T = \R^2$, og $T$ er surjektiv.
 
-\section*{Lineær utvidelse fra basis}
-
-% TODO
-% gitt vektorrom V, W og en basis B for V
-% enhver funksjon B -> W utvides entydig til en lin.tr. V -> W
-
-% flytte til senere i kapitlet?  droppe?
+Men $T$ er ikke injektiv: Vi kan for eksempel se på to funksjoner $f$
+og~$g$ i~$\C(\R)$ gitt ved:
+\[
+f(x) = 0
+\quad\text{og}\quad
+g(x) = x^2 - x
+\]
+Da har vi at
+\[
+T(f) = \vv{0}{0} = T(g),
+\]
+men $f \ne g$, så $T$ er ikke injektiv.
+\end{ex}
 
 
 \section*{Kjerne og bilde}
 
-% TODO tekst
+For enhver funksjon $f \colon A \to B$ har vi definert bildet $\im f$,
+som er delmengden av kodomenet~$B$ bestående av alle elementer
+funksjonen treffer.  For en lineærtransformasjon har vi også en
+delmengde av domenet som det er naturlig å knytte til
+lineærtransformasjonen, nemlig mengden av alle vektorer som sendes til
+nullvektoren.
 
 \begin{defn}
 La $T \colon V \to W$ være en lineærtransformasjon.  \defterm{Kjernen}
@@ -495,6 +592,19 @@ injektiv.  Det eneste vi trenger å sjekke er hva kjernen er, altså
 hvilke vektorer $T$ sender til nullvektoren.
 
 
+% \section*{Lineær utvidelse fra basis}
+
+% \begin{thm}
+% La $V$ være et vektorrom 
+% \end{thm}
+
+% TODO
+% gitt vektorrom V, W og en basis B for V
+% enhver funksjon B -> W utvides entydig til en lin.tr. V -> W
+
+% flytte til senere i kapitlet?  droppe?
+
+
 \section*{Lineærtransformasjoner gitt ved matriser}
 
 La $A$ være en $m \times n$-matrise.  Da kan vi definere en funksjon
@@ -526,7 +636,35 @@ T(\x) = A \x.
 \]
 Det å spesifisere $T$ på denne måten gjør at vi kan besvare spørsmål
 om~$T$ ved å benytte regneteknikkene vi kjenner for matriser.
-% TODO resten av eksempelet
+
+Hvis vi for eksempel lurer på hva $T(\vvS{2}{-1})$ blir, så er det
+bare å regne ut:
+\[
+T(\vv{2}{-1})
+ =
+\begin{bmatrix}
+1 & -3 \\
+3 & 5 \\
+-1 & 7
+\end{bmatrix}
+\vv{2}{-1}
+ = \vvv{5}{1}{-9}
+\]
+
+Hvis vi lurer på om det finnes noen vektor~$\x$ i~$\R^2$ slik at
+\[
+T(\x) = \vvv{3}{2}{-5},
+\]
+så er det bare å løse likningssystemet
+\[
+A\x = \vvv{3}{2}{-5}
+\]
+på vanlig måte med gausseliminasjon.  Svaret blir ja, det finnes en
+slik~$\x$, nemlig
+\[
+\x = \vv{3/2}{-1/2}.
+\qedhere
+\]
 \end{ex}
 
 Som vi så i eksempelet, kan vi alltid få til å besvare spørsmål av
@@ -633,26 +771,43 @@ Matrisen $A$ i teorem~\ref{thm:standardmatrise} kalles
 
 % TODO eks?
 
+Faktisk kan vi gjøre teorem~\ref{thm:standardmatrise} mer generelt.
+Så lenge vektorrommene våre er endeligdimensjonale, kan enhver
+lineærtransformasjon beskrives ved en matrise.  Men det krever at vi
+velger en basis for hvert vektorrom.
 % TODO tekst
 
 \begin{thm}
 La $V$ og~$W$ være endeligdimensjonale vektorrom, og la $\B$ og
 $\mathscr{C}$ være basiser for henholdsvis $V$ og~$W$.  La
 $T \colon V \to W$ være en lineærtransformasjon.  Da finnes en
-matrise~$A$, entydig bestemt av~$T$, slik at
+matrise~$A$ slik at
 \[
 \koord{T(\x)}{\mathscr{C}} = A \cdot \koord{\x}{\B}
 \]
 for alle vektorer~$\x$ i~$V$.
 \end{thm}
 
+Egentlig er det et valg av basis involvert i
+teorem~\ref{thm:standardmatrise} også.  Der har vi valgt å bruke
+standardbasisene for $\R^n$ og~$\R^m$.  For et vilkårlig vektorrom~$V$
+har vi ikke nødvendigvis noen slik basis som er det åpenbare valget.
+
 % TODO forklaring, eks?
+
+
+% TODO sammensetning av lineærtransformasjoner er matrisemultiplikasjon
 
 
 \section*{Isomorfi}
 
 Til slutt i dette kapitlet ser vi på hvordan vi kan bruke
-lineærtransformasjoner til å beskrive at to vektorrom er «strukturelt like». %TODO
+lineærtransformasjoner til å beskrive at to vektorrom er «strukturelt
+like».  Med dette mener vi at de oppfører seg på akkurat samme måte
+som vektorrom, selv om de kan bestå av helt forskjellige elementer.
+Da vil vi si at de to vektorrommene er \emph{isomorfe}.  For å kunne
+definere dette, trenger vi først et begrep om inverser for
+lineærtransformasjoner.
 
 \begin{defn}
 La $T \colon V \to W$ være en lineærtransformasjon.  En
@@ -661,17 +816,35 @@ som er slik at
 \begin{align*}
 S(T(\v)) &= \v &&\text{for alle $\v$ i~$V$, og} \\
 T(S(\w)) &= \w &&\text{for alle $\w$ i~$W$.}
+\qedhere
 % TODO formulere ved at sammensetningene er \id_V, \id_W
 \end{align*}
 \end{defn}
 
+Vi vil si at to vektorrom er isomorfe hvis det er mulig å bevege seg
+frem og tilbake mellom dem ved hjelp av lineærtransformasjoner som
+bevarer all informasjonen om vektorrommene.  Vi vil altså ha en
+situasjon slik som dette, der $T$ og~$S$ er hverandres inverser:
+\begin{center}
+\begin{tikzpicture}
+\node(V) at (0,0) {$V$};
+\node(W) at (1,0) {$W$};
+\draw[->] (V) to[bend left=20] node[anchor=south] {$T$} (W);
+\draw[->] (W) to[bend left=20] node[anchor=north] {$S$} (V);
+\end{tikzpicture}
+\end{center}
 \begin{defn}
 Hvis $T \colon V \to W$ er en lineærtransformasjon som har en invers,
 så er $T$ en \defterm{isomorfi}.  Da sier vi dessuten at vektorrommene
 $V$ og~$W$ er \defterm{isomorfe}, og vi skriver $V \iso W$.
 \end{defn}
 
- %TODO
+% TODO eks linje i R^2
 
+% TODO \P_1 \iso \R^2
+
+% TODO thm hvis dim V = n, så V \iso \R^n
+
+% TODO thm T iso <=> T inj og surj
 
 \kapittelslutt
