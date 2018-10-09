@@ -799,6 +799,40 @@ har vi ikke nødvendigvis noen slik basis som er det åpenbare valget.
 % TODO sammensetning av lineærtransformasjoner er matrisemultiplikasjon
 
 
+\section*{Egenverdier og egenvektorer}
+
+Vi er vant til å se på egenverdier og egenvektorer for kvadratiske
+matriser.  Nå vet vi at en $n \times n$-matrise~$A$ gir opphav til en
+lineærtransformasjon $T \colon \R^n \to \R^n$ definert ved
+\[
+T(\x) = A\x,
+\]
+og da kan vi beskrive egenverdiene og egenvektorene til~$A$ ved hjelp
+av denne lineærtransformasjonen.  Dersom $A$ har en
+egenverdi~$\lambda$ med tilhørende egenvektor~$\v$, så betyr det at
+\[
+T(\v) = \lambda \v.
+\]
+Dette kan vi generalisere til mer generelle lineærtransformasjoner.
+
+Hvis vi har en lineærtransformasjon $T \colon V \to V$ der domenet og
+kodomenet er det samme vektorrommet~$V$, så kan vi definere
+egenverdier og egenvektorer for~$T$ på tilsvarende måte som for
+matriser.  Vi sier at $\lambda$ er en \defterm{egenverdi} for~$T$, og
+$\v$ en tilhørende \emph{egenvektor}, dersom
+\[
+T(\v) = \lambda \v
+\qquad\text{og}\qquad
+\v \ne 0.
+\]
+Hvis $\lambda$ er en egenverdi for~$T$, så har $\lambda$ et tilhørende
+\defterm{egenrom}, nemlig underrommet
+\[
+\{ \v \in V \mid T(\v) = \lambda \v \}
+\]
+av~$V$.
+
+
 \section*{Isomorfi}
 
 Til slutt i dette kapitlet ser vi på hvordan vi kan bruke
