@@ -19,7 +19,7 @@
 \setsecheadstyle{\bfseries\large}
 %\subsectionfont{\bf\normalsize}
 
-\usepackage{tikz}
+\usepackage{tikz,pgfplots}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
 \def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
@@ -32,11 +32,15 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 
 \newcommand{\M}{\mathcal{M}} % vektorrom av matriser
-\newcommand{\C}{\mathcal{C}} % vektorrom av kontinuerlige funksjoner
+\newcommand{\Cf}{\mathcal{C}} % vektorrom av kontinuerlige funksjoner
 \renewcommand{\P}{\mathcal{P}} % vektorrom av polynomer
 \newcommand{\B}{\mathscr{B}} % basis
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
 
 \newcommand{\abs}[1]{|#1|}
 \newcommand{\intersect}{\cap}

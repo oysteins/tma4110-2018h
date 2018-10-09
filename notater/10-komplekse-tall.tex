@@ -2,36 +2,64 @@
 
 \kapittel{10}{Komplekse tall}
 \label{ch:komplekse-tall}
-\section*{Den imaginære enheten}
+
+Oppfinnelsen av nye tallsystemer henger gjerne sammen med polynomligninger. Ligningen
+\[
+2x-3=0
+\]
+har ingen heltallig løsning, selv om koeffisientente er hele tall. Ligningen 
+\[
+2x+3=0
+\]
+har ingen positiv løsning, selv om koeffisientene er positive tall. Ligningen
+\[
+x^2-2=0
+\]
+har ingen rasjonale løsninger, og likningen 
+\[
+x^2+1=0
+\]
+ingen reelle løsninger. 
 Generelt er det slik at en polynomlikning
 \[
 a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0=0
 \]
-ikke nødvendigvis har $n$ reelle løsninger. For eksempel har likningen 
+ikke nødvendigvis har $n$ løsninger i det tallsystemet koeffisientene er hentet fra. 
+
+\section*{Den imaginære enheten}
+Ligningen
 \[
 x^2+1=0
 \]
-ingen reell løsning. Men hva skjer om vi prøver å løse den med annengradsformelen? Vi får
-\[
-x=\frac{\sqrt{-4}}{2}=\frac{\sqrt{4\cdot (-1)}}{2}=\frac{2\sqrt{-1}}{2}=\sqrt{-1}.
-\]
-Vi gir dette 'tallet' en spesiell plass i våre hjerter ved å donere en bokstav
+har ingen reell løsning. 
+La oss finne opp et nytt tall. Vi kaller det $i$, den \emph{den imaginære enheten}. 
+Nå kan det være fristende å definere
 \[
 i=\sqrt{-1},
 \]
-og døpe det \emph{den imaginære enheten}. Vi forutsetter at den imaginære enheten oppfører seg som en vanlig kvadratrot
-\[
-i^2=\sqrt{-1}\cdot\sqrt{-1}=-1.
-\]
-Dersom vi forutsetter at $i$ ellers oppfører seg som vanlige tall, kan vi skrive kvadratroten av negative tall på en pen måte:
+og så skrive kvadratroten av negative tall på en pen måte:
 \begin{equation*}
 \sqrt{-4}=\sqrt{4\cdot (-1)}=\sqrt{4}\cdot \sqrt{(-1)}=2i.
+\end{equation*}
+Dette er imidlertid ikke en god strategi,
+for vanlige regneregler for røtter gjelder ikke for negative tall:
+\begin{align*}
+1&=(-1)\cdot(-1)\\&=\sqrt{(-1)\cdot (-1)}\\&=\sqrt{(-1)}\cdot \sqrt{ (-1)}=i^2=-1.
+\end{align*}
+Men disse suspekte beregningene gir oss allikevel en pekepinn om hva vi ønsker å oppnå. 
+En bedre løsning er å definere $i$ ved ligningen
+\[
+i^2=-1,
+\]
+og så definere
+\begin{equation*}
+\sqrt{-4}=2i.
 \end{equation*}
 Løser vi likningen
 \[
 x^2+x+1=0
 \]
-får vi 
+og bruker annengradsformelen, får vi ut røttene
 \[
 x=\frac{-1\pm \sqrt{-3}}{2}=\frac{-1\pm \sqrt{3}i}{2}=-\frac{1}{2}\pm\frac{\sqrt{3}}{2}i,
 \]
@@ -39,7 +67,11 @@ og dette inspirerer oss til å definere \emph{komplekse tall} som
 \[
 z=a+bi.
 \]
-Her er $a$ og $b$ reelle tall. De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$, og skrives gjerne Re $z$ og Im $z$. Mengden av alle komplekse tall kalles $\mathbb C$. Dersom $b=0$, er $z$ reell, og vi ser at de reelle tallene er inneholdt i de komplekse, $\mathbb R \subset \mathbb C$.
+Her er $a$ og $b$ reelle tall. 
+De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$,
+og skrives gjerne $\Re z$ og $\Im z$. 
+Mengden av alle komplekse tall kalles $\C$. 
+Dersom $b=0$, er $z$ reell, og vi ser at de reelle tallene er inneholdt i de komplekse, $\R \subset \C$.
 
 
 \section*{Operasjoner på komplekse tall}
@@ -59,7 +91,8 @@ De kan også deles
 \begin{align*}
 \frac{z}{w}&=\frac{2+3i}{4+5i}=\frac{2+3i}{4+5i}\cdot\frac{4-5i}{4-5i}\\&=\frac{8+15+(12-10)i}{16+25}=\frac{22}{41}-\frac{2}{41}i.
 \end{align*}
-Hva skjedde her? La $z=a+bi$. Vi ganget oppe og nede med '$z$ konjugert'
+Hva skjedde her? La $z=a+bi$. 
+Vi ganget oppe og nede med \emph{$z$ konjugert}
 \[
 \overline z =a-bi.
 \]
@@ -69,17 +102,23 @@ Merk at $z\overline z$ blir et reelt tall.
 
 \section*{Det komplekse planet}
 
-Et komplekst tall har en viss ytre likhet med vektorer i $\R^2$. Hvis komponentene til $\V x$ er $x_1$ og $x_2$ og enhetsvektorer i koordinatretningene er $\V{e}_1$ og $\V{e}_2$, skriver vi gjerne
+Et komplekst tall har en viss ytre likhet med vektorer i $\R^2$. 
+Hvis komponentene til $\V x$ er $x_1$ og $x_2$ og enhetsvektorer i koordinatretningene er $\V{e}_1$ og $\V{e}_2$, 
+skriver vi gjerne
 \[
 \V{x}=x_1 \V{e}_1+x_2 \V{e}_2.
 \]
-På lignende vis kan vi tenke at realdelen $a$ og imaginærdelen $b$ er komponenter i en vektor, og avmerke $z$ i \emph{det komplekse planet}.
+På lignende vis kan vi tenke at realdelen $a$ og imaginærdelen $b$ er komponenter i en vektor
+\[
+z=a+bi,
+\] 
+og avmerke $z$ i \emph{det komplekse planet}.
 \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-4,0) -- (7,0);
 \draw[->] (0,-4) -- (0,6);
-\node[anchor=east] at (9.8,0) {\footnotesize Re $z$};
-\node[anchor=south] at (0,6.8) {\footnotesize Im $z$};
+\node[anchor=east] at (9.8,0) {\footnotesize $\Re z$};
+\node[anchor=south] at (0,6.8) {\footnotesize $\Im z$};
 \foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
 \draw (\x,5pt) -- (\x,-5pt);
 \foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
@@ -102,20 +141,32 @@ På lignende vis kan vi tenke at realdelen $a$ og imaginærdelen $b$ er komponen
 \\
 {\small \textit{Det komplekse planet}}
 \end{center}
-Nå tenker du sikkert at det er på sin plass å sjekke om vektorromsaksiomene holder for de komplekse tallene. Til tross for den ytre likheten med $\R^2$, er ikke dette en spesielt naturlig ting å gjøre, men mange av de vanlige geometriske operasjonene man gjør på vektorer i $\R^2$, fungerer fint på komplekse tall. Mer om dette til slutt. 
+Nå tenker du sikkert at det er på sin plass å sjekke om vektorromsaksiomene holder for de komplekse tallene. 
+Det er en helt riktig ting å gjøre, $\C$ er et vektorrom, 
+og de vanlige geometriske operasjonene man gjør på vektorer i $\R^2$, 
+fungerer fint på komplekse tall. 
+Komplekse tall legges sammen komponentvis akkurat som vektorer i $\R^2$, 
+og bevisene for kjente og kjære sannheter, som for eksempel \emph{trekantulikheten}
+\[
+|z+w|\leq |z| + |w|
+\]
+er i prinsippet helt like.
+
 
 \section*{Noen trigonometriske betraktninger}
-La $r$ være avstanden fra $z$ til origo i det komplekse planet, og la $\theta$ være vinkelen $z$ gjør med den reelle aksen. Noen enkle geometriske betraktninger gir oss at 
+La $r$ være avstanden fra $z$ til origo i det komplekse planet, 
+og la $\theta$ være vinkelen $z$ gjør med den reelle aksen. 
+Noen enkle geometriske betraktninger gir oss at 
 \begin{align*}
-a=\text{Re}\, z = r\cos \theta \\
-b=\text{Im}\, z = r\sin \theta.
+a=\Re z = r\cos \theta \\
+b=\Im z = r\sin \theta.
 \end{align*}
 \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-5,0) -- (8,0);
 \draw[->] (0,-2.5) -- (0,6);
-\node[anchor=west] at (9,0) {\footnotesize Re $z$};
-\node[anchor=south] at (0,7) {\footnotesize Im $z$};
+\node[anchor=west] at (9,0) {\footnotesize $\Re z$};
+\node[anchor=south] at (0,7) {\footnotesize $\Im z$};
 \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
 \draw (\x,5pt) -- (\x,-5pt);
 \foreach \y in {-2,-1,1,2,3,4,5}
@@ -139,82 +190,135 @@ b=\text{Im}\, z = r\sin \theta.
 \\
 {\small \textit{Polare koordinater}}
 \end{center}
-Formlene over gir $a$ og $b$ som funksjon av $r$ og $\theta$. Litt mer enkel trigonometri gir den andre veien
+Formlene over gir $a$ og $b$ som funksjon av $r$ og $\theta$. 
+Litt mer trigonometri gir den andre veien
 \begin{align*}
 r&=a^2+b^2 \\
-\theta&= \begin{cases} \tan \frac{b}{a} \quad &\text{for}\; a>0\\ \tan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \end{cases}
+\theta&= \begin{cases} \arctan \frac{b}{a} \quad &\text{for}\; a>0\\ \arctan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \end{cases}
 \end{align*}
 Formelen for $\theta$ må deles opp i to tilfeller siden
 \[
 \frac{b}{a}=\frac{-b}{-a} \quad \text{og} \quad \frac{-b}{a}=\frac{b}{-a}.
 \]
- Tangensfunksjonen ser ikke forskjell på disse, og skjønner derfor ikke av seg selv om $z$ ligger til høyre eller venstre for den imaginære aksen. Vi skriver også $|z|=r=\sqrt{a^2+b^2}=z\overline z$ for avstanden fra $z$ til origo. Dette tallet kalles gjerne absoluttverdi eller modulus til $z$. Vinkelen $\theta$ kalles argumentet til $z$.
+ Tangensfunksjonen ser ikke forskjell på disse, 
+ og skjønner derfor ikke av seg selv om $z$ ligger til høyre eller venstre for den imaginære aksen. 
+ 
+ Vi skriver også 
+ \[|z|=r=\sqrt{a^2+b^2}=\sqrt{z\overline z}\]
+ for avstanden fra $z$ til origo. 
+ Dette tallet kalles gjerne \emph{absoluttverdi} eller \emph{modulus} til $z$. 
+ Vinkelen 
+ \[
+ \theta= \arg z
+ \] 
+ kalles \emph{vinkelen} eller \emph{argumentet} til $z$.
 
 
 \section*{Eulers formel}
-Fra envariabel kalkulus husker du kanskje de tre taylorrekkene
+Fra envariabel kalkulus husker du kanskje de tre taylorrekkene til eksponensialfunksjonen
 \[
 e^{x}=1+x+\frac{x^{2}}{2}+\frac{x^{3}}{3!}+\dots=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}, 
 \]
+sinusfunksjonen
 \[
 \sin{x}=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\dots=\sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n+1}}{(2n+1)!} 
 \]
-og
+og cosinusfunksjonen
 \[
-\cos{x}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\dots=\sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n}}{(2n)!}
+\cos{x}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\dots=\sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n}}{(2n)!}.
 \]
-Dersom vi skriver 
+Dersom bruker $i$ til å skrive
 \[
 \cos{x}=1+\frac{(ix)^{2}}{2!}+\frac{(ix)^{4}}{4!}-\dots=\sum_{n=0}^{\infty}\frac{(ix)^{2n}}{(2n)!}
 \]
 og 
 \[
-i\sin{x}=ix+\frac{(ix)^{3}}{3!}+\frac{(ix)^{5}}{5!}-\dots=\sum_{n=0}^{\infty}\frac{(ix)^{2n+1}}{(2n+1)!}
+i\sin{x}=ix+\frac{(ix)^{3}}{3!}+\frac{(ix)^{5}}{5!}-\dots=\sum_{n=0}^{\infty}\frac{(ix)^{2n+1}}{(2n+1)!},
 \]
-og legger disse sammen, får vi 
+og legger disse to sammen, får vi 
 \[
 \cos x + i\sin x=\sum_{n=0}^{\infty}\frac{(ix)^{n}}{n!}=e^{ix}.
 \]
-Dette er kun en symbolsk manipulasjon, vi vet strengt tatt ikke hva som skjer med konvergensen til en taylorrekke når du ganger den med $i$, men det er allikevel en plausibel hypotese at det er går fint å definere
+Dette er kun en symbolsk manipulasjon, 
+vi vet strengt tatt ikke hva som skjer med konvergensen til en taylorrekke når du ganger den med $i$, 
+men vi er nok inne på noe om vi definerer
 \[
 e^{ix}=\cos x + i\sin x,
 \]
-som kalles \emph{Eulers formel}. Vanlige regneregler for eksponensialfunksjonen er lette å utlede herfra.
-Tar vi Eulers formel for god fisk, kan vi skrive komplekse tall veldig kompakt på \emph{polar form:}
+som kalles \emph{Eulers formel}. 
+Vanlige regneregler for eksponensialfunksjonen er lette å utlede herfra.
+Tar vi Eulers formel for god fisk, kan vi skrive komplekse tall veldig kompakt på \emph{polar form}:
 \[
 z=r(\cos \theta+i\sin \theta)=re^{i\theta}.
 \]
-Hvis vi substituerer $nx$ for $x$ i Eulers formel, får vi de Moivres formel
-\[
-e^{inx}=\cos nx + i\sin nx.
-\]
+%Hvis vi substituerer $nx$ for $x$ i Eulers formel, får vi de Moivres formel
+%\[
+%e^{inx}=\cos nx + i\sin nx.
+%\]
 
 \begin{ex}
-Eulers formel gir at $e^{\pi/2 i}=i$, $e^{\pi i}=-1$, $e^{3\pi/2 i}=-i$ og $e^{2\pi}=1$.
+Eulers formel gir at $e^{ \pi i/2 }=i$, $e^{\pi i}=-1$, $e^{3\pi i/2 }=-i$ og $e^{2 \pi i}=1$.
 \end{ex}
 
 \section*{Røtter av komplekse tall}
-Hvis du plukker opp en tilfeldig bok i tallteori eller kompleks analyse, er det bevist følgende teorem et eller annet sted. Teoremet heter algebraens fundamentalteorem.
+Hvis du plukker opp en tilfeldig bok i algebra eller kompleks analyse, 
+er det bevist følgende teorem et eller annet sted. 
+Teoremet heter algebraens fundamentalteorem.
 \begin{thm}
-En polynomlikning
+Et polynom
+\[
+a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0
+\]
+kan alltid faktoriseres
+\[
+a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=a_n \prod_{i=1}^n (z-z_i),
+\]
+der $z_i$ er løsninger av likningen
 \[
 a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
 \]
-har $n$ komplekse løsninger.
+Dersom en faktor $(z-z_k)$  forekommer $m$ ganger i faktoriseringen, 
+sier vi at $z_k$ har multiplisitet $m$.
 \end{thm}
-\noindent Beviset er litt for hardt for dette kurset, men et spesialtilfelle av teoremet kan vi analysere med det vi kjenner til så langt, nemlig komplekse $n$-te røtter.  Dette er løsninger av polynomlikningen
+Vi skal ikke bevise dette,
+men et spesialtilfelle kan vi analysere med det vi kjenner til så langt, 
+nemlig komplekse $n$-te røtter.  
+Dette er løsninger av polynomlikningen
 \[
 z^n=w
 \]
-for et vilkårlig komplekst tall $w$. Vi skal se med egne øyne at denne likningen alltid har $n$ løsninger. Vi begynner med å skrive $w$ på polar form med valgfritt antall omdreininger rundt origo
+for et vilkårlig komplekst tall $w$. 
+Vi skal se med egne øyne at denne likningen alltid har $n$ løsninger. 
+Vi begynner med å skrive $w$ på polar form med valgfritt antall omdreininger rundt origo
 \[
-w = re^{i \theta}=re^{i \theta+2m\pi}.
+w = re^{i \theta}=re^{i (\theta+2m\pi)}.
 \]
 Dersom vi skriver 
 \[
-\sqrt[n]{w}=w^{1/n} = (re^{i \theta+2m\pi})^{1/n}=\sqrt[n]{r}e^{i \theta/n+2m\pi/n},
+w^{1/n} = (re^{i (\theta+2m\pi)})^{1/n}=\sqrt[n]{r}e^{i (\theta/n+2m\pi/n)},
 \]
-ser vi at det nå finnes $n$ potensielle verdier for $\sqrt[n]{w}$, alle sammen gyldige løsninger av $z^n=w$. Hvis du velger $0\leq m \leq n-1$ får du ut alle sammen. 
+ser vi at det nå finnes $n$ potensielle verdier for $\sqrt[n]{w}$, alle sammen gyldige løsninger av $z^n=w$. 
+Hvis du velger $0\leq m \leq n-1$ får du ut alle sammen. 
+vi definerer den prinsipale $n$-te roten av $w$ som
+\[
+\sqrt[n]{w} = \sqrt[n]{r}e^{i \theta/n},
+\]
+og kan skrive de andre røttene som 
+\[
+\sqrt[n]{w} \cdot e^{2m\pi i/n}
+\]
+for $1 \leq m\leq n-1$.
+Dette er analogt til hvordan man i det reelle tilfellet har to løsninger av ligningen
+\[
+x^2=4,
+\]
+definerer kvadratroten som den positive løsningen
+\[
+\sqrt{4}=2,
+\]
+og skriver den andre løsningen som $-\sqrt{4}$.
+
+
 \begin{ex}
 Vi finner alle løsninger av ligningen
 \[
@@ -224,20 +328,20 @@ Siden
 \[
 -1=e^{i\pi+2m\pi},
 \]
-får vi at 
+får vi 
 \[
-\sqrt[5]{-1}=e^{i\pi/5+2m\pi/5},
+(-1)^{1/5}=e^{i\pi/5+2m\pi/5},
 \]
 og for $0\leq m\leq 4$ spyttes ut
 \[
-\sqrt[5]{-1}=e^{i\pi/5},\;e^{i3\pi/5},\;e^{i5\pi/5}=-1,\; e^{i7\pi/5}\; \text{og}\; e^{i9\pi/5}.
+e^{i\pi/5} (=\sqrt[5]{-1}),\; e^{i3\pi/5},\; e^{i5\pi/5}(=-1),\; e^{i7\pi/5}\; \text{og}\; e^{i9\pi/5}.
 \]
 \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-5,0) -- (7,0);
 \draw[->] (0,-3.1) -- (0,5);
-\node[anchor=west] at (8,0) {\footnotesize Re $z$};
-\node[anchor=south] at (0,6) {\footnotesize Im $z$};
+\node[anchor=west] at (8,0) {\footnotesize $\Re z$};
+\node[anchor=south] at (0,6) {\footnotesize $\Im z$};
 %\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9}
 %\draw (\x,5pt) -- (\x,-5pt);
 %\foreach \y in {-2,-1,1,2,3,4,5,6}
@@ -268,26 +372,35 @@ og for $0\leq m\leq 4$ spyttes ut
 \\
 {\small \textit{Femterøttene til -1}}
 \end{center}
-Merk hvordan røttene sprer seg jevnt ut på en sirkel om origo. Merk også at om vi lar $m> 4$ eller $m<0$, får vi røtter som allerede er listet opp.
+Merk hvordan røttene sprer seg jevnt ut på en sirkel om origo. 
+Merk også at om vi lar $m> 4$ eller $m<0$, får vi røtter som allerede er listet opp.
 \end{ex}
 
 \section*{Går alt dette greit?}
-Dette har vært et litt 'kjapt' kapittel. Vi har jo ikke vist noe som helst, bare definert komplekse tall, sagt at $\sqrt{-1}$ oppfører seg som tallene vi kjenner fra før, og slengt ut en masse regneregler uten å argumentere for at dette går greit, eller at det i det hele tatt finnes et tallsystem der likningen
+Dette har vært et litt kjapt kapittel. 
+Vi har jo ikke vist noe som helst, bare definert komplekse tall, sagt at $i$ oppfører seg som tallene vi kjenner fra før, 
+og slengt ut en masse regneregler uten å argumentere for at dette går greit, 
+eller at det i det hele tatt finnes et tallsystem der likningen
 \[
 x^2+1
 \]
 har en løsning. 
 
-Konstruksjonen av de reelle tallene $\R$ fra de rasjonale tallene $\Q$ er komplisert nok til at selv matematikkstudenter ikke blir plaget nevneverdig med det. Den formelle konstruksjonen av $\mathbb C$ fra $\R$ er ikke på langt nær så komplisert, men man trenger fremdeles noen konsepter som ligger noe utenfor det vi kan gjøre i dette kurset.
+Konstruksjonen av de reelle tallene $\R$ fra de rasjonale tallene $\Q$ er komplisert nok til at selv matematikkstudenter ikke blir plaget nevneverdig med det. 
+Den formelle konstruksjonen av $\C$ fra $\R$ er ikke på langt nær så komplisert, 
+men man trenger fremdeles noen konsepter som ligger noe utenfor det vi kan gjøre i dette kurset.
 
-De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. Det at de er ordnet, betyr at man alltid kan avgjøre hvilket av to reelle tall som er størst, og kropp betyr at de tilfredsstiller noen aksiomer som er til forveksling like vektorromsaksiomene, og noen andre aksiomer i tillegg. De komplekse tallene er et eksempel på en kropp som ikke er ordnet, siden man ikke kan si om et komplekst tall er større enn et annet, akkurat som vi ikke i $\R^2$ kan si at en vektor er større enn en annen. (Du kan si at en vektor er lengre enn en annen, men det er ikke noen ordning, for to forskjellige vektorer kan være like lange. To reelle tall er like store kun dersom de er identiske.)
-%Vi begrenser oss til å nevne at de reelle tallene er inkludert i de komplekse 
-%\[
-%\N \subset \Z \subset \Q \subset \R \subset \mathbb C
-%\]
-%samt at de komplekse tallene ikke er ordnede.
+De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. 
+Det at de er ordnet, betyr at man alltid kan avgjøre hvilket av to reelle tall som er størst, 
+og kropp betyr at de tilfredsstiller noen aksiomer som er til forveksling like vektorromsaksiomene, 
+og noen andre aksiomer i tillegg. 
+De komplekse tallene er et eksempel på en kropp som ikke er ordnet, 
+siden man ikke kan si om et komplekst tall er større enn et annet, 
+akkurat som vi ikke i $\R^2$ kan si at en vektor er større enn en annen. 
+(Du kan si at en vektor er lengre enn en annen, men det er ikke noen ordning, 
+for to forskjellige vektorer kan være like lange. 
+To reelle tall er like store kun dersom de er identiske.)
 
-Siden det er en ytre likhet mellom $\mathbb C$ og $\R^2$, kan det være fristende å sjekke vektorromsaksiomene for å få bekreftelse på at $\mathbb C$ er et vektorrom. Dette går helt fint, $\mathbb C$ er forsåvidt et vektorrom, men det er ikke spesielt hensiktsmessig å se på det akkurat slik, for vi kan klare litt bedre. I neste kapittel skal vi se hvordan.
 
 %\section*{Oppgaver}
 %
@@ -312,6 +425,8 @@ Siden det er en ytre likhet mellom $\mathbb C$ og $\R^2$, kan det være fristend
 %\noindent Skriv $(1+2i)^3$, $\frac{5}{-3+4i}$ og $\left(\frac{2+i}{3-2i}\right)^2$ på polar form. \\
 %
 %\noindent Merk av $(1+2i)^3$, $\frac{5}{-3+4i}$ og $\left(\frac{2+i}{3-2i}\right)^2$ i det komplekse planet. \\
+%
+%\noindent Vis at $e^{i(x+y)}=e^{ix}e^{iy}$. \\
 %
 %\noindent Vis at $(\overline z)^n=\overline{z^n}$. Hint: de Moivres formel. \\
 \kapittelslutt
