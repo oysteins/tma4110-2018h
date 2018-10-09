@@ -1,6 +1,7 @@
 % -*- TeX-master: "oving08"; -*-
 \oppgaver{10}
 
+Projeksjon:
 
 \begin{oppgave}
 Vis at det ortogonale komplementet til en vektor $\V{u}$ i $\mathbb{R}^n$ er kjernen til en lineærtransformasjon.
@@ -23,4 +24,181 @@ x_2\\
 x_n\\
 \end{bmatrix}$$ i det ortogonale komplementet tilfredstiller $$u_1x_1+u_2x_2+\dots +u_nx_n=0,$$ eller ekvivalent $\V{u}\tr \V{x}=0$. Dette er altså kjernen til lineætransformasjonen $$\V{u}\tr:\mathbb{R}^n\rightarrow \mathbb{R}.$$
 
+\end{losning}
+
+
+
+Komplekse tall:
+
+
+
+\begin{oppgave}
+\begin{punkt}
+Skriv det komplekse tallet $-1+i\sqrt{3}$ på polarform.
+\end{punkt}
+
+\begin{punkt}
+Vis at $-1+i\sqrt{3}$ er en sjetterot av 64 (uten å finne alle sjetterøttene til 64).
+\end{punkt}
+
+\begin{punkt}
+Finn alle sjetterøttene til $-1+i\sqrt{3}$. Skissér dem i det komplekse planet.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+$2e^{\frac{2\pi i}{3}}$
+\end{punkt}
+
+\begin{punkt}
+$(-1+i\sqrt{3})^6=(2e^{\frac{2\pi i}{3}})^6=64e^{4\pi i}=64.$
+\end{punkt}
+
+\begin{punkt}
+$2,2e^{\frac{\pi i}{3}},2e^{\frac{2\pi i}{3}},-2,2e^{\frac{4\pi i}{3}},2e^{\frac{5\pi i}{3}}$
+
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+	\draw[->] (0,-3) -- (0,3) node[above] {$y$};
+	
+	\node at (2,0) [] {$\boldsymbol{\cdot}$};
+	\node at (1,1.732) [] {$\boldsymbol{\cdot}$};
+	\node at (-1,1.732) [] {$\boldsymbol{\cdot}$};
+	\node at (-2,0) [] {$\boldsymbol{\cdot}$};
+	\node at (-1,-1.732) [] {$\boldsymbol{\cdot}$};
+	\node at (1,-1.732) [] {$\boldsymbol{\cdot}$};
+	
+	\end{tikzpicture}
+\end{center}
+
+
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+Finn alle løsninger av likningen $$z^3-3z^2+3z-1=0.$$ Skissér løsningene i det komplekse planet.
+\end{punkt}
+\begin{punkt}
+Finn alle løsninger av likningen $$z^3-3z^2+3z-2=0$$ ved å bruke svaret du fant i $\textbf{a)}$. Skissér løsningene i det komplekse planet.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Vi har at $(z-1)^3=z^3-3z^2+3z-1$ slik at $z=1$ er en trippelrot.
+
+\noindent
+Aletrnativt kan du gjette på løsningen $z=1$ og deretter bruke polynomdivisjon.
+\end{punkt}
+
+\begin{punkt}
+
+
+Fra \textbf{a)} har vi at likningen kan skrives på formen $$(z-1)^3=1=e^{2\pi i}.$$ Tredjerøttene til $1$ er $$e^{\frac{2\pi}{3}}, \quad e^{\frac{4\pi}{3}},\quad 1.$$ Dermed har vi tre løsninger for $z-1$ som igjen gir tre løsninger for $z$: $$z=1+e^{\frac{2\pi}{3}},1+e^{\frac{4\pi}{3}},2.$$
+
+\noindent
+Tredjerøttene til $1$ ligger uniformt fordelt på sirekelen sentrert i origo med radius 1, men er forskjøvet til å ligge uniformt fordelt på sirkelen sentrert i $(1,0)$ med radius 1.
+
+
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+
+\begin{punkt}
+Finn alle tredjerøttene til $1$. Tegn en rett strek mellom løsningene (etter økende vinkel). Hva slags geometrisk figur er dette?
+\end{punkt}
+
+\begin{punkt}
+Repeter del $\textbf{a)}$ for alle fjerderøttene til $1$.
+\end{punkt}
+
+
+\begin{punkt}
+Repeter del $\textbf{a)}$ for alle $n$-terøttene ($n\geq 3$) til $1$.
+\end{punkt}
+
+\begin{punkt}
+Får vi samme geometriske figur i $\textbf{c)}$ dersom vi bytter ut $1$ med et reelt tall $r \neq 0$? Hva med et generelt kompleks tall $w\neq 0$?
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+
+\begin{punkt}
+Vi følger den vanlige metoden for å finne $n$-terøtter: Skriv $1$ på polarform; $1=e^{(2\pi k )i}$, $k$ et heltall. Ta tredjeroten for å få $\sqrt[3]{1}=e^{(\frac{2\pi k}{3} )i}$, $k$ heltall. Dette gir ulike komplekse tall for $k=0,1,2$: 
+$$1,\quad e^{\frac{2\pi i}{3}}, \quad e^{\frac{4\pi i}{3}}.$$ 
+
+\noindent
+Dette er tre punkter uniformt fordelt på sirkelen sentrert i origo med radius 1. Dersom vi trekker rette linjer mellom punkter etter økende vinkel får vi en trekant med røttene som hjørner.
+\end{punkt}
+
+\begin{punkt}
+Som i $\textbf{a)}$ gir $$1,\quad i,\quad -1, \quad -i. $$ Den geometriske figuren blir en firkant med hjørner i røttene.
+\end{punkt}
+
+\begin{punkt}
+Som i $\textbf{a)}$ gir $$1,\quad e^{\frac{2\pi i}{n}},\quad e^{\frac{4\pi i}{n}},\dots,e^{\frac{(n-1)\pi i}{n}}.$$ Den geometriske figuren blir en $n$-kant med hjørner i røttene.
+\end{punkt}
+
+\begin{punkt}
+Vi får fortsatt en $n$-kant med hjørner i røttene.
+
+\noindent
+Forklaring: Et komplekst tall kan skrives på formen $re^{i\theta}$ hvor $r>0$ er et reelt tall. Nå blir $n$-terøttene $\sqrt[n]{r}e^{(\theta+\frac{2\pi k}{n})i}$, $k=0,1,\dots, n-1$ (en hel runde i det komplekse planet). Dette er en uniform fordeling av $n$ punkter på sirkelen sentrert i origo med radius $\sqrt[n]{r}$.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+La $z$ og $w$ være to komplekse tall, begge ulik null. Er det mulig at $zw=0$?
+\end{oppgave}
+
+\begin{losning}
+Nei.
+
+\noindent
+Løsning: Skriv tallene på polarform, $z=re^{i\theta}$ og $w=\rho e^{i\phi}$. Nå kan produktet uttrykkes $zw=r\rho e^{i(\theta+\phi)}$, hvor $r \rho>0$. Derfor er produktet forskjellig fra null.
+
+\noindent
+Alternativ løsning: Du kan også løse oppgaven ved å skrive $z$ og~$w$ på formen $a+ib$.
+\end{losning}
+
+
+
+\begin{oppgave}
+La $n>0$ være et partall. Anta at $z$ er en $n$-terot av et reelt tall $r$ (betraktet som et komplekst tall med imaginær del lik null). Er den konjugerte $\bar{z}$ også en $n$-terot?
+\end{oppgave}
+
+\begin{losning}
+Ja.
+
+\noindent
+Røttene til $r$ fordeles uniformt langs sirkelen om origo med radius $\sqrt[n]{r}$, og $\sqrt[n]{r}$ er en rot. Vi har sett eksempler på dette tidligere i øvingen.
+\end{losning}
+
+
+Kompleks Lineær algebra:
+
+\begin{oppgave}
+Betrakt $A=\begin{bmatrix}
+0 & 1\\
+0 & 0
+\end{bmatrix}$ som en matrise med komplekse tall. Finn alle egenverdiene og egenvektorene til $A$.
+\end{oppgave}
+
+\begin{losning}
+Den karakteristiske likningen blir $\lambda^2+1=0$ og har løsning $\pm i$. Egenverdiene er derfor $\pm i$.
 \end{losning}
