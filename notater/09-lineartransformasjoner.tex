@@ -873,12 +873,101 @@ så er $T$ en \defterm{isomorfi}.  Da sier vi dessuten at vektorrommene
 $V$ og~$W$ er \defterm{isomorfe}, og vi skriver $V \iso W$.
 \end{defn}
 
-% TODO eks linje i R^2
+\begin{ex}
+Vi lar $V$ være underrommet
+\[
+V = \Sp \left\{ \vv{3}{2} \right\}
+\]
+i~$\R^2$ utspent av vektoren~$\vvS{3}{2}$.  Da er $V$ et
+endimensjonalt vektorrom, og geometrisk sett er det en linje.
+Vektorrommet~$V$ ser ut og oppfører seg akkurat som
+vektorrommet~$\R^1$.  Forskjellen er bare at elementene ser
+forskjellige ut.  Hvert element i $V$ er en vektor på formen
+\[
+\vv{3t}{2t}
+\]
+mens hvert element i $\R^1$ er bare et tall.
+\begin{center}
+\begin{tikzpicture}[scale=.5,baseline]
+\draw[->] (-3,0) -- (3,0);
+\draw[->] (0,-2) -- (0,2);
+\draw (-3,-2) -- (3,2) node[anchor=north] {$V$};
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[scale=.5,baseline]
+\draw[->] (-3,0) -- (3,0) node[anchor=north] {$\R^1$};
+\draw (0,.1) -- (0,-.1);
+\coordinate (O) at (0,0);
+\end{tikzpicture}
+\\[4pt]
+{\small \textit{De to vektorrommene $V$ og~$\R^1$}}
+\end{center}
 
-% TODO \P_1 \iso \R^2
+Det at $V$ og $\R^1$ «ser like ut» kan vi gjøre mer presist ved å vise
+at de er isomorfe.  Vi definerer lineærtransformasjoner
+\[
+T \colon V \to \R^1
+\quad\text{og}\quad
+S \colon \R^1 \to V
+\]
+ved:
+\[
+T \left( \vv{3t}{2t} \right) = t
+\qquad\quad
+S(x) = \vv{3x}{2x}
+\]
+Vi kan lett sjekke at disse faktisk er lineærtransformasjoner, og vi
+ser at de er hverandres inverser.  Det betyr at de er isomorfier, og
+de viser dermed at $V \iso \R^1$.
+\end{ex}
 
-% TODO thm hvis dim V = n, så V \iso \R^n
+\begin{ex}
+Vi husker at $\P_1$ er vektorrommet som består av alle polynomer av
+grad~$1$ eller lavere, altså alle funksjoner på formen
+\[
+p(x) = a_1 x + a_0.
+\]
+Polynomet~$p$ er entydig bestemt av de to tallene $a_1$ og~$a_0$, og
+vi vet at addisjon og skalarmultiplikasjon av polynomer foregår ved å
+addere eller skalarmultiplisere hver koeffisient.  Hvis vi bare ser på
+hva som skjer med koeffisientene, så ligner altså vektorrommet~$\P_1$
+veldig på~$\R^2$.
 
-% TODO thm T iso <=> T inj og surj
+Vi definerer to lineærtransformasjoner
+\[
+T \colon \P_1 \to \R^2
+\quad\text{og}\quad
+S \colon \R^2 \to \P_1
+\]
+på følgende måte:
+\begin{align*}
+T(p) &= \vv{a_1}{a_0}
+ &&\text{for et polynom~$p$ definert} \\[-8pt]
+&&&\text{ved $p(x) = a_1x + a_0$,} \\
+S\left( \vv{v_1}{v_2} \right) &= q,
+ &&\text{der $q$ er polynomet definert} \\[-8pt]
+&&&\text{ved $q(x) = v_1 x + v_2$.}
+\end{align*}
+Det er lett å sjekke at $T$ og~$S$ er lineærtransformasjoner, og at de
+er hverandres inverser.  Dermed er de isomorfier, og vi får at
+$\P_1 \iso \R^2$.
+\end{ex}
+
+I dette eksempelet viste vi at det todimensjonale vektorrommet~$\P_1$
+er isomorft med~$\R^2$.  På tilsvarende måte kan vi vise at ethvert
+todimensjonalt vektorrom er isomorft med~$\R^2$, og mer generelt at
+ethvert $n$-dimensjonalt vektorrom er isomorft med~$\R^n$.
+
+\begin{thm}
+Hvis $V$ er $n$-dimensjonalt vektorrom, så er $V$ isomorft med~$\R^n$.
+\end{thm}
+
+Vi kan også merke oss at det å være en isomorfi kan beskrives ved
+hjelp av injektivitet og surjektivitet.
+
+\begin{thm}
+En lineærtransformasjon er en isomorfi hvis og bare hvis den er både
+injektiv og surjektiv.
+\end{thm}
 
 \kapittelslutt
