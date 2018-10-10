@@ -68,32 +68,6 @@ TODO
 \end{losning}
 
 
-Projeksjon:
-
-\begin{oppgave}
-Vis at det ortogonale komplementet til en vektor $\V{u}$ er kjernen til en lineærtransformasjon
-\end{oppgave}
-
-\begin{losning}
-
-Vi kan skrive $$\V{u}=\begin{bmatrix}
-u_1\\
-u_2\\
-\vdots\\
-u_n\\
-\end{bmatrix}.$$ En vektor $$\V{x}=\begin{bmatrix}
-x_1\\
-x_2\\
-\vdots\\
-x_n\\
-\end{bmatrix}$$ i det ortogonale komplementet tilfredstiller $$u_1x_1+u_2x_2+\dots +u_nx_n=0,$$ eller ekvivalent $\V{u}\tr \V{x}=0$. Dette er altså kjernen til lineætransformasjonen $$\V{u}\tr:\mathbb{R}^n\rightarrow \mathbb{R}.$$
-
-\end{losning}
-
-
-
-Komplekse tall:
-
 
 
 \begin{oppgave}
@@ -251,39 +225,5 @@ Ja.
 
 \noindent
 Røttene til $r$ fordeles uniformt langs sirkelen om origo med radius $\sqrt[n]{r}$, og $\sqrt[n]{r}$ er en rot. Vi har sett eksempler på dette tidligere i øvingen.
-\end{losning}
-
-
-Kompleks Lineær algebra:
-
-\begin{oppgave}
-\begin{punkt}
-Betrakt $A=\begin{bmatrix}
-0 & -1\\
-1 & 0
-\end{bmatrix}$ som en matrise med komplekse tall. Finn alle egenverdiene og egenvektorene til $A$.
-\end{punkt}
-
-\begin{punkt}
-Gi en geometrisk forklaring på hvorfor $A$ ikke har noen reelle egenverdier. Hvorfor gjelder ikke dette for komplekse egenverdier?
-\end{punkt}
-
-\end{oppgave}
-
-\begin{losning}
-
-\begin{punkt}
-Den karakteristiske likningen blir $\lambda^2+1=0$ og har løsning $\pm i$. Egenverdiene er derfor $\pm i$.
-
-Egenvektorer: TODO
-
-\end{punkt}
-
-\begin{punkt}
-Matrisen roterer alle vektorer med 90 grader. Derfor skaleres ingen vektorer med en reell skalar.
-
-\noindent
-Dersom vi tillater komplekse egenverdier har vi 'snurremultiplikasjon'. Å multiplisere hver komponent i en vektor med $i$ roterer er jo nøyaktig å rotere vektoren 90 grader.
-\end{punkt}
 \end{losning}
 
