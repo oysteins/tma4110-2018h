@@ -191,7 +191,7 @@ Formlene over gir $a$ og $b$ som funksjon av $r$ og $\theta$.
 Litt mer trigonometri gir den andre veien
 \begin{align*}
 r&=a^2+b^2 \\
-\theta&= \begin{cases} \arctan \frac{b}{a} \quad &\text{for}\; a>0\\ \arctan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \end{cases}
+\theta&= \begin{cases} \arctan \frac{b}{a} \quad &\text{for}\; a>0\\ \arctan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \\  \pi/2 \quad &\text{for}\;  a=0, \; b>0 \\ -\pi/2 \quad &\text{for}\;  a=0, \; b<0  \end{cases}
 \end{align*}
 Formelen for $\theta$ må deles opp i to tilfeller siden
 \[
@@ -199,6 +199,7 @@ Formelen for $\theta$ må deles opp i to tilfeller siden
 \]
  Tangensfunksjonen ser ikke forskjell på disse, 
  og skjønner derfor ikke av seg selv om $z$ ligger til høyre eller venstre for den imaginære aksen. 
+ Merk også at vi kan legge til vilkårlige multipler av $2\pi$ overalt, samt at for $z=0$ er ikke $\theta$ definert.
  
  Vi skriver også 
  \[|z|=r=\sqrt{a^2+b^2}=\sqrt{z\overline z}\]
@@ -243,7 +244,11 @@ men vi er nok inne på noe om vi definerer
 e^{ix}=\cos x + i\sin x,
 \]
 som kalles \emph{Eulers formel}. 
-Vanlige regneregler for eksponensialfunksjonen er lette å utlede herfra.
+Vanlige regneregler for eksponensialfunksjonen er lette å utlede herfra. For eksempel er 
+\begin{align*}
+e^{i(x+y)}  &= \cos (x+y) + i\sin (x+y) \\[5pt] &= \cos x \cos y - \sin x \sin y + i (\cos x \sin y + \sin x \cos y) \\[5pt] &= 
+(\cos x+ i \sin x) \cdot (\cos y+ i \sin y) = e^{ix}e^{iy}.
+\end{align*}
 Tar vi Eulers formel for god fisk, kan vi skrive komplekse tall veldig kompakt på \emph{polar form}:
 \[
 z=r(\cos \theta+i\sin \theta)=re^{i\theta}.
@@ -279,8 +284,7 @@ sier vi at $z_k$ har multiplisitet $m$.
 \end{thm}
 Vi skal ikke bevise dette,
 men et spesialtilfelle kan vi analysere med det vi kjenner til så langt, 
-nemlig komplekse $n$-te røtter.  
-Dette er løsninger av polynomlikningen
+nemlig løsninger av polynomlikningen
 \[
 z^n=w
 \]
@@ -300,7 +304,7 @@ vi definerer den prinsipale $n$-te roten av $w$ som
 \[
 \sqrt[n]{w} = \sqrt[n]{r}e^{i \theta/n},
 \]
-og kan skrive de andre røttene som 
+og så kan vi skrive de andre røttene som 
 \[
 \sqrt[n]{w} \cdot e^{2m\pi i/n}
 \]
