@@ -1,0 +1,41 @@
+% -*- TeX-master: "oving10"; -*-
+\oppgaver{12}
+
+
+\begin{oppgave}
+Vis at det ortogonale komplementet til en vektor $\V{u}$ i $\R^n$
+er kjernen til en lineærtransformasjon.
+
+\noindent
+Hint: Hvilken ligning tilfredstiller en vektor i det ortogonale komplementet?
+\end{oppgave}
+
+\begin{losning}
+Vi kan skrive
+\[
+\V{u}=\begin{bmatrix}
+u_1\\
+u_2\\
+\vdots\\
+u_n\\
+\end{bmatrix}.
+\]
+En vektor
+\[
+\V{x}=\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n\\
+\end{bmatrix}
+\]
+i det ortogonale komplementet tilfredstiller
+\[
+u_1x_1+u_2x_2+\dots +u_nx_n=0,
+\]
+eller ekvivalent $\V{u}\tr \V{x}=0$.
+Dette er altså kjernen til lineætransformasjonen
+\[
+\V{u}\tr:\mathbb{R}^n\rightarrow \mathbb{R}.
+\]
+\end{losning}

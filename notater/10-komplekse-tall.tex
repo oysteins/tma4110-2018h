@@ -65,9 +65,10 @@ og dette inspirerer oss til å definere \emph{komplekse tall} som
 z=a+bi.
 \]
 Her er $a$ og $b$ reelle tall. 
-De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$, og skrives gjerne Re $z$ og Im $z$. 
-Mengden av alle komplekse tall kalles $\mathbb C$. 
-Dersom $b=0$, er $z$ reell, og vi ser at de reelle tallene er inneholdt i de komplekse, $\mathbb R \subset \mathbb C$.
+De kalles henholdsvis \emph{realdelen} og \emph{imaginærdelen} til $z$,
+og skrives gjerne $\Re z$ og $\Im z$. 
+Mengden av alle komplekse tall kalles $\C$. 
+Dersom $b=0$, er $z$ reell, og vi ser at de reelle tallene er inneholdt i de komplekse, $\R \subset \C$.
 
 
 \section*{Operasjoner på komplekse tall}
@@ -113,8 +114,8 @@ og avmerke $z$ i \emph{det komplekse planet}.
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-4,0) -- (7,0);
 \draw[->] (0,-4) -- (0,6);
-\node[anchor=east] at (9.8,0) {\footnotesize Re $z$};
-\node[anchor=south] at (0,6.8) {\footnotesize Im $z$};
+\node[anchor=east] at (9.8,0) {\footnotesize $\Re z$};
+\node[anchor=south] at (0,6.8) {\footnotesize $\Im z$};
 \foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
 \draw (\x,5pt) -- (\x,-5pt);
 \foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
@@ -138,7 +139,7 @@ og avmerke $z$ i \emph{det komplekse planet}.
 {\small \textit{Det komplekse planet}}
 \end{center}
 Nå tenker du sikkert at det er på sin plass å sjekke om vektorromsaksiomene holder for de komplekse tallene. 
-Det er en helt riktig ting å gjøre, $\mathbb C$ er et vektorrom, 
+Det er en helt riktig ting å gjøre, $\C$ er et vektorrom, 
 og de vanlige geometriske operasjonene man gjør på vektorer i $\R^2$, 
 fungerer fint på komplekse tall. 
 Komplekse tall legges sammen komponentvis akkurat som vektorer i $\R^2$, 
@@ -154,15 +155,15 @@ La $r$ være avstanden fra $z$ til origo i det komplekse planet,
 og la $\theta$ være vinkelen $z$ gjør med den reelle aksen. 
 Noen enkle geometriske betraktninger gir oss at 
 \begin{align*}
-a=\text{Re}\, z = r\cos \theta \\
-b=\text{Im}\, z = r\sin \theta.
+a=\Re z = r\cos \theta \\
+b=\Im z = r\sin \theta.
 \end{align*}
 \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-5,0) -- (8,0);
 \draw[->] (0,-2.5) -- (0,6);
-\node[anchor=west] at (9,0) {\footnotesize Re $z$};
-\node[anchor=south] at (0,7) {\footnotesize Im $z$};
+\node[anchor=west] at (9,0) {\footnotesize $\Re z$};
+\node[anchor=south] at (0,7) {\footnotesize $\Im z$};
 \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
 \draw (\x,5pt) -- (\x,-5pt);
 \foreach \y in {-2,-1,1,2,3,4,5}
@@ -336,8 +337,8 @@ e^{i\pi/5} (=\sqrt[5]{-1}),\; e^{i3\pi/5},\; e^{i5\pi/5}(=-1),\; e^{i7\pi/5}\; \
 \begin{tikzpicture}[scale=.42]
 \draw[->] (-5,0) -- (7,0);
 \draw[->] (0,-3.1) -- (0,5);
-\node[anchor=west] at (8,0) {\footnotesize Re $z$};
-\node[anchor=south] at (0,6) {\footnotesize Im $z$};
+\node[anchor=west] at (8,0) {\footnotesize $\Re z$};
+\node[anchor=south] at (0,6) {\footnotesize $\Im z$};
 %\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9}
 %\draw (\x,5pt) -- (\x,-5pt);
 %\foreach \y in {-2,-1,1,2,3,4,5,6}
@@ -383,7 +384,7 @@ x^2+1
 har en løsning. 
 
 Konstruksjonen av de reelle tallene $\R$ fra de rasjonale tallene $\Q$ er komplisert nok til at selv matematikkstudenter ikke blir plaget nevneverdig med det. 
-Den formelle konstruksjonen av $\mathbb C$ fra $\R$ er ikke på langt nær så komplisert, 
+Den formelle konstruksjonen av $\C$ fra $\R$ er ikke på langt nær så komplisert, 
 men man trenger fremdeles noen konsepter som ligger noe utenfor det vi kan gjøre i dette kurset.
 
 De reelle tallene er et eksempel på en \emph{ordnet} kropp med addisjon og multiplikasjon. 
