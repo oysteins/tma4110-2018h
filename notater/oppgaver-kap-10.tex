@@ -87,6 +87,41 @@ TODO
 \end{losning}
 
 
+\begin{oppgave}
+
+\begin{punkt}
+Skriv $e^{i\frac{3\pi}{4}}-e^{-i^\frac{3 \pi}{4}}$ på polarform.
+\end{punkt}
+
+\begin{punkt}
+Skriv $\frac{e^{i\frac{3\pi}{4}}}{e^{-i^\frac{3 \pi}{4}}}$ på polarform.
+\end{punkt}
+
+\begin{punkt}
+Er det enkelt å dele komplekse tall på polarform? Hva med addere? Sammenlign med Kartesisk form.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Euler gir: $e^{i\frac{3\pi}{4}}=\cos(\frac{3\pi}{4})+i\sin (\frac{3\pi}{4})$. Bruk at $\cos$ er en like funksjon og $\sin$ er en odde funksjon for å se at $e^{-i\frac{3\pi}{4}}=\cos(\frac{3\pi}{4})-i\sin (\frac{3\pi}{4})$. Nå kan vi regne ut at $$e^{i\frac{3\pi}{4}}-e^{-i^\frac{3 \pi}{4}}=-2i\sin \frac{3\pi}{4}=\sqrt{2}e^{i\frac{3\pi}{2}}.$$
+\end{punkt}
+
+\begin{punkt}
+$\frac{e^{i\frac{3\pi}{4}}}{e^{-i\frac{3 \pi}{4}}}=e^{i(\frac{3\pi}{4}-(-\frac{3 \pi}{4}))}=e^{i\frac{3\pi}{2}}.$ 
+\end{punkt}
+
+\begin{punkt}
+Polarform: Veldig enkelt å multiplisere/addere som del $\textbf{b)}$ illustrerer; vanskelig å addere som del $\textbf{a)}$ illustrerer.
+
+\noindent
+Kartesisk: Her blir det motsatt: Enkelt å addere; vanskelig å dele.
+\end{punkt}
+
+\end{losning}
+
 
 
 \begin{oppgave}
@@ -249,33 +284,3 @@ Røttene til $r$ fordeles uniformt langs sirkelen om origo med radius $\sqrt[n]{
 
 
 
-\begin{oppgave}
-La $\V{u}=\vvv{2}{-5}{1}$ og la $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$ være den ortogonale projeksjonen ned på underrommet utspent av $\V{u}$,
-$$T(\V{x})=\frac{\V{x}\boldsymbol{\cdot} \V{u}}{\|\V{u} \|^2} \V{u}.$$
-
-\begin{punkt}
-Bruk definisjonen av en lineærtransformasjon for å vise at $T$ er en lineærtransformasjon.
-\end{punkt}
-
-\begin{punkt}
-Finn matrisen $A$ slik at $T(\V{x})=A\V{x}$ for alle vektorer $\V{x}$.
-\end{punkt}
-
-\end{oppgave}
-
-\begin{losning}
-
-\begin{punkt}
-Dette følger av at prikkproduktet er lineært.
-\end{punkt}
-
-\begin{punkt}
-Bruk $T$ på standardbasisen til $\mathbb{R}^3$ for å se at
-$$A=\frac{1}{30}\begin{bmatrix}
-4 & -10 & 2\\
--10 & 25 & -5\\
-2 & -5 & 1
-\end{bmatrix}.$$
-\end{punkt}
-
-\end{losning}

@@ -13,12 +13,22 @@ Bruk definisjonen av en lineærtransformasjon for å vise at $T$ er en lineærtr
 Finn matrisen $A$ slik at $T(\V{x})=A\V{x}$ for alle vektorer $\V{x}$.
 \end{punkt}
 
+\begin{punkt}
+Gi geometriske argument for å avgjøre hva bildet til $T$ er, hva kjernen til $T$ er, og om $T$ er surjektiv og/eller injektiv.
+\end{punkt}
+
+
+\begin{punkt}
+Finn en matrise som er den ortogonale projeksjonen ned på det ortogonale komplementet til $\V{u}$
+\end{punkt}
+
+
 \end{oppgave}
 
 \begin{losning}
 
 \begin{punkt}
-Dette følger av at prikkproduktet er lineært.
+Hint: Prikkproduktet er lineært.
 \end{punkt}
 
 \begin{punkt}
@@ -28,6 +38,15 @@ $$A=\frac{1}{30}\begin{bmatrix}
 -10 & 25 & -5\\
 2 & -5 & 1
 \end{bmatrix}.$$
+\end{punkt}
+
+\begin{punkt}
+Bildet er linjen utspent av $\V{u}$. Kjernen er alt som sendes til null når vi prikker med $\V{u}$, dvs. det ortogonale komplementet. Fra dette ser vi at $T$ ikke er surjektiv eller injektiv.
+\end{punkt}
+
+\begin{punkt}
+Hint: En vektor $\V{x}$ kan skrives som en entydig sum $\V{x}=\text{proj}_{\V{u}^{\perp}}\V{x}+\text{proj}_{\V{u}}\V{x}$, hvor siste ledd er $T(\V{x})$ fra \textbf{a)}. Dermed blir projeksjonen ned på det ortogonale komplementet
+$$\text{proj}_{\V{u}^{\perp}}\V{x}=\V{x}-T(\V{x}).$$ Nå gjør vi som i løsningen til $\textbf{b)}$: sett inn for $\V{x}=\V{e}_i$, $i=1,2,3$, og bruk dette som kolonnevektorer.
 \end{punkt}
 
 \end{losning}
@@ -156,7 +175,7 @@ a\\
 b\\
 c\\
 d
-\end{bmatrix}=begin{bmatrix}
+\end{bmatrix}=\begin{bmatrix}
 0\\
 2\\
 9\\
@@ -183,7 +202,7 @@ Er minste kvadraters løsning til et system $A\V{x}=\V{b}$ entydig?
 Nei, ikke generelt.
 
 \noindent
-Forklaring: Kolonnene til $A^\tr A$ kan være lineært avhengige slik at $A^\tr A \V{x}=A\tr \V{b}$ ikke har entydig løsning. Prøv gjerne å finne et eksempel!
+Forklaring: Kolonnene til $A\tr A$ kan være lineært avhengige slik at $A\tr A \V{x}=A\tr \V{b}$ ikke har entydig løsning. Prøv gjerne å finne et eksempel!
 \end{losning}
 
 
