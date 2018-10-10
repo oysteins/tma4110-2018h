@@ -63,7 +63,12 @@ TODO
 
 
 
-
+\begin{oppgave}
+Vis at 
+\[
+|z+w|^2+|z-w|^2=2|z|^2+2|w|^2.
+\]
+\end{oppgave}
 
 
 
@@ -88,17 +93,26 @@ TODO
 
 
 \begin{oppgave}
-
+La $z$ og~$w$ være følgende komplekse tall:
+\[
+z = \frac{3\pi}{4} i
+\qquad\qquad
+w = -i^{3\pi/4}
+\]
 \begin{punkt}
-Skriv $e^{i\frac{3\pi}{4}}-e^{-i^\frac{3 \pi}{4}}$ på polarform.
+% Skriv $e^{i\frac{3\pi}{4}}-e^{-i^\frac{3 \pi}{4}}$ på polarform.
+Skriv tallet $e^z - e^w$ på polar form.
 \end{punkt}
 
 \begin{punkt}
-Skriv $\frac{e^{i\frac{3\pi}{4}}}{e^{-i^\frac{3 \pi}{4}}}$ på polarform.
+% Skriv $\frac{e^{i\frac{3\pi}{4}}}{e^{-i^\frac{3 \pi}{4}}}$ på polarform.
+Skriv tallet $e^z/e^w$ på polar form.
 \end{punkt}
 
 \begin{punkt}
-Er det enkelt å dele komplekse tall på polarform? Hva med addere? Sammenlign med Kartesisk form.
+Er det enkelt å dele komplekse tall på polar form?
+Hva med addere?
+Sammenlign med kartesisk form (altså formen $a + bi$).
 \end{punkt}
 
 \end{oppgave}
@@ -114,7 +128,7 @@ $\frac{e^{i\frac{3\pi}{4}}}{e^{-i\frac{3 \pi}{4}}}=e^{i(\frac{3\pi}{4}-(-\frac{3
 \end{punkt}
 
 \begin{punkt}
-Polarform: Veldig enkelt å multiplisere/addere som del $\textbf{b)}$ illustrerer; vanskelig å addere som del $\textbf{a)}$ illustrerer.
+Polar Form: Veldig enkelt å multiplisere/addere som del $\textbf{b)}$ illustrerer; vanskelig å addere som del $\textbf{a)}$ illustrerer.
 
 \noindent
 Kartesisk: Her blir det motsatt: Enkelt å addere; vanskelig å dele.
@@ -126,7 +140,7 @@ Kartesisk: Her blir det motsatt: Enkelt å addere; vanskelig å dele.
 
 \begin{oppgave}
 \begin{punkt}
-Skriv det komplekse tallet $-1+i\sqrt{3}$ på polarform.
+Skriv det komplekse tallet $-1+i\sqrt{3}$ på polar form.
 \end{punkt}
 
 \begin{punkt}
@@ -205,7 +219,6 @@ Tredjerøttene til $1$ ligger uniformt fordelt på sirekelen sentrert i origo me
 
 \end{losning}
 
-
 \begin{oppgave}
 
 \begin{punkt}
@@ -224,14 +237,13 @@ Repeter del $\textbf{a)}$ for alle $n$-terøttene ($n\geq 3$) til $1$.
 \begin{punkt}
 Får vi samme geometriske figur i $\textbf{c)}$ dersom vi bytter ut $1$ med et reelt tall $r \neq 0$? Hva med et generelt kompleks tall $w\neq 0$?
 \end{punkt}
-
 \end{oppgave}
 
 
 \begin{losning}
 
 \begin{punkt}
-Vi følger den vanlige metoden for å finne $n$-terøtter: Skriv $1$ på polarform; $1=e^{(2\pi k )i}$, $k$ et heltall. Ta tredjeroten for å få $\sqrt[3]{1}=e^{(\frac{2\pi k}{3} )i}$, $k$ heltall. Dette gir ulike komplekse tall for $k=0,1,2$: 
+Vi følger den vanlige metoden for å finne $n$-terøtter: Skriv $1$ på polar form; $1=e^{(2\pi k )i}$, $k$ et heltall. Ta tredjeroten for å få $\sqrt[3]{1}=e^{(\frac{2\pi k}{3} )i}$, $k$ heltall. Dette gir ulike komplekse tall for $k=0,1,2$: 
 $$1,\quad e^{\frac{2\pi i}{3}}, \quad e^{\frac{4\pi i}{3}}.$$ 
 
 \noindent
@@ -255,6 +267,35 @@ Forklaring: Et komplekst tall kan skrives på formen $re^{i\theta}$ hvor $r>0$ e
 
 \end{losning}
 
+
+\begin{oppgave}
+Vis at dersom koeffisentene $a_i$ i polynomligningen
+\[
+a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
+\]
+er reelle, kommer løsningene i konjugatpar, altså at dersom $w$ er en løsning, er også $\overline w$ det.
+\end{oppgave}
+
+\begin{losning}
+Vi har at
+\[
+a_nw^n+a_{n-1}w^{n-1}+...+a_1w+a_0=0.
+\]
+Konjugering av hele ligningen gir 
+\[
+a_n(\overline w)^n+a_{n-1}(\overline w)^{n-1}+...+a_1(\overline w)+a_0=0,
+\]
+men tidligere har du vist at $(\overline w)^n=(\overline {w^n}$, slik at 
+\[
+a_n\overline w^n+a_{n-1}\overline w^{n-1}+...+a_1\overline w+a_0=0.
+\]
+
+
+
+\end{losning}
+
+
+
 \begin{oppgave}
 La $z$ og $w$ være to komplekse tall, begge ulik null. Er det mulig at $zw=0$?
 \end{oppgave}
@@ -263,7 +304,7 @@ La $z$ og $w$ være to komplekse tall, begge ulik null. Er det mulig at $zw=0$?
 Nei.
 
 \noindent
-Løsning: Skriv tallene på polarform, $z=re^{i\theta}$ og $w=\rho e^{i\phi}$. Nå kan produktet uttrykkes $zw=r\rho e^{i(\theta+\phi)}$, hvor $r \rho>0$. Derfor er produktet forskjellig fra null.
+Løsning: Skriv tallene på polar form, $z=re^{i\theta}$ og $w=\rho e^{i\phi}$. Nå kan produktet uttrykkes $zw=r\rho e^{i(\theta+\phi)}$, hvor $r \rho>0$. Derfor er produktet forskjellig fra null.
 
 \noindent
 Alternativ løsning: Du kan også løse oppgaven ved å skrive $z$ og~$w$ på formen $a+ib$.
@@ -272,7 +313,7 @@ Alternativ løsning: Du kan også løse oppgaven ved å skrive $z$ og~$w$ på fo
 
 
 \begin{oppgave}
-La $n>0$ være et partall. Anta at $z$ er en $n$-terot av et reelt tall $r$ (betraktet som et komplekst tall med imaginær del lik null). Er den konjugerte $\bar{z}$ også en $n$-terot?
+La $n>0$ være et partall, og la $z$ være en $n$-terot av et reelt tall. Er $\bar{z}$ også en $n$-terot av dette tallet?
 \end{oppgave}
 
 \begin{losning}
@@ -286,3 +327,45 @@ Røttene til $r$ fordeles uniformt langs sirkelen om origo med radius $\sqrt[n]{
 Vis at $\mathbb C$ er et vektorrom.
 \end{oppgave}
 
+\begin{oppgave}
+Vis vektorrommet som består av alle matriser på formen 
+\[
+\begin{pmatrix}
+a & b \\
+-b & a \\
+\end{pmatrix}
+\]
+er isomorft med $\mathbb C$. 
+\end{oppgave}
+
+
+%\begin{oppgave}
+%La $\V{u}=\vvv{2}{-5}{1}$ og la $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$ være den ortogonale projeksjonen ned på underrommet utspent av $\V{u}$,
+%$$T(\V{x})=\frac{\V{x}\boldsymbol{\cdot} \V{u}}{\|\V{u} \|^2} \V{u}.$$
+%
+%\begin{punkt}
+%Bruk definisjonen av en lineærtransformasjon for å vise at $T$ er en lineærtransformasjon.
+%\end{punkt}
+%
+%\begin{punkt}
+%Finn matrisen $A$ slik at $T(\V{x})=A\V{x}$ for alle vektorer $\V{x}$.
+%\end{punkt}
+%
+%\end{oppgave}
+%
+%\begin{losning}
+%
+%\begin{punkt}
+%Dette følger av at prikkproduktet er lineært.
+%\end{punkt}
+%
+%\begin{punkt}
+%Bruk $T$ på standardbasisen til $\mathbb{R}^3$ for å se at
+%$$A=\frac{1}{30}\begin{bmatrix}
+%4 & -10 & 2\\
+%-10 & 25 & -5\\
+%2 & -5 & 1
+%\end{bmatrix}.$$
+%\end{punkt}
+%
+%\end{losning}
