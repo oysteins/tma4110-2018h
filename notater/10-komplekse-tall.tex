@@ -191,17 +191,14 @@ Formlene over gir $a$ og $b$ som funksjon av $r$ og $\theta$.
 Litt mer trigonometri gir den andre veien
 \begin{align*}
 r&=a^2+b^2 \\
-\theta&= \begin{cases} \arctan \frac{b}{a} \quad &\text{for}\; a>0\\ \arctan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \\  \pi/2 \quad &\text{for}\;  a=0, \; b>0 \\ -\pi/2 \quad &\text{for}\;  a=0, \; b<0  \end{cases}
+\theta&= \begin{cases} \arctan \frac{b}{a} \quad &\text{for}\; a>0\\ \arctan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \\  \pi/2 \quad &\text{for}\;  a=0, \; b>0 \\ 3\pi/2 \quad &\text{for}\;  a=0, \; b<0  \end{cases}
 \end{align*}
-Formelen for $\theta$ må deles opp i to tilfeller siden
-\[
-\frac{b}{a}=\frac{-b}{-a} \quad \text{og} \quad \frac{-b}{a}=\frac{b}{-a}.
-\]
- Tangensfunksjonen ser ikke forskjell på disse, 
- og skjønner derfor ikke av seg selv om $z$ ligger til høyre eller venstre for den imaginære aksen. 
+Det er flere tilfeller her, for arkustangensfunksjonen skjønner ikke av seg selv om 
+$z$ ligger til høyre eller venstre for den imaginære aksen, 
+og er $z$ imaginær blir den ihvertfall forvirret.
  Merk også at vi kan legge til vilkårlige multipler av $2\pi$ overalt, samt at for $z=0$ er ikke $\theta$ definert.
  
- Vi skriver også 
+ Vi skriver ellers
  \[|z|=r=\sqrt{a^2+b^2}=\sqrt{z\overline z}\]
  for avstanden fra $z$ til origo. 
  Dette tallet kalles gjerne \emph{absoluttverdi} eller \emph{modulus} til $z$. 
@@ -300,7 +297,7 @@ w^{1/n} = (re^{i (\theta+2m\pi)})^{1/n}=\sqrt[n]{r}e^{i (\theta/n+2m\pi/n)},
 \]
 ser vi at det nå finnes $n$ potensielle verdier for $\sqrt[n]{w}$, alle sammen gyldige løsninger av $z^n=w$. 
 Hvis du velger $0\leq m \leq n-1$ får du ut alle sammen. 
-vi definerer den prinsipale $n$-te roten av $w$ som
+Vi definerer den prinsipale $n$-te roten av $w$ som
 \[
 \sqrt[n]{w} = \sqrt[n]{r}e^{i \theta/n},
 \]
