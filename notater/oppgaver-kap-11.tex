@@ -1,6 +1,13 @@
 % -*- TeX-master: "oving09"; -*-
 \oppgaver{11}
 
+\begin{oppgave}
+TODO: Tre ligningssystemer (en løsning, ingen løsning, uendelig mange løsninger).
+\end{oppgave}
+
+\begin{losning}
+TODO
+\end{losning}
 
 \begin{oppgave}
 \begin{punkt}
@@ -33,4 +40,31 @@ Dersom vi tillater komplekse egenverdier har vi 'snurremultiplikasjon'. Å multi
 \end{punkt}
 \end{losning}
 
+\begin{oppgave}
+\begin{punkt}
+Forrige øving viste vi at $\mathbb{C}$ er et vektorrom over $\mathbb{R}$ (reelt vektorrom). Gi en basis. Hva er dimensjonen til $\mathbb{C}$? Hva om vi ser på $\mathbb{C}$ som et komplekst vektorrom?
+\end{punkt}
+\begin{punkt}
+Kan du gi en geometrisk forklaring på svaret ditt i \textbf{a)}?
+\end{punkt}
+\end{oppgave}
 
+\begin{losning}
+\begin{punkt}
+Reelt vektorrom: En basis er gitt ved $\B=(1,i)$ slik at dimensjonen er 2.
+
+\noindent
+Kompleks vektorrom: En basis er gitt ved $1$ slik at dimensjonen er 1.
+\end{punkt}
+
+\begin{punkt}
+Hvis vi innfører koordinater med hensyn på $\B$ (se løsningen til del \textbf{a)}) for $\mathbb{C}$ som reelt vektorrom har vi at $[a+ib]=\vv{a}{b}$. Dette betyr at $\mathbb{C}$ oppfører seg helt likt som $\mathbb{R}^2$; skalarmultiplikasjon $t[a+ib]=\vv{ta}{tb}=[(ta)+i(tb)]$ hvor $t$ er et reelt tall. En vektor $a+ib$ kan altså bare skaleres til å gi alle punktene på linjen $t(a+ib)$, $t\in\mathbb{R}$, i det komplekse planet. Men dersom vi betrakter $\mathbb{C}$ som et komplekst vektorrom, tillater vi komplekse skalarer. En vektor $a+ib$ spenner nå ut $w(a+ib)$, $w\in \mathbb{C}$, som er hele det komplekse planet dersom $a+ib\neq 0$ fordi vi har 'snurreganging' ($c+id=\frac{c+id}{a+ib}(a+ib)$).
+
+\noindent
+Moral: En linje i et komplekst vektorrom svarer -- rent geometrisk -- til et plan i et reelt vektorrom. 
+
+\noindent
+Merknad: Til tross for at $\mathbb{C}^n$ (som komplekst vektorrom) og $\mathbb{R}^n$ (som reelt vektorrom) ser ulike ut, må du ikke la deg lure. De oppfører seg helt likt! Derfor burde du tenke på $\mathbb{C}^n$ som $\mathbb{R}^n$ når du jobber med dem i praksis. 
+\end{punkt}
+
+\end{losning}
