@@ -19,13 +19,14 @@ Gi geometriske argument for å avgjøre hva bildet til $T$ er, hva kjernen til $
 
 
 \begin{punkt}
-Finn en matrise som er den ortogonale projeksjonen ned på det ortogonale komplementet til $\V{u}$
+Finn standardmatrisentil den ortogonale projeksjonen ned på det ortogonale komplementet til $\V{u}$
 \end{punkt}
 
 
 \end{oppgave}
 
 \begin{losning}
+
 
 \begin{punkt}
 Hint: Prikkproduktet er lineært.
@@ -57,6 +58,7 @@ er kjernen til en lineærtransformasjon.
 
 \noindent
 Hint: Hvilken ligning tilfredstiller en vektor i det ortogonale komplementet?
+
 \end{oppgave}
 
 \begin{losning}
@@ -88,14 +90,74 @@ Dette er altså kjernen til lineætransformasjonen
 \V{u}\tr:\mathbb{R}^n\rightarrow \mathbb{R}.
 \]
 \end{losning}
+
+
 \begin{oppgave}
-Anta at $\V{u}_1,\dots \V{u}_n$ er en ortonormal basis for $\mathbb{R}^n$. Vis at den inverse matrisen til $A=\begin{bmatrix}
-\V{u}_1 & \dots & \V{u_n}
-\end{bmatrix}$ er gitt ved $A^{-1}=A\tr$.
+Husk at alle lineærtransformasjoner mellom to vektorrom, $V$ og $W$, igjen er et vektorrom $\Hom(V,W)$. La $S$ være en delmengde av $\mathbb{R}^n$. Vis at $$\text{proj}_{\text{Sp}S}+\text{proj}_{S^{\perp}}=\text{id}.$$
 \end{oppgave}
 
 \begin{losning}
+Dette er nøyaktig at en vilkårlig vektor $\V{x}=\text{id}(\V{x})$ kan skrives som en entydig sum $$\text{proj}_{\text{Sp}S}\V{x}+\text{proj}_{S^{\perp}}\V{X}$$ langs utspennet til $S$ og det ortogonale komplementet til $S$.
+\end{losning}
+
+
+\begin{oppgave}
+\begin{punkt}
+Anta at $\V{u}_1,\dots \V{u}_n$ er en ortonormal basis for $\mathbb{R}^n$. Vis at den inverse matrisen til $A=\begin{bmatrix}
+\V{u}_1 & \dots & \V{u_n}
+\end{bmatrix}$ er gitt ved $A^{-1}=A\tr$.
+\end{punkt}
+\begin{punkt}
+Vis at en samling vektorer som er parvis ortogonale, og forskjellige fra null, vil være lineært uavhengige.
+\end{punkt}
+\end{oppgave}
+
+
+
+
+\begin{losning}
+\begin{punkt}
 Dette er oppgave \textbf{10. b)} kapittel 4 (Matriser).
+\end{punkt}
+\begin{punkt}
+Anta at $\V{v}_1,\dots,\V{v}_n$ er parvis ortogonale; $\V{v}_i\boldsymbol{\cdot}\V{v}_j=0$ for $i\neq j$. Vi må vise at likningen $$x_1\V{v}_1+\dots+a_n\V{v}_n=\V{0}$$ kun har triviell løsning (definisjonen på lineær uavhengighet). Prikk likningen med $\V{v}_1$ for å se at $x_1\|\V{v}_1\|^2=0$. Ettersom $\V{v}_1\neq \V{0}$ må $x_1=0$. Repeter denne prosessen for $i=2,\dots,n$ for å se at de resterende $x_i$-ene også må være lik null.
+\end{punkt}
+\end{losning}
+
+\begin{oppgave}
+Gitt $m$ lineært uavhengige vektorer i $\mathbb{R}^n$. Hvordan kan du -- på en systematisk måte -- finne $m$ ortogonale vektorer med det samme utspennet? Lag en tegning som illustrerer metoden for $m=2$ og $n=2$.
+\end{oppgave}
+
+\begin{losning}
+Gram-Schmidt. Se illustrasjonen under 'Projeksjon i $\mathbb{R}^2$' i notatet.
+\end{losning}
+
+\begin{oppgave}
+La $V$ være underrommet av $\mathbb{R}^3$ utspent av $\V{u}$ og~$\V{v}$ hvor 
+$$\vvv{2}{-5}{1} \quad \text{og} \quad \vvv{4}{-4}{2}.$$
+
+\begin{punkt}
+Finn en ortonormal basis for $V$.
+\end{punkt}
+
+\begin{punkt}
+Skissér $V$, $\V{u}$, $\V{v}$ og vektorene du fant i $\textbf{a)}$ i et $x-y-z$-koordinatsystem.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Det er flere løsninger. Du kan sjekke at svaret ditt i) ligger i spanet til $\V{u}$ og~$\V{v}$, ii) er ortogonale (prikkprodukt lik null) og iii) er normalisert (har lengde lik en). Alle svar som tilfredstiller i)-iii) er korrekt.
+\end{punkt}
+\begin{punkt}
+Vektorrommet $V$ er et plan i $\mathbb{R}^3$. Vektorene $\V{u}$ og $\V{v}$ ligger i planet og peker i ulike retninger (er lineært uavhengige). Vektorene du fant i $\textbf{a)}$ vil også ligge i $V$, men ha lik lengde og 90 grader mellom hverandre.
+\end{punkt}
+
+\end{losning}
+
+\begin{losning}
 \end{losning}
 
 \begin{oppgave}
@@ -213,4 +275,43 @@ Nei, ikke generelt.
 Forklaring: Kolonnene til $A\tr A$ kan være lineært avhengige slik at $A\tr A \V{x}=A\tr \V{b}$ ikke har entydig løsning. Prøv gjerne å finne et eksempel!
 \end{losning}
 
+
+
+\begin{oppgave}
+Et vektorrom med et 'prikkprodukt', også kalt indreprodukt, kalles et indreproduktrom. Vanlig notasjon er $$\langle \V{v},\V{u} \rangle,$$ i stedet for $$\V{v}\boldsymbol{\cdot}\V{u}.$$ Dette produktet skal tilfredstille de viktige egenskapene til prikkproduktet:
+
+\noindent
+Symmetri: $\langle \V{v}, \V{u}\rangle =\langle \V{u}, \V{v}\rangle$.
+
+\noindent
+Linearitet: $\langle a\V{v}_1+b\V{v_2}, \V{u}\rangle =a\langle \V{v}_1, \V{u}\rangle+b\langle \V{v_2}, \V{u}\rangle$.
+
+\noindent
+Positiv-definitt: $\langle \V{v}, \V{v}\rangle \geq 0$, hvor vi har likhet hvis og bare hvis $\V{v}=0$.
+
+\begin{punkt}
+Gi definisjonen av det ortogonale komplementet til en vektor $\V{u}$ i et indreproduktrom.
+\end{punkt}
+
+\begin{punkt}
+Gi definisjonen på projeksjonen ned på en vektor $\V{u}$ i et indreproduktrom.
+\end{punkt}
+
+\begin{punkt}
+Vis at en vilkårlig vektor $\V{v}$ kan skrives entydig som en sum $\V{v}_{\V{u}}+\V{v}_{\V{u}^{\perp}}$ hvor første faktor er projeksjonen ned på $\V{u}$ og andre faktor er projeksjonen ned på det ortogonale komplementet til $\V{u}$.
+\end{punkt}
+
+\begin{punkt}
+Vi har tidligere skrevet -- som et teorem uten bevis -- at alle vektorrom har en basis. Anta at $V$ er et indreproduktrom som kan utspennes av en endelig delmengde. Vis at $V$ har en basis.
+
+\noindent
+Hint: Vektorene i det ortogonale komplementet til en vektor $\V{u}$ er lineært uavhengig av $\V{u}$.
+\end{punkt}
+
+
+\end{oppgave}
+
+\begin{losning}
+TODO
+\end{losning}
 
