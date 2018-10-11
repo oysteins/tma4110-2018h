@@ -3,6 +3,15 @@
 \kapittel{11}{Kompleks lineær algebra}
 \label{ch:kompleks-linear-algebra}
 
+I dette kapitlet skal det drives gjennom tre sentrale poenger: 
+
+1. skalarene i definisjonen av vektorrom kan være andre tall enn de reelle.
+
+2. lineæralgebra over $\mathbb C$ er stort sett helt likt som over $\R$.
+
+3. Det finnes alltid $n$ egenverdier
+
+
 \section*{Definisjonen av vektorrom II}
 
 De rasjonale tallene $\Q$, de reelle tallene $\R$, og de komplekse tallene $\C$ er alle eksempler på et konsept kalt kropp. En kropp er et tallsystem med to regneoperasjoner $+$ og $\cdot$, som tilfredsstiller ti-tolv aksiomer, hvorav noen ligner ganske bra på vektorromsaksiomene. Vi skal ikke gå gjennom disse aksiomene, men sentralt for en kropp er at alle elementer i kroppen har multiplikativ invers.
@@ -16,7 +25,7 @@ La $V$ være en mengde, og $K$ en kropp. Anta at vi har definert to operasjoner:
 \text{skalarmultiplikasjon: } & c \cdot \V{u}
 \end{align*}
 Addisjonen skal være definert for alle elementer $\V{u}$ og~$\V{v}$
-i~$V$, og skalarmultiplikasjonen for alle skalarer~$c$ i kroppen $K$ og alle $\V{u}$
+i~$V$, og skalarmultiplikasjonen for alle skalarer~$c$ i $K$ og alle $\V{u}$
 i~$V$.  Resultatet av operasjonene skal alltid være et element i~$V$.
 
 Dersom mengden~$V$ og de to operasjonene oppfyller vektorromsaksiomene, 
@@ -32,6 +41,9 @@ $\Q^n$ et vektorrom over $\Q$.
 \begin{ex}
 Vi skriver $\C^n$ for vektorrommet der \emph{både} kroppen er $\C$ og komponentene i vektorene er hentet fra $\C$.
 \end{ex}
+\begin{ex}
+$\P^n$ er et vektorrom over $\mathbb R$ slik vi har jobbet med det til nå.
+\end{ex}
 
 \begin{thm}
 Alle teoremer vi har bevist til nå, gjelder også for $\mathbb C^n$. 
@@ -43,7 +55,26 @@ Alle teoremer vi har bevist til nå, gjelder også for $\mathbb C^n$.
 \section*{Hva nå?}
 Så på sett og vis er dette en repetisjonsuke. 
 Vi vet at alle teoremer vi har bevist til nå, gjelder i $\mathbb C^n$, 
-men det tar allikevel tid å komme inn i regningen. 
+men det tar allikevel tid å komme inn i regningen. Derfor tar vi noen eksempler.
+
+\begin{ex}
+Gausseliminasjon
+\end{ex}
+
+\begin{ex}
+Matrisemultiplikasjon
+\end{ex}
+
+\begin{ex}
+En determinant
+\end{ex}
+
+\begin{ex}
+lineær uavhengighet
+\end{ex}
+
+
+
 
 
 
@@ -61,6 +92,15 @@ der $z_i$ er polynomets røtter. Noen av disse kan være repeterte $k$ ganger, o
 Nå er det mulig å vise at det karakteristiske polynomet alltid har orden $n$, 
 og da følger det at en matrise alltid har $n$ egenverdier dersom du 
 teller med multiplisiteten. 
+
+\begin{ex}
+\[
+\begin{pmatrix}
+1 & -1 \\ 1 &1
+\end{pmatrix}
+\]
+\end{ex}
+
 
 
 \kapittelslutt
