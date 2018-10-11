@@ -277,6 +277,33 @@ Forklaring: Kolonnene til $A\tr A$ kan være lineært avhengige slik at $A\tr A 
 
 
 
+\begin{oppgave} I denne oppgaven skal du utlede din egen metode.
+\begin{punkt}
+La $\V{v}$ være en vektor i $\mathbb{R}^n$. Forklar hvordan du kan finne en ortogonal basis $\V{v},\V{v}_2,\dots \V{v}_n$.
+\end{punkt}
+\begin{punkt}
+Finn en ortogonal basis for $\mathbb{R}^3$ som inneholder $\vvv{1}{2}{3}$.
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+La $V_1$ være det ortogonale komplementet til $\V{v}$. Ta en vilkårlig vektor $\V{v}_2$ i $V_1$. La $V_2$ være det ortogonale komplementet til $\{\V{v},\V{v}_2\}$. Ta en vilkårlig vektor $\V{v}_3$ i $V_2$. La $V_3$ være det ortogonale komplementet til $\{\V{v},\V{v}_2,\V{v}_3\}$. Ta en vilkårlig vektor $\V{v}_4$ i $V_3$. Fortsett denne prosessen til vektor $\V{v}_n$. Nå har du en kandidat $\B=(\V{v},\V{v}_2,\dots,\V{v}_n)$ til en basis. Vektorene er lineært uavhengige fordi de er ortogonale på grunn av måten de er valgt (ref tidligere oppgave). Derfor utgjør de en basis for $\mathbb{R}^n$ ($n$ lineært uavhengige vektorer spenner ut $\mathbb{R}^n$).
+\end{punkt}
+\begin{punkt}
+Det ortogonale komplementet til $\vvv{1}{2}{3}$ er alle vektorer $\vvv{x}{y}{z}$ slik at $$\vvv{1}{2}{3}\boldsymbol{\cdot }\vvv{x}{y}{z}=0,$$ eller ekvivalent
+$$x+2y+3z=0.$$ Det finnes mange løsninger\ldots Du kan f. eks ta $\V{v}_2=\vvv{1}{2}{-3}$. Nå må vi finne en vektor i det ortogonale komplementet til $\V{v}$ og~$\V{v}_2$. Dette kan -- på lik måte som ovenfor -- beskrives av ligningene
+$$x+2y+3z=0$$
+$$x+2y-3z=0,$$ eller ekvivalent matriseligningen $$\begin{bmatrix}
+1 & 2 & 3 \\
+1 & 2 & -3
+\end{bmatrix}\vvv{x}{y}{z}=\V{0}.$$ Det finnes mange løsninger\ldots Du kan f. eks ta $\V{v}_3=\vvv{2}{-1}{0}$. Dermed utgjør -- for eksempel -- vektorene 
+$$\vvv{1}{2}{3},\quad \vvv{1}{2}{-3},\quad \vvv{2}{-1}{0}$$ en ortogonal basis for $\mathbb{R}^3$ som inneholder $\vvv{1}{2}{3}$.
+\end{punkt}
+
+\end{losning}
+
+
 \begin{oppgave}
 Et vektorrom med et 'prikkprodukt', også kalt indreprodukt, kalles et indreproduktrom. Vanlig notasjon er $$\langle \V{v},\V{u} \rangle,$$ i stedet for $$\V{v}\boldsymbol{\cdot}\V{u}.$$ Dette produktet skal tilfredstille de viktige egenskapene til prikkproduktet:
 
@@ -290,28 +317,25 @@ Linearitet: $\langle a\V{v}_1+b\V{v_2}, \V{u}\rangle =a\langle \V{v}_1, \V{u}\ra
 Positiv-definitt: $\langle \V{v}, \V{v}\rangle \geq 0$, hvor vi har likhet hvis og bare hvis $\V{v}=0$.
 
 \begin{punkt}
-Gi definisjonen av det ortogonale komplementet til en vektor $\V{u}$ i et indreproduktrom.
+Hva burde definisjonen av det ortogonale komplementet til en vektor $\V{u}$ i et indreproduktrom være?
 \end{punkt}
 
 \begin{punkt}
-Gi definisjonen på projeksjonen ned på en vektor $\V{u}$ i et indreproduktrom.
+Hva burde definisjonen av projeksjonen på en vektor $\V{u}$ i et indreproduktrom være?
 \end{punkt}
 
-\begin{punkt}
-Vis at en vilkårlig vektor $\V{v}$ kan skrives entydig som en sum $\V{v}_{\V{u}}+\V{v}_{\V{u}^{\perp}}$ hvor første faktor er projeksjonen ned på $\V{u}$ og andre faktor er projeksjonen ned på det ortogonale komplementet til $\V{u}$.
-\end{punkt}
-
-\begin{punkt}
-Vi har tidligere skrevet -- som et teorem uten bevis -- at alle vektorrom har en basis. Anta at $V$ er et indreproduktrom som kan utspennes av en endelig delmengde. Vis at $V$ har en basis.
-
-\noindent
-Hint: Vektorene i det ortogonale komplementet til en vektor $\V{u}$ er lineært uavhengig av $\V{u}$.
-\end{punkt}
-
+%\begin{punkt}
+%Vis at en vilkårlig vektor $\V{v}$ kan skrives entydig som en sum $\V{v}_{\V{u}}+\V{v}_{\V{u}^{\perp}}$ hvor første faktor er projeksjonen ned på $\V{u}$ og andre faktor er projeksjonen ned på det ortogonale komplementet til $\V{u}$.
+%\end{punkt}
 
 \end{oppgave}
-
 \begin{losning}
-TODO
+\begin{punkt}
+Alle vektorer $\V{v}$ slik at $\langle \V{v}, \V{u}\rangle=0$.
+\end{punkt}
+
+\begin{punkt}
+Projeksjonen av en vektor $\V{v}$ på $\V{u}$ er gitt ved $$\frac{\langle \V{v}, \V{u}\rangle}{\langle \V{u}, \V{u}\rangle} \V{u}.$$
+\end{punkt}
 \end{losning}
 
