@@ -3,27 +3,64 @@
 \kapittel{11}{Kompleks lineær algebra}
 \label{ch:kompleks-linear-algebra}
 
-\section*{Vektorrom over $\C$}
+\section*{Definisjonen av vektorrom II}
 
 De rasjonale tallene $\Q$, de reelle tallene $\R$, og de komplekse tallene $\C$ er alle eksempler på et konsept kalt kropp. En kropp er et tallsystem med to regneoperasjoner $+$ og $\cdot$, som tilfredsstiller ti-tolv aksiomer, hvorav noen ligner ganske bra på vektorromsaksiomene. Vi skal ikke gå gjennom disse aksiomene, men sentralt for en kropp er at alle elementer i kroppen har multiplikativ invers.
 
-Vektorromsaksiomene opererer med to 'ting' som kombineres, nemlig tall og vektorer. Tidligere har vi bare sagt at vektorer kan ganges med tall, men ikke åpnet for at disse tallene kan være noe annet enn reelle tall. Det skal vi gjøre noe med nå. Vi skal ikke endre på aksiomene for vektorrom, men vi skal begynne å spesifisere hva slags tall som kan ganges med vektorer. Vi sier gjerne at vi har et vektorrom over en kropp, og da er det disse tallene vi spesifiserer. 
+Vektorromsaksiomene opererer med to 'ting' som kombineres, nemlig tall og vektorer. Tidligere har vi bare sagt at vektorer kan ganges med tall, men ikke åpnet for at disse tallene kan være noe annet enn reelle tall. Det skal vi gjøre noe med nå. Vi skal ikke endre på aksiomene for vektorrom, men vi skal begynne å spesifisere hva slags tall som kan ganges med vektorer. 
+
+\begin{defn}
+La $V$ være en mengde, og $K$ en kropp. Anta at vi har definert to operasjoner:
+\begin{align*}
+\text{addisjon av vektorer: } & \V{u} + \V{v} \\
+\text{skalarmultiplikasjon: } & c \cdot \V{u}
+\end{align*}
+Addisjonen skal være definert for alle elementer $\V{u}$ og~$\V{v}$
+i~$V$, og skalarmultiplikasjonen for alle skalarer~$c$ i kroppen $K$ og alle $\V{u}$
+i~$V$.  Resultatet av operasjonene skal alltid være et element i~$V$.
+
+Dersom mengden~$V$ og de to operasjonene oppfyller vektorromsaksiomene, 
+så sier vi at $V$ er et \defterm{vektorrom} over $K$.
+\end{defn}
+
 \begin{ex}
 $\R^n$ et vektorrom over $\R$.
 \end{ex}
 \begin{ex}
+$\Q^n$ et vektorrom over $\Q$.
+\end{ex}
+\begin{ex}
 Vi skriver $\C^n$ for vektorrommet der \emph{både} kroppen er $\C$ og komponentene i vektorene er hentet fra $\C$.
 \end{ex}
-I dette kapitlet skal vi ta for oss alt vi har gjort av lineær algebra til nå. Alle operasjoner du har lært fungerer like fint i $\C^n$ som i $\R^n$, men det er ikke alltid så godt å visualisere, og det er derfor vi til nå har gjort alt i $\R^n$. Man må ha gode mentale bilder før man kan abstrahere.
+
+\begin{thm}
+Alle teoremer vi har bevist til nå, gjelder også for $\mathbb C^n$. 
+\end{thm}
+
+
+
 
 \section*{Hva nå?}
+Så på sett og vis er dette en repetisjonsuke. 
+Vi vet at alle teoremer vi har bevist til nå, gjelder i $\mathbb C^n$, 
+men det tar allikevel tid å komme inn i regningen. 
+
+
 
 \section*{Komplekse egenverdier}
-Nå kan vi ta en mer systematisk opptelling av egenverdiene til en matrise. Algebraens fundamentalteorem sier at likningen
+Algebraens fundamentalteorem sier at likningen
 \[
 a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
 \]
-alltid har $n$ komplekse løsninger. Dette impliserer at en matrise alltid har $n$ komplekse egenverdier.
+alltid har $n$ komplekse løsninger, i den forstand at vi alltid kan skrive
+\[
+a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=\prod_{n=1}^n (z-z_i),
+\]
+der $z_i$ er polynomets røtter. Noen av disse kan være repeterte $k$ ganger, og da sier vi at de har multiplisitet $k$. 
+
+Nå er det mulig å vise at det karakteristiske polynomet alltid har orden $n$, 
+og da følger det at en matrise alltid har $n$ egenverdier dersom du 
+teller med multiplisiteten. 
 
 
 \kapittelslutt
