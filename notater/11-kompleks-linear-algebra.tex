@@ -9,15 +9,26 @@ I dette kapitlet skal det drives gjennom fire sentrale poenger:
 
 2. lineæralgebra over $\mathbb C$ er stort sett helt likt som over $\R$.
 
-3. Det finnes alltid $n$ egenverdier
-
+3. Det finnes alltid $n$ egenverdier om du teller med multiplisitet
+ 
 4. egenrommet har dimensjon mindre enn eller lik multiplisiteten til egenverdien
 
 \section*{Definisjonen av vektorrom II}
 
-De rasjonale tallene $\Q$, de reelle tallene $\R$, og de komplekse tallene $\C$ er alle eksempler på et konsept kalt kropp. En kropp er et tallsystem med to regneoperasjoner $+$ og $\cdot$, som tilfredsstiller ti-tolv aksiomer, hvorav noen ligner ganske bra på vektorromsaksiomene. Vi skal ikke gå gjennom disse aksiomene, men sentralt for en kropp er at alle elementer i kroppen har multiplikativ invers.
+De rasjonale tallene $\Q$, de reelle tallene $\R$, 
+og de komplekse tallene $\C$ er alle eksempler på et konsept kalt kropp. 
+En kropp er et tallsystem med to regneoperasjoner $+$ og $\cdot$, 
+som tilfredsstiller ti-tolv aksiomer, 
+hvorav noen ligner ganske bra på vektorromsaksiomene. 
+Vi skal ikke gå gjennom disse aksiomene, 
+men sentralt for en kropp er at alle elementer i kroppen har multiplikativ invers.
 
-Vektorromsaksiomene opererer med to 'ting' som kombineres, nemlig tall og vektorer. Tidligere har vi bare sagt at vektorer kan ganges med tall, men ikke åpnet for at disse tallene kan være noe annet enn reelle tall. Det skal vi gjøre noe med nå. Vi skal ikke endre på aksiomene for vektorrom, men vi skal begynne å spesifisere hva slags tall som kan ganges med vektorer. 
+Vektorromsaksiomene opererer med to 'ting' som kombineres, nemlig tall og vektorer. 
+Tidligere har vi bare sagt at vektorer kan ganges med tall, 
+men ikke åpnet for at disse tallene kan være noe annet enn reelle tall. 
+Det skal vi gjøre noe med nå. 
+Vi skal ikke endre på aksiomene for vektorrom, 
+men vi skal begynne å spesifisere hva slags tall som kan ganges med vektorer. 
 
 \begin{defn}
 La $V$ være en mengde, og $K$ en kropp. Anta at vi har definert to operasjoner:
@@ -43,7 +54,8 @@ $\Q^n$ et vektorrom over $\Q$.
 Vi skriver $\C^n$ for vektorrommet der \emph{både} kroppen er $\C$ og komponentene i vektorene er hentet fra $\C$.
 \end{ex}
 \begin{ex}
-$\P^n$ er et vektorrom over $\mathbb R$ slik vi har jobbet med det til nå.
+$\P^n$ er et vektorrom over $\mathbb R$ slik vi har jobbet med det til nå. 
+Men det er ingenting i veien for å behandle det som et vektorrom over $\C$.
 \end{ex}
 
 
@@ -62,19 +74,79 @@ Alle teoremer vi har bevist til nå, gjelder også for $\mathbb C^n$.
 Men det tar allikevel tid å komme inn i regningen. Derfor tar vi noen eksempler.
 
 \begin{ex}
-Gausseliminasjon
+VI begynner med å løse ligningssystemet
+\begin{align*}
+(1-i) z + 3w   &= 2-3i \\
+i z + (1+2i) w &= 1
+\end{align*}
+som har totalmatrise
+\[
+\begin{amatrix}{2}
+1-i & 3 & 2-3i \\ i &1+2i & 1
+\end{amatrix}.
+\]
+Vi ønsker å kvitte oss med $i$-en til venstre i den andre raden, så vi begynner med å gange den første raden med $\frac{i}{1-i}$, og får
+\[
+\begin{amatrix}{2}
+i & \frac{3i}{1-i} & \frac{3+2i}{1-i} 
+\end{amatrix}.
+\]
+Vi trekker dette fra den andre raden og erstatter den andre raden med resultatet
+\[
+\begin{amatrix}{2}
+1-i & 3 & 2-3i \\ 0 &1+2i -\frac{3i}{1-i} & 1-\frac{3+2i}{1-i} 
+\end{amatrix}.
+\]
+Jeg tror vi ganger den andre raden med $\frac{1}{1-i}$ for å rydde litt
+\[
+\begin{amatrix}{2}
+1-i & 3 & 2-3i \\ 0 &3 -2i  & -2-3i.
+\end{amatrix}.
+\]
+Vi er nå klare for å finne $w$
+\[
+w=\frac{-2-3i}{3-2i}=\frac{-2-3i}{3-2i}\cdot \frac{3+2i}{3+2i}=-i,
+\]
+og $z$
+\[
+z=\frac{2-3i-3(-i)}{1-i}=1+i.
+\]
 \end{ex}
 
 \begin{ex}
-Matrisemultiplikasjon
+Det kan verifiseres at inversen til 
+\[
+\begin{bmatrix}
+1-i & 3  \\ i &1+2i 
+\end{bmatrix}
+\]
+er
+\[
+\frac{1}{3-2i}
+\begin{bmatrix}
+1+2i & -3  \\ -i &1-i 
+\end{bmatrix}
+\]
+ved å gange dem sammen
+\[
+\frac{1}{3-2i}
+\begin{bmatrix}
+1-i & 3  \\ i &1+2i 
+\end{bmatrix}
+\begin{bmatrix}
+1+2i & -3  \\ -i &1-i 
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0  \\ 0 &1 
+\end{bmatrix}.
+\]
+
+
 \end{ex}
 
 \begin{ex}
-En determinant
-\end{ex}
-
-\begin{ex}
-lineær uavhengighet
+Vi sjekker lineær uavhengighet akkurat som i det reelle tilfellet, altså ved gausseliminasjon.
 \end{ex}
 
 
@@ -92,11 +164,11 @@ a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=\prod_{n=1}^n (z-z_i),
 der $z_i$ er polynomets røtter. Noen av disse kan være repeterte $k$ ganger, og da sier vi at de har multiplisitet $k$. 
 
 \begin{ex}
-Polylnomet 
+Polynomet 
 \[
 z^3-3z^2+3z-1=(z-1)^3
 \]
-har en rot med multiplisitet 3.
+har en rot ($z=1$) med multiplisitet 3.
 \end{ex}
 
 \section*{Komplekse egenverdier}
@@ -107,11 +179,20 @@ og da følger det at en matrise alltid har $n$ egenverdier dersom du
 teller med multiplisiteten. 
 
 \begin{ex}
+Det karakteristiske polynomet til
 \[
 \begin{pmatrix}
 1 & -1 \\ 1 &1
 \end{pmatrix}
 \]
+er 
+\[
+(1-\lambda)^2+1=2-2\lambda+\lambda^2,
+\]
+så egenverdiene er 
+\[
+\lambda=\frac{2\pm\sqrt{4-8}}{2}=1\pm i.
+\] 
 \end{ex}
 
 \begin{ex}
@@ -121,14 +202,41 @@ Matrisen
 0 & -1 \\ 1 &0
 \end{pmatrix}
 \]
-har visst egenvektorer allikevel. Det karakteristiske polynomet er 
+har visst egenvektorer allikevel. Den karakteristiske ligningen er 
 \[
 \lambda^2+1=0,
 \]
 så egenverdiene er $\pm i$. 
 \end{ex}
 
+\begin{ex}
+Matrisen
+\[
+\begin{pmatrix}
+1 & 1 \\ 0 &1
+\end{pmatrix}
+\]
+har karakteristisk ligning
+\[
+(1-\lambda)^2=0,
+\]
+med dobbel egenverdi $\lambda=1$. 
+\end{ex}
+
+Som du ser kan egenverdiene fint være komplekse for reelle matrise, men de kommer alltid i konjugatpar.
+
 \section*{Mer om egenrommet}
+Hvis vi tar teorien fra kap. HAHAHA og terminologien fra kap. HIHIHI, ser vi at egenrommet til egenverdien $\lambda$ er nullrommet til matrisen $A-\lambda I$.
+
 En matrise har alltid $n$ egenverdier, men ikke nødvendigvis $n$ lineært avhengige egenvektorer.
+\begin{ex}
+Matrisen
+\[
+\begin{pmatrix}
+1 & 1 \\ 0 &1
+\end{pmatrix}
+\]
+har dobbel egenverdi $\lambda=1$. Egenrommet er som kjent nullrommet til 
+\end{ex}
 
 \kapittelslutt
