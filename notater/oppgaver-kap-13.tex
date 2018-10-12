@@ -282,7 +282,7 @@ Spektralteoremet: $A$ er symmetrisk impliserer at det finnes en basis av egenvek
 
 \begin{oppgave}
 \begin{punkt}
-Anta at $A$ er en diagonaliserbar. Hva er fordelen med å velge en ortonormal basis av egenvektorer mtp. å regne ut $P$, $D$ og~$P^{-1}$ i dekomponeringen $A=PDP^{-1}$.
+Anta at $A$ er en diagonaliserbar. Hva er fordelen med å kunne velge en ortonormal basis av egenvektorer (hvis mulig) mtp. å regne ut $P$, $D$ og~$P^{-1}$ i dekomponeringen $A=PDP^{-1}$.
 \end{punkt}
 
 \begin{punkt}
@@ -312,6 +312,141 @@ $$P^{-1}=P\tr=\begin{bmatrix}
 0 & 0 & 1\\
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0
 \end{bmatrix}$$
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+La $A=\begin{bmatrix}
+0 & -1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 3
+\end{bmatrix}$.
+
+\begin{punkt}
+Er $A$ diagonaliserbar som en reell matrise?
+\end{punkt}
+
+\begin{punkt}
+Er $A$ diagonaliserbar som en kompleks matrise?
+\end{punkt}
+
+\begin{punkt}
+Hvis $A$ er diagonaliserbar -- enten som en reell eller kompleks matrise -- finn diagonaliseringen.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+Det karakteristiske polynomet er $(\lambda^2+1)(3-\lambda)$. Vi har bare en reell egenverdi $\lambda=3$ med algebraisk multiplisitet=1. Den geometriske multiplisiteten er derfor mindre eller lik 1. Dermed har vi ikke en basis for $\mathbb{R}^3$ av egenvektorer; vi trenger tre lineær uavhengige egenvektorer. 
+\end{punkt}
+
+\begin{punkt}
+Nå har vi tre egenverdier: $3,i,-i$. Derfor har vi tre lineært uavhengige egenvektorer som utgjør en basis for $\mathbb{C}^3$.
+\end{punkt}
+
+\begin{punkt}
+$$P=\begin{bmatrix}
+0 & i & -i\\
+0 & 1 & 1\\
+1 & 0 & 0
+\end{bmatrix}$$
+$$D=\begin{bmatrix}
+3 & 0 & 0\\
+0 & i & 0\\
+0 & 0 & -i
+\end{bmatrix}$$
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+La $D:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen mellom andregradspolynom gitt ved derivasjon: $$D(ax^2+bx+c)=2ax+b.$$
+
+\begin{punkt}
+Finn standardmatrisen, $[D]$, til $D$ i koordinatene med hensyn på basisen $1,x,x^2$.
+\end{punkt}
+
+\begin{punkt}
+Bruk det at $[D]$ representerer derivasjon til å argumentere for hvorvidt matrisen er diagonaliserbar.
+\end{punkt}
+
+\begin{punkt}
+Verifiser svaret ditt i del \textbf{b)} ved regning. 
+\end{punkt}
+
+
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+$[D]=\begin{bmatrix}
+0 & 0 & 0\\
+2 & 0 & 0\\
+0 & 1 & 0
+\end{bmatrix}$.
+\end{punkt}
+
+\begin{punkt}
+Ikke diagonaliserbar: Deriverer man et andregradspolynom tre ganger får vi null. Dermed er $D^3(ax^2+bx+x)=0$ for alle polynom. Eneste mulige egenverdi er derfor $\lambda=0$ ($\lambda^3p=D^3p=0$ for $p\neq 0$ impliserer $\lambda=0$). Men det er kun konstante polynom som er egenvektorer til 0 (den deriverte av en konstant er lik null). Med andre ord, egenrommet til null er endimensjonalt.
+\end{punkt}
+
+\begin{punkt}
+Egenverdi: 0.
+
+\noindent
+Egenrommet til 0: Linjen utspent av $\vvv{0}{0}{1}$. (koordinatene til 1!)
+\end{punkt}
+
+
+\end{losning}
+
+\begin{oppgave}
+La $A$ være en kvadratisk matrise. Anta at $\V{v}_1$ og~$\V{v}_2$ er egenvektorer av $A$ med ulike tilhørende egenverdier.
+
+\begin{punkt}
+Finn et eksempel som illustrerer at $\V{v}_1$ og~$\V{v}_2$ ikke nødvendigvis er ortogonale.
+\end{punkt}
+
+\begin{punkt}
+Vis at hvis $A$ er symmetrisk, så er $\V{v}_1$ og~$\V{v}_2$ ortogonale.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+La $A$ være en kvadratisk matrise. Anta at $\V{v}_1$ og~$\V{v}_2$ er egenvektorer av $A$ med ulike tilhørende egenverdier.
+
+\begin{punkt}
+Du har allerede funnet eksempler tidligere i øvingen.
+\end{punkt}
+
+\begin{punkt}
+La $\lambda_1$ være egenverdien til $\V{v}_1$, og la $\lambda_2$ være egenverdien til $\V{v}_2$. Vi har antatt at $\lambda_1\neq\lambda_2$ og $A=A\tr$.
+
+\noindent
+Forslag til løsning: Vi ønsker å vise at $\V{v}_1 
+\boldsymbol{\cdot}\V{v}_2=0$. Vi må bruke at de er 
+egenvektorer på en eller annen måte, så vi utforsker følgende 
+uttrykk (basert på at egenvektorer kun skalerer vektorer):
+$$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}\V{v}_2=(A\V{v}_1 )
+\boldsymbol{\cdot}\V{v}_2=(A\V{v}_1 )\tr\V{v}_2=(\V{v}_1\tr A
+\tr)\V{v}_2.$$ Men nå kan vi bruke antagelsen om at $A$ er 
+symmetrisk til å se at $$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}
+\V{v}_2=\V{v}_1\tr(A\V{v}_2).$$ Lignende regning som ovenfor 
+gir nå at $$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}\V{v}_2=\V{v}
+_1 \boldsymbol{\cdot}(\lambda_2\V{v}_2).$$ Med gode gamle 
+flytte-bytte får vi altså $$(\lambda_1\V{v}_1 )
+\boldsymbol{\cdot}\V{v}_2-\V{v}_1 \boldsymbol{\cdot}
+(\lambda_2\V{v}_2)=0,$$ som -- siden prikkproduktet er lineært 
+-- kan skrives $$(\lambda_1-\lambda_2)(\V{v}_1 
+\boldsymbol{\cdot}\V{v}_2)=0.$$ Men første faktor er ikke lik 
+null fordi $\lambda_1\neq\lambda_2$, slik at vi kan konkludere 
+med at $$\V{v}_1 \boldsymbol{\cdot}\V{v}_2=0.$$ Egenvektorene 
+er ortogonale.
 \end{punkt}
 
 \end{losning}
