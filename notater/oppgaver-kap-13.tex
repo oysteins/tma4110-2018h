@@ -2,6 +2,8 @@
 \oppgaver{13}
 
 
+
+
 \begin{oppgave}
 Anta at $\V{v}_1,\dots,\V{v}_5$ er lineært uavhengige egenvektorer til en matrise $A$ med egenverdier henholdsvis $1,2,3,5,5$.  Hva blir $A$ i basisen gitt av egenvektorene?
 
@@ -32,11 +34,16 @@ Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
 \begin{punkt}
 Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
 \end{punkt}
+
+\begin{punkt}
+Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
+\end{punkt}
+
 \end{oppgave}
 
 \begin{losning}
 \begin{punkt}
-Nei.
+Nei. Vi har kun en egenverdi, og vi må sjekke den geometriske multiplisiteten eksplisitt.
 \end{punkt}
 
 \begin{punkt}
@@ -48,6 +55,8 @@ Egenvektorer til  0: linjen utspent av $\vv{1}{0}$. Geometrisk multiplisitet=1, 
 \noindent
 Dette utgjør ikke en basis for $\mathbb{R}^2$.
 \end{punkt}
+
+Ikke diagonaliserbar.
 
 \end{losning}
 
@@ -65,6 +74,11 @@ Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
 \begin{punkt}
 Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
 \end{punkt}
+
+\begin{punkt}
+Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
+\end{punkt}
+
 \end{oppgave}
 
 
@@ -88,6 +102,61 @@ Egenvektorer til  5: linjen utspent av $\vvv{25}{15}{6}$. Geometrisk multiplisit
 
 \end{punkt}
 
+$P=\begin{bmatrix}
+1 & 3 & 25\\
+0 & 1 & 15\\
+0 & 0 & 6\\
+\end{bmatrix}$, $D=\begin{bmatrix}
+2 & 0 & 0\\
+0 & 3 & 0\\
+0 & 0 & 5\\
+\end{bmatrix}.$
+
+\end{losning}
+
+
+\begin{oppgave}
+La oss modifisere matrisen i forrige oppgave med å bytte ut tallet 3 med tallet 2: $$A=\begin{bmatrix}
+2 & 3 & 5\\
+0 & 3 & 5\\
+0 & 0 & 5
+\end{bmatrix}.$$ 
+
+\begin{punkt}
+Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
+\end{punkt}
+
+\begin{punkt}
+Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+\end{punkt}
+
+\begin{punkt}
+Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+\begin{punkt}
+Nei: Vi har kun to egenverdier $2$ og $5$, og vi vet ikke om den geometriske multiplisiteten til $2$ er lik den algebraiske multiplisiteten til $2$.
+\end{punkt}
+
+\begin{punkt}
+Egenverier: 2,5
+
+\noindent
+Egenvektorer til  2: linjen utspent av $\vvv{1}{0}{0}$. Geometrisk multiplisitet=2, algebraisk multiplisitet=1.
+
+
+\noindent
+Egenvektorer til  5: linjen utspent av $\vvv{25}{15}{9}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+
+
+\end{punkt}
+
+Ikke diagonaliserbar.
+
 \end{losning}
 
 
@@ -104,7 +173,10 @@ $$A=
 Kan du avgjøre om det finnes en basis av egenvektorer uten å regne?
 \end{punkt}
 \begin{punkt}
-Finn egenverdiene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+Finn egenverdiene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Forklar hvorfor vi har en basis av egenvektorer.
+\end{punkt}
+\begin{punkt}
+Finn $D$ slik at du vet at det finnes en $P$ og $A=PDP^{-1}$.
 \end{punkt}
 \end{oppgave}
 
@@ -122,6 +194,12 @@ $\lambda-\mu$: geometrisk multiplisitet=algebraisk multiplisitet=2 (fordi egenve
 $\lambda-\mu$: geometrisk multiplisitet=algebraisk multiplisitet=1.
 
 \end{punkt}
+
+$D=\begin{bmatrix}
+\lambda-\mu & 0 & 0\\
+0 & \lambda-\mu & 0\\
+0 & 0 & \lambda+\mu\\
+\end{bmatrix}.$
 
 
 \end{losning}
@@ -148,6 +226,10 @@ Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometris
 \end{punkt}
 
 \begin{punkt}
+Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
+\end{punkt}
+
+\begin{punkt}
 Hvorfor er ikke denne oppgaven et moteksempel til spektralteoremet?
 \end{punkt}
 
@@ -156,7 +238,7 @@ Hvorfor er ikke denne oppgaven et moteksempel til spektralteoremet?
 
 \begin{losning}
 \begin{punkt}
-Nei.
+Nei. Det er ikke klart hva egenverdiene til $A$ er.
 \end{punkt}
 
 \begin{punkt}
@@ -178,9 +260,58 @@ Vi har en basis av egenvektorer; geometrisk multiplisitet samsvarer med algebrai
 
 \end{punkt}
 
+\begin{punkt}
+$P=\begin{bmatrix}
+1 & -2 & 1\\
+1 & 0 & 3\\
+0 & 1 & -2\\
+\end{bmatrix}$, $D=\begin{bmatrix}
+2 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & -4\\
+\end{bmatrix}.$
+\end{punkt}
 
 \begin{punkt}
 Spektralteoremet: $A$ er symmetrisk impliserer at det finnes en basis av egenvektorer. Men vi kan fortsatt ha en basis av egenvektorer uten at matrisen vi startet med er symmetrisk.
+\end{punkt}
+
+\end{losning}
+
+
+
+\begin{oppgave}
+\begin{punkt}
+Anta at $A$ er en diagonaliserbar. Hva er fordelen med å velge en ortonormal basis av egenvektorer mtp. å regne ut $P$, $D$ og~$P^{-1}$ i dekomponeringen $A=PDP^{-1}$.
+\end{punkt}
+
+\begin{punkt}
+La $A$ være som i oppgave $\mathbf{5.}$ med $\lambda=2$ og $\mu=1$. Regn ut $P$, $D$ og $P^{-1}$.
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+I forrige øving beviste vi at $U^{-1}=U\tr$ dersom kolonnene til $U$ er ortonormale. Derfor kan vi enkelt regne ut $P^{-1}=P\tr$ dersom vi velger en ortonormal egenvektorbasis. 
+\end{punkt}
+
+\begin{punkt}
+$$D=\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 3
+\end{bmatrix}$$ $$P=\begin{bmatrix}
+-\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\\
+0 & 1 & 0
+\end{bmatrix}$$
+
+$$P^{-1}=P\tr=\begin{bmatrix}
+-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0\\
+0 & 0 & 1\\
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0
+\end{bmatrix}$$
 \end{punkt}
 
 \end{losning}
