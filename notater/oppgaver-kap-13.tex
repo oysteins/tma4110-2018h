@@ -3,17 +3,108 @@
 
 
 \begin{oppgave}
+Anta at $\V{v}_1,\dots,\V{v}_5$ er lineært uavhengige egenvektorer til en matrise $A$ med egenverdier henholdsvis $1,2,3,5,5$.  Hva blir $A$ i basisen gitt av egenvektorene?
+
+\end{oppgave}
+
+\begin{losning}
+$A=\begin{bmatrix}
+1 & 0 & 0 & 0 & 0\\
+0 & 2 & 0 & 0 & 0\\
+0 & 0 & 3 & 0 & 0\\
+0 & 0 & 0 & 5 & 0\\
+0 & 0 & 0 & 0 & 5
+\end{bmatrix}$
+\end{losning}
+
+
+
+\begin{oppgave}
+La $A=\begin{bmatrix}
+0 & 4\\
+0 & 0
+\end{bmatrix}$. 
+
 \begin{punkt}
-La $\lambda\neq \mu$ være to reelle tall, begge ulik null. Forklar hvorfor matrisen
+Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
+\end{punkt}
+
+\begin{punkt}
+Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+\begin{punkt}
+Nei.
+\end{punkt}
+
+\begin{punkt}
+Egenverier: 0
+
+\noindent
+Egenvektorer til  0: linjen utspent av $\vv{1}{0}$. Geometrisk multiplisitet=1, mens algebraisk multiplisitet=2.
+
+\noindent
+Dette utgjør ikke en basis for $\mathbb{R}^2$.
+\end{punkt}
+
+\end{losning}
+
+\begin{oppgave}
+La $A=\begin{bmatrix}
+2 & 3 & 5\\
+0 & 3 & 5\\
+0 & 0 & 5
+\end{bmatrix}$. 
+
+\begin{punkt}
+Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
+\end{punkt}
+
+\begin{punkt}
+Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+\end{punkt}
+\end{oppgave}
+
+
+\begin{losning}
+\begin{punkt}
+Ja: Matrisen er triangulær, så vi kan lese av at $2,3,5$ er egenverdoiene til $A$. Egenvektorer til ulike egenverdier er lineært uavhengige. Derfor kan vi ta en egenvektor fra hvert egenrom for å lage en basis.
+\end{punkt}
+
+\begin{punkt}
+Egenverier: 2,3,5
+
+\noindent
+Egenvektorer til  2: linjen utspent av $\vvv{1}{0}{0}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+
+\noindent
+Egenvektorer til  3: linjen utspent av $\vvv{3}{1}{0}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+
+\noindent
+Egenvektorer til  5: linjen utspent av $\vvv{25}{15}{6}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+
+
+\end{punkt}
+
+\end{losning}
+
+
+\begin{oppgave}
+
+La $\lambda\neq \mu$ være to reelle tall, begge ulik null, og la
 $$A=
 \begin{bmatrix}
 \lambda & \mu & 0\\
 \mu & \lambda & 0\\
 0 & 0 & \lambda-\mu
-\end{bmatrix}$$ har tre lineært uavhengige egenvektorer.
+\end{bmatrix}.$$
+\begin{punkt}
+Kan du avgjøre om det finnes en basis av egenvektorer uten å regne?
 \end{punkt}
 \begin{punkt}
-Finn egenverdiene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene?
+Finn egenverdiene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
 \end{punkt}
 \end{oppgave}
 
@@ -21,7 +112,7 @@ Finn egenverdiene til $A$. Hva er den algebraiske- og geometriske multiplisitete
 
 
 \begin{punkt}
-Matrisen er symmetrisk. Spektralteoremet.
+Ja. Matrisen er symmetrisk. Spektralteoremet.
 \end{punkt}
 
 \begin{punkt}
@@ -32,5 +123,64 @@ $\lambda-\mu$: geometrisk multiplisitet=algebraisk multiplisitet=1.
 
 \end{punkt}
 
+
+\end{losning}
+
+
+\begin{oppgave}
+La $A=\begin{bmatrix}
+3 & -1 & 2\\
+3 & -1 & 6\\
+-2 & 2 & -2
+\end{bmatrix}$. 
+
+\begin{punkt}
+Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
+\end{punkt}
+
+\begin{punkt}
+Vis at $2$ er en egenverdi til $A$.
+\end{punkt}
+
+
+\begin{punkt}
+Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+\end{punkt}
+
+\begin{punkt}
+Hvorfor er ikke denne oppgaven et moteksempel til spektralteoremet?
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+\begin{punkt}
+Nei.
+\end{punkt}
+
+\begin{punkt}
+Hint: Hva er determinanten til $A-2I$?
+\end{punkt}
+
+\begin{punkt}
+Egenverier: 2,-4
+
+\noindent
+Egenvektorer til  2: planet utspent av $\vvv{1}{1}{0}$ og $\vvv{-2}{0}{1}$. Geometrisk multiplisitet=algebraisk multiplisitet=2.
+
+\noindent
+Egenvektorer til  -4: linjen utspent av $\vvv{1}{3}{-2}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+
+\noindent
+Vi har en basis av egenvektorer; geometrisk multiplisitet samsvarer med algebraisk multiplisitet for hver egenverdi.
+
+
+\end{punkt}
+
+
+\begin{punkt}
+Spektralteoremet: $A$ er symmetrisk impliserer at det finnes en basis av egenvektorer. Men vi kan fortsatt ha en basis av egenvektorer uten at matrisen vi startet med er symmetrisk.
+\end{punkt}
 
 \end{losning}
