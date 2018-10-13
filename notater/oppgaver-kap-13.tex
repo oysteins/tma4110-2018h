@@ -363,6 +363,14 @@ $$D=\begin{bmatrix}
 \end{losning}
 
 \begin{oppgave}
+La $A$ være matrisen fra oppgave $\textbf{2.}$ Får vi flere lineært uavhengige egenvektorer dersom vi betrakter $A$ som en kompleks matrise?
+\end{oppgave}
+
+\begin{losning}
+Nei. Vi har fortsatt en dobbel egenverdi $\lambda=2$ med et degenerert egenrom av dimensjon 1 (geometrisk multiplisitet = 1).
+\end{losning}
+
+\begin{oppgave}
 La $D:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen mellom andregradspolynom gitt ved derivasjon: $$D(ax^2+bx+c)=2ax+b.$$
 
 \begin{punkt}
@@ -384,21 +392,21 @@ Verifiser svaret ditt i del \textbf{b)} ved regning.
 
 \begin{punkt}
 $[D]=\begin{bmatrix}
-0 & 0 & 0\\
-2 & 0 & 0\\
-0 & 1 & 0
+0 & 1 & 0\\
+0 & 0 & 2\\
+0 & 0 & 0
 \end{bmatrix}$.
 \end{punkt}
 
 \begin{punkt}
-Ikke diagonaliserbar: Deriverer man et andregradspolynom tre ganger får vi null. Dermed er $D^3(ax^2+bx+x)=0$ for alle polynom. Eneste mulige egenverdi er derfor $\lambda=0$ ($\lambda^3p=D^3p=0$ for $p\neq 0$ impliserer $\lambda=0$). Men det er kun konstante polynom som er egenvektorer til 0 (den deriverte av en konstant er lik null). Med andre ord, egenrommet til null er endimensjonalt.
+Ikke diagonaliserbar: Vi ser at $\lambda=0$ er eneste egenverdien (triangulær matrise). Men det er kun konstante polynom som er egenvektorer til 0 (den deriverte av en konstant er lik null). Med andre ord, egenrommet til null er endimensjonalt.
 \end{punkt}
 
 \begin{punkt}
 Egenverdi: 0.
 
 \noindent
-Egenrommet til 0: Linjen utspent av $\vvv{0}{0}{1}$. (koordinatene til 1!)
+Egenrommet til 0: Linjen utspent av $\vvv{1}{0}{0}$. (koordinatene til 1!)
 \end{punkt}
 
 
@@ -413,6 +421,9 @@ Finn et eksempel som illustrerer at $\V{v}_1$ og~$\V{v}_2$ ikke nødvendigvis er
 
 \begin{punkt}
 Vis at hvis $A$ er symmetrisk, så er $\V{v}_1$ og~$\V{v}_2$ ortogonale.
+
+\noindent
+Hint: Steg 1: Hva vet du? Steg 2: Hva skal du vise? Steg 3: Utforsk uttrykket $(\lambda_1-\lambda_2)(\V{v}_1\boldsymbol{\cdot}\V{v}_2)$ hvor $\lambda$-ene er egenverdiene.
 \end{punkt}
 
 \end{oppgave}

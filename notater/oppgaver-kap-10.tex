@@ -19,7 +19,7 @@ $\frac{1}{z^2}$
 \end{oppgave}
 
 \begin{losning}
-TODO
+Du skal skrive $z$ på formen $a+ib$ og uttrykke real- og imaginærdelen til uttrykkene ved $a$ og ~$b$.
 \end{losning}
 
 
@@ -37,7 +37,15 @@ $\left(\frac{2+i}{3-2i}\right)^2$
 \end{oppgave}
 
 \begin{losning}
-TODO
+\begin{punkt}
+$-11-2i$
+\end{punkt}
+\begin{punkt}
+$-\frac{3}{5}-\frac{4}{5}i$  
+\end{punkt}
+\begin{punkt}
+$-\frac{33}{169}+\frac{56}{169}i$  
+\end{punkt}
 \end{losning}
 
 \begin{oppgave}
@@ -58,7 +66,19 @@ $z^5=2+2i$
 \end{oppgave}
 
 \begin{losning}
-TODO
+\begin{punkt}
+$\frac{1}{2}(1\pm \sqrt{19}i)$ 
+\end{punkt}
+\begin{punkt}
+$\sqrt[3]{2} e^{\frac{\pi}{6} i},\sqrt[3]{2} e^{\frac{5\pi}{6} i},\sqrt[3]{2} e^{9\frac{\pi}{6} i} $
+\end{punkt}
+\begin{punkt}
+$\sqrt[4]{2},\sqrt[4]{2} e^{\frac{\pi}{2} i},\sqrt[4]{2} e^{\pi i},\sqrt[4]{2} e^{\frac{3\pi}{2} i}$
+\end{punkt}
+\begin{punkt}
+$2+2i=2\sqrt{2}e^{\frac{\pi}{4}i}$ gir:
+$2^{\frac{3}{10}} e^{\frac{\pi}{20} i},2^{\frac{3}{10}} e^{\frac{9\pi}{20} i},2^{\frac{3}{10}} e^{\frac{17\pi}{20} i},2^{\frac{3}{10}} e^{\frac{25\pi}{20} i},2^{\frac{3}{10}} e^{\frac{33\pi}{20} i}$
+\end{punkt}
 \end{losning}
 
 
@@ -71,7 +91,9 @@ Vis at
 for alle komplekse tall $z$ og~$w$.
 \end{oppgave}
 
-
+\begin{losning}
+Hint: Skriv $z=a+ib$ og $w=c+id$. Regn ut høyre- og venstre side av ligningen. 
+\end{losning}
 
 \begin{oppgave}
 En variant av Eulers formel kalles de Moivres formel
@@ -89,7 +111,56 @@ Vis at $(\overline z)^n=\overline{z^n}$.
 
 
 \begin{losning}
-TODO
+\begin{punkt}
+\[
+(\cos x + i\sin x)^n=(e^{ix})^n=e^{nx}=\cos nx + i\sin nx.
+\]
+\end{punkt}
+
+\begin{punkt}
+Skriv $z=re^{i\theta}$. Da har vi at $\overline{z}=re^{-i\theta}$. Vi regner litt på venstre side av likheten vi ønsker å vise:
+\[
+(\overline{z})^n=r^ne^{-nx}.
+\]
+Bruk del \textbf{a)} for å se at
+\[
+(\overline{z})^n=r^n(\cos(- nx) + i\sin(- nx)).
+\]
+Men cosinus er like og sinus er odde slik at
+\[
+(\overline{z})^n=r^n(\cos(nx) - i\sin( nx)).
+\]
+Nå regner vi litt på høyre siden:
+\[
+(\overline{z^n})=\overline{r^ne^{ni\theta}}.
+\]
+Euler gir:
+\[
+(\overline{z^n})=\overline{r^n\cos(nx) + ir^n\sin( nx)}
+\]
+som igjen gir
+\[
+(\overline{z^n})=r^n\cos(nx) - ir^n\sin( nx).
+\]
+
+Dermed ser vi at høyre side er lik vesntre siden.
+
+
+\noindent
+Alternativ løsning: Du kan enkelt vise at $\overline{zw}=\bar{z}\bar{w}$ for to komplekse tall $z$ og~$w$. Dette gir umiddelbart resultatet for $n=2$ (ta $w=z$). La oss fortsette med induksjon. Anta at påstanden er sann for $z^{n}$. Da ser vi -- ta $w=z^n$ ovenfor -- at 
+\[
+\overline{z^{n+1}}=\overline{z^{n}}\overline{z}.
+\]
+Induksjonshypotesen er at 
+\[
+\overline{z^{n}}=\overline{z}^n.
+\]
+Sett inn for å se at
+\[
+\overline{z^{n+1}}=\overline{z}^{n+1}.
+\]
+Vi har dermed vist påstanden med induksjon.
+\end{punkt}
 \end{losning}
 
 
@@ -331,6 +402,10 @@ Røttene til $r$ fordeles uniformt langs sirkelen om origo med radius $\sqrt[n]{
 Vis at $\mathbb C$ er et vektorrom.
 \end{oppgave}
 
+\begin{losning}
+Operasjonene $(a+ib)+(c+id)=(a+c)+i(b+d)$ og $r(a+ib)=(ra)+i(rb)$ er helt like som operasjonene på $\mathbb{R}^2$ dersom vi tenker på $a+ib$ som et punkt $(a,b)$ i planet. Dermed er $\mathbb{C}$ helt likt $\mathbb{R}^2$ (bortsett fra at vektorene ser litt annerledes ut).
+\end{losning}
+
 \begin{oppgave}
 Vis at vektorrommet som består av alle matriser på formen 
 \[
@@ -341,6 +416,24 @@ a & b \\
 \]
 er isomorft med $\mathbb C$. 
 \end{oppgave}
+
+\begin{losning}
+Definer følgende funksjoner 
+$$T(a+ib)=\begin{pmatrix}
+a & b \\
+-b & a \\
+\end{pmatrix}$$ og 
+$$S(\begin{pmatrix}
+a & b \\
+-b & a \\
+\end{pmatrix})=a+ib.$$ Du kan sjekke at $T$ og $S$ er lineære. Du kan også sjekke at $S$ og $T$ er inverser av hverandre; $$S(T(a+ib))=a+ib,$$ og $$T(S(\begin{pmatrix}
+a & b \\
+-b & a \\
+\end{pmatrix}))=\begin{pmatrix}
+a & b \\
+-b & a \\
+\end{pmatrix}.$$ Derfor er både $T$ og $S$ isomorfier mellom vektorrommene.
+\end{losning}
 
 
 %\begin{oppgave}
