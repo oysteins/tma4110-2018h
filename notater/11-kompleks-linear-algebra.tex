@@ -3,15 +3,17 @@
 \kapittel{11}{Kompleks lineær algebra}
 \label{ch:kompleks-linear-algebra}
 
-I dette kapitlet skal det drives gjennom fire sentrale poenger: 
+I dette kapitlet er det fire sentrale poenger som skal drives gjennom:
 
-1. skalarene i definisjonen av vektorrom kan være andre tall enn de reelle.
+\begin{itemize}
+\item Skalarene i definisjonen av vektorrom kan være andre tall enn de reelle.
 
-2. lineæralgebra over $\mathbb C$ er stort sett helt likt som over $\R$.
+\item Lineæralgebra over $\mathbb C$ er stort sett helt likt som over $\R$.
 
-3. Det finnes alltid $n$ egenverdier om du teller med multiplisitet
+\item Alle matriser har $n$ komplekse egenverdier om du teller med multiplisiteten deres.
  
-4. egenrommet har dimensjon mindre enn eller lik multiplisiteten til egenverdien
+\item Egenrommet har dimensjon mindre enn eller lik multiplisiteten til den tilhørende egenverdien.
+\end{itemize}
 
 \section*{Definisjonen av vektorrom II}
 
@@ -47,12 +49,15 @@ så sier vi at $V$ er et \defterm{vektorrom} over $K$.
 \begin{ex}
 $\R^n$ et vektorrom over $\R$.
 \end{ex}
+
 \begin{ex}
-$\Q^n$ et vektorrom over $\Q$.
+Vi skriver $\C^n$ for vektorrommet der $K=\C$ og komponentene i vektorene er hentet fra $\C$.
 \end{ex}
+
 \begin{ex}
-Vi skriver $\C^n$ for vektorrommet der \emph{både} kroppen er $\C$ og komponentene i vektorene er hentet fra $\C$.
+$\Q^n$ et vektorrom over $\Q$. Merk at selv om vi har sagt at vi har gjort lineær algebra på $\R^n$ til nå, har vi i praksis operert på $\Q^n$. Ikke et eneste matriseeksempel har involvert $\sqrt{2}$.
 \end{ex}
+
 \begin{ex}
 $\P^n$ er et vektorrom over $\mathbb R$ slik vi har jobbet med det til nå. 
 Men det er ingenting i veien for å behandle det som et vektorrom over $\C$.
@@ -62,10 +67,9 @@ Men det er ingenting i veien for å behandle det som et vektorrom over $\C$.
 
 
 
-\section*{Hva nå?}
+\section*{Lineær algebra over $\C$}
 
-
-Så på sett og vis er dette en repetisjonsuke. 
+Vi starter dette avsnittet med en morsomt teorem.
 
 \begin{thm}
 Alle teoremer vi har bevist til nå, gjelder også for $\mathbb C^n$. 
@@ -149,6 +153,10 @@ ved å gange dem sammen
 Vi sjekker lineær uavhengighet akkurat som i det reelle tilfellet, altså ved gausseliminasjon.
 \end{ex}
 
+\begin{ex}
+Standardbasisen for $\R^n$ er også en basis for $\C^n$. Det er lett å se at alle elementer i $\C$ kan skrives som en unik lineærkombinasjon av elementene i basisen.
+\end{ex}
+
 
 
 \section*{Komplekse polynomer}
@@ -171,10 +179,18 @@ z^3-3z^2+3z-1=(z-1)^3
 har en rot ($z=1$) med multiplisitet 3.
 \end{ex}
 
+\begin{ex}
+Polynomet 
+\[
+=(z-1)(z+i)^2
+\]
+har en rot med multiplisitet ($z=1$) med multiplisitet 3.
+\end{ex}
+
 \section*{Komplekse egenverdier}
 
 
-Nå er det mulig å vise at det karakteristiske polynomet alltid har orden $n$, 
+Det er mulig å vise at det karakteristiske polynomet alltid har orden $n$, 
 og da følger det at en matrise alltid har $n$ egenverdier dersom du 
 teller med multiplisiteten. 
 
@@ -263,6 +279,29 @@ $
 og ingenting mer, så egenrommet til $\lambda=1$ er
 \[
 \Sp \left\{ \vv{1}{0} \right\}.
+\]
+\end{ex}
+
+\begin{ex}
+Matrisen
+\[
+\begin{pmatrix}
+0 & -1 \\ 1 &0
+\end{pmatrix}
+\]
+egenverdier
+\[
+\lambda=\pm i.
+\] 
+Egenvektorer for egenverdiene er 
+\[
+\begin{pmatrix}
+1  \\ i
+\end{pmatrix}
+\quad \text{og }\quad
+\begin{pmatrix}
+i  \\ 1
+\end{pmatrix}.
 \]
 \end{ex}
 
