@@ -268,16 +268,49 @@ egenverdier
 \[
 \lambda=\pm i.
 \] 
-Egenvektorer for egenverdiene er 
+Egenvektoren til $-i$ er nullrommet til 
+\[
+\begin{pmatrix}
+i & -1 \\ 1 &i
+\end{pmatrix}.
+\]
+Vi vet at denne matrisen er singulær, 
+og da må radene være skalarmultipler av hverandre (i dette tilfellet er den nederste $i$ ganger den øverste), 
+så vi kan egentlig bare stryke den nederste, og se at
+\[
+ix_1-x_2=0,
+\]
+slik at egenvektoren til $-i$ blir
 \[
 \begin{pmatrix}
 1  \\ i
 \end{pmatrix}
-\quad \text{og }\quad
+\]
+Likeledes blir egenvektoren til $i$ 
+\[
 \begin{pmatrix}
 i  \\ 1
 \end{pmatrix}.
 \]
+Vi dobbeltsjekker
+\[
+\begin{pmatrix}
+0 & -1 \\ 1 &0
+\end{pmatrix}
+\begin{pmatrix}
+i  \\ 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-1  \\ i
+\end{pmatrix}
+=
+i
+\begin{pmatrix}
+i  \\ 1
+\end{pmatrix}.
+\]
+
 \end{ex}
 
 \begin{ex}
