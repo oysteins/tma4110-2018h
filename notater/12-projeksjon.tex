@@ -176,7 +176,30 @@ En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
 \\
 {\small \textit{Hva er projeksjon III?}}
 \end{center}
+
+La oss si at $P$ har en egenverdi $\lambda$, med egenvektor $\V x$. I så fall må
+\[
+\lambda \V x=P\V x=P^2\V x=\lambda^2 \V x.
+\]
+Hver komponent i denne ligningen gir at
+\[
+\lambda=\lambda^2
+\]
+eller
+\[
+\lambda^2-\lambda=\lambda(\lambda-1)=0.
+\]
+ En projeksjonsmatrise har alltid en egenverdi som er 0 og en som er 1. Dette impliserer følgende teoremer.
  
+\begin{thm}
+Projeksjonsmatriser er singulære.
+\end{thm}
+
+\begin{thm}
+Det finnes alltid vektorer som ikke endres av en bestemt projeksjon.
+\end{thm}
+
+
 
 \section*{Mer om ortogonalitet}
 En ortogonal mengde er en mengde vekorer $\V v_1$, $\V v_2$, ...,$\V v_n$, slik at
