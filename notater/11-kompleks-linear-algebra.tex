@@ -25,12 +25,12 @@ hvorav noen ligner ganske bra på vektorromsaksiomene.
 Vi skal ikke gå gjennom disse aksiomene, 
 men sentralt for en kropp er at alle elementer i kroppen har multiplikativ invers.
 
-Vektorromsaksiomene opererer med to 'ting' som kombineres, nemlig tall og vektorer. 
-Tidligere har vi bare sagt at vektorer kan ganges med tall, 
-men ikke åpnet for at disse tallene kan være noe annet enn reelle tall. 
+Vektorromsaksiomene opererer med to ting som kombineres, nemlig skalarer og vektorer. 
+Tidligere har vi bare sagt at vektorer kan ganges med skalarer, 
+men ikke åpnet for at disse kan være noe annet enn reelle tall. 
 Det skal vi gjøre noe med nå. 
 Vi skal ikke endre på aksiomene for vektorrom, 
-men vi skal begynne å spesifisere hva slags tall som kan ganges med vektorer. 
+men vi skal begynne å spesifisere hva slags skalarer som kan ganges med vektorer. 
 
 \begin{defn}
 La $V$ være en mengde, og $K$ en kropp. De to operasjonene er fremdeles
@@ -45,12 +45,19 @@ Dersom kombinasjonen~$V$ og $K$ oppfyller vektorromsaksiomene,
 så sier vi at $V$ er et \defterm{vektorrom over $K$}.
 \end{defn}
 
-\begin{ex}
-$\R^n$ et vektorrom over $\R$.
-\end{ex}
+
+\begin{defn}
+Vi skriver $\C^n$ for vektorrommet der $K=\C$ og vektorene er kolonnevektorer med komplekse komponenter 
+\[
+\V z=
+\begin{bmatrix}
+a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
+\end{bmatrix}
+\]
+\end{defn}
 
 \begin{ex}
-Vi skriver $\C^n$ for vektorrommet der $K=\C$ og komponentene i vektorene er hentet fra $\C$.
+$\R^n$ et vektorrom over $\R$.
 \end{ex}
 
 \begin{ex}
@@ -59,7 +66,7 @@ $\Q^n$ et vektorrom over $\Q$. Selv om vi har sagt at vi har gjort lineær algeb
 
 \begin{ex}
 $\P^n$ er et vektorrom over $\mathbb R$ slik vi har jobbet med det. 
-Men det er ingenting i veien for å behandle det som et vektorrom over $\C$.
+Men det er ingenting i veien for å behandle polynomer der kroppen, variabelen og koeffisientene alle er komplekse.
 \end{ex}
 
 
@@ -75,9 +82,10 @@ ikke nødvendigvis noen løsning i $\Z^n$.
 
 Vi starter dette avsnittet med en morsomt teorem. Så tar vi noen eksempler på lineæralgebra over $\C$.
 
-\begin{thm}
+\begin{fishythm}
 Alt vi har gjort til nå, fungerer helt likt i $\mathbb C^n$ som i $\R^n$. 
-\end{thm}
+Noen ting fungerer til og med bedre.
+\end{fishythm}
 
 
 
@@ -94,7 +102,8 @@ som har totalmatrise
 1-i & 3 & 2-3i \\ i &1+2i & 1
 \end{amatrix}.
 \]
-Vi ønsker å kvitte oss med $i$-en til venstre i den andre raden, så vi begynner med å gange den første raden med $\frac{i}{1-i}$, og får
+Vi ønsker å kvitte oss med $i$-en til venstre i den andre raden. 
+Den første raden ganget  med $\frac{i}{1-i}$ er
 \[
 \begin{amatrix}{2}
 i & \frac{3i}{1-i} & \frac{3+2i}{1-i} 
@@ -203,9 +212,9 @@ teller med multiplisiteten til hver egenverdi.
 \begin{ex}
 Matrisen
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 0 & -1 \\ 1 &0
-\end{pmatrix}
+\end{bmatrix}
 \]
 har visst egenvektorer allikevel. Den karakteristiske ligningen er 
 \[
@@ -217,9 +226,9 @@ så egenverdiene er $\pm i$.
 \begin{ex}
 Matrisen
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 3 & 0 & 0 \\ 0 & 1 & -1 \\ 0&  1 &1  
-\end{pmatrix}
+\end{bmatrix}
 \]
 har karakteristisk ligning
 \[
@@ -239,9 +248,9 @@ Egenverdiene til en reell matrise kommer i komplekskonjugerte par.
 \begin{ex}
 Matrisen
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 1 & 1 & 0\\  0 &1 & 0 \\ 0 & 0 & 2
-\end{pmatrix}
+\end{bmatrix}
 \]
 har karakteristisk ligning
 \[
@@ -259,9 +268,9 @@ men ikke nødvendigvis $n$ lineært uavhengige egenvektorer.
 \begin{ex}
 Matrisen
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 0 & -1 \\ 1 &0
-\end{pmatrix}
+\end{bmatrix}
 \]
 egenverdier
 \[
@@ -269,9 +278,9 @@ egenverdier
 \] 
 Egenvektoren til $-i$ er nullrommet til 
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 i & -1 \\ 1 &i
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 Vi vet at denne matrisen er singulær, 
 og da må radene være skalarmultipler av hverandre (i dette tilfellet er den nederste $i$ ganger den øverste), 
@@ -281,72 +290,72 @@ ix_1-x_2=0,
 \]
 slik at egenvektoren til $-i$ blir
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 1  \\ i
-\end{pmatrix}
+\end{bmatrix}
 \]
 Likeledes blir egenvektoren til $i$ 
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 i  \\ 1
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 Vi dobbeltsjekker
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 0 & -1 \\ 1 &0
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 i  \\ 1
-\end{pmatrix}
+\end{bmatrix}
 =
-\begin{pmatrix}
+\begin{bmatrix}
 -1  \\ i
-\end{pmatrix}
+\end{bmatrix}
 =
 i
-\begin{pmatrix}
+\begin{bmatrix}
 i  \\ 1
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 \end{ex}
 
 \begin{ex}
 Vi beregner egenrommet til matrisen
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 3 & 0 & 0 \\ 0 & 1 & -1 \\ 0&  1 &1  
-\end{pmatrix}
+\end{bmatrix}
 \]
 sin egenverdi $\lambda= 1-i$. Dette er nullrommet til
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 2+i & 0 & 0 \\ 0 & i & -1 \\ 0&  1 &i  
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 Den øverste raden forteller at $x_1=0$. De to nedereste ligner mistenkelig på forrige eksempel, så egenvektoren blir 
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 0 \\ 1  \\ i 
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 Vi dobbeltsjekker
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 3 & 0 & 0 \\ 0 & 1 & -1 \\ 0&  1 &1  
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 0 \\ 1  \\ i 
-\end{pmatrix}
+\end{bmatrix}
 =
-\begin{pmatrix}
+\begin{bmatrix}
 0 \\ 1-i  \\ 1+i 
-\end{pmatrix}
+\end{bmatrix}
 =
 (1-i)
-\begin{pmatrix}
+\begin{bmatrix}
 0 \\ 1  \\ i 
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 
 \end{ex}
@@ -355,29 +364,29 @@ Vi dobbeltsjekker
 \begin{ex}
 Matrisen
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 1 & 1 & 0\\  0 &1 & 0 \\ 0 & 0 & 2
-\end{pmatrix}
+\end{bmatrix}
 \]
 har dobbel egenverdi $\lambda=1$. Det tilhørende egenrommet er nullrommet til 
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 0 & 1 & 0\\  0 &0 & 0 \\ 0 & 0 & 1
-\end{pmatrix}
+\end{bmatrix}
 \]
 %altså ikketrivielle løsninger av 
 %
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %0 & 1 & 0\\  0 &0 & 0 \\ 0 & 0 & 1
-%\end{pmatrix}
-%\begin{pmatrix}
+%\end{bmatrix}
+%\begin{bmatrix}
 %x_1  \\ x_2 \\ x_3
-%\end{pmatrix}
+%\end{bmatrix}
 %=
-%\begin{pmatrix}
+%\begin{bmatrix}
 %0  \\ 0 \\0
-%\end{pmatrix}
+%\end{bmatrix}
 %\]
 Dette gir at
 $

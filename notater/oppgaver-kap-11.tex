@@ -2,28 +2,41 @@
 \oppgaver{11}
 
 \begin{oppgave}
+Løs likningssystemet
+\begin{align*}
+(1+i) z - w   &= i \\
+(1-i) z + (1+i) w &= 1.
+\end{align*}
+\end{oppgave}
+
+\begin{losning}
+TODO
+\end{losning}
+
+
+\begin{oppgave}
 Er kolonnene lineært avhengige? Hvis ja, finn nullrommet til matrisen.
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 2i & 3i & 4i \\ 3 & 4 & 5 \\ 4 & 5 & 6 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 2i & 3 & 4 \\ 3 & 4i & 5 \\ 4 & 5 & 6i 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 2i & 3 & 4 \\ 3i & 4 & 5 \\ 4i & 5 & 6 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 \end{oppgave}
@@ -33,55 +46,39 @@ TODO
 \end{losning}
 
 
-\begin{oppgave}
-Vis at dersom matrisen $A$ har egenverdi $\lambda$, har $A^2$ egenverdi $\lambda^2$.
-\end{oppgave}
-
-
-\begin{losning}
-TODO
-\end{losning}
-
-\begin{oppgave}
-Vis at egenverdiene til rotasjonsmatrisen
-\[
-T_{\theta}=
-\begin{pmatrix}
-\cos \theta & -\sin \theta  \\ \sin \theta & \cos \theta  
-\end{pmatrix}
-\]
-er komplekse. Hva er egenverdiene til $T_{2 \theta}$?
-\end{oppgave}
-
-
-\begin{losning}
-TODO
-\end{losning}
 
 \begin{oppgave}
 Finn hver matrises determinant, egenverdier og tilhørende egenrom. 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 0 & 0 & -1 \\ 1 & -2 & 2 \\ 1 & 0 & 0 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 3 & 1 & 1 \\ 1 & 3 & 1 \\ 1 & 1 & 3 
-\end{pmatrix}
+\end{bmatrix}
+\]
+\end{punkt}
+
+\begin{punkt}
+\[
+\begin{bmatrix}
+3 & 1 & 0 \\ 0 & 3 & 1 \\ 0 & 0 & 3 
+\end{bmatrix}
 \]
 \end{punkt}
 
@@ -97,17 +94,21 @@ Beregn produktet av egenverdiene for hver matrise i forrige oppgave.
 \end{oppgave}
 
 \begin{oppgave}
-Finn en vektor $\V w$ slik at $\V w$, 
+Finn en vektor $\V w$ slik at
 \[
-\begin{pmatrix}
+\V w,
+\quad 
+\text{}
+\quad 
+\begin{bmatrix}
 -3 \\ 2i \\ 8 
-\end{pmatrix}
+\end{bmatrix}
 \quad 
 \text{og}
 \quad 
-\begin{pmatrix}
+\begin{bmatrix}
 1+i \\ 0 \\ -2 
-\end{pmatrix}
+\end{bmatrix}
 \]
 spenner ut $\C^3$.
 \end{oppgave}
@@ -120,21 +121,21 @@ TODO
 \begin{oppgave}
 Finn $a$ slik at vektoren 
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 a \\ 6-6i \\ -12 
-\end{pmatrix}
+\end{bmatrix}
 \]
 ligger i planet utspent av 
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 -3 \\ 2i \\ 8 
-\end{pmatrix}
+\end{bmatrix}
 \quad 
 \text{og}
 \quad 
-\begin{pmatrix}
+\begin{bmatrix}
 1 \\ 1 \\ 2 
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 
 \end{oppgave}
@@ -144,73 +145,94 @@ ligger i planet utspent av
 TODO
 \end{losning}
 
+
+%\begin{oppgave}
+%Matrisen i oppgave 3 a) 
+%har en dobbel egenverdi. Ta kryssproduktet av basisen du fant for egenrommet til denne egenverdien. Ser du noe rart?
+%\end{oppgave}
+%
+%\begin{losning}
+%TODO
+%\end{losning}
 
 \begin{oppgave}
-Matrisen
-\[
-\begin{pmatrix}
-0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 
-\end{pmatrix}
-\]
-har en dobbel egenverdi. Ta kryssproduktet av basisen du fant for egenrommet til denne egenverdien. Ser du noe rart?
+Vis at dersom matrisen $A$ har egenverdi $\lambda$, har $A^2$ egenverdi $\lambda^2$.
 \end{oppgave}
+
 
 \begin{losning}
 TODO
 \end{losning}
+
+\begin{oppgave}
+Finn egenverdiene til rotasjonsmatrisen
+\[
+T_{\theta}=
+\begin{bmatrix}
+\cos \theta & -\sin \theta  \\ \sin \theta & \cos \theta  
+\end{bmatrix}.
+\]
+Hva er egenverdiene til $T_{2 \theta}$?
+\end{oppgave}
+
+
+\begin{losning}
+TODO
+\end{losning}
+
 
 \begin{oppgave}
 Beregn determinanten. Følg nøye med,  det kan være det ikke er så mye jobb som det ser ut.
 %\begin{punkt}
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %i & 0 & 0 & 0  \\ 0 & i & 0 & 0 \\ 0 & 0 & i & 0 \\ 0 & 0& 0  &i 
-%\end{pmatrix}
+%\end{bmatrix}
 %\]
 %\end{punkt}
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
  i & 0 & 0 \\  0 & i & 1 \\  0& 1  &i  
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 %\begin{punkt}
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %i & 1 & 0 & 0  \\ 0 & i & 0 & 0  \\ 0 & 0 & i & 1 \\ 0 & 0& 1  &i  
-%\end{pmatrix}
+%\end{bmatrix}
 %\]
 %\end{punkt}
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 i & 1 & 0 & 0 \\ 1 & i & 0 & 0 \\ 0 & 0 & i & 1 \\ 0 & 0& 1  &i  
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 i & 1 & 1 & 1  \\ 1 & i & 1 & 1 \\ 0 & 0 & i & 1 \\ 0 & 0& 1  &i 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 i & 1 & 1 & 1 & 1 & 1 \\ 1 & i & 1 & 1 & 1 & 1\\ 0 & 0 & i & 1& 1 & 1 \\ 0 & 0& 1  &i & 1 & 1 \\ 0 & 0 & 0 & 0 & i & 1\\ 0 & 0 & 0 & 0 & 1 & i 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
 \begin{punkt}
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 1 & 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 & 1\\ 0 & 0 & 1 & 1& 1 & 1 \\ 0 & 0& 1  &1 & 1 & 1 \\ 0 & 0 & 0 & 0 & 1 & 1\\ 0 & 0 & 0 & 0 & 1 & 1 
-\end{pmatrix}
+\end{bmatrix}
 \]
 \end{punkt}
 
@@ -224,9 +246,9 @@ TODO
 Sett sammen egenvektorene til 
 \[
 A=
-\begin{pmatrix}
+\begin{bmatrix}
 0 & 0 & -1 \\ 1 & -2 & 2 \\ 1 & 0 & 0 
-\end{pmatrix}
+\end{bmatrix}
 \]
 i en $3 \times 3$-matrise $P$ der egenvektorene er kolonner, og beregn $P^{-1} A P$.
 \end{oppgave}
@@ -238,9 +260,9 @@ TODO
 \begin{oppgave}
 Finn egenverdiene til matrisen 
 \[
-\begin{pmatrix}
+\begin{bmatrix}
 2 & 3  \\ 4 & 6 
-\end{pmatrix}.
+\end{bmatrix}.
 \]
 \end{oppgave}
 
@@ -258,39 +280,39 @@ Vis at dersom en matrise har egenverdien 0, er den singulær.
 %Beregn determinanten.
 %\begin{punkt}
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %i & 0 & 0 & 0 & 0 & 0 \\ 0 & i & 0 & 0 & 0 & 0\\ 0 & 0 & i & 0& 0 & 0 \\ 0 & 0& 0  &i & 0 & 0 \\ 0 & 0 & 0 & 0 & i & 0\\ 0 & 0 & 0 & 0 & 0 & i- 
-%\end{pmatrix}.
+%\end{bmatrix}.
 %\]
 %\end{punkt}
 %\begin{punkt}
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %i & 1 & 0 & 0 & 0 & 0 \\ 0 & i & 0 & 0 & 0  & 0 \\ 0 & 0 & i & 1& 0 & 0 \\ 0 & 0& 0  &i & 0 & 0 \\ 0 & 0 & 0 & 0 & i & 1\\ 0 & 0 & 0 & 0 & 0 & i 
-%\end{pmatrix}.
+%\end{bmatrix}.
 %\]
 %\end{punkt}
 %\begin{punkt}
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %i & 1 & 0 & 0 & 0 & 0 \\ 1 & i & 0 & 0 & 0  & 0 \\ 0 & 0 & i & 1& 0 & 0 \\ 0 & 0& 1  &i & 0 & 0 \\ 0 & 0 & 0 & 0 & i & 1\\ 0 & 0 & 0 & 0 & 1 & i 
-%\end{pmatrix}.
+%\end{bmatrix}.
 %\]
 %\end{punkt}
 %
 %\begin{punkt}
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %i & 1 & 1 & 1 & 1 & 1 \\ 1 & i & 1 & 1 & 1 & 1\\ 0 & 0 & i & 1& 1 & 1 \\ 0 & 0& 1  &i & 1 & 1 \\ 0 & 0 & 0 & 0 & i & 1\\ 0 & 0 & 0 & 0 & 1 & i 
-%\end{pmatrix}.
+%\end{bmatrix}.
 %\]
 %\end{punkt}
 %
 %\begin{punkt}
 %\[
-%\begin{pmatrix}
+%\begin{bmatrix}
 %1 & 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 & 1\\ 0 & 0 & 1 & 1& 1 & 1 \\ 0 & 0& 1  &1 & 1 & 1 \\ 0 & 0 & 0 & 0 & 1 & 1\\ 0 & 0 & 0 & 0 & 1 & 1 
-%\end{pmatrix}.
+%\end{bmatrix}.
 %\]
 %\end{punkt}
 %\end{oppgave}
