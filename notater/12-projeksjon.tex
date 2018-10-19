@@ -29,7 +29,7 @@ Vi kan også definere skalarprodukt for rekkevektorer
  \] 
 
  \begin{ex}
- Vektorene $\V{v}=[1,1,0,0]$ og $\V{w}=[0,0,1,1]$ er ortogonale. 
+ Vektorene $\V{v}=[1,1,-1,0]$ og $\V{w}=[0,1,1,1]$ er ortogonale. 
  \end{ex}
 
  \begin{ex}
@@ -154,9 +154,38 @@ En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
  (I-P)^2=I^2-2P+P^2=I-P.
  \]
  Dette kalles komplementærprojeksjonen.
+
+La oss si at $P$ har en egenverdi $\lambda$, med egenvektor $\V x$. I så fall må
+\[
+\lambda \V x=P\V x=P^2\V x=\lambda^2 \V x.
+\]
+Hver komponent i denne ligningen gir at
+\[
+\lambda=\lambda^2
+\]
+eller
+\[
+\lambda^2-\lambda=\lambda(\lambda-1)=0.
+\]
+En projeksjonsmatrise har alltid en egenverdi som er 0 og en som er 1. Dette impliserer følgende teoremer.
  
- I figurene i forrige avsnitt er trekantene rettvinklede. Dette kalles \defterm{ortogonal projeksjon}.
+\begin{thm}
+Projeksjonsmatriser er singulære.
+\end{thm}
+
+\begin{thm}
+Det finnes alltid vektorer som ikke endres av en bestemt projeksjon.
+\end{thm}
+
  
+ I figurene i forrige avsnitt er trekantene rettvinklede. Dette kalles \defterm{ortogonal projeksjon}. 
+ Vi skal konsentrere oss om ortogonale projeksjoner fra nå av, 
+ og vi skal egentlig bare bruke en type, 
+ nemlig den beskrevet i forrige avsnitt. 
+ Projeksjonen som isolerer komponenter i retningen $\V{w}$ er 
+ 
+ 
+
  Hvis du projiserer $\V w_{\V v}$ på $\V v$, får du $\V w_{\V v}$. Kanskje vi skal definere
  \[
  P_{\V v}=
@@ -200,27 +229,6 @@ En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
 {\small \textit{Hva er projeksjon III?}}
 \end{center}
 
-La oss si at $P$ har en egenverdi $\lambda$, med egenvektor $\V x$. I så fall må
-\[
-\lambda \V x=P\V x=P^2\V x=\lambda^2 \V x.
-\]
-Hver komponent i denne ligningen gir at
-\[
-\lambda=\lambda^2
-\]
-eller
-\[
-\lambda^2-\lambda=\lambda(\lambda-1)=0.
-\]
- En projeksjonsmatrise har alltid en egenverdi som er 0 og en som er 1. Dette impliserer følgende teoremer.
- 
-\begin{thm}
-Projeksjonsmatriser er singulære.
-\end{thm}
-
-\begin{thm}
-Det finnes alltid vektorer som ikke endres av en bestemt projeksjon.
-\end{thm}
 
 
 
