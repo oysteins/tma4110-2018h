@@ -3,24 +3,37 @@
 \kapittel{12}{Projeksjon}
 \label{ch:projeksjon}
 \section*{Skalarproduktet}
-La $\V{v}$ og $\V{w}$ være kolonnevektorer i $\R^n$. Skalarproduktet mellom dem er definert som
+La $\V{v}$ og $\V{w}$ være kolonnevektorer i $\C^n$. 
+Skalarproduktet mellom dem er definert som
 \[
- \V{v}\cdot  \V{w} = v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}^T\V{w}.
+ \V{v}\cdot  \V{w} = v_1\overline w_1 + v_2\overline w_2 + \cdots +v_n\overline w_n=\V{v}^T \overline{ \V{w}}.
  \] 
- Resultatet blir en skalar, derav navnet. Vi definerer lengden til en vektor $\V v$ som 
- \[
- \|v\|=\sqrt{\V{v}^T\V{v}},
- \]
- og vi sier at $\V{v}$ og $\V{w}$ er ortogonale dersom 
+Resultatet blir en skalar, derav navnet. 
+Dersom $\V{v}$ og $\V{w}$ er reelle, blir skalarproduktet 
 \[
- \V{v}^T  \V{w} = 0.
- \]
-I $\R^2$ og $\R^3$ er vinkelen $\pi/2$ mellom ortogonale vektorer. Vi kan også definere skalarprodukt for rekkevektorer
- \[
- \V{v}\cdot  \V{w} =\V{v}\V{w}^T.
+ \V{v}\cdot  \V{w} = v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}^T\V{w},
  \] 
+ slik du er vant til fra gymnaset.
+ Vi definerer lengden til en vektor $\V v$ som 
+ \[
+ \|v\|=\sqrt{\V{v}^T\overline{\V{v}}},
+ \]
+ og vi sier at $\V{v}$ og $\V{w}$ er \defterm{ortogonale} dersom 
+\[
+ \V{v}^T  \overline{\V{w}} = 0.
+ \]
+I $\R^2$ og $\R^3$ er vinkelen $\pi/2$ mellom ortogonale vektorer. 
+Vi kan også definere skalarprodukt for rekkevektorer
+ \[
+ \V{v}\cdot  \V{w} =\V{v}\overline{\V{w}}^T.
+ \] 
+
  \begin{ex}
  Vektorene $\V{v}=[1,1,0,0]$ og $\V{w}=[0,0,1,1]$ er ortogonale. 
+ \end{ex}
+
+ \begin{ex}
+ Vektorene $\V{v}=[1,i]$ og $\V{w}=[i,1]$ er ortogonale. 
  \end{ex}
 
  \begin{ex}
@@ -134,7 +147,17 @@ En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
 \[
  P=P^2.
  \]
- Denne ligningen sier at intet nytt skjer om du benytter lineærtransformasjonen for andre gang, og det er nettopp den egenskapen vi er ute etter når vi projiserer. Hvis du projiserer $\V w_{\V v}$ på $\V v$, får du $\V w_{\V v}$. Kanskje vi skal definere
+ Denne ligningen sier at intet nytt skjer om du benytter lineærtransformasjonen for andre gang, 
+ og det er nettopp den egenskapen vi er ute etter når vi projiserer. 
+ Dersom $P$ er en projeksjon, er også $I-P$ det
+\[
+ (I-P)^2=I^2-2P+P^2=I-P.
+ \]
+ Dette kalles komplementærprojeksjonen.
+ 
+ I figurene i forrige avsnitt er trekantene rettvinklede. Dette kalles \defterm{ortogonal projeksjon}.
+ 
+ Hvis du projiserer $\V w_{\V v}$ på $\V v$, får du $\V w_{\V v}$. Kanskje vi skal definere
  \[
  P_{\V v}=
  \]
