@@ -53,6 +53,10 @@ Vi skriver $\C^n$ for vektorrommet der $K=\C$ og vektorene er kolonnevektorer me
 \begin{bmatrix}
 a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
 \end{bmatrix}
+=
+\begin{bmatrix}
+z_1    \\ z_2   \\ \vdots \\ z_n
+\end{bmatrix}.\qedhere
 \]
 \end{defn}
 
@@ -72,7 +76,7 @@ Men det er ingenting i veien for å behandle polynomer der kroppen, variabelen o
 
 \begin{ex}
 De hele tallene $\Z$ er ikke en kropp, så en del av teoremene vi har bevist, gjelder ikke for $\Z^n$. 
-Vi har jo sett at et $n\times n$-ligningssystem med komponenter i $\Z$ og lineært uavhengige kolonner,  
+Vi har jo sett at et $n\times n$-likningssystem med komponenter i $\Z$ og lineært uavhengige kolonner,  
 ikke nødvendigvis noen løsning i $\Z^n$. 
 \end{ex}
 
@@ -91,7 +95,7 @@ Noen ting fungerer til og med bedre.
 
 
 \begin{ex}
-Vi begynner med å løse ligningssystemet
+Vi begynner med å løse likningssystemet
 \begin{align*}
 (1-i) z + 3w   &= 2-3i \\
 i z + (1+2i) w &= 1
@@ -109,26 +113,23 @@ Den første raden ganget  med $\frac{i}{1-i}$ er
 i & \frac{3i}{1-i} & \frac{3+2i}{1-i} 
 \end{amatrix}.
 \]
-Vi trekker dette fra den andre raden og erstatter den andre raden med resultatet
+Vi trekker dette fra den andre raden og erstatter den andre raden med resultatet:
 \[
 \begin{amatrix}{2}
 1-i & 3 & 2-3i \\ 0 &1+2i -\frac{3i}{1-i} & 1-\frac{3+2i}{1-i} 
 \end{amatrix}.
 \]
-Jeg tror vi ganger den andre raden med $1-i$ for å rydde litt
+Jeg tror vi ganger den andre raden med $1-i$ for å rydde litt:
 \[
 \begin{amatrix}{2}
-1-i & 3 & 2-3i \\ 0 &3 -2i  & -2-3i.
-\end{amatrix}.
+1-i & 3 & 2-3i \\ 0 &3 -2i  & -2-3i
+\end{amatrix}
 \]
-Vi er nå klare for å finne $w$
-\[
-w=\frac{-2-3i}{3-2i}=\frac{-2-3i}{3-2i}\cdot \frac{3+2i}{3+2i}=-i,
-\]
-og $z$
-\[
-z=\frac{2-3i-3(-i)}{1-i}=1+i.
-\]
+Vi er nå klare for å beregne $w$ og $z$:
+\begin{align*}
+w&=\frac{-2-3i}{3-2i}=\frac{-2-3i}{3-2i}\cdot \frac{3+2i}{3+2i}=-i \\
+z&=\frac{2-3i-3(-i)}{1-i}=1+i \qedhere
+\end{align*}
 \end{ex}
 
 \begin{ex}
@@ -145,9 +146,10 @@ er
 1+2i & -3  \\ -i &1-i 
 \end{bmatrix}
 \]
-ved å gange dem sammen
+ved å gange dem sammen:
 \[
 \frac{1}{3-2i}
+\setlength\arraycolsep{4pt}
 \begin{bmatrix}
 1-i & 3  \\ i &1+2i 
 \end{bmatrix}
@@ -157,41 +159,155 @@ ved å gange dem sammen
 =
 \begin{bmatrix}
 1 & 0  \\ 0 &1 
-\end{bmatrix}.
+\end{bmatrix} \qedhere
 \]
 
 
 \end{ex}
 
 \begin{ex}
-Vi sjekker lineær uavhengighet akkurat som i det reelle tilfellet, altså ved å beregne nullrommet eller determinanten. 
+Vi sjekker lineær uavhengighet akkurat som i det reelle tilfellet, altså ved å beregne nullrommet eller determinanten. For eksempel er kolonnene i matrisen 
+\[
+\begin{bmatrix}
+2i & 3 & 4 \\ 3i & 4 & 5 \\ 4i &  5 &6  
+\end{bmatrix}
+\]
+lineært avhengige, siden 
+\[
+-i
+\begin{bmatrix}
+2i  \\ 3i \\ 4i 
+\end{bmatrix}
++
+-2
+\begin{bmatrix}
+ 3 \\  4  \\   5 
+\end{bmatrix}
++
+\begin{bmatrix}
+ 4 \\ 5 \\  6  
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix}. \qedhere
+\]
 \end{ex}
 
 \begin{ex}
-Standardbasisen for $\R^n$ er også en basis for $\C^n$. Det er lett å se at alle elementer i $\C^n$ kan skrives som en unik lineærkombinasjon av elementene i basisen.
+Standardbasisen for $\R^n$ er også en basis for $\C^n$. 
+Det er lett å se at alle elementer i $\C^n$ kan skrives som en unik lineærkombinasjon av elementene i basisen. 
+En tilfeldig vektor $\V z$ i $\C^n$ kan skrives
+\begin{align*}
+\V z&=
+\begin{bmatrix}
+a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
+\end{bmatrix}
+=
+\begin{bmatrix}
+z_1    \\ z_2   \\ \vdots \\ z_n
+\end{bmatrix}
+\\&=
+z_1
+\begin{bmatrix}
+1    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+z_2
+\begin{bmatrix}
+0    \\ 1  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+z_n
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ 1
+\end{bmatrix}. \qedhere
+\end{align*}
 \end{ex}
-
-
-
-\section*{Komplekse polynomer}
-
-Algebraens fundamentalteorem sier at likningen
-\[
-a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
-\]
-alltid har $n$ komplekse løsninger, i den forstand at vi alltid kan skrive
-\[
-a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=\prod_{n=1}^n (z-z_i),
-\]
-der $z_i$ er polynomets røtter. Noen av disse kan være repeterte. Hvis en rot er repetert $k$ ganger, sier vi at den har \defterm{multiplisitet} $k$. 
 
 \begin{ex}
-Polynomet 
-\[
-z^3-3z^2+3z-1=(z-1)^3
-\]
-har en rot ($z=1$) med multiplisitet 3.
+Hvis man ser på $\C^n$ som et vektorrom over $\R$, er ikke standardbasisen for $\R^n$ en basis. En basis er
+\begin{align*}
+&
+\begin{bmatrix}
+1    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+\begin{bmatrix}
+0    \\ 1  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ 1
+\end{bmatrix}
+\\ +
+&
+\begin{bmatrix}
+i    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+\begin{bmatrix}
+0    \\ i  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ i
+\end{bmatrix},
+\end{align*}
+og vi ser at dimensjonen er $2n$. 
+En tilfeldig vektor $\V z$ i $\C^n$ kan skrives
+\begin{align*}
+\V z&=
+\begin{bmatrix}
+a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
+\end{bmatrix}
+\\&= 
+a_1
+\begin{bmatrix}
+1    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+a_2
+\begin{bmatrix}
+0    \\ 1  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+a_n
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ 1
+\end{bmatrix}
+\\ &+
+b_1
+\begin{bmatrix}
+i    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+b_2
+\begin{bmatrix}
+0    \\ i  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+b_n
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ i
+\end{bmatrix}. \qedhere
+\end{align*}
 \end{ex}
+
+
+
+%\section*{Komplekse polynomer}
+
+%Algebraens fundamentalteorem sier at likningen
+%\[
+%a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
+%\]
+%alltid har $n$ komplekse løsninger, i den forstand at vi alltid kan skrive
+%\[
+%a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=\prod_{n=1}^n (z-z_i),
+%\]
+%der $z_i$ er polynomets røtter. Noen av disse kan være repeterte. Hvis en rot er repetert $k$ ganger, sier vi at den har \defterm{multiplisitet} $k$. 
+
 
 %\begin{ex}
 %Polynomet 
@@ -202,12 +318,19 @@ har en rot ($z=1$) med multiplisitet 3.
 %\end{ex}
 
 \section*{Komplekse egenverdier}
+Fra forrige kapittel husker vi at et $n$-te ordens polynom alltid kan faktoriseres i $n$ lineære faktorer. Dersom vi teller repeterte faktorer, er det vanlig å si at en polynomlikning 
+\[
+a_n z^n+a_{n-1} z^{n-1}+...+a_1 z +a_0=0
+\]
+har $n$ løsninger.
 
 \begin{thm}
-Det karakteristiske polynomet har alltid orden $n$. 
+Det karakteristiske polynomet til en $n\times n$-matrise har alltid orden $n$. 
 En matrise har alltid $n$ egenverdier dersom du 
 teller med multiplisiteten til hver egenverdi. 
 \end{thm}
+
+Vi skal ta noen eksempler der vi beregner egenverdier. Vi beregner egenvektorene i neste avsnitt.
 
 \begin{ex}
 Matrisen
@@ -216,9 +339,9 @@ Matrisen
 0 & -1 \\ 1 &0
 \end{bmatrix}
 \]
-har visst egenvektorer allikevel. Den karakteristiske ligningen er 
+har visst egenverdier allikevel, se eksempel \ref{ex:ingen-egenverdier}. Det karakteristiske polynomet er
 \[
-\lambda^2+1=0,
+\lambda^2+1,
 \]
 så egenverdiene er $\pm i$. 
 \end{ex}
@@ -230,14 +353,15 @@ Matrisen
 3 & 0 & 0 \\ 0 & 1 & -1 \\ 0&  1 &1  
 \end{bmatrix}
 \]
-har karakteristisk ligning
+har karakteristisk polynom
 \[
-(3-\lambda)((1-\lambda)^2+1)=(3-\lambda)(2-2\lambda+\lambda^2),
+(3-\lambda)((1-\lambda)^2+1)=(3-\lambda)(2-2\lambda+\lambda^2).
 \]
-så egenverdiene er $\lambda=3$ og
+Den ene egenverdien er åpenbart $\lambda=3$, mens andregradspolynomet $2-2\lambda+\lambda^2$ har røtter
 \[
 \lambda=\frac{2\pm\sqrt{4-8}}{2}=1\pm i.
 \] 
+Her er det altså en reell egenverdi $3$, og to komplekse egenverdier $1+i$ og $1-i$.
 \end{ex}
 
 \begin{thm}
@@ -252,7 +376,7 @@ Matrisen
 1 & 1 & 0\\  0 &1 & 0 \\ 0 & 0 & 2
 \end{bmatrix}
 \]
-har karakteristisk ligning
+har karakteristisk likning
 \[
 (2-\lambda)(1-\lambda)^2=0,
 \]
@@ -261,8 +385,7 @@ med en enkel egenverdi $\lambda=2$, og en dobbel egenverdi $\lambda=1$.
 
 
 \section*{Mer om egenrommet}
-Egenrommet til egenverdien $\lambda$ er nullrommet til matrisen $A-\lambda I$.
-En matrise har alltid $n$ egenverdier, 
+En $n \times n$-matrise har alltid $n$ egenverdier, 
 men ikke nødvendigvis $n$ lineært uavhengige egenvektorer.
 
 \begin{ex}
@@ -276,7 +399,7 @@ egenverdier
 \[
 \lambda=\pm i.
 \] 
-Egenvektoren til $-i$ er nullrommet til 
+En egenrommet til $-i$ er nullrommet til 
 \[
 \begin{bmatrix}
 i & -1 \\ 1 &i
@@ -288,13 +411,13 @@ så vi kan egentlig bare stryke den nederste, og se at
 \[
 ix_1-x_2=0,
 \]
-slik at egenvektoren til $-i$ blir
+slik at en egenvektor til $-i$ blir
 \[
 \begin{bmatrix}
 1  \\ i
 \end{bmatrix}
 \]
-Likeledes blir egenvektoren til $i$ 
+Likeledes blir en egenvektor til $i$ 
 \[
 \begin{bmatrix}
 i  \\ 1
@@ -316,7 +439,7 @@ i  \\ 1
 i
 \begin{bmatrix}
 i  \\ 1
-\end{bmatrix}.
+\end{bmatrix}.\qedhere
 \]
 \end{ex}
 
@@ -333,7 +456,7 @@ sin egenverdi $\lambda= 1-i$. Dette er nullrommet til
 2+i & 0 & 0 \\ 0 & i & -1 \\ 0&  1 &i  
 \end{bmatrix}.
 \]
-Den øverste raden forteller at $x_1=0$. De to nedereste ligner mistenkelig på forrige eksempel, så egenvektoren blir 
+Den øverste raden forteller at $x_1=0$. De to nedereste ligner mistenkelig på forrige eksempel, så en egenvektor blir 
 \[
 \begin{bmatrix}
 0 \\ 1  \\ i 
@@ -355,7 +478,7 @@ Vi dobbeltsjekker
 (1-i)
 \begin{bmatrix}
 0 \\ 1  \\ i 
-\end{bmatrix}.
+\end{bmatrix}. \qedhere
 \]
 
 \end{ex}
@@ -392,7 +515,7 @@ Dette gir at
 $
 x_2=x_3=0,
 $
-så egenvektor til $\lambda=1$ er
+så en egenvektor til $\lambda=1$ er
 %\[
 %\Sp \left\{ \vvv{1}{0}{0} \right\}.
 %\]

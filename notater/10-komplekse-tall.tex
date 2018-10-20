@@ -193,7 +193,7 @@ b=\Im z = r\sin \theta.
 Formlene over gir $a$ og $b$ som funksjon av $r$ og $\theta$. 
 Litt mer trigonometri gir den andre veien
 \begin{align*}
-r&=a^2+b^2 \\
+r&=\sqrt{a^2+b^2} \\
 \theta&= \begin{cases} \arctan \frac{b}{a} \quad &\text{for}\; a>0\\ \arctan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \\  \pi/2 \quad &\text{for}\;  a=0, \; b>0 \\ 3\pi/2 \quad &\text{for}\;  a=0, \; b<0  \end{cases}
 \end{align*}
 Det er flere tilfeller her, for arkustangensfunksjonen skjønner ikke av seg selv om 
@@ -286,7 +286,29 @@ a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0=0
 Dersom en faktor $(z-z_k)$  forekommer $m$ ganger i faktoriseringen, 
 sier vi at $z_k$ har multiplisitet $m$.
 \end{thm}
-Vi skal ikke bevise dette,
+
+\begin{ex}
+Polynomet 
+\[
+z^3-3z^2+3z-1=(z-1)^3
+\]
+har en rot ($z=1$) med multiplisitet 3.
+\end{ex}
+
+\begin{ex}
+Polynomet 
+\[
+z^2-2z+2
+\]
+har to røtter 
+\[
+\lambda=\frac{2\pm\sqrt{4-8}}{2}=1\pm i,
+\] 
+begge med multiplisitet 1.
+\end{ex}
+
+
+Vi skal ikke bevise algebraens fundamentalteorem,
 men et spesialtilfelle kan vi analysere med det vi kjenner til så langt, 
 nemlig løsninger av polynomlikningen
 \[
