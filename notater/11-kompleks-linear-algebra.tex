@@ -61,6 +61,106 @@ z_1    \\ z_2   \\ \vdots \\ z_n
 \end{defn}
 
 \begin{ex}
+Standardbasisen for $\R^n$ er også en basis for $\C^n$. 
+Det er lett å se at alle elementer i $\C^n$ kan skrives som en unik lineærkombinasjon av elementene i basisen. 
+En tilfeldig vektor $\V z$ i $\C^n$ kan skrives
+\begin{align*}
+\V z&=
+\begin{bmatrix}
+a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
+\end{bmatrix}
+=
+\begin{bmatrix}
+z_1    \\ z_2   \\ \vdots \\ z_n
+\end{bmatrix}
+\\&=
+z_1
+\begin{bmatrix}
+1    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+z_2
+\begin{bmatrix}
+0    \\ 1  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+z_n
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ 1
+\end{bmatrix}. \qedhere
+\end{align*}
+\end{ex}
+
+\begin{ex}
+Man kan også se på $\C^n$ som et vektorrom over $\R$, men da er ikke standardbasisen for $\R^n$ en basis for $\C^n$. En basis er
+\begin{align*}
+&
+\begin{bmatrix}
+1    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+\begin{bmatrix}
+0    \\ 1  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ 1
+\end{bmatrix}
+\\ +
+&
+\begin{bmatrix}
+i    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+\begin{bmatrix}
+0    \\ i  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ i
+\end{bmatrix},
+\end{align*}
+og vi ser at dimensjonen er $2n$. 
+En tilfeldig vektor $\V z$ i $\C^n$ kan skrives
+\begin{align*}
+\V z&=
+\begin{bmatrix}
+a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
+\end{bmatrix}
+\\&= 
+a_1
+\begin{bmatrix}
+1    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+a_2
+\begin{bmatrix}
+0    \\ 1  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+a_n
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ 1
+\end{bmatrix}
+\\ &+
+b_1
+\begin{bmatrix}
+i    \\ 0  \\ \vdots \\ 0
+\end{bmatrix}
++
+b_2
+\begin{bmatrix}
+0    \\ i  \\ \vdots \\ 0
+\end{bmatrix}
++...+
+b_n
+\begin{bmatrix}
+0    \\ 0  \\ \vdots \\ i
+\end{bmatrix}. \qedhere
+\end{align*}
+\end{ex}
+
+\begin{ex}
 $\R^n$ et vektorrom over $\R$.
 \end{ex}
 
@@ -194,105 +294,6 @@ lineært avhengige, siden
 \]
 \end{ex}
 
-\begin{ex}
-Standardbasisen for $\R^n$ er også en basis for $\C^n$. 
-Det er lett å se at alle elementer i $\C^n$ kan skrives som en unik lineærkombinasjon av elementene i basisen. 
-En tilfeldig vektor $\V z$ i $\C^n$ kan skrives
-\begin{align*}
-\V z&=
-\begin{bmatrix}
-a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
-\end{bmatrix}
-=
-\begin{bmatrix}
-z_1    \\ z_2   \\ \vdots \\ z_n
-\end{bmatrix}
-\\&=
-z_1
-\begin{bmatrix}
-1    \\ 0  \\ \vdots \\ 0
-\end{bmatrix}
-+
-z_2
-\begin{bmatrix}
-0    \\ 1  \\ \vdots \\ 0
-\end{bmatrix}
-+...+
-z_n
-\begin{bmatrix}
-0    \\ 0  \\ \vdots \\ 1
-\end{bmatrix}. \qedhere
-\end{align*}
-\end{ex}
-
-\begin{ex}
-Hvis man ser på $\C^n$ som et vektorrom over $\R$, er ikke standardbasisen for $\R^n$ en basis. En basis er
-\begin{align*}
-&
-\begin{bmatrix}
-1    \\ 0  \\ \vdots \\ 0
-\end{bmatrix}
-+
-\begin{bmatrix}
-0    \\ 1  \\ \vdots \\ 0
-\end{bmatrix}
-+...+
-\begin{bmatrix}
-0    \\ 0  \\ \vdots \\ 1
-\end{bmatrix}
-\\ +
-&
-\begin{bmatrix}
-i    \\ 0  \\ \vdots \\ 0
-\end{bmatrix}
-+
-\begin{bmatrix}
-0    \\ i  \\ \vdots \\ 0
-\end{bmatrix}
-+...+
-\begin{bmatrix}
-0    \\ 0  \\ \vdots \\ i
-\end{bmatrix},
-\end{align*}
-og vi ser at dimensjonen er $2n$. 
-En tilfeldig vektor $\V z$ i $\C^n$ kan skrives
-\begin{align*}
-\V z&=
-\begin{bmatrix}
-a_1+b_1 i    \\ a_2+b_2 i   \\ \vdots \\ a_n+b_n i 
-\end{bmatrix}
-\\&= 
-a_1
-\begin{bmatrix}
-1    \\ 0  \\ \vdots \\ 0
-\end{bmatrix}
-+
-a_2
-\begin{bmatrix}
-0    \\ 1  \\ \vdots \\ 0
-\end{bmatrix}
-+...+
-a_n
-\begin{bmatrix}
-0    \\ 0  \\ \vdots \\ 1
-\end{bmatrix}
-\\ &+
-b_1
-\begin{bmatrix}
-i    \\ 0  \\ \vdots \\ 0
-\end{bmatrix}
-+
-b_2
-\begin{bmatrix}
-0    \\ i  \\ \vdots \\ 0
-\end{bmatrix}
-+...+
-b_n
-\begin{bmatrix}
-0    \\ 0  \\ \vdots \\ i
-\end{bmatrix}. \qedhere
-\end{align*}
-\end{ex}
 
 
 
