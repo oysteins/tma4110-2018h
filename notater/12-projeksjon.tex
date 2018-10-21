@@ -4,16 +4,52 @@
 \label{ch:projeksjon}
 \section*{Skalarproduktet}
 La $\V{v}$ og $\V{w}$ være kolonnevektorer i $\C^n$. 
-Skalarproduktet mellom dem er definert som
+\defterm{Indreproduktet} mellom dem er definert som
 \[
- \V{v}\cdot  \V{w} = v_1\overline w_1 + v_2\overline w_2 + \cdots +v_n\overline w_n=\V{v}^T \overline{ \V{w}}.
+ v_1\overline w_1 + v_2\overline w_2 + \cdots +v_n\overline w_n=\V{v}^T \overline{ \V{w}}.
  \] 
-Resultatet blir en skalar, derav navnet. 
-Dersom $\V{v}$ og $\V{w}$ er reelle, blir skalarproduktet 
+ \defterm{Ytreproduktet} er
+\begin{align*}
+\V{v} \overline{ \V{w}}^T &=
+\begin{bmatrix}
+v_1 \overline w_1       & v_1 \overline w_2             & \cdots & v_1 \overline w_n \\
+v_2 \overline w_1     & v_2 \overline w_2              & \cdots & v_2 \overline w_n   \\
+\vdots & \vdots & \vdots  & \vdots \\
+v_n \overline w_1     & v_n \overline w_2              & \cdots & v_n \overline w_n   \\
+\end{bmatrix}
+\\[3pt]&=
+\overline w_1
+\begin{bmatrix}
+v_1  \\
+v_2  \\
+\vdots  \\
+v_n  \\
+\end{bmatrix}
++
+\overline w_2
+\begin{bmatrix}
+v_1  \\
+v_2  \\
+\vdots  \\
+v_n  \\
+\end{bmatrix}
++...+
+\overline w_n
+\begin{bmatrix}
+v_1  \\
+v_2  \\
+\vdots  \\
+v_n  \\
+\end{bmatrix}.
+ \end{align*} 
+ \begin{merkx}
+ Dersom $\V{v}$ og $\V{w}$ er reelle, blir indreproduktet 
 \[
- \V{v}\cdot  \V{w} = v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}^T\V{w},
+\V{v}^T\V{w}= v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}\cdot  \V{w}
  \] 
- slik du er vant til fra gymnaset.
+ slik du er vant til fra gymnaset. Resultatet av dette produktet er en skalar, og derfor kaller man det gjerne skalarproduktet.  
+ \end{merkx}
+ 
  Vi definerer lengden til en vektor $\V v$ som 
  \[
  \|v\|=\sqrt{\V{v}^T\overline{\V{v}}},
@@ -21,12 +57,10 @@ Dersom $\V{v}$ og $\V{w}$ er reelle, blir skalarproduktet
  og vi sier at $\V{v}$ og $\V{w}$ er \defterm{ortogonale} dersom 
 \[
  \V{v}^T  \overline{\V{w}} = 0.
- \]
-I $\R^2$ og $\R^3$ er vinkelen $\pi/2$ mellom ortogonale vektorer. 
-Vi kan også definere skalarprodukt for rekkevektorer
- \[
- \V{v}\cdot  \V{w} =\V{v}\overline{\V{w}}^T.
  \] 
+I $\R^2$ betyr dette at vinkelen er $\pi/2$ mellom $\V{v}$ og $\V{w}$. 
+
+Vi har definert indre- og ytreprodukt for kolonnevektorer. Det er ikke noe problem å sette opp tilsvarende definisjoner for rekkevektorer, men det skal vi ikke plage dere med.
 
  \begin{ex}
  Vektorene $\V{v}=[1,1,-1,0]$ og $\V{w}=[0,1,1,1]$ er ortogonale. 
