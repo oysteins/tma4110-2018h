@@ -61,7 +61,7 @@ utgangspunktet:
 \]
 \end{ex}
 
-Vi tar med noen regneregler for adjungering.
+\noindent Vi tar med noen regneregler for adjungering.
 
 \begin{thm}
 For enhver matrise~$A$ har vi at å adjungere to ganger gir den
@@ -78,7 +78,7 @@ motsatt rekkefølge:
 \end{thm}
 
 
-\section*{Skalarproduktet}
+\section*{Indre- og ytreprodukt}
 La $\V{v}$ og $\V{w}$ være kolonnevektorer i $\C^n$. 
 \defterm{Indreproduktet} mellom dem er definert som:
 \[
@@ -192,8 +192,8 @@ er ortogonale.
  Vektoren $\V{v}=\frac{\V{w}}{\|\V{w}\|}$ har lengde 1 for alle $\V w \neq 0$.
  \end{ex}
  
- \section*{Projeksjon i $\R^2$}
-Vi bruker skalarproduktet til å projisere vektorer på hverandre. Det sentrale spørsmålet er: hvor lange er de røde og blå lengdene i figuren under? 
+ \section*{Ortogonal projeksjon i $\R^2$}
+Vi bruker skalarproduktet til å projisere vektorer ortogonalt på hverandre. Det sentrale spørsmålet er: hvor lange er de røde og blå lengdene i figuren under? 
  \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[-latex,thick] (0,0) -- (7,1);
@@ -206,6 +206,8 @@ Vi bruker skalarproduktet til å projisere vektorer på hverandre. Det sentrale 
 \node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
 \node[anchor=east,red] at (3,-.5) {\footnotesize $w_{\V{v}}$};
 \node[anchor=east,blue] at (5.5,3) {\footnotesize $w_{\V{v}^{\perp}}$};
+\node[anchor=east] at (2.9,2) {\footnotesize $\theta$};
+\draw (2.5,.4) arc (8:55:3);
 %\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
 %\draw (\x,5pt) -- (\x,-5pt);
 %\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
@@ -228,19 +230,20 @@ Vi bruker skalarproduktet til å projisere vektorer på hverandre. Det sentrale 
 \\
 {\small \textit{Hva er projeksjon?}}
 \end{center}
-I to dimensjoner er det lett å vise at skalarproduktet også kan beregnes som 
+I $\R^2$ er det lett å vise at indreproduktet også kan beregnes som 
 \[
  \V{v}\cdot  \V{w} = \|\V v\| \|\V w\| \cos \theta,
  \] 
-der $\theta$ er vinkelen mellom $\V{v}$ og $\V{w}$. Vet man det, kan man beregne den røde lengden:
+der $\theta$ er vinkelen mellom $\V{v}$ og $\V{w}$. 
+Vet man det, kan utlede en formler for den røde lengden:
 \[
-w_{\V{v}}=\|\V w\| \cos \theta=\frac{\|\V v\|}{\|\V v\|} \|\V w\| \cos \theta =\frac{\V v \cdot \V w}{\|\V v\|}.
+w_{\V{v}}=\|\V w\| \cos \theta=\frac{\|\V v\|}{\|\V v\|} \|\V w\| \cos \theta =\frac{\V v \cdot \V w}{\|\V v\|}
 \]
 Den blå lengden kan så beregnes med pytagoras:
 \[
-w_{\V{v}^{\perp}}=\sqrt{\|\V w\|^2-\left(\frac{\V v \cdot \V w}{\|\V v\|}\right)^2}.
+w_{\V{v}^{\perp}}=\sqrt{\|\V w\|^2-\left(\frac{\V v \cdot \V w}{\|\V v\|}\right)^2}
 \]
-Denne lengden kalles $\V w$ sin skalarprojeksjon på normalen til $\V w$. Hvis vi tenker at de røde og blå lengdene er vektorer, kan de skrives
+Denne lengden kalles $\V v$ sin skalarprojeksjon ortogonalt på $\V w$. Hvis vi tenker at de røde og blå lengdene er vektorer, kan de skrives
 \[
 \V w_{\V{v}}=w_{\V{v}}\frac{\V v}{\|\V v\|}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=\frac{\V v \cdot \V w}{\V v \cdot \V v}\V v
 \]
@@ -299,18 +302,22 @@ En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
 \[
  P\V x=P^2\V x.
  \]
- for alle $\V x$. 
+ for alle $\V x$. Denne ligningen sier at intet nytt skjer om du benytter lineærtransformasjonen for andre gang, 
+ og det er nettopp den egenskapen vi er ute etter når vi projiserer. 
+ 
  \begin{ex}
 Både nullmatrisen og identitetsmatrisen er projeksjoner.
  \end{ex}
  
- Denne ligningen sier at intet nytt skjer om du benytter lineærtransformasjonen for andre gang, 
- og det er nettopp den egenskapen vi er ute etter når vi projiserer. 
- Dersom $P$ er en projeksjon, er også $I-P$ det
+\noindent Dersom $P$ er en projeksjon, er også $I-P$ det:
 \[
- (I-P)^2=I^2-2P+P^2=I-P.
+ (I-P)^2=I^2-2P+P^2=I-P
  \]
- Dette kalles komplementærprojeksjonen.
+Dette kalles komplementærprojeksjonen.
+ 
+\begin{ex}
+Nullmatrisen er identitetsmatrisens  komplementærprojeksjon.
+\end{ex}
  
  I $\C$ er det kun to trivielle projeksjoner. En generell lineærtransformasjon på $\C$ kan skrives 
  \[
@@ -338,34 +345,37 @@ eller
 \[
 \lambda^2-\lambda=\lambda(\lambda-1)=0.
 \]
-Egenverdiene til en projeksjonsmatrise kan kun være  0 eller 1. Dette impliserer følgende teoremer.
+Egenverdiene til en projeksjonsmatrise kan altså kun være  0 eller 1. Dette skal vi bruke til å klassifisere projeksjoner i $\C^2$ i neste uke.
  
 \begin{fishythm}
-Mange projeksjonsmatriser er ikke inverterbare.
+Interessante projeksjonsmatriser er ikke inverterbare.
 \end{fishythm}
 
-\begin{thm}
-Det finnes alltid vektorer som ikke endres av en bestemt projeksjon.
-\end{thm}
+\begin{merkx}
+Identitets- og nullmatrisen er projeksjonsmatriser, men de er ikke spesielt interessante.
+\end{merkx}
 
-Dersom en $2\times 2$-matrise skal være en projeksjon, må egenverdiene være 0 og 1. Dette kan vi bruke til å klassifisere alle projeksjoner i $\C^2$, men vi må vente til neste uke.
+\begin{fishythm}
+Det finnes alltid vektorer som ikke endres av en bestemt projeksjon.
+\end{fishythm}
+
+\begin{merkx}
+Hvis du projiserer en vektor på seg selv, skjer det ikke så mye interessant.
+\end{merkx}
+
+
  
  I figurene i forrige avsnitt er trekantene rettvinklede. Dette kalles \defterm{ortogonal projeksjon}. 
- Vi skal konsentrere oss om ortogonale projeksjoner fra nå av, 
- og vi skal egentlig bare bruke en type, 
- nemlig den beskrevet i forrige avsnitt. 
- 
- 
-
- Hvis du projiserer $\V w_{\V v}$ på $\V v$, får du $\V w_{\V v}$. Kanskje vi skal definere
+ Vi skal konsentrere oss om ortogonale projeksjoner fra nå av.
+ Vi definerer ortogonal projeksjon på $\V v$:
  \[
  P_{\V v}=\frac{\V v \V v^*}{\V v^* \V v}
  \]
- og 
+ og ortogonal projeksjon ortogonalt på $\V v$:
  \[
- P_{\V v^{\perp}}=I-\frac{\V v \V v^*}{\V v^* \V v}.
+ P_{\V v^{\perp}}=I-\frac{\V v \V v^*}{\V v^* \V v}
  \]
-
+Det er ikke så vanskelig å se at dette er generaliseringer av vektorprojeksjonsformlene i $\R^2$.
  \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[-latex,thick] (0,0) -- (7,1);
@@ -401,28 +411,31 @@ Dersom en $2\times 2$-matrise skal være en projeksjon, må egenverdiene være 0
 {\small \textit{Hva er projeksjon III?}}
 \end{center}
 
-
+\begin{ex}
+La oss projisere vektoren 
+\end{ex}
 
 
 \section*{Mer om ortogonalitet}
 \begin{defnx}
-En ortogonal mengde er en mengde vekorer $\V v_1$, $\V v_2$, ...,$\V v_n$, slik at
+En \defterm{ortogonal mengde} er en mengde vekorer $\V v_1$, $\V v_2$, ...,$\V v_n$, slik at
 \[
-\V v_i  \V v_k = 0
+\V v_i^*  \V v_k = 0
 \]
-for alle vektorer $\V v_i$ og $\V v_k$ i mengden. Dersom $\|\V v_i \|=1$ for alle vektorene, sier vi at mengden er ortonormal.
+for alle vektorer $\V v_i$ og $\V v_k$ i mengden. Dersom $\|\V v_i \|=1$ for alle vektorene, sier vi at mengden er \defterm{ortonormal}.
 \end{defnx}
 
 
 \begin{ex}
-Den vanlige basisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ og $\C^n$ og  er en ortogonal mengde.
+Standardbasisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ og $\C^n$ og  er en ortogonal mengde.
 \end{ex}
-\begin{ex}
-Rekkerommet og nullrommet står ortogonalt på hverandre.
-\end{ex}
+
+%\begin{ex}
+%Rekkerommet og nullrommet står ortogonalt på hverandre.
+%\end{ex}
 
 \section*{Gram-Schmidt}
-
+Gram-Schmidt er en prosess for å transformere en lineært uavhengig vektormengde til en ortogonal mengde som spenner ut det samme rommet. 
 
 \section*{Minste kvadraters metode}
 Dette er en teknikk for å 'løse' systemer med flere likninger enn ukjente. Kort fortalt projiserer den høyresiden ned i kolonnerommet til matrisen, for å finne punktet med kortest avstand til høyresiden.
