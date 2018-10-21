@@ -3,7 +3,7 @@
 \kapittel{12}{Projeksjon}
 \label{ch:projeksjon}
 
-\section*{Transponering II}
+\section*{Adjungering}
 
 Vi skal begynne med å utvide transponeringsoperasjonen litt. 
 
@@ -18,7 +18,7 @@ a_{21} & a_{22} & \cdots & a_{2n} \\
 a_{m1} & a_{m2} & \cdots & a_{mn}
 \end{bmatrix}
 \]
-være en kompleks $m \times n$-matrise.  Den \defterm{transponerte} av~$A$ er
+være en kompleks $m \times n$-matrise.  Den \defterm{adjungerte} av~$A$ er
 $n \times m$-matrisen
 \[
 A^* =
@@ -32,6 +32,10 @@ A^* =
 der radene og kolonnene i~$A$ er byttet om, og alt er komplekskonjugert.
 \end{defn}
 
+\begin{merkx}
+Å adjungere en reell matrise er det samme som å transponere den.
+\end{merkx}
+
 \begin{ex}
 Hvis vi lar $A$ være matrisen
 \[
@@ -41,7 +45,7 @@ A =
 3 & i &  4
 \end{bmatrix},
 \]
-så er den transponerte av~$A^*$ gitt ved:
+så er den adjungerte av~$A^*$ gitt ved:
 \[
 A^* =
 \begin{bmatrix}
@@ -50,23 +54,23 @@ A^* =
 2i & 4
 \end{bmatrix}
 \]
-Hvis vi transponerer denne matrisen igjen, så kommer vi tilbake til
+Hvis vi adjungerer denne matrisen igjen, så kommer vi tilbake til
 utgangspunktet:
 \[
 (A^*)^* = A\qedhere
 \]
 \end{ex}
 
-Vi tar med noen regneregler for transponering.
+Vi tar med noen regneregler for adjungering.
 
 \begin{thm}
-For enhver matrise~$A$ har vi at å transponere to ganger gir den
+For enhver matrise~$A$ har vi at å adjungere to ganger gir den
 opprinnelige matrisen:
 \[
 (A^*)^* = A
 \]
 Hvis $A$ og~$B$ er matriser sik at produktet~$AB$ er definert, så er
-den transponerte av produktet lik produktet av de transponerte, i
+den adjungerte av produktet lik produktet av de adjungerte, i
 motsatt rekkefølge:
 \[
 (AB)^* = B^* A^*
@@ -78,63 +82,68 @@ motsatt rekkefølge:
 La $\V{v}$ og $\V{w}$ være kolonnevektorer i $\C^n$. 
 \defterm{Indreproduktet} mellom dem er definert som:
 \[
-\V{v}^T \overline{ \V{w}}= v_1\overline w_1 + v_2\overline w_2 + \cdots +v_n\overline w_n
+\V{v}^* \V{w}= \overline v_1 w_1 + \overline v_2 w_2 + \cdots +\overline v_n w_n
  \] 
  \defterm{Ytreproduktet} er:
 \begin{align*}
-\V{v} \overline{ \V{w}}^T &=
+ \V{w} \V{v}^*&=
 \begin{bmatrix}
-v_1 \overline w_1       & v_1 \overline w_2             & \cdots & v_1 \overline w_n \\
-v_2 \overline w_1     & v_2 \overline w_2              & \cdots & v_2 \overline w_n   \\
+w_1 \overline v_1       & w_1 \overline v_2             & \cdots & w_1 \overline v_n \\
+w_2 \overline v_1     & w_2 \overline v_2              & \cdots & w_2 \overline v_n   \\
 \vdots & \vdots & \vdots  & \vdots \\
-v_n \overline w_1     & v_n \overline w_2              & \cdots & v_n \overline w_n   \\
+w_n \overline v_1     & w_n \overline v_2              & \cdots & w_n \overline v_n   \\
 \end{bmatrix}
 \\[3pt]&=
-\overline w_1
 \begin{bmatrix}
-v_1  \\
-v_2  \\
-\vdots  \\
-v_n  \\
+\V w  \overline v_1 & \V w \overline v_2  & \hdots & \V w \overline v_n 
 \end{bmatrix}
-+
-\overline w_2
-\begin{bmatrix}
-v_1  \\
-v_2  \\
-\vdots  \\
-v_n  \\
-\end{bmatrix}
-+...+
-\overline w_n
-\begin{bmatrix}
-v_1  \\
-v_2  \\
-\vdots  \\
-v_n  \\
-\end{bmatrix}
- \end{align*} 
+%+
+%\overline v_2
+%\begin{bmatrix}
+%w_1  \\
+%w_2  \\
+%\vdots  \\
+%w_n  \\
+%\end{bmatrix}
+%+...+
+%\overline v_n
+%\begin{bmatrix}
+%w_1  \\
+%w_2  \\
+%\vdots  \\
+%w_n  \\
+%\end{bmatrix}
+ \end{align*}  
+ Vi har definert indre- og ytreprodukt for kolonnevektorer. 
+ Det er ikke noe problem å sette opp tilsvarende definisjoner for rekkevektorer, 
+ men det skal vi ikke plage dere med. 
+ Vi definerer \defterm{lengden} til en vektor $\V v$ som 
+ \[
+ \|\V v\|=\sqrt{\V{v}^*\V{v}},
+ \]
+ og vi sier at $\V{v}$ og $\V{w}$ er \defterm{ortogonale} dersom 
+\[
+ \V{v}^*\V{w}=\V{w}^*\V{v} = 0.
+ \] 
+ 
+
+ 
  \begin{merkx}
  Dersom $\V{v}$ og $\V{w}$ er reelle, blir indreproduktet 
 \[
-\V{v}^T\V{w}= v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}\cdot  \V{w}
+\V{v}^* \V{w}=\V{v}^T\V{w}= v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}\cdot  \V{w}
  \] 
  slik du er vant til fra gymnaset. Resultatet av dette produktet er en skalar, og derfor kaller man det gjerne skalarproduktet.  
  \end{merkx}
  
- Vi definerer lengden til en vektor $\V v$ som 
- \[
- \|v\|=\sqrt{\V{v}^T\overline{\V{v}}},
- \]
- og vi sier at $\V{v}$ og $\V{w}$ er \defterm{ortogonale} dersom 
-\[
- \V{v}^T  \overline{\V{w}} = 0.
- \] 
+ \begin{merkx}
+ Ytreproduktet $ \V{w} \V{v}^*$ er en ikke inverterbar matrise, siden alle kolonnene er parallelle.
+ \end{merkx}
  
-Vi har definert indre- og ytreprodukt for kolonnevektorer. Det er ikke noe problem å sette opp tilsvarende definisjoner for rekkevektorer, men det skal vi ikke plage dere med.
+ 
 
  \begin{ex}
-I $\R^2$ er $\V{v}$ og $\V{w}$ ortogonale dersom vinkelen mellom dem er $\pi/2$, for eksempel 
+I $\R^2$ er $\V{v}$ og $\V{w}$ ortogonale dersom vinkelen mellom dem er $\pi/2$.
 \end{ex}
 
 
@@ -178,9 +187,6 @@ er ortogonale.
 er ortogonale. 
  \end{ex}
 
- \begin{ex}
- Vektorene $\V{v}=[1,i]$ og $\V{w}=[i,1]$ er ortogonale. 
- \end{ex}
 
  \begin{ex}
  Vektoren $\V{v}=\frac{\V{w}}{\|\V{w}\|}$ har lengde 1 for alle $\V w \neq 0$.
@@ -399,11 +405,15 @@ Dersom en $2\times 2$-matrise skal være en projeksjon, må egenverdiene være 0
 
 
 \section*{Mer om ortogonalitet}
+\begin{defnx}
 En ortogonal mengde er en mengde vekorer $\V v_1$, $\V v_2$, ...,$\V v_n$, slik at
 \[
-\V v_i \cdot \V v_k
+\V v_i  \V v_k = 0
 \]
-for alle vektorer $\V v_i$ og $\V v_k$ i mengden. 
+for alle vektorer $\V v_i$ og $\V v_k$ i mengden. Dersom $\|\V v_i \|=1$ for alle vektorene, sier vi at mengden er ortonormal.
+\end{defnx}
+
+
 \begin{ex}
 Den vanlige basisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ og $\C^n$ og  er en ortogonal mengde.
 \end{ex}
