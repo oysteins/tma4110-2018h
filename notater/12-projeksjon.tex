@@ -145,8 +145,13 @@ Tenker man på projeksjonene til $\V w$ på $\V v$ og $\V v^{\perp}$ som en leng
  \section*{Projeksjon i $\C^n$}
 En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
 \[
- P=P^2.
+ P\V x=P^2\V x.
  \]
+ for alle $\V x$. 
+ \begin{ex}
+Både nullmatrisen og identitetsmatrisen er projeksjoner.
+ \end{ex}
+ 
  Denne ligningen sier at intet nytt skjer om du benytter lineærtransformasjonen for andre gang, 
  og det er nettopp den egenskapen vi er ute etter når vi projiserer. 
  Dersom $P$ er en projeksjon, er også $I-P$ det
@@ -154,10 +159,24 @@ En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
  (I-P)^2=I^2-2P+P^2=I-P.
  \]
  Dette kalles komplementærprojeksjonen.
+ 
+ I $\C$ er det kun to trivielle projeksjoner. En generell lineærtransformasjon på $\C$ kan skrives 
+ \[
+ Tx=ax.
+ \]
+De eneste transformasjonene på denne formen som tifredsstiller $P=P^2$, er
+ \[
+ Px=x
+\]
+og 
+ \[
+ Px=0.
+\]
+Disse to er ikke så interessante, så vi skal i det etterfølgende anta at antall dimensjoner $n\geq 2$.
 
 La oss si at $P$ har en egenverdi $\lambda$, med egenvektor $\V x$. I så fall må
 \[
-\lambda \V x=P\V x=P^2\V x=\lambda^2 \V x.
+\lambda \V x=P\V x=P^2\V x=P(P\V x)=P(\lambda\V x)=\lambda P\V x=\lambda^2 \V x.
 \]
 Hver komponent i denne ligningen gir at
 \[
@@ -167,33 +186,34 @@ eller
 \[
 \lambda^2-\lambda=\lambda(\lambda-1)=0.
 \]
-En projeksjonsmatrise har alltid en egenverdi som er 0 og en som er 1. Dette impliserer følgende teoremer.
+Egenverdiene til en projeksjonsmatrise kan kun være  0 eller 1. Dette impliserer følgende teoremer.
  
-\begin{thm}
-Projeksjonsmatriser er singulære.
-\end{thm}
+\begin{fishythm}
+Mange projeksjonsmatriser er ikke inverterbare.
+\end{fishythm}
 
 \begin{thm}
 Det finnes alltid vektorer som ikke endres av en bestemt projeksjon.
 \end{thm}
 
+Dersom en $2\times 2$-matrise skal være en projeksjon, må egenverdiene være 0 og 1. Dette kan vi bruke til å klassifisere alle projeksjoner i $\C^2$, men vi må vente til neste uke.
  
  I figurene i forrige avsnitt er trekantene rettvinklede. Dette kalles \defterm{ortogonal projeksjon}. 
  Vi skal konsentrere oss om ortogonale projeksjoner fra nå av, 
  og vi skal egentlig bare bruke en type, 
  nemlig den beskrevet i forrige avsnitt. 
- Projeksjonen som isolerer komponenter i retningen $\V{w}$ er 
  
  
 
  Hvis du projiserer $\V w_{\V v}$ på $\V v$, får du $\V w_{\V v}$. Kanskje vi skal definere
  \[
- P_{\V v}=
+ P_{\V v}=\frac{\V v \V v^*}{\V v^* \V v}
  \]
  og 
  \[
- P_{\V v^{\perp}}=
+ P_{\V v^{\perp}}=I-\frac{\V v \V v^*}{\V v^* \V v}.
  \]
+
  \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[-latex,thick] (0,0) -- (7,1);
@@ -244,9 +264,9 @@ Den vanlige basisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ og $\C^n$ og  er 
 \begin{ex}
 Rekkerommet og nullrommet står ortogonalt på hverandre.
 \end{ex}
-\begin{ex}
-Gram-Schmidt
-\end{ex}
+
+\section*{Gram-Schmidt}
+
 
 \section*{Minste kvadraters metode}
 Dette er en teknikk for å 'løse' systemer med flere likninger enn ukjente. Kort fortalt projiserer den høyresiden ned i kolonnerommet til matrisen, for å finne punktet med kortest avstand til høyresiden.
