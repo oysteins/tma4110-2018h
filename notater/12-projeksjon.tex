@@ -2,13 +2,85 @@
 
 \kapittel{12}{Projeksjon}
 \label{ch:projeksjon}
+
+\section*{Transponering II}
+
+Vi skal begynne med å utvide transponeringsoperasjonen litt. 
+
+\begin{defn}
+La
+\[
+A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+\]
+være en kompleks $m \times n$-matrise.  Den \defterm{transponerte} av~$A$ er
+$n \times m$-matrisen
+\[
+A^* =
+\begin{bmatrix}
+\overline a_{11} & \overline a_{21} & \cdots & \overline a_{m1} \\
+\overline a_{12} & \overline a_{22} & \cdots & \overline a_{m2} \\
+\vdots & \vdots & \ddots & \vdots \\
+\overline a_{1n} & \overline a_{2n} & \cdots & \overline a_{mn}
+\end{bmatrix}
+\]
+der radene og kolonnene i~$A$ er byttet om, og alt er komplekskonjugert.
+\end{defn}
+
+\begin{ex}
+Hvis vi lar $A$ være matrisen
+\[
+A =
+\begin{bmatrix}
+5i & 0 & -2i \\
+3 & i &  4
+\end{bmatrix},
+\]
+så er den transponerte av~$A^*$ gitt ved:
+\[
+A^* =
+\begin{bmatrix}
+ -5i & 3 \\
+ 0 & -i \\
+2i & 4
+\end{bmatrix}
+\]
+Hvis vi transponerer denne matrisen igjen, så kommer vi tilbake til
+utgangspunktet:
+\[
+(A^*)^* = A\qedhere
+\]
+\end{ex}
+
+Vi tar med noen regneregler for transponering.
+
+\begin{thm}
+For enhver matrise~$A$ har vi at å transponere to ganger gir den
+opprinnelige matrisen:
+\[
+(A^*)^* = A
+\]
+Hvis $A$ og~$B$ er matriser sik at produktet~$AB$ er definert, så er
+den transponerte av produktet lik produktet av de transponerte, i
+motsatt rekkefølge:
+\[
+(AB)^* = B^* A^*
+\]
+\end{thm}
+
+
 \section*{Skalarproduktet}
 La $\V{v}$ og $\V{w}$ være kolonnevektorer i $\C^n$. 
-\defterm{Indreproduktet} mellom dem er definert som
+\defterm{Indreproduktet} mellom dem er definert som:
 \[
- v_1\overline w_1 + v_2\overline w_2 + \cdots +v_n\overline w_n=\V{v}^T \overline{ \V{w}}.
+\V{v}^T \overline{ \V{w}}= v_1\overline w_1 + v_2\overline w_2 + \cdots +v_n\overline w_n
  \] 
- \defterm{Ytreproduktet} er
+ \defterm{Ytreproduktet} er:
 \begin{align*}
 \V{v} \overline{ \V{w}}^T &=
 \begin{bmatrix}
@@ -40,7 +112,7 @@ v_1  \\
 v_2  \\
 \vdots  \\
 v_n  \\
-\end{bmatrix}.
+\end{bmatrix}
  \end{align*} 
  \begin{merkx}
  Dersom $\V{v}$ og $\V{w}$ er reelle, blir indreproduktet 
@@ -58,12 +130,52 @@ v_n  \\
 \[
  \V{v}^T  \overline{\V{w}} = 0.
  \] 
-I $\R^2$ betyr dette at vinkelen er $\pi/2$ mellom $\V{v}$ og $\V{w}$. 
-
+ 
 Vi har definert indre- og ytreprodukt for kolonnevektorer. Det er ikke noe problem å sette opp tilsvarende definisjoner for rekkevektorer, men det skal vi ikke plage dere med.
 
  \begin{ex}
- Vektorene $\V{v}=[1,1,-1,0]$ og $\V{w}=[0,1,1,1]$ er ortogonale. 
+I $\R^2$ er $\V{v}$ og $\V{w}$ ortogonale dersom vinkelen mellom dem er $\pi/2$, for eksempel 
+\end{ex}
+
+
+ \begin{ex}
+ Vektorene 
+ \[
+ \begin{bmatrix}
+ 1 \\ 
+ 1 \\
+ -1\\
+ 0
+ \end{bmatrix}
+ \quad
+ \text{og}
+ \quad
+  \begin{bmatrix}
+ 0 \\ 
+ 1 \\
+ 1\\
+ 1
+ \end{bmatrix}
+\]
+er ortogonale. 
+ \end{ex}
+
+ \begin{ex}
+ Vektorene 
+ \[
+ \begin{bmatrix}
+ 1 \\ 
+ i 
+ \end{bmatrix}
+ \quad
+ \text{og}
+ \quad
+  \begin{bmatrix}
+ i \\ 
+1
+ \end{bmatrix}
+\]
+er ortogonale. 
  \end{ex}
 
  \begin{ex}
