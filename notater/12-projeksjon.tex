@@ -36,6 +36,7 @@ der radene og kolonnene i~$A$ er byttet om, og alt er komplekskonjugert.
 Å adjungere en reell matrise er det samme som å transponere den.
 \end{merkx}
 
+
 \begin{ex}
 Hvis vi lar $A$ være matrisen
 \[
@@ -135,6 +136,11 @@ w_n \overline v_1     & w_n \overline v_2              & \cdots & w_n \overline 
  \] 
  slik du er vant til fra gymnaset. Resultatet av dette produktet er en skalar, og derfor kaller man det gjerne skalarproduktet.  
  \end{merkx}
+ 
+ 
+\begin{merkx}
+$\V{v}^*\V{v}$ består av de kvadrerte absoluttverdiene til komponentene til $\V v$. 
+\end{merkx}
  
  \begin{merkx}
  Ytreproduktet $ \V{w} \V{v}^*$ er en ikke inverterbar matrise, siden alle kolonnene er parallelle.
@@ -285,17 +291,60 @@ og
 \\
 {\small \textit{Hva er projeksjon II?}}
 \end{center}
-Tenker man på projeksjonene til $\V w$ på $\V v$ og $\V v^{\perp}$ som en lengder, kalles det skalarprojeksjon, og tenker man på det som vektorer, kalles det vektorprojeksjon. Det er egentlig ett fett hva man foretrekker.
+Tenker man på projeksjonene til $\V w$ på $\V v$ og $\V v^{\perp}$ som en lengder, 
+kalles det skalarprojeksjon, 
+og tenker man på det som vektorer, kalles det vektorprojeksjon. 
 
-%Vi skal ta dette for god fisk, og definere
-%\[
-% \theta = \cos^{-1} \frac{ \V{v}\cdot  \V{w}}{\|v\| \|w\|} 
-% \] 
-%som vinkelen mellom vektorer i $\R^n$.
+\begin{ex}
+Vektoren
+\[
+\V w
+=
+\begin{bmatrix}
+2 \\ 1
+\end{bmatrix}
+\]
+sin skalarprojeksjon i retningen
+\[
+\V v
+=
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+\]
+er:
+\[
+\frac{\V v \cdot \V w}{\|\V v\|}=\frac{2 \cdot 1+1\cdot 2}{\sqrt{2^2+1^2}}=\frac{4}{\sqrt{5}}
+\]
+Du kan tenke på dette på som $\V w$s komponent i retningen $\V v$. Vektorprojeksjonen er:
+\[
+\V w_{\V{v}}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=
+\frac{4}{5}
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix} 
+\]
+Vektorprojeksjonen til $\V w$ normalt på $\V v$ er:
+\[
+\V w - \V w_{\V{v}}=
+\begin{bmatrix}
+2 \\ 1
+\end{bmatrix} 
+-
+\frac{4}{5}
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+=
+\frac{3}{5}
+\begin{bmatrix}
+2 \\ -1
+\end{bmatrix} \qedhere
+\]
+\end{ex}
  
 
 
-% \section*{Projeksjon i $\R^3$}
 
  \section*{Projeksjon i $\C^n$}
 En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
@@ -367,15 +416,24 @@ Hvis du projiserer en vektor på seg selv, skjer det ikke så mye interessant.
  
  I figurene i forrige avsnitt er trekantene rettvinklede. Dette kalles \defterm{ortogonal projeksjon}. 
  Vi skal konsentrere oss om ortogonale projeksjoner fra nå av.
- Vi definerer ortogonal projeksjon på $\V v$:
+ Vi definerer ortogonal projeksjon på $\V v$ som lineærtransformasjonen
  \[
- P_{\V v}=\frac{\V v \V v^*}{\V v^* \V v}
+ P_{\V v}=\frac{\V v \V v^*}{\V v^* \V v},
  \]
- og ortogonal projeksjon ortogonalt på $\V v$:
+ og ortogonal projeksjon ortogonalt på $\V v$ som lineærtransformasjonen
  \[
- P_{\V v^{\perp}}=I-\frac{\V v \V v^*}{\V v^* \V v}
+ P_{\V v^{\perp}}=I-\frac{\V v \V v^*}{\V v^* \V v}.
  \]
-Det er ikke så vanskelig å se at dette er generaliseringer av vektorprojeksjonsformlene i $\R^2$.
+Det er ikke så vanskelig å se at dette er generaliseringer av vektorprojeksjonsformlene i $\R^2$. Assosiativiteten til matrisemultiplikasjon gir at
+ \[
+ P_{\V v}\V w=\frac{\V v \V v^*}{\V v^* \V v} \V w=\V v \frac{ \V v^*\V w}{\V v^* \V v}=\frac{ \V v^*\V w}{\V v^* \V v} \V v 
+ \]
+og 
+ \[
+ P_{\V v^{\perp}}=\left(I-\frac{\V v \V v^*}{\V v^* \V v}\right)\V w=\V w - \frac{ \V v^*\V w}{\V v^* \V v} \V v ,
+ \]
+ så likheten med vektorprojeksjon i $\R^2$ er jo slående.
+
  \begin{center}
 \begin{tikzpicture}[scale=.42]
 \draw[-latex,thick] (0,0) -- (7,1);
@@ -413,6 +471,64 @@ Det er ikke så vanskelig å se at dette er generaliseringer av vektorprojeksjon
 
 \begin{ex}
 La oss projisere vektoren 
+\[
+\V w=
+\begin{bmatrix}
+ -5i  \\
+ 0  \\
+2i 
+\end{bmatrix}
+\]
+både på og normalt på
+\[
+\V v=
+\begin{bmatrix}
+ 3 \\
+ -i \\
+ 4
+\end{bmatrix}.
+\]
+Vi beregner:
+\[
+\V v^* \V v=3\cdot 3+i\cdot (-i)+4\cdot 4=26
+\]
+og
+\[
+\V w^* \V v=5i\cdot 3+0\cdot (-i)+(-2i)\cdot 4=7i
+\]
+slik at
+\begin{align*}
+P_{\V v}\V w =\frac{ \V v^*\V w}{\V v^* \V v} \V v =
+\frac{7i}{26}
+\begin{bmatrix}
+ 3 \\
+ -i \\
+ 4
+\end{bmatrix}
+\end{align*}
+og 
+\begin{align*}
+P_{\V v^{\perp}}\V w &=\V w-\frac{ \V v^*\V w}{\V v^* \V v} \V v \\&= 
+\begin{bmatrix}
+ -5i  \\
+ 0  \\
+2i 
+\end{bmatrix}
+-
+\frac{7i}{26}
+\begin{bmatrix}
+ 3 \\
+ -i \\
+ 4
+\end{bmatrix}
+=
+\frac{i}{26}
+\begin{bmatrix}
+ -151 \\
+ -7 \\
+ 24
+\end{bmatrix}.\qedhere
+\end{align*} 
 \end{ex}
 
 
