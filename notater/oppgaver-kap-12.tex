@@ -2,24 +2,27 @@
 \oppgaver{12}
 
 \begin{oppgave}
-La $\V{u}=\vvv{2}{-5}{1}$ og la $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$ være den ortogonale projeksjonen ned på underrommet utspent av $\V{u}$,
-$$T(\V{x})=\frac{\V{x}\boldsymbol{\cdot} \V{u}}{\|\V{u} \|^2} \V{u}.$$
+La $\V{u}=\vvv{2}{-5}{1}$ og $\V{v}=\vvv{1}{2}{0}$.
+%og la $T:\mathbb{R}^3\rightarrow \mathbb{R}^3$ være den ortogonale projeksjonen ned på underrommet utspent av $\V{u}$,
+%$$T(\V{x})=\frac{\V{x}\boldsymbol{\cdot} \V{u}}{\|\V{u} \|^2} \V{u}.$$
+
+%\begin{punkt}
+%Bruk definisjonen av en lineærtransformasjon for å vise at $T$ er en lineærtransformasjon.
+%\end{punkt}
 
 \begin{punkt}
-Bruk definisjonen av en lineærtransformasjon for å vise at $T$ er en lineærtransformasjon.
+Skriv opp $P_{\V u}$, og beregn $P_{\V u}\V v$.
+%$A$ slik at $T(\V{x})=A\V{x}$ for alle vektorer $\V{x}$.
 \end{punkt}
 
-\begin{punkt}
-Finn matrisen $A$ slik at $T(\V{x})=A\V{x}$ for alle vektorer $\V{x}$.
-\end{punkt}
-
-\begin{punkt}
-Gi geometriske argument for å avgjøre hva bildet til $T$ er, hva kjernen til $T$ er, og om $T$ er surjektiv og/eller injektiv.
-\end{punkt}
+%\begin{punkt}
+%Gi geometriske argument for å avgjøre hva bildet til $T$ er, hva kjernen til $T$ er, og om $T$ er surjektiv og/eller injektiv.
+%\end{punkt}
 
 
 \begin{punkt}
-Finn standardmatrisentil den ortogonale projeksjonen ned på det ortogonale komplementet til $\V{u}$
+Skriv opp $P_{\V u^{\perp}}$, og beregn $P_{\V u^{\perp}}\V v$.
+%Finn standardmatrisentil den ortogonale projeksjonen ned på det ortogonale komplementet til $\V{u}$
 \end{punkt}
 
 
@@ -52,97 +55,72 @@ $$\text{proj}_{\V{u}^{\perp}}\V{x}=\V{x}-T(\V{x}).$$ Nå gjør vi som i løsning
 
 \end{losning}
 
-\begin{oppgave}
-Vis at det ortogonale komplementet til en vektor $\V{u}$ i $\R^n$
-er kjernen til en lineærtransformasjon.
-
-\noindent
-Hint: Hvilken ligning tilfredstiller en vektor i det ortogonale komplementet?
-
-\end{oppgave}
-
-\begin{losning}
-Vi kan skrive
-\[
-\V{u}=\begin{bmatrix}
-u_1\\
-u_2\\
-\vdots\\
-u_n\\
-\end{bmatrix}.
-\]
-En vektor
-\[
-\V{x}=\begin{bmatrix}
-x_1\\
-x_2\\
-\vdots\\
-x_n\\
-\end{bmatrix}
-\]
-i det ortogonale komplementet tilfredstiller
-\[
-u_1x_1+u_2x_2+\dots +u_nx_n=0,
-\]
-eller ekvivalent $\V{u}\tr \V{x}=0$.
-Dette er altså kjernen til lineætransformasjonen
-\[
-\V{u}\tr:\mathbb{R}^n\rightarrow \mathbb{R}.
-\]
-\end{losning}
-
-
-\begin{oppgave}
-Husk at alle lineærtransformasjoner mellom to vektorrom, $V$ og $W$, igjen er et vektorrom $\Hom(V,W)$. La $S$ være en delmengde av $\mathbb{R}^n$. Vis at $$\text{proj}_{\text{Sp}S}+\text{proj}_{S^{\perp}}=\text{id}.$$
-\end{oppgave}
-
-\begin{losning}
-Dette er nøyaktig at en vilkårlig vektor $\V{x}=\text{id}(\V{x})$ kan skrives som en entydig sum $$\text{proj}_{\text{Sp}S}\V{x}+\text{proj}_{S^{\perp}}\V{X}$$ langs utspennet til $S$ og det ortogonale komplementet til $S$.
-\end{losning}
+%\begin{oppgave}
+%Vis at det ortogonale komplementet til en vektor $\V{u}$ i $\R^n$
+%er kjernen til en lineærtransformasjon.
+%
+%\noindent
+%Hint: Hvilken ligning tilfredstiller en vektor i det ortogonale komplementet?
+%
+%\end{oppgave}
+%
+%\begin{losning}
+%Vi kan skrive
+%\[
+%\V{u}=\begin{bmatrix}
+%u_1\\
+%u_2\\
+%\vdots\\
+%u_n\\
+%\end{bmatrix}.
+%\]
+%En vektor
+%\[
+%\V{x}=\begin{bmatrix}
+%x_1\\
+%x_2\\
+%\vdots\\
+%x_n\\
+%\end{bmatrix}
+%\]
+%i det ortogonale komplementet tilfredstiller
+%\[
+%u_1x_1+u_2x_2+\dots +u_nx_n=0,
+%\]
+%eller ekvivalent $\V{u}\tr \V{x}=0$.
+%Dette er altså kjernen til lineætransformasjonen
+%\[
+%\V{u}\tr:\mathbb{R}^n\rightarrow \mathbb{R}.
+%\]
+%\end{losning}
 
 
-\begin{oppgave}
-\begin{punkt}
-Anta at $\V{u}_1,\dots \V{u}_n$ er en ortonormal basis for $\mathbb{R}^n$. Vis at den inverse matrisen til $A=\begin{bmatrix}
-\V{u}_1 & \dots & \V{u_n}
-\end{bmatrix}$ er gitt ved $A^{-1}=A\tr$.
-\end{punkt}
-\begin{punkt}
-Vis at en samling vektorer som er parvis ortogonale, og forskjellige fra null, vil være lineært uavhengige.
-\end{punkt}
-\end{oppgave}
+%\begin{oppgave}
+%Husk at alle lineærtransformasjoner mellom to vektorrom, $V$ og $W$, igjen er et vektorrom $\Hom(V,W)$. La $S$ være en delmengde av $\mathbb{R}^n$. Vis at $$\text{proj}_{\text{Sp}S}+\text{proj}_{S^{\perp}}=\text{id}.$$
+%\end{oppgave}
+%
+%\begin{losning}
+%Dette er nøyaktig at en vilkårlig vektor $\V{x}=\text{id}(\V{x})$ kan skrives som en entydig sum $$\text{proj}_{\text{Sp}S}\V{x}+\text{proj}_{S^{\perp}}\V{X}$$ langs utspennet til $S$ og det ortogonale komplementet til $S$.
+%\end{losning}
 
 
 
-
-\begin{losning}
-\begin{punkt}
-Dette er oppgave \textbf{10. b)} kapittel 4 (Matriser).
-\end{punkt}
-\begin{punkt}
-Anta at $\V{v}_1,\dots,\V{v}_n$ er parvis ortogonale; $\V{v}_i\boldsymbol{\cdot}\V{v}_j=0$ for $i\neq j$. Vi må vise at likningen $$x_1\V{v}_1+\dots+a_n\V{v}_n=\V{0}$$ kun har triviell løsning (definisjonen på lineær uavhengighet). Prikk likningen med $\V{v}_1$ for å se at $x_1\|\V{v}_1\|^2=0$. Ettersom $\V{v}_1\neq \V{0}$ må $x_1=0$. Repeter denne prosessen for $i=2,\dots,n$ for å se at de resterende $x_i$-ene også må være lik null.
-\end{punkt}
-\end{losning}
+%\begin{oppgave}
+%Gitt $m$ lineært uavhengige vektorer i $\mathbb{R}^n$. Hvordan kan du -- på en systematisk måte -- finne $m$ ortogonale vektorer med det samme utspennet? Lag en tegning som illustrerer metoden for $m=2$ og $n=2$.
+%\end{oppgave}
+%
+%\begin{losning}
+%Gram-Schmidt. Se illustrasjonen under 'Projeksjon i $\mathbb{R}^2$' i notatet.
+%\end{losning}
 
 \begin{oppgave}
-Gitt $m$ lineært uavhengige vektorer i $\mathbb{R}^n$. Hvordan kan du -- på en systematisk måte -- finne $m$ ortogonale vektorer med det samme utspennet? Lag en tegning som illustrerer metoden for $m=2$ og $n=2$.
-\end{oppgave}
-
-\begin{losning}
-Gram-Schmidt. Se illustrasjonen under 'Projeksjon i $\mathbb{R}^2$' i notatet.
-\end{losning}
-
-\begin{oppgave}
-La $V$ være underrommet av $\mathbb{R}^3$ utspent av $\V{u}$ og~$\V{v}$ hvor 
+La $V$ være underrommet av $\mathbb{R}^3$ utspent av  
 $$\vvv{2}{-5}{1} \quad \text{og} \quad \vvv{4}{-4}{2}.$$
-
-\begin{punkt}
 Finn en ortonormal basis for $V$.
-\end{punkt}
 
-\begin{punkt}
-Skissér $V$, $\V{u}$, $\V{v}$ og vektorene du fant i $\textbf{a)}$ i et $x-y-z$-koordinatsystem.
-\end{punkt}
+%\begin{punkt}
+%Skissér $V$, $\V{u}$, $\V{v}$ og vektorene du fant i $\textbf{a)}$ i et $x-y-z$-koordinatsystem.
+%\end{punkt}
 
 \end{oppgave}
 
@@ -160,25 +138,26 @@ Vektorrommet $V$ er et plan i $\mathbb{R}^3$. Vektorene $\V{u}$ og $\V{v}$ ligge
 \begin{losning}
 \end{losning}
 
-\begin{oppgave}
-Gi en forklaring på hvorfor minste kvadraters metode er en applikasjon av ortogonale projeksjoner.
-\end{oppgave}
+%\begin{oppgave}
+%Gi en forklaring på hvorfor minste kvadraters metode er en applikasjon av ortogonale projeksjoner.
+%\end{oppgave}
+%
+%\begin{losning}
+%Vi formulerer problemet vi ønsker å løse som en likning $A\V{x}=\V{b}$. Det er ikke sikkert denne likningen har en løsning. Derfor tar vi den ortogonale projeksjonen av $\V{b}$ ned på kolonnerommet til $A$, $\text{proj}_{\Col A}\V{b}$. Dette er den vektoren som er nærmest $\V{b}$ i $\Col A$, og vi finner derfor den beste approksimasjonen ved å løse likningen $A\V{x}=\text{proj}_{\Col A}\V{b}$. Merk at denne likningen har løsning!
+%\end{losning}
 
-\begin{losning}
-Vi formulerer problemet vi ønsker å løse som en likning $A\V{x}=\V{b}$. Det er ikke sikkert denne likningen har en løsning. Derfor tar vi den ortogonale projeksjonen av $\V{b}$ ned på kolonnerommet til $A$, $\text{proj}_{\Col A}\V{b}$. Dette er den vektoren som er nærmest $\V{b}$ i $\Col A$, og vi finner derfor den beste approksimasjonen ved å løse likningen $A\V{x}=\text{proj}_{\Col A}\V{b}$. Merk at denne likningen har løsning!
-\end{losning}
-
 \begin{oppgave}
-\begin{punkt}
-Skriv ned matriselikningen som ville vært tilfredstilt dersom polynomet $p(x)=ax^2+bx+c$ gikk gjennom punktene
+Vi skal finne polynomer som passer til datasettet 
 $$\vv{0}{1}, \vv{1}{2}, \vv{2}{3},\vv{3}{5},\vv{4}{7}.$$
+\begin{punkt}
+Det finnes et unikt polynom  $p(x)=ax^4+bx^3+cx^2+dx+e$  som tilfredsstilller datasettet. Skriv opp et ligningssystem for koeffisientene.
 \end{punkt}
 \begin{punkt}
-Finn koeffisienter $a$, $b$ og~$c$ som gir best tilpasning.
+Vi skal nå finne et polynom  $p(x)=ax^2+bx+c$ som gir best tilpasning. Finn koeffisientene $a$, $b$ og~$c$.
 \end{punkt}
 
 \begin{punkt}
-Går polynomet du fant i $\textbf{b)}$ gjennom punktene i $\textbf{a)}$?
+Skisser polynomet og de fem punktene. 
 \end{punkt}
 
 \end{oppgave}
@@ -213,19 +192,14 @@ Nei.
 
 
 \begin{oppgave}
-
-\begin{punkt}
-Skriv ned matriselikningen som ville vært tilfredstilt dersom polynomet $p(x)=ax^3+bx^2+cx+d$ gikk gjennom punktene
+Nå skal vi finne polynomer som passer til datasettet 
 $$\vv{0}{1}, \vv{1}{2}, \vv{2}{9},\vv{3}{28},\vv{4}{65}.$$ 
-\end{punkt}
-
-
 \begin{punkt}
-Finn koeffisienter $a$, $b$, $c$ og~$d$ som gir best tilpasning.
+Finn polynomet $p(x)=ax^3+bx^2+cx+d$ med best tilpasning.
 \end{punkt}
 
 \begin{punkt}
-Går polynomet du fant i $\textbf{b)}$ gjennom punktene i $\textbf{a)}$?
+Ser du noe artig?
 \end{punkt}
 
 \end{oppgave}
@@ -264,78 +238,99 @@ Ja.
 
 \end{losning}
 
-\begin{oppgave}
-Er minste kvadraters løsning til et system $A\V{x}=\V{b}$ entydig?
-\end{oppgave}
-
-\begin{losning}
-Nei, ikke generelt.
-
-\noindent
-Forklaring: Kolonnene til $A\tr A$ kan være lineært avhengige slik at $A\tr A \V{x}=A\tr \V{b}$ ikke har entydig løsning. Prøv gjerne å finne et eksempel!
-\end{losning}
-
-
-
-\begin{oppgave} I denne oppgaven skal du utlede din egen metode.
-\begin{punkt}
-La $\V{v}$ være en vektor i $\mathbb{R}^n$. Forklar hvordan du kan finne en ortogonal basis $\V{v},\V{v}_2,\dots \V{v}_n$.
-\end{punkt}
-\begin{punkt}
-Finn en ortogonal basis for $\mathbb{R}^3$ som inneholder $\vvv{1}{2}{3}$.
-\end{punkt}
-\end{oppgave}
-
-\begin{losning}
-\begin{punkt}
-La $V_1$ være det ortogonale komplementet til $\V{v}$. Ta en vilkårlig vektor $\V{v}_2$ i $V_1$. La $V_2$ være det ortogonale komplementet til $\{\V{v},\V{v}_2\}$. Ta en vilkårlig vektor $\V{v}_3$ i $V_2$. La $V_3$ være det ortogonale komplementet til $\{\V{v},\V{v}_2,\V{v}_3\}$. Ta en vilkårlig vektor $\V{v}_4$ i $V_3$. Fortsett denne prosessen til vektor $\V{v}_n$. Nå har du en kandidat $\B=(\V{v},\V{v}_2,\dots,\V{v}_n)$ til en basis. Vektorene er lineært uavhengige fordi de er ortogonale på grunn av måten de er valgt (ref tidligere oppgave). Derfor utgjør de en basis for $\mathbb{R}^n$ ($n$ lineært uavhengige vektorer spenner ut $\mathbb{R}^n$).
-\end{punkt}
-\begin{punkt}
-Det ortogonale komplementet til $\vvv{1}{2}{3}$ er alle vektorer $\vvv{x}{y}{z}$ slik at $$\vvv{1}{2}{3}\boldsymbol{\cdot }\vvv{x}{y}{z}=0,$$ eller ekvivalent
-$$x+2y+3z=0.$$ Det finnes mange løsninger\ldots Du kan f. eks ta $\V{v}_2=\vvv{1}{2}{-3}$. Nå må vi finne en vektor i det ortogonale komplementet til $\V{v}$ og~$\V{v}_2$. Dette kan -- på lik måte som ovenfor -- beskrives av ligningene
-$$x+2y+3z=0$$
-$$x+2y-3z=0,$$ eller ekvivalent matriseligningen $$\begin{bmatrix}
-1 & 2 & 3 \\
-1 & 2 & -3
-\end{bmatrix}\vvv{x}{y}{z}=\V{0}.$$ Det finnes mange løsninger\ldots Du kan f. eks ta $\V{v}_3=\vvv{2}{-1}{0}$. Dermed utgjør -- for eksempel -- vektorene 
-$$\vvv{1}{2}{3},\quad \vvv{1}{2}{-3},\quad \vvv{2}{-1}{0}$$ en ortogonal basis for $\mathbb{R}^3$ som inneholder $\vvv{1}{2}{3}$.
-\end{punkt}
-
-\end{losning}
+%\begin{oppgave}
+%Er minste kvadraters løsning til et system $A\V{x}=\V{b}$ entydig?
+%\end{oppgave}
+%
+%\begin{losning}
+%Nei, ikke generelt.
+%
+%\noindent
+%Forklaring: Kolonnene til $A\tr A$ kan være lineært avhengige slik at $A\tr A \V{x}=A\tr \V{b}$ ikke har entydig løsning. Prøv gjerne å finne et eksempel!
+%\end{losning}
 
 
 \begin{oppgave}
-Et vektorrom med et 'prikkprodukt', også kalt indreprodukt, kalles et indreproduktrom. Vanlig notasjon er $$\langle \V{v},\V{u} \rangle,$$ i stedet for $$\V{v}\boldsymbol{\cdot}\V{u}.$$ Dette produktet skal tilfredstille de viktige egenskapene til prikkproduktet:
+Anta at $\V{u}_1,\dots \V{u}_n$ er en ortonormal basis for $\mathbb{R}^n$. Vis at den inverse matrisen til $A=\begin{bmatrix}
+\V{u}_1 & \dots & \V{u_n}
+\end{bmatrix}$ er gitt ved $A^{-1}=A\tr$.
+\end{oppgave}
 
-\noindent
-Symmetri: $\langle \V{v}, \V{u}\rangle =\langle \V{u}, \V{v}\rangle$.
+\begin{oppgave}
+Vis at en samling vektorer som er parvis ortogonale, og forskjellige fra null, vil være lineært uavhengige.
+\end{oppgave}
 
-\noindent
-Linearitet: $\langle a\V{v}_1+b\V{v_2}, \V{u}\rangle =a\langle \V{v}_1, \V{u}\rangle+b\langle \V{v_2}, \V{u}\rangle$.
 
-\noindent
-Positiv-definitt: $\langle \V{v}, \V{v}\rangle \geq 0$, hvor vi har likhet hvis og bare hvis $\V{v}=0$.
 
+
+\begin{losning}
 \begin{punkt}
-Hva burde definisjonen av det ortogonale komplementet til en vektor $\V{u}$ i et indreproduktrom være?
+Dette er oppgave \textbf{10. b)} kapittel 4 (Matriser).
 \end{punkt}
-
 \begin{punkt}
-Hva burde definisjonen av projeksjonen på en vektor $\V{u}$ i et indreproduktrom være?
+Anta at $\V{v}_1,\dots,\V{v}_n$ er parvis ortogonale; $\V{v}_i\boldsymbol{\cdot}\V{v}_j=0$ for $i\neq j$. Vi må vise at likningen $$x_1\V{v}_1+\dots+a_n\V{v}_n=\V{0}$$ kun har triviell løsning (definisjonen på lineær uavhengighet). Prikk likningen med $\V{v}_1$ for å se at $x_1\|\V{v}_1\|^2=0$. Ettersom $\V{v}_1\neq \V{0}$ må $x_1=0$. Repeter denne prosessen for $i=2,\dots,n$ for å se at de resterende $x_i$-ene også må være lik null.
 \end{punkt}
+\end{losning}
+
+%\begin{oppgave} I denne oppgaven skal du utlede din egen metode.
+%\begin{punkt}
+%La $\V{v}$ være en vektor i $\mathbb{R}^n$. Forklar hvordan du kan finne en ortogonal basis $\V{v},\V{v}_2,\dots \V{v}_n$.
+%\end{punkt}
+%\begin{punkt}
+%Finn en ortogonal basis for $\mathbb{R}^3$ som inneholder $\vvv{1}{2}{3}$.
+%\end{punkt}
+%\end{oppgave}
+%
+%\begin{losning}
+%\begin{punkt}
+%La $V_1$ være det ortogonale komplementet til $\V{v}$. Ta en vilkårlig vektor $\V{v}_2$ i $V_1$. La $V_2$ være det ortogonale komplementet til $\{\V{v},\V{v}_2\}$. Ta en vilkårlig vektor $\V{v}_3$ i $V_2$. La $V_3$ være det ortogonale komplementet til $\{\V{v},\V{v}_2,\V{v}_3\}$. Ta en vilkårlig vektor $\V{v}_4$ i $V_3$. Fortsett denne prosessen til vektor $\V{v}_n$. Nå har du en kandidat $\B=(\V{v},\V{v}_2,\dots,\V{v}_n)$ til en basis. Vektorene er lineært uavhengige fordi de er ortogonale på grunn av måten de er valgt (ref tidligere oppgave). Derfor utgjør de en basis for $\mathbb{R}^n$ ($n$ lineært uavhengige vektorer spenner ut $\mathbb{R}^n$).
+%\end{punkt}
+%\begin{punkt}
+%Det ortogonale komplementet til $\vvv{1}{2}{3}$ er alle vektorer $\vvv{x}{y}{z}$ slik at $$\vvv{1}{2}{3}\boldsymbol{\cdot }\vvv{x}{y}{z}=0,$$ eller ekvivalent
+%$$x+2y+3z=0.$$ Det finnes mange løsninger\ldots Du kan f. eks ta $\V{v}_2=\vvv{1}{2}{-3}$. Nå må vi finne en vektor i det ortogonale komplementet til $\V{v}$ og~$\V{v}_2$. Dette kan -- på lik måte som ovenfor -- beskrives av ligningene
+%$$x+2y+3z=0$$
+%$$x+2y-3z=0,$$ eller ekvivalent matriseligningen $$\begin{bmatrix}
+%1 & 2 & 3 \\
+%1 & 2 & -3
+%\end{bmatrix}\vvv{x}{y}{z}=\V{0}.$$ Det finnes mange løsninger\ldots Du kan f. eks ta $\V{v}_3=\vvv{2}{-1}{0}$. Dermed utgjør -- for eksempel -- vektorene 
+%$$\vvv{1}{2}{3},\quad \vvv{1}{2}{-3},\quad \vvv{2}{-1}{0}$$ en ortogonal basis for $\mathbb{R}^3$ som inneholder $\vvv{1}{2}{3}$.
+%\end{punkt}
+%
+%\end{losning}
+
+
+%\begin{oppgave}
+%Et vektorrom med et 'prikkprodukt', også kalt indreprodukt, kalles et indreproduktrom. Vanlig notasjon er $$\langle \V{v},\V{u} \rangle,$$ i stedet for $$\V{v}\boldsymbol{\cdot}\V{u}.$$ Dette produktet skal tilfredstille de viktige egenskapene til prikkproduktet:
+%
+%\noindent
+%Symmetri: $\langle \V{v}, \V{u}\rangle =\langle \V{u}, \V{v}\rangle$.
+%
+%\noindent
+%Linearitet: $\langle a\V{v}_1+b\V{v_2}, \V{u}\rangle =a\langle \V{v}_1, \V{u}\rangle+b\langle \V{v_2}, \V{u}\rangle$.
+%
+%\noindent
+%Positiv-definitt: $\langle \V{v}, \V{v}\rangle \geq 0$, hvor vi har likhet hvis og bare hvis $\V{v}=0$.
+%
+%\begin{punkt}
+%Hva burde definisjonen av det ortogonale komplementet til en vektor $\V{u}$ i et indreproduktrom være?
+%\end{punkt}
+%
+%\begin{punkt}
+%Hva burde definisjonen av projeksjonen på en vektor $\V{u}$ i et indreproduktrom være?
+%\end{punkt}
 
 %\begin{punkt}
 %Vis at en vilkårlig vektor $\V{v}$ kan skrives entydig som en sum $\V{v}_{\V{u}}+\V{v}_{\V{u}^{\perp}}$ hvor første faktor er projeksjonen ned på $\V{u}$ og andre faktor er projeksjonen ned på det ortogonale komplementet til $\V{u}$.
 %\end{punkt}
-
-\end{oppgave}
-\begin{losning}
-\begin{punkt}
-Alle vektorer $\V{v}$ slik at $\langle \V{v}, \V{u}\rangle=0$.
-\end{punkt}
-
-\begin{punkt}
-Projeksjonen av en vektor $\V{v}$ på $\V{u}$ er gitt ved $$\frac{\langle \V{v}, \V{u}\rangle}{\langle \V{u}, \V{u}\rangle} \V{u}.$$
-\end{punkt}
-\end{losning}
-
+%
+%\end{oppgave}
+%\begin{losning}
+%\begin{punkt}
+%Alle vektorer $\V{v}$ slik at $\langle \V{v}, \V{u}\rangle=0$.
+%\end{punkt}
+%
+%\begin{punkt}
+%Projeksjonen av en vektor $\V{v}$ på $\V{u}$ er gitt ved $$\frac{\langle \V{v}, \V{u}\rangle}{\langle \V{u}, \V{u}\rangle} \V{u}.$$
+%\end{punkt}
+%\end{losning}
+%
