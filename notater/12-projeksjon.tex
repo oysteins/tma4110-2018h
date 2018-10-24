@@ -430,9 +430,9 @@ Det er ikke så vanskelig å se at dette er generaliseringer av vektorprojeksjon
  \]
 og 
  \[
- P_{\V v^{\perp}}=\left(I-\frac{\V v \V v^*}{\V v^* \V v}\right)\V w=\V w - \frac{ \V v^*\V w}{\V v^* \V v} \V v ,
+ P_{\V v^{\perp}}\V w=\left(I-\frac{\V v \V v^*}{\V v^* \V v}\right)\V w=\V w - \frac{ \V v^*\V w}{\V v^* \V v} \V v ,
  \]
- så likheten med vektorprojeksjon i $\R^2$ er jo slående.
+ så likheten med vektorprojeksjon i $\R^2$ er jo slående. Det er ikke så vanskelig å vise at $P_{\V v}\V w$ og $P_{\V v^{\perp}}\V w$ er ortogonale. Dette skal vi gjøre i øvingsopplegget.
 
  \begin{center}
 \begin{tikzpicture}[scale=.42]
@@ -534,11 +534,11 @@ P_{\V v^{\perp}}\V w &=\V w-\frac{ \V v^*\V w}{\V v^* \V v} \V v \\&=
 
 \section*{Mer om ortogonalitet}
 \begin{defnx}
-En \defterm{ortogonal mengde} er en mengde vekorer $\V v_1$, $\V v_2$, ...,$\V v_n$, slik at
+En \defterm{ortogonal mengde} er en mengde vekorer $\V u_1$, $\V u_2$, ...,$\V u_n$, slik at
 \[
-\V v_i^*  \V v_k = 0
+\V u_i^*  \V u_k = 0
 \]
-for alle vektorer $\V v_i$ og $\V v_k$ i mengden. Dersom $\|\V v_i \|=1$ for alle vektorene, sier vi at mengden er \defterm{ortonormal}.
+for alle vektorer $\V u_i$ og $\V u_k$ i mengden. Dersom $\|\V u_i \|=1$ for alle vektorene, sier vi at mengden er \defterm{ortonormal}.
 \end{defnx}
 
 
@@ -547,26 +547,68 @@ Standardbasisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ og $\C^n$ og  er en o
 \end{ex}
 
 \begin{defnx}
-En ortogonal mengde $\V v_1$, $\V v_2$, ...,$\V v_n$, spenner ut et rom $V$, sier vi at mengden er en \defterm{ortogonal basis} for $V$.
+En ortogonal mengde $\V u_1$, $\V u _2$, ...,$\V u_n$, spenner ut et rom $V$, sier vi at mengden er en \defterm{ortogonal basis} for $V$.
 \end{defnx}
 
-\begin{ex}
-Mengden bliff blaff bloff er en ortogonal basis for $\C^3$.
-\end{ex}
-
-\begin{ex}
-Mengden bliff blaff bloff er en basis for $\C^3$, men den er ikke ortogonal.
-\end{ex}
-
+%\begin{ex}
+%Mengden bliff blaff bloff er en ortogonal basis for $\C^3$.
+%\end{ex}
+%
+%\begin{ex}
+%Mengden bliff blaff bloff er en basis for $\C^3$, men den er ikke ortogonal.
+%\end{ex}
+%
 
 %\begin{ex}
 %Rekkerommet og nullrommet står ortogonalt på hverandre.
 %\end{ex}
 
 \section*{Gram-Schmidt}
-Gram-Schmidt er en prosess for å transformere en lineært uavhengig vektormengde til en ortogonal mengde som spenner ut det samme rommet. 
+La $\V v_1$, $\V v_2$, ...,$\V v_n$ være en lineært uavhengig vektormengde. 
+Vi skal lage oss en ortogonal basis $\V u_1$, $\V u_2$, ...,$\V u_n$ for rommet utspent av vektorene i mengden. 
+Vi begynner med å definere
+\[
+\V u_1=\V v_1
+\]
+Vektoren $\V v_2$ er ikke ortogonal på $\V u_1$, men 
+\[
+\V u_2=\V v_2-P_{\V u_1^{\perp}} \V v_2=\V v_2-\frac{ \V u_1^*\V v_2}{\V u_1^* \V u_1}\V u_1
+\]
+er. 
+Vi skal vise i øvingsopplegget at   $\V u_1$ og $\V u_2$ spenner ut det samme planet som $\V v_1$ og $\V v_2$.
+Vektoren 
+\begin{align*}
+\V u_3&=\V v_3-P_{\V u_1^{\perp}} \V v_3-P_{\V u_2^{\perp}} \V v_3\\[2pt]&=\V v_3-\frac{ \V u_1^*\V v_3}{\V u_1^* \V u_1}\V u_1-\frac{ \V u_2^*\V v_3}{\V u_2^* \V u_2}\V u_2
+\end{align*}
+er ortogonal på både $\V u_1$ og $\V u_2$, 
+og de tre vektorene $\V u_1$, $\V u_2$ og $\V u_3$  
+spenner ut det samme rommet som $\V v_1$, $\V v_2$ og $\V v_3$. 
+Nå kan vi fortsette slik, og definere rekursivt
+\begin{align*}
+\V u_k&=\V v_k-\sum_{j=1}^{k-1}P_{\V u_j^{\perp}} \V v_k\\[2pt]&=\V v_k-\sum_{j=1}^{k-1}\frac{ \V u_j^*\V v_k}{\V u_j^* \V u_j}\V u_j.
+\end{align*}
+Det kan vises at $\V u_1$, $\V u_2$, ...,$\V u_n$ er en ortogonal basis for rommet utspent av $\V v_1$, $\V v_2$, ...,$\V v_n$.
+
+
+
+
 
 \section*{Minste kvadraters metode}
-Dette er en teknikk for å 'løse' systemer med flere likninger enn ukjente. Kort fortalt projiserer den høyresiden ned i kolonnerommet til matrisen, for å finne punktet med kortest avstand til høyresiden.
+Dette er en teknikk for å finne tilnærmede løsninger til systemer med flere likninger enn ukjente. 
+La oss si at $A$ er en $m \times n$-matrise, $x$ og $b$ er kolonnevektorer i $\C^n$, og at vi ønsker å betrakte systemet
+\[
+Ax=b
+\]
+for $m>n$. Dette systemet vil ikke ha noen løsning med mindre $b$ tilfeldigvis ligger i kolonnerommet til $A$, 
+så vi ønsker istedet å finne den $x$ som minimerer avstanden fra $Ax$ til $b$. 
+Hvis vi krever at vektoren $Ax-b$ står ortogonalt på kolonnerommet til $A$, oppnår vi dette. Altså må vi ha
+\[
+A^*(Ax-b)=0
+\]
+eller 
+\[
+A^*Ax=A^*b.
+\]
+Dette er et $n \times n$-system som kalles normalligningene. Løsningen av systemet gir den $x$ som minimerer avstanden fra $Ax$ til $b$.
 
 \kapittelslutt
