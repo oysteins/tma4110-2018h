@@ -559,6 +559,29 @@ En ortogonal mengde $\V u_1$, $\V u _2$, ...,$\V u_n$, spenner ut et rom $V$, si
 %\end{ex}
 %
 
+Hvis vi har en ortogonal basis for et rom, er det veldig lett å finne en vektors komponenter i rommet. Vi bare projiserer vektoren på elementene i basisen. 
+\begin{thm}
+La $\V u_1$, $\V u _2$, ...,$\V u_n$ være en ortogonal basis for $V$, og la $\V v \in V$. I så fall kan $\V v$ skrives
+\begin{align*}
+\V v&= P_{\V u_1} \V v + P_{\V u_2} \V v + ... +P_{\V u_n} \V v\\ &= \frac{\V u_1^*\V v}{\V u_1^*\V u_1}\V u_1 + \frac{\V u_2^*\V v}{\V u_2^*\V u_2}\V u_2+...+\frac{\V u_n^*\V v_n}{\V u_n^*\V u_n}\V u_n
+\end{align*}
+\end{thm}
+
+\noindent Vi kan også projisere en vektor ned i et rom der den ikke hører hjemme. Projeksjonen minimerer avstanden fra rommet til vektoren.
+\begin{thm}
+La $\V u_1$, $\V u _2$, ...,$\V u_n$ være en ortogonal basis for $V$, og la $\V v \notin V$. Punktet
+\begin{align*}
+\V v&= P_{\V u_1} \V v + P_{\V u_2} \V v + ... +P_{\V u_n} \V v\\ &= \frac{\V u_1^*\V v}{\V u_1^*\V u_1}\V u_1 + \frac{\V u_2^*\V v}{\V u_2^*\V u_2}\V u_2+...+\frac{\V u_n^*\V v_n}{\V u_n^*\V u_n}\V u_n
+\end{align*}
+er det punktet i $V$ som har kortest avstand til $\V v$:
+\[
+\|\V v-\V v' \|=\min_{\V u \in V} \|\V v-\V u \|
+\]
+\end{thm}
+
+
+
+
 %\begin{ex}
 %Rekkerommet og nullrommet står ortogonalt på hverandre.
 %\end{ex}
@@ -572,20 +595,20 @@ Vi begynner med å definere
 \]
 Vektoren $\V v_2$ er ikke ortogonal på $\V u_1$, men 
 \[
-\V u_2=\V v_2-P_{\V u_1^{\perp}} \V v_2=\V v_2-\frac{ \V u_1^*\V v_2}{\V u_1^* \V u_1}\V u_1
+\V u_2=\V v_2-P_{\V u_1} \V v_2=\V v_2-\frac{ \V u_1^*\V v_2}{\V u_1^* \V u_1}\V u_1
 \]
 er. 
 Vi skal vise i øvingsopplegget at   $\V u_1$ og $\V u_2$ spenner ut det samme planet som $\V v_1$ og $\V v_2$.
 Vektoren 
 \begin{align*}
-\V u_3&=\V v_3-P_{\V u_1^{\perp}} \V v_3-P_{\V u_2^{\perp}} \V v_3\\[2pt]&=\V v_3-\frac{ \V u_1^*\V v_3}{\V u_1^* \V u_1}\V u_1-\frac{ \V u_2^*\V v_3}{\V u_2^* \V u_2}\V u_2
+\V u_3&=\V v_3-P_{\V u_1} \V v_3-P_{\V u_2} \V v_3\\[2pt]&=\V v_3-\frac{ \V u_1^*\V v_3}{\V u_1^* \V u_1}\V u_1-\frac{ \V u_2^*\V v_3}{\V u_2^* \V u_2}\V u_2
 \end{align*}
 er ortogonal på både $\V u_1$ og $\V u_2$, 
 og de tre vektorene $\V u_1$, $\V u_2$ og $\V u_3$  
 spenner ut det samme rommet som $\V v_1$, $\V v_2$ og $\V v_3$. 
 Nå kan vi fortsette slik, og definere rekursivt
 \begin{align*}
-\V u_k&=\V v_k-\sum_{j=1}^{k-1}P_{\V u_j^{\perp}} \V v_k\\[2pt]&=\V v_k-\sum_{j=1}^{k-1}\frac{ \V u_j^*\V v_k}{\V u_j^* \V u_j}\V u_j.
+\V u_k&=\V v_k-\sum_{j=1}^{k-1}P_{\V u_j} \V v_k\\[2pt]&=\V v_k-\sum_{j=1}^{k-1}\frac{ \V u_j^*\V v_k}{\V u_j^* \V u_j}\V u_j.
 \end{align*}
 Det kan vises at $\V u_1$, $\V u_2$, ...,$\V u_n$ er en ortogonal basis for rommet utspent av $\V v_1$, $\V v_2$, ...,$\V v_n$.
 
@@ -595,20 +618,20 @@ Det kan vises at $\V u_1$, $\V u_2$, ...,$\V u_n$ er en ortogonal basis for romm
 
 \section*{Minste kvadraters metode}
 Dette er en teknikk for å finne tilnærmede løsninger til systemer med flere likninger enn ukjente. 
-La oss si at $A$ er en $m \times n$-matrise, $x$ og $b$ er kolonnevektorer i $\C^n$, og at vi ønsker å betrakte systemet
+La oss si at $A$ er en $m \times n$-matrise, $\V x$ og $\V b$ er kolonnevektorer i $\C^n$, og at vi ønsker å betrakte systemet
 \[
-Ax=b
+A\V x=\V b
 \]
-for $m>n$. Dette systemet vil ikke ha noen løsning med mindre $b$ tilfeldigvis ligger i kolonnerommet til $A$, 
-så vi ønsker istedet å finne den $x$ som minimerer avstanden fra $Ax$ til $b$. 
-Hvis vi krever at vektoren $Ax-b$ står ortogonalt på kolonnerommet til $A$, oppnår vi dette. Altså må vi ha
+for $m>n$. Dette systemet vil ikke ha noen løsning med mindre $\V b$ tilfeldigvis ligger i kolonnerommet til $A$, 
+så vi ønsker istedet å finne den $\V x$ som minimerer avstanden fra $A\V x$ til $\V b$. 
+Hvis vi krever at vektoren $A\V x-\V b$ står ortogonalt på kolonnerommet til $A$, oppnår vi dette. Altså må vi ha
 \[
-A^*(Ax-b)=0
+A^*(A\V x-\V b)=\V 0
 \]
 eller 
 \[
-A^*Ax=A^*b.
+A^*A\V x=A^*\V b.
 \]
-Dette er et $n \times n$-system som kalles normalligningene. Løsningen av systemet gir den $x$ som minimerer avstanden fra $Ax$ til $b$.
+Dette er et $n \times n$-system som kalles normalligningene. Løsningen av systemet gir den $\V x$ som minimerer avstanden fra $A\V x$ til $\V b$.
 
 \kapittelslutt
