@@ -5,17 +5,15 @@
 
  
  \section*{Ortogonal projeksjon i $\R^2$}
- Du husker fra gymnaset skalarproduktet.
-  Du har lært to måter å beregne skalarproduktet nemlig
+ Du husker skalarproduktet fra gymnaset.
+  Du har lært to måter å beregne skalarproduktet, nemlig
 \[
  \V{v}\cdot  \V{w} = \|\V v\| \|\V w\| \cos \theta,
  \] 
 der $\theta$ er vinkelen mellom $\V{v}$ og $\V{w}$, og 
 \[
- \V{v}\cdot  \V{w} = sum
+ \V{v}\cdot  \V{w} = v_1 w_1+v_1w_2.
  \] 
-
-
 Vi bruker skalarproduktet til å projisere vektorer ortogonalt på hverandre. Det sentrale spørsmålet er: hvor lange er de røde og blå lengdene i figuren under? 
  \begin{center}
 \begin{tikzpicture}[scale=.42]
@@ -53,13 +51,13 @@ Vi bruker skalarproduktet til å projisere vektorer ortogonalt på hverandre. De
 \\
 {\small \textit{Hva er projeksjon?}}
 \end{center}
-Vet man det, kan utlede en formler for den røde lengden:
+Vet man det, kan utlede en formler for $\V w$s komponent langs $\V v$, altså den røde lengden:
 \[
-w_{\V{v}}=\|\V w\| \cos \theta=\frac{\|\V v\|}{\|\V v\|} \|\V w\| \cos \theta =\frac{\V v \cdot \V w}{\|\V v\|}
+w_{\V{v}}=\|\V w\| \cos \theta=\frac{\|\V v\|}{\|\V v\|} \|\V w\| \cos \theta =\frac{\V v \cdot \V w}{\|\V v\|},
 \]
-Den blå lengden kan så beregnes med pytagoras:
+og $\V w$s komponent ortogonalt på $\V v$, altså den blå lengden:
 \[
-w_{\V{v}^{\perp}}=\sqrt{\|\V w\|^2-\left(\frac{\V v \cdot \V w}{\|\V v\|}\right)^2}
+w_{\V{v}^{\perp}}=\sqrt{\|\V w\|^2-\left(\frac{\V v \cdot \V w}{\|\V v\|}\right)^2}.
 \]
 %Denne lengden kalles $\V v$ sin skalarprojeksjon ortogonalt på $\V w$. 
 Hvis vi tenker at de røde og blå lengdene er vektorer, kan de skrives
@@ -71,6 +69,7 @@ og
 \V w - \V w_{\V{v}}.
 \]
  \begin{center}
+Disse to vektorene kalles henholdsvis projeksjonen av $\V w$ på $\V v$, og projeksjonen av $\V w$ ortogonalt på $\V v$.
 \begin{tikzpicture}[scale=.42]
 \draw[-latex,thick] (0,0) -- (7,1);
 \draw[-latex,thick] (0,0) -- (3,6);
@@ -117,7 +116,7 @@ Vektoren
 2 \\ 1
 \end{bmatrix}
 \]
-sin skalarprojeksjon i retningen
+sin komponent i retningen
 \[
 \V v
 =
@@ -129,7 +128,7 @@ er:
 \[
 \frac{\V v \cdot \V w}{\|\V v\|}=\frac{2 \cdot 1+1\cdot 2}{\sqrt{2^2+1^2}}=\frac{4}{\sqrt{5}}
 \]
-Du kan tenke på dette på som $\V w$s komponent i retningen $\V v$. Vektorprojeksjonen er:
+Vektorprojeksjonene er
 \[
 \V w_{\V{v}}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=
 \frac{4}{5}
@@ -137,7 +136,7 @@ Du kan tenke på dette på som $\V w$s komponent i retningen $\V v$. Vektorproje
 1 \\ 2
 \end{bmatrix} 
 \]
-Vektorprojeksjonen til $\V w$ normalt på $\V v$ er:
+og
 \[
 \V w - \V w_{\V{v}}=
 \begin{bmatrix}
@@ -158,7 +157,7 @@ Vektorprojeksjonen til $\V w$ normalt på $\V v$ er:
  
 \section*{Adjungering}
 
-Vi skal begynne med å utvide transponeringsoperasjonen litt. 
+Før vi kan generalisere projeksjon til $\C^n$, må vi utvide transponeringsoperasjonen litt. 
 
 \begin{defn}
 La
@@ -287,7 +286,7 @@ w_n \overline v_1     & w_n \overline v_2              & \cdots & w_n \overline 
 \[
 \V{v}^* \V{w}=\V{v}^T\V{w}= v_1w_1 + v_2w_2 + \cdots +v_nw_n=\V{v}\cdot  \V{w}
  \] 
- slik du er vant til fra gymnaset. Resultatet av dette produktet er en skalar, og derfor kaller man det gjerne skalarproduktet.  
+ slik du er vant til fra gymnaset. Resultatet av dette produktet er en skalar, og det er derfor man gjerne kaller det skalarproduktet.  
  \end{merkx}
  
  
@@ -556,7 +555,6 @@ Standardbasisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ og $\C^n$ og  er en o
 \begin{defnx}
 Dersom en ortogonal mengde $\V u_1$, $\V u _2$, ...,$\V u_n$ spenner ut et rom $V$, sier vi at mengden er en \defterm{ortogonal basis} for $V$.
 \end{defnx}
-
 %\begin{ex}
 %Mengden bliff blaff bloff er en ortogonal basis for $\C^3$.
 %\end{ex}
@@ -565,8 +563,7 @@ Dersom en ortogonal mengde $\V u_1$, $\V u _2$, ...,$\V u_n$ spenner ut et rom $
 %Mengden bliff blaff bloff er en basis for $\C^3$, men den er ikke ortogonal.
 %\end{ex}
 %
-
-Hvis vi har en ortogonal basis for et rom, er det veldig lett å finne en vektors komponenter i rommet. Vi bare projiserer vektoren på elementene i basisen. 
+\noindent Hvis vi har en ortogonal basis for et rom, er det veldig lett å finne en vektors komponenter i rommet. Vi bare projiserer vektoren på elementene i basisen. 
 \begin{thm}
 La $\V u_1$, $\V u _2$, ...,$\V u_n$ være en ortogonal basis for $V$, og la $\V v \in V$. I så fall kan $\V v$ skrives
 \begin{align*}
@@ -640,5 +637,95 @@ eller
 A^*A\V x=A^*\V b.
 \]
 Dette er et $n \times n$-system som kalles normalligningene. Løsningen av systemet gir den $\V x$ som minimerer avstanden fra $A\V x$ til $\V b$.
+\begin{ex}
+Vi ønsker å bruke minste kvadrats metode på systemet med totalmatrise
+\[
+\begin{amatrix}{2}
+0 & 1   & 1-i\\
+i & i &  1+i\\
+ 0 & i   & i
+\end{amatrix}
+\]
+Vi ganger matrisen på venstre side av ligningssystemet med sin adjungerte
+\[
+\begin{bmatrix}
+0 & -i   & 0\\
+1 & -i &  -i
+\end{bmatrix}
+\]
+og får 
+\[
+\begin{bmatrix}
+0 & -i   & 0\\
+1 & -i &  -i
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1\\
+i & i \\
+ 0 & i
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 1\\
+ 1 & 3
+\end{bmatrix}.
+\]
+Vi ganger høyresiden med den adjungerte av venstresiden, og får
+\[
+\begin{bmatrix}
+0 & -i   & 0\\
+1 & -i &  -i
+\end{bmatrix}
+\begin{bmatrix}
+ 1-i\\
+ 1+i \\
+ i
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 1-i\\
+ 3-2i
+\end{bmatrix}
+\]
+Løsningen av systemet med totalmatrise
+\[
+\begin{amatrix}{2}
+1 & 1   & 1-i\\
+1 & 3 &  3-2i
+\end{amatrix}
+\]
+gir vektene til den lineærkombinasjonen av matrisens kolonner som minimerer avstanden til $\V b$.
+\end{ex}
+
+\section*{Litt polynomregresjon}
+Hvis du har $n+1$ punkter $(x_i,y_i)$ i $\R^2$, der $x_i$ er forskjellig for alle punkter, vil det generelt være mulig å finne et reelt polynom 
+\[
+p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0
+\]
+hvis graf går gjennom alle disse punktene. Hvis vi krever $p(x_i)=y_i$ for alle $1\leq i \leq n+1$, får vi et $(n+1)\times (n+1)$-likningssystem for koeffisientene $a_i$ med totalmatrise
+\[
+\begin{amatrix}{5}
+x_{1}^{n} & x_{1}^{n-1} & \hdots  & x_{1} & 1 & y_1\\
+x_{2}^{n} & x_{2}^{n-1} & \hdots  & x_{2} & 1 & y_2\\
+\vdots  & \vdots & \ddots  & \vdots & \vdots & \vdots\\
+x_{n+1}^{n} & x_{n+1}^{n-1} & \hdots  & x_{n+1} & 1 & y_{n+1}\\
+\end{amatrix}
+\]
+Dersom man prøver å gjøre dette med et polynom som har orden $m < n$ , vil man få det overbestemte $(n+1)\times (m+1)$systemet 
+\[
+\begin{amatrix}{5}
+x_{1}^{m} & x_{1}^{n-1} & \hdots  & x_{1} & 1 & y_1\\
+x_{2}^{m} & x_{2}^{n-1} & \hdots  & x_{2} & 1 & y_2\\
+\vdots  & \vdots & \ddots  & \vdots & \vdots & \vdots\\
+x_{n+1}^{m} & x_{n+1}^{n-1} & \hdots  & x_{n+1} & 1 & y_{n+1}\\
+\end{amatrix}
+\]
+Dersom man så bruker minste kvadrats metode på dette systemet, 
+får man et polynom som passer ganske bra til punktene uten at grafen går gjennom hvert enkelt punkt - 
+dette kalles \defterm{regresjon}.
+\begin{ex}
+Vi prøver å tilpasse andregradspolynomet $ax^2+bx+c$ til punktene
+
+\end{ex}
 
 \kapittelslutt
