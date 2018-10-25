@@ -10,8 +10,18 @@ Finn den adjungerte matrisen til
  2-i & 1+i
 \end{bmatrix}
 \]
-
 \end{oppgave}
+
+
+\begin{losning}
+\[
+\begin{bmatrix}
+ 1-i & 2 & 2 + i \\
+ 1+i & i & 1-i
+\end{bmatrix}
+\]
+\end{losning}
+
 
 \begin{oppgave}
 La
@@ -21,8 +31,35 @@ La
 Finn vektorprojeksjonen av $\V u$ på $\V v$. Tegn $\V u$, $\V v$ og vektorprojeksjonen i samme koordinatsystem. 
 \end{oppgave}
 
+
+\begin{losning}
+Projeksjonen av $\u$ på~$\v$ er:
+\[
+\u_\v
+= \frac{\v^* \u}{\v^* \v} \v
+= \frac{1 \cdot 2 + 2 \cdot (-5)}{1^2 + 2^2} \vv{1}{2}
+%= \frac{-8}{5} \vv{1}{2}
+= \vv{-8/5}{-16/5}
+\]
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+\draw[->] (-5.5,0) -- (5.5,0);
+\draw[->] (0,-5.3) -- (0,3.5);
+\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
+\draw (\x,.1) -- (\x,-.1);% node[anchor=north] {$\x$};
+\foreach \y in {-5,-4,-3,-2,-1,1,2,3}
+\draw (.1,\y) -- (-.1,\y);% node[anchor=east] {$\y$};
+\draw[->] (0,0) -- (2,-5) node[anchor=west] {$\u$};
+\draw[->] (0,0) -- (1,2) node[anchor=west] {$\v$};
+\draw[->] (0,0) -- (-1.6,-3.2) node[anchor=north] {$\u_\v$};
+\end{tikzpicture}
+\end{center}
+\end{losning}
+
+
 \begin{oppgave}
 Hvilke matriser representerer projeksjoner?
+\\
 \noindent
 \begin{minipage}{0.14\textwidth}
 \begin{punkt}
@@ -87,6 +124,111 @@ $
 \end{oppgave}
 
 
+\begin{losning}
+For å finne ut om en matrise $P$ representerer en projeksjon, må vi
+sjekke om $P^2 = P$.
+\begin{punkt}
+$
+\begin{bmatrix}
+ 0 & 0\\
+ 1 & 1
+\end{bmatrix}
+^2
+=
+\begin{bmatrix}
+ 0 & 0\\
+ 1 & 1
+\end{bmatrix}
+$
+\end{punkt}
+\begin{punkt}
+$
+\begin{bmatrix}
+ 0 & 0\\
+ 2 & 1
+\end{bmatrix}
+^2
+=
+\begin{bmatrix}
+ 0 & 0\\
+ 2 & 1
+\end{bmatrix}
+$
+\end{punkt}
+\begin{punkt}
+$
+\begin{bmatrix}
+ 0 & 0\\
+ 0 & 1
+\end{bmatrix}
+^2
+=
+\begin{bmatrix}
+ 0 & 0\\
+ 0 & 1
+\end{bmatrix}
+$
+\end{punkt}
+\begin{punkt}
+$
+\begin{bmatrix}
+ 0 & 0\\
+ 1 & 0
+\end{bmatrix}
+^2
+=
+\begin{bmatrix}
+ 0 & 0\\
+ 0 & 0
+\end{bmatrix}
+\ne
+\begin{bmatrix}
+ 0 & 0\\
+ 1 & 0
+\end{bmatrix}
+$
+\end{punkt}
+\begin{punkt}
+$
+\begin{bmatrix}
+ 0 & 1\\
+ 1 & 0
+\end{bmatrix}
+^2
+=
+\begin{bmatrix}
+ 1 & 0\\
+ 0 & 1
+\end{bmatrix}
+\ne
+\begin{bmatrix}
+ 0 & 1\\
+ 1 & 0
+\end{bmatrix}
+$
+\end{punkt}
+\begin{punkt}
+$
+\begin{bmatrix}
+ 1 & 0\\
+ 0 & 1
+\end{bmatrix}
+^2
+=
+\begin{bmatrix}
+ 1 & 0\\
+ 0 & 1
+\end{bmatrix}
+$
+\end{punkt}
+\medskip
+\noindent
+Konklusjon: Matrisene i del~\textbf{a)}, \textbf{b)}, \textbf{c)}
+og~\textbf{f)} representerer projeksjoner; matrisene i del~\textbf{d)}
+og~\textbf{e)} representerer ikke projeksjoner.
+\end{losning}
+
+
 
 \begin{oppgave}
 Hvilke av vektorene er ortogonale med hverandre?
@@ -107,6 +249,57 @@ $\vvv{i}{0}{1}$, $\vvv{i}{1}{0}$ og $\vvv{1}{i}{i}$ \\[4pt]
 %\end{punkt}
 \end{oppgave}
 
+
+\begin{losning}
+\begin{punkt}
+Indreproduktet av de to vektorene er:
+\[
+\vvv{2}{-5}{1}^*
+\vvv{1}{2}{0}
+= 2 \cdot 1 + (-5) \cdot 2 + 1 \cdot 0 = -8
+\]
+Siden indreproduktet ikke er~$0$, er vektorene ikke ortogonale.
+\end{punkt}
+
+\begin{punkt}
+Vi ser på indreproduktet av hvert par av vektorer:
+\begin{align*}
+\vvv{1}{0}{-1}^* \vvv{1}{\sqrt{2}}{1}  &= 0 \\
+\vvv{1}{0}{-1}^* \vvv{1}{-\sqrt{2}}{1} &= 0 \\
+\vvv{1}{\sqrt{2}}{1}^* \vvv{1}{-\sqrt{2}}{1} &= 0
+\end{align*}
+Alle de tre vektorene er ortogonale til hverandre.
+\end{punkt}
+
+\begin{punkt}
+Vi ser på indreproduktet av hvert par av vektorer:
+\begin{align*}
+\vvv{i}{0}{1}^* \vvv{i}{1}{0}
+&= \begin{bmatrix} -i & 0 & 1 \end{bmatrix} \vvv{i}{1}{0}
+ = 1 \\
+\vvv{i}{0}{1}^* \vvv{1}{i}{i}
+&= \begin{bmatrix} -i & 0 & 1 \end{bmatrix} \vvv{1}{i}{i}
+ = 0 \\
+\vvv{i}{1}{0}^* \vvv{1}{i}{i}
+&= \begin{bmatrix} -i & 1 & 0 \end{bmatrix} \vvv{1}{i}{i}
+ = 0
+\end{align*}
+Vektorene $(i,0,1)$ og $(i,1,0)$ er altså ikke ortogonale,
+men vektoren $(1,i,i)$ er ortogonal til hver av de to andre.
+\end{punkt}
+
+\begin{punkt}
+Vi ser på indreproduktet av hvert par av vektorer:
+\begin{align*}
+\vvv{1}{0}{0}^* \vvv{1+i}{2+i}{3+i} &= 1 + i \\
+\vvv{1}{0}{0}^* \vvv{3+i}{2+i}{1+i} &= 3 + i \\
+\vvv{1+i}{2+i}{3+i}^* \vvv{3+i}{2+i}{1+i} &= 11 + 12i
+\end{align*}
+Ingen av de tre vektorene er ortogonale til hverandre.
+\end{punkt}
+\end{losning}
+
+
 \begin{oppgave}
 Beregn $P_{\V u}$, $P_{\V u^{\perp}}$, $P_{\V u}\V v$ og $P_{\V u^{\perp}}\V v$ når \\[2pt]
 \begin{punkt}
@@ -126,6 +319,115 @@ $\V{u}=\vvv{i}{0}{1}$ og $\V{v}=\vvv{i}{1}{0}$\\[4pt]
 %\end{punkt}
 \end{oppgave}
 
+
+\begin{losning}
+\begin{punkt}
+Vi får:
+\begin{align*}
+P_{\u}
+&= \frac{1}{\u^* \u} \cdot (\u \u^*) \\
+&= \frac{1}{2^2 + (-5)^2 + 1^2}
+\begin{bmatrix}
+ 2 \cdot 2 &  2 \cdot (-5) &  2 \cdot 1 \\
+-5 \cdot 2 & -5 \cdot (-5) & -5 \cdot 1 \\
+ 1 \cdot 2 &  1 \cdot (-5) &  1 \cdot 1
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+2/15 & -1/3 & 1/15 \\
+-1/3 &  5/6 & -1/6 \\
+1/15 & -1/6 & 1/30
+\end{bmatrix}
+\\
+P_{\u^\perp}
+&= I_3 - P_\u
+=
+\begin{bmatrix}
+13/15 & 1/3 & -1/15 \\
+ 1/3  & 1/6 &  1/6  \\
+-1/15 & 1/6 & 29/30
+\end{bmatrix}
+\\
+P_\u \v
+&=
+\begin{bmatrix}
+13/15 & 1/3 & -1/15 \\
+ 1/3  & 1/6 &  1/6  \\
+-1/15 & 1/6 & 29/30
+\end{bmatrix}
+\vvv{1}{2}{0}
+= \vvv{-8/15}{4/3}{-4/15}
+\\
+P_{\u^\perp} \v
+&=
+\begin{bmatrix}
+13/15 & 4/3 & 14/15 \\
+ 4/3  & 1/6 &  7/6  \\
+14/15 & 7/6 & 29/30
+\end{bmatrix}
+\vvv{1}{2}{0}
+= \vvv{23/15}{2/3}{4/15}
+\end{align*}
+\end{punkt}
+
+\noindent
+I de neste delene viser vi ikke all mellomregningen, men bare
+resultatene.
+
+\begin{punkt}
+\vspace{-15pt}
+\begin{align*}
+P_\u
+&=
+\begin{bmatrix}
+ 1/2 & 0 & -1/2 \\
+ 0   & 0 & 0    \\
+-1/2 & 0 &  1/2
+\end{bmatrix}
+&
+P_\u \v &= \0
+\\
+P_{\u^\perp}
+&=
+\begin{bmatrix}
+1/2 & 0 & 1/2 \\
+0   & 1 & 0    \\
+1/2 & 0 & 1/2
+\end{bmatrix}
+&
+P_{\u^\perp} \v &= \v
+\end{align*}
+\end{punkt}
+
+\begin{punkt}
+$\V{u}=\vvv{i}{0}{1}$ og $\V{v}=\vvv{i}{1}{0}$\\[4pt]
+\vspace{-15pt}
+\begin{align*}
+P_\u
+&=
+\begin{bmatrix}
+1/2  & 0 & i/2 \\
+0    & 0 & 0   \\
+-i/2 & 0 & 1/2
+\end{bmatrix}
+&
+P_\u \v &= \vvv{i/2}{0}{1/2}
+\\
+P_{\u^\perp}
+&=
+\begin{bmatrix}
+1/2  & 0 & -i/2 \\
+0    & 1 & 0    \\
+i/2  & 0 & 1/2
+\end{bmatrix}
+&
+P_{\u^\perp} \v &= \vvv{i/2}{1}{-1/2}
+\end{align*}
+\end{punkt}
+\end{losning}
+
+
 \begin{oppgave}
 Vis at vektorene 
 \[
@@ -138,29 +440,32 @@ utgjør en ortogonal basis for $\R^3$, og finn koordinatene til punktet
 i denne basisen.
 \end{oppgave}
 
-\begin{losning}
-\begin{punkt}
-Hint: Prikkproduktet er lineært.
-\end{punkt}
 
-\begin{punkt}
-Bruk $T$ på standardbasisen til $\mathbb{R}^3$ for å se at
-$$A=\frac{1}{30}\begin{bmatrix}
-4 & -10 & 2\\
--10 & 25 & -5\\
-2 & -5 & 1
-\end{bmatrix}.$$
-\end{punkt}
 
-\begin{punkt}
-Bildet er linjen utspent av $\V{u}$. Kjernen er alt som sendes til null når vi prikker med $\V{u}$, dvs. det ortogonale komplementet. Fra dette ser vi at $T$ ikke er surjektiv eller injektiv.
-\end{punkt}
-
-\begin{punkt}
-Hint: En vektor $\V{x}$ kan skrives som en entydig sum $\V{x}=\text{proj}_{\V{u}^{\perp}}\V{x}+\text{proj}_{\V{u}}\V{x}$, hvor siste ledd er $T(\V{x})$ fra \textbf{a)}. Dermed blir projeksjonen ned på det ortogonale komplementet
-$$\text{proj}_{\V{u}^{\perp}}\V{x}=\V{x}-T(\V{x}).$$ Nå gjør vi som i løsningen til $\textbf{b)}$: sett inn for $\V{x}=\V{e}_i$, $i=1,2,3$, og bruk dette som kolonnevektorer.
-\end{punkt}
-\end{losning}
+% TODO: denne løsningen har kommet bort fra oppgaven sin
+% \begin{losning}
+% \begin{punkt}
+% Hint: Prikkproduktet er lineært.
+% \end{punkt}
+%
+% \begin{punkt}
+% Bruk $T$ på standardbasisen til $\mathbb{R}^3$ for å se at
+% $$A=\frac{1}{30}\begin{bmatrix}
+% 4 & -10 & 2\\
+% -10 & 25 & -5\\
+% 2 & -5 & 1
+% \end{bmatrix}.$$
+% \end{punkt}
+%
+% \begin{punkt}
+% Bildet er linjen utspent av $\V{u}$. Kjernen er alt som sendes til null når vi prikker med $\V{u}$, dvs. det ortogonale komplementet. Fra dette ser vi at $T$ ikke er surjektiv eller injektiv.
+% \end{punkt}
+%
+% \begin{punkt}
+% Hint: En vektor $\V{x}$ kan skrives som en entydig sum $\V{x}=\text{proj}_{\V{u}^{\perp}}\V{x}+\text{proj}_{\V{u}}\V{x}$, hvor siste ledd er $T(\V{x})$ fra \textbf{a)}. Dermed blir projeksjonen ned på det ortogonale komplementet
+% $$\text{proj}_{\V{u}^{\perp}}\V{x}=\V{x}-T(\V{x}).$$ Nå gjør vi som i løsningen til $\textbf{b)}$: sett inn for $\V{x}=\V{e}_i$, $i=1,2,3$, og bruk dette som kolonnevektorer.
+% \end{punkt}
+% \end{losning}
 
 
 \begin{oppgave}
@@ -367,6 +672,14 @@ Vis at $\V v^* \V w=\overline{\V w^* \V v}$.
 \begin{oppgave}
 Vis at $P_{\V v}\V w$ og $P_{\V v^{\perp}}\V w$ er ortogonale.
 \end{oppgave}
+
+
+\begin{losning}
+% (P w)^* ((I-P)w)
+% = w^* P^* (I-P) w
+% P* (I-P) = P* - P*P
+\end{losning}
+
 
 \begin{oppgave}
 Vis at $P_{\V v}\V w$ og $P_{\V v^{\perp}}\V w$ spenner ut det samme rommet som $\V v$ og $\V w$.
