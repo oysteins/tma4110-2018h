@@ -3,6 +3,152 @@
 \kapittel{12}{Projeksjon}
 \label{ch:projeksjon}
 
+ 
+ \section*{Ortogonal projeksjon i $\R^2$}
+Vi bruker skalarproduktet til å projisere vektorer ortogonalt på hverandre. Det sentrale spørsmålet er: hvor lange er de røde og blå lengdene i figuren under? 
+ \begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[-latex,thick] (0,0) -- (7,1);
+\draw[-latex,thick] (0,0) -- (3,6);
+\draw[-, thick, red] (0,0) -- (27/50*7,27/50*1);
+\draw[-,thick, blue] (27/50*7,27/50*1) -- (3,6);
+\draw[-]  (27/50*7-1/7,27/50*1+1-1/77) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\draw[-]  (27/50*7+1,27/50*1+1/7) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\node[anchor=east] at (9,1.2) {\footnotesize $\V{v}$};
+\node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
+\node[anchor=east,red] at (3,-.5) {\footnotesize $w_{\V{v}}$};
+\node[anchor=east,blue] at (5.5,3) {\footnotesize $w_{\V{v}^{\perp}}$};
+\node[anchor=east] at (2.9,2) {\footnotesize $\theta$};
+\draw (2.5,.4) arc (8:55:3);
+%\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
+%\draw (\x,5pt) -- (\x,-5pt);
+%\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
+%\draw (5pt,\y) -- (-5pt,\y);
+%\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
+%\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
+%\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
+%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
+%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
+%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
+%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Hva er projeksjon?}}
+\end{center}
+I $\R^2$ er det lett å vise at indreproduktet også kan beregnes som 
+\[
+ \V{v}\cdot  \V{w} = \|\V v\| \|\V w\| \cos \theta,
+ \] 
+der $\theta$ er vinkelen mellom $\V{v}$ og $\V{w}$. 
+Vet man det, kan utlede en formler for den røde lengden:
+\[
+w_{\V{v}}=\|\V w\| \cos \theta=\frac{\|\V v\|}{\|\V v\|} \|\V w\| \cos \theta =\frac{\V v \cdot \V w}{\|\V v\|}
+\]
+Den blå lengden kan så beregnes med pytagoras:
+\[
+w_{\V{v}^{\perp}}=\sqrt{\|\V w\|^2-\left(\frac{\V v \cdot \V w}{\|\V v\|}\right)^2}
+\]
+Denne lengden kalles $\V v$ sin skalarprojeksjon ortogonalt på $\V w$. Hvis vi tenker at de røde og blå lengdene er vektorer, kan de skrives
+\[
+\V w_{\V{v}}=w_{\V{v}}\frac{\V v}{\|\V v\|}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=\frac{\V v \cdot \V w}{\V v \cdot \V v}\V v
+\]
+og
+\[
+\V w - \V w_{\V{v}}.
+\]
+ \begin{center}
+\begin{tikzpicture}[scale=.42]
+\draw[-latex,thick] (0,0) -- (7,1);
+\draw[-latex,thick] (0,0) -- (3,6);
+\draw[-latex, thick, red] (0,0) -- (27/50*7,27/50*1);
+\draw[-latex,thick, blue] (27/50*7,27/50*1) -- (3,6);
+\draw[-]  (27/50*7-1/7,27/50*1+1-1/77) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\draw[-]  (27/50*7+1,27/50*1+1/7) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
+\node[anchor=east] at (9,1.2) {\footnotesize $\V{v}$};
+\node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
+\node[anchor=east,red] at (3,-.5) {\footnotesize $\V w_{\V{v}}$};
+\node[anchor=east,blue] at (5.5,3) {\footnotesize $\V w_{\V{v}^{\perp}}$};
+%\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
+%\draw (\x,5pt) -- (\x,-5pt);
+%\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
+%\draw (5pt,\y) -- (-5pt,\y);
+%\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
+%\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
+%\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
+%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
+%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
+%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
+%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
+%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
+%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
+%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
+%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
+%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
+%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
+%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
+\end{tikzpicture}
+\\
+{\small \textit{Hva er projeksjon II?}}
+\end{center}
+Tenker man på projeksjonene til $\V w$ på $\V v$ og $\V v^{\perp}$ som en lengder, 
+kalles det skalarprojeksjon, 
+og tenker man på det som vektorer, kalles det vektorprojeksjon. 
+
+\begin{ex}
+Vektoren
+\[
+\V w
+=
+\begin{bmatrix}
+2 \\ 1
+\end{bmatrix}
+\]
+sin skalarprojeksjon i retningen
+\[
+\V v
+=
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+\]
+er:
+\[
+\frac{\V v \cdot \V w}{\|\V v\|}=\frac{2 \cdot 1+1\cdot 2}{\sqrt{2^2+1^2}}=\frac{4}{\sqrt{5}}
+\]
+Du kan tenke på dette på som $\V w$s komponent i retningen $\V v$. Vektorprojeksjonen er:
+\[
+\V w_{\V{v}}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=
+\frac{4}{5}
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix} 
+\]
+Vektorprojeksjonen til $\V w$ normalt på $\V v$ er:
+\[
+\V w - \V w_{\V{v}}=
+\begin{bmatrix}
+2 \\ 1
+\end{bmatrix} 
+-
+\frac{4}{5}
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+=
+\frac{3}{5}
+\begin{bmatrix}
+2 \\ -1
+\end{bmatrix} \qedhere
+\]
+\end{ex}
+ 
 \section*{Adjungering}
 
 Vi skal begynne med å utvide transponeringsoperasjonen litt. 
@@ -197,152 +343,6 @@ er ortogonale.
  \begin{ex}
  Vektoren $\V{v}=\frac{\V{w}}{\|\V{w}\|}$ har lengde 1 for alle $\V w \neq 0$.
  \end{ex}
- 
- \section*{Ortogonal projeksjon i $\R^2$}
-Vi bruker skalarproduktet til å projisere vektorer ortogonalt på hverandre. Det sentrale spørsmålet er: hvor lange er de røde og blå lengdene i figuren under? 
- \begin{center}
-\begin{tikzpicture}[scale=.42]
-\draw[-latex,thick] (0,0) -- (7,1);
-\draw[-latex,thick] (0,0) -- (3,6);
-\draw[-, thick, red] (0,0) -- (27/50*7,27/50*1);
-\draw[-,thick, blue] (27/50*7,27/50*1) -- (3,6);
-\draw[-]  (27/50*7-1/7,27/50*1+1-1/77) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
-\draw[-]  (27/50*7+1,27/50*1+1/7) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
-\node[anchor=east] at (9,1.2) {\footnotesize $\V{v}$};
-\node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
-\node[anchor=east,red] at (3,-.5) {\footnotesize $w_{\V{v}}$};
-\node[anchor=east,blue] at (5.5,3) {\footnotesize $w_{\V{v}^{\perp}}$};
-\node[anchor=east] at (2.9,2) {\footnotesize $\theta$};
-\draw (2.5,.4) arc (8:55:3);
-%\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
-%\draw (\x,5pt) -- (\x,-5pt);
-%\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
-%\draw (5pt,\y) -- (-5pt,\y);
-%\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
-%\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
-%\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
-%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
-%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
-%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
-%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
-%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
-%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
-%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
-%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
-%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
-%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
-%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
-\end{tikzpicture}
-\\
-{\small \textit{Hva er projeksjon?}}
-\end{center}
-I $\R^2$ er det lett å vise at indreproduktet også kan beregnes som 
-\[
- \V{v}\cdot  \V{w} = \|\V v\| \|\V w\| \cos \theta,
- \] 
-der $\theta$ er vinkelen mellom $\V{v}$ og $\V{w}$. 
-Vet man det, kan utlede en formler for den røde lengden:
-\[
-w_{\V{v}}=\|\V w\| \cos \theta=\frac{\|\V v\|}{\|\V v\|} \|\V w\| \cos \theta =\frac{\V v \cdot \V w}{\|\V v\|}
-\]
-Den blå lengden kan så beregnes med pytagoras:
-\[
-w_{\V{v}^{\perp}}=\sqrt{\|\V w\|^2-\left(\frac{\V v \cdot \V w}{\|\V v\|}\right)^2}
-\]
-Denne lengden kalles $\V v$ sin skalarprojeksjon ortogonalt på $\V w$. Hvis vi tenker at de røde og blå lengdene er vektorer, kan de skrives
-\[
-\V w_{\V{v}}=w_{\V{v}}\frac{\V v}{\|\V v\|}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=\frac{\V v \cdot \V w}{\V v \cdot \V v}\V v
-\]
-og
-\[
-\V w - \V w_{\V{v}}.
-\]
- \begin{center}
-\begin{tikzpicture}[scale=.42]
-\draw[-latex,thick] (0,0) -- (7,1);
-\draw[-latex,thick] (0,0) -- (3,6);
-\draw[-latex, thick, red] (0,0) -- (27/50*7,27/50*1);
-\draw[-latex,thick, blue] (27/50*7,27/50*1) -- (3,6);
-\draw[-]  (27/50*7-1/7,27/50*1+1-1/77) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
-\draw[-]  (27/50*7+1,27/50*1+1/7) -- (27/50*7+1-1/7,27/50*1+8/7-1/77);
-\node[anchor=east] at (9,1.2) {\footnotesize $\V{v}$};
-\node[anchor=south] at (3.5,7) {\footnotesize $\V{w}$};
-\node[anchor=east,red] at (3,-.5) {\footnotesize $\V w_{\V{v}}$};
-\node[anchor=east,blue] at (5.5,3) {\footnotesize $\V w_{\V{v}^{\perp}}$};
-%\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6}
-%\draw (\x,5pt) -- (\x,-5pt);
-%\foreach \y in {-4,-3,-2,-1,1,2,3,4,5}
-%\draw (5pt,\y) -- (-5pt,\y);
-%\filldraw (2,3) circle [radius=3pt] node[anchor=west] {$z=2+3i$};
-%\filldraw (2,-3) circle [radius=3pt] node[anchor=west] {$\overline z=2-3i$};
-%\filldraw (4,5) circle [radius=3pt] node[anchor=west] {$w=4+5i$};
-%\filldraw (0,1) circle [radius=3pt] node[anchor=east] {$\V{e}_2$};
-%\filldraw (-1,-2) circle [radius=3pt] node[anchor=east] {$\V{u}$};
-%\filldraw (3,2) circle [radius=3pt] node[anchor=east] {$\V{v}$};
-%\filldraw (1,4) circle [radius=3pt] node[anchor=south] {$A \V{e}_1$};
-%\filldraw (3,-3) circle [radius=3pt] node[anchor=north] {$A \V{e}_2$};
-%\filldraw (-7,2) circle [radius=3pt] node[anchor=east] {$A \V{u}$};
-%\filldraw (9,6) circle [radius=3pt] node[anchor=north] {$A \V{v}$};
-%\draw[->,shorten <=4pt,shorten >=4pt] (1,0) to[bend right=20] (1,4);
-%\draw[->,shorten <=4pt,shorten >=4pt] (0,1) to[bend right=30] (3,-3);
-%\draw[->,shorten <=4pt,shorten >=4pt] (-1,-2) to[bend right=20] (-7,2);
-%\draw[->,shorten <=4pt,shorten >=4pt] (3,2) to[bend left=20] (9,6);
-\end{tikzpicture}
-\\
-{\small \textit{Hva er projeksjon II?}}
-\end{center}
-Tenker man på projeksjonene til $\V w$ på $\V v$ og $\V v^{\perp}$ som en lengder, 
-kalles det skalarprojeksjon, 
-og tenker man på det som vektorer, kalles det vektorprojeksjon. 
-
-\begin{ex}
-Vektoren
-\[
-\V w
-=
-\begin{bmatrix}
-2 \\ 1
-\end{bmatrix}
-\]
-sin skalarprojeksjon i retningen
-\[
-\V v
-=
-\begin{bmatrix}
-1 \\ 2
-\end{bmatrix}
-\]
-er:
-\[
-\frac{\V v \cdot \V w}{\|\V v\|}=\frac{2 \cdot 1+1\cdot 2}{\sqrt{2^2+1^2}}=\frac{4}{\sqrt{5}}
-\]
-Du kan tenke på dette på som $\V w$s komponent i retningen $\V v$. Vektorprojeksjonen er:
-\[
-\V w_{\V{v}}=\frac{\V v \cdot \V w}{\|\V v\|^2}\V v=
-\frac{4}{5}
-\begin{bmatrix}
-1 \\ 2
-\end{bmatrix} 
-\]
-Vektorprojeksjonen til $\V w$ normalt på $\V v$ er:
-\[
-\V w - \V w_{\V{v}}=
-\begin{bmatrix}
-2 \\ 1
-\end{bmatrix} 
--
-\frac{4}{5}
-\begin{bmatrix}
-1 \\ 2
-\end{bmatrix}
-=
-\frac{3}{5}
-\begin{bmatrix}
-2 \\ -1
-\end{bmatrix} \qedhere
-\]
-\end{ex}
- 
 
 
 
@@ -394,7 +394,7 @@ eller
 \[
 \lambda^2-\lambda=\lambda(\lambda-1)=0.
 \]
-Egenverdiene til en projeksjonsmatrise kan altså kun være  0 eller 1. Dette skal vi bruke til å klassifisere projeksjoner i $\C^2$ i neste uke.
+Egenverdiene til en projeksjonsmatrise kan altså kun være  0 eller 1. 
  
 \begin{fishythm}
 Interessante projeksjonsmatriser er ikke inverterbare.
@@ -547,7 +547,7 @@ Standardbasisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\R^n$ og $\C^n$ og  er en o
 \end{ex}
 
 \begin{defnx}
-En ortogonal mengde $\V u_1$, $\V u _2$, ...,$\V u_n$, spenner ut et rom $V$, sier vi at mengden er en \defterm{ortogonal basis} for $V$.
+Dersom en ortogonal mengde $\V u_1$, $\V u _2$, ...,$\V u_n$ spenner ut et rom $V$, sier vi at mengden er en \defterm{ortogonal basis} for $V$.
 \end{defnx}
 
 %\begin{ex}
