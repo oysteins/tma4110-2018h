@@ -3,6 +3,15 @@
 \kapittel{12}{Projeksjon}
 \label{ch:projeksjon}
 
+En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
+\[
+ P\V x=P^2\V x.
+ \]
+ for alle $\V x$. Denne ligningen sier at intet nytt skjer om du benytter lineærtransformasjonen for andre gang,
+ og man kan tenke at $ P\V x$ er skyggen $\V x$ kaster dersom man lyser på $\V x$ med en lommelykt.
+Vi skal begrense oss til å studere ortogonale projeksjoner. 
+Dette betyr at lommelykten står slik at $\V x$ og $P\V x$ danner en rettvinklet trekant.
+
  
  \section*{Ortogonal projeksjon i $\R^2$}
  Du husker skalarproduktet fra gymnaset.
@@ -353,6 +362,20 @@ er ortogonale.
  \begin{ex}
  Vektoren $\V{v}=\frac{\V{w}}{\|\V{w}\|}$ har lengde 1 for alle $\V w \neq 0$.
  \end{ex}
+ 
+ Vi tar med noen regneregler for indre- og ytreprodukt. Disse er lette å utlede, så vi dropper bevisene.
+\begin{thm}
+Indreproduktet tilfredsstiller følgende regneregler:
+\begin{align*}
+ \V v ^* \V w&=\overline{\V w ^* \V v} \\
+( c\V v )^* \V w&=c(\V w ^* \V v ) = \V w ^* (\overline c\V v) \\
+%  \V v ^* c\V w&=\overline c \V w ^* \V v \\
+ (\V v+\V u) ^* \V w&= \V v ^* \V w+ \V u ^* \V w \\
+  \V v ^* (\V w+\V u)&= \V v ^* \V w+ \V v ^* \V u
+\end{align*}
+\end{thm}
+ 
+ Det neste på posten er Pytagoras' teorem. 
 
 \begin{thm}
 Vektorene $\V v$ og $\V w$ er ortogonale hvis og bare hvis
@@ -361,11 +384,13 @@ Vektorene $\V v$ og $\V w$ er ortogonale hvis og bare hvis
 \]
 \end{thm}
 
-\noindent Vi vet at 
+\begin{proof}
+Vi vet at 
 \begin{align*}
 \|\V v-\V w \|^2&=(\V v-\V w)^*(\V v-\V w)\\&=\V v^*\V v-\V v^*\V w-\V w^*\V v+\V w^*\V w\\ & =\|\V v\|^2 -\V v^*\V w-\V w^*\V v+\|\V w\|^2,
 \end{align*}
 så $\|\V v-\V w\|^2=\|\V v\|^2+\|\V w\|^2$ hvis og bare hvis $\V v^* \V w=\V v^* \V w=0$.
+\end{proof}
 
  \section*{Projeksjon i $\C^n$}
 %En projeksjon er en lineærtransformasjon $P$ som tilfredsstiller
@@ -452,7 +477,7 @@ Assosiativiteten til matrisemultiplikasjon gir at vi kan skrive
 % \[
 % P_{\V v^{\perp}}\V w=\left(I-\frac{\V v \V v^*}{\V v^* \V v}\right)\V w=\V w - \frac{ \V v^*\V w}{\V v^* \V v} \V v ,
 % \]
- så likheten med vektorprojeksjon i $\R^2$ er jo slående. %Det er ikke så vanskelig å vise at $P_{\V v}\V w$ og $P_{\V v^{\perp}}\V w$ er ortogonale. Dette skal vi gjøre i øvingsopplegget.
+ så likheten med projeksjon i $\R^2$ er slående. %Det er ikke så vanskelig å vise at $P_{\V v}\V w$ og $P_{\V v^{\perp}}\V w$ er ortogonale. Dette skal vi gjøre i øvingsopplegget.
 
  \begin{center}
 \begin{tikzpicture}[scale=.42]
@@ -604,7 +629,9 @@ Standardbasisen $\V e_1$, $\V e_2$,...,$\V e_n$ for $\C^n$ er en ortogonal mengd
 \begin{defnx}
 Dersom en ortogonal mengde $\V u_1$, $\V u _2$, ...,$\V u_n$ spenner ut et rom $V$, sier vi at mengden er en \defterm{ortogonal basis} for $V$.
 \end{defnx}
+\begin{defnx}
 Det er vanlig å sette opp $\V u_1$, $\V u _2$, ...,$\V u_n$ som kolonner i en matrise $U$. Vi sier da at $U$ er en \defterm{ortogonal matrise}.
+\end{defnx}
 %\begin{ex}
 %Mengden bliff blaff bloff er en ortogonal basis for $\C^3$.
 %\end{ex}
@@ -618,11 +645,11 @@ Hvis vi har en ortogonal basis for et rom, er det veldig lett å finne en vektor
 \[
 \V v = x_1 \V u_1 + x_2 \V u_2 + ...x_n \V u_n = U\V x
 \]
-Hvis vi ganger begge sider av denne likningen med $U$, får vi, siden kolonnene til $U$ er ortogonale,
+Hvis vi ganger begge sider av denne likningen med $U$, får vi
 \[
-U^* \V v = U^*U\V x.
+U^* \V v = U^*U\V x,
 \]
-Den kvadratiske matrisen $U^*U$ er diagonal:
+og siden kolonnene til $U$ er ortogonale, blir den kvadratiske matrisen $U^*U$ diagonal:
 \[
 U^*U=
 \begin{bmatrix}
@@ -631,17 +658,20 @@ U^*U=
 0 & 0 & \V u_3^*\V u_3  & \hdots & 0 \\
 \vdots & \vdots & \vdots & \ddots & \vdots\\
 0 & 0 & 0 & \hdots & \V u_n^*\V u_n
-\end{bmatrix},
+\end{bmatrix}.
 \]
-så løsningen av systemet $U^* \V v = U^*U\V x$ er enkel å skrive opp. 
+Følgelig er løsningen av systemet $U^* \V v = U^*U\V x$ enkel å skrive opp. 
 \begin{thm}
-La $\V u_1$, $\V u _2$, ...,$\V u_n$ være en ortogonal basis for $V$, og la $\V v \in V$. I så fall kan $\V v$ skrives
+La $\V u_1$, $\V u _2$, ...,$\V u_n$ være en ortogonal basis for $V$, og la $\V v \in V$. 
+I så fall kan $\V v$ skrives
 \begin{align*}
 \V v&= P_{\V u_1} \V v + P_{\V u_2} \V v + ... +P_{\V u_n} \V v\\ &= \frac{\V u_1^*\V v}{\V u_1^*\V u_1}\V u_1 + \frac{\V u_2^*\V v}{\V u_2^*\V u_2}\V u_2+...+\frac{\V u_n^*\V v_n}{\V u_n^*\V u_n}\V u_n
 \end{align*}
 \end{thm}
 
-\noindent Vi kan også projisere en vektor ned i et rom der den ikke hører hjemme. Projeksjonen minimerer avstanden fra rommet til vektoren.
+
+Vi kan også projisere en vektor ned i et rom der den ikke hører hjemme. 
+Projeksjonen minimerer avstanden fra rommet til vektoren.
 \begin{thm}
 La $\V u_1$, $\V u _2$, ...,$\V u_n$ være en ortogonal basis for $V$, og la $\V v \notin V$. Punktet
 \begin{align*}
@@ -652,31 +682,35 @@ er det punktet i $V$ som har kortest avstand til $\V v$:
 \|\V v-\V v' \|=\min_{\V w \in V} \|\V v-\V w \|
 \]
 \end{thm}
-\noindent For å vise dette, må vi først bevise at $\V v-\V v'$ står ortogonalt på $V$. Rommet $V$ er utspent av $\V u_1$, $\V u _2$, ...,$\V u_n$, så vi kan sjekke at $\V v-\V v'$ står ortogonalt på hver $\V u_j$. Dette er lett å sjekke:
+\begin{proof}
+Vi må først bevise at $\V v-\V v'$ står ortogonalt på $V$. 
+Rommet $V$ er utspent av $\V u_1$, $\V u _2$, ...,$\V u_n$.
+Vi sjekker at $\V v-\V v'$ står ortogonalt på hver $\V u_j$:
 \begin{align*}
 (\V v-\V v')^*\V u_j&=\V v^*\V u_j-(\V v')^*\V u_j \\ &=\V v^*\V u_j-\V v^*\V u_j =0
 \end{align*}
-Nå er det lett å se at
-\[
-\|\V v-\V v' \|=\min_{\V w \in V} \|\V v-\V w \|.
-\]
-Pytagoras gir
+Dersom $\V w \in V$, ligger også $\V w-\V v'$ i $V$, og da står $\V w-\V v'$ og $\V v-\V v'$ ortogonalt på hverande. Pytagoras' teorem gir
 \begin{align*}
-\|\V v-\V w \|&=\|\V v-\V v'-(\V w-\V v') \|\\&= \|\V v-\V v' \| +\|\V w-\V v' \|  \geq  \|\V v-\V v' \|.
+\|\V v-\V w \|&=\|\V v-\V v'-(\V w-\V v') \|\\&= \|\V v-\V v' \| +\|\V w-\V v' \|  \geq  \|\V v-\V v' \|,
 \end{align*}
+for alle $\V w \in V$, slik at 
+\[
+\|\V v-\V v' \|=\min_{\V w \in V} \|\V v-\V w \|.\qedhere
+\]
+\end{proof}
 
 %\begin{ex}
 %Rekkerommet og nullrommet står ortogonalt på hverandre.
 %\end{ex}
 
-\section*{Gram-Schmidt}
+\section*{Gram-Schmidts metode}
 La $\V v_1$, $\V v_2$, ...,$\V v_n$ være en lineært uavhengig vektormengde. 
 Vi skal lage oss en ortogonal basis $\V u_1$, $\V u_2$, ...,$\V u_n$ for rommet utspent av vektorene i mengden. 
 Vi begynner med å definere
 \[
 \V u_1=\V v_1
 \]
-Vektoren $\V v_2$ er ikke ortogonal på $\V u_1$, men 
+Vektoren $\V v_2$ er ikke nødvendigvis ortogonal på $\V u_1$, men 
 \[
 \V u_2=\V v_2-P_{\V u_1} \V v_2=\V v_2-\frac{ \V u_1^*\V v_2}{\V u_1^* \V u_1}\V u_1
 \]
