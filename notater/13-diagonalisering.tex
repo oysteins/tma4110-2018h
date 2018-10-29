@@ -2,10 +2,16 @@
 
 \kapittel{13}{Diagonalisering}
 \label{ch:diagonalisering}
-\section*{Distinkte egenverdier}
-La $A$ være en $n \times n$-matrise med egenverdier $\lambda_1$, $\lambda_2$,$\cdots$, $\lambda_n$, og tilhørende egenvektorer $\V{v}_1$, $\V{v}_2\dots \V{v}_n$. For hvert par av egenverdier og egenvektorer gjelder
+Dette kapitlet avslutter det skal lære om egenverdier og egenvektorer.
+
+
+\section*{Diagonalisering}
+La $A$ være en  $n \times n$-matrise med $n$ lineært avhengige egenvektorer.
+$\V{v}_1$, $\V{v}_2\dots \V{v}_n$ 
+og tilhørende egenverdier $\lambda_1$, $\lambda_2$,$\cdots$, $\lambda_n$, . 
+For hver egenvektor gjelder
 \[
-A\V{v}_k=\lambda \V{v}_k.
+A\V{v}_k=\lambda_k \V{v}_k.
 \]
 Disse $n$ ligningene kan like gjerne organiseres i en matriseligning
 \[
@@ -29,11 +35,29 @@ V=
 \V{v}_1 & \V{v}_2 & \cdots & \V{v}_n
 \end{bmatrix}.
 \]
-Fra teorem HEIHEIHEI vet vi at $\V{v}_1$, $\V{v}_2\dots \V{v}_n$ er lineært uavhengige, og dermed at matrisen $V$ har en invers. Vi ganger med $P^{-1}$ fra venstre og får
+Siden $\V{v}_1$, $\V{v}_2\dots \V{v}_n$ er lineært uavhengige, har matrisen $V$  en invers $V^{-1}$. Vi ganger med $V^{-1}$ fra høyre og får
 \[
 V^{-1}AV=D.
 \]
-Denne operasjonen kalles å \emph{diagonalisere} $A$. 
+Denne operasjonen kalles å \emph{diagonalisere} $A$. Tidligere har vi nevnt at dersom $A$ har $n$ lineært uavhengige egenvektorer, sier vi at $A$ er diagonaliserbar. Dette er forklaringen.
+
+Man kan også se det motsatt. Dersom 
+\[
+V^{-1}AV=D
+\]
+for en inverterbar $n \times n$-matrise $V$, kan vi gange fra venstre med $V$, og få
+\[
+AV=VD
+\]
+Vi ser av denne likningen at kolonnene til $V$ utgjør $n$ lineært uavhengige vektorer.
+
+\begin{thm}
+Vi kan skrive 
+\[
+V^{-1}AV=D
+\]
+hvis og bare hvis $A$ har $n$ lineært uavhengige egenvektorer.
+\end{thm}
 
 \begin{ex}	
 Vi diagonaliserer matrisen 
@@ -44,27 +68,143 @@ A=
 1      & 2
 \end{bmatrix}.
 \]
+Egenvektorene er 
+\[
+\begin{bmatrix}
+1 \\ 1
+\end{bmatrix}
+\quad \text{og} \quad
+\begin{bmatrix}
+1 \\ -1
+\end{bmatrix},
+\]
+med respektive egenverdier 3 og 1. Vi definerer
+\[
+V=
+\begin{bmatrix}
+1 & 1 \\ 1 &-1
+\end{bmatrix},
+\]
+og beregner 
+\[
+V^{-1}=
+\frac{1}{2}
+\begin{bmatrix}
+1 & 1 \\ 1 &-1
+\end{bmatrix}.
+\]
+Vi dobbeltsjekker ved å beregne produktet
+\begin{align*}
+V^{-1}AV&=
+\frac{1}{2}
+\begin{bmatrix}
+1 & 1 \\ 1 &-1
+\end{bmatrix}
+\begin{bmatrix}
+2     & 1 \\
+1      & 2
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1 \\ 1 &-1
+\end{bmatrix}
+\\& =
+\begin{bmatrix}
+3     & 0 \\
+0      & 1
+\end{bmatrix}
+=
+D \qedhere
+\end{align*}
 \end{ex}
-
-\begin{thm}
-En $n \times n$-matrise $A$ kan diagonaliseres dersom den har $n$ lineært uavhengige egenvektorer.
-\end{thm}
-
-\section*{Ikke distinkte egenverdier}
-Teorem HIHIHI har en slags triviell aura over seg. Så klart man kan diagonlisere en matrise dersom den har $n$ lineært uavhengige egenvektorer - det er jo bare å stille opp likningene for egenvektorene i matriseform. Dersom alle egenverdiene er forskjellige, finnes det automatisk $n$ lineært uavhengige egenvektor. Det er først når vi har doble egenverdier det blir interessant.
 
 \begin{ex}
-La oss finne den doble egenverdien til matrisen
+en matrise med egenverdi 0
 \end{ex}
+
+\begin{ex}
+Matrisen 
+\[
+\begin{bmatrix}
+1 & 1 & 0\\  0 &1 & 0 \\ 0 & 0 & 2
+\end{bmatrix}
+\]
+har bare to lineært uavhengige egenvektorer, og kan følgelig ikke diagonaliseres.
+\end{ex}
+
+
+\section*{Kvadratiske former}
+La $\V v$ være en kolonnevektor i $\C^n$ og $A$ en $n\times n$-matrise. En kvadratisk form er et uttrykk på formen 
+\[
+\V v^* A \V v
+\]
+Et slikt uttrykk er spesielt interessant dersom $\V v$ er en egenvektor med lengde 1 og egenverdi $\lambda$:
+\[
+\V v^* A \V v=\V v^* \lambda \V v=\lambda \V v^* \V v=\lambda
+\]
 
 
 
 \section*{Symmetriske matriser}
-Dersom matrisen er symmetrisk, går det an å vise at ingen 
-\begin{ex}
-La oss prøve å finne egenverdiene til denne matrisen hvis karakteristiske polynom ikke har noen røtter
-\end{ex}
+En matrise sies å være 
+\defterm{symmetrisk} dersom $A=A^*$.
 
-\section*{Kvadratiske former}
+\begin{defnx}
+En $n \times n$-matrise er \defterm{ortogonalt diagonaliserbar} dersom den har $n$ ortogonale egenvektorer.
+\end{defnx}
+
+Dersom vi lar $V$ være en $n \times n$-matrise bestånde av $A$ sine $n$ ortonormale egenvektorer, 
+ser vi at 
+\[
+V^* A V =V^* VD =D
+\]
+siden $V^* V=I$. Motsatt ser vi at dersom
+\[
+V^* A V =D,
+\]
+for en ortonormal matrise $V$, utgjør $V$ sine kolonner  $n$ ortonormale egenvektorer for $D$.
+
+\begin{thm}
+Vi kan skrive 
+\[
+V^*AV=D
+\]
+hvis og bare hvis $A$ har $n$ ortogonale egenvektorer. 
+\end{thm}
+
+
+\begin{thm}
+En  symmetrisk matrise har reelle egenverdier.
+\end{thm}
+\begin{proof}
+\[
+A \V v=A^*\V = \lambda \V v
+\]
+\end{proof}
+
+
+\begin{thm}
+En matrise er symmetrisk hvis og bare hvis den er ortogonalt diagonaliserbar.
+\end{thm}
+
+
+\begin{thm}
+Dersom $\V v$ er en egenvektor med egenverdi  $\lambda$ for  $A$, er $\overline{\V v}$ en egenvektor med egenverdi $\overline{\lambda}$ for $A^*$.
+\end{thm}
+\begin{proof}
+Vi har
+\[
+ \lambda \V v=A \V v
+\]
+Adjungering gir
+\[
+ \lambda \V v^*=A 
+\]
+
+\end{proof}
+
+
+
+
+
 
 \kapittelslutt
