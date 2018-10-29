@@ -715,7 +715,6 @@ Vektoren $\V v_2$ er ikke nødvendigvis ortogonal på $\V u_1$, men
 \V u_2=\V v_2-P_{\V u_1} \V v_2=\V v_2-\frac{ \V u_1^*\V v_2}{\V u_1^* \V u_1}\V u_1
 \]
 er. 
-Vi skal vise i øvingsopplegget at   $\V u_1$ og $\V u_2$ er ortogonale og spenner ut det samme planet som $\V v_1$ og $\V v_2$.
 Vektoren 
 \begin{align*}
 \V u_3&=\V v_3-P_{\V u_1} \V v_3-P_{\V u_2} \V v_3\\[2pt]&=\V v_3-\frac{ \V u_1^*\V v_3}{\V u_1^* \V u_1}\V u_1-\frac{ \V u_2^*\V v_3}{\V u_2^* \V u_2}\V u_2
@@ -727,9 +726,32 @@ Nå kan vi fortsette slik, og definere rekursivt
 \begin{align*}
 \V u_k&=\V v_k-\sum_{j=1}^{k-1}P_{\V u_j} \V v_k\\[2pt]&=\V v_k-\sum_{j=1}^{k-1}\frac{ \V u_j^*\V v_k}{\V u_j^* \V u_j}\V u_j.
 \end{align*}
-Det kan vises at $\V u_1$, $\V u_2$, ...,$\V u_n$ er en ortogonal basis for rommet utspent av $\V v_1$, $\V v_2$, ...,$\V v_n$.
+\begin{thm}
+Mengden $\V u_1$, $\V u_2$, ...,$\V u_n$ er en ortogonal basis for rommet utspent av $\V v_1$, $\V v_2$, ...,$\V v_n$.
+\end{thm}
+\begin{proof}
+Vi bruker induksjon.
+Det er lett å se at  $\V u_1$ og $\V u_2$ er ortogonale: 
+\begin{align*}
+\V u_1^*\V u_2&=\V u_1^*(\V v_2-\frac{ \V u_1^*\V v_2}{\V u_1^* \V u_1}\V u_1) \\&=\V u_1^*\V v_2-\frac{ \V u_1^*\V v_2}{\V u_1^* \V u_1}\V u_1^*\V u_1 \\ &= \V u_1^*\V v_2-\V u_1^*\V v_2=0
+\end{align*}
+Siden $\V u_1$ og $\V u_2$ er ikketrivielle lineærkombinasjoner av de lineært uavhegnige vektorene $\V v_1$ og $\V v_2$, 
+er det åpenbart at $\V u_1$ og $\V u_2$ spenner ut det samme rommet som $\V v_1$ og $\V v_2$. 
 
-
+La nå 
+\[
+V_{k}=\Sp\{\V v_1,\V v_2,\dots,\V v_k\}.
+\]
+Vi antar at $\V u_1,\V u_2,\dots,\V u_{k-1}$ er en ortogonal basis for $V_{k-1}$. 
+Vi må vise at $\V u_k$ står ortogonalt på $V_{k-1}$, og at $\V u_1,\V u_2,\dots,\V u_{k}$ spenner ut $V_k$.
+Vi sjekker indreproduktet av $\V u_j$ med $\V u_k$. Siden $\V u_j^*\V u_m=0$ når $j\neq m$, får vi
+\begin{align*}
+\V u_j^*\V u_k&=\V u_j^*(\V v_k-\sum_{m=1}^{k-1} \frac{ \V u_m^*\V v_k}{\V u_m^* \V u_m}\V u_m) \\&=\V u_j^*\V v_k-\sum_{m=1}^{k-1} \frac{ \V u_m^*\V v_k}{\V u_m^* \V u_m}\V u_j^*\V u_m \\ &= \V u_j^*\V v_k-\V u_j^*\V v_k=0.
+\end{align*}
+Vi ser altså at $\V u_k$ står ortogonalt på alle $\V u_j$, og siden $\V u_1,\V u_2,\dots,\V u_{k-1}$ er en ortogonal basis for $V_{k-1}$, står $\V u_k$ ortogonalt på $V_{k-1}$. 
+Siden $\V v_k$ er lineært uavhengig av $\V u_1,\V u_2,\dots,\V u_{k-1}$, og $\V u_k$ er en lineærkombinasjon av $V_k$ og $\V u_1,\V u_2,\dots,\V u_{k-1}$, 
+spenner $\V u_1,\V u_2,\dots,\V u_{k}$ ut $V_k$.
+\end{proof}
 
 
 
@@ -850,12 +872,16 @@ som minimerer avstanden til punktet
 \]
 \end{ex}
 
-\section*{Litt polynomregresjon}
+\section*{Litt om polynominterpolasjon}
 Hvis du har $n+1$ punkter $(x_i,y_i)$ i $\R^2$, der $x_i$ er forskjellig for alle punkter, vil det generelt være mulig å finne et reelt polynom 
 \[
 p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0
 \]
-hvis graf går gjennom alle disse punktene. Hvis vi krever $p(x_i)=y_i$ for alle $1\leq i \leq n+1$, får vi et $(n+1)\times (n+1)$-likningssystem for koeffisientene $a_i$ med totalmatrise
+hvis graf går gjennom alle disse punktene, altså at
+\[
+p(x_i)=y_i
+\]
+for alle $1\leq i \leq n+1$. Dette kalles \defterm{interpolasjon}. Likningene over utgjør et $(n+1)\times (n+1)$-likningssystem for koeffisientene $a_i$ med totalmatrise
 \[
 \begin{amatrix}{5}
 x_{1}^{n} & x_{1}^{n-1} & \hdots  & x_{1} & 1 & y_1\\
@@ -864,7 +890,37 @@ x_{2}^{n} & x_{2}^{n-1} & \hdots  & x_{2} & 1 & y_2\\
 x_{n+1}^{n} & x_{n+1}^{n-1} & \hdots  & x_{n+1} & 1 & y_{n+1}\\
 \end{amatrix}
 \]
-Dersom man prøver å gjøre dette med et polynom som har orden $m < n$ , vil man få det overbestemte $(n+1)\times (m+1)$systemet 
+Det kan vises at dette ligningssystemet alltid har entydig løsning så lenge $x_j\neq x_k$ for $j \neq k$, 
+men det skal vi ikke gjøre. Det følger at du alltid kan interpolere $n+1$ punkter med et polynom av orden $n$ på en entydig måte. 
+
+
+\begin{ex}
+Vi prøver å finne et annengradspolyom som går gjennom punktene
+\[
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}, \;
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix} \;
+\quad \text{og} \quad
+\begin{bmatrix}
+2 \\ 1
+\end{bmatrix}.
+\]
+Et annengradspolynom skrives $p(x)=ax^2+bx+c$, så likningssystemet blir 
+\[
+\systeme{
+                   c = 1,
+    a + b + c  = 0,
+    4a + 2b + c = 1
+}
+\]
+Løsningen er $a=1$ , $b=-2$ og $c=1$, slik at polynomet blir $p(x)=x^2-2x+1=(x-1)^2$. Det er lett å sjekke at polynomet tar de rette verdiene i $x=0$, $x=1$ og $x=2$.
+\end{ex}
+
+
+\noindent Dersom man prøver å gjøre den samme prosessen med et polynom som har orden $m < n$ , vil man få det overbestemte $(n+1)\times (m+1)$systemet 
 \[
 \begin{amatrix}{5}
 x_{1}^{m} & x_{1}^{n-1} & \hdots  & x_{1} & 1 & y_1\\
@@ -873,15 +929,100 @@ x_{2}^{m} & x_{2}^{n-1} & \hdots  & x_{2} & 1 & y_2\\
 x_{n+1}^{m} & x_{n+1}^{n-1} & \hdots  & x_{n+1} & 1 & y_{n+1}\\
 \end{amatrix}
 \]
-Dersom man så bruker minste kvadrats metode på dette systemet, 
+Bruker man så minste kvadrats metode på dette systemet, 
 får man et polynom som passer ganske bra til punktene uten at grafen går gjennom hvert enkelt punkt - 
 dette kalles \defterm{regresjon}.
 
-\noindent SLAPP AV, DETTE KOMMER PÅ FORELESNING PÅ MANDAG OG TIRSDAG.
-
-%\begin{ex}
-%Vi prøver å tilpasse andregradspolynomet $ax^2+bx+c$ til punktene
-%
-%\end{ex}
-
+\begin{ex}
+Vi prøver å finne et annengradspolyom som går gjennom punktene
+\[
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}, \;
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}, \;
+\begin{bmatrix}
+2 \\ 1
+\end{bmatrix} \;
+\quad \text{og} \quad
+\begin{bmatrix}
+3 \\ 2
+\end{bmatrix} .
+\]
+Likningssystemet blir nå
+\[
+\systeme{
+                   c = 1,
+    a + b + c  = 0,
+    4a + 2b + c = 1,
+    9a + 3b + c = 2
+}
+\]
+Dette systemet har ingen løsning, men vi kan bruke minste kvadrats metode. Matrisen er:
+\[
+A=
+\begin{bmatrix}
+0 & 0 & 1 \\  1&1 &1 \\ 4& 2&1 \\ 9& 3& 1
+\end{bmatrix}, 
+\]
+mens høyresiden $\V b$ er:
+\[
+\V b=
+\begin{bmatrix}
+1 \\ 0 \\ 1 \\ 2
+\end{bmatrix}.
+\]
+Den adjungerte $A^*$ er:
+\[
+A^*=
+\begin{bmatrix}
+0 & 1 & 4 & 9\\  0&1 &2 & 3\\ 1& 1&1 &1 
+\end{bmatrix}.
+\]
+Vi ganger $A^*$ med $A$ og $\V b$, og får 
+\[
+A^*A=
+\begin{bmatrix}
+0 & 1 & 4 & 9\\  0&1 &2 & 3\\ 1& 1&1 &1 
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 & 1 \\  1&1 &1 \\ 4& 2&1 \\ 9& 3& 1
+\end{bmatrix} 
+=
+\begin{bmatrix}
+98 & 36 & 14 \\  36 &14 & 3\\ 14& 6&4
+\end{bmatrix}
+\]
+og 
+\[
+A^*\V b=
+\begin{bmatrix}
+0 & 1 & 4 & 9\\  0&1 &2 & 3\\ 1& 1&1 &1 
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ 0 \\ 1 \\ 2
+\end{bmatrix} 
+=
+\begin{bmatrix}
+22 \\ 8 \\ 3 
+\end{bmatrix}
+\]
+Vi må løse systemet $A^*A=A^*\V b$, altså systemet med totalmatrise
+\[
+\begin{amatrix}{3}
+98 & 36 & 14 & 22\\  36 &14 & 3 & 8\\ 14& 6&4 & 3
+\end{amatrix}.
+\]
+Løsningen er 
+\[
+\begin{bmatrix}
+0.27710843 \\ -0.13855422 \\ -0.01204819 
+\end{bmatrix}
+\]
+slik at polynomet blir 
+\[
+p(x)=0.27710843x^2  -0.13855422x  -0.01204819. \qedhere
+\]
+\end{ex}
 \kapittelslutt
