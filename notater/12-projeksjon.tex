@@ -378,7 +378,7 @@ Indreproduktet tilfredsstiller følgende regneregler:
  Det neste på posten er Pytagoras' teorem. 
 
 \begin{thm}
-Vektorene $\V v$ og $\V w$ er ortogonale hvis og bare hvis
+Dersom vektorene $\V v$ og $\V w$ er ortogonale, er
 \[
 \|\V v-\V w\|^2=\|\V v\|^2+\|\V w\|^2.
 \]
@@ -387,9 +387,9 @@ Vektorene $\V v$ og $\V w$ er ortogonale hvis og bare hvis
 \begin{proof}
 Vi vet at 
 \begin{align*}
-\|\V v-\V w \|^2&=(\V v-\V w)^*(\V v-\V w)\\&=\V v^*\V v-\V v^*\V w-\V w^*\V v+\V w^*\V w\\ & =\|\V v\|^2 -\V v^*\V w-\V w^*\V v+\|\V w\|^2,
+\|\V v-\V w \|^2&=(\V v-\V w)^*(\V v-\V w)\\&=\V v^*\V v-\V v^*\V w-\V w^*\V v+\V w^*\V w\\ & =\|\V v\|^2 -\V v^*\V w-\V w^*\V v+\|\V w\|^2\\ &=\|\V v\|^2 +\|\V w\|^2\\
 \end{align*}
-så $\|\V v-\V w\|^2=\|\V v\|^2+\|\V w\|^2$ hvis og bare hvis $\V v^* \V w=\V v^* \V w=0$.
+siden $\V v^*\V w-\V w^*\V v=0$.
 \end{proof}
 
  \section*{Projeksjon i $\C^n$}
