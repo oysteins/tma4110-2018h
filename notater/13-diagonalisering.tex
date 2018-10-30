@@ -5,15 +5,15 @@
 Dette kapitlet avslutter det skal lære om egenverdier og egenvektorer.
 
 
-\section*{Diagonalisering}
-La $A$ være en  $n \times n$-matrise med $n$ lineært avhengige egenvektorer.
-$\V{v}_1$, $\V{v}_2\dots \V{v}_n$ 
-og tilhørende egenverdier $\lambda_1$, $\lambda_2$,$\cdots$, $\lambda_n$, . 
+\section*{Hvorfor heter det diagonalisering?}
+La $A$ være en  $n \times n$-matrise med $m$ lineært uavhengige egenvektorer.
+$\V{v}_1$, $\V{v}_2\dots \V{v}_m$ 
+og tilhørende egenverdier $\lambda_1$, $\lambda_2$,$\cdots$, $\lambda_m$, . 
 For hver egenvektor gjelder
 \[
 A\V{v}_k=\lambda_k \V{v}_k.
 \]
-Disse $n$ ligningene kan like gjerne organiseres i en matriseligning
+Disse $m$ ligningene kan like gjerne organiseres i en matriseligning
 \[
 AV=VD, 
 \]
@@ -25,21 +25,22 @@ D=
 0      & \lambda_2      & 0      & \cdots & 0 \\
 0      & 0      & \lambda_3      & \cdots & 0 \\
 \vdots & \vdots & \vdots & \ddots & \vdots \\
-0      & 0      & 0      & \cdots & \lambda_n
+0      & 0      & 0      & \cdots & \lambda_m
 \end{bmatrix}
 \]
 og 
 \[
 V=
 \begin{bmatrix}
-\V{v}_1 & \V{v}_2 & \cdots & \V{v}_n
+\V{v}_1 & \V{v}_2 & \cdots & \V{v}_m
 \end{bmatrix}.
 \]
-Siden $\V{v}_1$, $\V{v}_2\dots \V{v}_n$ er lineært uavhengige, har matrisen $V$  en invers $V^{-1}$. Vi ganger med $V^{-1}$ fra høyre og får
+Dersom $m=n$, har matrisen $V$  en invers $V^{-1}$,
+siden $\V{v}_1$, $\V{v}_2\dots \V{v}_n$ er lineært uavhengige. Vi ganger med $V^{-1}$ fra høyre og får
 \[
 V^{-1}AV=D.
 \]
-Denne operasjonen kalles å \emph{diagonalisere} $A$. Tidligere har vi nevnt at dersom $A$ har $n$ lineært uavhengige egenvektorer, sier vi at $A$ er diagonaliserbar. Dette er forklaringen.
+Denne operasjonen kalles å \emph{diagonalisere} $A$, og dette er grunnen til at en $n\times n$-matrise med $n$ lineært uavhengige egenvektorer kalles diagonaliserbar. 
 
 Man kan også se det motsatt. Dersom 
 \[
@@ -49,7 +50,7 @@ for en inverterbar $n \times n$-matrise $V$, kan vi gange fra venstre med $V$, o
 \[
 AV=VD
 \]
-Vi ser av denne likningen at kolonnene til $V$ utgjør $n$ lineært uavhengige vektorer.
+Vi ser av denne likningen at kolonnene til $V$ utgjør $n$ lineært uavhengige vektorer for $A$.
 
 \begin{thm}
 Vi kan skrive 
@@ -118,8 +119,18 @@ D \qedhere
 \end{ex}
 
 \begin{ex}
-en matrise med egenverdi 0
+Matrisen 
+\[
+\begin{bmatrix}
+2 & 3 & 4\\  3 &4 & 5 \\ 4 & 5 & 6
+\end{bmatrix}
+\]
+har egenverdier $0$ og $6\pm \sqrt{55}$, og følgelig tre lineært uavhengige egenvektorer. Den er derfor diagonaliserbar.
 \end{ex}
+
+\begin{merkx}
+Det forrige eksemplet viser at en matrise kan være diagonaliserbar uten å være inverterbar.
+\end{merkx}
 
 \begin{ex}
 Matrisen 
@@ -128,7 +139,7 @@ Matrisen
 1 & 1 & 0\\  0 &1 & 0 \\ 0 & 0 & 2
 \end{bmatrix}
 \]
-har bare to lineært uavhengige egenvektorer, og kan følgelig ikke diagonaliseres.
+har bare to lineært uavhengige egenvektorer, og er følgelig ikke diagonaliserbar.
 \end{ex}
 
 
@@ -147,6 +158,20 @@ Et slikt uttrykk er spesielt interessant dersom $\V v$ er en egenvektor med leng
 \section*{Symmetriske matriser}
 En matrise sies å være 
 \defterm{symmetrisk} dersom $A=A^*$.
+
+\begin{ex}
+Matrisen
+\[
+\begin{bmatrix}
+1 & 1 & 0\\  0 &1 & 0 \\ 0 & 0 & 2
+\end{bmatrix}
+\]
+er symmetrisk
+\end{ex}
+
+\begin{merkx}
+En symmetrisk matrise har reelle diagonalelementer.
+\end{merkx}
 
 \begin{defnx}
 En $n \times n$-matrise er \defterm{ortogonalt diagonaliserbar} dersom den har $n$ ortogonale egenvektorer.
@@ -173,34 +198,59 @@ hvis og bare hvis $A$ har $n$ ortogonale egenvektorer.
 
 
 \begin{thm}
-\[
-\V x A \V x
-\]
-er reell hvis $A=A^*$
+Dersom  $A=A^*$, er 
+$
+\V x^* A \V x
+$
+reell.
 \end{thm}
 \begin{proof}
+Vi ser fryktelig lett at
 \[
-A \V v=A^*\V = \lambda \V v
+\V x^* A \V x
 \]
+er en sum av reelle tall og komplekskonjugater.
 \end{proof}
+
 
 \begin{thm}
 En  symmetrisk matrise har reelle egenverdier.
 \end{thm}
 \begin{proof}
+La $\V v$ være en normalisert egenvektor med egenverdi $\lambda$. Vi vet at 
 \[
-A \V v=A^*\V = \lambda \V v
+\V v^* A \V v=\lambda,
 \]
+og venstresiden er reell, så da må også $\lambda$ være det.
 \end{proof}
 
 
 
 \begin{thm}
-En  symmetrisk matrise ortogonalt diagonaliserbar.
+Egenvektorene til to distinkte egenverdier er ortogonale for symmetriske matriser.
+\end{thm}
+
+\begin{proof}
+La $\V v_1$ og $\V v_2$ være to egenvektorer med egenverdier $\lambda_1$ og $\lambda_2$. 
+Vi beregner
+\begin{align*}
+\lambda_1 \V v_1^*\V v_2&=(\lambda_1 \V v_1)^*\V v_2=(A \V v_1)^*\V v_2\\&= \V v_1^*A^*\V v_2=\V v_1^*(A\V v_2)=\V v_1^*(\lambda_2\V v_2)=\lambda_2 \V v_1^*\V v_2
+\end{align*}
+Her har vi brukt at $\lambda_1$ og $\lambda_2$ er reelle Vi vet altså at
+\[
+0= \lambda_1 \V v_1^*\V v_2-\lambda_2 \V v_1^*\V v_2=(\lambda_1-\lambda_2) \V v_1^*\V v_2,
+\]
+og hvis vi bruker at $\lambda_1$ og $\lambda_2$ er forskjellige, må vi ha $\V v_1^*\V v_2=0$.
+\end{proof}
+
+\begin{thm}
+En  symmetrisk matrise er ortogonalt diagonaliserbar.
 \end{thm}
 
 
-
+\begin{proof}
+Vi ser lett at en symmertrisk $n\times n$-matrise like mange ortogonale egenvektorer som distinkte egenverdier, og at vi kan finne en ortogonal basis for repeterte egenverdier.
+\end{proof}
 
 
 
