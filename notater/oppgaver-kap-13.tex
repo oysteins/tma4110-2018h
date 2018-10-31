@@ -4,160 +4,154 @@
 
 
 
+%\begin{oppgave}
+%Anta at $\V{v}_1,\dots,\V{v}_5$ er lineært uavhengige egenvektorer til en matrise $A$ med egenverdier henholdsvis $1,2,3,5,5$.  Hva blir $A$ i basisen gitt av egenvektorene?
+%
+%\end{oppgave}
+%
+%\begin{losning}
+%$A=\begin{bmatrix}
+%1 & 0 & 0 & 0 & 0\\
+%0 & 2 & 0 & 0 & 0\\
+%0 & 0 & 3 & 0 & 0\\
+%0 & 0 & 0 & 5 & 0\\
+%0 & 0 & 0 & 0 & 5
+%\end{bmatrix}$
+%\end{losning}
+
+
+
 \begin{oppgave}
-Anta at $\V{v}_1,\dots,\V{v}_5$ er lineært uavhengige egenvektorer til en matrise $A$ med egenverdier henholdsvis $1,2,3,5,5$.  Hva blir $A$ i basisen gitt av egenvektorene?
-
-\end{oppgave}
-
-\begin{losning}
-$A=\begin{bmatrix}
-1 & 0 & 0 & 0 & 0\\
-0 & 2 & 0 & 0 & 0\\
-0 & 0 & 3 & 0 & 0\\
-0 & 0 & 0 & 5 & 0\\
-0 & 0 & 0 & 0 & 5
-\end{bmatrix}$
-\end{losning}
-
-
-
-\begin{oppgave}
-La $A=\begin{bmatrix}
+Finn matrisenes egenverdier og egenvektorer, og avgjør om de er diagonaliserbare. 
+\begin{punkt}
+$\begin{bmatrix}
 0 & 4\\
 0 & 0
 \end{bmatrix}$. 
-
-\begin{punkt}
-Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
 \end{punkt}
-
-\begin{punkt}
-Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
-\end{punkt}
-
-\begin{punkt}
-Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
-\end{punkt}
-
+%
+%\begin{punkt}
+%Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
+%\end{punkt}
+%
+%\begin{punkt}
+%Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+%\end{punkt}
+%
+%\begin{punkt}
+%Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
+%\end{punkt}
+%
 \end{oppgave}
 
-\begin{losning}
-\begin{punkt}
-Nei. Vi har kun en egenverdi, og vi må sjekke den geometriske multiplisiteten eksplisitt.
-\end{punkt}
+%\begin{losning}
+%\begin{punkt}
+%Nei. Vi har kun en egenverdi, og vi må sjekke den geometriske multiplisiteten eksplisitt.
+%\end{punkt}
+%
+%\begin{punkt}
+%Egenverier: 0
+%
+%\noindent
+%Egenvektorer til  0: linjen utspent av $\vv{1}{0}$. Geometrisk multiplisitet=1, mens algebraisk multiplisitet=2.
+%
+%\noindent
+%Dette utgjør ikke en basis for $\mathbb{R}^2$.
+%\end{punkt}
+%
+%Ikke diagonaliserbar.
+%
+%\end{losning}
 
 \begin{punkt}
-Egenverier: 0
-
-\noindent
-Egenvektorer til  0: linjen utspent av $\vv{1}{0}$. Geometrisk multiplisitet=1, mens algebraisk multiplisitet=2.
-
-\noindent
-Dette utgjør ikke en basis for $\mathbb{R}^2$.
-\end{punkt}
-
-Ikke diagonaliserbar.
-
-\end{losning}
-
-\begin{oppgave}
-La $A=\begin{bmatrix}
+$\begin{bmatrix}
 2 & 3 & 5\\
 0 & 3 & 5\\
 0 & 0 & 5
-\end{bmatrix}$. 
-
-\begin{punkt}
-Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
+\end{bmatrix}$
 \end{punkt}
 
+%
+%\begin{losning}
+%\begin{punkt}
+%Ja: Matrisen er triangulær, så vi kan lese av at $2,3,5$ er egenverdoiene til $A$. Egenvektorer til ulike egenverdier er lineært uavhengige. Derfor kan vi ta en egenvektor fra hvert egenrom for å lage en basis.
+%\end{punkt}
+%
+%\begin{punkt}
+%Egenverier: 2,3,5
+%
+%\noindent
+%Egenvektorer til  2: linjen utspent av $\vvv{1}{0}{0}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+%
+%\noindent
+%Egenvektorer til  3: linjen utspent av $\vvv{3}{1}{0}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+%
+%\noindent
+%Egenvektorer til  5: linjen utspent av $\vvv{25}{15}{6}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+%
+%
+%\end{punkt}
+%
+%$P=\begin{bmatrix}
+%1 & 3 & 25\\
+%0 & 1 & 15\\
+%0 & 0 & 6\\
+%\end{bmatrix}$, $D=\begin{bmatrix}
+%2 & 0 & 0\\
+%0 & 3 & 0\\
+%0 & 0 & 5\\
+%\end{bmatrix}.$
+%
+%\end{losning}
+
+
 \begin{punkt}
-Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
-\end{punkt}
-
-\begin{punkt}
-Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
-\end{punkt}
-
-\end{oppgave}
-
-
-\begin{losning}
-\begin{punkt}
-Ja: Matrisen er triangulær, så vi kan lese av at $2,3,5$ er egenverdoiene til $A$. Egenvektorer til ulike egenverdier er lineært uavhengige. Derfor kan vi ta en egenvektor fra hvert egenrom for å lage en basis.
-\end{punkt}
-
-\begin{punkt}
-Egenverier: 2,3,5
-
-\noindent
-Egenvektorer til  2: linjen utspent av $\vvv{1}{0}{0}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
-
-\noindent
-Egenvektorer til  3: linjen utspent av $\vvv{3}{1}{0}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
-
-\noindent
-Egenvektorer til  5: linjen utspent av $\vvv{25}{15}{6}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
-
-
-\end{punkt}
-
-$P=\begin{bmatrix}
-1 & 3 & 25\\
-0 & 1 & 15\\
-0 & 0 & 6\\
-\end{bmatrix}$, $D=\begin{bmatrix}
-2 & 0 & 0\\
-0 & 3 & 0\\
-0 & 0 & 5\\
-\end{bmatrix}.$
-
-\end{losning}
-
-
-\begin{oppgave}
-La oss modifisere matrisen i forrige oppgave med å bytte ut tallet 3 med tallet 2: $$A=\begin{bmatrix}
+$
+\begin{bmatrix}
 2 & 2 & 5\\
 0 & 2 & 5\\
 0 & 0 & 5
-\end{bmatrix}.$$ 
-
+\end{bmatrix}
+$ 
+\end{punkt}
+%
+%\begin{losning}
+%\begin{punkt}
+%Nei: Vi har kun to egenverdier $2$ og $5$, og vi vet ikke om den geometriske multiplisiteten til $2$ er lik den algebraiske multiplisiteten til $2$.
+%\end{punkt}
+%
+%\begin{punkt}
+%Egenverier: 2,5
+%
+%\noindent
+%Egenvektorer til  2: linjen utspent av $\vvv{1}{0}{0}$. Geometrisk multiplisitet=2, algebraisk multiplisitet=1.
+%
+%
+%\noindent
+%Egenvektorer til  5: linjen utspent av $\vvv{25}{15}{9}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+%
+%
+%\end{punkt}
+%
+%Ikke diagonaliserbar.
+%
+%\end{losning}
+%
 \begin{punkt}
-Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
+$\begin{bmatrix}
+3 & -1 & 2\\
+3 & -1 & 6\\
+-2 & 2 & -2
+\end{bmatrix}$
 \end{punkt}
 
 \begin{punkt}
-Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+$\begin{bmatrix}
+0 & -1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 3
+\end{bmatrix}$
 \end{punkt}
-
-\begin{punkt}
-Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
-\end{punkt}
-
-\end{oppgave}
-
-
-\begin{losning}
-\begin{punkt}
-Nei: Vi har kun to egenverdier $2$ og $5$, og vi vet ikke om den geometriske multiplisiteten til $2$ er lik den algebraiske multiplisiteten til $2$.
-\end{punkt}
-
-\begin{punkt}
-Egenverier: 2,5
-
-\noindent
-Egenvektorer til  2: linjen utspent av $\vvv{1}{0}{0}$. Geometrisk multiplisitet=2, algebraisk multiplisitet=1.
-
-
-\noindent
-Egenvektorer til  5: linjen utspent av $\vvv{25}{15}{9}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
-
-
-\end{punkt}
-
-Ikke diagonaliserbar.
-
-\end{losning}
 
 
 \begin{oppgave}
@@ -205,170 +199,162 @@ $D=\begin{bmatrix}
 \end{losning}
 
 
-\begin{oppgave}
-La $A=\begin{bmatrix}
-3 & -1 & 2\\
-3 & -1 & 6\\
--2 & 2 & -2
-\end{bmatrix}$. 
-
-\begin{punkt}
-Kan du avgjøre om det finnes en basis av egenvektorer til $A$ uten å regne?
-\end{punkt}
-
-\begin{punkt}
-Vis at $2$ er en egenverdi til $A$.
-\end{punkt}
-
-
-\begin{punkt}
-Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
-\end{punkt}
-
-\begin{punkt}
-Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
-\end{punkt}
-
-\begin{punkt}
-Hvorfor er ikke denne oppgaven et moteksempel til spektralteoremet?
-\end{punkt}
-
-\end{oppgave}
+%\begin{oppgave}
+%
+%
+%\begin{punkt}
+%Vis at $2$ er en egenverdi til $A$.
+%\end{punkt}
+%
+%
+%\begin{punkt}
+%Finn egenverdiene og egenvektorene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Har vi en basis ev egenvektorer?
+%\end{punkt}
+%
+%\begin{punkt}
+%Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
+%\end{punkt}
+%
+%\begin{punkt}
+%Hvorfor er ikke denne oppgaven et moteksempel til spektralteoremet?
+%\end{punkt}
+%
+%\end{oppgave}
 
 
-\begin{losning}
-\begin{punkt}
-Nei. Det er ikke klart hva egenverdiene til $A$ er.
-\end{punkt}
-
-\begin{punkt}
-Hint: Hva er determinanten til $A-2I$?
-\end{punkt}
-
-\begin{punkt}
-Egenverier: 2,-4
-
-\noindent
-Egenvektorer til  2: planet utspent av $\vvv{1}{1}{0}$ og $\vvv{-2}{0}{1}$. Geometrisk multiplisitet=algebraisk multiplisitet=2.
-
-\noindent
-Egenvektorer til  -4: linjen utspent av $\vvv{1}{3}{-2}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
-
-\noindent
-Vi har en basis av egenvektorer; geometrisk multiplisitet samsvarer med algebraisk multiplisitet for hver egenverdi.
-
-
-\end{punkt}
-
-\begin{punkt}
-$P=\begin{bmatrix}
-1 & -2 & 1\\
-1 & 0 & 3\\
-0 & 1 & -2\\
-\end{bmatrix}$, $D=\begin{bmatrix}
-2 & 0 & 0\\
-0 & 2 & 0\\
-0 & 0 & -4\\
-\end{bmatrix}.$
-\end{punkt}
-
-\begin{punkt}
-Spektralteoremet: $A$ er symmetrisk impliserer at det finnes en basis av egenvektorer. Men vi kan fortsatt ha en basis av egenvektorer uten at matrisen vi startet med er symmetrisk.
-\end{punkt}
-
-\end{losning}
+%\begin{losning}
+%\begin{punkt}
+%Nei. Det er ikke klart hva egenverdiene til $A$ er.
+%\end{punkt}
+%
+%\begin{punkt}
+%Hint: Hva er determinanten til $A-2I$?
+%\end{punkt}
+%
+%\begin{punkt}
+%Egenverier: 2,-4
+%
+%\noindent
+%Egenvektorer til  2: planet utspent av $\vvv{1}{1}{0}$ og $\vvv{-2}{0}{1}$. Geometrisk multiplisitet=algebraisk multiplisitet=2.
+%
+%\noindent
+%Egenvektorer til  -4: linjen utspent av $\vvv{1}{3}{-2}$. Geometrisk multiplisitet=algebraisk multiplisitet=1.
+%
+%\noindent
+%Vi har en basis av egenvektorer; geometrisk multiplisitet samsvarer med algebraisk multiplisitet for hver egenverdi.
+%
+%
+%\end{punkt}
+%
+%\begin{punkt}
+%$P=\begin{bmatrix}
+%1 & -2 & 1\\
+%1 & 0 & 3\\
+%0 & 1 & -2\\
+%\end{bmatrix}$, $D=\begin{bmatrix}
+%2 & 0 & 0\\
+%0 & 2 & 0\\
+%0 & 0 & -4\\
+%\end{bmatrix}.$
+%\end{punkt}
+%
+%\begin{punkt}
+%Spektralteoremet: $A$ er symmetrisk impliserer at det finnes en basis av egenvektorer. Men vi kan fortsatt ha en basis av egenvektorer uten at matrisen vi startet med er symmetrisk.
+%\end{punkt}
+%
+%\end{losning}
 
 
 
-\begin{oppgave}
-\begin{punkt}
-Anta at $A$ er en diagonaliserbar. Hva er fordelen med å kunne velge en ortonormal basis av egenvektorer (hvis mulig) mtp. å regne ut $P$, $D$ og~$P^{-1}$ i dekomponeringen $A=PDP^{-1}$.
-\end{punkt}
+%\begin{oppgave}
+%\begin{punkt}
+%Anta at $A$ er en diagonaliserbar. Hva er fordelen med å kunne velge en ortonormal basis av egenvektorer (hvis mulig) mtp. å regne ut $P$, $D$ og~$P^{-1}$ i dekomponeringen $A=PDP^{-1}$.
+%\end{punkt}
+%
+%\begin{punkt}
+%La $A$ være som i oppgave $\mathbf{5.}$ med $\lambda=2$ og $\mu=1$. Regn ut $P$, $D$ og $P^{-1}$.
+%\end{punkt}
+%
+%\end{oppgave}
+%
+%\begin{losning}
+%\begin{punkt}
+%I forrige øving beviste vi at $U^{-1}=U\tr$ dersom kolonnene til $U$ er ortonormale. Derfor kan vi enkelt regne ut $P^{-1}=P\tr$ dersom vi velger en ortonormal egenvektorbasis. 
+%\end{punkt}
+%
+%\begin{punkt}
+%$$D=\begin{bmatrix}
+%1 & 0 & 0\\
+%0 & 1 & 0\\
+%0 & 0 & 3
+%\end{bmatrix}$$ $$P=\begin{bmatrix}
+%-\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\\
+%\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\\
+%0 & 1 & 0
+%\end{bmatrix}$$
+%
+%$$P^{-1}=P\tr=\begin{bmatrix}
+%-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0\\
+%0 & 0 & 1\\
+%\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0
+%\end{bmatrix}$$
+%\end{punkt}
+%
+%\end{losning}
 
-\begin{punkt}
-La $A$ være som i oppgave $\mathbf{5.}$ med $\lambda=2$ og $\mu=1$. Regn ut $P$, $D$ og $P^{-1}$.
-\end{punkt}
-
-\end{oppgave}
-
-\begin{losning}
-\begin{punkt}
-I forrige øving beviste vi at $U^{-1}=U\tr$ dersom kolonnene til $U$ er ortonormale. Derfor kan vi enkelt regne ut $P^{-1}=P\tr$ dersom vi velger en ortonormal egenvektorbasis. 
-\end{punkt}
-
-\begin{punkt}
-$$D=\begin{bmatrix}
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & 3
-\end{bmatrix}$$ $$P=\begin{bmatrix}
--\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\\
-\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\\
-0 & 1 & 0
-\end{bmatrix}$$
-
-$$P^{-1}=P\tr=\begin{bmatrix}
--\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0\\
-0 & 0 & 1\\
-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0
-\end{bmatrix}$$
-\end{punkt}
-
-\end{losning}
-
-\begin{oppgave}
-La $A=\begin{bmatrix}
-0 & -1 & 0\\
-1 & 0 & 0\\
-0 & 0 & 3
-\end{bmatrix}$.
-
-\begin{punkt}
-Er $A$ diagonaliserbar som en reell matrise?
-\end{punkt}
-
-\begin{punkt}
-Er $A$ diagonaliserbar som en kompleks matrise?
-\end{punkt}
-
-\begin{punkt}
-Hvis $A$ er diagonaliserbar -- enten som en reell eller kompleks matrise -- finn diagonaliseringen.
-\end{punkt}
-
-\end{oppgave}
-
-\begin{losning}
-
-\begin{punkt}
-Det karakteristiske polynomet er $(\lambda^2+1)(3-\lambda)$. Vi har bare en reell egenverdi $\lambda=3$ med algebraisk multiplisitet=1. Den geometriske multiplisiteten er derfor mindre eller lik 1. Dermed har vi ikke en basis for $\mathbb{R}^3$ av egenvektorer; vi trenger tre lineær uavhengige egenvektorer. 
-\end{punkt}
-
-\begin{punkt}
-Nå har vi tre egenverdier: $3,i,-i$. Derfor har vi tre lineært uavhengige egenvektorer som utgjør en basis for $\mathbb{C}^3$.
-\end{punkt}
-
-\begin{punkt}
-$$P=\begin{bmatrix}
-0 & i & -i\\
-0 & 1 & 1\\
-1 & 0 & 0
-\end{bmatrix}$$
-$$D=\begin{bmatrix}
-3 & 0 & 0\\
-0 & i & 0\\
-0 & 0 & -i
-\end{bmatrix}$$
-\end{punkt}
-
-\end{losning}
-
-\begin{oppgave}
-La $A$ være matrisen fra oppgave $\textbf{2.}$ Får vi flere lineært uavhengige egenvektorer dersom vi betrakter $A$ som en kompleks matrise?
-\end{oppgave}
-
-\begin{losning}
-Nei. Vi har fortsatt en dobbel egenverdi $\lambda=2$ med et degenerert egenrom av dimensjon 1 (geometrisk multiplisitet = 1).
-\end{losning}
+%\begin{oppgave}
+%La $A=\begin{bmatrix}
+%0 & -1 & 0\\
+%1 & 0 & 0\\
+%0 & 0 & 3
+%\end{bmatrix}$.
+%
+%\begin{punkt}
+%Er $A$ diagonaliserbar som en reell matrise?
+%\end{punkt}
+%
+%\begin{punkt}
+%Er $A$ diagonaliserbar som en kompleks matrise?
+%\end{punkt}
+%
+%\begin{punkt}
+%Hvis $A$ er diagonaliserbar -- enten som en reell eller kompleks matrise -- finn diagonaliseringen.
+%\end{punkt}
+%
+%\end{oppgave}
+%
+%\begin{losning}
+%
+%\begin{punkt}
+%Det karakteristiske polynomet er $(\lambda^2+1)(3-\lambda)$. Vi har bare en reell egenverdi $\lambda=3$ med algebraisk multiplisitet=1. Den geometriske multiplisiteten er derfor mindre eller lik 1. Dermed har vi ikke en basis for $\mathbb{R}^3$ av egenvektorer; vi trenger tre lineær uavhengige egenvektorer. 
+%\end{punkt}
+%
+%\begin{punkt}
+%Nå har vi tre egenverdier: $3,i,-i$. Derfor har vi tre lineært uavhengige egenvektorer som utgjør en basis for $\mathbb{C}^3$.
+%\end{punkt}
+%
+%\begin{punkt}
+%$$P=\begin{bmatrix}
+%0 & i & -i\\
+%0 & 1 & 1\\
+%1 & 0 & 0
+%\end{bmatrix}$$
+%$$D=\begin{bmatrix}
+%3 & 0 & 0\\
+%0 & i & 0\\
+%0 & 0 & -i
+%\end{bmatrix}$$
+%\end{punkt}
+%
+%\end{losning}
+%
+%\begin{oppgave}
+%La $A$ være matrisen fra oppgave $\textbf{2.}$ Får vi flere lineært uavhengige egenvektorer dersom vi betrakter $A$ som en kompleks matrise?
+%\end{oppgave}
+%
+%\begin{losning}
+%Nei. Vi har fortsatt en dobbel egenverdi $\lambda=2$ med et degenerert egenrom av dimensjon 1 (geometrisk multiplisitet = 1).
+%\end{losning}
 
 \begin{oppgave}
 La $D:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen mellom andregradspolynom gitt ved derivasjon: $$D(ax^2+bx+c)=2ax+b.$$
@@ -378,12 +364,12 @@ Finn standardmatrisen, $[D]$, til $D$ i koordinatene med hensyn på basisen $1,x
 \end{punkt}
 
 \begin{punkt}
-Bruk det at $[D]$ representerer derivasjon til å argumentere for hvorvidt matrisen er diagonaliserbar.
+Finn egenverdiene og egenvektorene. Er $D$ diagonaliserbar?
 \end{punkt}
 
-\begin{punkt}
-Verifiser svaret ditt i del \textbf{b)} ved regning. 
-\end{punkt}
+%\begin{punkt}
+%Verifiser svaret ditt i del \textbf{b)} ved regning. 
+%\end{punkt}
 
 
 \end{oppgave}
@@ -412,52 +398,52 @@ Egenrommet til 0: Linjen utspent av $\vvv{1}{0}{0}$. (koordinatene til 1!)
 
 \end{losning}
 
-\begin{oppgave}
-La $A$ være en kvadratisk matrise. Anta at $\V{v}_1$ og~$\V{v}_2$ er egenvektorer av $A$ med ulike tilhørende egenverdier.
-
-\begin{punkt}
-Finn et eksempel som illustrerer at $\V{v}_1$ og~$\V{v}_2$ ikke nødvendigvis er ortogonale.
-\end{punkt}
-
-\begin{punkt}
-Vis at hvis $A$ er symmetrisk, så er $\V{v}_1$ og~$\V{v}_2$ ortogonale.
-
-\noindent
-Hint: Steg 1: Hva vet du? Steg 2: Hva skal du vise? Steg 3: Utforsk uttrykket $(\lambda_1-\lambda_2)(\V{v}_1\boldsymbol{\cdot}\V{v}_2)$ hvor $\lambda$-ene er egenverdiene.
-\end{punkt}
-
-\end{oppgave}
-
-\begin{losning}
-La $A$ være en kvadratisk matrise. Anta at $\V{v}_1$ og~$\V{v}_2$ er egenvektorer av $A$ med ulike tilhørende egenverdier.
-
-\begin{punkt}
-Du har allerede funnet eksempler tidligere i øvingen.
-\end{punkt}
-
-\begin{punkt}
-La $\lambda_1$ være egenverdien til $\V{v}_1$, og la $\lambda_2$ være egenverdien til $\V{v}_2$. Vi har antatt at $\lambda_1\neq\lambda_2$ og $A=A\tr$.
-
-\noindent
-Forslag til løsning: Vi ønsker å vise at $\V{v}_1 
-\boldsymbol{\cdot}\V{v}_2=0$. Vi må bruke at de er 
-egenvektorer på en eller annen måte, så vi utforsker følgende 
-uttrykk (basert på at egenvektorer kun skalerer vektorer):
-$$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}\V{v}_2=(A\V{v}_1 )
-\boldsymbol{\cdot}\V{v}_2=(A\V{v}_1 )\tr\V{v}_2=(\V{v}_1\tr A
-\tr)\V{v}_2.$$ Men nå kan vi bruke antagelsen om at $A$ er 
-symmetrisk til å se at $$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}
-\V{v}_2=\V{v}_1\tr(A\V{v}_2).$$ Lignende regning som ovenfor 
-gir nå at $$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}\V{v}_2=\V{v}
-_1 \boldsymbol{\cdot}(\lambda_2\V{v}_2).$$ Med gode gamle 
-flytte-bytte får vi altså $$(\lambda_1\V{v}_1 )
-\boldsymbol{\cdot}\V{v}_2-\V{v}_1 \boldsymbol{\cdot}
-(\lambda_2\V{v}_2)=0,$$ som -- siden prikkproduktet er lineært 
--- kan skrives $$(\lambda_1-\lambda_2)(\V{v}_1 
-\boldsymbol{\cdot}\V{v}_2)=0.$$ Men første faktor er ikke lik 
-null fordi $\lambda_1\neq\lambda_2$, slik at vi kan konkludere 
-med at $$\V{v}_1 \boldsymbol{\cdot}\V{v}_2=0.$$ Egenvektorene 
-er ortogonale.
-\end{punkt}
-
-\end{losning}
+%\begin{oppgave}
+%La $A$ være en kvadratisk matrise. Anta at $\V{v}_1$ og~$\V{v}_2$ er egenvektorer av $A$ med ulike tilhørende egenverdier.
+%
+%\begin{punkt}
+%Finn et eksempel som illustrerer at $\V{v}_1$ og~$\V{v}_2$ ikke nødvendigvis er ortogonale.
+%\end{punkt}
+%
+%\begin{punkt}
+%Vis at hvis $A$ er symmetrisk, så er $\V{v}_1$ og~$\V{v}_2$ ortogonale.
+%
+%\noindent
+%Hint: Steg 1: Hva vet du? Steg 2: Hva skal du vise? Steg 3: Utforsk uttrykket $(\lambda_1-\lambda_2)(\V{v}_1\boldsymbol{\cdot}\V{v}_2)$ hvor $\lambda$-ene er egenverdiene.
+%\end{punkt}
+%
+%\end{oppgave}
+%
+%\begin{losning}
+%La $A$ være en kvadratisk matrise. Anta at $\V{v}_1$ og~$\V{v}_2$ er egenvektorer av $A$ med ulike tilhørende egenverdier.
+%
+%\begin{punkt}
+%Du har allerede funnet eksempler tidligere i øvingen.
+%\end{punkt}
+%
+%\begin{punkt}
+%La $\lambda_1$ være egenverdien til $\V{v}_1$, og la $\lambda_2$ være egenverdien til $\V{v}_2$. Vi har antatt at $\lambda_1\neq\lambda_2$ og $A=A\tr$.
+%
+%\noindent
+%Forslag til løsning: Vi ønsker å vise at $\V{v}_1 
+%\boldsymbol{\cdot}\V{v}_2=0$. Vi må bruke at de er 
+%egenvektorer på en eller annen måte, så vi utforsker følgende 
+%uttrykk (basert på at egenvektorer kun skalerer vektorer):
+%$$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}\V{v}_2=(A\V{v}_1 )
+%\boldsymbol{\cdot}\V{v}_2=(A\V{v}_1 )\tr\V{v}_2=(\V{v}_1\tr A
+%\tr)\V{v}_2.$$ Men nå kan vi bruke antagelsen om at $A$ er 
+%symmetrisk til å se at $$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}
+%\V{v}_2=\V{v}_1\tr(A\V{v}_2).$$ Lignende regning som ovenfor 
+%gir nå at $$(\lambda_1\V{v}_1 )\boldsymbol{\cdot}\V{v}_2=\V{v}
+%_1 \boldsymbol{\cdot}(\lambda_2\V{v}_2).$$ Med gode gamle 
+%flytte-bytte får vi altså $$(\lambda_1\V{v}_1 )
+%\boldsymbol{\cdot}\V{v}_2-\V{v}_1 \boldsymbol{\cdot}
+%(\lambda_2\V{v}_2)=0,$$ som -- siden prikkproduktet er lineært 
+%-- kan skrives $$(\lambda_1-\lambda_2)(\V{v}_1 
+%\boldsymbol{\cdot}\V{v}_2)=0.$$ Men første faktor er ikke lik 
+%null fordi $\lambda_1\neq\lambda_2$, slik at vi kan konkludere 
+%med at $$\V{v}_1 \boldsymbol{\cdot}\V{v}_2=0.$$ Egenvektorene 
+%er ortogonale.
+%\end{punkt}
+%
+%\end{losning}
