@@ -6,7 +6,7 @@ Dette kapitlet avslutter det skal lære om egenverdier og egenvektorer.
 
 
 \section*{Hvorfor heter det diagonalisering?}
-La $A$ være en  $n \times n$-matrise med $m$ lineært uavhengige egenvektorer.
+La $A$ være en  $n \times n$-matrise med $m$ lineært uavhengige egenvektorer
 $\V{v}_1$, $\V{v}_2\dots \V{v}_m$ 
 og tilhørende egenverdier $\lambda_1$, $\lambda_2$,$\cdots$, $\lambda_m$, . 
 For hver egenvektor gjelder
@@ -35,13 +35,13 @@ V=
 \V{v}_1 & \V{v}_2 & \cdots & \V{v}_m
 \end{bmatrix}.
 \]
-Dersom $m=n$, har matrisen $V$  en invers $V^{-1}$,
-siden $\V{v}_1$, $\V{v}_2\dots \V{v}_n$ er lineært uavhengige. Vi ganger med $V^{-1}$ fra høyre og får
+
+Siden $\V{v}_1$, $\V{v}_2\dots \V{v}_n$ er lineært uavhengige, er matrisen $V$  invertibel dersom $m=n$.
+Vi ganger med $V^{-1}$ fra høyre og får
 \[
 V^{-1}AV=D.
 \]
 Denne operasjonen kalles å \emph{diagonalisere} $A$, og dette er grunnen til at en $n\times n$-matrise med $n$ lineært uavhengige egenvektorer kalles diagonaliserbar. 
-
 Man kan også se det motsatt. Dersom 
 \[
 V^{-1}AV=D
@@ -118,19 +118,6 @@ D \qedhere
 \end{align*}
 \end{ex}
 
-\begin{ex}
-Matrisen 
-\[
-\begin{bmatrix}
-2 & 3 & 4\\  3 &4 & 5 \\ 4 & 5 & 6
-\end{bmatrix}
-\]
-har egenverdier $0$ og $6\pm \sqrt{55}$, og følgelig tre lineært uavhengige egenvektorer. Den er derfor diagonaliserbar.
-\end{ex}
-
-\begin{merkx}
-Det forrige eksemplet viser at en matrise kan være diagonaliserbar uten å være inverterbar.
-\end{merkx}
 
 \begin{ex}
 Matrisen 
@@ -163,10 +150,10 @@ En matrise sies å være
 Matrisen
 \[
 \begin{bmatrix}
-1 & 1 & 0\\  0 &1 & 0 \\ 0 & 0 & 2
+1 & 1+i & -i\\  1-i &0 & 2-i \\ i & 2+i  & 2
 \end{bmatrix}
 \]
-er symmetrisk
+er symmetrisk.
 \end{ex}
 
 \begin{merkx}
@@ -232,25 +219,47 @@ Egenvektorene til to distinkte egenverdier er ortogonale for symmetriske matrise
 
 \begin{proof}
 La $\V v_1$ og $\V v_2$ være to egenvektorer med egenverdier $\lambda_1$ og $\lambda_2$. 
-Vi beregner
+Vi beregner (husk at $\lambda_1$ og $\lambda_2$ er reelle)
 \begin{align*}
 \lambda_1 \V v_1^*\V v_2&=(\lambda_1 \V v_1)^*\V v_2=(A \V v_1)^*\V v_2\\&= \V v_1^*A^*\V v_2=\V v_1^*(A\V v_2)=\V v_1^*(\lambda_2\V v_2)=\lambda_2 \V v_1^*\V v_2
 \end{align*}
-Her har vi brukt at $\lambda_1$ og $\lambda_2$ er reelle Vi vet altså at
+Vi vet altså at
 \[
 0= \lambda_1 \V v_1^*\V v_2-\lambda_2 \V v_1^*\V v_2=(\lambda_1-\lambda_2) \V v_1^*\V v_2,
 \]
 og hvis vi bruker at $\lambda_1$ og $\lambda_2$ er forskjellige, må vi ha $\V v_1^*\V v_2=0$.
 \end{proof}
 
+\noindent Det siste teoremet vi tar med, skal vi la stå ubevist. 
 \begin{thm}
 En  symmetrisk matrise er ortogonalt diagonaliserbar.
 \end{thm}
 
+\begin{ex}
+Matrisen 
+\[
+\begin{bmatrix}
+1 & 2 & 2\\  2 &6 & 2 \\ 2 & 2 & 6
+\end{bmatrix}
+\]
+har egenverdier 4, 9 og 0. Egenvektorer er 
+\[
+\begin{bmatrix}
+-4 \\ 1 \\ 1
+\end{bmatrix}
+\]
+Nå våknet ungen, så jeg rakk ikke regne ut de to andre. Vi får ta det i forelesning.
+%har egenverdier $0$ og $6\pm \sqrt{55}$, og følgelig tre lineært uavhengige egenvektorer. Den er derfor diagonaliserbar.
+\end{ex}
 
-\begin{proof}
-Vi ser lett at en symmertrisk $n\times n$-matrise like mange ortogonale egenvektorer som distinkte egenverdier, og at vi kan finne en ortogonal basis for repeterte egenverdier.
-\end{proof}
+\begin{merkx}
+Det forrige eksemplet viser at en matrise kan være diagonaliserbar uten å være inverterbar.
+\end{merkx}
+
+
+%\begin{proof}
+%Vi ser lett at en symmertrisk $n\times n$-matrise like mange ortogonale egenvektorer som distinkte egenverdier, og at vi kan finne en ortogonal basis for repeterte egenverdier.
+%\end{proof}
 
 
 
