@@ -10,7 +10,45 @@ Løs likningssystemet
 \end{oppgave}
 
 \begin{losning}
-TODO
+Ligningssystemet 
+\begin{equation*}
+\begin{matrix}
+(1+i)z &- w &= i \\
+(1-i)z &+ (1+i)w &= 1
+\end{matrix}
+\end{equation*}
+kan skrives som matriseligningen
+\begin{equation*}
+\begin{pmatrix}	
+1+i & -1 \\
+1-i & 1+i
+\end{pmatrix}
+\begin{pmatrix}
+z \\ w
+\end{pmatrix}	
+=
+\begin{pmatrix}
+i \\ 1
+\end{pmatrix}
+\end{equation*}
+Vi regner ut inversen til en $2\times 2$ matrise og multipliserer på begge sider med den og får
+\begin{equation*}
+\begin{pmatrix}
+z \\ w
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 + i & \frac{1}{2}(1 - i) \\
+i& 1
+\end{pmatrix}
+\begin{pmatrix}
+i \\ 1
+\end{pmatrix}
+= \frac{1}{2}
+\begin{pmatrix}
+1 + i \\ 0
+\end{pmatrix}	
+\end{equation*}
 \end{losning}
 
 
@@ -42,7 +80,42 @@ Er kolonnene lineært avhengige? Hvis ja, finn nullrommet til matrisen.
 \end{oppgave}
 
 \begin{losning}
-TODO
+Vi vet at kolonenne til en matrise er lineært avhengige hvis, og bare hvis, determinanten er $0$.
+\begin{punkt}
+	Her er $\det(A) = 0$ så vi vet at nullrommet er ikke-trivielt. Rad-reduserer vi matrisen får vi systemet
+	\begin{equation*}
+		\begin{pmatrix}
+			1 & 0 & -1 \\
+			0 & 1 & 2 \\
+			0 & 0 & 0 
+		\end{pmatrix}
+		\begin{pmatrix}
+			x \\ y \\ z
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			0 \\ 0 \\ 0
+		\end{pmatrix}
+	\end{equation*}
+	Her har vi én nullrad som betyr at nullrommet har dimensjon 1. Vi velger $z=t$ og får at $x=t$ og $y = -2t$ som betyr at nullrommet er
+	\begin{equation*}
+		\mathrm{null}(A) = \mathrm{span}\left\{\begin{pmatrix}1 \\ -2 \\ 1\end{pmatrix}\right\} = t\begin{pmatrix}1 \\ -2 \\ 1\end{pmatrix}
+	\end{equation*}
+\end{punkt}
+\begin{punkt}
+	Matrisen har determinant ulik 0 og har derfor nullrom som kun er vektoren $(0, 0, 0)$.
+\end{punkt}
+\begin{punkt}
+	Her er determinanten lik 0 så nulrommet er ikke-trivielt. Vi kan regne ut som i del a) og finne rad-redusert form
+	\begin{equation*}
+		\begin{pmatrix}
+			1 & 0 & -1 \\
+			0 & 1 & 2 \\
+			0 & 0 & 0 
+		\end{pmatrix}
+	\end{equation*}
+	for så å finne nullrommet. Dette er den samme matrisen som den vi fikk i a) og nullrommet blir derfor likt. Vi kan også observere at matrisene i a) og c) er transponerte av hverandre.
+\end{punkt}
 \end{losning}
 
 
@@ -86,12 +159,58 @@ Finn hver matrises determinant, egenverdier og tilhørende egenrom.
 
 
 \begin{losning}
-TODO
+	\begin{punkt}
+		Determinanten er $-2$ og egenverdiene er $-2$, $i$ og $-i$. Her får vi de korresponderende egenvektorene
+		\begin{equation*}
+			\begin{pmatrix}
+				0 \\ 1 \\ 0
+			\end{pmatrix}
+			,
+			\begin{pmatrix}
+				i \\ 1 \\ 1
+			\end{pmatrix}
+			,
+			\begin{pmatrix}
+				-i \\ 1 \\ 1
+			\end{pmatrix}
+		\end{equation*}
+	\end{punkt}
+	\begin{punkt}
+		Her er determinanten $2$ og vi har karakteristisk polynom
+		\begin{equation*}
+			(\lambda + 1)^2(\lambda - 2)
+		\end{equation*}
+		som gir egenverdier $\lambda  = -1$ og $\lambda = 2$.
+		
+	\end{punkt}
+
+	\begin{punkt}
+		Determinanten er $20$ og karakteristisk polynom er 
+		\begin{equation*}
+			(\lambda - 2)^2(\lambda - 5)
+		\end{equation*}
+	\end{punkt}
+
+	\begin{punkt}
+		Determinanten er $27$ og egenverdiene er $\lambda = 3$ med multiplisitet 3
+	\end{punkt}
+
 \end{losning}
 
 \begin{oppgave}
 Beregn produktet av egenverdiene for hver matrise i forrige oppgave.
 \end{oppgave}
+
+\begin{losning}
+	Hvis vi ganger sammen egenverdiene \emph{med} multiplisitet får vi
+	\begin{align*}
+		(-2)i(-i) &= -2 \\
+		(-1)^22 &= 2 \\
+		2^2\cdot 5 &= 20 \\
+		3^3 & = 27
+	\end{align*}
+	altså nøyaktig determinantene til de respektive matrisene.
+\end{losning}
 
 \begin{oppgave}
 Finn en vektor $\V w$ slik at
@@ -114,7 +233,19 @@ spenner ut $\C^3$.
 \end{oppgave}
 
 \begin{losning}
-TODO
+	Siden sannsynligheten for at en tilfeldig valgt vektor i $\mathbb{C}^3$ ligger i planet utspent av de to oppgitte vektorene er forsvinnene liten kan vi prøve å bare gjette en vektor og se om den er en lineær kombinasjon av de to andre. Vi gjetter
+	\begin{equation*}
+		\V w= \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}
+	\end{equation*}
+	og regner ut determinanten til matrisen
+	\begin{equation*}
+		\begin{pmatrix}
+			1 & -3 & 1 + i 	\\
+			1 & 2i & 0 		\\
+			1 & 8 & -2 		
+		\end{pmatrix}
+	\end{equation*}
+	som blir ulik null. Dette skjer hvis, og bare hvis, kolonenne er linær uavhengige. Det vil si at vårt valg av vektoren $\V w$ ikke er en lineær kombinasjon av de to andre, som betyr at de tre vektorene sammen spenner ut $\mathbb{C}$.
 \end{losning}
 
 
@@ -142,26 +273,59 @@ ligger i planet utspent av
 
 
 \begin{losning}
-TODO
+	Her blir det motsatt av forrige oppgave: Hvis vi gjetter $a$ vil det svært liten sannsynlighet at den ligger i planet utspent av de to andre vektorene. Det at vektoren ligger i dette planet betyr at det finnes $b$ og $c$, muligens komplekse, slik at
+	\begin{equation*}
+		\begin{pmatrix}
+			a\\ 6 - 6i \\ -12
+		\end{pmatrix}
+		= b
+		\begin{pmatrix}
+			-3 \\ 2i \\ 8
+		\end{pmatrix}
+		+ c
+		\begin{pmatrix}
+			1 \\ 1 \\ 2
+		\end{pmatrix}
+	\end{equation*}
 \end{losning}
-
-
-%\begin{oppgave}
-%Matrisen i oppgave 3 a) 
-%har en dobbel egenverdi. Ta kryssproduktet av basisen du fant for egenrommet til denne egenverdien. Ser du noe rart?
-%\end{oppgave}
-%
-%\begin{losning}
-%TODO
-%\end{losning}
-
+eller skrevet som matriseligningen
+\begin{equation*}
+	\begin{pmatrix}
+		a \\ 6-6i \\ -12
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-3 & 1 \\
+		2i & 1 \\
+		8 & 2
+	\end{pmatrix}
+	\begin{pmatrix}
+		b \\ c
+	\end{pmatrix}.
+\end{equation*}
+ene og få at $b = -3$ og $c = 6$ slik at 
+\begin{equation*}
+	a = 3b + c = 15
+\end{equation*}
 \begin{oppgave}
 Vis at dersom matrisen $A$ har egenverdi $\lambda$, har $A^2$ egenverdi $\lambda^2$.
 \end{oppgave}
 
 
 \begin{losning}
-TODO
+Vi antar at $A$ har egenverdi $\lambda$. Det betyr at det finnes en $\boldsymbol{v}\not = \boldsymbol{0}$ slik at
+\begin{equation*}
+A \boldsymbol{v} = \lambda \boldsymbol{v}
+\end{equation*}
+vi multipliserer begge sidene av ligningen med $A$ og får
+\begin{equation*}
+A(A\boldsymbol{v}) = A(\lambda\boldsymbol{v})
+\end{equation*}
+men siden vi kan flytte på paranteser og dra ut konstanter vil dette bli
+\begin{equation*}
+A^2\boldsymbol{v} = \lambda A\boldsymbol{v} = \lambda (\lambda \boldsymbol{v}) = \lambda^2\boldsymbol{v}
+\end{equation*}
+Siden vi vet fra antagelsen at $\boldsymbol{v} \not =\boldsymbol{0}$ har vi funnet en verdi, nemlig $\lambda^2$, som er en egenverdi til matrisen $A^2$.
 \end{losning}
 
 \begin{oppgave}
@@ -177,19 +341,36 @@ Hva er egenverdiene til $T_{2 \theta}$?
 
 
 \begin{losning}
-TODO
+Vi setter som vanlig opp matrisen
+\begin{equation*}
+	T_\theta - \lambda I = 
+	\begin{pmatrix}
+	\cos \theta - \lambda & -\sin\theta \\
+	\sin\theta & \cos\theta - \lambda
+\end{pmatrix}
+\end{equation*}
+og beregner determinanten
+\begin{equation*}
+	\det(T_\theta - \lambda I) = \lambda^2 - 2\cos\theta + 1
+\end{equation*}
+Ved nå å bruke abc-formelen får vi at 
+\begin{equation*}
+	\lambda = \frac{2\cos\theta \pm 2\sqrt{\cos ^2\theta - 1}}{2}
+\end{equation*}	
+som blir
+\begin{equation*}
+	\lambda = \cos\theta \pm i\sin\theta
+\end{equation*}
+Hvis vi ser på denne komplekse egenverdien som en vektor i planet er det nøyaktiv vektoren som peker i samme retning som $\V e_1$ rotert med/mot klokken med $\theta$ radianer. Fra tidligere øvinger vet vi at $T_{2\theta} = T_\theta\cdot T_\theta = T_\theta^2$. Fra oppgave 7 vet vi derfor at egenverdiene til  $T_{2\theta}$ er $\lambda^2$
+\begin{equation*}
+	\lambda^2 = (\cos\theta \pm i\sin\theta)^2 = \cos^2\theta - \sin^2\theta \pm \sin2\theta
+\end{equation*}
+og så husker vi at $\cos^2\theta - \sin^2\theta = \cos 2\theta$ for å få det vi forventet, altså at hvis vi dobler vinkelen i $T_\theta$ dobler vi vinkelen i egenverdien.
 \end{losning}
 
 
 \begin{oppgave}
 Beregn determinanten. Følg nøye med,  det kan være det ikke er så mye jobb som det ser ut.
-%\begin{punkt}
-%\[
-%\begin{bmatrix}
-%i & 0 & 0 & 0  \\ 0 & i & 0 & 0 \\ 0 & 0 & i & 0 \\ 0 & 0& 0  &i 
-%\end{bmatrix}
-%\]
-%\end{punkt}
 \begin{punkt}
 \[
 \begin{bmatrix}
@@ -197,13 +378,6 @@ Beregn determinanten. Følg nøye med,  det kan være det ikke er så mye jobb s
 \end{bmatrix}
 \]
 \end{punkt}
-%\begin{punkt}
-%\[
-%\begin{bmatrix}
-%i & 1 & 0 & 0  \\ 0 & i & 0 & 0  \\ 0 & 0 & i & 1 \\ 0 & 0& 1  &i  
-%\end{bmatrix}
-%\]
-%\end{punkt}
 \begin{punkt}
 \[
 \begin{bmatrix}
@@ -239,7 +413,52 @@ i & 1 & 1 & 1 & 1 & 1 \\ 1 & i & 1 & 1 & 1 & 1\\ 0 & 0 & i & 1& 1 & 1 \\ 0 & 0& 
 \end{oppgave}
 
 \begin{losning}
-TODO
+	Her må vi finne den beste raden/kolonnen for å regne ut determinanten.
+	\begin{punkt}	% a)
+		Regner vi ut determinanten langs den første raden får vi determinanten
+		\begin{equation*}
+			i(i^2 - 1^2)  - 0 + 0 = -2i
+		\end{equation*}
+	\end{punkt}
+	\begin{punkt}	% b)
+		Her kan vi velge første rad eller første kolonne. Vi velger første kolonne og får determinanten
+		\begin{equation*}
+			i\det 
+			\begin{pmatrix}
+				i & 0 & 0 \\
+				0 & i & 1 \\
+				0 & 1 & i
+			\end{pmatrix}
+			-1\det
+			\begin{pmatrix}
+				1 & 0 & 0 \\
+				0 & i & 1 \\
+				0 & 1 & i
+			\end{pmatrix}
+		\end{equation*}
+		Den første determinanten er samme som i oppg a) og den andre ligner. Vi får at determinanten er
+		\begin{equation*}
+			2 + 2i
+		\end{equation*}
+	\end{punkt}
+
+	\begin{punkt}
+		Vi velger å regne ut determinanten langs første kolonne. Det gir
+		\begin{equation*}
+			i\det\begin{pmatrix}
+				i & 1 & 1 \\
+				0 & i & 1 \\
+				0 & 1 & i
+			\end{pmatrix}
+			-1\det\begin{pmatrix}
+				1 & 1 & 1 \\
+				0 & i & 1 \\
+				0 & 1 & i
+			\end{pmatrix}
+		\end{equation*}
+		Her ser vi at den første determinanten er kjent, og den andre regner vi ut langs første kolonne og får at determinanten til slutt blir $2 + 2i$ som i b)
+	\end{punkt}
+	Oppgave d) og e) er tilsvarende: nøst deg nedover ved å velge en lur rad/kolonne å beregne determinanten fra.
 \end{losning}
 
 \begin{oppgave}
@@ -254,7 +473,29 @@ i en $3 \times 3$-matrise $P$ der egenvektorene er kolonner, og beregn $P^{-1} A
 \end{oppgave}
 
 \begin{losning}
-TODO
+	Vi fant egenverdiene og egenvektorene i oppgave 3. Hvis vi setter disse opp i matrisen $P$ får vi
+	\begin{equation*}
+		P = \begin{pmatrix}
+				0 & i & -i \\
+				1 & 1 & 1 \\
+				0 & 1 & 1 
+			\end{pmatrix}
+			\quad P^{-1} = \frac{1}{2}
+			\begin{pmatrix}
+				0 & 2 & -2 \\
+				 -i & 0 & 1 \\
+				 i & 0 & 1
+			\end{pmatrix}
+	\end{equation*}
+	som gir oss
+	\begin{equation*}
+		P^{-1}AP = \begin{pmatrix}
+			-2 & 0 & 0 \\
+			0 & i & 0 \\
+			0 & 0 & -i 
+		\end{pmatrix}
+	\end{equation*}
+	som er en diagonalmatrise hvor elementene er egenverdiene til $A$.
 \end{losning}
 
 \begin{oppgave}
@@ -267,12 +508,32 @@ Finn egenverdiene til matrisen
 \end{oppgave}
 
 \begin{losning}
-TODO
+	Vi regner ut det karakteristiske polynomet som vanlig og får 
+	\begin{equation*}
+		\lambda^2 - 8\lambda = \lambda(\lambda - 8)
+	\end{equation*}
+	som betyr at egenverdiene er $0$ og $8$. Her kan vi observere at determinanten til matrisen er $0$ siden den første raden er halvparten av den andre.
 \end{losning}
 
 \begin{oppgave}
 Vis at dersom en matrise har egenverdien 0, er den singulær.
 \end{oppgave}
+
+\begin{losning}
+	Vi viser dette med en selvmotsigelse. Anta at $A$ ikke er singulær, altså at $A\V y = 0$ kun har den trivielle løsningen. Vi vet at egenverdiene til en matrise $A$ er slik at det finnes en ikke-null vektor $\V v$ slik at
+	\begin{equation*}
+		A\V v = \lambda\V v
+	\end{equation*}
+	Siden vi antar at en av egenverdiene er $\lambda = 0$ vet vi da at
+	\begin{equation*}
+		A\V v = 0		
+	\end{equation*}
+	for en \emph{ikke-null} vektor $\V v$. Altså har ligningssystemet
+	\begin{equation*}
+		A\V y = 0
+	\end{equation*}
+	minst 2 løsninger: $\V v$ og den trivielle løsningen $0$. Men vi antok at $A$ kun hadde den trivielle løsningen, en selvmotsigelse. Altså må $A$ være singulær.
+\end{losning}
 
 
 %
