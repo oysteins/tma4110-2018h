@@ -152,7 +152,50 @@ $\begin{bmatrix}
 \end{bmatrix}$
 \end{punkt}
 
+
+\begin{punkt}
+$\begin{bmatrix}
+0 & -1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix}$
+\end{punkt}
+
+\begin{punkt}
+$\begin{bmatrix}
+0 & -1 & 1& 5\\
+1 & 0 & 2& 6\\
+0 & 0 & 3 & 0\\
+0 & 0 & 4 & 0
+\end{bmatrix}$
+\end{punkt}
+
+
+\begin{punkt}
+$\begin{bmatrix}
+0 & -1 & 1& 5\\
+1 & 0 & 2& 6\\
+0 & 0 & 3 & 7\\
+0 & 0 & 4 & 0
+\end{bmatrix}$
+\end{punkt}
+
 \end{oppgave}
+
+\begin{oppgave}
+Anta $A=V^{-1}DV$. 
+Hva blir $A^n$? 
+\end{oppgave}
+
+\begin{oppgave}
+La
+$A=\begin{bmatrix}
+2 & 3 & 5\\
+0 & 3 & 5\\
+0 & 0 & 5
+\end{bmatrix}$. Beregn $A^{10}$.
+\end{oppgave}
+
 
 \begin{oppgave}
 La $\lambda\neq \mu$ være to reelle tall, begge ulik null, og la
@@ -355,29 +398,25 @@ Avgjør om $A$ er diagonaliserbar, og finn egenverdier og egenvektorer.
 %Nei. Vi har fortsatt en dobbel egenverdi $\lambda=2$ med et degenerert egenrom av dimensjon 1 (geometrisk multiplisitet = 1).
 %\end{losning}
 
-\begin{oppgave}
-Anta $A=V^{-1}DV$. 
-Hva blir $A^n$? 
-\end{oppgave}
 
 \begin{oppgave}
-La
-$A=\begin{bmatrix}
-2 & 3 & 5\\
-0 & 3 & 5\\
-0 & 0 & 5
-\end{bmatrix}$. Beregn $A^{10}$.
-\end{oppgave}
-
-\begin{oppgave}
-La $A$ være den komplekse ortogonalt diagonaliserbare matrisen 
-\[
+Finn $V$ og $D$ slik at $A=V^*DV$.
+\begin{punkt}
+$
 A=\begin{bmatrix}
 2 & 3-i\\
 3+i & 4
-\end{bmatrix},
-\]
-og finn $V$, $D$ og $V^{-1}$ slik at $A=V^{-1}DV$.
+\end{bmatrix}
+$
+\end{punkt}
+\begin{punkt}
+$
+A=\begin{bmatrix}
+1 & 1-i\\
+1+i & -1
+\end{bmatrix}
+$
+\end{punkt}
 \end{oppgave}
 
 \begin{oppgave}
@@ -424,6 +463,53 @@ Egenverdi: 0.
 Egenrommet til 0: Linjen utspent av $\vvv{1}{0}{0}$. (koordinatene til 1!)
 \end{punkt}
 \end{losning}
+
+
+
+\begin{oppgave}
+En reell matrise er symmetrisk hvis og bare hvis den er ortogonalt diagonaliserbar. 
+Dette står i kontrast til komplekse symmetriske matriser, hvor implikasjonen kun går den ene veien. 
+Vis at dersom $A$ er reell, og $A=V^*DV$, må $A=A^T$.
+\end{oppgave}
+
+\begin{oppgave}
+En kompleks matrise $A$ er \defterm{normal} dersom $A^*A=AA^*$. 
+Vis at dersom $A$ er symmetrisk, er $A$ normal. 
+
+\textbf{Fun fact:} En kompleks matrise er ortogonalt diagonaliserbar hvis og bare hvis den er normal.
+\end{oppgave}
+
+\begin{oppgave}
+La 
+$
+A=
+\begin{bmatrix}
+5 &-1-2i \\-1-2i & 5
+\end{bmatrix}.
+$
+\begin{punkt}
+Er $A$ symmetrisk?
+\end{punkt}
+\begin{punkt}
+Er $A$ ortogonalt diagonaliserbar? 
+\end{punkt}
+\begin{punkt}
+Er $A$ normal?
+\end{punkt}
+\end{oppgave}
+
+
+%\begin{oppgave}
+%Finn løsningen av systemet
+%\[
+%\systeme{
+%3x +y = x',
+%x +3y = y'
+%}
+%\]
+%som tilfredsstiller $x(0)=y(0)=1$.
+%\end{oppgave}
+
 
 %\begin{oppgave}
 %La $A$ være en kvadratisk matrise. Anta at $\V{v}_1$ og~$\V{v}_2$ er egenvektorer av $A$ med ulike tilhørende egenverdier.
