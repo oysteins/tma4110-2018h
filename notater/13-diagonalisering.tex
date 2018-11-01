@@ -129,6 +129,47 @@ Matrisen
 har bare to lineært uavhengige egenvektorer, og er følgelig ikke diagonaliserbar.
 \end{ex}
 
+Man kan også snu likningen
+\[
+D=V^{-1}AV
+\]
+om, og få
+\[
+A=VDV^{-1},
+\]
+og dermed tenke på diagonalisering som en faktorisering av $A$.
+
+\begin{ex}
+Vi kan faktorisere matrisen 
+\[
+\begin{bmatrix}
+2     & 1 \\
+1      & 2
+\end{bmatrix}
+\]
+som
+\[
+\begin{bmatrix}
+2     & 1 \\
+1      & 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 1 \\ 1 &-1
+\end{bmatrix}
+\begin{bmatrix}
+3     & 0 \\
+0      & 1
+\end{bmatrix}
+\frac{1}{2}
+\begin{bmatrix}
+1 & 1 \\ 1 &-1
+\end{bmatrix}.\qedhere
+\]
+\end{ex}
+\begin{merkx}
+I eksemplet over spiller ikke plasseringen av $V$ og $V^{-1}$ noen rolle. Mer om dette under.
+\end{merkx}
 
 \section*{Kvadratiske former}
 La $\V v$ være en kolonnevektor i $\C^n$ og $A$ en $n\times n$-matrise. En kvadratisk form er et uttrykk på formen 
