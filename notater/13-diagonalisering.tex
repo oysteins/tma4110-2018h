@@ -178,10 +178,44 @@ La $\V v$ være en kolonnevektor i $\C^n$ og $A$ en $n\times n$-matrise. En kvad
 \]
 Et slikt uttrykk er spesielt interessant dersom $\V v$ er en egenvektor med lengde 1 og egenverdi $\lambda$:
 \[
-\V v^* A \V v=\V v^* \lambda \V v=\lambda \V v^* \V v=\lambda
+\V v^* A \V v=\V v^* \lambda \V v=\lambda \V v^* \V v=\lambda.
 \]
 
-
+\begin{ex}
+Vi lar 
+\[
+A=
+\begin{bmatrix}
+2     & 1 \\
+1      & 2
+\end{bmatrix}
+\]
+og 
+\[
+\V v=
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1    \\
+1    
+\end{bmatrix}
+\]
+slik at 
+\[
+\V v^* A \V v=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}}   & \frac{1}{\sqrt{2}}    
+\end{bmatrix}
+\begin{bmatrix}
+2     & 1 \\
+1      & 2
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}}    \\
+\frac{1}{\sqrt{2}}    
+\end{bmatrix}
+=3. \qedhere
+\]
+\end{ex}
 
 \section*{Symmetriske matriser}
 En matrise sies å være 
@@ -283,14 +317,21 @@ Matrisen
 1 & 2 & 2\\  2 &6 & 2 \\ 2 & 2 & 6
 \end{bmatrix}
 \]
-har egenverdier 4, 9 og 0. Egenvektorer er 
+har egenverdier 4, 9 og 0. Egenvektorerer er henholdsvis
 \[
 \begin{bmatrix}
--4 \\ 1 \\ 1
+0 \\ -1 \\ 1
+\end{bmatrix},
+\;
+\begin{bmatrix}
+1 \\ 2 \\ 2
 \end{bmatrix}
+\quad \text{og} \quad
+\begin{bmatrix}
+-4 \\ 1 \\ 1
+\end{bmatrix}.
 \]
-Nå våknet ungen, så jeg rakk ikke regne ut de to andre. Vi får ta det i forelesning.
-%har egenverdier $0$ og $6\pm \sqrt{55}$, og følgelig tre lineært uavhengige egenvektorer. Den er derfor diagonaliserbar.
+Merk at alle vektorer er innbyrdes ortogonale.
 \end{ex}
 
 \begin{merkx}
