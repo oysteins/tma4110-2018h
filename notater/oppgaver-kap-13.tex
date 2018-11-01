@@ -22,12 +22,12 @@
 
 
 \begin{oppgave}
-Finn matrisenes egenverdier og egenvektorer, og avgjør om de er diagonaliserbare. 
+Finn matrisenes egenverdier og egenvektorer, og avgjør om matrisene er diagonaliserbare. 
 \begin{punkt}
 $\begin{bmatrix}
 0 & 4\\
 0 & 0
-\end{bmatrix}$. 
+\end{bmatrix}$
 \end{punkt}
 %
 %\begin{punkt}
@@ -42,7 +42,6 @@ $\begin{bmatrix}
 %Er $A$ diagonaliserbar? I så fall: Finn $P$ og $D$ slik at $A=PDP^{-1}$.
 %\end{punkt}
 %
-\end{oppgave}
 
 %\begin{losning}
 %\begin{punkt}
@@ -153,9 +152,9 @@ $\begin{bmatrix}
 \end{bmatrix}$
 \end{punkt}
 
+\end{oppgave}
 
 \begin{oppgave}
-
 La $\lambda\neq \mu$ være to reelle tall, begge ulik null, og la
 $$A=
 \begin{bmatrix}
@@ -163,40 +162,40 @@ $$A=
 \mu & \lambda & 0\\
 0 & 0 & \lambda-\mu
 \end{bmatrix}.$$
-\begin{punkt}
-Kan du avgjøre om det finnes en basis av egenvektorer uten å regne?
-\end{punkt}
-\begin{punkt}
-Finn egenverdiene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Forklar hvorfor vi har en basis av egenvektorer.
-\end{punkt}
-\begin{punkt}
-Finn $D$ slik at du vet at det finnes en $P$ og $A=PDP^{-1}$.
-\end{punkt}
+Avgjør om $A$ er diagonaliserbar, og finn egenverdier og egenvektorer.
+%\begin{punkt}
+%Kan du avgjøre om det finnes en basis av egenvektorer uten å regne?
+%\end{punkt}
+%\begin{punkt}
+%Finn egenverdiene til $A$. Hva er den algebraiske- og geometriske multiplisiteten til egenverdiene? Forklar hvorfor vi har en basis av egenvektorer.
+%\end{punkt}
+%\begin{punkt}
+%Finn $D$ slik at du vet at det finnes en $P$ og $A=PDP^{-1}$.
+%\end{punkt}
 \end{oppgave}
+%\begin{losning}
 
-\begin{losning}
-
-
-\begin{punkt}
-Ja. Matrisen er symmetrisk. Spektralteoremet.
-\end{punkt}
-
-\begin{punkt}
-$\lambda-\mu$: geometrisk multiplisitet=algebraisk multiplisitet=2 (fordi egenvektorene skal kunne danne en basis).
-
-\noindent
-$\lambda-\mu$: geometrisk multiplisitet=algebraisk multiplisitet=1.
-
-\end{punkt}
-
-$D=\begin{bmatrix}
-\lambda-\mu & 0 & 0\\
-0 & \lambda-\mu & 0\\
-0 & 0 & \lambda+\mu\\
-\end{bmatrix}.$
-
-
-\end{losning}
+%
+%\begin{punkt}
+%Ja. Matrisen er symmetrisk. Spektralteoremet.
+%\end{punkt}
+%
+%\begin{punkt}
+%$\lambda-\mu$: geometrisk multiplisitet=algebraisk multiplisitet=2 (fordi egenvektorene skal kunne danne en basis).
+%
+%\noindent
+%$\lambda-\mu$: geometrisk multiplisitet=algebraisk multiplisitet=1.
+%
+%\end{punkt}
+%
+%$D=\begin{bmatrix}
+%\lambda-\mu & 0 & 0\\
+%0 & \lambda-\mu & 0\\
+%0 & 0 & \lambda+\mu\\
+%\end{bmatrix}.$
+%
+%
+%\end{losning}
 
 
 %\begin{oppgave}
@@ -357,6 +356,38 @@ $D=\begin{bmatrix}
 %\end{losning}
 
 \begin{oppgave}
+Anta $A=V^{-1}DV$. 
+Hva blir $A^n$? 
+\end{oppgave}
+
+\begin{oppgave}
+La
+$A=\begin{bmatrix}
+2 & 3 & 5\\
+0 & 3 & 5\\
+0 & 0 & 5
+\end{bmatrix}$. Beregn $A^{10}$.
+\end{oppgave}
+
+\begin{oppgave}
+La $A$ være den komplekse ortogonalt diagonaliserbare matrisen 
+\[
+A=\begin{bmatrix}
+2 & 3-i\\
+3+i & 4
+\end{bmatrix},
+\]
+og finn $V$, $D$ og $V^{-1}$ slik at $A=V^{-1}DV$.
+\end{oppgave}
+
+\begin{oppgave}
+La $A=\begin{bmatrix}
+r_1 & z\\
+\overline{z} & r_2
+\end{bmatrix}$ være en symmetrisk $2 \times 2$-matrise. Utled en formel for egenverdiene til $A$.
+\end{oppgave}
+
+\begin{oppgave}
 La $D:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen mellom andregradspolynom gitt ved derivasjon: $$D(ax^2+bx+c)=2ax+b.$$
 
 \begin{punkt}
@@ -370,8 +401,6 @@ Finn egenverdiene og egenvektorene. Er $D$ diagonaliserbar?
 %\begin{punkt}
 %Verifiser svaret ditt i del \textbf{b)} ved regning. 
 %\end{punkt}
-
-
 \end{oppgave}
 
 \begin{losning}
@@ -394,8 +423,6 @@ Egenverdi: 0.
 \noindent
 Egenrommet til 0: Linjen utspent av $\vvv{1}{0}{0}$. (koordinatene til 1!)
 \end{punkt}
-
-
 \end{losning}
 
 %\begin{oppgave}
