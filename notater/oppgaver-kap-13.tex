@@ -62,13 +62,6 @@ $\begin{bmatrix}
 %
 %\end{losning}
 
-\begin{punkt}
-$\begin{bmatrix}
-2 & 3 & 5\\
-0 & 3 & 5\\
-0 & 0 & 5
-\end{bmatrix}$
-\end{punkt}
 
 %
 %\begin{losning}
@@ -153,13 +146,6 @@ $\begin{bmatrix}
 \end{punkt}
 
 
-\begin{punkt}
-$\begin{bmatrix}
-0 & -1 & 0\\
-1 & 0 & 0\\
-0 & 0 & 0
-\end{bmatrix}$
-\end{punkt}
 
 \begin{punkt}
 $\begin{bmatrix}
@@ -198,12 +184,12 @@ $A=\begin{bmatrix}
 
 
 \begin{oppgave}
-La $\lambda\neq \mu$ være to reelle tall, begge ulik null, og la
+La $ a\neq b$ være to reelle tall, begge ulik null, og la
 $$A=
 \begin{bmatrix}
-\lambda & \mu & 0\\
-\mu & \lambda & 0\\
-0 & 0 & \lambda-\mu
+a & b & 0\\
+b & a & 0\\
+0 & 0 & a-b
 \end{bmatrix}.$$
 Avgjør om $A$ er diagonaliserbar, og finn egenverdier og egenvektorer.
 %\begin{punkt}
@@ -436,44 +422,6 @@ r_1 & z\\
 \end{bmatrix}$ være en symmetrisk $2 \times 2$-matrise. Utled en formel for egenverdiene til $A$.
 \end{oppgave}
 
-\begin{oppgave}
-La $D:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen mellom andregradspolynom gitt ved derivasjon: $$D(ax^2+bx+c)=2ax+b.$$
-
-\begin{punkt}
-Finn standardmatrisen, $[D]$, til $D$ i koordinatene med hensyn på basisen $1,x,x^2$.
-\end{punkt}
-
-\begin{punkt}
-Finn egenverdiene og egenvektorene. Er $D$ diagonaliserbar?
-\end{punkt}
-
-%\begin{punkt}
-%Verifiser svaret ditt i del \textbf{b)} ved regning. 
-%\end{punkt}
-\end{oppgave}
-
-\begin{losning}
-
-\begin{punkt}
-$[D]=\begin{bmatrix}
-0 & 1 & 0\\
-0 & 0 & 2\\
-0 & 0 & 0
-\end{bmatrix}$.
-\end{punkt}
-
-\begin{punkt}
-Ikke diagonaliserbar: Vi ser at $\lambda=0$ er eneste egenverdien (triangulær matrise). Men det er kun konstante polynom som er egenvektorer til 0 (den deriverte av en konstant er lik null). Med andre ord, egenrommet til null er endimensjonalt.
-\end{punkt}
-
-\begin{punkt}
-Egenverdi: 0.
-
-\noindent
-Egenrommet til 0: Linjen utspent av $\vvv{1}{0}{0}$. (koordinatene til 1!)
-\end{punkt}
-\end{losning}
-
 
 
 \begin{oppgave}
@@ -508,6 +456,91 @@ Er $A$ normal?
 \end{punkt}
 \end{oppgave}
 
+
+\begin{oppgave}
+La $T:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen som deriverer annengradspolynomer: $$T(ax^2+bx+c)=2ax+b.$$
+
+\begin{punkt}
+Finn standardmatrisen, $[T]$, til $T$ i koordinatene med hensyn på basisen $1,x,x^2$.
+\end{punkt}
+
+\begin{punkt}
+Finn egenverdiene og egenvektorene. Er $T$ diagonaliserbar?
+\end{punkt}
+
+%\begin{punkt}
+%Verifiser svaret ditt i del \textbf{b)} ved regning. 
+%\end{punkt}
+\end{oppgave}
+
+\begin{losning}
+
+\begin{punkt}
+$[D]=\begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 2\\
+0 & 0 & 0
+\end{bmatrix}$.
+\end{punkt}
+
+\begin{punkt}
+Ikke diagonaliserbar: Vi ser at $\lambda=0$ er eneste egenverdien (triangulær matrise). Men det er kun konstante polynom som er egenvektorer til 0 (den deriverte av en konstant er lik null). Med andre ord, egenrommet til null er endimensjonalt.
+\end{punkt}
+
+\begin{punkt}
+Egenverdi: 0.
+
+\noindent
+Egenrommet til 0: Linjen utspent av $\vvv{1}{0}{0}$. (koordinatene til 1!)
+\end{punkt}
+\end{losning}
+
+
+
+\begin{oppgave}
+La $T:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen mellom andregradspolynom gitt ved: $$T(f)=(x+1)f'(x)+f(x).$$
+
+\begin{punkt}
+Finn standardmatrisen, $[T]$, til $T$ i koordinatene med hensyn på basisen $1,x,x^2$.
+\end{punkt}
+
+\begin{punkt}
+Finn egenverdiene og egenvektorene. Er $T$ diagonaliserbar?
+\end{punkt}
+%\begin{punkt}
+%Verifiser svaret ditt i del \textbf{b)} ved regning. 
+%\end{punkt}
+\end{oppgave}
+
+\begin{oppgave}
+Lineærtransformasjonen $T(\V x)=A\V x$, der $A$ er matrisen
+\[
+A=
+\begin{bmatrix}
+\frac{\sqrt{3}}{2} & -\frac{1}{2} \\ \frac{1}{2} & \frac{\sqrt{3}}{2}
+\end{bmatrix}
+\]
+roterer vektorer i $\R^2$. 
+\begin{punkt}
+Hva er rotasjonsvinkelen?
+\end{punkt}
+\begin{punkt}
+Finn egenverdiene og egenvektorene til matrisen. 
+\end{punkt}
+\begin{punkt}
+Egenvektorene $\V v_1$ og $\V v_2$ danner en basis for $\C^2$. Hva er standardmatrisen til $T$ i denne basisen?
+\end{punkt}
+
+%\begin{punkt}
+%Verifiser svaret ditt i del \textbf{b)} ved regning. 
+%\end{punkt}
+\end{oppgave}
+
+
+
+%\begin{punkt}
+%Verifiser svaret ditt i del \textbf{b)} ved regning. 
+%\end{punkt}
 
 %\begin{oppgave}
 %Finn løsningen av systemet
