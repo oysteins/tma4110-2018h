@@ -218,8 +218,16 @@ slik at
 \end{ex}
 
 \section*{Symmetriske matriser}
-En matrise sies å være 
-\defterm{symmetrisk} dersom $A=A^*$.
+\begin{defnx}
+En kompleks matrise sies å være 
+\defterm{symmetrisk} dersom $A=A^*$. 
+\end{defnx}
+
+\begin{merkx}
+Dersom $A$ er reell er $A^*=A^T$, slik at kravet for en symmetrisk matrise er at $A=A^T$. 
+I litteraturen er det vanlig å reservere begrepet \textit{symmetrisk} for reelle matriser der $A=A^T$, mens komplekse matriser kalles $\textit{hermittiske}$ hvis $A=A^*$. 
+Nå er det imidlertid ingen gode grunner til dette, for det er ingen som noen gang transponerer en kompleks matrise. 
+\end{merkx}
 
 \begin{ex}
 Matrisen
@@ -232,12 +240,16 @@ er symmetrisk.
 \end{ex}
 
 \begin{merkx}
-En symmetrisk matrise har reelle diagonalelementer.
+En symmetrisk matrise må har reelle diagonalelementer, siden $z=\overline z$ for alle elementer der.
 \end{merkx}
 
 \begin{defnx}
 En $n \times n$-matrise er \defterm{ortogonalt diagonaliserbar} dersom den har $n$ ortogonale egenvektorer.
 \end{defnx}
+
+\begin{merkx}
+Denne definisjonen kommer kanskje som troll i eske. Men alt blir klart om litt.
+\end{merkx}
 
 Dersom vi lar $V$ være en $n \times n$-matrise bestånde av $A$ sine $n$ ortonormale egenvektorer, 
 ser vi at 
@@ -267,11 +279,23 @@ $
 reell.
 \end{thm}
 \begin{proof}
-Vi ser fryktelig lett at
+Vi tar beviset kun for $2 \times 2$-matriser. Selv Gilbert Strang gjør det for sine studenter, og han er professor på Harvard.
+En symmetrisk $2 \times 2$-matrise kan skrives
 \[
-\V x^* A \V x
+A=\begin{bmatrix}
+r_1 & z\\
+\overline{z} & r_2
+\end{bmatrix}
 \]
-er en sum av reelle tall og komplekskonjugater.
+der $r_1$ og $r_2$ er relle tall. Vi beregner
+\[
+\V x^* A \V x=r_1x_1\overline{x_1}+z\overline{ x_1}x_2+\overline{z}x_1\overline{ x_2}+r_2x_2\overline{x_2}.
+\]
+Nå er $r_1x_1\overline{x_1}$ og $r_2x_2\overline{x_2}$ reelle tall, 
+mens $z \overline{x_1}x_2$ og 
+$\overline{z}x_1\overline{x_2}$ er hverandres komplekskonjugater, 
+og følgelig er 
+$z\overline{x_1}x_2+\overline{z}x_1\overline{x_2}$ også et reelt tall.
 \end{proof}
 
 
@@ -331,7 +355,20 @@ har egenverdier 4, 9 og 0. Egenvektorerer er henholdsvis
 -4 \\ 1 \\ 1
 \end{bmatrix}.
 \]
-Merk at alle vektorer er innbyrdes ortogonale.
+Merk at alle vektorer er innbyrdes ortogonale, og matrisen er følgelig ortogonalt diagonaliserbar, med
+\[
+V=
+\begin{bmatrix}
+0 & \frac{1}{3} & -\frac{4}{3\sqrt{2}}\\  -\frac{1}{\sqrt{2}} &\frac{2}{3} &  \frac{1}{3\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{2}{3} &  \frac{1}{3\sqrt{2}}.
+\end{bmatrix}
+\]
+og 
+\[
+D=
+\begin{bmatrix}
+4 & 0 & 0\\  0 &9 & 0 \\ 0 & 0 & 0
+\end{bmatrix}. \qedhere
+\]
 \end{ex}
 
 \begin{merkx}
