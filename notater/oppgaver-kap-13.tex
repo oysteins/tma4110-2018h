@@ -169,6 +169,109 @@ $\begin{bmatrix}
 \end{oppgave}
 
 
+\begin{losning}
+\begin{punkt}
+Matrisen har egenverdien~$0$, med tilhørende egenrom $\Sp \{ \vvS{1}{0} \}$.
+Siden den ikke har to lineært uavhengige egenvektorer er den
+ikke diagonaliserbar.
+\end{punkt}
+
+\begin{punkt}
+Matrisen har egenverdiene $2$ og~$5$, med tilhørende egenrom
+henholdsvis
+\[
+\Sp \left\{ \vvv{1}{0}{0} \right\}
+\qquad\text{og}\qquad
+\Sp \left\{ \vvv{25}{15}{9} \right\}.
+\]
+Siden den ikke har to lineært uavhengige egenvektorer er den
+ikke diagonaliserbar.
+\end{punkt}
+
+\begin{punkt}
+Det karakteristiske polynomet er
+\[
+\begin{vmatrix}
+3-\lambda & -1         & 2          \\
+3         & -1-\lambda & 6          \\
+-2        & 2          & -2-\lambda
+\end{vmatrix}
+=
+-\lambda^3 + 12\lambda - 16.
+\]
+Vi må altså løse likningen
+\[
+-\lambda^3 + 12\lambda - 16 = 0.
+\]
+Ved å prøve oss frem finner vi ganske raskt at $\lambda=2$ er en
+løsning.  Det vil si at vi kan dele ut faktoren $(\lambda-2)$ fra det
+karakteristiske polynomet ved polynomdivisjon.  Da får vi at
+\[
+-\lambda^3 + 12\lambda - 16 = (\lambda - 2) (-\lambda^2 - 2\lambda + 8).
+\]
+Vi finner dermed de andre løsningene av likningen ved å løse
+\[
+-\lambda^2 - 2\lambda + 8 = 0,
+\]
+som vi gjør ved å bruke den vanlige formelen for andregradslikninger:
+\[
+\lambda
+ = \frac{-(-2) \pm \sqrt{(-2)^2 - 4 \cdot (-1) \cdot 8}}{2 (-1)}
+ = -1 \pm 3
+\]
+Egenverdiene til matrisen er altså $2$ og~$-4$.
+
+Vi finner egenrommene på vanlig måte.  Egenrommet til egenverdien~$2$ er
+\[
+\Sp \left\{ \vvv{1}{1}{0}, \vvv{-2}{0}{1} \right\},
+\]
+og egenrommet til egenverdien~$-4$ er
+\[
+\Sp \left\{ \vvv{1}{3}{-1} \right\}.
+\]
+Matrisen har altså tre lineært uavhengige egenvektorer, så den er
+diagonaliserbar.
+\end{punkt}
+
+\begin{punkt}
+Egenverdiene er $3$, $-i$ og~$i$, med tilhørende egenrom henholdsvis
+\[
+\Sp \left\{ \vvv{0}{0}{1} \right\},\qquad
+\Sp \left\{ \vvv{-i}{1}{0} \right\},\qquad
+\Sp \left\{ \vvv{i}{1}{0} \right\}.
+\]
+Matrisen har altså tre lineært uavhengige egenvektorer, så den er
+diagonaliserbar.
+\end{punkt}
+
+\begin{punkt}
+Egenverdiene er $0$, $3$, $-i$ og~$i$, med tilhørende egenrom
+henholdsvis
+\[
+\Sp \left\{ \vvvv{-6}{5}{0}{1} \right\},\quad
+\Sp \left\{ \vvvv{39}{113}{30}{40} \right\},\quad
+\Sp \left\{ \vvvv{-i}{1}{0}{0} \right\},\quad
+\Sp \left\{ \vvvv{i}{1}{0}{0} \right\}.
+\]
+Matrisen har altså fire lineært uavhengige egenvektorer, så den er
+diagonaliserbar.
+\end{punkt}
+
+\begin{punkt}
+Egenverdiene er $-4$, $7$, $-i$ og~$i$, med tilhørende egenrom
+henholdsvis
+\[
+\Sp \left\{ \vvvv{20}{12}{17}{-17} \right\},\quad
+\Sp \left\{ \vvvv{151}{293}{350}{200} \right\},\quad
+\Sp \left\{ \vvvv{-i}{1}{0}{0} \right\},\quad
+\Sp \left\{ \vvvv{i}{1}{0}{0} \right\}.
+\]
+Matrisen har altså fire lineært uavhengige egenvektorer, så den er
+diagonaliserbar.
+\end{punkt}
+\end{losning}
+
+
 \begin{oppgave}
 La
 $A=\begin{bmatrix}
@@ -178,6 +281,80 @@ $A=\begin{bmatrix}
 \end{bmatrix}$. Beregn $A^{10}$. \\[5pt] (Hint: Se på $A=VDV^{-1}$. 
 Hva blir $A^n$?)
 \end{oppgave}
+
+
+\begin{losning}
+Vi starter med å finne en diagonalisering $A=VDV^{-1}$ av~$A$.  Siden
+$A$ er øvre triangulær, er egenverdiene til~$A$ bare tallene på
+diagonalen: $2$, $3$ og~$5$.  Vi lager matrisen $V$ ved å sette sammen
+egenvektorer som hører til de tre egenverdiene, og vi lager
+matrisen~$D$ ved å sette egenverdiene på diagonalen:
+\begin{align*}
+V &=
+\begin{bmatrix}
+1 & 3 & 25 \\
+0 & 1 & 15 \\
+0 & 0 &  6
+\end{bmatrix}
+\\
+D &=
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 5
+\end{bmatrix}
+\end{align*}
+Da får vi (ved å regne ut inversen på vanlig måte) at
+\[
+V^{-1} =
+\begin{bmatrix}
+1 & -3 & 10/3 \\
+0 &  1 & -5/2 \\
+0 &  0 &  1/6 
+\end{bmatrix}
+\]
+Dermed har vi diagonalisert matrisen~$A$.
+
+Legg merke til at når $A = VDV^{-1}$, så har vi
+\begin{align*}
+A^2 &= (VDV^{-1})(VDV^{-1}) = VD (V^{-1}V) DV^{-1} \\
+    &= V D^2 V^{-1}, \\
+A^3 &= (V D^2 V^{-1})(VDV^{-1}) = V D^2 (V^{-1}V) D V^{-1} \\
+    &= V D^3 V^{-1},
+\end{align*}
+og så videre.  Generelt:
+\[
+A^n = V D^n V^{-1}
+\]
+Det betyr at i vårt tilfelle kan vi beregne $A^{10}$ slik:
+\begin{align*}
+A^{10}
+&= V D^{10} V^{-1} \\
+&=
+\begin{bmatrix}
+1 & 3 & 25 \\
+0 & 1 & 15 \\
+0 & 0 &  6
+\end{bmatrix}
+\begin{bmatrix}
+2^{10} & 0      & 0      \\
+0      & 3^{10} & 0      \\
+0      & 0      & 5^{10}
+\end{bmatrix}
+\begin{bmatrix}
+1 & -3 & 10/3 \\
+0 &  1 & -5/2 \\
+0 &  0 &  1/6 
+\end{bmatrix}
+\\
+&=
+\begin{bmatrix}
+1024 & 174075 & 40250650 \\
+   0 & 59049  & 24266440 \\
+   0 & 0      & 9765625
+\end{bmatrix}
+\end{align*}
+\end{losning}
 
 
 %\begin{losning}
@@ -393,12 +570,138 @@ $
 \end{punkt}
 \end{oppgave}
 
+
+\begin{losning}
+\begin{punkt}
+Det karakteristiske polynomet er
+\[
+\begin{vmatrix}
+2 - \lambda & 3 - i       \\
+3 + i       & 4 - \lambda
+\end{vmatrix}
+= (2 - \lambda)(4 - \lambda) - (3 - i)(3 + i)
+= \lambda^2 - 6\lambda - 2,
+\]
+og egenverdiene er $3 + \sqrt{11}$ og $3 - \sqrt{11}$.
+
+Vi finner lett ut at
+\[
+\v_1 = \vv{3-i}{1+\sqrt{11}}
+\]
+er en egenvektor for egenverdien $3 + \sqrt{11}$, og at
+\[
+\v_2 = \vv{3-i}{1-\sqrt{11}}
+\]
+er en egenvektor for egenverdien $3 - \sqrt{11}$.  For å lage en
+ortogonal diagonalisering må vi ha egenvektorer med lengde~$1$, så vi
+deler hver av disse på lengden sin og får normaliserte egenvektorer
+$\hat\v_1$ og~$\hat\v_2$:
+\begin{align*}
+\hat\v_1
+&= \frac{1}{\| \v_1 \|} \v_1
+ = \frac{1}{\sqrt{2 (11+\sqrt{11})}} \v_1 \\
+&= \vv{(3-i) \Big/ \sqrt{2 (11+\sqrt{11})}}
+      {(1+\sqrt{11}) \Big/ \sqrt{2 (11+\sqrt{11})}}
+\\
+\hat\v_2
+&= \frac{1}{\| \v_2 \|} \v_2
+ = \frac{1}{\sqrt{2 (11-\sqrt{11})}} \v_2 \\
+&= \vv{(3-i) \Big/ \sqrt{2 (11-\sqrt{11})}}
+      {(1-\sqrt{11}) \Big/ \sqrt{2 (11-\sqrt{11})}}
+\end{align*}
+Da kan vi sette
+\[
+V = \begin{bmatrix} \hat\v_1 & \hat\v_2 \end{bmatrix}
+\quad\text{og}\quad
+D =
+\begin{bmatrix}
+3+\sqrt{11} & 0           \\
+0           & 3-\sqrt{11}
+\end{bmatrix}
+\]
+\end{punkt}
+\begin{punkt}
+Det karakteristiske polynomet er
+\[
+\begin{vmatrix}
+1-\lambda & 1-i\\
+1+i & -1-\lambda
+\end{vmatrix}
+= \lambda^2 - 3.
+\]
+Egenverdiene er $\sqrt{3}$ og~$-\sqrt{3}$.  Vi finner tilhørende
+egenvektorer
+\[
+\v_1 = \vv{-1+i}{1-\sqrt{3}}
+\qquad\text{og}\qquad
+\v_2 = \vv{-1+i}{1+\sqrt{3}}.
+\]
+Vi normaliserer disse:
+\begin{align*}
+\hat\v_1
+&= \vv{(-1+i)/\sqrt{(6-2\sqrt{3})}}
+      {(1-\sqrt{3})/\sqrt{(6-2\sqrt{3})}}
+\\
+\hat\v_1
+&= \vv{(-1+i)/\sqrt{(6+2\sqrt{3})}}
+      {(1+\sqrt{3})/\sqrt{(6+2\sqrt{3})}}
+\end{align*}
+Da kan vi sette
+\[
+V = \begin{bmatrix} \hat\v_1 & \hat\v_2 \end{bmatrix}
+\quad\text{og}\quad
+D =
+\begin{bmatrix}
+\sqrt{3} & 0         \\
+0        & -\sqrt{3}
+\end{bmatrix}
+\]
+\end{punkt}
+\begin{punkt}
+Det karakteristiske polynomet er
+\[
+\begin{vmatrix}
+1 & 2 & 2\\
+2 & 6 & 2\\
+2 & 2 & 6
+\end{vmatrix}
+= -\lambda^3 + 13\lambda^2 - 36\lambda
+\]
+Egenverdiene er $0$, $4$ og~$9$.  Vi finner tilhørende egenvektorer
+\[
+\v_1 = \vvv{-4}{1}{1},\qquad
+%\v_2 = \vvv{
+\]
+
+TODO
+\end{punkt}
+\end{losning}
+
+
 \begin{oppgave}
 La $A=\begin{bmatrix}
 r_1 & z\\
 \overline{z} & r_2
 \end{bmatrix}$ være en symmetrisk $2 \times 2$-matrise. Utled en formel for egenverdiene til $A$.
 \end{oppgave}
+
+
+\begin{losning}
+Det karakteristiske polynomet til~$A$ er:
+\begin{align*}
+\begin{vmatrix}
+r_1 - \lambda & z             \\
+\overline{z}  & r_2 - \lambda
+\end{vmatrix}
+&= (r_1 - \lambda)(r_2 - \lambda) - z \overline{z} \\
+&= \lambda^2 - (r_1 + r_2) \lambda + r_1 r_2 - z \overline{z}
+\end{align*}
+Egenverdiene blir:
+\[
+\lambda = \frac{r_1 + r_2 \pm \sqrt{(r_1 + r_2)^2 - 4 (r_1 r_2 - z \overline{z})}}{2}
+\]
+\end{losning}
+
 
 \begin{oppgave}
 La $ a\neq b$ være to reelle tall, begge ulik null, og la
@@ -421,6 +724,11 @@ Avgjør om $A$ er diagonaliserbar, og finn egenverdier og egenvektorer.
 \end{oppgave}
 
 
+\begin{losning}
+TODO
+\end{losning}
+
+
 
 \begin{oppgave}
 En reell matrise er symmetrisk hvis og bare hvis den er ortogonalt diagonaliserbar. 
@@ -428,12 +736,48 @@ Dette står i kontrast til komplekse symmetriske matriser, hvor implikasjonen ku
 Vis at dersom $A$ er reell, og $A=VDV^*$, må $A=A^T$.
 \end{oppgave}
 
+
+\begin{losning}
+Anta at $A$ er en reell matrise slik at $A = VDV^*$, altså $A = VDV\tr$.
+Da er
+\[
+A\tr = (VDV\tr)\tr.
+\]
+Regnereglene for transponering (teorem~\ref{thm:tr}) gir:
+\[
+(VDV\tr)\tr = (V\tr)\tr D\tr V\tr = V D\tr V\tr
+\]
+Siden $D$ er en diagonalmatrise, er den sin egen transponert:
+\[
+D\tr = D
+\]
+Dette betyr at vi har
+\[
+A\tr = (VDV\tr)\tr = V D\tr V\tr = VDV\tr = A.
+\]
+
+(Hvorfor fungerer ikke dette for komplekse matriser?  Da må vi
+erstatte transponering med adjungering, og vi får ikke nødvendigvis at
+$D^* = D$.)
+\end{losning}
+
+
 \begin{oppgave}
 En kompleks matrise $A$ er \defterm{normal} dersom $A^*A=AA^*$. 
 Vis at dersom $A$ er symmetrisk, er $A$ normal. 
 
 \textbf{Fun fact:} En kompleks matrise er ortogonalt diagonaliserbar hvis og bare hvis den er normal.
 \end{oppgave}
+
+
+\begin{losning}
+Anta at $A$ er en symmetrisk matrise, altså at $A = A^*$.  Da har vi
+\[
+A^* A = A A = A A^*,
+\]
+så $A$ er normal.
+\end{losning}
+
 
 \begin{oppgave}
 La 
@@ -455,6 +799,69 @@ Er $A$ normal?
 \end{oppgave}
 
 
+\begin{losning}
+La 
+$
+A=
+\begin{bmatrix}
+5 &-1-2i \\-1-2i & 5
+\end{bmatrix}.
+$
+\begin{punkt}
+Den adjungerte av~$A$ er:
+\[
+A^* =
+\begin{bmatrix}
+5     & -1+2i \\
+-1+2i & 5
+\end{bmatrix}
+\]
+Siden $A^* \ne A$ er $A$ ikke symmetrisk.
+\end{punkt}
+\begin{punkt}
+Vi kan sjekke direkte om $A$ er ortogonalt diagonaliserbar, men det
+kan være enklere å svare på del~\textbf{c)} først.
+\end{punkt}
+\begin{punkt}
+Vi regner ut $A^* A$ og $A A^*$:
+\begin{align*}
+A^* A &=
+\begin{bmatrix}
+5     & -1+2i \\
+-1+2i & 5
+\end{bmatrix}
+\begin{bmatrix}
+5 &-1-2i \\
+-1-2i & 5
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 30 & -10 \\
+-10 & 30
+\end{bmatrix}
+\\
+A A^* &=
+\begin{bmatrix}
+5 &-1-2i \\
+-1-2i & 5
+\end{bmatrix}
+\begin{bmatrix}
+5     & -1+2i \\
+-1+2i & 5
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 30 & -10 \\
+-10 & 30
+\end{bmatrix}
+\end{align*}
+Vi har altså at $A^* A = A A^*$, så $A$ er en normal matrise.
+\end{punkt}
+\textbf{b)} Vi har funnet ut at $A$ er normal, og dermed må den være
+ortogonalt diagonaliserbar.
+\end{losning}
+
+
 \begin{oppgave}
 La $T:\mathcal{P}_2\rightarrow \mathcal{P}_2$ være lineærtransformasjonen som deriverer annengradspolynomer: $$T(ax^2+bx+c)=2ax+b.$$
 
@@ -474,7 +881,7 @@ Finn egenverdiene og egenvektorene til $A$. Er $A$ diagonaliserbar?
 \begin{losning}
 
 \begin{punkt}
-$[D]=\begin{bmatrix}
+$A=\begin{bmatrix}
 0 & 1 & 0\\
 0 & 0 & 2\\
 0 & 0 & 0
@@ -483,13 +890,6 @@ $[D]=\begin{bmatrix}
 
 \begin{punkt}
 Ikke diagonaliserbar: Vi ser at $\lambda=0$ er eneste egenverdien (triangulær matrise). Men det er kun konstante polynom som er egenvektorer til 0 (den deriverte av en konstant er lik null). Med andre ord, egenrommet til null er endimensjonalt.
-\end{punkt}
-
-\begin{punkt}
-Egenverdi: 0.
-
-\noindent
-Egenrommet til 0: Linjen utspent av $\vvv{1}{0}{0}$. (koordinatene til 1!)
 \end{punkt}
 \end{losning}
 
@@ -510,6 +910,36 @@ Finn egenverdiene og egenvektorene $A$. Er $A$ diagonaliserbar?
 %Verifiser svaret ditt i del \textbf{b)} ved regning. 
 %\end{punkt}
 \end{oppgave}
+
+
+\begin{losning}
+\begin{punkt}
+% T(1) = 1
+% T(x) = (x+1) + x = 2x + 1
+% T(x^2) = (x+1) 2x + x^2 = 3x^2 + 2x
+$
+A =
+\begin{bmatrix}
+1 & 1 & 0 \\
+0 & 2 & 2 \\
+0 & 0 & 3
+\end{bmatrix}
+$
+\end{punkt}
+
+\begin{punkt}
+Egenverdiene er $1$, $2$ og~$3$, med tilhørende egenrom henholdsvis
+\[
+\Sp \left\{ \vvv{1}{0}{0} \right\},\qquad
+\Sp \left\{ \vvv{1}{1}{0} \right\},\qquad
+\Sp \left\{ \vvv{1}{2}{1} \right\}.
+\]
+Matrisen $A$ er diagonaliserbar siden den har tre lineært uavhengige
+egenvektorer.
+\end{punkt}
+\end{losning}
+
+
 
 \begin{oppgave}
 Lineærtransformasjonen $T(\V x)=A\V x$, der $A$ er matrisen
@@ -534,6 +964,77 @@ Egenvektorene $\V v_1$ og $\V v_2$ danner en basis for $\C^2$. Hva er standardma
 %Verifiser svaret ditt i del \textbf{b)} ved regning. 
 %\end{punkt}
 \end{oppgave}
+
+
+\begin{losning}
+\begin{punkt}
+Rotasjonsvinkelen er $\pi/6$.
+\end{punkt}
+\begin{punkt}
+Det karakteristiske polynomet er:
+\[
+\begin{vmatrix}
+\frac{\sqrt{3}}{2} - \lambda & -\frac{1}{2}                 \\
+\frac{1}{2}                  & \frac{\sqrt{3}}{2} - \lambda
+\end{vmatrix}
+=
+(\frac{\sqrt{3}}{2} - \lambda)^2 + \frac{1}{4}
+\]
+% \sqrt{3}/2 - \lambda = \pm \sqrt{-1/4} = \pm i/2
+% \lambda = \sqrt{3}/2 \pm i/2
+Egenverdiene er
+\[
+\frac{\sqrt{3}}{2} + \frac{i}{2}
+\qquad\text{og}\qquad
+\frac{\sqrt{3}}{2} - \frac{i}{2},
+\]
+med tilhørende egenrom henholdsvis
+% -i/2 -1/2
+%  1/2 -i/2
+% --
+% i  1
+% 1 -i
+% --
+% 1 -i
+% 0  0
+% -----------------
+% i/2 -1/2
+% 1/2  i/2
+% --
+% i -1
+% 1  i
+% --
+% 1 i
+% 0 0
+\[
+\Sp \left\{ \vv{i}{1} \right\}
+\qquad\text{og}\qquad
+\Sp \left\{ \vv{i}{-1} \right\}.
+\]
+\end{punkt}
+\begin{punkt}
+La
+\[
+\v_1 = \vv{i}{1}
+\qquad\text{og}\qquad
+\v_2 = \vv{i}{-1}
+\]
+være de to egenvektorene i fant i del~\textbf{b)}.  Vi skal finne
+matrisen til~$T$ med hensyn på basisen $\B = (\v_1, \v_2)$.  Vi vet at
+\[
+T(\v_1) = (\frac{\sqrt{3}}{2} + \frac{i}{2}) \v_1
+\qquad\text{og}\qquad
+T(\v_2) = (\frac{\sqrt{3}}{2} - \frac{i}{2}) \v_2.
+\]
+Dermed får vi følgende matrise:
+\[
+\begin{bmatrix}
+\frac{\sqrt{3}}{2} + \frac{i}{2} & 0 \\
+0 & \frac{\sqrt{3}}{2} - \frac{i}{2}
+\end{bmatrix}
+\]
+\end{punkt}
+\end{losning}
 
 
 
