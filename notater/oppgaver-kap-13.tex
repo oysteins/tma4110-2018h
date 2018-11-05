@@ -729,37 +729,35 @@ TODO
 \end{losning}
 
 
+%\begin{oppgave}
+%En reell matrise er symmetrisk hvis og bare hvis den er ortogonalt diagonaliserbar. 
+%Dette står i kontrast til komplekse symmetriske matriser, hvor implikasjonen kun går den ene veien. 
+%Vis at dersom $A$ er reell, har reelle egenverdier og $A=VDV^*$, må $A=A^T$.
+%\end{oppgave}
 
-\begin{oppgave}
-En reell matrise er symmetrisk hvis og bare hvis den er ortogonalt diagonaliserbar. 
-Dette står i kontrast til komplekse symmetriske matriser, hvor implikasjonen kun går den ene veien. 
-Vis at dersom $A$ er reell, og $A=VDV^*$, må $A=A^T$.
-\end{oppgave}
+% \begin{losning}
+% Anta at $A$ er en reell matrise slik at $A = VDV^*$, altså $A = VDV\tr$.
+% Da er
+% \[
+% A\tr = (VDV\tr)\tr.
+% \]
+% Regnereglene for transponering (teorem~\ref{thm:tr}) gir:
+% \[
+% (VDV\tr)\tr = (V\tr)\tr D\tr V\tr = V D\tr V\tr
+% \]
+% Siden $D$ er en diagonalmatrise, er den sin egen transponert:
+% \[
+% D\tr = D
+% \]
+% Dette betyr at vi har
+% \[
+% A\tr = (VDV\tr)\tr = V D\tr V\tr = VDV\tr = A.
+% \]
 
-
-\begin{losning}
-Anta at $A$ er en reell matrise slik at $A = VDV^*$, altså $A = VDV\tr$.
-Da er
-\[
-A\tr = (VDV\tr)\tr.
-\]
-Regnereglene for transponering (teorem~\ref{thm:tr}) gir:
-\[
-(VDV\tr)\tr = (V\tr)\tr D\tr V\tr = V D\tr V\tr
-\]
-Siden $D$ er en diagonalmatrise, er den sin egen transponert:
-\[
-D\tr = D
-\]
-Dette betyr at vi har
-\[
-A\tr = (VDV\tr)\tr = V D\tr V\tr = VDV\tr = A.
-\]
-
-(Hvorfor fungerer ikke dette for komplekse matriser?  Da må vi
-erstatte transponering med adjungering, og vi får ikke nødvendigvis at
-$D^* = D$.)
-\end{losning}
+% (Hvorfor fungerer ikke dette for komplekse matriser?  Da må vi
+% erstatte transponering med adjungering, og vi får ikke nødvendigvis at
+% $D^* = D$.)
+% \end{losning}
 
 
 \begin{oppgave}
