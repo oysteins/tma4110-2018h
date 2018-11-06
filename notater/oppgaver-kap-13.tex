@@ -184,7 +184,7 @@ henholdsvis
 \qquad\text{og}\qquad
 \Sp \left\{ \vvv{25}{15}{9} \right\}.
 \]
-Siden den ikke har to lineært uavhengige egenvektorer er den
+Siden den ikke har tre lineært uavhengige egenvektorer er den
 ikke diagonaliserbar.
 \end{punkt}
 
@@ -574,14 +574,14 @@ $
 \begin{losning}
 \begin{punkt}
 Det karakteristiske polynomet er
-\[
+\begin{align*}
 \begin{vmatrix}
 2 - \lambda & 3 - i       \\
 3 + i       & 4 - \lambda
 \end{vmatrix}
-= (2 - \lambda)(4 - \lambda) - (3 - i)(3 + i)
-= \lambda^2 - 6\lambda - 2,
-\]
+&= (2 - \lambda)(4 - \lambda) - (3 - i)(3 + i) \\
+&= \lambda^2 - 6\lambda - 2,
+\end{align*}
 og egenverdiene er $3 + \sqrt{11}$ og $3 - \sqrt{11}$.
 
 Vi finner lett ut at
@@ -670,10 +670,26 @@ Det karakteristiske polynomet er
 Egenverdiene er $0$, $4$ og~$9$.  Vi finner tilhørende egenvektorer
 \[
 \v_1 = \vvv{-4}{1}{1},\qquad
-%\v_2 = \vvv{
+\v_2 = \vvv{0}{1}{-1}\qquad\text{og}\qquad
+\v_3 = \vvv{1}{2}{2}.
 \]
-
-TODO
+Vi normaliserer disse:
+\begin{align*}
+\hat\v_1 &= \vvv{-2/\sqrt{3}}{1/(2\sqrt{3})}{1/(2\sqrt{3})} \\
+\hat\v_2 &= \vvv{0}{1/\sqrt{2}}{-1/\sqrt{2}} \\
+\hat\v_3 &= \vvv{1/3}{2/3}{2/3}
+\end{align*}
+Da kan vi sette
+\[
+V = \begin{bmatrix} \hat\v_1 & \hat\v_2 & \hat\v_3 \end{bmatrix}
+\quad\text{og}\quad
+D =
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 4 & 0 \\
+0 & 0 & 9
+\end{bmatrix}
+\]
 \end{punkt}
 \end{losning}
 
@@ -697,9 +713,11 @@ r_1 - \lambda & z             \\
 &= \lambda^2 - (r_1 + r_2) \lambda + r_1 r_2 - z \overline{z}
 \end{align*}
 Egenverdiene blir:
-\[
-\lambda = \frac{r_1 + r_2 \pm \sqrt{(r_1 + r_2)^2 - 4 (r_1 r_2 - z \overline{z})}}{2}
-\]
+\begin{align*}
+\lambda
+&= \frac{r_1 + r_2 \pm \sqrt{(r_1 + r_2)^2 - 4 (r_1 r_2 - z \overline{z})}}{2} \\
+&= \frac{r_1 + r_2 \pm \sqrt{(r_1 - r_2)^2 + 4 z \overline{z}}}{2}
+\end{align*}
 \end{losning}
 
 
@@ -725,7 +743,84 @@ Avgjør om $A$ er diagonaliserbar, og finn egenverdier og egenvektorer.
 
 
 \begin{losning}
-TODO
+Det karakteristiske polynomet er
+\[
+\begin{vmatrix}
+a - \lambda & b           & 0               \\
+b           & a - \lambda & 0               \\
+0           & 0           & a - b - \lambda
+\end{vmatrix}
+= (a - b - \lambda) \big( (a - \lambda)^2 - b^2 \big).
+\]
+For å finne egenverdiene må vi altså løse likningen
+\[
+(a - b - \lambda) \big( (a - \lambda)^2 - b^2 \big) = 0,
+\]
+som er det samme som
+\[
+a - b - \lambda = 0
+\qquad\text{eller}\qquad
+(a - \lambda)^2 - b^2 = 0.
+\]
+Vi får løsningene $\lambda = a \pm b$, så matrisen~$A$ har de to
+egenverdiene $a - b$ og $a + b$.
+
+Vi gausseliminerer matrisen $A - (a - b)I_3$ for å finne egenvektorer
+som hører til den første egenverdien:
+\begin{multline*}
+\begin{bmatrix}
+a - (a - b) & b           & 0                 \\
+b           & a - (a - b) & 0                 \\
+0           & 0           & (a - b) - (a - b)
+\end{bmatrix}
+\\
+=
+\begin{bmatrix}
+b & b & 0 \\
+b & b & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\roweq
+\begin{bmatrix}
+1 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{multline*}
+Egenrommet til egenverdien $a - b$ er altså
+\[
+\Sp \left\{ \vvv{1}{-1}{0}, \vvv{0}{0}{1} \right\}.
+\]
+
+Vi gausseliminerer matrisen $A - (a + b)I_3$ for å finne egenvektorer
+som hører til den andre egenverdien:
+\begin{multline*}
+\begin{bmatrix}
+a - (a + b) & b           & 0                 \\
+b           & a - (a + b) & 0                 \\
+0           & 0           & (a - b) - (a + b)
+\end{bmatrix}
+\\
+=
+\begin{bmatrix}
+-b &  b & 0   \\
+ b & -b & 0   \\
+ 0 &  0 & -2b
+\end{bmatrix}
+\roweq
+\begin{bmatrix}
+1 & -1 & 0 \\
+0 &  0 & 1 \\
+0 &  0 & 0
+\end{bmatrix}
+\end{multline*}
+Egenrommet til egenverdien $a + b$ er altså
+\[
+\Sp \left\{ \vvv{1}{1}{0} \right\}.
+\]
+
+Matrisen~$A$ er diagonaliserbar siden den har tre lineært uavhengige
+egenvektorer.
 \end{losning}
 
 
@@ -832,7 +927,8 @@ A^* A &=
 5 &-1-2i \\
 -1-2i & 5
 \end{bmatrix}
-=
+\\
+&=
 \begin{bmatrix}
  30 & -10 \\
 -10 & 30
@@ -847,7 +943,8 @@ A A^* &=
 5     & -1+2i \\
 -1+2i & 5
 \end{bmatrix}
-=
+\\
+&=
 \begin{bmatrix}
  30 & -10 \\
 -10 & 30
@@ -855,7 +952,7 @@ A A^* &=
 \end{align*}
 Vi har altså at $A^* A = A A^*$, så $A$ er en normal matrise.
 \end{punkt}
-\textbf{b)} Vi har funnet ut at $A$ er normal, og dermed må den være
+\smallskip\noindent\textbf{b)} Vi har funnet ut at $A$ er normal, og dermed må den være
 ortogonalt diagonaliserbar.
 \end{losning}
 
@@ -976,7 +1073,7 @@ Det karakteristiske polynomet er:
 \frac{1}{2}                  & \frac{\sqrt{3}}{2} - \lambda
 \end{vmatrix}
 =
-(\frac{\sqrt{3}}{2} - \lambda)^2 + \frac{1}{4}
+\left( \frac{\sqrt{3}}{2} - \lambda \right)^2 + \frac{1}{4}
 \]
 % \sqrt{3}/2 - \lambda = \pm \sqrt{-1/4} = \pm i/2
 % \lambda = \sqrt{3}/2 \pm i/2
@@ -1020,9 +1117,9 @@ La
 være de to egenvektorene i fant i del~\textbf{b)}.  Vi skal finne
 matrisen til~$T$ med hensyn på basisen $\B = (\v_1, \v_2)$.  Vi vet at
 \[
-T(\v_1) = (\frac{\sqrt{3}}{2} + \frac{i}{2}) \v_1
-\qquad\text{og}\qquad
-T(\v_2) = (\frac{\sqrt{3}}{2} - \frac{i}{2}) \v_2.
+T(\v_1) = \left( \frac{\sqrt{3}}{2} + \frac{i}{2} \right) \v_1
+\quad\text{og}\quad
+T(\v_2) = \left( \frac{\sqrt{3}}{2} - \frac{i}{2} \right) \v_2.
 \]
 Dermed får vi følgende matrise:
 \[
