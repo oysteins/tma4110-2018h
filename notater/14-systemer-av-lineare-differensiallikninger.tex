@@ -356,7 +356,7 @@ A\V y=\V y'
 \]
 med initialbetingelse
 \[
-\V y(0)=\V y_0,
+\V y(t_0)=\V y_0,
 \]
 der $\V y_0 \in \R^n$. En løsning som tilfredsstiller dette kravet, kalles en \defterm{spesiell løsning}.
 \end{defnx}
@@ -386,6 +386,18 @@ til systemet i forrige eksempel, starter i punktet
 \]
 ved $t=0$. \qedhere
 \end{ex}
+
+\begin{defnx}
+Et initialverdiproblemer \defterm{velformulert} dersom det tilfredsstiller følgende krav:
+\begin{itemize}
+\item Problemet har en løsning
+\item Løsningen er entydig
+\item Løsningens oppførsel avhenger av initialbetingelsene på en kontinuerlig måte
+\end{itemize}
+\end{defnx}
+
+Vi skal ikke gå inn på en lengre diskusjon om dette, men nevne at et initialverdiproblem ikke er velformulert når matrisen $A$ er singulær. 
+Det kommer et eksempel på dette lenger ned.
 
 \section*{Forskjellige typer løsninger i planet}
 
@@ -518,13 +530,15 @@ Merk at så lenge $c_1 \neq 0$,
 vil alle løsninger søke mot likevektsløsningen
 \[
 \V y=
+c_2
 \begin{bmatrix}
 1  \\
 -1 
 \end{bmatrix}. 
 \]
 og ingen mot $\V y=0$ når $t\to \infty$.
-Jeg er ikke sikker på om denne situasjonen har noe navn. 
+Dette er et eksempel på et problem som ikke er velformulert - ved å variere $t_0$ i startpunktet, 
+kan vi lage løsningskurver som krysser hverandre, og dette går på tverke med entydigheten av løsninger.
 \end{ex}
 
 
@@ -591,7 +605,8 @@ Den generelle løsningen til systemet blir
 \V y(t)=\;&d_1 \left(\cos t\begin{bmatrix}  1 \\ 0\end{bmatrix}-\sin t\begin{bmatrix} 0 \\ 1\end{bmatrix}\right) 
 \\+\;&d_2 \left(\cos t\begin{bmatrix} 0 \\ 1\end{bmatrix}+\sin t\begin{bmatrix}  1 \\ 0\end{bmatrix}\right)\\=\;&d_1\begin{bmatrix} \cos t \\ \sin t\end{bmatrix}+d_2\begin{bmatrix}  -\sin t \\ \cos t\end{bmatrix}=\begin{bmatrix} \cos t & -\sin t\\ \sin t & \cos t\end{bmatrix}\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}.
 \end{align*}
-Vi ser at denne løsningen starter i punktet $\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}$ ved $t=0$, og kjører deretter i en pen sirkulær bane om origo.
+Vi ser at denne løsningen starter i punktet $\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}$ ved $t=0$, og kjører deretter i en pen sirkulær bane om origo. 
+Merk at kurven er traversert med klokken.
 \end{ex}
 
 
