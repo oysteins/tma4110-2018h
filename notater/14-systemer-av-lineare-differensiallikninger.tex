@@ -413,6 +413,7 @@ Den generelle løsningen er
 der både $c_1$, $c_2$, $\V x_1$, $\V x_2$, $\lambda_1$ og $\lambda_2$ er relle. Vi illustrerer hva som kan skje med tre eksempler.
 
 \begin{ex}
+\label{eks_1}
 La 
 \[
 A=
@@ -438,8 +439,18 @@ c_2
 \]
 Merk at uansett hvilke kombinasjoner av $c_1$ og $c_2$ vi har, så lenge ikke begge er 0, 
 vil alle løsninger reise mot uendelig når $t\to \infty$, altså vekk fra den eneste likevektsløsningen $\V y=0$. 
-Vi sier derfor at $\V y$ er en \defterm{ustabil likevektsløsning}.
+Vi sier derfor at $\V y$ er en \defterm{ustabil likevektsløsning}. 
+Nedenfor er plot av løsningskurver for et par tusen tilfeldige verdier av $c_1$ og $c_2$.
 \end{ex}
+
+\begin{figure}[htbp]
+  \begin{center}
+	\includegraphics[scale=.1]{eks_1.jpg}
+	\captionsetup{labelformat=empty}
+	\caption{Eksempel \ref{eks_1}}
+	\end{center}
+\end{figure}
+
 
 \begin{ex}
 La 
@@ -472,6 +483,7 @@ Vi sier derfor at $\V y$ er en \defterm{stabil likevektsløsning}.
 \end{ex}
 
 \begin{ex}
+\label{eks_2}
 La 
 \[
 A=
@@ -500,6 +512,16 @@ vil alle løsninger gå mot uendelig når $t\to \infty$, altså inn mot likevekt
 Men dersom $c_1=0$ og $c_2\neq0$, vil løsningen søke mot origo. Likevektsløsningen $\V y=0$ kalles derfor en
 \defterm{ustabil sadel}.
 \end{ex}
+
+
+\begin{figure}[htbp]
+  \begin{center}
+	\includegraphics[scale=.1]{eks_2.jpg}	
+	\captionsetup{labelformat=empty}
+	\caption{Eksempel \ref{eks_2}}
+	\end{center}
+\end{figure}
+
 
 
 \begin{ex}
@@ -580,6 +602,7 @@ er også $\V v_1$ og $\V v_2$ lineært uavhengige for alle $t$. Fordelen med den
 
 
 \begin{ex}
+\label{eks_3}
 La 
 \[
 A=
@@ -603,14 +626,24 @@ i
 Den generelle løsningen til systemet blir 
 \begin{align*}
 \V y(t)=\;&d_1 \left(\cos t\begin{bmatrix}  1 \\ 0\end{bmatrix}-\sin t\begin{bmatrix} 0 \\ 1\end{bmatrix}\right) 
-\\+\;&d_2 \left(\cos t\begin{bmatrix} 0 \\ 1\end{bmatrix}+\sin t\begin{bmatrix}  1 \\ 0\end{bmatrix}\right)\\=\;&d_1\begin{bmatrix} \cos t \\ \sin t\end{bmatrix}+d_2\begin{bmatrix}  -\sin t \\ \cos t\end{bmatrix}=\begin{bmatrix} \cos t & -\sin t\\ \sin t & \cos t\end{bmatrix}\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}.
+\\+\;&d_2 \left(\cos t\begin{bmatrix} 0 \\ 1\end{bmatrix}+\sin t\begin{bmatrix}  1 \\ 0\end{bmatrix}\right)\\=\;&d_1\begin{bmatrix} \cos t \\ -\sin t\end{bmatrix}+d_2\begin{bmatrix}  \sin t \\ \cos t\end{bmatrix}=\begin{bmatrix} \cos t & \sin t\\ -\sin t & \cos t\end{bmatrix}\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}.
 \end{align*}
 Vi ser at denne løsningen starter i punktet $\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}$ ved $t=0$, og kjører deretter i en pen sirkulær bane om origo. 
 Merk at kurven er traversert med klokken.
 \end{ex}
 
+\begin{figure}[htbp]
+  \begin{center}
+	\includegraphics[scale=.1]{eks_3.jpg}
+	\captionsetup{labelformat=empty}
+	\caption{Eksempel \ref{eks_3}}
+	\end{center}
+\end{figure}
+
+
 
 \begin{ex}
+\label{eks_4}
 La 
 \[
 A=
@@ -633,12 +666,24 @@ i
 \]
 På samme vis som i forrige eksempel blir den generelle løsningen 
 \begin{align*}
-\V y(t)=\;&d_1e^t\begin{bmatrix} \cos t \\ \sin t\end{bmatrix}+d_2e^t\begin{bmatrix}  -\sin t \\ \cos t\end{bmatrix}\\&=\;e^t\begin{bmatrix} \cos t & -\sin t\\ \sin t & \cos t\end{bmatrix}\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}.
+\V y(t)=\;&d_1e^t\begin{bmatrix} \cos t \\ -\sin t\end{bmatrix}+d_2e^t\begin{bmatrix}  \sin t \\ \cos t\end{bmatrix}\\&=\;e^t\begin{bmatrix} \cos t & \sin t\\ -\sin t & \cos t\end{bmatrix}\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}.
 \end{align*}
-Denne løsningen starter i punktet $\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}$ ved $t=0$, og kjører deretter i en pen utadgående sirkulær spiral.
+Denne løsningen starter i punktet $\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}$ ved $t=0$, og kjører deretter i en særdeles vakker sirkulær og utadgående spiral.
 \end{ex}
 
+
+\begin{figure}[htbp]
+  \begin{center}
+	\includegraphics[scale=.1]{eks_4.jpg}
+	\captionsetup{labelformat=empty}
+	\caption{Eksempel \ref{eks_4}}
+	\end{center}
+\end{figure}
+
+
+
 \begin{ex}
+\label{eks_5}
 La 
 \[
 A=
@@ -661,13 +706,22 @@ i
 \]
 På samme vis som i de to forrige eksemplene blir den generelle løsningen 
 \begin{align*}
-\V y(t)=\;&d_1e^{-t}\begin{bmatrix} \cos t \\ \sin t\end{bmatrix}+d_2e^{-t}\begin{bmatrix}  -\sin t \\ \cos t\end{bmatrix}\\&=\;e^{-t}\begin{bmatrix} \cos t & -\sin t\\ \sin t & \cos t\end{bmatrix}\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}.
+\V y(t)=\;&d_1e^{-t}\begin{bmatrix} \cos t \\ -\sin t\end{bmatrix}+d_2e^{-t}\begin{bmatrix}  \sin t \\ \cos t\end{bmatrix}\\&=\;e^{-t}\begin{bmatrix} \cos t & \sin t\\ -\sin t & \cos t\end{bmatrix}\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}.
 \end{align*}
 Denne løsningen starter i punktet $\begin{bmatrix} d_1 \\ d_2 \end{bmatrix}$ ved $t=0$, og kjører deretter i en innadgående sirkulær spiral.
 \end{ex}
 
-\subsubsection*{Dobbel egenverdi}
-Dette tilfellet kan vi egentlig ikke analysere med teorien vi har lært til nå. Så vi skal bruke $2 \times 2$-matriser til å ta en smakebit på det generelle tilfellet. 
+
+\begin{figure}[htbp]
+  \begin{center}
+	\includegraphics[scale=.1]{eks_5.jpg}
+	\captionsetup{labelformat=empty}
+	\caption{Eksempel \ref{eks_5}}
+	\end{center}
+\end{figure}
+\subsubsection*{Dobbel egenverdi - for spesielt interesserte!}
+Dette tilfellet kan vi egentlig ikke analysere med teorien vi har lært til nå, så du skal slippe å kunne det til eksamen. 
+Men vi klarer ikke motstå fristelsen til å  bruke $2 \times 2$-matriser til å ta en smakebit på hva som skjuler seg utenfor pensum. 
 
 \begin{ex}
 La 
