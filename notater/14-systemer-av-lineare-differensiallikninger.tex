@@ -387,17 +387,14 @@ til systemet i forrige eksempel, starter i punktet
 ved $t=0$. \qedhere
 \end{ex}
 
-\begin{defnx}
-Et initialverdiproblemer \defterm{velformulert} dersom det tilfredsstiller følgende krav:
-\begin{itemize}
-\item Problemet har en løsning
-\item Løsningen er entydig
-\item Løsningens oppførsel avhenger av initialbetingelsene på en kontinuerlig måte
-\end{itemize}
-\end{defnx}
-
-Vi skal ikke gå inn på en lengre diskusjon om dette, men nevne at et initialverdiproblem ikke er velformulert når matrisen $A$ er singulær. 
-Det kommer et eksempel på dette lenger ned.
+%\begin{defnx}
+%Et initialverdiproblemer \defterm{velformulert} dersom det tilfredsstiller følgende krav:
+%\begin{itemize}
+%\item Problemet har en løsning
+%\item Løsningen er entydig
+%\item Løsningens oppførsel avhenger av initialbetingelsene på en kontinuerlig måte
+%\end{itemize}
+%\end{defnx}
 
 \section*{Forskjellige typer løsninger i planet}
 
@@ -525,6 +522,7 @@ Men dersom $c_1=0$ og $c_2\neq0$, vil løsningen søke mot origo. Likevektsløsn
 
 
 \begin{ex}
+\label{eks_hm}
 La 
 \[
 A=-\frac{1}{2}
@@ -559,10 +557,15 @@ c_2
 \end{bmatrix}. 
 \]
 og ingen mot $\V y=0$ når $t\to \infty$.
-Dette er et eksempel på et problem som ikke er velformulert - ved å variere $t_0$ i startpunktet, 
-kan vi lage løsningskurver som krysser hverandre, og dette går på tverke med entydigheten av løsninger.
 \end{ex}
 
+\begin{figure}[htbp]
+  \begin{center}
+	\includegraphics[scale=.1]{eks_hm.jpg}	
+	\captionsetup{labelformat=empty}
+	\caption{Eksempel \ref{eks_hm}}
+	\end{center}
+\end{figure}
 
 
 \subsubsection*{Komplekse egenverdier}
