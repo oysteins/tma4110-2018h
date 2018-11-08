@@ -19,36 +19,38 @@ Ligningssystemet
 \end{equation*}
 kan skrives som matriseligningen
 \begin{equation*}
-\begin{pmatrix}	
+\begin{bmatrix}	
 1+i & -1 \\
 1-i & 1+i
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 z \\ w
-\end{pmatrix}	
+\end{bmatrix}	
 =
-\begin{pmatrix}
+\begin{bmatrix}
 i \\ 1
-\end{pmatrix}
+\end{bmatrix}
 \end{equation*}
-Vi regner ut inversen til en $2\times 2$ matrise og multipliserer på begge sider med den og får
+Ligningen har entydig løsning
+%Vi regner ut inversen til en $2\times 2$-matrise og multipliserer på begge sider med den og får
 \begin{equation*}
-\begin{pmatrix}
+\begin{bmatrix}
 z \\ w
-\end{pmatrix}
+\end{bmatrix}
 =
-\begin{pmatrix}
-1 + i & \frac{1}{2}(1 - i) \\
-i& 1
-\end{pmatrix}
-\begin{pmatrix}
-i \\ 1
-\end{pmatrix}
-= \frac{1}{2}
-\begin{pmatrix}
+%\begin{pmatrix}
+%1 + i & \frac{1}{2}(1 - i) \\
+%i& 1
+%\end{pmatrix}
+%\begin{pmatrix}
+%i \\ 1
+%\end{pmatrix}
+\frac{1}{2}
+\begin{bmatrix}
 1 + i \\ 0
-\end{pmatrix}	
+\end{bmatrix}.
 \end{equation*}
+
 \end{losning}
 
 
@@ -80,41 +82,41 @@ Er kolonnene lineært avhengige? Hvis ja, finn nullrommet til matrisen.
 \end{oppgave}
 
 \begin{losning}
-Vi vet at kolonenne til en matrise er lineært avhengige hvis, og bare hvis, determinanten er $0$.
+Vi vet at kolonenne til en kvadratisk matrise er lineært avhengige hvis, og bare hvis, determinanten er $0$.
 \begin{punkt}
-	Her er $\det(A) = 0$ så vi vet at nullrommet er ikke-trivielt. Rad-reduserer vi matrisen får vi systemet
+	Her er $\det(A) = 0$ så vi vet at kolonnene er lineært avhengige. Radreduserer vi matrisen får vi systemet
 	\begin{equation*}
-		\begin{pmatrix}
+		\begin{bmatrix}
 			1 & 0 & -1 \\
 			0 & 1 & 2 \\
 			0 & 0 & 0 
-		\end{pmatrix}
-		\begin{pmatrix}
+		\end{bmatrix}
+		\begin{bmatrix}
 			x \\ y \\ z
-		\end{pmatrix}
+		\end{bmatrix}
 		=
-		\begin{pmatrix}
+		\begin{bmatrix}
 			0 \\ 0 \\ 0
-		\end{pmatrix}
+		\end{bmatrix}
 	\end{equation*}
-	Her har vi én nullrad som betyr at nullrommet har dimensjon 1. Vi velger $z=t$ og får at $x=t$ og $y = -2t$ som betyr at nullrommet er
+	Her har vi én nullrad som betyr at nullrommet har dimensjon 1. Vi velger $z=t$ som fri kompleks variabel og får at $x=t$ og $y = -2t$ som betyr at nullrommet er
 	\begin{equation*}
-		\mathrm{null}(A) = \mathrm{span}\left\{\begin{pmatrix}1 \\ -2 \\ 1\end{pmatrix}\right\} = t\begin{pmatrix}1 \\ -2 \\ 1\end{pmatrix}
+		\mathrm{null}(A) = \mathrm{Sp}\left\{\begin{bmatrix}1 \\ -2 \\ 1\end{bmatrix}\right\} = t\begin{bmatrix}1 \\ -2 \\ 1\end{bmatrix}
 	\end{equation*}
 \end{punkt}
 \begin{punkt}
-	Matrisen har determinant ulik 0 og har derfor nullrom som kun er vektoren $(0, 0, 0)$.
+	Matrisen har determinant ulik 0. Derfor er kolonnene lineært uavhengige, og nullrommet inneholder kun vektoren $\vvv{0}{0}{0}$.
 \end{punkt}
 \begin{punkt}
-	Her er determinanten lik 0 så nulrommet er ikke-trivielt. Vi kan regne ut som i del a) og finne rad-redusert form
+	Her er determinanten lik 0 så kolonnene er lineært avhengige. Vi finner radredusert form
 	\begin{equation*}
-		\begin{pmatrix}
+		\begin{bmatrix}
 			1 & 0 & -1 \\
 			0 & 1 & 2 \\
 			0 & 0 & 0 
-		\end{pmatrix}
+		\end{bmatrix}
 	\end{equation*}
-	for så å finne nullrommet. Dette er den samme matrisen som den vi fikk i a) og nullrommet blir derfor likt. Vi kan også observere at matrisene i a) og c) er transponerte av hverandre.
+	for så å finne nullrommet. Dette er den samme matrisen som den vi fikk i a) og nullrommet blir derfor likt. %Vi kan også observere at matrisene i a) og c) er transponerte av hverandre.
 \end{punkt}
 \end{losning}
 
@@ -160,19 +162,19 @@ Finn hver matrises determinant, egenverdier og tilhørende egenrom.
 
 \begin{losning}
 	\begin{punkt}
-		Determinanten er $-2$ og egenverdiene er $-2$, $i$ og $-i$. Her får vi de korresponderende egenvektorene
+		Determinanten er $-2$ og egenverdiene er $-2$, $i$ og $-i$. Egenrommene er utspent av de korresponderende egenvektorene
 		\begin{equation*}
-			\begin{pmatrix}
+			\begin{bmatrix}
 				0 \\ 1 \\ 0
-			\end{pmatrix}
+			\end{bmatrix}
 			,
-			\begin{pmatrix}
+			\begin{bmatrix}
 				i \\ 1 \\ 1
-			\end{pmatrix}
+			\end{bmatrix}
 			,
-			\begin{pmatrix}
+			\begin{bmatrix}
 				-i \\ 1 \\ 1
-			\end{pmatrix}
+			\end{bmatrix}
 		\end{equation*}
 	\end{punkt}
 	\begin{punkt}
@@ -233,19 +235,21 @@ spenner ut $\C^3$.
 \end{oppgave}
 
 \begin{losning}
-	Siden sannsynligheten for at en tilfeldig valgt vektor i $\mathbb{C}^3$ ligger i planet utspent av de to oppgitte vektorene er forsvinnene liten kan vi prøve å bare gjette en vektor og se om den er en lineær kombinasjon av de to andre. Vi gjetter
+%	Siden sannsynligheten for at en tilfeldig valgt vektor i $\mathbb{C}^3$ ligger i planet utspent av de to oppgitte vektorene er forsvinnende liten kan vi prøve å bare gjette en vektor og se om den er en lineær kombinasjon av de to andre. Vi gjetter
+Ved samme fremgangsmåte som kapittel 3, oppgave 5, kan vi f. eks se at
 	\begin{equation*}
-		\V w= \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}
+		\V w= \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
 	\end{equation*}
-	og regner ut determinanten til matrisen
-	\begin{equation*}
-		\begin{pmatrix}
-			1 & -3 & 1 + i 	\\
-			1 & 2i & 0 		\\
-			1 & 8 & -2 		
-		\end{pmatrix}
-	\end{equation*}
-	som blir ulik null. Dette skjer hvis, og bare hvis, kolonenne er linær uavhengige. Det vil si at vårt valg av vektoren $\V w$ ikke er en lineær kombinasjon av de to andre, som betyr at de tre vektorene sammen spenner ut $\mathbb{C}$.
+er lineært uavhengig av vektorene i oppgaveteksten. Videre kan du sjekke at de to gitte vektorene også er lineært uavhengige. Vi har altså tre lineært uavhengige vektorer i $\mathbb{C}^3$, som derfor spenner ut $\mathbb{C}^3$.
+%	og regner ut determinanten til matrisen
+%	\begin{equation*}
+%		\begin{bmatrix}
+%			1 & -3 & 1 + i 	\\
+%			1 & 2i & 0 		\\
+%			1 & 8 & -2 		
+%		\end{bmatrix}
+%	\end{equation*}
+%	som blir ulik null. Dette skjer hvis, og bare hvis, kolonenne er linær uavhengige. Det vil si at vårt valg av vektoren $\V w$ ikke er en lineær kombinasjon av de to andre, som betyr at de tre vektorene sammen spenner ut $\mathbb{C}$.
 \end{losning}
 
 
@@ -273,37 +277,38 @@ ligger i planet utspent av
 
 
 \begin{losning}
-	Her blir det motsatt av forrige oppgave: Hvis vi gjetter $a$ vil det svært liten sannsynlighet at den ligger i planet utspent av de to andre vektorene. Det at vektoren ligger i dette planet betyr at det finnes $b$ og $c$, muligens komplekse, slik at
+%	Her blir det motsatt av forrige oppgave: Hvis vi gjetter $a$ vil det svært liten sannsynlighet at den ligger i planet utspent av de to andre vektorene. Det at vektoren ligger i dette planet betyr at det finnes $b$ og $c$, muligens komplekse, slik at
+Vi ønsker å velge $a$ slik at vi har en lineærkombinasjon
 	\begin{equation*}
-		\begin{pmatrix}
+		\begin{bmatrix}
 			a\\ 6 - 6i \\ -12
-		\end{pmatrix}
+		\end{bmatrix}
 		= b
-		\begin{pmatrix}
+		\begin{bmatrix}
 			-3 \\ 2i \\ 8
-		\end{pmatrix}
+		\end{bmatrix}
 		+ c
-		\begin{pmatrix}
+		\begin{bmatrix}
 			1 \\ 1 \\ 2
-		\end{pmatrix}
+		\end{bmatrix},
 	\end{equation*}
 \end{losning}
-eller skrevet som matriseligningen
+ekvivalent har matriseligningen
 \begin{equation*}
-	\begin{pmatrix}
+	\begin{bmatrix}
 		a \\ 6-6i \\ -12
-	\end{pmatrix}
+	\end{bmatrix}
 	=
-	\begin{pmatrix}
+	\begin{bmatrix}
 		-3 & 1 \\
 		2i & 1 \\
 		8 & 2
-	\end{pmatrix}
-	\begin{pmatrix}
+	\end{bmatrix}
+	\begin{bmatrix}
 		b \\ c
-	\end{pmatrix}.
+	\end{bmatrix}
 \end{equation*}
-ene og få at $b = -3$ og $c = 6$ slik at 
+en løsning. Dette gir at $b = -3$ og $c = 6$ slik at 
 \begin{equation*}
 	a = 3b + c = 15
 \end{equation*}
@@ -313,19 +318,19 @@ Vis at dersom matrisen $A$ har egenverdi $\lambda$, har $A^2$ egenverdi $\lambda
 
 
 \begin{losning}
-Vi antar at $A$ har egenverdi $\lambda$. Det betyr at det finnes en $\boldsymbol{v}\not = \boldsymbol{0}$ slik at
+Vi antar at $A$ har egenverdi $\lambda$. Dette betyr at det finnes en $\mathbf{v}\not = \mathbf{0}$ slik at
 \begin{equation*}
-A \boldsymbol{v} = \lambda \boldsymbol{v}
+A \mathbf{v} = \lambda \mathbf{v}.
 \end{equation*}
-vi multipliserer begge sidene av ligningen med $A$ og får
+Multipliser begge sidene av ligningen med $A$ for å få
 \begin{equation*}
-A(A\boldsymbol{v}) = A(\lambda\boldsymbol{v})
+A(A\mathbf{v}) = A(\lambda\mathbf{v}).
 \end{equation*}
-men siden vi kan flytte på paranteser og dra ut konstanter vil dette bli
+Vi kan flytte på paranteser, dra ut konstanter og bruke at $\mathbf{v}$ er en egenverdi til $A$ for å se at
 \begin{equation*}
-A^2\boldsymbol{v} = \lambda A\boldsymbol{v} = \lambda (\lambda \boldsymbol{v}) = \lambda^2\boldsymbol{v}
+A^2\mathbf{v} = A(A\mathbf{v}) =A( \lambda \mathbf{v})=  \lambda (A \mathbf{v}) =\lambda (\lambda \mathbf{v})= \lambda^2\mathbf{v}.
 \end{equation*}
-Siden vi vet fra antagelsen at $\boldsymbol{v} \not =\boldsymbol{0}$ har vi funnet en verdi, nemlig $\lambda^2$, som er en egenverdi til matrisen $A^2$.
+Dette betyr at $\lambda^2$ er en egenverdi til matrisen $A^2$.
 \end{losning}
 
 \begin{oppgave}
@@ -344,10 +349,10 @@ Hva er egenverdiene til $T_{2 \theta}$?
 Vi setter som vanlig opp matrisen
 \begin{equation*}
 	T_\theta - \lambda I = 
-	\begin{pmatrix}
+	\begin{bmatrix}
 	\cos \theta - \lambda & -\sin\theta \\
 	\sin\theta & \cos\theta - \lambda
-\end{pmatrix}
+\end{bmatrix}
 \end{equation*}
 og beregner determinanten
 \begin{equation*}
@@ -424,17 +429,17 @@ i & 1 & 1 & 1 & 1 & 1 \\ 1 & i & 1 & 1 & 1 & 1\\ 0 & 0 & i & 1& 1 & 1 \\ 0 & 0& 
 		Her kan vi velge første rad eller første kolonne. Vi velger første kolonne og får determinanten
 		\begin{equation*}
 			i\det 
-			\begin{pmatrix}
+			\begin{bmatrix}
 				i & 0 & 0 \\
 				0 & i & 1 \\
 				0 & 1 & i
-			\end{pmatrix}
+			\end{bmatrix}
 			-1\det
-			\begin{pmatrix}
+			\begin{bmatrix}
 				1 & 0 & 0 \\
 				0 & i & 1 \\
 				0 & 1 & i
-			\end{pmatrix}
+			\end{bmatrix}
 		\end{equation*}
 		Den første determinanten er samme som i oppg a) og den andre ligner. Vi får at determinanten er
 		\begin{equation*}
@@ -445,16 +450,16 @@ i & 1 & 1 & 1 & 1 & 1 \\ 1 & i & 1 & 1 & 1 & 1\\ 0 & 0 & i & 1& 1 & 1 \\ 0 & 0& 
 	\begin{punkt}
 		Vi velger å regne ut determinanten langs første kolonne. Det gir
 		\begin{equation*}
-			i\det\begin{pmatrix}
+			i\det\begin{bmatrix}
 				i & 1 & 1 \\
 				0 & i & 1 \\
 				0 & 1 & i
-			\end{pmatrix}
-			-1\det\begin{pmatrix}
+			\end{bmatrix}
+			-1\det\begin{bmatrix}
 				1 & 1 & 1 \\
 				0 & i & 1 \\
 				0 & 1 & i
-			\end{pmatrix}
+			\end{bmatrix}
 		\end{equation*}
 		Her ser vi at den første determinanten er kjent, og den andre regner vi ut langs første kolonne og får at determinanten til slutt blir $2 + 2i$ som i b)
 	\end{punkt}
@@ -475,25 +480,25 @@ i en $3 \times 3$-matrise $P$ der egenvektorene er kolonner, og beregn $P^{-1} A
 \begin{losning}
 	Vi fant egenverdiene og egenvektorene i oppgave 3. Hvis vi setter disse opp i matrisen $P$ får vi
 	\begin{equation*}
-		P = \begin{pmatrix}
+		P = \begin{bmatrix}
 				0 & i & -i \\
 				1 & 1 & 1 \\
 				0 & 1 & 1 
-			\end{pmatrix}
+			\end{bmatrix}
 			\quad P^{-1} = \frac{1}{2}
-			\begin{pmatrix}
+			\begin{bmatrix}
 				0 & 2 & -2 \\
 				 -i & 0 & 1 \\
 				 i & 0 & 1
-			\end{pmatrix}
+			\end{bmatrix}
 	\end{equation*}
 	som gir oss
 	\begin{equation*}
-		P^{-1}AP = \begin{pmatrix}
+		P^{-1}AP = \begin{bmatrix}
 			-2 & 0 & 0 \\
 			0 & i & 0 \\
 			0 & 0 & -i 
-		\end{pmatrix}
+		\end{bmatrix}
 	\end{equation*}
 	som er en diagonalmatrise hvor elementene er egenverdiene til $A$.
 \end{losning}
@@ -519,20 +524,33 @@ Finn egenverdiene til matrisen
 Vis at dersom en matrise har egenverdien 0, er den singulær.
 \end{oppgave}
 
-\begin{losning}
-	Vi viser dette med en selvmotsigelse. Anta at $A$ ikke er singulær, altså at $A\V y = 0$ kun har den trivielle løsningen. Vi vet at egenverdiene til en matrise $A$ er slik at det finnes en ikke-null vektor $\V v$ slik at
-	\begin{equation*}
-		A\V v = \lambda\V v
-	\end{equation*}
-	Siden vi antar at en av egenverdiene er $\lambda = 0$ vet vi da at
-	\begin{equation*}
-		A\V v = 0		
-	\end{equation*}
-	for en \emph{ikke-null} vektor $\V v$. Altså har ligningssystemet
-	\begin{equation*}
-		A\V y = 0
-	\end{equation*}
-	minst 2 løsninger: $\V v$ og den trivielle løsningen $0$. Men vi antok at $A$ kun hadde den trivielle løsningen, en selvmotsigelse. Altså må $A$ være singulær.
+\begin{losning} Anta at null er en egenverdi til en matrise $A$.	
+\\
+\noindent
+Ønsker: $A$ er singulær. Vi har sett mange ekvivalente formuleringer av singulær. En av dem er at det finnes en ikke-null løsning av ligningen $A\mathbf{x}=\mathbf{0}$.
+\\
+\noindent
+Antagelsen: Det finnes en ikke-null vektor $\mathbf{v}$ slik at $A\mathbf{v}=0 \mathbf{v}=\mathbf{0}$. 
+\\
+\noindent
+Observasjon: Vi ser at egenvektoren $\mathbf{v}$ er en ikke-null løsning av $A\mathbf{x}=\mathbf{0}$.
+\\
+\noindent
+Konklusjon: $A$ er singulær, som er det vi ønsket å vise.
+
+%	Vi viser dette med en selvmotsigelse. Anta at $A$ ikke er singulær, altså at $A\V y = 0$ kun har den trivielle løsningen. Vi vet at egenverdiene til en matrise $A$ er slik at det finnes en ikke-null vektor $\V v$ slik at
+%	\begin{equation*}
+%		A\V v = \lambda\V v
+%	\end{equation*}
+%	Siden vi antar at en av egenverdiene er $\lambda = 0$ vet vi da at
+%	\begin{equation*}
+%		A\V v = 0		
+%	\end{equation*}
+%	for en \emph{ikke-null} vektor $\V v$. Altså har ligningssystemet
+%	\begin{equation*}
+%		A\V y = 0
+%	\end{equation*}
+%	minst 2 løsninger: $\V v$ og den trivielle løsningen $0$. Men vi antok at $A$ kun hadde den trivielle løsningen, en selvmotsigelse. Altså må $A$ være singulær.
 \end{losning}
 
 
