@@ -3,12 +3,70 @@
 
 
 \begin{oppgave}
-Finn likningssystemet $A\V y=\V y'$ sin generelle løsning og tegn fasediagram når
+Skissér faseplottet til systemet $A\V y=\V{y}'$ når
+\begin{punkt}
+$A= \begin{bmatrix}
+2 & 3\\
+-1 & -2
+\end{bmatrix}
+$	
+\end{punkt}
+
+\begin{punkt}
+	$A= \begin{bmatrix}
+	7 & -1\\
+	3 & 3
+	\end{bmatrix}
+	$	
+\end{punkt}
+
+\begin{punkt}
+	$A= \begin{bmatrix}
+	-3 & 2\\
+	-1 & -1
+	\end{bmatrix}
+	$	
+\end{punkt}
+
+\begin{punkt}
+	$A= \begin{bmatrix}
+	-3 & -9\\
+	2 & 3
+	\end{bmatrix}
+	$	
+\end{punkt}
+
+\end{oppgave}
+
+
+\begin{losning}
+Vi ber kun om en skisse. Det holder å finne egenverdiene for å se hvordan systemet oppfører seg.
+	\begin{punkt}
+		Egenverdiene er $-1$ og~$1$, derfor får vi en sadel om origo.
+	\end{punkt}
+	
+	\begin{punkt}
+		Egenverdiene er $4$ og~$6$, derfor får vi en ustabilt likevektsløsning.
+	\end{punkt}
+	
+	\begin{punkt}
+		Egenverdiene er $2+i$ og~$2-i$, derfor får vi spiraler som er sirkulære og utgående fra origo.
+	\end{punkt}
+	
+	\begin{punkt}
+		Egenverdiene er $3i$ og~$-3i$, derfor får vi sirkulære baner om origo.
+	\end{punkt}
+	
+\end{losning}
+
+
+\begin{oppgave}
+Finn generell løsning av $A\V y=\V y'$ når
 \begin{punkt}
 $
 A=
 \begin{bmatrix}
-2 & 2 & 5\\
+2 & 3 & 5\\
 0 & 3 & 5\\
 0 & 0 & 5
 \end{bmatrix}
@@ -51,141 +109,173 @@ A=
 
 \end{oppgave}
 
+\begin{losning}
+Du fant egenverdier og egenvektorer til alle matrisene i kapittel 13. Du trenger derfor bare å sette inn i formelen for generell løsning.
+
+
+\begin{punkt}
+	$$\V{y}=c_1\vvv{1}{0}{0}e^{2t}+c_2\vvv{3}{1}{0}e^{3t}+c_3\vvv{25}{15}{6}e^{5t}$$
+\end{punkt}
+
+\begin{punkt}
+	$$\V{y}=c_1\vvv{1}{1}{0}e^{2t}+c_2\vvv{-2}{0}{1}e^{2t}+c_3\vvv{1}{3}{-1}e^{-4t}$$
+\end{punkt}
+
+\begin{punkt}
+$$	\begin{aligned}
+	\V{y}= {} & c_1\vvv{0}{0}{1}e^{3t}+c_2(\cos (t) \vvv{0}{1}{0}-\sin (t) \vvv{1}{0}{0})\\
+	& +c_3(\cos (t) \vvv{1}{0}{0}+\sin (t) \vvv{0}{1}{0})
+	\end{aligned}$$
+	
+\end{punkt}
+
+\begin{punkt} 
+$$	\begin{aligned}
+	\V{y}= {} & c_1\vvvv{20}{12}{17}{-17}e^{-4t} +c_2\vvvv{151}{293}{350}{200}e^{7t}\\
+	& +c_3(\cos (t) \vvvv{0}{1}{0}{0}-\sin (t) \vvvv{1}{0}{0}{0})\\
+	& +c_4(\cos (t) \vvvv{1}{0}{0}{0}+\sin (t) \vvvv{0}{1}{0}{0})
+	\end{aligned}$$
+
+\end{punkt}
+
+
+	
+\end{losning}
+
+\begin{oppgave}
+Løs initialverdiproblemene $A\V y= \V y '$, $\V{y}(0)=\V{y}_0$ når 
+
+\begin{punkt}
+	$
+	A=
+	\begin{bmatrix}
+	2 & 3 & 5\\
+	0 & 3 & 5\\
+	0 & 0 & 5
+	\end{bmatrix}
+	$, $
+	\V{y}_0=\vvv{1}{0}{0}
+	$
+\end{punkt}
+%
+\begin{punkt}
+	$
+	A=
+	\begin{bmatrix}
+	3 & -1 & 2\\
+	3 & -1 & 6\\
+	-2 & 2 & -2
+	\end{bmatrix}$, $
+	\V{y}_0=\vvv{1}{-1}{1}
+	$
+\end{punkt}
+
+\begin{punkt}
+	$
+	A=
+	\begin{bmatrix}
+	0 & -1 & 0\\
+	1 & 0 & 0\\
+	0 & 0 & 3
+	\end{bmatrix}$, $
+	\V{y}_0=\vvv{1}{2}{3}
+	$
+\end{punkt}
+
+
+\end{oppgave}
 
 \begin{losning}
+
+
 \begin{punkt}
-Matrisen har egenverdien~$0$, med tilhørende egenrom $\Sp \{ \vvS{1}{0} \}$.
-Siden den ikke har to lineært uavhengige egenvektorer er den
-ikke diagonaliserbar.
+	$$\V{y}=\vvv{1}{0}{0}e^{2t}$$
 \end{punkt}
 
 \begin{punkt}
-Matrisen har egenverdiene $2$ og~$5$, med tilhørende egenrom
-henholdsvis
-\[
-\Sp \left\{ \vvv{1}{0}{0} \right\}
-\qquad\text{og}\qquad
-\Sp \left\{ \vvv{25}{15}{9} \right\}.
-\]
-Siden den ikke har tre lineært uavhengige egenvektorer er den
-ikke diagonaliserbar.
+	$$\V{y}=2\vvv{1}{1}{0}e^{2t}-\vvv{1}{3}{-1}e^{-4t}$$
 \end{punkt}
 
 \begin{punkt}
-Det karakteristiske polynomet er
-\[
-\begin{vmatrix}
-3-\lambda & -1         & 2          \\
-3         & -1-\lambda & 6          \\
--2        & 2          & -2-\lambda
-\end{vmatrix}
-=
--\lambda^3 + 12\lambda - 16.
-\]
-Vi må altså løse likningen
-\[
--\lambda^3 + 12\lambda - 16 = 0.
-\]
-Ved å prøve oss frem finner vi ganske raskt at $\lambda=2$ er en
-løsning.  Det vil si at vi kan dele ut faktoren $(\lambda-2)$ fra det
-karakteristiske polynomet ved polynomdivisjon.  Da får vi at
-\[
--\lambda^3 + 12\lambda - 16 = (\lambda - 2) (-\lambda^2 - 2\lambda + 8).
-\]
-Vi finner dermed de andre løsningene av likningen ved å løse
-\[
--\lambda^2 - 2\lambda + 8 = 0,
-\]
-som vi gjør ved å bruke den vanlige formelen for andregradslikninger:
-\[
-\lambda
- = \frac{-(-2) \pm \sqrt{(-2)^2 - 4 \cdot (-1) \cdot 8}}{2 (-1)}
- = -1 \pm 3
-\]
-Egenverdiene til matrisen er altså $2$ og~$-4$.
-
-Vi finner egenrommene på vanlig måte.  Egenrommet til egenverdien~$2$ er
-\[
-\Sp \left\{ \vvv{1}{1}{0}, \vvv{-2}{0}{1} \right\},
-\]
-og egenrommet til egenverdien~$-4$ er
-\[
-\Sp \left\{ \vvv{1}{3}{-1} \right\}.
-\]
-Matrisen har altså tre lineært uavhengige egenvektorer, så den er
-diagonaliserbar.
+	$$	\begin{aligned}
+	\V{y}= {} & 3\vvv{0}{0}{1}e^{3t}+2(\cos (t) \vvv{0}{1}{0}-\sin (t) \vvv{1}{0}{0})\\
+	& +(\cos (t) \vvv{1}{0}{0}+\sin (t) \vvv{0}{1}{0})
+	\end{aligned}$$
+	
 \end{punkt}
 
-\begin{punkt}
-Egenverdiene er $3$, $-i$ og~$i$, med tilhørende egenrom henholdsvis
-\[
-\Sp \left\{ \vvv{0}{0}{1} \right\},\qquad
-\Sp \left\{ \vvv{-i}{1}{0} \right\},\qquad
-\Sp \left\{ \vvv{i}{1}{0} \right\}.
-\]
-Matrisen har altså tre lineært uavhengige egenvektorer, så den er
-diagonaliserbar.
-\end{punkt}
 
-\begin{punkt}
-Egenverdiene er $0$, $3$, $-i$ og~$i$, med tilhørende egenrom
-henholdsvis
-\[
-\Sp \left\{ \vvvv{-6}{5}{0}{1} \right\},\quad
-\Sp \left\{ \vvvv{39}{113}{30}{40} \right\},\quad
-\Sp \left\{ \vvvv{-i}{1}{0}{0} \right\},\quad
-\Sp \left\{ \vvvv{i}{1}{0}{0} \right\}.
-\]
-Matrisen har altså fire lineært uavhengige egenvektorer, så den er
-diagonaliserbar.
-\end{punkt}
+	
 
-\begin{punkt}
-Egenverdiene er $-4$, $7$, $-i$ og~$i$, med tilhørende egenrom
-henholdsvis
-\[
-\Sp \left\{ \vvvv{20}{12}{17}{-17} \right\},\quad
-\Sp \left\{ \vvvv{151}{293}{350}{200} \right\},\quad
-\Sp \left\{ \vvvv{-i}{1}{0}{0} \right\},\quad
-\Sp \left\{ \vvvv{i}{1}{0}{0} \right\}.
-\]
-Matrisen har altså fire lineært uavhengige egenvektorer, så den er
-diagonaliserbar.
-\end{punkt}
+\end{losning}
+
+\begin{oppgave}
+Løs initialverdiproblemet $$
+A=
+\begin{bmatrix}
+0 & -1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 3
+\end{bmatrix}
+\V{y}=\V{y}',\quad \V{y}(\frac{\pi}{2})=\vvv{1}{1}{1}.
+$$
+\end{oppgave}
+
+\begin{losning}
+	$$	\begin{aligned}
+	\V{y}= {} & \vvv{0}{0}{1}e^{3(t-\frac{\pi}{2})}-(\cos (t) \vvv{0}{1}{0}-\sin (t) \vvv{1}{0}{0})\\
+	& +(\cos (t) \vvv{1}{0}{0}+\sin (t) \vvv{0}{1}{0})
+	\end{aligned}$$
 \end{losning}
 
 
-
 \begin{oppgave}
-Løs initialverdiproblemet
-\begin{punkt}
-$
-A=
+Vis at systemet
+$$
 \begin{bmatrix}
-1 & 2 & 2\\
-2 & 6 & 2\\
-2 & 2 & 6
-\end{bmatrix}
-$ 
-\end{punkt}
+3 & -1 & 2\\
+3 & -1 & 6\\
+-2 & 2 & -2
+\end{bmatrix} \V y= \V{y} '$$
+med en gitt initialverdi $\V{y}(0)=\V{y}_0$ har en entydig løsning.\\
+
+\noindent
+\emph{Hint}: Du kan anta at den generelle løsningen inneholder alle løsninger.
+\end{oppgave}
+
+\begin{losning}
+Vi har sett at den generelle løsningen er 
+$$\V{y}=c_1\vvv{1}{1}{0}e^{2t}+c_2\vvv{-2}{0}{1}e^{2t}+c_3\vvv{1}{3}{-1}e^{-4t}.$$ Det gjenstår kun å bestemme koeffisientene fra initialverdiene:
+$$c_1\vvv{1}{1}{0}+c_2\vvv{-2}{0}{1}+c_3\vvv{1}{3}{-1}=\V{y}_0.$$ Dette kan skrives som en matriseligning
+$$\begin{bmatrix}
+1 & -2 & 1\\
+1 & 0 & 3\\
+0 & 1 & -1
+\end{bmatrix} \V c= \V{y}_0$$ hvor $\V c=\vvv{c_1}{c_2}{c_3}$. Du kan sjekke at kolonnene til denne matrisen er inverterbar. Dermed er det et entydig valg av koeffisienter $c_1$, $c_2$ og~$c_3$; løsningen er dermed entydig ettersom den generelle løsningen inneholder alle løsninger.
+\end{losning}
+
+\newpage
+\begin{oppgave}\textbf{[Utfordring]}
+	
+\noindent
+Husk at glatte funksjoner $f :\mathbb{R}\rightarrow \mathbb{R}$ er et vektorrom. På samme måte danner glatte vektorfunksjoner $\mathbf f:\mathbb{R}\rightarrow \mathbb{R}^n$ et vektorrom $V$ med addisjon
+$$(\mathbf f + \mathbf g)(t)=\mathbf{f}(t)+\mathbf{g}(t),$$ og skalarmultiplikasjon
+$$(c \mathbf f )(t)=c\mathbf{f}(t).$$
+
 \begin{punkt}
-$\begin{bmatrix}
-\frac{\sqrt{3}}{2} & -\frac{1}{2} \\ \frac{1}{2} & \frac{\sqrt{3}}{2}
-\end{bmatrix}
-$
+Forklar hvorfor alle løsningene til et system $A\V y=\V{y}'$ danner et underrom av $V$.
 \end{punkt}
+
 \begin{punkt}
-% T(1) = 1
-% T(x) = (x+1) + x = 2x + 1
-% T(x^2) = (x+1) 2x + x^2 = 3x^2 + 2x
-$
-A =
+Hva er dimensjonen til rommet av alle løsninger til $$
 \begin{bmatrix}
-1 & 1 & 0 \\
-0 & 2 & 2 \\
-0 & 0 & 3
-\end{bmatrix}
-$
+3 & -1 & 2\\
+3 & -1 & 6\\
+-2 & 2 & -2
+\end{bmatrix} \V y= \V{y} ' ?$$
+
+\noindent
+\emph{Hint}: Bruk forrige oppgave.
 \end{punkt}
 
 
@@ -194,74 +284,17 @@ $
 
 
 
+
 \begin{losning}
-\begin{punkt}
-Rotasjonsvinkelen er $\pi/6$.
-\end{punkt}
-\begin{punkt}
-Det karakteristiske polynomet er:
-\[
-\begin{vmatrix}
-\frac{\sqrt{3}}{2} - \lambda & -\frac{1}{2}                 \\
-\frac{1}{2}                  & \frac{\sqrt{3}}{2} - \lambda
-\end{vmatrix}
-=
-\left( \frac{\sqrt{3}}{2} - \lambda \right)^2 + \frac{1}{4}
-\]
-% \sqrt{3}/2 - \lambda = \pm \sqrt{-1/4} = \pm i/2
-% \lambda = \sqrt{3}/2 \pm i/2
-Egenverdiene er
-\[
-\frac{\sqrt{3}}{2} + \frac{i}{2}
-\qquad\text{og}\qquad
-\frac{\sqrt{3}}{2} - \frac{i}{2},
-\]
-med tilhørende egenrom henholdsvis
-% -i/2 -1/2
-%  1/2 -i/2
-% --
-% i  1
-% 1 -i
-% --
-% 1 -i
-% 0  0
-% -----------------
-% i/2 -1/2
-% 1/2  i/2
-% --
-% i -1
-% 1  i
-% --
-% 1 i
-% 0 0
-\[
-\Sp \left\{ \vv{i}{1} \right\}
-\qquad\text{og}\qquad
-\Sp \left\{ \vv{i}{-1} \right\}.
-\]
-\end{punkt}
-\begin{punkt}
-La
-\[
-\v_1 = \vv{i}{1}
-\qquad\text{og}\qquad
-\v_2 = \vv{i}{-1}
-\]
-være de to egenvektorene i fant i del~\textbf{b)}.  Vi skal finne
-matrisen til~$T$ med hensyn på basisen $\B = (\v_1, \v_2)$.  Vi vet at
-\[
-T(\v_1) = \left( \frac{\sqrt{3}}{2} + \frac{i}{2} \right) \v_1
-\quad\text{og}\quad
-T(\v_2) = \left( \frac{\sqrt{3}}{2} - \frac{i}{2} \right) \v_2.
-\]
-Dermed får vi følgende matrise:
-\[
-\begin{bmatrix}
-\frac{\sqrt{3}}{2} + \frac{i}{2} & 0 \\
-0 & \frac{\sqrt{3}}{2} - \frac{i}{2}
-\end{bmatrix}
-\]
-\end{punkt}
+	\begin{punkt}
+		Dette er superposisjonsprinsippet.
+	\end{punkt}
+	
+	\begin{punkt}
+	Vi viste i forrige oppgave at en løsning er entydig bestemt av en gitt initialverdi. Initialverdiene danner et tredimensjonalt rom. Derfor er dimensjonen lik tre.
+	\end{punkt}
+	
+	
 \end{losning}
 
 
@@ -270,137 +303,175 @@ Dermed får vi følgende matrise:
 
 
 
-\begin{losning}
-\begin{punkt}
-Det karakteristiske polynomet er
-\begin{align*}
-\begin{vmatrix}
-2 - \lambda & 3 - i       \\
-3 + i       & 4 - \lambda
-\end{vmatrix}
-&= (2 - \lambda)(4 - \lambda) - (3 - i)(3 + i) \\
-&= \lambda^2 - 6\lambda - 2,
-\end{align*}
-og egenverdiene er $3 + \sqrt{11}$ og $3 - \sqrt{11}$.
 
-Vi finner lett ut at
-\[
-\v_1 = \vv{3-i}{1+\sqrt{11}}
-\]
-er en egenvektor for egenverdien $3 + \sqrt{11}$, og at
-\[
-\v_2 = \vv{3-i}{1-\sqrt{11}}
-\]
-er en egenvektor for egenverdien $3 - \sqrt{11}$.  For å lage en
-ortogonal diagonalisering må vi ha egenvektorer med lengde~$1$, så vi
-deler hver av disse på lengden sin og får normaliserte egenvektorer
-$\hat\v_1$ og~$\hat\v_2$:
-\begin{align*}
-\hat\v_1
-&= \frac{1}{\| \v_1 \|} \v_1
- = \frac{1}{\sqrt{2 (11+\sqrt{11})}} \v_1 \\
-&= \vv{(3-i) \Big/ \sqrt{2 (11+\sqrt{11})}}
-      {(1+\sqrt{11}) \Big/ \sqrt{2 (11+\sqrt{11})}}
-\\
-\hat\v_2
-&= \frac{1}{\| \v_2 \|} \v_2
- = \frac{1}{\sqrt{2 (11-\sqrt{11})}} \v_2 \\
-&= \vv{(3-i) \Big/ \sqrt{2 (11-\sqrt{11})}}
-      {(1-\sqrt{11}) \Big/ \sqrt{2 (11-\sqrt{11})}}
-\end{align*}
-Da kan vi sette
-\[
-V = \begin{bmatrix} \hat\v_1 & \hat\v_2 \end{bmatrix}
-\quad\text{og}\quad
-D =
-\begin{bmatrix}
-3+\sqrt{11} & 0           \\
-0           & 3-\sqrt{11}
-\end{bmatrix}
-\]
-\end{punkt}
-\begin{punkt}
-Det karakteristiske polynomet er
-\[
-\begin{vmatrix}
-1-\lambda & 1-i\\
-1+i & -1-\lambda
-\end{vmatrix}
-= \lambda^2 - 3.
-\]
-Egenverdiene er $\sqrt{3}$ og~$-\sqrt{3}$.  Vi finner tilhørende
-egenvektorer
-\[
-\v_1 = \vv{-1+i}{1-\sqrt{3}}
-\qquad\text{og}\qquad
-\v_2 = \vv{-1+i}{1+\sqrt{3}}.
-\]
-Vi normaliserer disse:
-\begin{align*}
-\hat\v_1
-&= \vv{(-1+i)/\sqrt{(6-2\sqrt{3})}}
-      {(1-\sqrt{3})/\sqrt{(6-2\sqrt{3})}}
-\\
-\hat\v_1
-&= \vv{(-1+i)/\sqrt{(6+2\sqrt{3})}}
-      {(1+\sqrt{3})/\sqrt{(6+2\sqrt{3})}}
-\end{align*}
-Da kan vi sette
-\[
-V = \begin{bmatrix} \hat\v_1 & \hat\v_2 \end{bmatrix}
-\quad\text{og}\quad
-D =
-\begin{bmatrix}
-\sqrt{3} & 0         \\
-0        & -\sqrt{3}
-\end{bmatrix}
-\]
-\end{punkt}
-\begin{punkt}
-Det karakteristiske polynomet er
-\[
-\begin{vmatrix}
-1 & 2 & 2\\
-2 & 6 & 2\\
-2 & 2 & 6
-\end{vmatrix}
-= -\lambda^3 + 13\lambda^2 - 36\lambda
-\]
-Egenverdiene er $0$, $4$ og~$9$.  Vi finner tilhørende egenvektorer
-\[
-\v_1 = \vvv{-4}{1}{1},\qquad
-\v_2 = \vvv{0}{1}{-1}\qquad\text{og}\qquad
-\v_3 = \vvv{1}{2}{2}.
-\]
-Vi normaliserer disse:
-\begin{align*}
-\hat\v_1 &= \vvv{-2/\sqrt{3}}{1/(2\sqrt{3})}{1/(2\sqrt{3})} \\
-\hat\v_2 &= \vvv{0}{1/\sqrt{2}}{-1/\sqrt{2}} \\
-\hat\v_3 &= \vvv{1/3}{2/3}{2/3}
-\end{align*}
-Da kan vi sette
-\[
-V = \begin{bmatrix} \hat\v_1 & \hat\v_2 & \hat\v_3 \end{bmatrix}
-\quad\text{og}\quad
-D =
-\begin{bmatrix}
-0 & 0 & 0 \\
-0 & 4 & 0 \\
-0 & 0 & 9
-\end{bmatrix}
-\]
-\end{punkt}
-\end{losning}
 
 
 \oppgaver{15}
 
 \begin{oppgave}
-Skriv om til system.
+Skriv om følgende andreordens differensiallikninger til system.
+
+\begin{punkt}
+$y''-y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''+2y'+3y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''+y'=0$
+\end{punkt}
+
+
 \end{oppgave}
 
+\begin{losning} La $v=y'$.
+	
+	\begin{punkt}$\begin{bmatrix}
+		0 & 1\\
+		1 & 0
+		\end{bmatrix} \vv{y}{v}=\vv{y}{v}'
+		$
+	\end{punkt}
+	
+	\begin{punkt}$\begin{bmatrix}
+		0 & 1\\
+		-3 & -2
+		\end{bmatrix} \vv{y}{v}=\vv{y}{v}'
+		$
+	\end{punkt}
+	
+	\begin{punkt}$\begin{bmatrix}
+		0 & 1\\
+		0 & 1
+		\end{bmatrix} \vv{y}{v}=\vv{y}{v}'
+		$
+	\end{punkt}
+	
+\end{losning}
+
 \begin{oppgave}
-Løs likningen.
+Finn generell løsning av
+\begin{punkt}
+	$y''-y'-2y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''+y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''-4y'+4y=0$
+\end{punkt}
+
 \end{oppgave}
+
+\begin{losning}
+	\begin{punkt}
+		$y=c_1 e^{2t}+c_2 e^{-t}$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y=c_1\cos(t)+ c_2 \sin (t)$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y=(c_1+tc_2)e^{2t}$
+	\end{punkt}
+	
+\end{losning}
+
+
+\begin{oppgave}
+Løs initialverdiproblemet
+	\begin{punkt}
+		$y''-y'-2y=0$, $y(0)=0$, $y'(0)=1$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''+y=0$, $y(\frac{\pi}{2})=1$, $y'(\frac{\pi}{2})=0$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''-4y'+4y=0$, $y(1)=2$, $y'(0)=e^{-2}$
+	\end{punkt}
+	
+\end{oppgave}
+
+\begin{losning}
+	\begin{punkt}
+		$y=\frac{1}{3}( e^{2t}- e^{-t})$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y= \sin (t)$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y=(t-1)e^{2(t-1)}$
+	\end{punkt}
+	
+\end{losning}
+
+
+\begin{oppgave}
+	Finn generell løsning av
+	\begin{punkt}
+		$y''-y'-2y=e^{-2t}$
+	\end{punkt}
+
+	\begin{punkt}
+		$y''-y'-2y=e^{2t}$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''+y=t$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''-4y'+4y=4t$
+	\end{punkt}
+	
+\end{oppgave}
+
+\begin{losning}
+	\begin{punkt} Prøv $y=a e^{-2t}$ for å finne
+		$$y=c_1 e^{2t}+c_2 e^{-t}-\frac{1}{2}e^{-2t}.$$
+	\end{punkt}
+
+	\begin{punkt} Prøv $y=a t e^{2t}$ for å finne
+		$$y=c_1 e^{2t}+c_2 e^{-t}+\frac{1}{3} t e^{2t}.$$
+	\end{punkt}
+	
+	\begin{punkt} Prøv $a t$ for å finne
+		$$y=c_1\cos(t)+ c_2 \sin (t)+t.$$
+	\end{punkt}
+	
+	\begin{punkt} Prøv $at+b$ for å finne
+		$$y=(c_1+tc_2)e^{2t}+t+1.$$
+	\end{punkt}
+	
+\end{losning}
+
+\begin{oppgave}
+For alle ligningene i oppgave \textbf{15.1.} skal du: regne ut det karakteristiske polynomet til differensialligningen, og det karakteristiske polynomet til matrisen i tilhørende system. Ser du en sammenheng? Klarer du å bevise observasjonen din?
+\end{oppgave}
+
+\begin{losning}
+Vi ser at polynomene blir like.
+\\
+
+Bevis: Betrakt en generell ligning $y''+py'+qy=0$. Det karakteristiske polynomet er $\lambda ^2+p\lambda+q$. Vi kan generelt skrive tilhørende system som $$\begin{bmatrix}
+0 & 1\\
+-q & -p
+\end{bmatrix} \vv{y}{v}=\vv{y}{v} '
+$$ hvor $v=y'$. Det karakteristiske polynomet til matrisen blir $$
+\text{det}\begin{bmatrix}
+-\lambda & 1\\
+-q & -p-\lambda
+\end{bmatrix}=\lambda(p+\lambda)+q=\lambda^2+p\lambda+q.
+$$Polynomene er like.
+\end{losning}
 
 %\end{losning}
