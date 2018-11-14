@@ -1,0 +1,206 @@
+\documentclass[titlepage,a4paper,12pt,norsk]{IMFeksamen}
+\geometry{left=3.5cm,right=3.5cm,bottom=2cm}
+\usepackage[utf8]{inputenc}
+\trykkinfo[ensidig,sorthvit]
+\emnekode{TMA4110}
+\emnenavn{Matematikk 3 -- EKSEMPEL~1}
+\eksamensdato{23. november 2018}
+\eksamenstid{09:00–13:00}
+\fagligkontaktinfo{Øystein Skartsæterhagen}{}
+\hjelpemiddel{Ingen trykte eller håndskrevne hjelpemidler tillatt.
+ Bestemt, enkel kalkulator tillatt.
+ (Casio fx-82ES PLUS, Casio fx-82EX,
+  Citizen SR-270X, Citizen SR-270X College,
+  Hewlett Packard HP30S)}
+\anneninfo{Eksamenen består av ti oppgaver
+Hver av disse teller like mye.
+Alle svar må begrunnes.
+
+\textbf{Merk.}
+Dette er ikke en virkelig eksamen, men et eksempel for å vise
+hvordan en eksamen kan se ut.
+Hvis du ikke har nok godkjente øvinger, kan du levere svar på disse
+oppgavene som en ekstra øving.
+}
+\runninghead{TMA4110 -- Eksamen høsten 2018 -- EKSEMPEL~1}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsfonts}
+\usepackage{mathrsfs}
+\usepackage{systeme}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\M}{\mathcal{M}} % vektorrom av matriser
+\newcommand{\Cf}{\mathcal{C}} % vektorrom av kontinuerlige funksjoner
+\renewcommand{\P}{\mathcal{P}} % vektorrom av polynomer
+\newcommand{\B}{\mathscr{B}} % basis
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\intersect}{\cap}
+\newcommand{\union}{\cup}
+\newcommand{\fcomp}{\circ}
+\newcommand{\iso}{\cong}
+
+\newcommand{\roweq}{\sim}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Col}{Col}
+\DeclareMathOperator{\Row}{Row}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\tr}{^\top}
+\newcommand{\koord}[2]{[\,{#1}\,]_{#2}} % koordinater mhp basis
+
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\vv}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\vvS}[2]{\left[ \begin{smallmatrix} #1 \\ #2 \end{smallmatrix} \right]}
+\newcommand{\vvv}[3]{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}}
+\newcommand{\vvvv}[4]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \end{bmatrix}}
+\newcommand{\vvvvv}[5]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \\ #5 \end{bmatrix}}
+\newcommand{\vn}[2]{\vvvv{#1_1}{#1_2}{\vdots}{#1_#2}}
+
+\newcommand{\e}{\V{e}}
+\renewcommand{\u}{\V{u}}
+\renewcommand{\v}{\V{v}}
+\newcommand{\w}{\V{w}}
+\renewcommand{\b}{\V{b}}
+\newcommand{\x}{\V{x}}
+\newcommand{\0}{\V{0}}
+
+\newenvironment{amatrix}[1]{% "augmented matrix"
+  \left[\begin{array}{*{#1}{c}|c}
+}{%
+  \end{array}\right]
+}
+
+
+
+\begin{document}
+
+
+\begin{oppgave}
+Finn alle løsninger av likningen
+$
+\begin{bmatrix}
+0 & 2 & 4 &   2 \\
+2 & 1 & 2 & -13 \\
+1 & 3 & 6 &  -4
+\end{bmatrix}
+\x
+= \vvv{6}{3}{9}
+$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Se på disse tre vektorene i~$\C^3$:
+\[
+\vvv{i}{0}{1},\quad
+\vvv{10-2i}{2+i}{3-5i},\quad\text{og}\quad
+\vvv{-3+3i}{-i}{4}
+\]
+Er de lineært uavhengige?
+\end{oppgave}
+
+
+\begin{oppgave}
+Løs følgende system av differensiallikninger:
+\[
+\begin{bmatrix}
+-42 & 8 & 27 \\
+  0 & 2 & -2 \\
+-30 & 6 & 19
+\end{bmatrix}
+\V{y}
+= \V{y}'
+\]
+\end{oppgave}
+
+
+\begin{oppgave}
+Beregn determinanten
+$
+\begin{vmatrix}
+ 3 &  1 - i  & i      & 4      \\
+ 3 &  1      & 1 - 2i & 4 + 7i \\
+6i &  2 + 2i & -1     & 3i     \\
+-3 & -1 + i  & 1      & 3 - 4i
+\end{vmatrix}
+$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Finn en $4 \times 4$-matrise $A$ som har egenverdier $1$, $-1$ og~$3$,
+med tilhørende egenrom henholdsvis
+\[
+\Sp \left\{ \vvvv{1}{2}{0}{-3}, \vvvv{1}{3}{0}{-3} \right\},\quad
+\Sp \left\{ \vvvv{2}{4}{1}{-6} \right\}
+\quad\text{og}\quad
+\Sp \left\{ \vvvv{-1}{-2}{3}{4} \right\}.
+\]
+\end{oppgave}
+
+
+\begin{oppgave}
+Finn en ortogonal basis for kolonnerommet til matrisen
+$
+\begin{bmatrix}
+1 & 5 & 5 \\
+2 & 8 & 6 \\
+-1 & 3 & 11
+\end{bmatrix}
+$.
+% \vvv{1}{2}{-1}, \vvv{2}{2}{6}
+\end{oppgave}
+
+
+\begin{oppgave}
+La % $A$ være følgende matrise:
+$
+A =
+\begin{bmatrix}
+3 & 0 & 4 \\
+2 & 1 & 1
+\end{bmatrix}
+$.
+Finn en matrise $B$ slik at $AB = I_2$.
+% f.eks.
+%  1/3  0
+% -2/3  1
+%   0   0
+\end{oppgave}
+
+
+\begin{oppgave}
+La $T \colon \R^n \to \R^m$ være en lineærtransformasjon, og la $\u$,
+$\v$ og~$\w$ være vektorer i~$\R^n$.  Vis at hvis $T(\u)$, $T(\v)$
+og~$T(\w)$ er lineært uavhengige, så er $\u$, $\v$ og~$\w$ også
+lineært uavhengige.
+\end{oppgave}
+
+
+\begin{oppgave}
+Husk at vi skriver $\M_2$ for vektorrommet som består av alle $2 \times 2$-matriser.
+La $U$ være mengden av alle symmetriske $2 \times 2$-matriser.
+Vis at $U$ er et underrom av~$\M_2$.
+Finn en basis for~$U$.  Hva er dimensjonen til~$\M_2$, og hva er dimensjonen til~$U$?
+\end{oppgave}
+
+
+\begin{oppgave}
+TODO
+\end{oppgave}
+
+
+\end{document}
