@@ -97,11 +97,55 @@ $
 1 & 3 & 6 &  -4 & 9
 \end{bmatrix}
 $.
-Dersom du radreduserer finner du relasjonene
-$$x_1+7x_2+14x_3=21$$
+Vi radreduserer matrisen:
+\begin{align*}
+\begin{bmatrix}
+0 & 2 & 4 &   2 & 6 \\
+2 & 1 & 2 & -13 & 3 \\
+1 & 3 & 6 &  -4 & 9
+\end{bmatrix}
+&\sim 
+\begin{bmatrix}
+1 & 3 & 6 &  -4 & 9 \\
+2 & 1 & 2 & -13 & 3 \\
+0 & 2 & 4 &   2 & 6
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 3 & 6 &  -4 & 9 \\
+0 & -5 & -10 & -5 & -15 \\
+0 & 2 & 4 &   2 & 6
+\end{bmatrix}\\
+&\sim 
+\begin{bmatrix}
+1 & 3 & 6 &  -4 & 9 \\
+0 & 1 & 2 & 1 & 3 \\
+0 & 2 & 4 &   2 & 6
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 3 & 6 &  -4 & 9 \\
+0 & 1 & 2 & 1 & 3 \\
+0 & 1 & 2 & 1 & 3
+\end{bmatrix}\\
+&\sim 
+\begin{bmatrix}
+1 & 3 & 6 &  -4 & 9 \\
+0 & 1 & 2 & 1 & 3 \\
+0 & 0 & 0 &  0 & 0
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 0 & 0 &  -7 & 0 \\
+0 & 1 & 2 & 1 & 3 \\
+0 & 0 & 0 &  0 & 0
+\end{bmatrix}.
+\end{align*}
+Dette gir likningene 
+$$x_1-7x_4=0$$
 og $$x_2+2x_3+x_4=3.$$
-Vi har altså to frie variabler; det finnes mange valg av parametrisering. Du kan for eksemepl velge $x_2=t$ og $x_3=s$ som parametere. Dette gir løsninger
-$$\{\vvvv{-7t-14s+21}{t}{s}{-t-2s+3}|\;\; t,s \in \mathbb{R}\}.$$
+Vi har altså to frie variabler; det finnes mange valg av parametrisering. Du kan for eksemepl velge $x_3=t$ og $x_4=s$ som parametere. Dette gir løsninger
+$$\{\vvvv{-7t}{-2t-s+3}{t}{s}|\;\; t,s \in \mathbb{R}\}.$$
 \end{oppgave}
 
 
@@ -111,24 +155,122 @@ Lineært avhengige. Du kan se dette ved å enten beregne determinanten (og se at
 
 
 \begin{oppgave}
-Egenverdiene til
-\[
+Vi finner først egenverdiene og egenvektorene til
+\[A=
 \begin{bmatrix}
--42 & 8 & 27 \\
-  0 & 2 & -2 \\
--30 & 6 & 19
-\end{bmatrix}
+4 & 0 & -16 \\
+0 & 2 & 0 \\
+-3 & 0 & 6
+\end{bmatrix}.
 \]
-er $-22,1,0$ med egenrom utspent av henholdsvis 
-$$\vvv{83}{5}{60} \quad \vvv{1}{2}{1} \quad \vvv{5}{6}{6}.$$
 
-Sett inn i formelen for generell løsning:
-$$\V{y} = c_1\vvv{83}{5}{60}e^{-22t}+c_2\vvv{1}{2}{1}e^{t}+c_3 \vvv{5}{6}{6}.$$
+\begin{align*}
+\det (A-\lambda I) &= \det
+\begin{bmatrix}
+4-\lambda & 0 & -16 \\
+0 & 2-\lambda & 0 \\
+-3 & 0 & 6-\lambda
+\end{bmatrix}\\
+&= (2-\lambda)\det
+\begin{bmatrix}
+4-\lambda & -16 \\
+-3 &  6-\lambda
+\end{bmatrix}\\
+&=(2-\lambda)((4-\lambda)(6-\lambda)-(-3)(-16))\\
+&=(2-\lambda)(\lambda ^2-10\lambda-24)
+\end{align*}
+Vi ser umiddelbart at $\lambda_1=2$ er en egenverdi. Bruk abc-formelen for å finne resten:
+$$\lambda=\frac{-(-10\pm \sqrt{(-10)^2-4(-24)})}{2}=5\pm 7.$$
+
+Dette gir tre egenverdier: $2$,$-2$ og~$12$.
+
+\noindent 
+$\lambda=2$:
+\begin{align*}
+A-2I &=
+\begin{bmatrix}
+2 & 0 & -16 \\
+0 & 0 & 0 \\
+-3 & 0 & 4
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 0 & -8 \\
+0 & 0 & 0 \\
+-3 & 0 & 4
+\end{bmatrix}\\
+&\sim
+\begin{bmatrix}
+1 & 0 & -8 \\
+-3 & 0 & 4 \\
+0 & 0 & 0
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 0 & -8 \\
+0 & 0 & -20 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{align*}
+Vi ser at $x_2$ er en fri variabel (andre kolonne består kun av null). Videre har vi $-20x_3=0$ slik at $x_3=0$, og $x_1-8x_3=0$ som gir $x_1=0$. Vi kan dermed parametrisere egenrommet til $2$:
+$$E_2=\{\vvv{0}{t}{0}|\;\;t\in\mathbb{R}\}=\Sp \vvv{0}{1}{0}.$$ Spesielt er $\vvv{0}{1}{0}$ en egenvektor.
+
+\noindent
+Tilsvarende fremgangsmåte for $-2$ og~$12$ gir henholdsvis $\vvv{8}{0}{3}$ og $\vvv{-2}{0}{1}$.
+
+
+\noindent
+Til slutt setter vi inn i formelen for generell løsning:
+$$\V{y} = c_1\vvv{0}{1}{0}e^{2t}+c_2\vvv{8}{0}{3}e^{-2t}+c_3 \vvv{-2}{0}{1}e^{12t}.$$
 \end{oppgave}
 
 
 \begin{oppgave}
-Radreduser matrisen og bruk regneregler for determinanten. Determinanten er $-3+6i$.
+Husk at determinanten ikke endrer seg dersom man legger til et multiplum av en rad til en annen, og determinanten multipliseres med $-1$ dersom man bytter om på to rader:
+
+\begin{align*}
+\begin{vmatrix}
+3  &  1 - i  & i      & 4      \\
+3  &  1      & 1 - 2i & 4 + 7i \\
+6i &  2 + 2i & -2     & 3i     \\
+-3 & -1 + i  & 1      & 3 - 4i
+\end{vmatrix} &=
+\begin{vmatrix}
+3  &  1 - i   & i      & 4  \\
+0  &  i       & 1 - 3i & 7i \\
+6i &  2 + 2i  & -2     & 3i \\
+-3 & -1 + i   & 1      & 3 - 4i
+\end{vmatrix}\\ &=
+\begin{vmatrix}
+3  &  1 - i  & i      & 4  \\
+0  &  i      & 1 - 3i & 7i \\
+0  &  0      & 0     & -5i \\
+-3 & -1 + i  & 1     & 3 - 4i
+\end{vmatrix}\\ &=
+\begin{vmatrix}
+3 &  1 - i  & i      & 4  \\
+0 &  i      & 1 - 3i & 7i \\
+0 &  0      & 0      & -5i\\
+0 &  0      & 1+i    & 7 - 4i
+\end{vmatrix}\\ &=
+-\begin{vmatrix}
+3 &  1 - i  & i      & 4     \\
+0 &  i      & 1 - 3i & 7i    \\
+0 &  0      & 1+i    & 7 - 4i\\
+0 &  0      & 0      & -5i
+\end{vmatrix}.
+\end{align*}
+Nå kan vi bruke at determinanten til en triangulær matrise er produktet av elementet langs diagonalen:
+\[
+\begin{vmatrix}
+3  &  1 - i  & i      & 4      \\
+3  &  1      & 1 - 2i & 4 + 7i \\
+6i &  2 + 2i & -2     & 3i     \\
+-3 & -1 + i  & 1      & 3 - 4i
+\end{vmatrix} 
+=-(3)(i)(1+i)(-5i)=-15-15i.
+\]
+
 \end{oppgave}
 
 
@@ -176,7 +318,37 @@ A=\begin{bmatrix}
 
 
 \begin{oppgave}
-Radredusering viser at vi har pivotelement i første og andre kolonne. En basis er dermed gitt av 
+Radreduser matrisen:
+
+\begin{align*}
+\begin{bmatrix}
+1 & 5 & 5 \\
+2 & 8 & 6 \\
+-1 & 3 & 11
+\end{bmatrix} &\sim
+\begin{bmatrix}
+1 & 5 & 5 \\
+1 & 4 & 3 \\
+-1 & 3 & 11
+\end{bmatrix} \sim
+\begin{bmatrix}
+1 & 5 & 5 \\
+0 & -1 & -2 \\
+0 & 8 & 16
+\end{bmatrix}\\ &\sim
+\begin{bmatrix}
+1 & 5 & 5 \\
+0 & -1 & -2 \\
+0 & 1 & 2
+\end{bmatrix} \sim
+\begin{bmatrix}
+1 & 5 & 5 \\
+0 & 1 & 2 \\
+0 & 0 & 0
+\end{bmatrix}.
+\end{align*}
+
+Dette viser at vi kun har pivotelement i første og andre kolonne. En basis til kolonnerommet er dermed gitt av 
 
 $$\vvv{1}{2}{-1}, \quad \vvv{5}{8}{3}.$$
 Men merk at 
@@ -184,21 +356,94 @@ $$\vvv{1}{2}{-1} \boldsymbol{\cdot} \vvv{5}{8}{3} =18. $$
 Derfor må vi bruke Gram-Schmidt for å ortogonalisere basisen:
 Ta $\V{v}_1=\vvv{1}{2}{-1}$ som første basiselement, og trekk fra den ortogonale projeksjonen ned på denne:
 $$\V{v}_2=\vvv{5}{8}{3}-\frac{\V{v}_1 \boldsymbol{\cdot} \vvv{5}{8}{3}}{\V{v}_1 \boldsymbol{\cdot} \V{v}_1} \V{v}_1=\vvv{2}{2}{6}.$$
+Vektorene $\V{v}_1$ og~$\V{v}_2$ er en ortogonal basis for kolonnerommet.
 
 % \vvv{1}{2}{-1}, \vvv{2}{2}{6}
 \end{oppgave}
 
 
 \begin{oppgave}
-La % $A$ være følgende matrise:
-$
-A =
+Skriv $B$ på elementform:
+\[
+B=\begin{bmatrix}
+b_1 & b_4\\
+b_2 & b_5\\
+b_3 & b_6
+\end{bmatrix}
+\]
+Produktet $AB$ kan nå uttrykkes ved 
+\[
+AB=
 \begin{bmatrix}
 3 & 0 & 4 \\
 2 & 1 & 1
 \end{bmatrix}
-$.
-Finn en matrise $B$ slik at $AB = I_2$.
+\begin{bmatrix}
+b_1 & b_4\\
+b_2 & b_5\\
+b_3 & b_6
+\end{bmatrix}=
+\begin{bmatrix}
+3b_1+4b_3 & 3b_4+4b_6\\
+2b_1+b_2+b_3 & 2b_4+b_5+b_6
+\end{bmatrix}
+\]
+
+Vi ønsker å bestemme $b_i$-ene slik at $AB=I$;
+
+\[
+\begin{bmatrix}
+3b_1+4b_3 & 3b_4+4b_6\\
+2b_1+b_2+b_3 & 2b_4+b_5+b_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}.
+\]
+Dette er fire likninger med seks ukjente
+
+\begin{align*}
+3b_1+4b_3&=1\\
+2b_1+b_2+b_3&=0\\
+3b_4+4b_6&=0\\
+2b_4+b_5+b_6&=1.
+\end{align*}
+%Totalmatrisen er
+%\[
+%\begin{bmatrix}
+%3 & 0 & 4 & 0 & 0 & 0 & 1\\
+%2 & 1 & 1 & 0 & 0 & 0 & 0\\
+%0 & 0 & 0 & 3 & 0 & 4 & 0\\
+%0 & 0 & 0 & 2 & 1 & 1 & 1
+%\end{bmatrix}.
+%\]
+Vi ser at $b_3=t$ og~$b_6=s$ er frie variabler. Multipliser andre og fjerde likning med $3$, og bruk første likning for å eliminere $b_1$ i andre likning; tredje likning for å eliminere $b_4$ i fjerde likning (du kan alternativt skrive opp totalmatrisen til systemet og radredusere):
+\begin{align*}
+b_1&=\frac{1-4t}{3}\\
+b_2&=\frac{5t-2}{3}\\
+b_4&=-\frac{4}{3}s\\
+b_5&=\frac{5s+3}{3}.
+\end{align*}
+Alle løsninger kan dermed parametriseres som (du trenger bare å finne en av disse for å svare på oppgaven)
+
+\[\{\begin{bmatrix}
+\frac{1-4t}{3} & -\frac{4}{3}s\\
+\frac{5t-2}{3} & \frac{5s+3}{3}\\
+t & s
+\end{bmatrix}|\;\;t,s\in\mathbb{R}\}.
+\]
+
+Vi kan for eksempel ta $t$ og~$s$ lik null for å få
+\[
+B=
+\begin{bmatrix}
+\frac{1}{3} & 0\\
+-\frac{2}{3} & 1\\
+0 & 0
+\end{bmatrix}.
+\]
 % f.eks.
 %  1/3  0
 % -2/3  1
@@ -207,13 +452,22 @@ Finn en matrise $B$ slik at $AB = I_2$.
 
 
 \begin{oppgave}
-La $T \colon \R^n \to \R^m$ være en lineærtransformasjon, og la $\u$,
-$\v$ og~$\w$ være vektorer i~$\R^n$.  Vis at hvis $T(\u)$, $T(\v)$
-og~$T(\w)$ er lineært uavhengige, så er $\u$, $\v$ og~$\w$ også
-lineært uavhengige.
+Vi vet at $T(\u)$, $T(\v)$ og~$T(\w)$ er lineært uavhengige, hvor $T$ er en lineærtransformasjon. 
+
+Vi ønsker å vise at $\u$, $\v$ og~$\w$ er lineært uavhengige. Anta at de er lineært avhengige (for å vise at dette umulig kan stemme). Dette betyr -- per definisjon -- at det eksisterer koeffisienter $a$, $b$ og~$c$, ikke alle lik null, slik at
+\[
+a\u+b\v+c\w=\0. 
+\]
+Anvend $T$ på begge sider for å få 
+\[
+T(a\u+b\v+c\w)=T(\0). 
+\]
+Vi vet at $T$ er lineær som gir
+\[
+aT(\u)+bT(\v)+cT(\w)=\0. 
+\]
+Denne likningen betyr i så fall at $T(\u)$, $T(\v)$ og~$T(\w)$ også er lineært avhengige. Men vi \emph{vet} jo at de er lineært uavhengige -- antagelsen er altså umulig . Dermed må $\u$, $\v$ og~$\w$ være lineært uavhengige -- som er det vi ønsket å vise.
 \end{oppgave}
-
-
 \begin{oppgave}
 Husk at vi skriver $\M_2$ for vektorrommet som består av alle $2 \times 2$-matriser.
 La $U$ være mengden av alle symmetriske $2 \times 2$-matriser.
