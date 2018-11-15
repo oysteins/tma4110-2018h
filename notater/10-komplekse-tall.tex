@@ -3,15 +3,15 @@
 \kapittel{10}{Komplekse tall}
 \label{ch:komplekse-tall}
 
-Oppfinnelsen av nye tallsystemer henger gjerne sammen med polynomligninger. Ligningen
-\[
-2x-3=0
-\]
-har ingen heltallig løsning, selv om koeffisientente er hele tall. Ligningen 
+Oppfinnelsen av nye tallsystemer henger gjerne sammen med polynomligninger. Ligningen 
 \[
 2x+3=0
 \]
 har ingen positiv løsning, selv om koeffisientene er positive tall. Ligningen
+\[
+2x-3=0
+\]
+har ingen heltallig løsning, selv om koeffisientente er hele tall. Ligningen
 \[
 x^2-2=0
 \]
@@ -95,7 +95,10 @@ Vi ganget oppe og nede med \emph{$z$ konjugert}
 \]
 Merk at $z\overline z$ blir et reelt tall. Det er lett å vise regneregler for $\overline z$, for eksempel
 \begin{align*}
-\overline{z+w}=\overline{z} + \overline{w}.
+\overline{z+w}&=\overline{z} + \overline{w}, \\
+z+\overline{z}&=2a \\
+\text{og} \\
+z\cdot \overline z&= a^2+b^2.
 \end{align*}
 
 
@@ -196,9 +199,9 @@ Litt mer trigonometri gir den andre veien
 r&=\sqrt{a^2+b^2} \\
 \theta&= \begin{cases} \arctan \frac{b}{a} \quad &\text{for}\; a>0\\ \arctan \frac{b}{a} + \pi \quad &\text{for}\;  a<0 \\  \pi/2 \quad &\text{for}\;  a=0, \; b>0 \\ 3\pi/2 \quad &\text{for}\;  a=0, \; b<0  \end{cases}
 \end{align*}
-Det er flere tilfeller her, for arkustangensfunksjonen skjønner ikke av seg selv om 
+Arkustangensfunksjonen skjønner ikke av seg selv om 
 $z$ ligger til høyre eller venstre for den imaginære aksen, 
-og er $z$ imaginær blir den ihvertfall forvirret.
+og er $z$ imaginær blir den ihvertfall forvirret. Derav alle tilfellene.
  Merk også at vi kan legge til vilkårlige multipler av $2\pi$ overalt, samt at for $z=0$ er ikke $\theta$ definert.
  
  Vi skriver ellers
