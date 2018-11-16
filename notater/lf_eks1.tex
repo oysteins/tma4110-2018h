@@ -54,7 +54,9 @@
 \renewcommand{\u}{\V{u}}
 \renewcommand{\v}{\V{v}}
 \newcommand{\w}{\V{w}}
+\renewcommand{\a}{\V{a}}
 \renewcommand{\b}{\V{b}}
+\renewcommand{\c}{\V{c}}
 \newcommand{\x}{\V{x}}
 \newcommand{\0}{\V{0}}
 
@@ -286,45 +288,105 @@ Nå kan vi bruke at determinanten til en triangulær matrise er produktet av ele
 
 
 \begin{losning}
-En matrise som tilfredstiller oppgaveteksten kan skrives på formen $A=PDP^{-1}$ hvor
+Informasjonen i oppgaven er essensielt en diagonalisering av matrisen.
+Vi har tre lineært uavhengige egenvektorer
 \[
-P=\begin{bmatrix}
-1  & 1  & 2  & -1 \\
-2  & 3  & 4  & -2 \\
-0  & 0  & 1  & 3  \\
--3 & -3 & -6 & 4
-\end{bmatrix},
+\vvv{1}{2}{-3},\quad
+\vvv{1}{3}{-3}\quad
+\text{og}\quad
+\vvv{-2}{-4}{8}
 \]
-og
+med tilhørende egenverdier $3$, $3$ og~$-2$.  Vi lager en matrise
 \[
-D=\begin{bmatrix}
-1 & 0 & 0  & 0 \\
-0 & 1 & 0  & 0 \\
-0 & 0 &-1  & 0  \\
-0 & 0 & 0  & 3
-\end{bmatrix}.
+V =
+\begin{bmatrix}
+ 1 &  1 & -2 \\
+ 2 &  3 & -4 \\
+-3 & -3 &  8
+\end{bmatrix}
 \]
+med egenvektorene som kolonner, og en diagonalmatrise
+\[
+D =
+\begin{bmatrix}
+3 & 0 &  0 \\
+0 & 3 &  0 \\
+0 & 0 & -2
+\end{bmatrix}
+\]
+med egenverdiene på diagonalen.  Matrisen vi vil finne er da gitt ved
+diagonaliseringen $VDV^{-1}$.
 
-Regn ut
+For å kunne regne ut matrisen gjenstår det å finne inversen til~$V$.
+Vi regner ut denne på vanlig måte:
+\begin{align*}
+\left[\begin{array}{ccc|ccc}
+1 & 1 & -2 & 1 & 0 & 0 \\
+2 & 3 & -4 & 0 & 1 & 0 \\
+-3 & -3 & 8 & 0 & 0 & 1
+\end{array}\right]
+&
+\roweq
+\left[\begin{array}{ccc|ccc}
+1 & 1 & -2 & 1 & 0 & 0 \\
+0 & 1 & 0 & -2 & 1 & 0 \\
+0 & 0 & 2 & 3 & 0 & 1
+\end{array}\right]
+\roweq
+\left[\begin{array}{ccc|ccc}
+1 & 1 & 0 & 4 & 0 & 1 \\
+0 & 1 & 0 & -2 & 1 & 0 \\
+0 & 0 & 2 & 3 & 0 & 1
+\end{array}\right]
+\\
+&
+\roweq
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 6 & -1 & 1 \\
+0 & 1 & 0 & -2 & 1 & 0 \\
+0 & 0 & 2 & 3 & 0 & 1
+\end{array}\right]
+\roweq
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 6 & -1 & 1 \\
+0 & 1 & 0 & -2 & 1 & 0 \\
+0 & 0 & 1 & \frac{3}{2} & 0 & \frac{1}{2}
+\end{array}\right]
+\end{align*}
+Vi leser av at inversen til $V$ er:
 \[
-P^{-1}=\begin{bmatrix}
-24 & -1 & -2 & 7  \\
--2 & 1  & 0  & 0  \\
--9 & 0  & 1  & -3 \\
-3  & 0  & 0  & 1
-\end{bmatrix},
+V^{-1} =
+\begin{bmatrix}
+6 & -1 & 1 \\
+-2 & 1 & 0 \\
+\frac{3}{2} & 0 & \frac{1}{2}
+\end{bmatrix}
 \]
-og sett inn i $A=PDP^{-1}$:
+Nå kan vi regne ut matrisen vi skulle finne:
 \[
-A=\begin{bmatrix}
-34  & 0 & -4 & 11 \\
-66  & 1 & -8 & 22 \\
-27  & 0 & -1 & 9  \\
--96 & 0 & 12 & -31
-\end{bmatrix}.
+VDV^{-1} =
+\begin{bmatrix}
+ 1 &  1 & -2 \\
+ 2 &  3 & -4 \\
+-3 & -3 &  8
+\end{bmatrix}
+\begin{bmatrix}
+3 & 0 &  0 \\
+0 & 3 &  0 \\
+0 & 0 & -2
+\end{bmatrix}
+\begin{bmatrix}
+6 & -1 & 1 \\
+-2 & 1 & 0 \\
+\frac{3}{2} & 0 & \frac{1}{2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 18 & 0 &   5 \\
+ 30 & 3 &  10 \\
+-60 & 0 & -17
+\end{bmatrix}
 \]
-
-
 \end{losning}
 
 
@@ -479,19 +541,222 @@ aT(\u)+bT(\v)+cT(\w)=\0.
 \]
 Denne likningen betyr i så fall at $T(\u)$, $T(\v)$ og~$T(\w)$ også er lineært avhengige. Men vi \emph{vet} jo at de er lineært uavhengige -- antagelsen er altså umulig . Dermed må $\u$, $\v$ og~$\w$ være lineært uavhengige -- som er det vi ønsket å vise.
 \end{losning}
+
+
 \begin{losning}
-Husk at vi skriver $\M_2$ for vektorrommet som består av alle $2 \times 2$-matriser.
-La $U$ være mengden av alle symmetriske $2 \times 2$-matriser.
-Vis at $U$ er et underrom av~$\M_2$.
-Finn en basis for~$U$.  Hva er dimensjonen til~$\M_2$, og hva er dimensjonen til~$U$?
+Vi husker at vi har følgende tre kriterier for å sjekke om en gitt
+delmengde $U$ av et vektorrom er et underrom:
+\begin{enumerate}
+\item Nullvektoren er med i~$U$.
+\item For alle vektorer $\u$ og~$v$ i~$U$
+er også summen $\u + \v$ med i~$U$.
+\item For alle vektorer $\u$ i~$U$ og alle skalarer~$c$
+er også produktet $c\u$ med i~$U$.
+\end{enumerate}
+Vi sjekker at disse tre kriteriene holder når $U$ er mengden av
+symmetriske $2 \times 2$-matriser:
+\begin{enumerate}
+\item Nullvektoren -- altså matrisen
+$
+\left[
+\begin{smallmatrix}
+0 & 0 \\
+0 & 0
+\end{smallmatrix}
+\right]
+$ --
+er symmetrisk, så den er med i~$U$.
+\item Hvis
+\[
+M =
+\begin{bmatrix}
+a & b \\
+b & d
+\end{bmatrix}
+\quad\text{og}\quad
+N =
+\begin{bmatrix}
+a' & b' \\
+b' & d'
+\end{bmatrix}
+\]
+er symmetriske matriser, så er også summen
+\[
+M + N =
+\begin{bmatrix}
+a+a' & b+b' \\
+b+b' & d+d'
+\end{bmatrix}
+\]
+en symmetrisk matrise.
+\item Hvis
+\[
+M =
+\begin{bmatrix}
+a & b \\
+b & d
+\end{bmatrix}
+\]
+er en symmetrisk matrise og $c$ en skalar, så er også produktet
+\[
+cM =
+\begin{bmatrix}
+ca & cb \\
+cb & cd
+\end{bmatrix}
+\]
+en symmetrisk matrise.
+\end{enumerate}
+Dette vil si at $U$ er et underrom av~$\M_2$.
+
+Videre skal vi finne en basis for~$U$.
+Vi ser at de tre matrisene
+\[
+B_1 =
+\begin{bmatrix}
+1 & 0 \\
+0 & 0
+\end{bmatrix},\quad
+B_2 =
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}\quad
+\text{og}\quad
+B_3 =
+\begin{bmatrix}
+0 & 0 \\
+0 & 1
+\end{bmatrix}
+\]
+utspenner~$U$, siden enhver symmetrisk matrise
+$
+M =
+\left[
+\begin{smallmatrix}
+a & b \\
+b & d
+\end{smallmatrix}
+\right]
+$
+kan skrives som en lineærkombinasjon
+\[
+M = a B_1 + b B_2 + d B_3
+\]
+av disse.
+Matrisene $B_1$, $B_2$ og~$B_3$ er dessuten lineært uavhengige,
+siden likningen
+\[
+c_1 B_1 + c_2 B_2 + c_3 B_3 =
+\begin{bmatrix}
+0 & 0 \\
+0 & 0
+\end{bmatrix}
+\]
+ikke har andre løsninger enn den trivielle løsningen $c_1=c_2=c_3=0$.
+Dette vil si at $(B_1,B_2,B_3)$ er en basis for~$U$.
+
+Basisen vi fant for~$U$ består av tre basisvektorer,
+så dimensjonen til $U$ er~$3$.
+Vi kan lett sjekke at
+\[
+\left(
+\begin{bmatrix}
+1 & 0 \\
+0 & 0
+\end{bmatrix},\ %
+\begin{bmatrix}
+0 & 1 \\
+0 & 0
+\end{bmatrix},\ %
+\begin{bmatrix}
+0 & 0 \\
+1 & 0
+\end{bmatrix},\ %
+\begin{bmatrix}
+0 & 0 \\
+0 & 1
+\end{bmatrix}
+\right)
+\]
+er en basis for~$\M_2$,
+og det betyr at dimensjonen til~$\M_2$ er~$4$.
 \end{losning}
 
 
 \begin{losning}
-La $A$ være en $m \times n$-matrise med rang~$r$.
-Vis at det finnes en $m \times r$-matrise~$B$ og
-en $r \times n$-matrise~$C$
-slik at $A = BC$.
+Rangen til~$A$ er det samme som dimensjonen til kolonnerommet:
+\[
+r = \dim \Col A
+\]
+Dette betyr at kolonnerommet har en basis som består av $r$ vektorer.
+La $(\b_1, \b_2, \ldots, \b_r)$ være en slik basis,
+og la
+\[
+B =
+\begin{bmatrix}
+\,
+\b_1 & \b_2 & \cdots & \b_r
+\,
+\end{bmatrix}
+\]
+være $m \times r$-matrisen med basisvektorene som kolonner.
+
+La $\a_1$, $\a_2$, \ldots, $\a_n$ være kolonnene i~$A$.
+Hver kolonne $\a_i$ ligger i kolonnerommet til~$A$,
+så den kan skrives som en lineærkombinasjon
+\[
+\a_i = c_{i1} \b_1 + c_{i2} \b_2 + \cdots + c_{ir} \b_r
+\]
+av basisvektorene.
+Koeffisientene i dette uttrykket kan vi sette sammen til en vektor
+\[
+\c_i = \vvvv{c_{i1}}{c_{i2}}{\vdots}{c_{ir}}
+\]
+i~$\R^r$.
+Da har vi:
+\[
+\a_i
+= c_{i1} \b_1 + c_{i2} \b_2 + \cdots + c_{ir} \b_r
+=
+\begin{bmatrix}
+\,
+\b_1 & \b_2 & \cdots & \b_r
+\,
+\end{bmatrix}
+\vvvv{c_{i1}}{c_{i2}}{\vdots}{c_{ir}}
+= B \c_i
+\]
+Nå har vi definert en vektor $\c_i$ for hver kolonne $\a_i$ fra~$A$;
+det betyr at vi har definert $n$ vektorer
+$\c_1$, $\c_2$, \ldots, $\c_n$.  Vi lager en $r \times n$-matrise
+\[
+C =
+\begin{bmatrix}
+\,
+\c_1 & \c_2 & \cdots & \c_n
+\,
+\end{bmatrix}
+\]
+med disse vektorene som kolonner.
+
+Nå har vi funnet en $m \times r$-matrise $B$
+og en $r \times n$-matrise $C$, og vi har
+\[
+BC =
+\begin{bmatrix}
+\,
+B \c_1 & B \c_2 & \cdots & B \c_n
+\,
+\end{bmatrix}
+=
+\begin{bmatrix}
+\,
+\a_1 & \a_2 & \cdots & \a_n
+\,
+\end{bmatrix}
+= A.
+\]
 \end{losning}
 
 
