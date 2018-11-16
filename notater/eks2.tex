@@ -27,6 +27,7 @@ oppgavene som en ekstra øving.
 \usepackage{lmodern,amsmath,amssymb,amsfonts}
 \usepackage{mathrsfs}
 \usepackage{systeme}
+\usepackage{tikz}
 
 
 \newcommand{\N}{\mathbb{N}}
@@ -121,7 +122,7 @@ A \x = \vvv{1}{2}{3}.
 \begin{oppgave}
 Skriv om den homogene andreordens differensiallikningen
 \[
-y''-3y'-2 = 0
+y''-3y'= 0
 \]
 til et system av førsteordens differensiallikninger,
 og finn generell løsning.
@@ -151,6 +152,7 @@ x + 2y = 1,
 5x + 6y = 3
 }
 \]
+Er approksimasjonen du fant en eksakt løsning?
 \end{oppgave}
 
 
@@ -161,7 +163,20 @@ Vis at rotasjonsmatrisen
 \cos \theta  & -\sin \theta  \\  \sin \theta & \cos \theta 
 \end{bmatrix}
 \]
-er en ortogonal matrise.  Finn en matrise som har kolonnene i rotasjonsmatrisen som egenvektorer, og egenverdier 1 og 2. \\
+er en ortogonal matrise.  Finn en matrise $A$ som har kolonnene i rotasjonsmatrisen som egenvektorer med egenverdier henholdsvis $1$ og~$2$. Fra nå lar vi $\theta$ være lik $45$ grader. Skissér bildet av enhetssirkelen
+\begin{center}
+\begin{tikzpicture}
+\draw (-1.5,0) -- (1.5,0) node[right]{$x$};
+\draw (0,-1.5) -- (0,1.5) node[above]{$y$};
+\draw (0,0) circle (1cm);
+\node at (1.1,0) [above] {$1$};
+\node at (0,1.2) [left] {$1$};
+\end{tikzpicture}
+\end{center}
+under lineærtransformasjonen
+\[
+\vv{x}{y}\mapsto A\vv{x}{y}.
+\]
 \end{oppgave}
 
 
