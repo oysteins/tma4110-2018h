@@ -106,7 +106,7 @@ Vi skriver linjene på formen $y=f(x)$:
 	\end{tikzpicture}
 \end{center}
 
-Alle linjene skjerer samme punkt på $y$-aksen; systemet har én løsning.
+Alle linjene skjærer samme punkt på $y$-aksen; systemet har én løsning.
 \end{oppgave}
 
 
@@ -594,16 +594,83 @@ Likningen for nullrommet er $x_1-2x_2+x_3=0$. Det er to frie variabler; vi kan f
 
 
 \begin{oppgave}
-Husk at vi skriver $\P_2$ for vektorrommet som består av alle
-polynomfunksjoner av grad~$2$ eller lavere.  La $p_1$, $p_2$, $p_3$
-og~$q$ være følgende polynomer i~$\P_2$:
+En basis er definert til å være et en liste av vektorer som i) er lineært uavhengige og ii) spenner ut. Vi sjekker først i):
+
+i): Polynomene $p_1$, $p_2$ og~$p_3$ er lineært uavhengige hvis og bare hvis likningen (med $x_i$-ene som ukjente) \[
+x_1p_1+x_2p_2+x_3p_3=0
+\]
+kun har triviell løsning $x_1=x_2=x_3=0$. Derfor prøver vi å løse likningen. Først setter vi inn $p_1$, $p_2$ og~$p_3$ i likningen, og skriver om litt:
 \begin{align*}
-p_1(x) &= x^2 - 2    &   q(x) &= 4x^2 + x - 7  \\
-p_2(x) &= -x^2 + x + 2 \\
-p_3(x) &= 3x^2 + x - 5
+x_1p_1+x_2p_2+x_3p_3&=0\\
+x_1(x^2 - 2 )+x_2(-x^2 + x + 2)+x_3(3x^2 + x - 5)&=0\\
+(x_1-x_2+3x_3)x^2+(x_2+x_3)x+(-2x_1+2x_2-5x_3)&=0
 \end{align*}
-Vis at $\B = (p_1, p_2, p_3)$ er en basis for $\P_2$,
-og finn koordinatene $[ q ]_\B$ til $q$ med hensyn på denne basisen.
+Siste likning sier at et polynomet $(x_1-x_2+3x_3)x^2+(x_2+x_3)x+(-2x_1+2x_2-5x_3)$ skal være lik null-polynomet. To polynom er like hvis og bare hvis de har like koeffisienter -- og koeffisientene til null-polynomet er alle lik null. Dette gir likningssytemet\[
+\systeme{
+x_1-x_2+3x_3=0,
+x_2+x_3=0,
+-2x_1+2x_2-5x_3=0
+},
+\]
+eller ekvivalent
+\[
+\begin{bmatrix}
+1 & -1 & 3\\
+0 & 1 & 1\\
+-2 & 2 & -5
+\end{bmatrix}\vvv{x_1}{x_2}{x_3}=\vvv{0}{0}{0}.
+\]
+Radreduser matrisen:
+\[
+\begin{bmatrix}
+1 & -1 & 3\\
+0 & 1 & 1\\
+-2 & 2 & -5
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & -1 & 3\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}.
+\]
+Den reduserte matrisen har pivotelement i hver rad, dette betyr at likningen kun har triviell løsning $x_1=x_2=x_3=0$. Merk at dette også kan sjekkes direkte ved regning: Nederste rad gir $x_3=0$; andre rad gir deretter $x_2=0$; første rad gir til slutt $x_1=0$. Vi har dermed vist at den eneste løsningen på \[
+x_1p_1+x_2p_2+x_3p_3=0
+\]
+er den trivielle løsningen, ekvivalent har vi vist at $p_1$, $p_2$ og~$p_3$ er lineært uavhengige.
+
+
+ii): Vi trenger ikke å sjekke dette direkte. I løpet av semesteret har vi vist at dimensjonen på $\mathcal{P}_2$ er lik tre. Dimensjonen er det maksimale antallet lineært uavhengige vektorer. Dermed vil alle lister av tre lineært uavhengige vektorer automatisk spenne ut $\mathcal{P}_2$ -- hvis vi legger til en vektor blir den automatisk en lineærkombinasjon ettersom vi maksimalt kan ha tre lineært uavhengige vektorer.
+
+Vi kan konkludere med at $(p_1,p_2,p_3)$ er en basis for $\mathcal{P}_2$.
+
+Ettersom $(p_1,p_2,p_3)$ er en basis vet vi at det finnes unike koeffisienter $x_1$, $x_2$ og~$x_3$ slik at $q=4x^2+x-7$ tilfredstiller $q=x_1p_1+x_2p_2+x_3p_3$. Ved å sette inn for polynomene og bruke samme fremgangsmåte som i argumentasjonen for lineær uavhengighet ender vi opp med systemet
+\[
+\systeme{
+	x_1-x_2+3x_3=4,
+	x_2+x_3=1,
+	-2x_1+2x_2-5x_3=-7
+}.
+\]
+
+Radreduser tilhørende totalmatrise:
+\[
+\begin{bmatrix}
+1 & -1 & 3 & 4\\
+0 & 1 & 1 & 1\\
+-2 & 2 & -5 & -7
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & -1 & 3& 4\\
+0 & 1 & 1 & 1\\
+0 & 0 & 1 & 1
+\end{bmatrix}.
+\]
+Vi ser at $x_3=1$; $x_2+x_3=1$ som gir $x_2=0$; $x_1-x_2+3x_3=4$ som gir $x_1=1$. Løsningen betyr at $q=p_1+0p_2+p_3$ slik at \[
+[q]_\beta=\vvv{1}{0}{1}.
+\]
+
 \end{oppgave}
 
 
