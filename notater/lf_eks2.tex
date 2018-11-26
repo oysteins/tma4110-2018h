@@ -168,128 +168,98 @@ $\x = \vvv{-3}{2}{0}$.
 
 
 \begin{losning}
-Innfør en ny funksjon $v=y'$.
-Nå kan vi skrive om likningen til 
-\[
-v'-3v=0.
-\]
-Vi har altså følgende system:
+Ved å sette $v_1 = y$ og $v_2 = y'$ får vi følgende system:
 \[
 \systeme*{
-y'=v,
-v'=3v
+v_1' = v_2,
+v_2' = -2v_1 + 3v_2
 }
+\qquad\text{som også kan skrives som}\qquad
+\vv{v_1}{v_2}' =
+\begin{bmatrix}
+0 & 1 \\
+-2 & 3
+\end{bmatrix}
+\vv{v_1}{v_2}
 \]
-Dette kan også skrives som
+Koeffisientmatrisen
 \[
-\V{y}'=\begin{bmatrix}
-0 & 1\\
-0 & 3
-\end{bmatrix}\V{y},
+\begin{bmatrix}
+0 & 1 \\
+-2 & 3
+\end{bmatrix}
 \]
-der $\V{y}=\vv{y}{v}$.
-
-Vi finner egenverdiene til koeffisientmatrisen.
-Det karakteristiske polynomet er
+har karakteristisk polynom
 \[
-\begin{vmatrix}
--\lambda & 1\\
-0 & 3-\lambda
-\end{vmatrix}
-= -\lambda(3-\lambda),
+\begin{bmatrix}
+0-\lambda & 1 \\
+-2 & 3-\lambda
+\end{bmatrix}
+= (-\lambda)(3-\lambda) + 2
+= \lambda^2 - 3\lambda + 2
 \]
-og det betyr at egenverdiene er $0$ og~$3$. 
-Egenrommene til de to egenverdiene er henholdsvis
+og egenverdier $1$ og~$2$, med tilhørende egenrom henholdsvis
 \[
-\Sp \left\{ \vv{1}{0} \right\}
+\Sp \left\{ \vv{1}{1} \right\}
 \qquad\text{og}\qquad
-\Sp \left\{ \vv{1}{3} \right\}.
+\Sp \left\{ \vv{1}{2} \right\}.
 \]
-Vi kan dermed velge for eksempel egenvektorene
-$\vvS{1}{0}$ og $\vvS{1}{3}$ som hører til henholdsvis $0$ og~$3$.
-Vi setter inn disse i formelen for generell løsning av systemet:
+Den generelle løsningen av systemet er
 \[
-\V{y} = c_1\vv{1}{0}+c_2\vv{1}{3}e^{3t}
+\vv{v_1}{v_2} = c_1 \vv{1}{1} e^t + c_2 \vv{1}{2} e^{2t}.
 \]
-Den generelle løsningen av likningen $y'' - 3y' = 0$ er dermed
+Den generelle løsningen av likningen
+$y'' - 3y' + 2y = 0$
+er dermed:
 \[
-y = c_1 + c_2 e^{3t}.
+y = c_1 e^t + c_2 e^{2t}
 \]
 Nå går vi videre til å se på den ikkehomogene likningen 
-$y''-3y'-2 = e^t$.
-Vi flytter konstantleddet~$-2$ over til høyre side for å få
-likningen på vanlig form:
-\[
-y''-3y' = e^t+2.
-\]
+$y'' - 3y' + 2y = e^t$.
 Vi har allerede funnet generell løsning
-$y_h = c_1 + c_2 e^{3t}$
+$y_h = c_1 e^t + c_2 e^{2t}$
 av den tilhørende homogene ligningen.
 Det gjenstår å finne en partikulær løsning.
 
-% TODO: fiks!
-% Vi bruker variasjon av parametre på de to lineært uavhengige løsningene
-% $y_1 = 1$ og~$y_2 = e^{3t}$ av den homogene likningen.
-% Vi får
-% \[
-% y_1' = 0,
-% \qquad
-% y_2' = 3 e^{3t}
-% \qquad
-% \text{og}\qquad
-% y_1 y_2' - y_2 y_1' = 3 e^{3t},
-% \]
-% og integralene vi trenger i variasjon av parametre blir:
-% \begin{align*}
-% \int \frac{y_1 \cdot (e^t + 2)}{y_1 y_2' - y_2 y_1'} dt
-% &= \int \frac{e^t + 2}{3 e^{3t}} dt
-%  = \int \left( \frac{1}{3} e^{-2t} + \frac{2}{3} e^{-3t} \right) dt
-%  = -\frac{1}{6} e^{-2t} - \frac{2}{9} e^{-3t} + C
-% \\
-% \int \frac{y_2 \cdot (e^t + 2)}{y_1 y_2' - y_2 y_1'} dt
-% &= \int \frac{3e^{4t} + 6e^{3t}}{3 e^{3t}} dt
-%  = \int ( e^{t} + 2 ) dt
-%  = e^{t} + 2t + C
-% \end{align*}
-% Variasjon av parametre gir oss dermed følgende løsning:
-% \begin{align*}
-% y_p
-% &= y_2 \left( -\frac{1}{6} e^{-2t} - \frac{2}{9} e^{-3t} \right)
-%    - y_1 \left( e^{t} + 2t \right) \\
-% &= -\frac{1}{2} e^t + \frac{2}{3} - e^t - 2t \\
-% &= -\frac{3}{2} e^t + \frac{2}{3} - 2t
-% \end{align*}
-
-Prøv en løsning som ligner på $e^{3t}+2$: $y=ae^{3t}+b$. Regn ut 
+Vi bruker variasjon av parametre på de to lineært uavhengige løsningene
+$y_1 = e^{t}$ og~$y_2 = e^{2t}$ av den homogene likningen.
+Vi får
+\[
+y_1' = e^t,
+\qquad
+y_2' = 2 e^{2t}
+\qquad
+\text{og}\qquad
+y_1 y_2' - y_2 y_1' = e^{3t}
+\]
+og integralene vi trenger i variasjon av parametre blir:
 \begin{align*}
-y'&=3ae^{3t}\\
-y''&=9ae^{3t}.
+\int \frac{y_1 \cdot e^t}{y_1 y_2' - y_2 y_1'} dt
+&= \int \frac{e^{2t}}{e^{3t}} dt
+ = \int e^{-t} dt
+ = - e^{-t} + C
+\\
+\int \frac{y_2 \cdot e^t}{y_1 y_2' - y_2 y_1'} dt
+&= \int \frac{e^{3t}}{e^{3t}} dt
+ = \int 1 dt
+ = t + C
 \end{align*}
-Sett inn i likningen:
-\[
-e^{3t}+2=y''-3y'=9ae^{3t}-9ae^{3t}=0.
-\]
-
-Dette gir oss ingen informasjon om $a$ og~$b$. Derfor prøver vi å multiplisere forslaget vårt med $t$: $y=tae^{3t}+bt$. Regn ut
+Variasjon av parametre gir oss dermed følgende løsning:
 \begin{align*}
-y'&=ae^{3t}+3ate^{3t}+b\\
-y''&=6ae^{3t}+9ate^{3t}.
+y_p
+&= y_2 \cdot (- e^{-t}) - y_1 \cdot t
+ = -e^t - t e^t
 \end{align*}
-Sett inn i likningen:
+Her kan vi observere at det ene leddet, nemlig $-e^t$,
+allerede er en løsning av den tilhørende homogene likningen,
+så vi kan sløyfe dette fra den partikulære løsningen og isteden velge
 \[
-e^{3t}+2=y''-3y'=6ae^{3t}+9ate^{3t}-3ae^{3t}-9ate^{3t}-3b=3ae^{3t}-3b.
+y_p = -t e^t.
 \]
-Dette gir $a=\frac{1}{3}$ og~$b=-\frac{2}{3}$, og vi har en partikulær løsning
+Den generelle løsningen til den ikkehomogene likningen er altså:
 \[
-y_p=\frac{t}{3}e^{3t}-\frac{2t}{3}.
+y = y_h+y_p = c_1 e^t + c_2 e^{2t} - t e^t
 \]
-
-
-Den generelle løsningen til den ikkehomogene likningen:
-\[
-y=y_h+y_p=c_1+c_2e^{3t}+\frac{t}{3}e^{3t}-\frac{2t}{3}.
-\]
-
 \end{losning}
 
 \begin{losning}
