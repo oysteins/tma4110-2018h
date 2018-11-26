@@ -105,37 +105,40 @@ Alle linjene skjærer samme punkt på $y$-aksen; systemet har én løsning.
 
 
 \begin{losning}
-Vi radreduserer $[A, I]$ som svarer til å løse likningene $A\x=\V{e}_i$ simultant: 
+Vi finner inversen på vanlig måte ved å gausseliminere matrisen
+$\begin{amatrix}{1} A & I_3 \end{amatrix}$:
 \begin{align*}
-\begin{bmatrix}
+\left[
+\begin{array}{ccc|ccc}
 1 & -2 & 3 & 1 & 0 & 0\\
 2 & -4 & 7 & 0 & 1 & 0\\
 1 & -1 & 3 & 0 & 0 & 1
-\end{bmatrix}
-&\sim
-\begin{bmatrix}
+\end{array}
+\right]
+&\roweq
+\left[
+\begin{array}{ccc|ccc}
 1 & -2 & 3 & 1  & 0 & 0\\
 0 & 0  & 1 & -2 & 1 & 0\\
 0 & 1  & 0 & -1 & 0 & 1
-\end{bmatrix}
-\sim 
-\begin{bmatrix}
+\end{array}
+\right]
+\roweq 
+\left[
+\begin{array}{ccc|ccc}
 1 & -2 & 3 & 1  & 0 & 0\\
 0 & 1  & 0 & -1 & 0 & 1\\
 0 & 0  & 1 & -2 & 1 & 0
-\end{bmatrix}\\
-&\sim
-\begin{bmatrix}
-1 & 0 & 3 & -1 & 0 & 2\\
-0 & 1 & 0 & -1 & 0 & 1\\
-0 & 0 & 1 & -2 & 1 & 0
-\end{bmatrix}
-\sim
-\begin{bmatrix}
+\end{array}
+\right]\\
+&\roweq
+\left[
+\begin{array}{ccc|ccc}
 1 & 0 & 0 & 5  & -3 & 2\\
 0 & 1 & 0 & -1 & 0  & 1\\
 0 & 0 & 1 & -2 & 1  & 0
-\end{bmatrix}.
+\end{array}
+\right]
 \end{align*}
 Dette gir
 \[
@@ -147,7 +150,7 @@ A^{-1}=
 \end{bmatrix}.
 \]
 
-Løsningen er
+Nå kan vi løse likningen ved å gange med $A^{-1}$:
 \begin{align*}
 A\x&=\vvv{1}{2}{3}\\
 A^{-1}A\x&=A^{-1}\vvv{1}{2}{3}\\
@@ -157,82 +160,105 @@ I\x&=\begin{bmatrix}
 -2 & 1  & 0
 \end{bmatrix}
 \vvv{1}{2}{3}\\
-\x&=\vvv{-3}{2}{0}.
+\x&=\vvv{-3}{2}{0}
 \end{align*}
+Likningen har altså én løsning, nemlig
+$\x = \vvv{-3}{2}{0}$.
 \end{losning}
 
 
 \begin{losning}
-Innfør $v=y'$. Nå kan vi skrive om likningen til 
+Innfør en ny funksjon $v=y'$.
+Nå kan vi skrive om likningen til 
 \[
 v'-3v=0.
 \]
-Vi har altså et system
+Vi har altså følgende system:
 \[
-\systeme{
+\systeme*{
 y'=v,
 v'=3v
-},
+}
 \]
-som kan skrives 
+Dette kan også skrives som
 \[
 \V{y}'=\begin{bmatrix}
 0 & 1\\
 0 & 3
-\end{bmatrix}\V{y}
+\end{bmatrix}\V{y},
 \]
-hvor $\V{y}=\vv{y}{v}$.
+der $\V{y}=\vv{y}{v}$.
 
-Vi finner egenverdiene til matrisen:
-
+Vi finner egenverdiene til koeffisientmatrisen.
+Det karakteristiske polynomet er
 \[
-\det \begin{bmatrix}
+\begin{vmatrix}
 -\lambda & 1\\
 0 & 3-\lambda
-\end{bmatrix}=-\lambda(3-\lambda)
+\end{vmatrix}
+= -\lambda(3-\lambda),
 \]
-Egenverdiene er $0$ og~$3$. 
-
-
-$\lambda=0$: 
+og det betyr at egenverdiene er $0$ og~$3$. 
+Egenrommene til de to egenverdiene er henholdsvis
 \[
-A-0I=A=\begin{bmatrix}
-0 & 1\\
-0 & 3
-\end{bmatrix}\sim
-\begin{bmatrix}
-0 & 1\\
-0 & 0
-\end{bmatrix}
+\Sp \left\{ \vv{1}{0} \right\}
+\qquad\text{og}\qquad
+\Sp \left\{ \vv{1}{3} \right\}.
 \]
-Likningen for egenrommet er derfor $x_2=0$, slik at \[
-E_0=\{\vv{t}{0}|\;\; t\in \mathbb{R}\}=\Sp\vv{1}{0}.
-\]
-
-$\lambda=3$: Tilsvarende finner vi at 
+Vi kan dermed velge for eksempel egenvektorene
+$\vvS{1}{0}$ og $\vvS{1}{3}$ som hører til henholdsvis $0$ og~$3$.
+Vi setter inn disse i formelen for generell løsning av systemet:
 \[
-E_3=\Sp\vv{1}{3}.
+\V{y} = c_1\vv{1}{0}+c_2\vv{1}{3}e^{3t}
 \]
-
-Vi setter inn i fromelen for generell løsning:
+Den generelle løsningen av likningen $y'' - 3y' = 0$ er dermed
 \[
-\V{y} =c_1\vv{1}{0}+c_2\vv{1}{3}e^{3t}.
+y = c_1 + c_2 e^{3t}.
 \]
-
-Den ikkehomogene likningen 
-\[
-y''-3y'-2 = e^t.
-\]
-kan skrives
+Nå går vi videre til å se på den ikkehomogene likningen 
+$y''-3y'-2 = e^t$.
+Vi flytter konstantleddet~$-2$ over til høyre side for å få
+likningen på vanlig form:
 \[
 y''-3y' = e^t+2.
 \]
+Vi har allerede funnet generell løsning
+$y_h = c_1 + c_2 e^{3t}$
+av den tilhørende homogene ligningen.
+Det gjenstår å finne en partikulær løsning.
 
-Vi har altså allerede funnet generell løsning til den tilhørende homogene ligningen: $\V{y}=\vv{y}{y'}$ slik at 
-\[
-y_h=c_1+c_2e^{3t}
-\]
-Det gjenstår kun å finne en partikulær løsning.
+% TODO: fiks!
+% Vi bruker variasjon av parametre på de to lineært uavhengige løsningene
+% $y_1 = 1$ og~$y_2 = e^{3t}$ av den homogene likningen.
+% Vi får
+% \[
+% y_1' = 0,
+% \qquad
+% y_2' = 3 e^{3t}
+% \qquad
+% \text{og}\qquad
+% y_1 y_2' - y_2 y_1' = 3 e^{3t},
+% \]
+% og integralene vi trenger i variasjon av parametre blir:
+% \begin{align*}
+% \int \frac{y_1 \cdot (e^t + 2)}{y_1 y_2' - y_2 y_1'} dt
+% &= \int \frac{e^t + 2}{3 e^{3t}} dt
+%  = \int \left( \frac{1}{3} e^{-2t} + \frac{2}{3} e^{-3t} \right) dt
+%  = -\frac{1}{6} e^{-2t} - \frac{2}{9} e^{-3t} + C
+% \\
+% \int \frac{y_2 \cdot (e^t + 2)}{y_1 y_2' - y_2 y_1'} dt
+% &= \int \frac{3e^{4t} + 6e^{3t}}{3 e^{3t}} dt
+%  = \int ( e^{t} + 2 ) dt
+%  = e^{t} + 2t + C
+% \end{align*}
+% Variasjon av parametre gir oss dermed følgende løsning:
+% \begin{align*}
+% y_p
+% &= y_2 \left( -\frac{1}{6} e^{-2t} - \frac{2}{9} e^{-3t} \right)
+%    - y_1 \left( e^{t} + 2t \right) \\
+% &= -\frac{1}{2} e^t + \frac{2}{3} - e^t - 2t \\
+% &= -\frac{3}{2} e^t + \frac{2}{3} - 2t
+% \end{align*}
 
 Prøv en løsning som ligner på $e^{3t}+2$: $y=ae^{3t}+b$. Regn ut 
 \begin{align*}
@@ -347,17 +373,17 @@ Radreduser totalmatrisen:
 35 & 44 & 22\\
 44 & 56 & 28
 \end{bmatrix}
-&\sim
+&\roweq
 \begin{bmatrix}
 1 & \frac{44}{35} & \frac{22}{35}\\
 44 & 56 & 28
 \end{bmatrix}\\
-&\sim
+&\roweq
 \begin{bmatrix}
 1 & \frac{44}{35} & \frac{22}{35}\\
 0 & \frac{24}{35} & \frac{12}{35}
 \end{bmatrix}\\
-&\sim
+&\roweq
 \begin{bmatrix}
 1 & \frac{44}{35} & \frac{22}{35}\\
 0 & 2 & 1
@@ -566,13 +592,13 @@ Som alltid radreduserer vi for å finne nullrommet:
 0 &   0 &   0 \\
 -20 & 40 &   -24
 \end{bmatrix}
-\sim
+\roweq
 \begin{bmatrix}
 1 &  -2 & 1 \\
 0 &   0 &   0 \\
 -1 & 2 &   -1
 \end{bmatrix}
-\sim
+\roweq
 \begin{bmatrix}
 1 &  -2 & 1 \\
 0 &   0 &   0 \\
@@ -621,7 +647,7 @@ Radreduser matrisen:
 0 & 1 & 1\\
 -2 & 2 & -5
 \end{bmatrix}
-\sim
+\roweq
 \begin{bmatrix}
 1 & -1 & 3\\
 0 & 1 & 1\\
@@ -654,7 +680,7 @@ Radreduser tilhørende totalmatrise:
 0 & 1 & 1 & 1\\
 -2 & 2 & -5 & -7
 \end{bmatrix}
-\sim
+\roweq
 \begin{bmatrix}
 1 & -1 & 3& 4\\
 0 & 1 & 1 & 1\\
