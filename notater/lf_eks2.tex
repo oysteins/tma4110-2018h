@@ -1,33 +1,15 @@
-\documentclass[titlepage,a4paper,12pt,norsk]{IMFeksamen}
+\documentclass[notitlepage,a4paper,12pt,norsk]{IMFeksamen}
 %\geometry{left=3.5cm,right=3.5cm,bottom=2cm}
 \usepackage[utf8]{inputenc}
-\trykkinfo[tosidig,sorthvit]
 \emnekode{TMA4110}
 \emnenavn{Matematikk 3 -- EKSEMPEL~2}
-\eksamensdato{Når du vil}
-\eksamenstid{Fire timer}
-\fagligkontaktinfo{Spør på mattelab hvis du lurer på noe}{Nei}
-\hjelpemiddel{Ingen trykte eller håndskrevne hjelpemidler tillatt.
- Bestemt, enkel kalkulator tillatt.
- (Casio fx-82ES PLUS, Casio fx-82EX,
-  Citizen SR-270X, Citizen SR-270X College,
-  Hewlett Packard HP30S)}
-\anneninfo{Eksamenen består av ti oppgaver
-Hver av disse teller like mye.
-Alle svar må begrunnes.
-
-\textbf{Merk.}
-Dette er ikke en virkelig eksamen, men et eksempel for å vise
-hvordan en eksamen kan se ut.
-Hvis du ikke har nok godkjente øvinger, kan du levere svar på disse
-oppgavene som en ekstra øving.
-}
 \runninghead{TMA4110 -- Eksamen høsten 2018 -- EKSEMPEL~2}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,amssymb,amsfonts}
 \usepackage{mathrsfs}
 \usepackage{systeme}
 \usepackage{tikz}
+\usepackage{pgfornament}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -83,12 +65,24 @@ oppgavene som en ekstra øving.
   \end{array}\right]
 }
 
+\newcommand{\oppgslutt}{
+\begin{center}
+\pgfornament[width=6cm]{88}
+\end{center}
+}
+\newenvironment{losning}{\begin{oppgave}}{\oppgslutt\end{oppgave}}
 
 
 \begin{document}
 
+\begin{center}
+\textbf{\large Løsningsforslag} \\[3pt]
+\pgfornament[width=6cm]{88}
+\end{center}
+\vspace{-10pt}
 
-\begin{oppgave}
+
+\begin{losning}
 Vi skriver linjene på formen $y=f(x)$:
 \begin{align*}
 	y &= \frac{1-x}{2}\\
@@ -107,10 +101,10 @@ Vi skriver linjene på formen $y=f(x)$:
 \end{center}
 
 Alle linjene skjærer samme punkt på $y$-aksen; systemet har én løsning.
-\end{oppgave}
+\end{losning}
 
 
-\begin{oppgave}
+\begin{losning}
 Vi radreduserer $[A, I]$ som svarer til å løse likningene $A\x=\V{e}_i$ simultant: 
 \begin{align*}
 \begin{bmatrix}
@@ -165,10 +159,10 @@ I\x&=\begin{bmatrix}
 \vvv{1}{2}{3}\\
 \x&=\vvv{-3}{2}{0}.
 \end{align*}
-\end{oppgave}
+\end{losning}
 
 
-\begin{oppgave}
+\begin{losning}
 Innfør $v=y'$. Nå kan vi skrive om likningen til 
 \[
 v'-3v=0.
@@ -270,9 +264,9 @@ Den generelle løsningen til den ikkehomogene likningen:
 y=y_h+y_p=c_1+c_2e^{3t}+\frac{t}{3}e^{3t}-\frac{2t}{3}.
 \]
 
-\end{oppgave}
+\end{losning}
 
-\begin{oppgave}
+\begin{losning}
 Anta at $A$ er en $3 \times 3$-matrise med egenverdiene $2$, $5$ og $-5$.
 Finn alle egenverdiene til hver av matrisene $3A$ og $A^2$.
 
@@ -293,11 +287,11 @@ $3A$: Vi har tre \emph{ulike} egenverdier: $6$, $15$ og~$-15$. Egenvektorer fra 
 $A^2$: Nå har vi bare to \emph{ulike} egenverdier fordi $(\pm 5)^2=25$. Første del av argumentasjonen ovenfor garanterer derfor bare at vi har to lineært uavhengige egenvektorer. Men observasjonen viser at alle egenvektorene tilhørende $5$ og~$-5$ -- betraktet som egenverdier til $A$ -- også er egenvektorer tilhørende $25$ -- betraktet som egenverdier til $A^2$. Siden egenvektorer tilhørende $5$ og~$-5$ er lineært uavhengige må egenrommet til $25$ minst være todimensjonalt. Vi kan altså finne to lineært uavhengige egenvektorer i egenrommet til $25$. Tilsammen med en egenvektor fra egenrommet til $4$ har vi dermed tre lineært uavhengige egenvektorer av $A^2$. Nå er resten av argumentasjonen helt lik som siste del av argumentasjonen for $3A$.
 
 \emph{Merk}: Teorien som er brukt er oppsummert i Teorem \textbf{7.15.} fra forelesningsnotatene.
-\end{oppgave}
+\end{losning}
 
 
 
-\begin{oppgave}
+\begin{losning}
 Bruk minste kvadrats metode til å finne en approksimasjon til likningssystemet
 \[
 \systeme{
@@ -387,10 +381,10 @@ A\vv{0}{\frac{1}{2}}=\begin{bmatrix}
 \vvv{1}{2}{3}=\b.
 \]
 Ja.
-\end{oppgave}
+\end{losning}
 
 
-\begin{oppgave}
+\begin{losning}
 Den transponerte til rotasjonsmatrisen er
 \[
 \begin{bmatrix}
@@ -499,10 +493,10 @@ Denne matrisen skalerer med en faktor $1$ langs $\vv{\frac{1}{\sqrt{2}}}{\frac{1
 
 
 
-\end{oppgave}
+\end{losning}
 
 
-\begin{oppgave}
+\begin{losning}
 La $A$ være følgende matrise:
 \[
 A =
@@ -589,11 +583,11 @@ Likningen for nullrommet er $x_1-2x_2+x_3=0$. Det er to frie variabler; vi kan f
 \[
 \{\vvv{2t-s}{t}{s}|\;\; t,s\in\mathbb{R}\}.
 \]
-\end{oppgave}
+\end{losning}
 
 
 
-\begin{oppgave}
+\begin{losning}
 En basis er definert til å være et en liste av vektorer som i) er lineært uavhengige og ii) spenner ut. Vi sjekker først i):
 
 i): Polynomene $p_1$, $p_2$ og~$p_3$ er lineært uavhengige hvis og bare hvis likningen (med $x_i$-ene som ukjente) \[
@@ -671,10 +665,10 @@ Vi ser at $x_3=1$; $x_2+x_3=1$ som gir $x_2=0$; $x_1-x_2+3x_3=4$ som gir $x_1=1$
 [q]_\beta=\vvv{1}{0}{1}.
 \]
 
-\end{oppgave}
+\end{losning}
 
 
-\begin{oppgave}
+\begin{losning}
 Anta at $A$ er diagonaliserbar. Vi ønsker å vise at determinanten til $A$ er produktet av egenverdiene til $A$. 
 
 Vi vet at det finnes $V$ og $D$, hvor 
@@ -708,10 +702,10 @@ Vi kan enkelt regne ut determinanten til en diagonalmatrise:
 \]
 Dette er akkurat hva vi ønsket å vise.
 
-\end{oppgave}
+\end{losning}
 
 
-\begin{oppgave}
+\begin{losning}
 La $T \colon \R^n \to \R^m$ være en lineærtransformasjon.
 Vis at $T$ er surjektiv hvis og bare hvis det finnes en
 lineærtransformasjon $S \colon \R^m \to \R^n$ slik at
@@ -747,7 +741,7 @@ Vi har vist begge implikasjonene. Beviset er ferdig.
 
 
 
-\end{oppgave}
+\end{losning}
 
 
 \end{document}
