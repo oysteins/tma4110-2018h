@@ -129,7 +129,7 @@ Vektoren du fant i \textbf{b)} løser oppgave \textbf{9.} \textbf{b)} kapittel 3
 a\\
 b\\
 c
-\end{bmatrix}.$$ De
+\end{bmatrix}.$$
 \end{punkt}
 
 \end{losning}
@@ -160,6 +160,7 @@ er lineært uavhengige.
 \end{punkt}
 
 \begin{punkt}
+% TODO omformuler (eller fjern) denne oppgaven
 Finn en vektor $\V{v}$ som er lineært uavhengig av hver av vektorene i
 $\textbf{a)}$.
 \end{punkt}
@@ -310,30 +311,74 @@ uavhengige.
 \begin{losning}
 
 \begin{punkt}
-Feil.
-
-\noindent
-Hint: Husk at matriseproduktet $A\V{v}$ er en lineærkombinasjon av kolonnene til $A$ med komponentene til $\V{v}$ som koeffisienter. Det finnes mange moteksempler \ldots 
-
-Mer Hint: Det kan være lurt å velge $A$ slik at kolonnene er lineært avhengige.
+Påstanden er usann.
+Et veldig enkelt moteksempel:
+\[
+\v_1 = \vv{1}{0}\qquad
+\v_2 = \vv{0}{1}\qquad
+A =
+\begin{bmatrix}
+0 & 0 \\
+0 & 0 \end{bmatrix}
+\]
 \end{punkt}
 
 
 \begin{punkt}
-Riktig.
+Påstanden er sann.  Bevis:
 
-\noindent
-Spesialtilfellet $t=2$: Antagelsen er at $A\V{v}_1$ og $A\V{v}_2$ er lineært uavhengige. 
+Anta at vektorene
+$A \v_1$, $A \v_2$, \ldots, $A \v_t$
+er lineært uavhengige.
+Vi skal vise at
+$\v_1$, $\v_2$, \ldots, $\v_t$
+også er lineært uavhengige.
 
-Den kritiske observasjonen for å løse oppgaven: regneregler for matriser gir oss at hvis $\V{u}=c\V{w}$, så $$A\V{u}=A(c\V{w})=c(A\V{w}).$$ To vektorer som ligger på samme linje -- er lineært avhengige -- ligger altså fortsatt på samme linje etter multiplikasjon med $A$ (rent geometrisk).
-
-Logisk konklusjon: Men vektorene $A\V{v}_1$ og $A\V{v}_2$ er antatt lineært uavhengig, de ligger altså ikke på samme linje. Derfor kan ikke $\V{v}_1$ og $\V{v}_2$ være lineært avhengig; hvis de var lineært avhengig ville $A\V{v}_1$ og $A\V{v}_2$ vært lineært avhengig basert på observasjonen ovenfor.
-
-Kan du nå løse oppgaven for en generell $t>1$? 
-
-\noindent
-Hint: 'ligger på linje' betyr lineært avhengig i løsningen ovenfor.
-
+Se på likningen
+\[
+\v_1 x_1 + \v_2 x_2 + \cdots \v_t x_t = \0.
+\]
+Anta at $(a_1, a_2, \ldots, a_t)$ er en løsning av denne likningen,
+altså at
+\[
+\v_1 a_1 + \v_2 a_2 + \cdots \v_t a_t = \0.
+\]
+Da får vi:
+\begin{align*}
+& \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
+(A \v_1) a_1 + (A \v_2) a_2 + \cdots + (A \v_t) a_t \\
+&= A (\v_1 a_1 + \v_2 a_2 + \cdots + \v_t a_t) \\
+&= A \cdot \0 = \0
+\end{align*}
+Men siden vi har antatt at
+$A \v_1$, $A \v_2$, \ldots, $A \v_t$
+er lineært uavhengige, betyr dette at vi må ha
+\[
+a_1 = a_2 = \cdots = a_t = 0.
+\]
+Nå kan vi oppsummere det vi har gjort.
+Vi startet med å si at
+$(a_1, a_2, \ldots, a_t)$
+er en løsning av likningen
+\[
+\v_1 x_1 + \v_2 x_2 + \cdots \v_t x_t = \0,
+\]
+og konkluderte med at da må alle $a$-ene være~$0$.
+Det betyr at denne likningen kun har den trivielle løsningen,
+og dermed er vektorene
+$\v_1$, $\v_2$, \ldots, $\v_t$
+lineært uavhengige.
+% \noindent
+% Spesialtilfellet $t=2$: Antagelsen er at $A\V{v}_1$ og $A\V{v}_2$ er lineært uavhengige. 
+%
+% Den kritiske observasjonen for å løse oppgaven: regneregler for matriser gir oss at hvis $\V{u}=c\V{w}$, så $$A\V{u}=A(c\V{w})=c(A\V{w}).$$ To vektorer som ligger på samme linje -- er lineært avhengige -- ligger altså fortsatt på samme linje etter multiplikasjon med $A$ (rent geometrisk).
+%
+% Logisk konklusjon: Men vektorene $A\V{v}_1$ og $A\V{v}_2$ er antatt lineært uavhengig, de ligger altså ikke på samme linje. Derfor kan ikke $\V{v}_1$ og $\V{v}_2$ være lineært avhengig; hvis de var lineært avhengig ville $A\V{v}_1$ og $A\V{v}_2$ vært lineært avhengig basert på observasjonen ovenfor.
+%
+% Kan du nå løse oppgaven for en generell $t>1$? 
+%
+% \noindent
+% Hint: 'ligger på linje' betyr lineært avhengig i løsningen ovenfor.
 \end{punkt}
 
 

@@ -77,100 +77,179 @@ i kolonnerommet til~$B$?
 \begin{losning}
 
 \begin{punkt}
+Merk at matrisen~$A$ allerede er på redusert trappeform,
+så vi trenger ikke gausseliminere.
+
 Matrisen har fire frie variabler og tre pivotelement. Dimensjonen på nullrommet er derfor lik fire, mens dimensjonen på kolonnerommet (og derfor også radrommet) er lik tre. For å finne en basis holder det å finne fire lineært uavhengige vektorer i nullrommet og tre lineært uavhengige vektorer i kolonnerommet (og radrommet).
 
 
 \noindent
-Eksempel på valg av basis: Du kan ta kolonnene og radene som svarer til pivotelementene for å finne basis for kolonne- og radrommet; kolonnene som svarer til pivotelement er alltid lineært uavhengige, og vi har tre slike kolonner. Basis for kolonnerommet: kolonne 2, 5 og 6. Basis for radrommet: rad 1, 2 og 3. Matrisen er allerede radredusert, og likningene for nullrommet er $$x_1+x_2+x_7=0$$ $$x_5+x_7=0$$ $$x_6+x_7=0.$$ Vi kan ta $x_1$, $x_3$, $x_4$ og~$x_7$ som frie variabler. Da blir en parametrisering av nullrommet
-$$\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-x_4\\
-x_5\\
-x_6\\
-x_7
-\end{bmatrix}=\begin{bmatrix}
-x_1\\
--x_1-x_7\\
-x_3\\
-x_4\\
--x_7\\
--x_7\\
-x_7
-\end{bmatrix}=x_1\begin{bmatrix}
+Eksempel på valg av basis: Du kan ta kolonnene og radene som svarer til pivotelementene for å finne basis for kolonne- og radrommet; kolonnene som svarer til pivotelement er alltid lineært uavhengige, og vi har tre slike kolonner. Basis for kolonnerommet: kolonne 2, 5 og 6. Basis for radrommet: rad 1, 2 og 3. Matrisen er allerede radredusert, og likningene for nullrommet er:
+\begin{align*}
+x_2+x_3+x_7 &= 0 \\
+x_5+x_7 &= 0 \\
+x_6+x_7 &= 0
+\end{align*}
+Vi kan ta $x_1=q$, $x_3=r$, $x_4=s$ og~$x_7=t$ som frie variabler.
+Da får vi følgende parametrisering av nullrommet:
+\[
+\x
+=
+\begin{bmatrix}
+q \\
+-r - t \\
+r \\
+s \\
+-t \\
+-t \\
+t
+\end{bmatrix}
+=
+\begin{bmatrix}
 1\\
--1\\
+0\\
 0\\
 0\\
 0\\
 0\\
 0
-\end{bmatrix}+x_3\begin{bmatrix}
-0\\
-0\\
-1\\
-0\\
-0\\
-0\\
-0
-\end{bmatrix}+x_4\begin{bmatrix}
-0\\
-0\\
-0\\
-1\\
-0\\
-0\\
-0
-\end{bmatrix}+x_7\begin{bmatrix}
-0\\
-0\\
-0\\
+\end{bmatrix}
+q
++
+\begin{bmatrix}
 0\\
 -1\\
+1\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix}
+r
++
+\begin{bmatrix}
+0\\
+0\\
+0\\
+1\\
+0\\
+0\\
+0
+\end{bmatrix}
+s
++
+\begin{bmatrix}
+0\\
 -1\\
-1
-\end{bmatrix}.$$ Vi kan f. eks ta $$\begin{bmatrix}
-1\\
--1\\
-0\\
-0\\
-0\\
-0\\
-0
-\end{bmatrix},\quad \begin{bmatrix}
-0\\
-0\\
-1\\
-0\\
-0\\
-0\\
-0
-\end{bmatrix}, \quad \begin{bmatrix}
-0\\
-0\\
-0\\
-1\\
-0\\
-0\\
-0
-\end{bmatrix}, \quad \begin{bmatrix}
-0\\
-0\\
 0\\
 0\\
 -1\\
 -1\\
 1
-\end{bmatrix}$$ som basis.
+\end{bmatrix}
+t
+\]
+Dette betyr at
+\[
+\left(
+\begin{bmatrix}
+1\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix},
+\ %
+\begin{bmatrix}
+0\\
+-1\\
+1\\
+0\\
+0\\
+0\\
+0
+\end{bmatrix},
+\ %
+\begin{bmatrix}
+0\\
+0\\
+0\\
+1\\
+0\\
+0\\
+0
+\end{bmatrix},
+\ %
+\begin{bmatrix}
+0\\
+-1\\
+0\\
+0\\
+-1\\
+-1\\
+1
+\end{bmatrix}
+\right)
+\]
+er en basis for nullrommet.
 \end{punkt}
 
 \begin{punkt}
+Gausseliminering av matrisen~$B$ til redusert trappeform gir:
+\[
+\begin{bmatrix}
+ 1 & 2 & 3\\
+ 2 & 3 & 4\\
+ 3 & 4 & 5\\
+ 4 & 5 & 6
+\end{bmatrix}
+\roweq
+\begin{bmatrix}
+ 1 & 0 & -1 \\
+ 0 & 1 &  2 \\
+ 0 & 0 &  0 \\
+ 0 & 0 &  0
+\end{bmatrix}
+\]
+Her er det pivotelementer i de to første kolonnene,
+så
+\[
+\left(
+\vvvv{1}{2}{3}{4},\ %
+\vvvv{2}{3}{4}{5}
+\right)
+\]
+er en basis for kolonnerommet.
+Vi får en basis for radrommet ved å ta de radene
+som ikke er null i trappeformmatrisen
+(dette ville også fungere om vi bare har trappeform,
+og ikke redusert trappeform), så
+\[
+\left(
+\vvv{1}{0}{-1},
+\vvv{0}{1}{2}
+\right)
+\]
+er en basis for radrommet.
+Både radrommet og kolonnerommet har dimensjon~$2$.
 
-Ved radredusering ser vi at det er en fri variabel og to pivotelement. Derfor er dimensjonen på kolonnerommet (radrommet) lik to og dimensjonen på nullromet lik en. Du kan finne en basis for alle underrommene på samme måte som i del $\textbf{a)}$.
-
-\noindent
-Husk: Du kan sjekke om svaret ditt er riktig: Du trenger to lineært uavhengige vektorer i kolonnerommet (radrommet) og en ikke-null vektor i nullrommet. Ligger svaret ditt i ønsket underrom? Er vektorene i hvert underrom lineært uavhengige?
+Nullrommet består av alle løsninger av likningen $B\x = \0$.
+Vi ser at generell løsning av denne likningen blir
+\[
+\x = \vvv{1}{-2}{1} t
+\qquad\text{der $t$ er et vilkårlig reelt tall.}
+\]
+Dermed er
+\[
+\left(
+\vvv{1}{-2}{1}
+\right)
+\]
+en basis for nullrommet.
+Nullrommet har dimensjon~$1$.
+% Husk: Du kan sjekke om svaret ditt er riktig: Du trenger to lineært uavhengige vektorer i kolonnerommet (radrommet) og en ikke-null vektor i nullrommet. Ligger svaret ditt i ønsket underrom? Er vektorene i hvert underrom lineært uavhengige?
 \end{punkt}
 
 \begin{punkt}
@@ -202,23 +281,23 @@ $$\begin{bmatrix}
 \begin{punkt}
 Vektoren ligger ikke i kolonnerommet til~$A$ fordi systemet med totalmatrise 
 $$
-\begin{bmatrix}
-\;0 & 1 & 1 & 0 & 0 & 0 & 1 & -1 \;\\
-\;0 & 0 & 0 & 0 & 1 & 0 & 1 & -1 \;\\
-\;0 & 0 & 0 & 0 & 0 & 1 & 1 & -1 \;\\
-\;0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 \;
-\end{bmatrix}
+\begin{amatrix}{7}
+0 & 1 & 1 & 0 & 0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 0 & 1 & 0 & 1 & -1 \\
+0 & 0 & 0 & 0 & 0 & 1 & 1 & -1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 
+\end{amatrix}
 $$
 umulig kan ha løsning; den siste raden svarer til likningen $0=-1$.
 
 Vektoren ligger i kolonnerommet til~$B$; du kan sjekke at likningssystemet med totalmatrise 
 $$
-\begin{bmatrix}
+\begin{amatrix}{3}
 	1 & 2 & 3 & -1\\
 	2 & 3 & 4 & -1\\
 	3 & 4 & 5 & -1\\
 	4 & 5 & 6 & -1
-	\end{bmatrix}
+	\end{amatrix}
 $$ har løsning.
 \end{punkt}
 
@@ -245,13 +324,15 @@ Finn en basis for $\P_n$, der $n \ge 0$.
 
 
 \begin{punkt}
-Vi kan f. eks velge $1$, $x$ og $x^2$. En basis er -- per definisjon -- en samling som spenner ut og er lineært uavhengig.
+Vi kan for eksempel velge $(1, x, x^2)$.
+En basis er -- per definisjon -- en liste med vektorer som spenner ut rommet
+og er lineært uavhengige.
 
 \noindent
 Spenner ut: En vilkårlig vektor $a+bx+cx^2$ er trivielt en lineærkombinasjon $a\cdot 1+b\cdot x+c\cdot x^2$ av $1$, $x$ og $x^2$.
 
 \noindent
-Lineær uavhengig: Gitt en likning $a\cdot 1+b\cdot x+c\cdot x^2=0$, så må vi vise at vi kun har triviell løsning. Men et andregradspolynom kan maksimalt ha to nullpunkt, altså kan likningen umulig holde hvis ikke $a=0$, $b=0$ og~$c=0$; vi har kun triviell løsning.
+Lineært uavhengige: Gitt en likning $a\cdot 1+b\cdot x+c\cdot x^2=0$, så må vi vise at vi kun har triviell løsning. Men et andregradspolynom kan maksimalt ha to nullpunkt, altså kan likningen umulig holde hvis ikke $a=0$, $b=0$ og~$c=0$; vi har kun triviell løsning.
 \end{punkt}
 
 
@@ -312,30 +393,58 @@ Sammenlign med det du fant ut i del~$\textbf{a)}$ og~$\textbf{b)}$.
 \begin{losning}
 
 \begin{punkt}
-Ikke underrom; du kan f. eks sjekke at planet ikke går gjennom origo.
+Nei, det er ikke et underrom, for nullvektoren er ikke med.
 \end{punkt}
 
 \begin{punkt}
-Underrom; du kan f. eks sjekke at $\begin{bmatrix}
-1\\
-1\\
-1
-\end{bmatrix}$ er en lineærkombinasjon av de to andre.
+Ja, det er et underrom.
+
+Det kan være lurt å legge merke til at vektoren~$\v$
+er en lineærkombinasjon av $\a_1$ og~$\a_2$:
+\[
+\v = \a_2 - \a_1
+\]
+Dette betyr at vi isteden kan se på mengden av alle vektorer på formen
+\[
+s \cdot \a_1 + t \cdot \a_2
+\]
+og få den samme mengden.
+Nå er det lett å sjekke at kriteriene for å være underrom er oppfylt:
+\begin{enumerate}
+\item Nullvektoren er med i mengden vår
+(vi får nullvektoren ved å velge $s = t = 0$).
+\item Summen av to vektorer som er med i mengden er også med i mengden:
+\[
+(s \a_1 + t \a_2)
++ (s' \a_1 + t' \a_2)
+= (s + s') \a_1 + (t + t') \a_2
+\]
+\item Om vi ganger en vektor i mengden med en skalar~$c$,
+får vi igjen en vektor i mengden:
+\[
+c \cdot (s \cdot \a_1 + t \cdot \a_2)
+= (cs) \a_1 + (ct) \a_2
+\]
+\end{enumerate}
 \end{punkt}
 
 \begin{punkt}
-$\begin{bmatrix}
-1\\
--1\\
-1
-\end{bmatrix}$ ligger ikke i kolonnerommet (vektoren løfter kolonnerommet, som er et plan, opp fra origo); $\begin{bmatrix}
-1\\
-1\\
-1
-\end{bmatrix}$ ligger i kolonnerommet (vektoren løfter ikke kolonnerommet, som er et plan, opp fra origo). 
-
-\noindent
-Prøv gjerne å tegne situasjonen i denne oppgaven.
+Vektoren $\u$ ligger ikke i kolonnerommet,
+men vektoren $\v$ gjør det.
+Merk at kolonnerommet til~$A$ er nøyaktig det underrommet av~$\R^3$
+som ble beskrevet i del~\textbf{b)}.
+% $\begin{bmatrix}
+% 1\\
+% -1\\
+% 1
+% \end{bmatrix}$ ligger ikke i kolonnerommet (vektoren løfter kolonnerommet, som er et plan, opp fra origo); $\begin{bmatrix}
+% 1\\
+% 1\\
+% 1
+% \end{bmatrix}$ ligger i kolonnerommet (vektoren løfter ikke kolonnerommet, som er et plan, opp fra origo). 
+%
+% \noindent
+% Prøv gjerne å tegne situasjonen i denne oppgaven.
 \end{punkt}
 
 \end{losning}
@@ -476,10 +585,10 @@ Vektorrommene~$\P_n$, for forskjellige~$n$, er underrom av hverandre:
 \[
 \P_0 \subset \P_1 \subset \P_2 \subset \cdots
 \]
-På samme måte er vektorrommene~$\Cf^n(\R)$, for forskjellige~$n$, også
+Vektorrommene~$\Cf^n(\R)$, for forskjellige~$n$, også
 underrom av hverandre:
 \[
-\Cf^1(\R) \subset \Cf^2(\R) \subset \Cf^3(\R) \subset \cdots
+\Cf(\R) \supset \Cf^1(\R) \supset \Cf^2(\R) \supset \Cf^3(\R) \supset \cdots
 \]
 For hver~$n$ har vi:
 \[
