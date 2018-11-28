@@ -1,0 +1,167 @@
+\oppgaver{15}
+
+\begin{oppgave}
+Skriv om følgende andre ordens differensiallikninger til system.
+
+\begin{punkt}
+$y''-y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''+2y'+3y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''+y'=0$
+\end{punkt}
+
+
+\end{oppgave}
+
+\begin{losning} La $v=y'$.
+	
+	\begin{punkt}$\begin{bmatrix}
+		0 & 1\\
+		1 & 0
+		\end{bmatrix} \vv{y}{v}=\vv{y}{v}'
+		$
+	\end{punkt}
+	
+	\begin{punkt}$\begin{bmatrix}
+		0 & 1\\
+		-3 & -2
+		\end{bmatrix} \vv{y}{v}=\vv{y}{v}'
+		$
+	\end{punkt}
+	
+	\begin{punkt}$\begin{bmatrix}
+		0 & 1\\
+		0 & -1
+		\end{bmatrix} \vv{y}{v}=\vv{y}{v}'
+		$
+	\end{punkt}
+	
+\end{losning}
+
+\begin{oppgave}
+Finn generell løsning av
+\begin{punkt}
+	$y''-y'-2y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''+y=0$
+\end{punkt}
+
+\begin{punkt}
+	$y''-4y'+4y=0$
+\end{punkt}
+
+\end{oppgave}
+
+\begin{losning}
+	\begin{punkt}
+		$y=c_1 e^{2t}+c_2 e^{-t}$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y=c_1\cos(t)+ c_2 \sin (t)$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y=(c_1+tc_2)e^{2t}$
+	\end{punkt}
+	
+\end{losning}
+
+
+\begin{oppgave}
+Løs initialverdiproblemet
+	\begin{punkt}
+		$y''-y'-2y=0$, $y(0)=0$, $y'(0)=1$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''+y=0$, $y(\frac{\pi}{2})=1$, $y'(\frac{\pi}{2})=0$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''-4y'+4y=0$, $y(1)=0$, $y'(0)=-e^{-2}$
+	\end{punkt}
+	
+\end{oppgave}
+
+\begin{losning}
+	\begin{punkt}
+		$y=\frac{1}{3}( e^{2t}- e^{-t})$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y= \sin (t)$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y=(t-1)e^{2(t-1)}$
+	\end{punkt}
+	
+\end{losning}
+
+
+\begin{oppgave}
+	Finn generell løsning av
+	\begin{punkt}
+		$y''-y'-2y=e^{-2t}$
+	\end{punkt}
+
+	\begin{punkt}
+		$y''-y'-2y=e^{2t}$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''+y=t$
+	\end{punkt}
+	
+	\begin{punkt}
+		$y''-4y'+4y=4t$
+	\end{punkt}
+	
+\end{oppgave}
+
+\begin{losning}
+	\begin{punkt} Prøv $y=a e^{-2t}$ for å finne
+		$$y=c_1 e^{2t}+c_2 e^{-t}-\frac{1}{2}e^{-2t}.$$
+	\end{punkt}
+
+	\begin{punkt} Prøv $y=a t e^{2t}$ for å finne
+		$$y=c_1 e^{2t}+c_2 e^{-t}+\frac{1}{3} t e^{2t}.$$
+	\end{punkt}
+	
+	\begin{punkt} Prøv $a t$ for å finne
+		$$y=c_1\cos(t)+ c_2 \sin (t)+t.$$
+	\end{punkt}
+	
+	\begin{punkt} Prøv $at+b$ for å finne
+		$$y=(c_1+tc_2)e^{2t}+t+1.$$
+	\end{punkt}
+	
+\end{losning}
+
+\begin{oppgave}
+For alle likningene i oppgave \textbf{15.1.} skal du: regne ut det karakteristiske polynomet til differensiallikningen, og det karakteristiske polynomet til matrisen i tilhørende system. Ser du en sammenheng? Klarer du å bevise observasjonen din?
+\end{oppgave}
+
+\begin{losning}
+Vi ser at polynomene blir like.
+\\
+
+Bevis: Betrakt en generell likning $y''+py'+qy=0$. Det karakteristiske polynomet er $\lambda ^2+p\lambda+q$. Vi kan generelt skrive tilhørende system som $$\begin{bmatrix}
+0 & 1\\
+-q & -p
+\end{bmatrix} \vv{y}{v}=\vv{y}{v} '
+$$ hvor $v=y'$. Det karakteristiske polynomet til matrisen blir $$
+\text{det}\begin{bmatrix}
+-\lambda & 1\\
+-q & -p-\lambda
+\end{bmatrix}=\lambda(p+\lambda)+q=\lambda^2+p\lambda+q.
+$$Polynomene er like.
+\end{losning}
