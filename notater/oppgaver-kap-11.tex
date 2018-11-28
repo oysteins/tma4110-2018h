@@ -366,11 +366,11 @@ som blir
 \begin{equation*}
 	\lambda = \cos\theta \pm i\sin\theta
 \end{equation*}
-Hvis vi ser på denne komplekse egenverdien som en vektor i planet er det nøyaktiv vektoren som peker i samme retning som $\V e_1$ rotert med/mot klokken med $\theta$ radianer. Fra tidligere øvinger vet vi at $T_{2\theta} = T_\theta\cdot T_\theta = T_\theta^2$. Fra oppgave 7 vet vi derfor at egenverdiene til  $T_{2\theta}$ er $\lambda^2$
+Hvis vi ser på denne komplekse egenverdien som en vektor i planet er det nøyaktig vektoren som peker i samme retning som $\V e_1$ rotert med/mot klokken med $\theta$ radianer. Fra tidligere øvinger vet vi at $T_{2\theta} = T_\theta\cdot T_\theta = T_\theta^2$. Fra oppgave 7 vet vi derfor at egenverdiene til  $T_{2\theta}$ er $\lambda^2$
 \begin{equation*}
-	\lambda^2 = (\cos\theta \pm i\sin\theta)^2 = \cos^2\theta - \sin^2\theta \pm \sin2\theta
+	\lambda^2 = (\cos\theta \pm i\sin\theta)^2 =  \cos 2\theta \pm \sin2\theta.
 \end{equation*}
-og så husker vi at $\cos^2\theta - \sin^2\theta = \cos 2\theta$ for å få det vi forventet, altså at hvis vi dobler vinkelen i $T_\theta$ dobler vi vinkelen i egenverdien.
+%og så husker vi at $\cos^2\theta - \sin^2\theta = \cos 2\theta$ for å få det vi forventet, altså at hvis vi dobler vinkelen i $T_\theta$ dobler vi vinkelen i egenverdien.
 \end{losning}
 
 
@@ -426,44 +426,54 @@ i & 1 & 1 & 1 & 1 & 1 \\ 1 & i & 1 & 1 & 1 & 1\\ 0 & 0 & i & 1& 1 & 1 \\ 0 & 0& 
 		\end{equation*}
 	\end{punkt}
 	\begin{punkt}	% b)
-		Her kan vi velge første rad eller første kolonne. Vi velger første kolonne og får determinanten
-		\begin{equation*}
-			i\det 
-			\begin{bmatrix}
-				i & 0 & 0 \\
-				0 & i & 1 \\
-				0 & 1 & i
-			\end{bmatrix}
-			-1\det
-			\begin{bmatrix}
-				1 & 0 & 0 \\
-				0 & i & 1 \\
-				0 & 1 & i
-			\end{bmatrix}
-		\end{equation*}
-		Den første determinanten er samme som i oppg a) og den andre ligner. Vi får at determinanten er
-		\begin{equation*}
-			2 + 2i
-		\end{equation*}
+Matrise er blokkdiagonal, slik at 
+\begin{align*}
+\det
+\begin{bmatrix}
+i & 1 & 0 & 0 \\ 1 & i & 0 & 0 \\ 0 & 0 & i & 1 \\ 0 & 0& 1  &i  
+\end{bmatrix}
+&= \\
+\det
+\begin{bmatrix}
+i & 1  \\ 1 & i 
+\end{bmatrix}
+\det
+\begin{bmatrix}
+i & 1  \\ 1 & i 
+\end{bmatrix}
+&=
+(-1)\cdot (-1)=4.
+\end{align*}
+
+
 	\end{punkt}
 
 	\begin{punkt}
-		Vi velger å regne ut determinanten langs første kolonne. Det gir
-		\begin{equation*}
-			i\det\begin{bmatrix}
-				i & 1 & 1 \\
-				0 & i & 1 \\
-				0 & 1 & i
-			\end{bmatrix}
-			-1\det\begin{bmatrix}
-				1 & 1 & 1 \\
-				0 & i & 1 \\
-				0 & 1 & i
-			\end{bmatrix}
-		\end{equation*}
-		Her ser vi at den første determinanten er kjent, og den andre regner vi ut langs første kolonne og får at determinanten til slutt blir $2 + 2i$ som i b)
+Denne matrisen er blokktriangulær, så determinanten blir 
+\begin{align*}
+\det
+\begin{bmatrix}
+i & 1 & 1 & 1  \\ 1 & i & 1 & 1 \\ 0 & 0 & i & 1 \\ 0 & 0& 1  &i 
+\end{bmatrix}
+&= \\
+\det
+\begin{bmatrix}
+i & 1  \\ 1 & i 
+\end{bmatrix}
+\det
+\begin{bmatrix}
+i & 1  \\ 1 & i 
+\end{bmatrix}
+&=
+(-1)\cdot (-1)=4.
+\end{align*}
 	\end{punkt}
-	Oppgave d) og e) er tilsvarende: nøst deg nedover ved å velge en lur rad/kolonne å beregne determinanten fra.
+	\begin{punkt}
+	Bruk blokktriangulariteten og få $(-2)^3=-8$. (Google block triangular matrix.)
+	\end{punkt}
+	\begin{punkt}
+Lureoppgave: denne matrisen er singulær.
+	\end{punkt}
 \end{losning}
 
 \begin{oppgave}

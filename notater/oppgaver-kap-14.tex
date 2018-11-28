@@ -118,13 +118,13 @@ Du fant egenverdier og egenvektorer til alle matrisene i kapittel 13. Du trenger
 \end{punkt}
 
 \begin{punkt}
-	$$\V{y}=c_1\vvv{1}{1}{0}e^{2t}+c_2\vvv{-2}{0}{1}e^{2t}+c_3\vvv{1}{3}{-1}e^{-4t}$$
+	$$\V{y}=c_1\vvv{1}{1}{0}e^{2t}+c_2\vvv{-2}{0}{1}e^{2t}+c_3\vvv{1}{3}{-2}e^{-4t}$$
 \end{punkt}
 
 \begin{punkt}
 $$	\begin{aligned}
-	\V{y}= {} & c_1\vvv{0}{0}{1}e^{3t}+c_2(\cos (t) \vvv{0}{1}{0}-\sin (t) \vvv{1}{0}{0})\\
-	& +c_3(\cos (t) \vvv{1}{0}{0}+\sin (t) \vvv{0}{1}{0})
+	\V{y}= {} & c_1\vvv{0}{0}{1}e^{3t}+c_2\left(\cos (t) \vvv{0}{1}{0}-\sin (t) \vvv{1}{0}{0}\right)\\
+	& +c_3\left(\cos (t) \vvv{1}{0}{0}+\sin (t) \vvv{0}{1}{0}\right)
 	\end{aligned}$$
 	
 \end{punkt}
@@ -132,8 +132,8 @@ $$	\begin{aligned}
 \begin{punkt} 
 $$	\begin{aligned}
 	\V{y}= {} & c_1\vvvv{20}{12}{17}{-17}e^{-4t} +c_2\vvvv{151}{293}{350}{200}e^{7t}\\
-	& +c_3(\cos (t) \vvvv{0}{1}{0}{0}-\sin (t) \vvvv{1}{0}{0}{0})\\
-	& +c_4(\cos (t) \vvvv{1}{0}{0}{0}+\sin (t) \vvvv{0}{1}{0}{0})
+	& +c_3\left(\cos (t) \vvvv{0}{1}{0}{0}-\sin (t) \vvvv{1}{0}{0}{0}\right)\\
+	& +c_4\left(\cos (t) \vvvv{1}{0}{0}{0}+\sin (t) \vvvv{0}{1}{0}{0}\right)
 	\end{aligned}$$
 
 \end{punkt}
@@ -193,7 +193,7 @@ Løs initialverdiproblemene $A\V y= \V y '$, $\V{y}(0)=\V{y}_0$ når
 \end{punkt}
 
 \begin{punkt}
-	$$\V{y}=2\vvv{1}{1}{0}e^{2t}-\vvv{1}{3}{-1}e^{-4t}$$
+	$$\V{y}=2\vvv{1}{1}{0}e^{2t}-\vvv{1}{3}{-2}e^{-4t}$$
 \end{punkt}
 
 \begin{punkt}
@@ -216,14 +216,14 @@ Løs initialverdiproblemet $$
 1 & 0 & 0\\
 0 & 0 & 3
 \end{bmatrix}
-\V{y}=\V{y}',\quad \V{y}(\frac{\pi}{2})=\vvv{1}{1}{1}.
+\V{y}=\V{y}',\quad \V{y}\left(\frac{\pi}{2}\right)=\vvv{1}{1}{1}.
 $$
 \end{oppgave}
 
 \begin{losning}
 	$$	\begin{aligned}
-	\V{y}= {} & \vvv{0}{0}{1}e^{3(t-\frac{\pi}{2})}-(\cos (t) \vvv{0}{1}{0}-\sin (t) \vvv{1}{0}{0})\\
-	& +(\cos (t) \vvv{1}{0}{0}+\sin (t) \vvv{0}{1}{0})
+	\V{y}= {} & \vvv{0}{0}{1}e^{3(t-\frac{\pi}{2})}-\left(\cos (t) \vvv{0}{1}{0}-\sin (t) \vvv{1}{0}{0}\right)\\
+	& +\left(\cos (t) \vvv{1}{0}{0}+\sin (t) \vvv{0}{1}{0}\right)
 	\end{aligned}$$
 \end{losning}
 
@@ -244,8 +244,8 @@ med en gitt initialverdi $\V{y}(0)=\V{y}_0$ har en entydig løsning.\\
 
 \begin{losning}
 Vi har sett at den generelle løsningen er 
-$$\V{y}=c_1\vvv{1}{1}{0}e^{2t}+c_2\vvv{-2}{0}{1}e^{2t}+c_3\vvv{1}{3}{-1}e^{-4t}.$$ Det gjenstår kun å bestemme koeffisientene fra initialverdiene:
-$$c_1\vvv{1}{1}{0}+c_2\vvv{-2}{0}{1}+c_3\vvv{1}{3}{-1}=\V{y}_0.$$ Dette kan skrives som en matriselikning
+$$\V{y}=c_1\vvv{1}{1}{0}e^{2t}+c_2\vvv{-2}{0}{1}e^{2t}+c_3\vvv{1}{3}{-2}e^{-4t}.$$ Det gjenstår kun å bestemme koeffisientene fra initialverdiene:
+$$c_1\vvv{1}{1}{0}+c_2\vvv{-2}{0}{1}+c_3\vvv{1}{3}{-2}=\V{y}_0.$$ Dette kan skrives som en matriselikning
 $$\begin{bmatrix}
 1 & -2 & 1\\
 1 & 0 & 3\\
@@ -343,7 +343,7 @@ $y''-y=0$
 	
 	\begin{punkt}$\begin{bmatrix}
 		0 & 1\\
-		0 & 1
+		0 & -1
 		\end{bmatrix} \vv{y}{v}=\vv{y}{v}'
 		$
 	\end{punkt}
@@ -393,7 +393,7 @@ Løs initialverdiproblemet
 	\end{punkt}
 	
 	\begin{punkt}
-		$y''-4y'+4y=0$, $y(1)=2$, $y'(0)=e^{-2}$
+		$y''-4y'+4y=0$, $y(1)=0$, $y'(0)=-e^{-2}$
 	\end{punkt}
 	
 \end{oppgave}

@@ -118,48 +118,51 @@ Vis at $(\overline z)^n=\overline{z^n}$.
 \end{punkt}
 
 \begin{punkt}
-Skriv $z=re^{i\theta}$. Da har vi at $\overline{z}=re^{-i\theta}$. Vi regner litt på venstre side av likheten vi ønsker å vise:
 \[
-(\overline{z})^n=r^ne^{-nx}.
+(\overline{z})^n=(re^{-i\theta})^n=r^ne^{-in\theta}=\overline{r^ne^{in\theta}}=\overline{z^n}
 \]
-Bruk del \textbf{a)} for å se at
-\[
-(\overline{z})^n=r^n(\cos(- nx) + i\sin(- nx)).
-\]
-Men cosinus er like og sinus er odde slik at
-\[
-(\overline{z})^n=r^n(\cos(nx) - i\sin( nx)).
-\]
-Nå regner vi litt på høyre siden:
-\[
-(\overline{z^n})=\overline{r^ne^{ni\theta}}.
-\]
-Euler gir:
-\[
-(\overline{z^n})=\overline{r^n\cos(nx) + ir^n\sin( nx)}
-\]
-som igjen gir
-\[
-(\overline{z^n})=r^n\cos(nx) - ir^n\sin( nx).
-\]
-
-Dermed ser vi at høyre side er lik vesntre siden.
-
-
-\noindent
-Alternativ løsning: Du kan enkelt vise at $\overline{zw}=\bar{z}\bar{w}$ for to komplekse tall $z$ og~$w$. Dette gir umiddelbart resultatet for $n=2$ (ta $w=z$). La oss fortsette med induksjon. Anta at påstanden er sann for $z^{n}$. Da ser vi -- ta $w=z^n$ ovenfor -- at 
-\[
-\overline{z^{n+1}}=\overline{z^{n}}\overline{z}.
-\]
-Induksjonshypotesen er at 
-\[
-\overline{z^{n}}=\overline{z}^n.
-\]
-Sett inn for å se at
-\[
-\overline{z^{n+1}}=\overline{z}^{n+1}.
-\]
-Vi har dermed vist påstanden med induksjon.
+%Skriv $z=re^{i\theta}$. Da har vi at $\overline{z}=re^{-i\theta}$. Vi regner litt på venstre side av likheten vi ønsker å vise:
+%\[
+%(\overline{z})^n=r^ne^{-nx}.
+%\]
+%Bruk del \textbf{a)} for å se at
+%\[
+%(\overline{z})^n=r^n(\cos(- nx) + i\sin(- nx)).
+%\]
+%Men cosinus er like og sinus er odde slik at
+%\[
+%(\overline{z})^n=r^n(\cos(nx) - i\sin( nx)).
+%\]
+%Nå regner vi litt på høyre siden:
+%\[
+%(\overline{z^n})=\overline{r^ne^{ni\theta}}.
+%\]
+%Euler gir:
+%\[
+%(\overline{z^n})=\overline{r^n\cos(nx) + ir^n\sin( nx)}
+%\]
+%som igjen gir
+%\[
+%(\overline{z^n})=r^n\cos(nx) - ir^n\sin( nx).
+%%\]
+%
+%%Dermed ser vi at høyre side er lik vesntre siden.
+%
+%
+%\noindent
+%Alternativ løsning: Du kan enkelt vise at $\overline{zw}=\bar{z}\bar{w}$ for to komplekse tall $z$ og~$w$. Dette gir umiddelbart resultatet for $n=2$ (ta $w=z$). La oss fortsette med induksjon. Anta at påstanden er sann for $z^{n}$. Da ser vi -- ta $w=z^n$ ovenfor -- at 
+%\[
+%\overline{z^{n+1}}=\overline{z^{n}}\overline{z}.
+%\]
+%Induksjonshypotesen er at 
+%\[
+%\overline{z^{n}}=\overline{z}^n.
+%\]
+%Sett inn for å se at
+%\[
+%\overline{z^{n+1}}=\overline{z}^{n+1}.
+%\]
+%Vi har dermed vist påstanden med induksjon.
 \end{punkt}
 \end{losning}
 
@@ -200,7 +203,7 @@ $\frac{e^{i\frac{3\pi}{4}}}{e^{-i\frac{3 \pi}{4}}}=e^{i(\frac{3\pi}{4}-(-\frac{3
 \end{punkt}
 
 \begin{punkt}
-Polar Form: Veldig enkelt å multiplisere/addere som del $\textbf{b)}$ illustrerer; vanskelig å addere som del $\textbf{a)}$ illustrerer.
+Polar Form: Veldig enkelt å multiplisere/dividere som del $\textbf{b)}$ illustrerer; vanskelig å addere som del $\textbf{a)}$ illustrerer.
 
 \noindent
 Kartesisk: Her blir det motsatt: Enkelt å addere; vanskelig å dele.
@@ -360,7 +363,7 @@ Konjugering av hele ligningen gir
 \[
 a_n(\overline w)^n+a_{n-1}(\overline w)^{n-1}+...+a_1(\overline w)+a_0=0,
 \]
-men tidligere har du vist at $(\overline w)^n=(\overline {w^n}$, slik at 
+men tidligere har du vist at $(\overline w)^n=\overline {w^n}$, slik at 
 \[
 a_n\overline w^n+a_{n-1}\overline w^{n-1}+...+a_1\overline w+a_0=0.
 \]
@@ -388,14 +391,12 @@ Alternativ løsning: Du kan også løse oppgaven ved å skrive $z$ og~$w$ på fo
 
 
 \begin{oppgave}
-La $n>0$ være et partall, og la $z$ være en $n$-terot av et reelt tall. Er $\bar{z}$ også en $n$-terot av dette tallet?
+La $n>0$, og la $z$ være en $n$-terot av et reelt tall. Er $\bar{z}$ også en $n$-terot av dette tallet?
 \end{oppgave}
 
 \begin{losning}
-Ja.
+Ja. Se oppgave 5b.
 
-\noindent
-Røttene til $r$ fordeles uniformt langs sirkelen om origo med radius $\sqrt[n]{r}$, og $\sqrt[n]{r}$ er en $n$-terot. Vi har sett eksempler på dette tidligere i øvingen.
 \end{losning}
 
 \begin{oppgave}
