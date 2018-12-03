@@ -368,7 +368,7 @@ er ortogonale.
 Indreproduktet tilfredsstiller følgende regneregler:
 \begin{align*}
  \V v ^* \V w&=\overline{\V w ^* \V v} \\
-( c\V v )^* \V w&=c(\V w ^* \V v ) = \V w ^* (\overline c\V v) \\
+( c\V v )^* \V w&=\overline{c}(\V v ^* \V w ) = \V v ^* (\overline c\V w) \\
 %  \V v ^* c\V w&=\overline c \V w ^* \V v \\
  (\V v+\V u) ^* \V w&= \V v ^* \V w+ \V u ^* \V w \\
   \V v ^* (\V w+\V u)&= \V v ^* \V w+ \V v ^* \V u
@@ -387,9 +387,10 @@ Dersom vektorene $\V v$ og $\V w$ er ortogonale, er
 \begin{proof}
 Vi vet at 
 \begin{align*}
-\|\V v-\V w \|^2&=(\V v-\V w)^*(\V v-\V w)\\&=\V v^*\V v-\V v^*\V w-\V w^*\V v+\V w^*\V w\\ & =\|\V v\|^2 -\V v^*\V w-\V w^*\V v+\|\V w\|^2\\ &=\|\V v\|^2 +\|\V w\|^2\\
+\|\V v-\V w \|^2&=(\V v-\V w)^*(\V v-\V w)\\&=\V v^*\V v-\V v^*\V w-\V w^*\V v+\V w^*\V w\\ & =\|\V v\|^2 -\V v^*\V w-\V w^*\V v+\|\V w\|^2\\ &=\|\V v\|^2 +\|\V w\|^2
 \end{align*}
 siden $\V v^*\V w-\V w^*\V v=0$.
+siden $\v^* \w = 0$ og $\w^* \v = 0$.
 \end{proof}
 
  \section*{Projeksjon i $\C^n$}
@@ -574,12 +575,12 @@ Vi beregner:
 \]
 og
 \[
-\V w^* \V v=5i\cdot 3+0\cdot (-i)+(-2i)\cdot 4=7i
+\V v^* \V w = 3 \cdot (-5i) + i \cdot 0 + 4 \cdot 2i = -7i
 \]
 slik at
 \begin{align*}
 P_{\V v}\V w =\frac{ \V v^*\V w}{\V v^* \V v} \V v =
-\frac{7i}{26}
+\frac{-7i}{26}
 \begin{bmatrix}
  3 \\
  -i \\
@@ -595,18 +596,18 @@ og
 2i 
 \end{bmatrix}
 -
-\frac{7i}{26}
+\frac{-7i}{26}
 \begin{bmatrix}
  3 \\
  -i \\
  4
 \end{bmatrix}
 =
-\frac{i}{26}
+\frac{1}{26}
 \begin{bmatrix}
- -151 \\
- -7 \\
- 24
+ -109i \\
+ 7 \\
+ 80i
 \end{bmatrix}\qedhere
 \end{align*} 
 \end{ex}
@@ -641,7 +642,7 @@ Det er vanlig å sette opp $\V u_1$, $\V u _2$, ...,$\V u_n$ som kolonner i en m
 %\end{ex}
 %
 
-Hvis vi har en ortogonal basis for et rom, er det veldig lett å finne en vektors komponenter i rommet. La oss si at vi ønsker å finne vektoren $\V v$ sine komponenter i basisen $\V u_1$, $\V u _2$, ...,$\V u_n$. Komponentene til $\V V$ er gitt ved likningen 
+Hvis vi har en ortogonal basis for et rom, er det veldig lett å finne en vektors komponenter i rommet. La oss si at vi ønsker å finne vektoren $\V v$ sine komponenter i basisen $\V u_1$, $\V u _2$, ...,$\V u_n$. Komponentene til $\V v$ er gitt ved likningen 
 \[
 \V v = x_1 \V u_1 + x_2 \V u_2 + ...x_n \V u_n = U\V x
 \]
