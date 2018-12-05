@@ -1,0 +1,223 @@
+\documentclass[titlepage,a4paper,12pt,norsk]{IMFeksamen}
+\geometry{left=3.5cm,right=3.5cm,bottom=2cm}
+\usepackage[utf8]{inputenc}
+\trykkinfo[tosidig,sorthvit]
+\emnekode{TMA4110}
+\emnenavn{Matematikk 3}
+\eksamensdato{4. desember 2018}
+\eksamenstid{09:00–13:00}
+\fagligkontaktinfo{Øystein Skartsæterhagen og Morten Nome}{95 92 55 96}
+\hjelpemiddel{Ingen trykte eller håndskrevne hjelpemidler tillatt.
+ Bestemt, enkel kalkulator tillatt.
+ (Casio fx-82ES PLUS, Casio fx-82EX,
+  Citizen SR-270X, Citizen SR-270X College,
+  Hewlett Packard HP30S)}
+\anneninfo{Eksamenen består av ti oppgaver
+Hver av disse teller like mye.
+Alle svar må begrunnes.
+}
+\runninghead{TMA4110 Matematikk 3 -- Eksamen høsten 2018}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsfonts}
+\usepackage{mathrsfs}
+\usepackage{systeme}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\M}{\mathcal{M}} % vektorrom av matriser
+\newcommand{\Cf}{\mathcal{C}} % vektorrom av kontinuerlige funksjoner
+\renewcommand{\P}{\mathcal{P}} % vektorrom av polynomer
+\newcommand{\B}{\mathscr{B}} % basis
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\intersect}{\cap}
+\newcommand{\union}{\cup}
+\newcommand{\fcomp}{\circ}
+\newcommand{\iso}{\cong}
+
+\newcommand{\roweq}{\sim}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Col}{Col}
+\DeclareMathOperator{\Row}{Row}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\tr}{^\top}
+\newcommand{\koord}[2]{[\,{#1}\,]_{#2}} % koordinater mhp basis
+
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\vv}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\vvS}[2]{\left[ \begin{smallmatrix} #1 \\ #2 \end{smallmatrix} \right]}
+\newcommand{\vvv}[3]{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}}
+\newcommand{\vvvv}[4]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \end{bmatrix}}
+\newcommand{\vvvvv}[5]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \\ #5 \end{bmatrix}}
+\newcommand{\vn}[2]{\vvvv{#1_1}{#1_2}{\vdots}{#1_#2}}
+
+\newcommand{\e}{\V{e}}
+\renewcommand{\u}{\V{u}}
+\renewcommand{\v}{\V{v}}
+\newcommand{\w}{\V{w}}
+\renewcommand{\b}{\V{b}}
+\newcommand{\x}{\V{x}}
+\newcommand{\0}{\V{0}}
+
+\newenvironment{amatrix}[1]{% "augmented matrix"
+  \left[\begin{array}{*{#1}{c}|c}
+}{%
+  \end{array}\right]
+}
+
+
+
+\begin{document}
+
+\begin{oppgave}
+Finn alle løsninger av følgende likningssystem:
+\[
+\systeme{
+x - y + 2z = 28,
+-2x + 5y - 4z = -20,
+-x + y - z = -10
+}
+\]
+\end{oppgave}
+
+
+\begin{oppgave}
+Se på følgende vektorer i~$\R^3$:
+\[
+\v_1 = \vvv{3}{-3}{-6},\quad
+\v_2 = \vvv{-2}{2}{4},\quad
+\v_3 = \vvv{1}{-1}{8},\quad
+\b = \vvv{4}{-9}{3}
+\]
+Er vektorene $\v_1$, $\v_2$ og~$\v_3$ lineært uavhengige?
+Er $\b$ en lineærkombinasjon av $\v_1$, $\v_2$ og~$\v_3$?
+% ja; nei
+\end{oppgave}
+
+
+\begin{oppgave}
+Finn generell løsning av systemet
+\[
+\left\{
+\begin{aligned}
+y_1' &= 7 y_1 - 2 y_2 \\
+y_2' &= 2 y_1 + 2 y_2
+\end{aligned}
+\right.
+\]
+og skisser fasediagrammet.
+\end{oppgave}
+
+
+\begin{oppgave}
+Se på de tre punktene
+\[
+\vv{0}{-1},\quad
+\vv{1}{1}\quad\text{og}\quad
+\vv{2}{7}
+\]
+i $\R^2$.
+
+Finn andregradspolynomet
+$p(x) = ax^2 + bx + c$
+som går gjennom alle disse punktene.
+
+Bruk minste kvadraters metode til å finne  førstegradspolynomet
+$q(x) = dx + e$
+som passer best til de tre punktene.
+
+Tegn grafene til $p$ og~$q$.
+\end{oppgave}
+
+
+\begin{oppgave}
+La $A$ være følgende matrise:
+\[
+A =
+\begin{bmatrix}
+ 9 & -3 \\
+-3 &  2
+\end{bmatrix}
+\]
+Finn alle $2 \times 2$-matriser~$X$ som er løsninger av likningen
+$AX = XA$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Finn en ortogonal basis for underrommet av~$\R^4$ utspent av
+disse vektorene:
+\[
+\v_1 = \vvvv{2}{1}{1}{0},\quad
+\v_2 = \vvvv{1}{0}{-2}{1},\quad
+\v_3 = \vvvv{1}{1}{1}{0},\quad
+\v_4 = \vvvv{2}{1}{-1}{1}
+\]
+\end{oppgave}
+
+
+\begin{oppgave}
+La $R$ være følgende matrise:
+\[
+R =
+\begin{bmatrix}
+        1/2 & \sqrt{3}/2 \\
+-\sqrt{3}/2 &        1/2
+\end{bmatrix}
+\]
+Regn ut $R^{\,42}$.
+\end{oppgave}
+
+
+\begin{oppgave}
+La $A$ være følgende komplekse matrise:
+\[
+A =
+\begin{bmatrix}
+2  &  i &  5 - 3i \\
+4  & 2i & 10 + 2i \\
+2i & -1 &  4 + 6i
+\end{bmatrix}
+\]
+Først: Finn en basis for $\Null A$ og en basis for $\Col A$.
+
+Deretter: Finn alle vektorer $\v$ i~$\C^3$ som er slik at
+$A\v = \0$
+og
+$\| \v \| = 1$.
+% basis Null A: (\vvv{i}{-2}{0})
+% basis Col A: 
+% \v = \vvv{i/\sqrt{5}}{-2/\sqrt{5}}{0} \cdot e^{\theta i} for \theta \in [0,2\pi)
+\end{oppgave}
+
+
+\begin{oppgave}
+Husk at vi skriver $\M_2$ for vektorrommet som består av alle reelle
+$2 \times 2$-matriser.
+Definer en funksjon $T \colon \M_2 \to \M_2$ ved
+\[
+T(M) = M - M\tr.
+\]
+Vis at $T$ er en lineærtransformasjon, og finn $\ker T$ og~$\im T$.
+\end{oppgave}
+
+
+\begin{oppgave}
+La $A$ være en $m \times n$-matrise med lineært uavhengige kolonner,
+og la $B$ og~$C$ være $n \times p$-matriser.
+Vis at hvis $AB = AC$, så er $B = C$.
+\end{oppgave}
+
+
+\end{document}

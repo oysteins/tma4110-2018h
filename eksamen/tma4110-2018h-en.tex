@@ -1,0 +1,221 @@
+\documentclass[titlepage,a4paper,12pt,english]{IMFeksamen}
+\geometry{left=3.5cm,right=3.5cm,bottom=2cm}
+\usepackage[utf8]{inputenc}
+\trykkinfo[tosidig,sorthvit]
+\emnekode{TMA4110}
+\emnenavn{Calculus 3}
+\eksamensdato{4 December 2018}
+\eksamenstid{09:00–13:00}
+\fagligkontaktinfo{Øystein Skartsæterhagen and Morten Nome}{95 92 55 96}
+\hjelpemiddel{No printed or hand-written support material is allowed.
+ A specific basic calculator is allowed.
+ (Casio fx-82ES PLUS, Casio fx-82EX,
+  Citizen SR-270X, Citizen SR-270X College,
+  Hewlett Packard HP30S)}
+\anneninfo{The exam consists of ten problems.
+ Each of these carries the same weight towards the grade.
+ Give reasons for all answers.
+}
+\runninghead{TMA4110 Calculus 3 -- Exam fall 2018}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsfonts}
+\usepackage{mathrsfs}
+\usepackage{systeme}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\M}{\mathcal{M}} % vektorrom av matriser
+\newcommand{\Cf}{\mathcal{C}} % vektorrom av kontinuerlige funksjoner
+\renewcommand{\P}{\mathcal{P}} % vektorrom av polynomer
+\newcommand{\B}{\mathscr{B}} % basis
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\intersect}{\cap}
+\newcommand{\union}{\cup}
+\newcommand{\fcomp}{\circ}
+\newcommand{\iso}{\cong}
+
+\newcommand{\roweq}{\sim}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Col}{Col}
+\DeclareMathOperator{\Row}{Row}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\tr}{^\top}
+\newcommand{\koord}[2]{[\,{#1}\,]_{#2}} % koordinater mhp basis
+
+\newcommand{\V}[1]{\mathbf{#1}}
+\newcommand{\vv}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\vvS}[2]{\left[ \begin{smallmatrix} #1 \\ #2 \end{smallmatrix} \right]}
+\newcommand{\vvv}[3]{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}}
+\newcommand{\vvvv}[4]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \end{bmatrix}}
+\newcommand{\vvvvv}[5]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \\ #5 \end{bmatrix}}
+\newcommand{\vn}[2]{\vvvv{#1_1}{#1_2}{\vdots}{#1_#2}}
+
+\newcommand{\e}{\V{e}}
+\renewcommand{\u}{\V{u}}
+\renewcommand{\v}{\V{v}}
+\newcommand{\w}{\V{w}}
+\renewcommand{\b}{\V{b}}
+\newcommand{\x}{\V{x}}
+\newcommand{\0}{\V{0}}
+
+\newenvironment{amatrix}[1]{% "augmented matrix"
+  \left[\begin{array}{*{#1}{c}|c}
+}{%
+  \end{array}\right]
+}
+
+
+
+\begin{document}
+
+\begin{oppgave}
+Find all solutions of the following system of equations:
+\[
+\systeme{
+x - y + 2z = 28,
+-2x + 5y - 4z = -20,
+-x + y - z = -10
+}
+\]
+\end{oppgave}
+
+
+\begin{oppgave}
+Consider the following vectors in~$\R^3$:
+\[
+\v_1 = \vvv{3}{-3}{-6},\quad
+\v_2 = \vvv{-2}{2}{4},\quad
+\v_3 = \vvv{1}{-1}{8},\quad
+\b = \vvv{4}{-9}{3}
+\]
+Are the vectors $\v_1$, $\v_2$ and~$\v_3$ linearly independent?
+Is $\b$ a linear combination of $\v_1$, $\v_2$ and~$\v_3$?
+\end{oppgave}
+
+
+\begin{oppgave}
+Find the general solution of the system
+\[
+\left\{
+\begin{aligned}
+y_1' &= 7 y_1 - 2 y_2 \\
+y_2' &= 2 y_1 + 2 y_2
+\end{aligned}
+\right.
+\]
+and sketch the phase plane plot.
+\end{oppgave}
+
+
+\begin{oppgave}
+Consider the three points
+\[
+\vv{0}{-1},\quad
+\vv{1}{1}\quad\text{and}\quad
+\vv{2}{7}
+\]
+in $\R^2$.
+
+Find the polynomial
+$p(x) = ax^2 + bx + c$
+of degree two that goes through all these points.
+
+Use the method of least squares to find the polynomial
+$q(x) = dx + e$
+of degree one that best fits the three points.
+
+Draw the graphs of $p$ and~$q$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Let $A$ be the following matrix:
+\[
+A =
+\begin{bmatrix}
+ 9 & -3 \\
+-3 &  2
+\end{bmatrix}
+\]
+Find all $2 \times 2$-matrices~$X$ that are solutions of the equation
+$AX = XA$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Find an orthogonal basis for the subspace of~$\R^4$ spanned by
+these vectors:
+\[
+\v_1 = \vvvv{2}{1}{1}{0},\quad
+\v_2 = \vvvv{1}{0}{-2}{1},\quad
+\v_3 = \vvvv{1}{1}{1}{0},\quad
+\v_4 = \vvvv{2}{1}{-1}{1}
+\]
+\end{oppgave}
+
+
+\begin{oppgave}
+Let $R$ be the following matrix:
+\[
+R =
+\begin{bmatrix}
+        1/2 & \sqrt{3}/2 \\
+-\sqrt{3}/2 &        1/2
+\end{bmatrix}
+\]
+Compute $R^{\,42}$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Let $A$ be the following complex matrix:
+\[
+A =
+\begin{bmatrix}
+2  &  i &  5 - 3i \\
+4  & 2i & 10 + 2i \\
+2i & -1 &  4 + 6i
+\end{bmatrix}
+\]
+First: Find a basis for $\Null A$ and a basis for $\Col A$.
+
+Then: Find all vectors $\v$ in~$\C^3$ such that
+$A\v = \0$
+and
+$\| \v \| = 1$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Recall that we write $\M_2$ for the vector space consisting of all real
+$2 \times 2$-matrices.
+Define a function $T \colon \M_2 \to \M_2$ by
+\[
+T(M) = M - M\tr.
+\]
+Show that $T$ is a linear transformation,
+and find $\ker T$ and~$\im T$.
+\end{oppgave}
+
+
+\begin{oppgave}
+Let $A$ be an $m \times n$-matrix with linearly independent columns,
+and let $B$ and~$C$ be $n \times p$-matrices.
+Show that if $AB = AC$, then $B = C$.
+\end{oppgave}
+
+
+\end{document}
