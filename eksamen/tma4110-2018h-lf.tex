@@ -195,23 +195,23 @@ y_1  \\
 y_2 
 \end{bmatrix}
 \]
-Egenverdiene til matrisen er $2$ og~$1$,
+Egenverdiene til matrisen er $3$ og~$6$,
 med egenvektorer henholdsvis
-$\vvS{2}{1}$ og~$\vvS{1}{2}$.
+$\vvS{1}{2}$ og~$\vvS{2}{1}$.
 Den generelle løsningen av systemet er
+% \[
+% \left\{
+% \begin{aligned}
+% y_1(t) &= c_1 e^{3t} + 2 c_2 e^{6t} \\
+% y_2(t) &= 2 c_1 e^{3t} + c_2 e^{6t}
+% \end{aligned}
+% \right.
+% \]
 \[
-\mathbf y(t)=
-c_1e^{2t}
-\begin{bmatrix}
-2  \\
-1 
-\end{bmatrix}
+\vv{y_1(t)}{y_2(t)} =
+c_1 \vv{1}{2} e^{3t}
 + 
-c_2e^{t}
-\begin{bmatrix}
-1  \\
-2 
-\end{bmatrix}.
+c_2 \vv{2}{1}  e^{6t}.
 \]
 \end{oppgave}
 \end{minipage}
@@ -311,8 +311,7 @@ e
 7
 \end{bmatrix},
 \]
-som har løsning $d=4$ og $e=1$. Polynomet er $q(x) = 4x + 1$.
-% TODO: Skisse?
+som har løsning $d=4$ og $e=-\frac{5}{3}$. Polynomet er $q(x) = 4x - \frac{5}{3}$.
 \begin{center}
 \begin{tikzpicture}[baseline]
 \begin{axis}[
@@ -328,8 +327,11 @@ xlabel=$x$,ylabel=$y$,
 width=8cm,
 anchor=center,
 ]
-\addplot[black] {2*x^2 - 1} ;
-\addplot[black] {4*x + 1} ;
+\addplot[black] {2*x^2 - 1};
+\addplot[black] {4*x - 5/3};
+\addplot[mark=*,color=blue] plot coordinates { (0,-1) };
+\addplot[mark=*,color=blue] plot coordinates { (1,1) };
+\addplot[mark=*,color=blue] plot coordinates { (2,7) };
 \end{axis}
 \end{tikzpicture}
 \end{center}
